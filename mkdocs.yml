@@ -1,0 +1,22 @@
+site_name: My Notes 
+nav:
+  - Home: index.md
+  - Machine leaning: Machine Learning.md
+  - About: about.md
+
+theme:
+  name: 'material'
+  palette:
+      primary: 'White'
+      accent: 'Purple'
+  font: 
+    text: Roboto
+    code: Roboto Mono
+  logo: '/images/Logo.png'
+  favicon: 'img/favicon.ico.png'
+
+extra_javascript:
+  - https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML
+
+markdown_extensions:
+  - pymdownx.arithmatex
