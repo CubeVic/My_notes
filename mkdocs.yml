@@ -1,8 +1,11 @@
 site_name: My Notes 
+repo_url: https://github.com/CubeVic/My_notes
 nav:
-  - Home: index.md
-  - Machine leaning: Machine Learning.md
-  - About: about.md
+  - Home: 'index.md'
+  - Machine leaning: 
+     - Key ML Terminology: 'Key ML Terminology.md'
+     - Linear regression: 'Linear regression.md'
+  - About: 'about.md'
 
 theme:
   name: 'material'
