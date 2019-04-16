@@ -1,17 +1,17 @@
-# Welcome to MkDocs
+# Welcome My notes
 
-For full documentation visit [mkdocs.org](https://mkdocs.org).
+This is where I store all notes about the different topics im learning, the idea is to have easy access to the notes from anywhere, initially will be locally and in github eventually to a personal server
+I'm using MkDocs to generate this "documentation" more information visit [mkdocs.org](https://mkdocs.org).
 
-## Commands
+
+## Useful MkDocs Commands
 
 * `mkdocs new [dir-name]` - Create a new project.
 * `mkdocs serve` - Start the live-reloading docs server.
 * `mkdocs build` - Build the documentation site.
 * `mkdocs help` - Print this help message.
 
-## Project layout
+## Useful commands 
 
-    mkdocs.yml    # The configuration file.
-    docs/
-        index.md  # The documentation homepage.
-        ...       # Other markdown pages, images and other files.
+* `[Name of the image](/images/nameImage.png)` -  to add an image 
+* `[text](URL)` to add a link to a text 
