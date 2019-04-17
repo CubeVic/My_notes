@@ -4,7 +4,9 @@ nav:
   - Home: 'index.md'
   - Machine leaning: 
      - Key ML Terminology: 'Key ML Terminology.md'
-     - Linear regression: 'Linear regression.md'
+     - Linear Regression: 'Linear regression.md'
+  - Miscellaneous:
+      - OAuth 2: OAuth_2.md
   - About: 'about.md'
 
 theme:
