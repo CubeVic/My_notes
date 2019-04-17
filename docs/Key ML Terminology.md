@@ -1,5 +1,3 @@
-***Machine Learning ***
-=======================
 
 # Key ML ( Machine Learning ) Terminology
 
