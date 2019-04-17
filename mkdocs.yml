@@ -1,13 +1,6 @@
 site_name: My Notes 
 repo_url: https://github.com/CubeVic/My_notes
-nav:
-  - Home: 'index.md'
-  - Machine leaning: 
-     - Key ML Terminology: 'Key ML Terminology.md'
-     - Linear Regression: 'Linear regression.md'
-  - Miscellaneous:
-      - OAuth 2: OAuth_2.md
-  - About: 'about.md'
+
 
 theme:
   name: 'material'
@@ -19,10 +12,27 @@ theme:
     code: Roboto Mono
   logo: '/images/Logo.png'
   favicon: 'img/favicon.ico.png'
+  feature:
+      tabs: true
+
+pages:
+    - Home: 'index.md'
+    - Machine Leaning: 
+      - Key ML Terminology: 'Key ML Terminology.md'
+      - Linear Regression: 'Linear regression.md'
+    - Miscellaneous:
+      - OAuth 2: OAuth_2.md
+    - About: 'about.md'
 
 extra_javascript:
   - https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML
 
 markdown_extensions:
   - pymdownx.arithmatex
-  
+  - admonition
+  - codehilite:
+      guess_lang: false
+      linenums: true
+  - toc:
+      permalink: true
+      separator: "_"

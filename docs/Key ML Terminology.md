@@ -1,7 +1,9 @@
-# ***Machine Learning ***
+***Machine Learning ***
+=======================
 
-Key ML ( Machine Learning ) Terminology
-=======================================
+# Key ML ( Machine Learning ) Terminology
+
+
 
 __Supervised machine learning:__ ML systems learn how to combine input to produce useful predictions on never-before-seen data.
 
