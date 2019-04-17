@@ -1,32 +1,34 @@
-site_name: My Notes 
-repo_url: https://github.com/CubeVic/My_notes
+# Project information
+site_name: 'My Notes' 
+site_description: 'A Material Design theme for my personal notes'
+site_author: 'Victor Andres Aguirre Fernandez'
+site_url: ''
 
+# Repository
+repo_name: 'My_notes'
+repo_url: 'https://github.com/CubeVic/My_notes'
+
+# Copyright
+copyright: 'Copyright &copy; 2019 -  Victor Aguirre'
 
 theme:
   name: 'material'
+  language: 'en'
   palette:
-      primary: 'White'
-      accent: 'Purple'
+      primary: 'grey'
+      accent: 'Indigo'
   font: 
-    text: Roboto
-    code: Roboto Mono
+    text: 'Ubuntu'
+    code: 'Ubuntu Mono'
   logo: '/images/Logo.png'
   favicon: 'img/favicon.ico.png'
   feature:
       tabs: true
 
-pages:
-    - Home: 'index.md'
-    - Machine Leaning: 
-      - Key ML Terminology: 'Key ML Terminology.md'
-      - Linear Regression: 'Linear regression.md'
-    - Miscellaneous:
-      - OAuth 2: OAuth_2.md
-    - About: 'about.md'
-
 extra_javascript:
   - https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML
 
+# Extensions
 markdown_extensions:
   - pymdownx.arithmatex
   - admonition
@@ -36,3 +38,14 @@ markdown_extensions:
   - toc:
       permalink: true
       separator: "_"
+
+
+# Navigation
+pages:
+    - Home: 'index.md'
+    - Machine Leaning: 
+      - Key ML Terminology: 'Key ML Terminology.md'
+      - Linear Regression: 'Linear regression.md'
+    - Miscellaneous:
+      - OAuth 2: 'OAuth_2.md'
+    - About: 'about.md'
