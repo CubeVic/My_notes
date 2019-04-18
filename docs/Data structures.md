@@ -52,7 +52,7 @@ It will output:
 
 A **dictionary** is a mutable data type that stores mappings of unique keys to values.
 
-```
+```python
 elements = {"hydrogen": 1, "helium": 2, "carbon": 6}
 ```
 
@@ -60,14 +60,15 @@ Dictionaries can have keys of any immutable type, like integers or tuples, not j
 
 If you expect lookups to sometimes fail, `get` might be a better tool than normal square bracket lookups because errors can crash your program.
 
-```
+```python
 print("carbon" in elements)
 print(elements.get("dilithium"))
 ```
-
 this would output:
 
 ```
 True
 None
 ```
+
+
