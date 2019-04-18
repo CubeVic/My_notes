@@ -41,11 +41,13 @@ markdown_extensions:
 
 
 # Navigation
-pages:
+nav:
     - Home: 'index.md'
     - Machine Leaning: 
       - Key ML Terminology: 'Key ML Terminology.md'
       - Linear Regression: 'Linear regression.md'
     - Miscellaneous:
+      - Python:
+        - Data Structures: 'Data structures.md'
       - OAuth 2: 'OAuth_2.md'
     - About: 'about.md'
