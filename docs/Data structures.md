@@ -71,5 +71,16 @@ True
 None
 ```
 
+So, to recap 
+
+Data Structure | Ordered | Mutable | Constructor     | Example             |
+:--------------|:-------:|:-------:|:----------------|:--------------------|
+List           | Yes     | Yes     |`[]` or `list()` | `[5.7,4,'yesy',5.7]`|
+Tuple          | Yes     | No      |`()` or `tuple()`|`(5.7,4,'yes',5.7)`  |
+Set            | No      | Yes     |`{}`[^1] or `set()` |`{5.7,4,'yes'}`      |
+Dictionary     | No      | No[^2]  |`{}` or `dict()` |`{'jun':75.'jul':89}`|
+
+[^1]: You can use curly braces to define a set like this: `{1, 2, 3}`. However, if you leave the curly braces empty like this: `{}` Python will instead create an empty dictionary. So to create an empty set, use `set()`.  
+[^2]: A dictionary itself is mutable, but each of its individual keys must be immutable.
 
 
