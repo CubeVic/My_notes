@@ -41,3 +41,48 @@ A convolution is the process of applying a filter ("kernel") to an image. Max po
 **Maxpooling:** A pooling process in which many values are converted into a single value by talking the maximum value from among them.  
 **Stride:**the number of pixels to slide the kernel (filter) across the image.  
 **Downsampling:** The act of reducing the size of an image. 
+
+```python
+#Imports
+import tensorflow as tf
+from tensorflow import keras
+import numpy as np
+import matplotlib.pyplot as plt
+
+#import dataset
+
+fashion_mnist = keras.datasets.fashion_mnist
+(train_image, train_label), (test_image, test_labels) = fashion_mnist.load_data()
+
+#classes name ( name of the classes of clothes)
+class_name = ['t-shirt/top','trouser','pullover','dress','coat','sandal','shirt','sneakers','bag','Ankle boot']
+
+#Explore data/ process data
+train_image = train_image / 255
+test_image = test_image / 255
+
+#build a model 
+#setup layer
+
+model = keras.Sequencial([keras.layers.Flatten(input_shape(28,28)),
+	keras.layers.Dense(128, activation=tf.np.relu),
+	keras.layers.Dense(10,activation=tf.np.softmax)
+	])
+
+#compile the model
+model.compile(optimizer='adam', loss='sparse_categorical_crossentropy',metrics=['accuracy'])
+
+#train the model
+model.fit(train_image,train_label, epochs = 5)
+
+#Evaluate accuracy
+test_loss, test_acc = model.evaluate(test_image,test_labels)
+print('Test accuracy: ', test_acc)
+
+#make predictions
+predictions = model.predict(test_image)
+predictions[0]
+np.argmax(predictions[0])
+test_labels[0]
+
+```
