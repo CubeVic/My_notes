@@ -1,5 +1,5 @@
 
-**feature:** The input(s) to our model.  
+**Feature:** The input(s) to our model.  
 **Examples:** An input/output pair used for training (Output, are the labels we mentioned in other notes).  
 **Labels:** the output of the model.  
 **Layer:** A collection of nodes connected together within a neural network.  
