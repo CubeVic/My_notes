@@ -46,6 +46,7 @@ nav:
     - Home: 'index.md'
     - Machine Leaning: 
       - Key ML Terminology: 'Key ML Terminology.md'
+      - Other Key Terminology (TensorFlow): 'Other_key_Terminology.md'
       - Linear Regression: 'Linear regression.md'
     - Miscellaneous:
       - Python:
