@@ -1,17 +1,15 @@
-**Building AI projects**  
-
 ##Starting an AI projects  
 * Workflow of a project.  
 * Select AI project (Framework).  
 * Organizing data and teams for the project.  
 
-## Workflow of a machine learning project  
+## Workflow of a Machine Learning project  
 
 1. Collect data.  
 1. Train the model. (_Iterate many times until achieve the result._)
 1. Deploy model. (_Get back maintain and update._)
 
-## workflow of a data science project.
+## Workflow of a Data Science project.
 Unlike a machine learning project, the output of a data science project is often a set of actionable insights, a set of insights that may cause you to do things differently.  
 
 1. Collect Data.  
