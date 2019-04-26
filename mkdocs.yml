@@ -51,6 +51,7 @@ nav:
     - Miscellaneous:
       - Python:
         - Data Structures: 'Data structures.md'
+        - Control Flow: 'control flow.md'
       - OAuth 2: 'OAuth_2.md'
       - Random: 'Random Link.md'
     - Courses:
