@@ -26,3 +26,63 @@ Actor: Julia Louis-Dreyfus    Role: Elaine Benes
 Actor: Jason Alexander    Role: George Costanza
 Actor: Michael Richards    Role: Cosmo Kramer
 ```
+
+## `for` Loops vs. `While` Loops
+
+`for` loops are idea when the *number of iteration* are _known_ or _finite_.  
+
+Examples:  
+
+* When you have an iterable collection (list, string, set, tuple, dictionary):  
+```python
+for name in names:
+```
+
+* When you want to iterate through a loop for a definite number of times, using `range()`
+```python
+for i in range(5):
+```
+
+`while` loop are ideal when the *iterations* are to _continue until a condition is met_  
+
+Examples:
+
+* When you want to use comparison operations:
+``` python
+while count <= 100:
+```
+
+* When you want to loop base on receiving specific user input
+```python
+while user_input == 'y'
+```
+
+the following are required to build a correct `while` loop: 
+
+* The condition for existing the while loop should be included.  
+* Check if the iteration conditions is met.  
+* Body of the loop should change the value of condition variables.  
+##Break and continue.  
+
+* `break` terminates a loop.  
+* `continue` skips one iteration of a loop.  
+
+## Zip and Enumerate
+`zip` and `enumerate` are build-in functions that can come handy when dealing with loops.
+
+**Zip**
+
+`zip` will return  an iterator that combine multiples iterables into one sequence of tuples, this will be more clear with an example:
+
+```python
+list(zip(['a','b','c'], [1,2,3]))
+```
+
+which out put will be:
+
+```python
+[('a',1),('b',2),('c',3)]
+```
+
+so in this case we can see that `zip` create a iterator that combine the two provided and each iterator is a tuple with items in the in that position.
+```
