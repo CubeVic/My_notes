@@ -136,3 +136,42 @@ It will take 2 list and it will out put a single list of items that include a bo
 ```
 ['Barney Stinson 72', 'Robin Scherbatsky 68', 'Ted Mosby 72', 'Lily Aldrin 66', 'Marshall Eriksen 76']
 ```
+
+## List Comprehensions  
+
+List comprehensions are just present in python and not in other languages, this are normally use to create a list in a quickly and concisely way, for example:
+
+```python
+capitalized_cities = []
+for city in cities:
+    capitalized_cities.append(city.title())
+```
+
+can be reduce to:
+
+```python
+capitalized_cities = [city.title() for city in cities]
+```
+
+Conditional can be added to this list comprehensions (listcomps).
+be aware that if the conditional has a `else` statement the syntax will be a bit different.
+
+Lets start with a simply conditional.
+
+```python
+squares = [x**2 for x in range(9) if x % 2 == 0]
+```
+
+this will create a list with the power of the even numbers 
+
+if you want to add a `else`, you will get a syntax error 
+
+```python
+squares = [x**2 for x in range(9) if x % 2 == 0 else x + 3] # this will produce a syntax error
+```
+
+in this case, it is necessary move all the block to the beginning.
+
+```python
+squares = [x**2 if x % 2 == 0 else x + 3 for x in range(9)]
+```
