@@ -85,4 +85,54 @@ which out put will be:
 ```
 
 so in this case we can see that `zip` create a iterator that combine the two provided and each iterator is a tuple with items in the in that position.
+
+the reverse or Unzip process can be done using the *
+
+```python
+letters = ['a','b','c']
+nums = [1,2,3]
+
+for letter, num in zip(letters,nums):
+	print("{}:{}".format(letter,num))
+
+some_list = [('a',1),('b',2),('c',3)]
+letters, nums = zip(*some_list)
+```
+
+**Enumerate**  
+`enumerate` is a built in function that return an iterator of tuples containing indexes and values of a list, example:
+
+```python
+letters = ['a','b','c','d','e']
+
+for i, letter in enumerate(letters):
+	print(i, letter)
+```
+
+this will be the output:
+
+```
+0 a
+1 b
+2 c
+3 d
+4 e
+```
+
+an example of `enumerate`, here:
+
+```python
+cast = ["Barney Stinson", "Robin Scherbatsky", "Ted Mosby", "Lily Aldrin", "Marshall Eriksen"]
+heights = [72, 68, 72, 66, 76]
+
+for i, character in enumerate(cast):
+    cast[i] = character + " " + str(heights[i])
+
+print(cast)
+```
+
+It will take 2 list and it will out put a single list of items that include a both original list as a single string
+
+```
+['Barney Stinson 72', 'Robin Scherbatsky 68', 'Ted Mosby 72', 'Lily Aldrin 66', 'Marshall Eriksen 76']
 ```
