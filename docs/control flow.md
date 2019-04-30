@@ -222,3 +222,12 @@ for director, wins in win_dict.items():
 ```python 
  print("most_win_director = {}".format(most_win_director))
 ```
+
+
+and here a more compact solution using `max` and _list comprehension_:
+
+```python 
+highest_count = max(win_count_dict.values())
+
+most_win_director = [key for key, value in win_count_dict.items() if value == highest_count]
+```

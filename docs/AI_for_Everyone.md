@@ -97,3 +97,6 @@ AI engineer trainees | 1. Build and ship AI software. 2.Gather data. 3. Execute 
 * Internal Communications.  
 
 
+## Some application of AI
+
+watch the video here [Video about AI application](https://d3c33hcgiwev3.cloudfront.net/kZO8yy_nEemPcBIa2xz0qA.processed/full/540p/index.mp4?Expires=1556755200&Signature=BLBJgIajv0Gi~wFgWoS5EQuQ~p5lLPoqCijiUOAt0mRMgmGo1hRAA4vGFpqsMfcKpOMFiTr52CD24Q6aPynAfb476zplFMDmbtIjaDVuZa4hWsIQO~XURk-SEhkWJGQ-Z7OeWzjhVy4zbo6fC1uYIlqEWcAHoh4LyN1goqXMd5A_&Key-Pair-Id=APKAJLTNE6QMUY6HBC5A)
