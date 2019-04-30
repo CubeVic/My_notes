@@ -96,3 +96,4 @@ AI engineer trainees | 1. Build and ship AI software. 2.Gather data. 3. Execute 
 * Talent/recruitment.  
 * Internal Communications.  
 
+

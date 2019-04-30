@@ -175,3 +175,50 @@ in this case, it is necessary move all the block to the beginning.
 ```python
 squares = [x**2 if x % 2 == 0 else x + 3 for x in range(9)]
 ```
+
+## exercise using the dictionaries and for loops
+
+Provide a list with the name(s) of the director(s) with the most Oscar wins. We are asking for a list because there could be more than 1 director tied for the most Oscar wins.
+
+```python
+winners = {1931: ['Norman Taurog'], 1932: ['Frank Borzage'], 1933: ['Frank Lloyd'], 1934: ['Frank Capra'], 1935: ['John Ford'], 1936: ['Frank Capra'], 1937: ['Leo McCarey'], 1938: ['Frank Capra'], 1939: ['Victor Fleming'], 1940: ['John Ford'], 1941: ['John Ford'], 1942: ['William Wyler'], 1943: ['Michael Curtiz'], 1944: ['Leo McCarey'], 1945: ['Billy Wilder'], 1946: ['William Wyler'], 1947: ['Elia Kazan'], 1948: ['John Huston'], 1949: ['Joseph L. Mankiewicz'], 1950: ['Joseph L. Mankiewicz'], 1951: ['George Stevens'], 1952: ['John Ford'], 1953: ['Fred Zinnemann'], 1954: ['Elia Kazan'], 1955: ['Delbert Mann'], 1956: ['George Stevens'], 1957: ['David Lean'], 1958: ['Vincente Minnelli'], 1959: ['William Wyler'], 1960: ['Billy Wilder'], 1961: ['Jerome Robbins', 'Robert Wise'], 1962: ['David Lean'], 1963: ['Tony Richardson'], 1964: ['George Cukor'], 1965: ['Robert Wise'], 1966: ['Fred Zinnemann'], 1967: ['Mike Nichols'], 1968: ['Carol Reed'], 1969: ['John Schlesinger'], 1970: ['Franklin J. Schaffner'], 1971: ['William Friedkin'], 1972: ['Bob Fosse'], 1973: ['George Roy Hill'], 1974: ['Francis Ford Coppola'], 1975: ['Milos Forman'], 1976: ['John G. Avildsen'], 1977: ['Woody Allen'], 1978: ['Michael Cimino'], 1979: ['Robert Benton'], 1980: ['Robert Redford'], 1981: ['Warren Beatty'], 1982: ['Richard Attenborough'], 1983: ['James L. Brooks'], 1984: ['Milos Forman'], 1985: ['Sydney Pollack'], 1986: ['Oliver Stone'], 1987: ['Bernardo Bertolucci'], 1988: ['Barry Levinson'], 1989: ['Oliver Stone'], 1990: ['Kevin Costner'], 1991: ['Jonathan Demme'], 1992: ['Clint Eastwood'], 1993: ['Steven Spielberg'], 1994: ['Robert Zemeckis'], 1995: ['Mel Gibson'], 1996: ['Anthony Minghella'], 1997: ['James Cameron'], 1998: ['Steven Spielberg'], 1999: ['Sam Mendes'], 2000: ['Steven Soderbergh'], 2001: ['Ron Howard'], 2002: ['Roman Polanski'], 2003: ['Peter Jackson'], 2004: ['Clint Eastwood'], 2005: ['Ang Lee'], 2006: ['Martin Scorsese'], 2007: ['Ethan Coen', 'Joel Coen'], 2008: ['Danny Boyle'], 2009: ['Kathryn Bigelow'], 2010: ['Tom Hooper']}
+```
+
+first step, is "open the dictionary", i will need to list the directors as a key and the number of wins as a value, for that i can use the for loops and the `get` method of dictionaries
+
+```python
+most_win_director = [] # i will use this list later to print the results
+
+win_dict = {} # this Dictionary will hold the directors and the values ( number of wins)
+
+for year, winner_name in winner.item():
+	for winner in winner_name:
+		win_dict[winner] = win_dict.get(winner,0) + 1
+```
+
+so in this step i get a dictionary that holds the name and the number of wins
+
+```
+{'Peter Jackson': 1, 'Anthony Minghella': 1, 'Robert Redford': 1, 'Clint Eastwood': 2, 'Ron Howard': 1, 'Billy Wilder': 2, 'Steven Spielberg': 2, 'Richard Attenborough': 1, 'Mel Gibson': 1, 'Leo McCarey': 2, 'William Friedkin': 1, 'Barry Levinson': 1, 'Oliver Stone': 2, 'Warren Beatty': 1, 'Ang Lee': 1, 'Joseph L. Mankiewicz': 2, 'Sydney Pollack': 1, 'Robert Wise': 2, 'Woody Allen': 1, 'John Ford': 4, 'Bob Fosse': 1, 'Jerome Robbins': 1, 'Robert Benton': 1, 'Elia Kazan': 2, 'Frank Lloyd': 1, 'John G. Avildsen': 1, 'Tom Hooper': 1, 'Frank Borzage': 1, 'Sam Mendes': 1, 'John Huston': 1, 'Carol Reed': 1, 'Francis Ford Coppola': 1, 'Joel Coen': 1, 'Fred Zinnemann': 2, 'William Wyler': 3, 'Jonathan Demme': 1, 'Kathryn Bigelow': 1, 'Delbert Mann': 1, 'Danny Boyle': 1, 'George Cukor': 1, 'Norman Taurog': 1, 'Tony Richardson': 1, 'George Roy Hill': 1, 'James L. Brooks': 1, 'Martin Scorsese': 1, 'David Lean': 2, 'Franklin J. Schaffner': 1, 'Bernardo Bertolucci': 1, 'John Schlesinger': 1, 'Ethan Coen': 1, 'Michael Cimino': 1, 'Milos Forman': 2, 'Mike Nichols': 1, 'Michael Curtiz': 1, 'Steven Soderbergh': 1, 'Robert Zemeckis': 1, 'Kevin Costner': 1, 'Frank Capra': 3, 'Vincente Minnelli': 1, 'James Cameron': 1, 'George Stevens': 2, 'Roman Polanski': 1, 'Victor Fleming': 1}
+```  
+
+now I will need to create a variable `highest_wins` I will change the value of this variable every time I encounter a director with a higher number of wins, and I will clean the `most_win_director` and append the a new name.  
+
+```python
+highest_wins = 0
+ 
+for director, wins in win_dict.items():  
+    if wins > highest_wins:  
+        highest_wins = wins  
+        most_win_director.clear()  
+        most_win_director.append(director)  
+    elif wins == highest_wins:  
+        most_win_director.append(director)  
+    else:  
+        continue 
+```
+ finally print the solution:  
+
+```python 
+ print("most_win_director = {}".format(most_win_director))
+```
