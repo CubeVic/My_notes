@@ -57,4 +57,18 @@ multiply = lambda x, y: x * y
 2. Following `lambda` are one or more arguments for the anonymous function separated by commas, followed by a colon `:`. Similar to functions, the way the arguments are named in a lambda expression is arbitrary.
 3. Last is an expression that is evaluated and returned in this function. This is a lot like an expression you might see as a return statement in a function.
 
+`map()` is a higher-order built-in function that takes a function and iterable as inputs, and returns an iterator that applies the function to each element of the iterable.
+
+```python
+numbers = [
+              [34, 63, 88, 71, 29],
+              [90, 78, 51, 27, 45],
+              [63, 37, 85, 46, 22],
+              [51, 22, 34, 11, 18]
+           ]
+
+averages = list(map(lambda num_list: sum(num_list) / len(num_list), numbers))
+print(averages)
+```
+
 
