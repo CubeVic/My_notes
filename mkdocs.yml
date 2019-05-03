@@ -48,11 +48,12 @@ nav:
       - Key ML Terminology: 'Key ML Terminology.md'
       - Other Key Terminology (TensorFlow): 'Other_key_Terminology.md'
       - Linear Regression: 'Linear regression.md'
+    - Python:
+      - Data Structures: 'Data structures.md'
+      - Control Flow: 'control flow.md'
+      - Functions: 'functions.md'
+      - Error and Exceptions: 'Error and Exceptions.md'
     - Miscellaneous:
-      - Python:
-        - Data Structures: 'Data structures.md'
-        - Control Flow: 'control flow.md'
-        - Functions: 'functions.md'
       - OAuth 2: 'OAuth_2.md'
       - Random: 'Random Link.md'
     - Courses:
