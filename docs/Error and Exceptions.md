@@ -40,5 +40,24 @@ except valueError:
 	#some code
 ```
 
-Now, in this case the `except` block 
+Now, in this case the `except` block will catch the exception `ValueErrror` but not other exception. We can catch the exception `KeyboardInterrupt` at the same time ( this apply to other exception not this two)
+
+```python
+try:
+	# some code
+except (ValueError, KeyboardInterrupt):
+	# some code
+```
+
+in the preavious case the exception are going to be handle in the same way, but if we required different response to a different exception, it can be done in the following way:
+
+```python
+try:
+	#some code
+except ValueError:
+	#some code
+except KeyboardInterrupt:
+	# some code
+```
+
 
