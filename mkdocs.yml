@@ -53,6 +53,7 @@ nav:
       - Control Flow: 'control flow.md'
       - Functions: 'functions.md'
       - Error and Exceptions: 'Error and Exceptions.md'
+      - Reading and Writing Files: 'Reading and Writing Files.md'
     - Miscellaneous:
       - OAuth 2: 'OAuth_2.md'
       - Random: 'Random Link.md'
