@@ -49,7 +49,7 @@ except (ValueError, KeyboardInterrupt):
 	# some code
 ```
 
-in the preavious case the exception are going to be handle in the same way, but if we required different response to a different exception, it can be done in the following way:
+in the previous case the exception are going to be handle in the same way, but if we required different response to a different exception, it can be done in the following way:
 
 ```python
 try:
@@ -59,5 +59,35 @@ except ValueError:
 except KeyboardInterrupt:
 	# some code
 ```
+## Accessing Error Messages
 
+Previously we saw how to handle the error, basically how to avoid the program crash when a error appears, but we don't get information about the error, but, there is a way to display this errors, and it is as follow:
+
+```python
+try:
+	# some code
+except ZeroDivisionError as e:
+	#some code
+	print("ZeroDivisionErro occurred: {}".format(e))
+```
+
+this would print something like this:
+
+```
+ZeroDivisionError occurred: integer division or modulo by zero
+```
+
+so in that way you can handle errors, preventing the program for crashing and at the same time get information about the error.
+
+In those case where there are not specific errors to handle, you can use a general form to access to those messages:
+
+```python
+try:
+	#some code
+except Exception as e:
+	#some code
+	print("Exception occurred: {} ".format(e))
+```
+
+for more information about exception check this [link](https://docs.python.org/3/library/exceptions.html#bltin-exceptions)
 
