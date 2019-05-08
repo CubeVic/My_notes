@@ -79,3 +79,44 @@ The Python Standard Library has a lot of modules, here are a selection of our Py
 * `os.path`: submodule of os for manipulating path names
 * `sys`: work directly with the Python interpreter
 * `json`: good for reading and writing json files (good for web work)
+
+## Techniques for Importing Modules
+
+there are some variants of `import` that are useful in different situation.
+
+1. To import an individual function or class:
+
+```python
+from module_name import object_name
+```
+
+2. To import multiple individual object from a module:
+
+```python
+from module_name import firts_object, second_object
+```
+
+3. To rename a module:
+
+```python
+import module_name as new_name
+```
+
+4. To import an object from a module and rename it:
+
+```python
+from module_name import object_name as new_name
+```
+5. To import everything 
+
+```python
+import module_name
+```
+
+## Modules, packages, and Names
+
+In order to manage the coder better, the modules of python are contain in **package**, this package is just a container for the modules, to call the sub-module from one package we use the dot notation:
+
+```python
+import package_name.submodule_name
+```
