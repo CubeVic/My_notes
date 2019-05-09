@@ -64,14 +64,37 @@ lessons = ["Why Python Programming", "Data Types and Operators", "Control Flow",
 def my_enumerate(iterable, start=0):
     # Implement your generator function here
    count = start
-   for item in iterable
-    yield count, iterable
-    count += 1
+   for item in iterable:
+    	yield count, item
+    	count += 1
    
 for i, lesson in my_enumerate(lessons, 1):
     print("Lesson {}: {}".format(i, lesson))
 ```
 
+## Chuker 
+
+```python
+def chunker(iterable, size):
+    """Yield successive chunks from iterable of length size."""
+    for i in range(0, len(iterable), size):
+        yield iterable[i:i + size]
+
+for chunk in chunker(range(25), 4):
+    print(list(chunk))
+```
+
+Output:
+
+```
+[0, 1, 2, 3]
+[4, 5, 6, 7]
+[8, 9, 10, 11]
+[12, 13, 14, 15]
+[16, 17, 18, 19]
+[20, 21, 22, 23]
+[24]
+```
 ## Why Generators?
 
 Generators are a lazy way to build iterables. They are useful when the fully realized list would not fit in memory, or when the cost to calculate each list element is high and you want to do it as late as possible. But they can only be iterated over once.
