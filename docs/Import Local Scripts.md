@@ -121,4 +121,34 @@ In order to manage the coder better, the modules of python are contain in **pack
 import package_name.submodule_name
 ```
 
+## Third-party packages
 
+normally in a project you will find a document call requirements.txt which is a list that contain all the modules, packages and its version us in the specific script, the requirements.txt file looks like:
+
+```
+beautifulsoup4==4.5.1
+bs4==0.0.1
+pytz==2016.7
+requests==2.11.1
+```
+to install all the packages on this file we can use pip, the command will be:
+```cmd
+pip install -r requirements.txt
+```
+Some of the popular third-party packages are:
+
+* [IPython](https://ipython.org/) - A better interactive Python interpreter
+* [requests](https://2.python-requests.org/en/master/) - Provides easy to use methods to make web requests. Useful for accessing web APIs.
+* [Flask](http://flask.pocoo.org/) - a lightweight framework for making web applications and APIs.
+* [Django](https://www.djangoproject.com/) - A more featureful framework for making web applications. Django is particularly good for designing complex, content heavy, web applications.
+* [Beautiful Soup](https://www.crummy.com/software/BeautifulSoup/) - Used to parse HTML and extract information from it. Great for web scraping.
+* [pytest](https://docs.pytest.org/en/latest/) - extends Python's builtin assertions and unittest module.
+* [PyYAML](https://pyyaml.org/wiki/PyYAML) - For reading and writing YAML files.
+* [NumPy](http://www.numpy.org/) - The fundamental package for scientific computing with Python. It contains among other things a powerful N-dimensional array object and useful linear algebra capabilities.
+* [pandas](http://pandas.pydata.org/) - A library containing high-performance, data structures and data analysis tools. In  particular, pandas provides dataframes!
+* [matplotlib](https://matplotlib.org/) - a 2D plotting library which produces publication quality figures in a variety of hardcopy formats and interactive environments.
+* [ggplot](http://ggplot.yhathq.com/) - Another 2D plotting library, based on R's ggplot2 library.
+* [Pillow](https://python-pillow.org/) - The Python Imaging Library adds image processing capabilities to your Python interpreter.
+* [pyglet](https://bitbucket.org/pyglet/pyglet/wiki/Home) - A cross-platform application framework intended for game development.
+* [Pygame](https://www.pygame.org/news) - A set of Python modules designed for writing games.
+* [pytz](http://pytz.sourceforge.net/) - World Timezone Definitions for Python
