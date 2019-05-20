@@ -59,6 +59,7 @@ nav:
     - Miscellaneous:
       - OAuth 2: 'OAuth_2.md'
       - Random: 'Random Link.md'
+      - Potential activities: 'potential activities.md'
     - Courses:
           - Coursera:
             - AI for Everyone: 'AI_for_Everyone.md'
