@@ -56,6 +56,8 @@ nav:
       - Reading and Writing Files: 'Reading and Writing Files.md'
       - Import Local Scripts: 'Import Local Scripts.md'
       - Generator and Iterators: 'Generator and Iterator.md'
+    - Django:
+      - First steps: 'First steps.md'
     - Miscellaneous:
       - OAuth 2: 'OAuth_2.md'
       - Random: 'Random Link.md'
