@@ -1,5 +1,3 @@
-The information in this page is taken from the Django documentation, in some case i will complement with tutorials (in first place with freecodecamp tutorial).
-
 ## Verify Django is installed and what Version are we using
 
 to verify which version are we using we can use;
@@ -40,52 +38,85 @@ this files are:
 * `mysite/wsgi.py`: An entry-point for WSGI-compatible web servers to serve your project. See How to deploy with WSGI for more details.  
 
 
+## Creating the Polls app
 
-#[django-admin and manage.py](https://docs.djangoproject.com/en/2.2/ref/django-admin/)
+Now that your environment – a “project” – is set up
+Each application we write in Django consists of a Python package that follows a certain convention. Django comes with a utility that automatically generates the basic directory structure of an app. 
 
-`django-admin` is the Django's command-line utility, the manage.py is created automatically when the project is created and it does the same thing as django-admin.
+**What’s the difference between a project and an app?** An app is a Web application that does something – e.g., a Weblog system, a database of public records or a simple poll app. A project is a collection of configuration and apps for a particular website. A project can contain multiple apps. An app can be in multiple projects.
 
-*Usage*
-
-```
-$ django-admin <command> [options]
-$ manage.py <command> [option]
-```
-*Getting runtime help*
+In this case to create an app we will need to be at the same level that the `manage.py` file, and we can create the app with the command:
 
 ```
-django-admin help
+python manage.py startapp polls
 ```
 
-* Run `django-admin help` to display usage information and a list of commands
-* Run `django-admin help --commands` to display a list of all available commands
-
-*determining the version*
+this will create a directory like this:
 
 ```
-django-admin version
+polls/
+    __init__.py
+    admin.py
+    apps.py
+    migrations/
+        __init__.py
+    models.py
+    tests.py
+    views.py
 ```
 
-to get the version use in this project.  
+this directory house the poll application
 
-## brief view to [URL dispatcher](https://docs.djangoproject.com/en/2.2/topics/http/urls/)
 
-To design URLs for an app, you create a Python module informally called a URLconf (URL configuration). This module is pure Python code and is a mapping between URL path expressions to Python functions (your views).
+## Write your first view
 
-# How Django processes a request 
+to write the first view open the file **polls/views.py** and add the following code:
 
-When a user requests a page from your Django-powered site, this is the algorithm the system follows to determine which Python code to execute:
+```python
+from django.http import HttpResponse
 
-1. Django determines the root URLconf module to use. Ordinarily, this is the value of the **ROOT_URLCONF** setting, but if the incoming *HttpRequest* object has a urlconf attribute (set by middleware), its value will be used in place of the **ROOT_URLCONF** setting.  
 
-2. Django loads that Python module and looks for the variable *urlpatterns*. This should be a sequence of **django.urls.path()** and/or **django.urls.re_path()** instances.
+def index(request):
+    return HttpResponse("Hello, world. You're at the polls index.")
+```
 
-3. Django runs through each URL pattern, in order, and stops at the first one that matches the requested URL.  
+now to be able to see it we will need to create the URLconf.
 
-4. Once one of the URL patterns matches, Django imports and calls the given view, which is a simple Python function (or a class-based view). The view gets passed the following arguments:
+To create the URLconf in the polls directory, create a file called **urls.py**, so now the app directory will looks like:
 
-* An instance of HttpRequest.  
-* If the matched URL pattern returned no named groups, then the matches from the regular expression are provided as positional arguments.  
-* The keyword arguments are made up of any named parts matched by the path expression, overridden by any arguments specified in the optional *kwargs* argument to **django.urls.path()** or **django.urls.re_path()**.  
+```
+polls/
+    __init__.py
+    admin.py
+    apps.py
+    migrations/
+        __init__.py
+    models.py
+    tests.py
+    urls.py
+    views.py
+```
 
-5. If no URL pattern matches, or if an exception is raised during any point in this process, Django invokes an appropriate error-handling view
+in the **Polls/urls.py** add:
+
+```python
+from django.urls import path
+
+from . import views
+
+urlpatterns = [
+    path('', views.index, name='index'),
+]
+```
+
+The next step is to point the root URLconf at the **polls.urls** module, to do this we will need to add something in **mysite/urls.py**, we need to import `django.urls.include` and insert an `include()` in the `urlpatterns` list, so you have:
+
+```python
+from django.contrib import admin
+from django.urls import include, path
+
+urlpatterns = [
+    path('polls/', include('polls.urls')),
+    path('admin/', admin.site.urls),
+]
+```

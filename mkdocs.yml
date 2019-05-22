@@ -58,6 +58,7 @@ nav:
       - Generator and Iterators: 'Generator and Iterator.md'
     - Django:
       - First steps: 'First steps.md'
+      - (Optional) More details about file structure: 'More details about project structure.md'
     - Miscellaneous:
       - OAuth 2: 'OAuth_2.md'
       - Random: 'Random Link.md'
