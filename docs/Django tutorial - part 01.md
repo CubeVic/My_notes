@@ -129,8 +129,9 @@ When to use `include()`? You should always use `include()` when you include othe
 
 now the index is wired to the URLconf so we should be be able so see it  under *http://localhost:8000/polls/*
 
-first, lets run
+first, lets run:
 
 ```
 $ python manage.py runserver
 ```
+

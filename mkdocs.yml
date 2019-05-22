@@ -57,7 +57,7 @@ nav:
       - Import Local Scripts: 'Import Local Scripts.md'
       - Generator and Iterators: 'Generator and Iterator.md'
     - Django:
-      - First steps: 'First steps.md'
+      - Django Tutorial (part 01): 'Django tutorial - part 01.md'
       - (Optional) More details about file structure: 'More details about project structure.md'
     - Miscellaneous:
       - OAuth 2: 'OAuth_2.md'
