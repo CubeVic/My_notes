@@ -1,4 +1,6 @@
-#[django-admin and manage.py](https://docs.djangoproject.com/en/2.2/ref/django-admin/)
+# More Details about the project structure and  essencial methods/files
+
+##[django-admin and manage.py](https://docs.djangoproject.com/en/2.2/ref/django-admin/)  
 
 `django-admin` is the Django's command-line utility, the manage.py is created automatically when the project is created and it does the same thing as django-admin.
 
@@ -25,11 +27,11 @@ django-admin version
 
 to get the version use in this project.  
 
-## brief view to [URL dispatcher](https://docs.djangoproject.com/en/2.2/topics/http/urls/)
+## Brief view to [URL dispatcher](https://docs.djangoproject.com/en/2.2/topics/http/urls/)
 
 To design URLs for an app, you create a Python module informally called a URLconf (URL configuration). This module is pure Python code and is a mapping between URL path expressions to Python functions (your views).
 
-# How Django processes a request 
+## How Django processes a request 
 
 When a user requests a page from your Django-powered site, this is the algorithm the system follows to determine which Python code to execute:
 
@@ -46,7 +48,7 @@ When a user requests a page from your Django-powered site, this is the algorithm
 
 5. If no URL pattern matches, or if an exception is raised during any point in this process, Django invokes an appropriate error-handling view.
 
-#Example
+**Example**
 
 ```python
 from django.urls import path
@@ -78,7 +80,7 @@ Example requests:
 * **/articles/2003/03/building-a-django-site/** would match the final pattern. Django would call the function `views.article_detail(request, year=2003, month=3, slug="building-a-django-site")`.  
 
 
-#Path converters¶
+### Path converters¶
 The following path converters are available by default:
 
 * **str** - Matches any non-empty string, excluding the path separator, '/'. This is the default if a converter isn’t included in the expression.
@@ -90,3 +92,33 @@ The following path converters are available by default:
 * **uuid** - Matches a formatted UUID. To prevent multiple URLs from mapping to the same page, dashes must be included and letters must be lowercase. For example, **075194d3-6885-417e-a8a8-6c931e272f00**. Returns a **UUID** instance.
 
 * **path** - Matches any non-empty string, including the path separator, **'/'**. This allows you to match against a complete URL path rather than just a segment of a URL path as with str.
+
+
+## `path()`
+
+**path(route,view,kwarg=None,name=None**
+
+Returns an element for inclussion in `urlpatters`, for example:
+
+```python
+from django.urls import include, path
+
+urlpatterns = [
+    path('index/', views.index, name='main-view'),
+    path('bio/<username>/', views.bio, name='bio'),
+    path('articles/<slug:title>/', views.article, name='article-detail'),
+    path('articles/<slug:title>/<int:section>/', views.section, name='article-section'),
+    path('weblog/', include('blog.urls')),
+    ...
+]
+```
+
+* The **route** is in [more cases](https://docs.djangoproject.com/en/2.2/topics/i18n/translation/#translating-urlpatterns) a string, this string can contain anlge brakets, like `<username>` in the example above, this can be use to capture a part of the URL and send it as a keyword argument to the view, this angle brakes may include converter specification, like `<int:section>`, in this case the it will catch or match a string of decimal digits and converts the value to a *int* .
+
+* The **view** argument is a view that will be the result of the match, this argument can be a `include()`
+
+* The *kwargs* argument allows you to pass additional arguments to the view function or method, more info [here](https://docs.djangoproject.com/en/2.2/topics/http/urls/#views-extra-options).
+
+* The name is an useful argument to name the URL and its advantage are mentioned [here](https://docs.djangoproject.com/en/2.2/topics/http/urls/#naming-url-patterns)
+
+more versions of `path()` such as `re_path()` for regular expression adn more information about `include()` can be find in [django.urls.path](https://docs.djangoproject.com/en/2.2/ref/urls/#django.urls.path)

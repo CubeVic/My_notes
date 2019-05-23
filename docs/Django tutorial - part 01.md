@@ -1,4 +1,4 @@
-## Verify Django is installed and what Version are we using
+# Verify Django is installed and what Version are we using.
 
 to verify which version are we using we can use;
 
@@ -6,7 +6,7 @@ to verify which version are we using we can use;
 py -m django --version
 ```
 
-## Creating a project
+## Creating a project  
 
 To create a project, first, we need to navigate to the location where we want to store the project, we can use *cd* to do so, second we type:
 
@@ -38,7 +38,7 @@ this files are:
 * `mysite/wsgi.py`: An entry-point for WSGI-compatible web servers to serve your project. See How to deploy with WSGI for more details.  
 
 
-## Creating the Polls app
+## Creating the Polls app  
 
 Now that your environment – a “project” – is set up
 Each application we write in Django consists of a Python package that follows a certain convention. Django comes with a utility that automatically generates the basic directory structure of an app. 
@@ -68,7 +68,7 @@ polls/
 this directory house the poll application
 
 
-## Write your first view
+### Write your first view  
 
 to write the first view open the file **polls/views.py** and add the following code:
 
@@ -81,6 +81,8 @@ def index(request):
 ```
 
 now to be able to see it we will need to create the URLconf.
+
+### `URLconf` for the polls app
 
 To create the URLconf in the polls directory, create a file called **urls.py**, so now the app directory will looks like:
 
@@ -134,4 +136,43 @@ first, lets run:
 ```
 $ python manage.py runserver
 ```
+
+The `path()` function is important to find the correct URL, this function is passed, two argument, in the previous example, the argument **route** and 
+**view**, for more explanation of this function we can visit the [documentation](https://docs.djangoproject.com/en/2.2/ref/urls/#django.urls.path) or the notes I made in [More details about project structure](/More%20details%20about%20project%20structure/)
+
+so a brief explanation of each argument will be:
+
+#### `path()` argument: route  
+
+This route argument is a string that contain the URLpattern , Django will start with the first pattern in `urlpatterns` and make its way down the list until find one pattern that matches.
+GET and POST parameters are ignore, for example:
+`http://www.example.com/myapp/`, the URLconfig will look at `myapp/`, in a request `http://www.example.com/myapp/?page=3`, the URLconf will look for `myapp/`
+
+####`path()` argument: view  
+
+When Django finds a matching pattern, it calls the specific view function with an **HttpRequest** object as it first argument and any "captured" value from the *route* as keyword argument (check [More details about project structure](/More%20details%20about%20project%20structure/) for more details )
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
