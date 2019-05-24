@@ -27,7 +27,7 @@ Actor: Jason Alexander    Role: George Costanza
 Actor: Michael Richards    Role: Cosmo Kramer
 ```
 
-## `for` Loops vs. `While` Loops
+## `for` Loops vs. `while` Loops
 
 `for` loops are idea when the *number of iteration* are _known_ or _finite_.  
 
@@ -176,7 +176,7 @@ in this case, it is necessary move all the block to the beginning.
 squares = [x**2 if x % 2 == 0 else x + 3 for x in range(9)]
 ```
 
-## exercise using the dictionaries and for loops
+## Exercise using the dictionaries and for loops
 
 Provide a list with the name(s) of the director(s) with the most Oscar wins. We are asking for a list because there could be more than 1 director tied for the most Oscar wins.
 

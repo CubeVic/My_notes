@@ -1,4 +1,4 @@
-## default arguments
+## Default arguments
 We can add default arguments in a function to have default values for parameters that are unspecified in a function call:
 
 ```python
