@@ -56,6 +56,7 @@ nav:
       - Reading and Writing Files: 'Reading and Writing Files.md'
       - Import Local Scripts: 'Import Local Scripts.md'
       - Generator and Iterators: 'Generator and Iterator.md'
+      - Useful or researched built-in functions: 'Useful or researched built-in functions.md'
     - Django:
       - Django Tutorial (part 01): 'Django tutorial - part 01.md'
       - (Optional) More details about file structure: 'More details about project structure.md'
