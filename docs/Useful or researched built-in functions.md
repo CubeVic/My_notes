@@ -56,3 +56,23 @@ print ("The gcd of 60 and 48 is : ",end="")
 print (math.gcd(60,48)) 
 ```
 
+##`Counter()` from collection  
+A `Counter` is a `dict` subclass for counting hashable objects. It is a collection where elements are stored as dictionary keys and their counts are stored as dictionary values. Counts are allowed to be any integer value including zero or negative counts. 
+
+for example: assume an array `arr=[1,1,2,2,3]` and you are asked to find the number of occurrence of each integer, in this case you can use `Counter` whihc will return a dictionary using the value as key and the count as value, like this:
+
+```python
+
+from collection import Counter
+
+arr=[1,1,2,2,3]
+
+dict_arr=Counter(arr)
+print(dict_arr)
+```
+
+the result will be:
+
+```
+{1:2, 2:2, 3:1}
+```
