@@ -76,3 +76,64 @@ the result will be:
 ```
 {1:2, 2:2, 3:1}
 ```
+
+##`iter()` from the build-in functions
+
+Before start to talk about `iter()` better start by remembering what is a [Iterator](https://www.w3schools.com/python/python_iterators.asp) and what is the difference with iterable
+
+### Python Iterators
+An iterator is an object that contains a countable number of values, and it can be iterated upon, meaning that you can traverse through all the values.
+
+Technically, in Python, an iterator is an object which implements the iterator protocol, which consist of the methods __iter__() and __next__().
+
+### Iterator vs Iterable
+
+Lists, tuples, dictionaries, and sets are all iterable objects. They are iterable containers which you can get an iterator from.
+
+All these objects have a `iter()` method which is used to get an iterator:
+
+```python
+mytuple = ("apple", "banana", "cherry")
+myit = iter(mytuple)
+
+print(next(myit))
+print(next(myit))
+print(next(myit))
+```
+it will output:
+
+```
+apple
+banana
+cherry
+```
+
+
+## `setdefault()` method from Dictionaries
+
+The setdefault() method returns the value of the item with the specified key.
+
+If the key does not exist, insert the key, with the specified value, see example below
+
+**Syntax**
+```
+dictionary.setdefault(keyname,value)
+```
+
+**Example**
+```python
+car = {
+  "brand": "Ford",
+  "model": "Mustang",
+  "year": 1964
+}
+
+x = car.setdefault("color", "white")
+
+print(x)
+```
+ the output will be:
+
+```
+White
+```
