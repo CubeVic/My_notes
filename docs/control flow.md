@@ -84,7 +84,7 @@ which out put will be:
 [('a',1),('b',2),('c',3)]
 ```
 
-so in this case we can see that `zip` create a iterator that combine the two provided and each iterator is a tuple with items in the in that position.
+In this case we can see that `zip` create a iterator that combine the two provided iterables and each iterator is a tuple with items in the position of the original iterable.
 
 the reverse or Unzip process can be done using the *
 
