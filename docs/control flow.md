@@ -98,6 +98,28 @@ for letter, num in zip(letters,nums):
 some_list = [('a',1),('b',2),('c',3)]
 letters, nums = zip(*some_list)
 ```
+In Python3, zip methods returns a zip object instead of a list. This zip object is an iterator. Iterators are lazily evaluated.
+
+Lazy evaluation, or call-by-need is an evaluation strategy which delays the evaluation of an expression until its value is needed and which also avoids repeated evaluations 
+
+Iterators returns only element at a time. len function cannot be used with iterators. We can loop over the zip object or the iterator to get the actual list
+
+Consider the below example:
+
+```python
+list_a = [1, 2, 3]
+list_b = [4, 5, 6]
+
+zipped = zip(a, b) # Output: Zip Object. <zip at 0x4c10a30>
+
+len(zipped) # TypeError: object of type 'zip' has no len()
+
+zipped[0] # TypeError: 'zip' object is not subscriptable
+
+list_c = list(zipped) #Output: [(1, 4), (2, 5), (3, 6)]
+
+list_d = list(zipped) # Output []... Output is empty list becuase by the above statement zip got exhausted.
+```
 
 **Enumerate**  
 `enumerate` is a built in function that return an iterator of tuples containing indexes and values of a list, example:
