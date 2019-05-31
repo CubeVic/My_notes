@@ -137,3 +137,80 @@ print(x)
 ```
 White
 ```
+
+## `map()`
+
+**Basic Syntax**
+```python
+map(functions_object, iterable1, iterable2,...)
+```
+`map` functions expects a function object and any number of iterables like list, dictionary, etc. It executes the function_object for each element in the sequence and returns a list of the elements modified by the function object.
+
+**Example:**
+```python
+def multiply2(x):
+  return x * 2
+    
+map(multiply2, [1, 2, 3, 4])  # Output [2, 4, 6, 8]
+```
+In the above example, map executes multiply2 function for each element in the list i.e. 1, 2, 3, 4 and returns [2, 4, 6, 8]
+
+Let’s see how we can write the above code using map and lambda.
+
+```python
+map(lambda x : x*2, [1, 2, 3, 4]) #Output [2, 4, 6, 8]
+```
+
+We can pass multiple sequences to the map functions as shown below:
+```python
+
+list_a = [1, 2, 3]
+list_b = [10, 20, 30]
+  
+map(lambda x, y: x + y, list_a, list_b) # Output: [11, 22, 33]
+```
+Neither we can access the elements of the map object with index nor we can use len() to find the length of the map object
+
+We can force convert the map output i.e. the map object to list as shown below:
+
+```python
+map_output = map(lambda x: x*2, [1, 2, 3, 4])
+print(map_output) # Output: map object: <map object at 0x04D6BAB0>
+
+list_map_output = list(map_output)
+
+print(list_map_output) # Output: [2, 4, 6, 8]
+```
+
+## `filter()`
+
+**Basic Syntax**
+```python
+filter(function_object, iterable)
+```
+
+filter function expects two arguments, function_object and an iterable. function_object returns a boolean value. function_object is called for each element of the iterable and filter returns only those element for which the function_object returns true.
+
+Like map function, filter function also returns a list of element. Unlike map function filter function can only have one iterable as input.
+
+**Example:**
+
+Even number using filter function
+```python
+
+a = [1, 2, 3, 4, 5, 6]
+filter(lambda x : x % 2 == 0, a) # Output: [2, 4, 6]
+```
+
+Similar to map, filter function in Python3 returns a filter object or the iterator which gets lazily evaluated. Neither we can access the elements of the filter object with index nor we can use len() to find the length of the filter object.
+
+```python
+list_a = [1, 2, 3, 4, 5]
+
+filter_obj = filter(lambda x: x % 2 == 0, list_a) # filter object <filter at 0x4e45890>
+
+even_num = list(filter_obj) # Converts the filer obj to a list
+
+print(even_num) # Output: [2, 4]
+```
+
