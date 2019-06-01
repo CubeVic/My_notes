@@ -60,6 +60,8 @@ nav:
     - Django:
       - Django Tutorial (part 01): 'Django tutorial - part 01.md'
       - (Optional) More details about file structure: 'More details about project structure.md'
+    - SQL:
+      - Miscellaneous: 'SQL/Miscellaneous.md'
     - Miscellaneous:
       - OAuth 2: 'OAuth_2.md'
       - Random: 'Random Link.md'
