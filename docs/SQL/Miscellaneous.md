@@ -22,4 +22,11 @@ SELECT DISTINCT Country
 ORDER BY COUNTRY
 ```
 
-(some reference)[https://www.dofactory.com/sql/select-distinct]
+## How to find the difference between unique values and all values
+
+```SQL
+SELECT (COUNT(CITY) - COUNT(DISTINCT CITY)) FROM STATION;
+```
+
+
+[some reference](https://www.dofactory.com/sql/select-distinct)
