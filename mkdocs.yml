@@ -15,8 +15,8 @@ theme:
   name: 'material'
   language: 'en'
   palette:
-      primary: 'grey'
-      accent: 'Indigo'
+      primary: 'Indigo'
+      accent: 'Grey'
   font: 
     text: 'Ubuntu'
     code: 'Ubuntu Mono'
@@ -59,6 +59,7 @@ nav:
       - Useful or researched built-in functions: 'Python/Useful or researched built-in functions.md'
     - Django:
       - Django Tutorial (part 01): 'Django/Django tutorial - part 01.md'
+      - Django Tutorial (part 02): 'Django/Django tutorial - part 02.md'
       - (Optional) More details about file structure: 'Django/More details about project structure.md'
     - SQL:
       - Miscellaneous: 'SQL/Miscellaneous.md'

@@ -150,9 +150,14 @@ GET and POST parameters are ignore, for example:
 
 ####`path()` argument: view  
 
-When Django finds a matching pattern, it calls the specific view function with an **HttpRequest** object as it first argument and any "captured" value from the *route* as keyword argument (check [More details about project structure](/More%20details%20about%20project%20structure/) for more details )
+When Django finds a matching pattern, it calls the specific view function with an **HttpRequest** object as it first argument and any "captured" value from the *route* as keyword argument (check [More details about project structure](/Django/More%20details%20about%20project%20structure/) for more details )
 
+#### `path()` argument: kwargs
 
+Arbitrary keyword argument can be passed in a dictionary to the target view
+
+#### `path()` argument: name
+Naming your URL lets you refer to it unambiguously from elsewhere in Django, especially from within templates.
 
 
 
