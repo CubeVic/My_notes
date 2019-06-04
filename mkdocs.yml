@@ -72,4 +72,5 @@ nav:
             - AI for Everyone: 'Courses/Coursera/AI for Everyone/AI_for_Everyone.md'
             - Introduction tensorflow: 
               - The Hello World of neural networks: 'Courses/Coursera/Introduction tensorflow/The Hello World of neural networks.md'
+              - Introduction to Computer vision: 'Courses/Coursera/Introduction tensorflow/Introduction to computer vision.md'
     - About: 'about.md'
