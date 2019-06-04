@@ -54,7 +54,7 @@ The interesting stuff happens in the middle layer, sometimes also called a hidde
 
 ![Hidden layer](images/computer_vision-hidden_layer.png)
 
-if you then say the function was `y` equals `w1` times `x1`, plus `w2` times `x2`, plus `w3` times `x3`, all the way up to a `w128` times x128. By figuring out the values of `w`, then `y` will be `9`, which is the category of the shoe.
+if you then say the function was `y` equals `w1` times `x1`, plus `w2` times `x2`, plus `w3` times `x3`, all the way up to a `w128` times `x128` ($y = w_1x_1 +w_2x_2+w_3x_3+...+w_{128}x_{128}$). By figuring out the values of `w`, then `y` will be `9`, which is the category of the shoe.
 
 We can check the exercise in the colab [A Computer Vision Example](https://gist.github.com/CubeVic/5b560b7106a25e31cddb5f53b8d3e0dc) 
 
