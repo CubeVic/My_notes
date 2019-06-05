@@ -57,6 +57,8 @@ nav:
       - Import Local Scripts: 'Python/Import Local Scripts.md'
       - Generator and Iterators: 'Python/Generator and Iterator.md'
       - Useful or researched built-in functions: 'Python/Useful or researched built-in functions.md'
+      - Algorithm:
+          - Magic Square: 'Python/Algorithm/Magic_square.md'
     - Django:
       - Django Tutorial (part 01): 'Django/Django tutorial - part 01.md'
       - Django Tutorial (part 02): 'Django/Django tutorial - part 02.md'
