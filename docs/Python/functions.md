@@ -71,4 +71,15 @@ averages = list(map(lambda num_list: sum(num_list) / len(num_list), numbers))
 print(averages)
 ```
 
+in this case `maps()` is getting the value of numbers (an iterable variable) and use it in the `lambda` expression, it will get the values in `numbers`  and will get the average.
+
+`filter()` is a higher-order built-in function that takes a function and iterable as inputs and returns an iterator with the elements from the iterable for which the function returns True, here and example:
+
+```python
+cities = ["New York City", "Los Angeles", "Chicago", "Mountain View", "Denver", "Boston"]
+
+short_cities = list(filter(lambda name: len(name) < 10, cities))
+print(short_cities)
+```
+
 
