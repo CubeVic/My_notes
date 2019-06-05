@@ -1,8 +1,13 @@
 
+## Key concepts about dataset
+
 **Feature:** The input(s) to our model.  
 **Examples:** An input/output pair used for training (Output, are the labels we mentioned in other notes).  
 **Labels:** the output of the model.  
 **Layer:** A collection of nodes connected together within a neural network.  
+
+## Key concept about the model
+
 **Model:** The representation of your neural network.  
 **Dense and Fully Connected (FC):** Each node in one layer is connected to each node in the previous layer.  
 **Weights and Biases:** the internal variable of model.  
@@ -16,6 +21,8 @@
 **Forward pass:** The computation of output values from input.  
 **Backward pass (back-propagation):** The calculation of internal variable adjustments according to the optimizer algorithm, starting from the output layer and working back through each layer to the input. (it is the tunning process)  
 
+## Different type of models
+
 **Regression:** A model that outputs a single value. For example, an estimate of a house's value.  
 **Classification:** A model that outputs a probability distribution across several categories. For example, in Fashion MNIST, the output was 10 probabilities, one for each of the different types of clothing. Remember, we use _Softmax_ as the activation function in our last Dense layer to create this probability Distribution.
 
@@ -26,12 +33,16 @@ Example                        | Fashion MNIST                                  
 Loss                           | Spare categorical cross-entropy                            | Mean squared error    |
 Last Layer Activation Function | Softmax                                                    | None                  |
 
+## Key concepts in the model and the Dense function
+
 **Flattening:** The process of converting a 2d image into 1d vector.  
 **ReLU:** An activation function that allows a model to solve nonlinear problems.  
 **Softmax:** A function that provides probabilities for each possible output class.  
 **Classification:** A machine learning model used for distinguishing among two or more output categories.  
 
 A convolution is the process of applying a filter ("kernel") to an image. Max pooling is the process of reducing the size of the image through downsampling. 
+
+## Key concept about convolutional networks 
 
 **CNNs:** Convolutional neural network, that is, a network which has at least one convolutional layer. A typical CNN also includes other types of Layers, such as pooling layers and dense layers.  
 **Convolution:** The process of applying a kernel (filter) to an image.  
@@ -41,6 +52,8 @@ A convolution is the process of applying a filter ("kernel") to an image. Max po
 **Maxpooling:** A pooling process in which many values are converted into a single value by talking the maximum value from among them.  
 **Stride:**the number of pixels to slide the kernel (filter) across the image.  
 **Downsampling:** The act of reducing the size of an image. 
+
+## Example of  a script with convolutional and fashion MNIST data set
 
 ```python
 #Imports
