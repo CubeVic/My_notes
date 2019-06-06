@@ -210,3 +210,12 @@ it is zero for $x<=0$ and $x>0$, this is the activation use most frequently and 
 
 ![Pooling Layer](../images/Pooling_layer.png)
 
+This layer is primarily used to help reduce the computational complexity and extract prominent features, the pooling Layer (POOL) has no weights/parameters, unlike CONV layers. The result is smaller activation volume along the width and height. the depth of the input is still maintained, so if 12 activation maps go to the POOL layer, the output will also have 12 activation maps.
+
+For the POOL layer, we have to define the pool size, which tells us by how much we will reduce the width and height of the activation volume, if we want to halve the activation volume in width and height, we would choose a pool size of 2x2, if we wanted to reduce it by more, we should choose a larger pool size.
+
+The computation we do depends on the type of pooling: average or max.
+
+![Pool type](../images/Pooling-Types.png)
+
+[Reference](https://pythonmachinelearning.pro/introduction-to-convolutional-neural-networks-for-vision-tasks/)
