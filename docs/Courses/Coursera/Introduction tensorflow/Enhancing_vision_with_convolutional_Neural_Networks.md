@@ -142,8 +142,5 @@ The next, is the first max-pooling layer. We specified it to be *two-by-two*, th
 
 Number of convolutions per image, in this case 64 (filters) of five-by-five pixels are fed in to the Flatten, that will output 25 pixels times 64, which is 1600. So, you can see that the new flattened layer has 1,600 elements in it, as opposed to the 784 that you had previously. This number is impacted by the parameters that you set when defining the convolutional 2D layers.
 
-A graphic representation of the process done with the convolutions and the max pooling will be 
-
-![Graphic representation](../images/graphic_rep.png)
 
 

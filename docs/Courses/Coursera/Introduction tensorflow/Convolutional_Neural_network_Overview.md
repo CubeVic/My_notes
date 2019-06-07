@@ -1,4 +1,4 @@
-# Convolutional Neural network Overview](https://pythonmachinelearning.pro/introduction-to-convolutional-neural-networks-for-vision-tasks/)
+# [Convolutional Neural network Overview](https://pythonmachinelearning.pro/introduction-to-convolutional-neural-networks-for-vision-tasks/)
 
 > in this additional note we describe some concept mentioned about but in this case from the theory perspective, we make mentione of an architecture called LeNeT-5 which is a convolutional network designed for handwritten and machine-printed character recognition.
 
@@ -68,6 +68,17 @@ The computation we do depends on the type of pooling: average or max.
 
 ![Pool type](../images/Pooling-Types.png)
 
+For max pooling, inside of the window, we just choose the maximum value in that window. This intuitively corresponds to choosing the most prominent features. For average pooling, we take the average of the values in the window. This produces smoother results than max pooling.
+
+In practice, max pooling is used more frequently than average pooling, and the most common pooling size is 2×2.
+
+## Fully-Connected Layer
+
+This layer is the common artificial neural network, the catch, we have a activation volume as output of the CONV and POOL Layers, and this layer accept just a vector, so we will need to flatten this volume.
+
+![Flattening](../images/Flattenin.png) 
+
+After flattening the volume, we can treat this layer just like a neural network! It is okay to flatten here since we’ve already passed through all of the CONV layers and applied the filters.
 
 
 [Reference](https://pythonmachinelearning.pro/introduction-to-convolutional-neural-networks-for-vision-tasks/)
