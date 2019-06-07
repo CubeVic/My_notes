@@ -128,19 +128,25 @@ the table is showing  the layer and some details about them, including the outpu
 
 ![first layer conv](../images/first_layer_conv.png)
  
- the output shape isn't 28x28 instead 26x26, remember the filter is 3x3, so if we are trying to scan a picture we won't be able to scan form the top left corner, because  it doesn't have any neighbors.
+the output shape isn't 28x28 instead 26x26, remember the filter is 3x3, so if we are trying to scan a picture we won't be able to scan form the top left corner, because  it doesn't have any neighbors.
 
  ![top left corner](../images/top_left.png)
 
- we will need to start from one pixel down and one pixel to the right
+we will need to start from one pixel down and one pixel to the right
 
 ![new pixel start](../images/new_pixel_start.png)
 
 this means we cant use a one pixel margin all around the image, so the output of the convolution will be 2 pixel smaller in `x`  and 2 pixel smaller in `y`, if we use a filter 5x5 the output will be smaller, but in a filter 3x3 the output shape of an input of 28x28 will be 26x26. 
 
-The next, is the first max-pooling layer. We specified it to be *two-by-two*, thus turning four pixels into one, so now the output get reduced from 26 by 26, to 13 by 13. the next convolution will operate in this, losing one margin as before, and we are down to 11 by 11, add another *two-by-two* max-pooling layers, rounding down, and we when down to a image of 5 by 5 instead of 28 by 28. 
+The next, is the first max-pooling layer. We specified it to be *two-by-two*, thus turning four pixels into one, so now the output get reduced from 26 by 26, to 13 by 13. 
 
-Number of convolutions per image, in this case 64 (filters) of five-by-five pixels are fed in to the Flatten, that will output 25 pixels times 64, which is 1600. So, you can see that the new flattened layer has 1,600 elements in it, as opposed to the 784 that you had previously. This number is impacted by the parameters that you set when defining the convolutional 2D layers.
+![first maxpooling](../images/first_maxpooling.png)
+
+The next convolution will operate in this, losing one margin as before, and we are down to 11 by 11, add another *two-by-two* max-pooling layers, rounding down, and we when down to a image of 5 by 5 instead of 28 by 28. 
+
+![second Layers](../images/second_layers.png)
+
+The Number of convolutions per image, in this case 64 (filters) and size  five-by-five pixels are fed in to the Flatten, that will output 25 pixels times 64, which is 1600. Then the flattened layer will get 1,600 elements in it, as opposed to the 784 that you had previously. This number is impacted by the parameters that you set when defining the convolutional 2D layers.
 
 
 
