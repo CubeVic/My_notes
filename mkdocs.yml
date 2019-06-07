@@ -75,5 +75,6 @@ nav:
             - Introduction tensorflow: 
               - The Hello World of neural networks: 'Courses/Coursera/Introduction tensorflow/The Hello World of neural networks.md'
               - Introduction to Computer vision: 'Courses/Coursera/Introduction tensorflow/Introduction to computer vision.md'
+              - Convolutional Neural network Overview : 'Courses/Coursera/Introduction tensorflow/Convolutional_Neural_network_Overview.md'
               - Enhancing vision with convolutional Neural Networks : 'Courses/Coursera/Introduction tensorflow/Enhancing_vision_with_convolutional_Neural_Networks.md'
     - About: 'about.md'
