@@ -146,3 +146,8 @@ model.fit(training_images, training_labels, epochs=10)
 test_loss, test_acc = model.evaluate(test_images, test_labels)
 print(test_acc)
 ```
+
+## Additional Information
+
+* [Lode's Computer Graphics Tutorial](https://lodev.org/cgtutor/filtering.html)
+* [Convolutions Sidebar](https://colab.research.google.com/gist/CubeVic/8903948f8c13c69df7956d7ef4000135/convolutions-sidebar.ipynb)
