@@ -151,3 +151,4 @@ print(test_acc)
 
 * [Lode's Computer Graphics Tutorial](https://lodev.org/cgtutor/filtering.html)
 * [Convolutions Sidebar](https://colab.research.google.com/gist/CubeVic/8903948f8c13c69df7956d7ef4000135/convolutions-sidebar.ipynb)
+* (https://www.youtube.com/playlist?list=PLkDaE6sCZn6Gl29AoE31iwdVwSG-KnDzF)
