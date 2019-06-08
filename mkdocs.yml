@@ -64,7 +64,9 @@ nav:
       - Django Tutorial (part 02): 'Django/Django tutorial - part 02.md'
       - (Optional) More details about file structure: 'Django/More details about project structure.md'
     - SQL:
-      - Miscellaneous: 'SQL/Miscellaneous.md'
+      - Random notes about SQL: 'SQL/Some_SQL.md'
+      - String Funtions SQL: 'SQL/String_Functions_SQL.md'
+      - Advance Funtion SQL: 'SQL/Advance_Funtion_SQL.md'
     - Miscellaneous:
       - OAuth 2: 'Miscellaneous/OAuth_2.md'
       - Random: 'Miscellaneous/Random Link.md'
