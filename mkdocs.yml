@@ -67,10 +67,6 @@ nav:
       - Random notes about SQL: 'SQL/Some_SQL.md'
       - String Funtions SQL: 'SQL/String_Functions_SQL.md'
       - Advance Funtion SQL: 'SQL/Advance_Funtion_SQL.md'
-    - Miscellaneous:
-      - OAuth 2: 'Miscellaneous/OAuth_2.md'
-      - Random: 'Miscellaneous/Random Link.md'
-      - Potential activities: 'Miscellaneous/potential activities.md'
     - Courses:
           - Coursera:
             - AI for Everyone: 'Courses/Coursera/AI for Everyone/AI_for_Everyone.md'
@@ -79,4 +75,9 @@ nav:
               - Introduction to Computer vision: 'Courses/Coursera/Introduction tensorflow/Introduction to computer vision.md'
               - Convolutional Neural network Overview : 'Courses/Coursera/Introduction tensorflow/Convolutional_Neural_network_Overview.md'
               - Enhancing vision with convolutional Neural Networks : 'Courses/Coursera/Introduction tensorflow/Enhancing_vision_with_convolutional_Neural_Networks.md'
+              - (Code) Step by step Convolutions : 'Courses/Coursera/Introduction tensorflow/Step_by_step_Convolutions.md'
+    - Miscellaneous:
+      - OAuth 2: 'Miscellaneous/OAuth_2.md'
+      - Random: 'Miscellaneous/Random Link.md'
+      - Potential activities: 'Miscellaneous/potential activities.md'
     - About: 'about.md'
