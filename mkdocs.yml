@@ -76,6 +76,7 @@ nav:
               - Convolutional Neural network Overview : 'Courses/Coursera/Introduction tensorflow/Convolutional_Neural_network_Overview.md'
               - Enhancing vision with convolutional Neural Networks : 'Courses/Coursera/Introduction tensorflow/Enhancing_vision_with_convolutional_Neural_Networks.md'
               - (Code) Step by step Convolutions : 'Courses/Coursera/Introduction tensorflow/Step_by_step_Convolutions.md'
+              - Using Real-World Images: 'Courses/Coursera/Introduction tensorflow/Using_Real_world_Image.md'
     - Miscellaneous:
       - OAuth 2: 'Miscellaneous/OAuth_2.md'
       - Random: 'Miscellaneous/Random Link.md'
