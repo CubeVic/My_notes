@@ -36,3 +36,33 @@ Extract 5 characters from the text in the "CustomerName" column (starting from r
 SELECT RIGHT(CustomerName, 5) AS ExtractString
 FROM Customers;
 ```
+
+## `CONCAT()` function
+
+The CONCAT() function adds two or more expressions together.
+
+###**Syntax CONCAT()** 
+```SQL
+CONCAT(expression1, expression2, expression3,...)
+```
+
+**Example:**
+```SQL
+SELECT CONCAT(Address, " ", PostalCode, " ", City) AS Address
+FROM Customers;
+```
+
+##`CONCAT_WS()` function 
+
+The `CONCAT_WS()` function adds two or more expressions together with a separator.
+
+##**Syntax CONCAT_WS()**
+```SQL
+CONCAT_WS(separator, expression1, expression2, expression3,...)
+```
+
+**Example**
+```SQL
+SELECT CONCAT_WS(" ", Address, PostalCode, City) AS Address
+FROM Customers;
+```
