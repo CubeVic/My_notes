@@ -71,3 +71,42 @@ The validation generator should be exactly the same except of course it points a
 
 ![Validation](../images/validation.png)
 
+##Defining a ConvNet to use complex images
+
+Now we are going to see the model that will classify the human vs horses. this model is quite similar to the one that classify clothes, but with some minor differences that we are going to see.
+
+```python
+model = tf.keras.models.Sequential([
+    tf.keras.layers.Conv2D(16, (3,3), activation = 'relu', input_shape = (300,300,3)),
+    tf.keras.layers.Maxpooling2D(2,2),
+    tf.keras.layers.Conv2D(32, (3,3), activation = 'relu'),
+    tf.keras.layers.Maxpooling2D(2,2),
+    tf.keras.layers.Conv2D(64, (3,3), activation = 'relu'),
+    tf.keras.layers.Maxpooling2D(2,2),
+    tf.keras.layers.Flatten(),
+    tf.keras.layers.Dense(512, activation = 'relu'),
+    tf.keras.layers.Dense(1, activation = 'sigmoid')
+    ])
+```
+
+### The differences
+
+The model is still sequential, but with some differences:
+
+**1. Three Convolutional and Maxpooling Layers**
+
+![First difference - CONV and POOL layers](../images/first Diff.png)
+
+This reflect the higher complexity of the model, in the previous model we started with 28x28 but in this case we started with 300x300.
+
+**2. Input Shape**
+
+![Input Shape](../images/input_shape.png)
+
+In this case we are dealing with color images or RGB images, which means we need 3 channels depth, so in this case the input shape is `input_shape = (300,300,3)` 
+
+**3. Output Layer**
+
+![Binary classification - sigmoid](../images/sigmoid.png)
+
+In the previous model we use 10 classes, so we have 10 neuron outputs, but in this case we are using just 1, but, we have two classes, how is this possible?, well this is because we are using a different `activation` in this case `sigmoid` which is the best activation for *binary* *classification* where one class will move towards 1 and the other towards 0
