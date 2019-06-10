@@ -138,7 +138,7 @@ print(x)
 White
 ```
 
-## `map()`
+## `map()` Built-in function
 
 **Basic Syntax**
 ```python
@@ -182,7 +182,7 @@ list_map_output = list(map_output)
 print(list_map_output) # Output: [2, 4, 6, 8]
 ```
 
-## `filter()`
+## `filter()` Built-in function
 
 **Basic Syntax**
 ```python
