@@ -109,4 +109,6 @@ In this case we are dealing with color images or RGB images, which means we need
 
 ![Binary classification - sigmoid](../images/sigmoid.png)
 
-In the previous model we use 10 classes, so we have 10 neuron outputs, but in this case we are using just 1, but, we have two classes, how is this possible?, well this is because we are using a different `activation` in this case `sigmoid` which is the best activation for *binary* *classification* where one class will move towards 1 and the other towards 0
+In the previous model we use 10 classes, so we have 10 neuron outputs, but in this case we are using just 1, but, we have two classes, how is this possible?, well this is because we are using a different `activation` in this case `sigmoid` which is the best activation for *binary* *classification* where one class will move towards 1 and the other towards 0.
+
+
