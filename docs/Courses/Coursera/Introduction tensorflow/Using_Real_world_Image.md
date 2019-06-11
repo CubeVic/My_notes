@@ -111,4 +111,52 @@ In this case we are dealing with color images or RGB images, which means we need
 
 In the previous model we use 10 classes, so we have 10 neuron outputs, but in this case we are using just 1, but, we have two classes, how is this possible?, well this is because we are using a different `activation` in this case `sigmoid` which is the best activation for *binary* *classification* where one class will move towards 1 and the other towards 0.
 
+## Training the ConvNet with `fit_generator`
+
+### The compile function
+
+we have a **loss** function and an **optimizer**. When classifying the ten items of fashion, in that previous model the **loss** function was a _categorical cross entropy_. But because we're doing a binary choice here, let's pick a *binary_crossentropy* instead. Now the about the **optimizer**, we used an _Adam_ optimizer in this case we use the *RMSprop*, where we can adjust the learning rate to experiment with performance.
+
+```python
+from tensorflow.keras.optimizers import RMSprop
+
+model.compile(loss='binary_crossentropy', optimizer=RSSPROP(1r=0,001), metrics=['acc'])
+```
+### The Training function (fit_generator)
+
+```python
+history =  model.fit_generator(
+    train_enerator,
+    steps_per_epoch = 8,
+    epochs = 15,
+    validation_data = validation_generator,
+    validation_steps = 8,
+    verbose = 2 )
+```
+Because we are using generators instead the dataset, now you call `model.fit_generator`, now let see the parameters:
+
+* The first parameter is the training generator that you set up earlier. This streams the images from the training directory.
+
+![First parameter](../images/first_parameter.png)
+
+* Remember the batch size you used when you created it, it was 20, that's important in the next step. There are 1,024 images in the training directory, so we're loading them in 128 at a time. So in order to load them all, we need to do 8 batches($8 * 128 = 1024$). So we set the `steps_per_epoch` to cover that.
+
+![steps_per_epoch](../images/steps_per_epoch.png)
+
+* Here we just set the number of epochs to train for. This is a bit more complex, so let's use, say, 15 epochs in this case.
+
+![epochs](../images/epochs.png)
+
+* Here we just set the number of epochs to train for. This is a bit more complex, so let's use, say, 15 epochs in this case.
+
+![validation_data](../images/validation_data.png)
+
+* It had 256 images, and we wanted to handle them in batches of 32, so we will do 8 steps.
+
+![Validation_batch](../images/Validation_batch.png)
+
+* The verbose parameter specifies how much to display while training is going on. With verbose set to 2, we'll get a little less animation hiding the epoch progress. 
+
+![verbose](../images/verbose.png)
+
 
