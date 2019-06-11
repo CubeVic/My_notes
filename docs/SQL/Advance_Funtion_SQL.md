@@ -48,3 +48,24 @@ SELECT IF(500<1000, 5, 10);
 SELECT OrderID, Quantity, IF(Quantity>10, "MORE", "LESS")
 FROM OrderDetails;
 ```
+
+## `SET @var_name` User-defined Variables
+
+You can store a value in a user-defined variable in one statement and refer to it later in another statement. This enables you to pass values from one statement to another.
+
+User variables are written as @var_name, where the variable name var_name consists of alphanumeric characters, ., _ , and $.
+
+User variable names are not case-sensitive. Names have a maximum length of 64 characters.
+
+One way to set a user-defined variable is by issuing a `SET` statement:
+
+```SQL
+SET @var_name = expr [, @var_name = expr] ...
+```
+
+For `SET`, either `=` or `:=` can be used as the assignment operator.  
+
+When making an assignment in this way, you must use `:=` as the assignment operator; `=` is treated as the comparison operator in statements other than `SET`.
+
+
+
