@@ -68,4 +68,25 @@ For `SET`, either `=` or `:=` can be used as the assignment operator.
 When making an assignment in this way, you must use `:=` as the assignment operator; `=` is treated as the comparison operator in statements other than `SET`.
 
 
+Here ans example of the usage of this "user-defined variables", this is the solution to the challenge [Occupations](https://www.hackerrank.com/challenges/occupations/problem) of [Hacker Ranks](https://www.hackerrank.com)
 
+```SQL
+SET @dRow = 0, @pRow = 0, @sRow = 0, @aRow = 0;
+
+SELECT MIN(Doctor), MIN(Professor), MIN(Singer), MIN(Actor)
+FROM (
+    SELECT  CASE Occupation    
+                WHEN 'Doctor'       THEN @dRow := @dRow + 1
+                WHEN 'Professor'    THEN @pRow := @pRow + 1
+                WHEN 'Singer'       THEN @sRow := @sRow + 1
+                WHEN 'Actor'        THEN @aRow := @aRow + 1
+            END AS row,
+            IF (Occupation = 'Doctor', Name, NULL) AS Doctor,
+            IF (Occupation = 'Professor', Name, NULL) AS Professor,
+            IF (Occupation = 'Singer', Name, NULL) AS Singer,
+            IF (Occupation = 'Actor', Name, NULL) AS Actor
+    FROM    OCCUPATIONS
+    ORDER BY Name
+) a
+GROUP BY row;
+```
