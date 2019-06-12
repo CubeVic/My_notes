@@ -217,3 +217,20 @@ uploaded = files.upload()
 now, we need a loop to "read" or iterate though all the images in the collection
 
 ![loop_collection](../images/loop_collection.png)
+
+It is really important to set the `target_size` to the correct dimensions to match the input images that we specify designing the model.
+
+```python
+...
+img = image.load_img(path, target_size=(300,300))
+...
+```
+
+### `predict` Predictions
+
+after feed the images with the correct size we can start with the predictions, so we can call `model.predict` passing the details and we will get in return an array of classes.
+
+
+![predict](../images/predict.png)
+
+In the case of binary classification, this will only contain one item with a value close to 0 for one class and close to 1 for the other, that is why we use the `if` at the end.
