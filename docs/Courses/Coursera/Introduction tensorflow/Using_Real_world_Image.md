@@ -47,6 +47,17 @@ train_generator = train_datagen.flow_from_directory(
     batch_size = 128,
     class_mode = 'binary')
 ```
+
+```python
+# Flow training images in batches of 128 using train_datagen generator
+validation_generator = validation_datagen.flow_from_directory(
+        '/tmp/validation-horse-or-human/',  # This is the source directory for training images
+        target_size=(300, 300),  # All images will be resized to 150x150
+        batch_size=32,
+        # Since we use binary_crossentropy loss, we need binary labels
+        class_mode='binary')
+```
+
 The names of the sub-directories will be the labels for your images that are contained within them. Make sure the first parameter `train_dir` is pointing to the right directory.
 
 ![train_dir](../images/train_dir.png)
@@ -160,3 +171,49 @@ Because we are using generators instead the dataset, now you call `model.fit_gen
 ![verbose](../images/verbose.png)
 
 
+## Running the Model
+
+Now, we will need to run the model, in this case we are going to use a code that will contain some special code for [colab](https://colab.research.google.com/notebooks/welcome.ipynb) and the colab for this model (without validation) can be found [Horse-or-Human-NoValidation](https://colab.research.google.com/gist/CubeVic/e083247bc8257ff0296770787e0cd16d/horse-or-human-novalidation.ipynb#scrollTo=o6vSHzPR2ghH).
+
+```python
+import numpy as np
+from google.colab import files
+from keras.preprocessing import image
+
+uploaded = files.upload()
+
+for fn in uploaded.keys():
+ 
+  # predicting images
+  path = '/content/' + fn
+  img = image.load_img(path, target_size=(300, 300))
+  x = image.img_to_array(img)
+  x = np.expand_dims(x, axis=0)
+
+  images = np.vstack([x])
+  classes = model.predict(images, batch_size=10)
+  print(classes[0])
+  if classes[0]>0.5:
+    print(fn + " is a human")
+  else:
+    print(fn + " is a horse")
+```
+
+### Colab specific - Button to upload images
+
+Here we show the code that is specific for colab, this will give me a button that i can use to pick another image that I'm going to use to make the prediction 
+
+![Button_colab](../images/Button_colab.png)
+
+
+The images are will have a path, this image path is then loaded into this list called `uploaded`
+
+```python
+uploaded = files.upload()
+```
+
+### Loop to iterate in the collection that holds the images
+
+now, we need a loop to "read" or iterate though all the images in the collection
+
+![loop_collection](../images/loop_collection.png)
