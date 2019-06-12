@@ -1,4 +1,4 @@
-#Useful or researched built-in functions
+#Useful functions or Statements
 
 ## `reduce()` from functools  
 
@@ -214,3 +214,24 @@ even_num = list(filter_obj) # Converts the filer obj to a list
 print(even_num) # Output: [2, 4]
 ```
 
+## `pass` Statement 
+
+The pass statement does nothing. It can be used when a statement is required syntactically but the program requires no action. For example:
+
+```python
+while True:
+     pass  # Busy-wait for keyboard interrupt (Ctrl+C)
+```
+This is commonly used for creating minimal classes:
+
+```python
+class MyEmptyClass:
+     pass
+```
+
+Another place pass can be used is as a place-holder for a function or conditional body when you are working on new code, allowing you to keep thinking at a more abstract level. The pass is silently ignored:
+
+```python
+def initlog(*args):
+     pass   # Remember to implement this!
+```
