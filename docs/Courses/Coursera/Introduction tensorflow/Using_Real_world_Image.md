@@ -89,11 +89,11 @@ Now we are going to see the model that will classify the human vs horses. this m
 ```python
 model = tf.keras.models.Sequential([
     tf.keras.layers.Conv2D(16, (3,3), activation = 'relu', input_shape = (300,300,3)),
-    tf.keras.layers.Maxpooling2D(2,2),
+    tf.keras.layers.MaxPooling2D(2,2),
     tf.keras.layers.Conv2D(32, (3,3), activation = 'relu'),
-    tf.keras.layers.Maxpooling2D(2,2),
+    tf.keras.layers.MaxPooling2D(2,2),
     tf.keras.layers.Conv2D(64, (3,3), activation = 'relu'),
-    tf.keras.layers.Maxpooling2D(2,2),
+    tf.keras.layers.MaxPooling2D(2,2),
     tf.keras.layers.Flatten(),
     tf.keras.layers.Dense(512, activation = 'relu'),
     tf.keras.layers.Dense(1, activation = 'sigmoid')
@@ -131,7 +131,7 @@ we have a **loss** function and an **optimizer**. When classifying the ten items
 ```python
 from tensorflow.keras.optimizers import RMSprop
 
-model.compile(loss='binary_crossentropy', optimizer=RSSPROP(1r=0,001), metrics=['acc'])
+model.compile(loss='binary_crossentropy', optimizer=RSSPROP(lr=0.001), metrics=['acc'])
 ```
 ### The Training function (fit_generator)
 
@@ -150,7 +150,7 @@ Because we are using generators instead the dataset, now you call `model.fit_gen
 
 ![First parameter](../images/first_parameter.png)
 
-* Remember the batch size you used when you created it, it was 20, that's important in the next step. There are 1,024 images in the training directory, so we're loading them in 128 at a time. So in order to load them all, we need to do 8 batches($8 * 128 = 1024$). So we set the `steps_per_epoch` to cover that.
+* Remember the batch size you used when you created it, it was 128, that's important in the next step. There are 1,024 images in the training directory, so we're loading them in 128 at a time. So in order to load them all, we need to do 8 batches($8 * 128 = 1024$). So we set the `steps_per_epoch` to cover that.
 
 ![steps_per_epoch](../images/steps_per_epoch.png)
 

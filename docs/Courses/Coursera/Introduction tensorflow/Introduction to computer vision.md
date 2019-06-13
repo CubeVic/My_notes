@@ -103,9 +103,9 @@ Each layer of neurons need an activation function to tell them what to do. There
 first we will need to create the class `myCallback` 
 
 ```python
-class myCallback(tf.keras.callback.Callback):
+class myCallback(tf.keras.callbacks.Callback):
 	"""docstring for myCallback"""
-	def on_epoch_end(self,epoch,logs={}:
+	def on_epoch_end(self,epoch,logs={}):
 		if(logs.get('acc')>0.6):
 			print("\n Reached 60% accuracy so cancelling training!")
 			self.model.stop_training = True
