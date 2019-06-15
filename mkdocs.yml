@@ -82,7 +82,9 @@ nav:
               - Using Real-World Images: 'Courses/Coursera/Introduction tensorflow/Using_Real_world_Image.md'
           - Udemy:
             - Python Computer Vision and OpenCV:
-              - Numpy and image Basic: 'Courses/Udemy/Python Computer Vision and OpenCV/Numpy_and_Image_Basic.md'
+              - Numpy Basic (Part 1): 'Courses/Udemy/Python Computer Vision and OpenCV/Numpy_Basic_part_1.md'
+              - Numpy Basic (Part 2): 'Courses/Udemy/Python Computer Vision and OpenCV/Numpy_Basic_part_2.md'
+              - Images and Numpy: 'Courses/Udemy/Python Computer Vision and OpenCV/Images_and Numpy.md'
     - Miscellaneous:
       - Aliases in Windows command prompt: 'Miscellaneous/Aliases_in_Windows_command_prompt.md'
       - OAuth 2: 'Miscellaneous/OAuth_2.md'
