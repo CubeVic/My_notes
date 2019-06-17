@@ -88,3 +88,123 @@ Conversely, a model that predicts the probability that someone will click "thumb
 | What video the learner wants to watch next. | Show those videos in the recommendation bar.|
 | Probability someone will click on a search result.| If P(click) > 0.12, prefetch the web page.|
 | What fraction of a video ad the user will watch. | If a small fraction, don't show the user the ad.|
+
+## Success and Failure Metrics
+
+How I will measure the success or failure of the model, the success or failure metric are different than metrics such as precision, recall, etc, rather the specific anticipated outcome. As an example, let say i want a video recommendations model, the success metric might be "A success metric is the number of popular videos properly predicted by the model. Success means predicting 95% of the most popular videos as measured by watch time within 28 days of being uploaded." and the failure metric will be "Failure means the number of popular videos properly predicted is no better than current heuristics"
+
+### Are the Metrics Measurable?
+
+Ask the following: 
+
+* How will you measure your metrics?
+* When can you measure your metrics?
+* How long will it take to know whether your new ML system is a success or failure?
+
+### What Output Would You like the ML Model to Produce?
+
+Revisiting this table, which type of output are you looking for: a number, a label, a cluster, or something else?
+
+| Type of ML Problem | Description               | Example                   |
+|:-------------------|:--------------------------|:--------------------------|
+|Classification      |	Pick one of N labels     |	cat, dog, horse, or bear |
+|Regression	         |  Predict numerical values |	click-through rate       |
+|Clustering	         |  Group similar examples   |	most relevant documents (unsupervised) |
+|Association rule learning | Infer likely association patterns in data |	If you buy hamburger buns, you're likely to buy hamburgers (unsupervised)|
+|Structured output   |	Create complex output	 | natural language parse trees, image recognition bounding boxes |
+
+
+## Heuristics 
+
+How might you solve your problem without ML?
+
+Suppose you need to deliver a product tomorrow, and you have only time enough to hard-code the business logic. You could try a heuristic (non-ML solution) like the following:
+
+>Example
+Consider people who uploaded popular videos in the past. Assume that new videos uploaded by these people will also become popular.
+
+The preceding heuristic might not be the world’s greatest heuristic, but it does provide a baseline. Never launch a fancy ML model that can't beat a heuristic. The exercise of making a heuristic often will help you identify good signals in your ML model.
+
+Non-ML solutions can sometimes be simpler to maintain than ML solutions.
+
+## Formulate YourProblem as an ML Problem
+
+We are to follow the suggested approach for framing the ML problem:
+
+1. Articulate your problem.
+2. Start simple.
+3. Identify Your Data Sources.
+4. Design your data for the model.
+5. Determine where data comes from.
+6. Determine easily obtain inputs.
+7. Ability to Learn.
+8. Think About Potential Bias.
+
+
+### Articulate Your Problem
+
+There are several subtype of classification an regression, the following flowchart can give help to define which can be use.
+
+![classification_Flowchart_001](../images/002_classification_Flowchart.svg)
+
+  
+![Regression_Flowchart_001](../images/003_Regression_Flowchart.svg)
+
+Our problem is best framed as:
+
+* Binary classification
+* Unidimensional regression
+* Multi-class single-label classification
+* Multi-class multi-label classification
+* Multidimensional regression
+* Clustering (unsupervised)
+* Other (translation, parsing, bounding box id, etc.)
+
+### Start Simple
+
+Can you simplify your problem?
+
+First, simplify your modeling task. State your given problem as a binary classification or a unidimensional regression problem
+
+Then, for that task, use the simplest model possible. A simple model is easier to implement and understand. Once you have a full ML pipeline, you can iterate on the simple model with greater ease.
+
+
+![Barchart](../images/004_Barchart.svg)
+
+The biggest gain from ML tends to be the first launch, since that's when you can first leverage your data. Further tuning still gives wins, but, generally, the biggest gain is at the start so it's good to pick well-tested methods to make the process easier.
+
+### Identify Your Data Sources
+
+Provide answers to the following questions about your labels:
+
+* How much labeled data do you have?
+* What is the source of your label?
+* Is your label closely connected to the decision you will be making?
+
+### Design your Data for the Model
+
+Identify the data that your ML system should use to make predictions (input -> output), If an input is not a scalar or 1D list, consider whether that is the best representation for your data.
+
+### Determine Where Data Comes From
+
+Assess how much work it will be to develop a data pipeline to construct each column for a row. When does the example output become available for training purposes? 
+
+### Determine Easily Obtained Inputs
+
+Pick 1-3 inputs that are easy to obtain and that you believe would produce a reasonable, initial outcome.
+
+Which inputs would be useful for implementing heuristics mentioned previously?
+
+### Ability to Learn
+
+Will the ML model be able to learn? List aspects of your problem that might cause difficulty learning. For example:
+
+* The data set doesn't contain enough positive labels.
+* The training data doesn't contain enough examples.
+* The labels are too noisy.
+* The system memorizes the training data, but has difficulty generalizing to new cases
+
+
+### Think About Potential Bias
+
+Many dataset are biased in some way. These biases may adversely affect training and the predictions made.
