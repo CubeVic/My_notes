@@ -16,7 +16,7 @@ theme:
   language: 'en'
   palette:
       primary: 'Indigo'
-      accent: 'Grey'
+      accent: 'Blue Grey'
   font: 
     text: 'Ubuntu'
     code: 'Ubuntu Mono'
@@ -24,6 +24,7 @@ theme:
   favicon: 'img/favicon.ico.png'
   feature:
       tabs: true
+
 
 extra_javascript:
   - https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML
@@ -33,6 +34,11 @@ markdown_extensions:
   - pymdownx.arithmatex
   - admonition
   - footnotes
+  - pymdownx.details
+  - pymdownx.betterem:
+      smart_enable: all
+  - pymdownx.tasklist:
+      custom_checkbox: true
   - codehilite:
       guess_lang: false
       linenums: true
