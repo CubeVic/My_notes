@@ -20,7 +20,7 @@ theme:
   font: 
     text: 'Ubuntu'
     code: 'Ubuntu Mono'
-  logo: '/images/Logo.png'
+  logo: '/img/Logo.png'
   favicon: 'img/favicon.ico.png'
   feature:
       tabs: true
