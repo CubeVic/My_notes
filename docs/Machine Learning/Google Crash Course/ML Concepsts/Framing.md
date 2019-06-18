@@ -1,16 +1,14 @@
-## Framing 
-
 **Supervised machine learning:** ML systems learn how to combine input to produce useful predictions on never-before-seen data.
 
 the fundamental machine learning terminology
 
-### Key ML Terminology
+## Key ML Terminology
 
-#### Label
+### Label
 
 It is the thing we're predicting, the $y$ variable in a lineal regression. It can be the future price of the wheat, kind of animal shown in a picture, just about anything.
 
-#### Features
+### Features
 
 A **Feature** is a input variable, the $x$ in a simple linear regression. A ML project might have several $x$ depending of the complexity of the project.
 
@@ -25,26 +23,26 @@ Lets take a spam detector as an example, the features include the following:
 * time of day the email was sent
 * email contains the phrase "one weird trick"
 
-#### Examples 
+### Examples 
 
 An _Example_  is a particular instance of Data, this data can be represented as **x**, ( were **x** can be a vector), we have to categories:
 
 * Labeled examples
 * Unlabeled examples
 
-##### Labeled Examples
+#### Labeled Examples
 
 `labeled examples: {features, labels}: (x,y)`
 
 use label example to train the model, for the example of the spam detector , the label example will be those mails mark as "spam" or "not spam".
 
-##### Unlabeled Examples
+#### Unlabeled Examples
 
 `unlabeled examples: {features, ?}: (x,?)`
 
 once the model is trained using the label examples, we can use the model to predict the labels of the unlabeled examples.
 
-#### Models
+### Models
 
 It defines the relationship between features and labels. The main phases of the model's life are:
 
@@ -52,7 +50,7 @@ It defines the relationship between features and labels. The main phases of the 
 
 * **Inference:** means apply the trained model to the unlabeled example,  in other words, it is use the trained model to make a prediction, if the example are $x$ the prediction will be $y$.
 
-####Regressions vs Classifications
+###Regressions vs Classifications
 
 **Regression models** are used to predict continues values, for example, given a temperature in Celsius what is the equivalent in Fahrenheit, or:
 

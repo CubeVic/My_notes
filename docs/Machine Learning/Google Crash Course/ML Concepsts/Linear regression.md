@@ -88,5 +88,24 @@ Where:
 * $D$ is a dataset containing many examples and labels, which are $(x,y)$ pairs.
 * $N$ is the number of examples in $D$  
 
+## Important Concepts 
 
+### Bias
 
+An intercept or offset from an origin. Bias (also known as the bias term) is referred to as b or w0 in machine learning models. For example, bias is the b in the following formula:
+
+$$
+y' = b + w_1x_1 + w_2x_2 + ... + w_nx_n
+$$
+
+### Inference
+
+In machine learning, often refers to the process of making predictions by applying the trained model to unlabeled examples. In statistics, inference refers to the process of fitting the parameters of a distribution conditioned on some observed data.
+
+### Weight
+
+A coefficient for a **feature** in a linear model, or an edge in a deep network. The goal of training a linear model is to determine the ideal weight for each feature. If a weight is $0$, then its corresponding feature does not contribute to the model.
+
+### Loss
+
+A measure of how far a model's **predictions** are from its **label**. Or, to phrase it more pessimistically, a measure of how bad the model is. To determine this value, a model must define a loss function. For example, linear regression models typically use **mean squared error** for a loss function, while logistic regression models use **Log Loss**.
