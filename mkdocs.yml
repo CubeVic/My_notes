@@ -47,6 +47,7 @@ nav:
     - Machine Leaning:
       - Google Crash Course:
         - Problem Framing:  'Machine Learning/Google Crash Course/Problem_Framing.md'
+        - ML Concepts: 'Machine Learning/Google Crash Course/ML_Concepts.md'
       - Key ML Terminology: 'Machine Learning/Key ML Terminology.md'
       - Linear Regression: 'Machine Learning/Linear regression.md'
       - Other Key Terminology (TensorFlow): 'Machine Learning/Other_key_Terminology.md'
