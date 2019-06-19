@@ -63,3 +63,4 @@ By choosing examples at random from our data set, we could estimate a big averag
 
 **Mini-batch stochastic gradient descent** (**mini-batch SGD**) is a compromise between full-batch iteration and SGD. A mini-batch is typically between 10 and 1,000 examples, chosen at random. Mini-batch SGD reduces the amount of noise in SGD but is still more efficient than full-batch.
 
+    
