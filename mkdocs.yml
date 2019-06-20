@@ -15,8 +15,8 @@ theme:
   name: 'material'
   language: 'en'
   palette:
-      primary: 'Indigo'
-      accent: 'Blue Grey'
+      primary: 'Blue Grey'
+      accent: 'Deep Purple'
   font: 
     text: 'Ubuntu'
     code: 'Ubuntu Mono'
@@ -57,6 +57,7 @@ nav:
             - Framing: 'Machine Learning/Google Crash Course/ML Concepsts/Framing.md'
             - Linear Regression: 'Machine Learning/Google Crash Course/ML Concepsts/Linear regression.md'
             - Reducing Loss: 'Machine Learning/Google Crash Course/ML Concepsts/Reducing_Loss.md'
+            - First Steps TensorFlow: 'Machine Learning/Google Crash Course/ML Concepsts/First_steps_TensorFlow.md'
       - Other Key Terminology (TensorFlow): 'Machine Learning/Other_key_Terminology.md'
     - Python:
       - Data Structures: 'Python/Data structures.md'
