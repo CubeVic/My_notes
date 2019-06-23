@@ -93,7 +93,8 @@ nav:
             - Python Computer Vision and OpenCV:
               - Numpy Basic (Part 1): 'Courses/Udemy/Python Computer Vision and OpenCV/Numpy_Basic_part_1.md'
               - Numpy Basic (Part 2): 'Courses/Udemy/Python Computer Vision and OpenCV/Numpy_Basic_part_2.md'
-              - Images and Numpy: 'Courses/Udemy/Python Computer Vision and OpenCV/Images_and Numpy.md'
+              - Images and Numpy: 'Courses/Udemy/Python Computer Vision and OpenCV/Images_and_Numpy.md'
+              - Images and Opencv: 'Courses/Udemy/Python Computer Vision and OpenCV/Images_and_Opencv.md'
     - Miscellaneous:
       - Aliases in Windows command prompt: 'Miscellaneous/Aliases_in_Windows_command_prompt.md'
       - OAuth 2: 'Miscellaneous/OAuth_2.md'
