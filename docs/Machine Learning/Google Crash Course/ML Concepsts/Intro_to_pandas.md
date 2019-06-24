@@ -47,7 +47,7 @@ california_housing_dataframe.describe()
 california_housing_dataframe.head()
 ```
 
-`describe()` will desplay some stadistics about this DataFrame, and `head()`display few of the first records,
+`describe()` will display some statistics about this DataFrame, and `head()`display few of the first records,
 here is what we see with `head()`
 
 ![010_pandas_head](../images/010_pandas_head.png)
@@ -85,3 +85,30 @@ cities['city name'][1]
 # 'San Jose'
 ```
 
+or 
+
+```python
+print(type(cities[0:2]))
+# <class 'pandas.core.frame.DataFrame>
+cities[0:2]
+#' 	City name	Population
+# 0	San Francisco	852469
+# 1	San Jose	1015785
+```
+
+## Manipulating Data
+
+We can use the python arithmetics to interact with the pandas data types
+
+```python
+population / 1000.
+```
+
+we can use series as arguments of a Numpy function
+
+```python
+import numpy as np
+
+np.log(population)
+
+```
