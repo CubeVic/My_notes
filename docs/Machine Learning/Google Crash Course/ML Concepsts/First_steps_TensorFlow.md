@@ -31,3 +31,18 @@ predictions = classifier.predict(input_fn=predict_input_fn)
 >
 **Tensor:** 
 The primary data structure in TensorFlow programs. Tensors are N-dimensional (where N could be very large) data structures, most commonly scalars, vectors, or matrices. The elements of a Tensor can hold integer, floating-point, or string values.
+
+## Common hyperparameter in Machine Learning
+
+Many of the coding exercises contain the following hyperparameters:
+
+* **steps**, which is the total number of training iterations. One step calculates the loss from one batch and uses that value to modify the model's weights once.
+* **batch size**, which is the number of examples (chosen at random) for a single step. For example, the batch size for SGD is 1.
+
+The following formula applies:
+
+$$
+total_number_of_trained_examples = batch size * steps
+$$
+
+
