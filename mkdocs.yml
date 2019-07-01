@@ -59,6 +59,7 @@ nav:
             - Reducing Loss: 'Machine Learning/Google Crash Course/ML Concepsts/Reducing_Loss.md'
             - First Steps TensorFlow: 'Machine Learning/Google Crash Course/ML Concepsts/First_steps_TensorFlow.md'
             - Introduction to Pandas: 'Machine Learning/Google Crash Course/ML Concepsts/Intro_to_pandas.md'
+            - Training and Test Sets: 'Machine Learning/Google Crash Course/ML Concepsts/Training_Test_sets.md'
       - Other Key Terminology (TensorFlow): 'Machine Learning/Other_key_Terminology.md'
     - Python:
       - Data Structures: 'Python/Data structures.md'

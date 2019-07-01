@@ -7,11 +7,11 @@ Linear Regression, Training and loss
 
 As an example, we can use the relationship between the temperature and the cripts-per-minutes of crickets
 
-![Chirps per Minute vs. Temperature in Celsius.](/images/CricketPoints.png)
+![Chirps per Minute vs. Temperature in Celsius.](../images/CricketPoints.png)
 
 As expected, the plot shows the temperature rising with the number of chirps. the relationship between chirps and temperature is linear, you could draw a single straight line like the following to approximate this relationship:
 
-![A linear relationship](/images/CricketLine.png)
+![A linear relationship](../images/CricketLine.png)
 
 the line doesn't pass through every dot, but the line does clearly show the relationship between chirps and temperature. Using the equation for a line:
 
