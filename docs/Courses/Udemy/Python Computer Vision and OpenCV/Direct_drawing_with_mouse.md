@@ -185,3 +185,7 @@ while True:
 cv2.destroyAllWindows()
 ``` 
 
+The result is:
+
+
+![025_drawing_rectangles](../images/025_drawing_rectangles.png)
