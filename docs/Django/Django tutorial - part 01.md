@@ -3,7 +3,7 @@
 to verify which version are we using we can use;
 
 ```
-py -m django --version
+python -m django --version
 ```
 
 ## Creating a project  
