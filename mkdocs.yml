@@ -76,14 +76,17 @@ nav:
       - Trick and tips for better code in python: 'Python/Tricks_tips_better_code_python.md'
       - Algorithm:
           - Magic Square: 'Python/Algorithm/Magic_square.md'
+
     - Django:
       - Django Tutorial (part 01): 'Django/Django tutorial - part 01.md'
       - Django Tutorial (part 02): 'Django/Django tutorial - part 02.md'
       - (Optional) More details about file structure: 'Django/More details about project structure.md'
+
     - SQL:
       - Random notes about SQL: 'SQL/Some_SQL.md'
       - String Funtions SQL: 'SQL/String_Functions_SQL.md'
       - Advance Funtion SQL: 'SQL/Advance_Funtion_SQL.md'
+
     - Courses:
           - Coursera:
             - AI for Everyone: 'Courses/Coursera/AI for Everyone/AI_for_Everyone.md'
@@ -102,6 +105,9 @@ nav:
               - Images and Opencv: 'Courses/Udemy/Python Computer Vision and OpenCV/Images_and_Opencv.md'
               - Drawing on Images: 'Courses/Udemy/Python Computer Vision and OpenCV/Drawing_on_Images.md'
               - Drawing with mouse: 'Courses/Udemy/Python Computer Vision and OpenCV/Direct_drawing_with_mouse.md'
+
+    - EasyLanguage:
+      - EasyLanguage 001: 'EasyLanguage/EasyLanguages_001.md'          
     - Miscellaneous:
       - Aliases in Windows command prompt: 'Miscellaneous/Aliases_in_Windows_command_prompt.md'
       - OAuth 2: 'Miscellaneous/OAuth_2.md'

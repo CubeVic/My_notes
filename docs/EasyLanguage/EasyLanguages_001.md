@@ -1,0 +1,1 @@
+[Resources: ](https://www.abctradinggroup.com/powerlanguage-tutorials-lesson-01/)
