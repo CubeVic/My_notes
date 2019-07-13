@@ -140,3 +140,21 @@ cv2.imwrite('my_new_picture.jpg',new_img)
 #True
 ```
 Keep in mind, the above stored the BGR version of the image.
+
+## Drawing Images
+
+We start by making a canvas, we are going to create an array that will serve as it.
+
+```python
+import numpy as np
+import matplotlib.pyplot as plt
+%matplotlib inline
+import cv2
+
+blank_img = np.zeros(shape=(512,512,3),dtype=np.int16)
+blank_img.shape
+plt.imshow(blank_img)
+```
+
+
+
