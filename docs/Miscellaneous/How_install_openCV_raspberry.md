@@ -15,7 +15,7 @@ we are going to access to the configuration, after the command a menu will be di
 
 next, we select the option "Expand filesystem"
 
-![002_Expand_filesystem](../images/002_Expand_filesystem.lpg)
+![002_Expand_filesystem](../images/002_Expand_filesystem.jpg)
 
 once we select we option we can go t **<Finish>** and reboot the unit
 
@@ -30,10 +30,23 @@ This might not be enough, therefore we will proceed to remove libreOffice and Wo
 
 ```
 $ sudo apt-get purge wolfram-engine
-$ sudo apt-get purge libreoffice
+$ sudo apt-get purge libreoffice*
 $ sudo apt-get clean
 $ sudo apt-get autoremove
 ```
+> you can use dpkg-query -l to list all the programs installed, we can remove the following:   
+* wolfram-engine.  
+* bluej.  
+* greenfoot.  
+* nodered.  
+* nuscratch.  
+* scratch.  
+* sonic-pi.  
+* libreoffice.  
+* claws-mail.  
+* claws-mail-i18n.  
+* minecraft-pi.  
+* python-pygame.  
 
 ## Step 2: Installing OpenCV 4 dependencies on Raspberry pi
 
@@ -49,5 +62,6 @@ after this, we proceed to include the developer tools on [CMake](https://cmake.o
 ```
 $ sudo apt-get install build-essential cmake unzip pkg-config
 ```
+
 
 [Resource](https://www.pyimagesearch.com/2018/09/26/install-opencv-4-on-your-raspberry-pi/)
