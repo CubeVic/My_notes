@@ -114,4 +114,5 @@ nav:
       - OAuth 2: 'Miscellaneous/OAuth_2.md'
       - Random: 'Miscellaneous/Random Link.md'
       - Potential activities: 'Miscellaneous/potential activities.md'
+      - How to Install OpenCv on Raspberry pi: 'Miscellaneous/How_install_openCV_raspberry.md'
     - About: 'about.md'
