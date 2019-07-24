@@ -77,5 +77,22 @@ $ sudo apt-get install libgtk-3-dev
 $ sudo apt-get install libcanberra-gtk*
 ```
 
+now two more packages, one for numerical optimization other for python development headers
+
+```
+$ sudo apt-get install libatlas-base-dev gfortran
+$ sudo apt-get install python3-dev
+```
+
+## Step 3: Download OpenCV 4 for Raspberry pi
+
+There are two things to download, the `opencv` and the `opencv_contrib`, we are going to download them, unzip them and later rename the directories
+
+```
+$ cd ~
+$ wget -O opencv.zip https://github.com/opencv/opencv/archive/4.0.0.zip
+$ wget -O opencv_contrib.zip https://github.com/opencv/opencv_contrib/archive/4.0.0.zip
+```
+
 
 [Resource](https://www.pyimagesearch.com/2018/09/26/install-opencv-4-on-your-raspberry-pi/)
