@@ -63,5 +63,19 @@ after this, we proceed to include the developer tools on [CMake](https://cmake.o
 $ sudo apt-get install build-essential cmake unzip pkg-config
 ```
 
+Next, we are going to install libraries to work with videos  and images
+
+```
+$ sudo apt-get install libjpeg-dev libpng-dev libtiff-dev
+$ sudo apt-get install libavcodec-dev libavformat-dev libswscale-dev libv4l-dev
+$ sudo apt-get install libxvidcore-dev libx264-dev
+```
+The next step will be Install GTK and GUI backend and install a package whihc reduce the GTK warnings
+
+```
+$ sudo apt-get install libgtk-3-dev
+$ sudo apt-get install libcanberra-gtk*
+```
+
 
 [Resource](https://www.pyimagesearch.com/2018/09/26/install-opencv-4-on-your-raspberry-pi/)
