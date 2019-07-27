@@ -107,7 +107,8 @@ nav:
               - Drawing with mouse: 'Courses/Udemy/Python Computer Vision and OpenCV/Direct_drawing_with_mouse.md'
 
     - EasyLanguage:
-      - EasyLanguage 001: 'EasyLanguage/EasyLanguages_001.md' 
+      - EasyLanguage 001: 'EasyLanguage/EasyLanguages_001.md'
+      - Plot: 'EasyLanguage/Plot.md'  
                
     - Miscellaneous:
       - Aliases in Windows command prompt: 'Miscellaneous/Aliases_in_Windows_command_prompt.md'
