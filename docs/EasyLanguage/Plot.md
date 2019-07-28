@@ -48,7 +48,9 @@ In these examples the reserved word PlotPB is used to paint the bar a different 
 ## NoPlot
 
 The `NoPlot` statement removes a specified drawn plot from the current bar. It is most often used to remove ShowMe or PaintBar plots that are no longer true on the current in-progress bar. If a ShowMe or PaintBar condition is true on the real-time in-progress bar, but during the same bar becomes false before the close of the bar, the drawn ShowMe or PaintBar can be removed with NoPlot.
-The structure of a NoPlot statement for an indicator is: NoPlot: NoPlot(plot number);
+The structure of a NoPlot statement for an indicator is: 
+
+*NoPlot:* `NoPlot(plot number);`
 
 *Usage Example:*
 ```
@@ -59,16 +61,33 @@ Else
 ```
 
 This ShowMe example marks the low price of a gap-down bar, but removes the ShowMe marker if the condition is no longer true on the real-time bar.
-Usage Example:
-if Close > Average(Close,10) then
+
+*Usage Example:*
+
+```if Close > Average(Close,10) then
           PlotPB(High, Low, "Up Bar")
-      Else
-NoPlot(1);
+Else
+    NoPlot(1);
+```
+
 This PaintBar example paints the entire bar if the Close is greater than the average Close but removes the PaintBar if the condition is no longer true on the real-time bar. You may use number 1 to refer to a PlotPB statement in the NoPlot parameter.
-Displacing Plots
+
+## Displacing Plots
+
 Displacing plots allows you to visually move any analysis technique plots left or right on the chart by some number of specified bars. A positive number moves the plot to the left and a negative number moves the plot to the right. Space to the right of the last bar must be sufficient to accommodate the displaced plots or an error will occur.
+ 
 The structure of a NoPlot statement for an indicator is:
-Plot1[+/-N ] Square brackets after the Plot statement are used to indicate the number of bars to displace the plot left or right. Positive = left and Negative = right.
-Usage Example1 (displacing a plot into the future): Plot1[-5](Average(Close,5), “avg close”);
-Usage Example2 (displacing a plot historically): Plot1[5](Average(Close,5), “avg close”);
+
+**Plot1[+/-N ] ** Square brackets after the Plot statement are used to indicate the number of bars to displace the plot left or right. Positive = left and Negative = right.
+
+*Usage Example1 (displacing a plot into the future):* 
+```
+Plot1[-5](Average(Close,5), “avg close”);
+```
+
+*Usage Example2 (displacing a plot historically):*
+```
+Plot1[5](Average(Close,5), “avg close”);
+```
+
 These examples move the plot right and left, respectively, on the chart.
