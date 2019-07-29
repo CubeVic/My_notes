@@ -1,22 +1,33 @@
 To plot we use the function `plot#()` were # is a number that identify the plot, this number can be from 1 to 99
 
-The basic structure of a plot statement for an indicator:
-**PlotN:** PlotN(numeric expression, "plot name"); *//(where N = 1 to 99, no space)*
+The basic structure of a plot statement for an indicator:  
+**PlotN:** PlotN(numeric expression, "plot name"); *//(where N = 1 to 99, no space)*  
 
-*Usage Example1:*
-Plot1(Close, "The Close");
-*Usage Example2:*
-Plot1(High, "The High"); Plot2(Low, "The Low");
+*Usage Example1:*  
+```
+Plot1(Close, "The Close");    
+```
+
+*Usage Example2:*  
+```
+Plot1(High, "The High"); Plot2(Low, "The Low");  
+```
 
 ## Modify structure of `plot`
 
-The complete structure of a plot statement for an indicator:
-**PlotN:** PlotN(numeric expression, "plot name", foreground color, background color, width);
+The complete structure of a plot statement for an indicator:  
 
-*Usage Example:*
+**PlotN:** 
+```
+PlotN(numeric expression, "plot name", foreground color, background color, width);
+```
+
+*Usage Example:*  
+```
 Plot1(Close, "The Close", Red, Default, 3);
+```
 
-*Note:** It is generally more useful to set colors and width for an indicator conditionally based on some technical condition than to hard-code colors in the plot statement. There are three reserved words that can be used for this purpose: `SetPlotColor`, `SetPlotBGColor`, and `SetPlotWidth`.
+**Note:** It is generally more useful to set colors and width for an indicator conditionally based on some technical condition than to hard-code colors in the plot statement. There are three reserved words that can be used for this purpose: `SetPlotColor`, `SetPlotBGColor`, and `SetPlotWidth`.
 
 ## PlotPB
 The `PlotPB` statement is a specialized plot statement that is used in PaintBar studies. 
@@ -25,7 +36,10 @@ It instructs Multicharts where to draw on a bar so that the bar is painted a dif
 
 The structure of a PlotPB statement for a PaintBar is:
 
-**PlotPB:** PlotPB(Price Point, Price Point, "plot name");
+**PlotPB:** 
+```
+PlotPB(Price Point, Price Point, "plot name");
+```
 
 *Usage Example1 (paint full bar) :*
 ```
@@ -50,23 +64,27 @@ In these examples the reserved word PlotPB is used to paint the bar a different 
 The `NoPlot` statement removes a specified drawn plot from the current bar. It is most often used to remove ShowMe or PaintBar plots that are no longer true on the current in-progress bar. If a ShowMe or PaintBar condition is true on the real-time in-progress bar, but during the same bar becomes false before the close of the bar, the drawn ShowMe or PaintBar can be removed with NoPlot.
 The structure of a NoPlot statement for an indicator is: 
 
-*NoPlot:* `NoPlot(plot number);`
+*NoPlot:* 
+```
+NoPlot(plot number);
+```
 
-*Usage Example:*
+*Usage Example:*   
 ```
 if (High < Low[1]) Then
     Plot1(Low[1], "GapDown")
-Else
+else
     NoPlot(1) ;
 ```
 
 This ShowMe example marks the low price of a gap-down bar, but removes the ShowMe marker if the condition is no longer true on the real-time bar.
 
-*Usage Example:*
+*Usage Example:*  
 
-```if Close > Average(Close,10) then
+```
+if Close > Average(Close,10) then
           PlotPB(High, Low, "Up Bar")
-Else
+else
     NoPlot(1);
 ```
 
@@ -78,14 +96,15 @@ Displacing plots allows you to visually move any analysis technique plots left o
  
 The structure of a NoPlot statement for an indicator is:
 
-**Plot1[+/-N ] ** Square brackets after the Plot statement are used to indicate the number of bars to displace the plot left or right. Positive = left and Negative = right.
+**Plot1[+/-N ]** Square brackets after the Plot statement are used to indicate the number of bars to displace the plot left or right. Positive = left and Negative = right.
 
-*Usage Example1 (displacing a plot into the future):* 
+*Usage Example1 (displacing a plot into the future):*   
 ```
 Plot1[-5](Average(Close,5), “avg close”);
 ```
 
-*Usage Example2 (displacing a plot historically):*
+*Usage Example2 (displacing a plot historically):*  
+
 ```
 Plot1[5](Average(Close,5), “avg close”);
 ```
