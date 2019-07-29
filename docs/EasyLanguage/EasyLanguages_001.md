@@ -1,3 +1,12 @@
+There are different type of data on Input and on Variables, these types are:
+
+* a Numeric Value
+* A String 
+* A Boolean (true or False)
+
+here and example:
+
+![001_type_of_data.png](../images/001_type_of_data.png)
 
 [001. Power languages tutorial](https://www.abctradinggroup.com/powerlanguage-tutorials-lesson-01/)
 
