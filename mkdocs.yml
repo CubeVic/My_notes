@@ -112,6 +112,7 @@ nav:
 
     - EasyLanguage:
       - EasyLanguage 001: 'EasyLanguage/EasyLanguages_001.md'
+      - Text and Trendlines: 'EasyLanguage/text_trendlines.md'
       - Plot: 'EasyLanguage/Plot.md'  
                
     - Miscellaneous:
