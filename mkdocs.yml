@@ -15,7 +15,7 @@ theme:
   name: 'material'
   language: 'en'
   palette:
-      primary: 'Blue Grey'
+      primary: 'Deep Purple'
       accent: 'Deep Purple'
   font: 
     text: 'Ubuntu'
@@ -25,6 +25,9 @@ theme:
   feature:
       tabs: true
 
+extra_css:
+  - stylesheets/dark_theme.css
+  - stylesheets/codehilite.css
 
 extra_javascript:
   - https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML
@@ -74,6 +77,7 @@ nav:
       - Generator and Iterators: 'Python/Generator and Iterator.md'
       - Useful or researched built-in functions: 'Python/Useful or researched built-in functions.md'
       - Trick and tips for better code in python: 'Python/Tricks_tips_better_code_python.md'
+      - Virtual Environments: 'Python/virtual_environments.md'
       - Algorithm:
           - Magic Square: 'Python/Algorithm/Magic_square.md'
 

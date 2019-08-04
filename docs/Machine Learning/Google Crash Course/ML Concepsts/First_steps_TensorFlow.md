@@ -42,7 +42,7 @@ Many of the coding exercises contain the following hyperparameters:
 The following formula applies:
 
 $$
-total_number_of_trained_examples = batch size * steps
+total\ number\ of\ trained\ examples = batch\ size * steps
 $$
 
 

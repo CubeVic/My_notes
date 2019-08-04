@@ -16,5 +16,57 @@ I'm using MkDocs to generate this "documentation" more information visit [mkdocs
 * `![Name of the image](/images/nameImage.png)` -  to add an image 
 * `[text](URL)` to add a link to a text 
 
+## Math
+
+To add inline math you can use `$` and close it `$`, like `$...$`
+
+## Modification to the dark theme
+
+### TOC visited links
+I made a modification on the **dark_theme.css**
+
+```css
+/*
+/////////////////////////////
+/// visited links on toc ////
+////////////////////////////
+
+Modification by: Victor Fernandez
+Description: modification of the visited links on TOC to 
+              solve contrast issue
+*/
+
+.md-nav__link:visited{
+  color: #808080;
+}
+
+.md-nav__link[data-md-state=blur] {
+    color: #808080;
+}
+```
+This modification wants to change the color of the visited links in the TOC, by default this visited link ( or permalinks) are black, this black color against black background present low contrast, thus it is difficult to read, therefore the modification.
+
+### Blockquote 
+
+block quote has the same problem with the contrast, like the visited link in toc, thus these changes in the **dark_theme.css** file
+
+```css
+/*
+////////////////////
+/// Blockquote/////
+///////////////////
+
+Modification by: Victor Fernandez
+Description: modification of the blockquote to 
+              solve contrast issue
+*/
+
+.md-typeset blockquote {
+  color: #808080;
+  border-left-width: 0.2rem;
+  border-left-style: solid;
+  border-left-color: #808080;
+}
+```
 
 >"To every man upon this earth, death cometh soon or late, And how can man die better, Than facing fearful odds, for the ashes of his fathers, And the temples of his gods." 
