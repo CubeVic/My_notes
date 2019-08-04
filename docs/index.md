@@ -18,7 +18,9 @@ I'm using MkDocs to generate this "documentation" more information visit [mkdocs
 
 ## Math
 
-To add inline math you can use `$` and close it `$`, like `$...$`
+* To add inline math you can use `$` and close it `$`, like `$...$`
+* To add a block of math we use `$$$` and close with `$$$`
+* In case that you need to add a white space inside this blocks you will need to escape it, example `training\ batch`
 
 ## Modification to the dark theme
 
