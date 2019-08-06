@@ -26,9 +26,14 @@ now a Folder with the name of the environment it is going to be created, the fir
 
 and later call the `activate` file that is inside the `bin` directory 
 
-```
+``` 
+// on Mac
 cd /Users/victoraguirre/Documents/026.workspace_Python/virtualenv
 source bin/activate
+
+// On windows
+call /Users/victoraguirre/Documents/026.workspace_Python/virtualenv
+source bin/activate.bat
 ```
 
 ![virtual_environments_004](../images/virtual_environments_004.png)
