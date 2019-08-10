@@ -118,8 +118,9 @@ nav:
 
     - EasyLanguage:
       - EasyLanguage 001: 'EasyLanguage/EasyLanguages_001.md'
+      - Functions: 'EasyLanguage/functions.md'
+      - Plot: 'EasyLanguage/Plot.md'
       - Text and Trendlines: 'EasyLanguage/text_trendlines.md'
-      - Plot: 'EasyLanguage/Plot.md'  
                
     - Miscellaneous:
       - Aliases in Windows command prompt: 'Miscellaneous/Aliases_in_Windows_command_prompt.md'
