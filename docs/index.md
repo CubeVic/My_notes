@@ -16,6 +16,16 @@ I'm using MkDocs to generate this "documentation" more information visit [mkdocs
 * `![Name of the image](/images/nameImage.png)` -  to add an image 
 * `[text](URL)` to add a link to a text 
 
+## Deploy the MKDocs
+
+The project pages site will be deploy in other branch called 'gh-deploy', run the following command:
+
+```bash
+mkdocs gh-deploy
+```
+
+That's it! Behind the scenes, MkDocs will build your docs and use the ghp-import tool to commit them to the gh-pages branch and push the gh-pages branch to GitHub.
+
 ## Math
 
 * To add inline math you can use `$` and close it `$`, like `$...$`
