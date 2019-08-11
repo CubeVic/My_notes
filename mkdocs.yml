@@ -121,6 +121,9 @@ nav:
       - Functions: 'EasyLanguage/functions.md'
       - Plot: 'EasyLanguage/Plot.md'
       - Text and Trendlines: 'EasyLanguage/text_trendlines.md'
+
+    - Arduino:
+      - Basics: 'Arduino/Basics.md'
                
     - Miscellaneous:
       - Aliases in Windows command prompt: 'Miscellaneous/Aliases_in_Windows_command_prompt.md'

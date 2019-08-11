@@ -1,0 +1,106 @@
+code of Part 02
+// ————— PART 2 —————
+
+const int ledPin = 13;
+
+// 6. Arrays & Strings
+// Arrays can contain many values which are accessed using
+// their index starting at 0
+
+// We'll create an array of numbers that will set how many times
+// the LED blinks
+int numOfBlinks[] = {1,2,3,4};
+
+void setup() {
+  Serial.begin(9600);
+  pinMode(ledPin, OUTPUT);
+
+}
+
+void loop() {
+  
+  int delayPeriod = 1000;
+
+  // Change a value in the array
+  numOfBlinks[0] = 5;
+
+  // You can define an array size
+  int array2[10];
+  
+  // You can store a string of characters or a String
+  // A string ends with a \0 Null
+  char array3[] = "Derek";
+
+  // Strings are normally assigned this way and this is 
+  // actually a pointer that points to the first chars address
+  // in the char array
+  char *str = "Bananas";
+
+  // You can print the string
+  Serial.println(str);
+
+  // There is also a String object with many functions
+  String myName = "Derek Bananas";
+
+  // You can combine strings
+  Serial.println("Name : " + myName);
+
+  // Get length
+  Serial.println(myName.length());
+
+  // Check equality (also equalsIgnoreCase())
+  Serial.println(myName.equals("Derek"));
+
+  // Get a character at an index
+  Serial.println(myName.charAt(6));
+
+  // Get index of match
+  Serial.println(myName.indexOf('B'));
+
+  // Remove starting at index and the number of items to remove
+  myName.remove(0, 6);
+  Serial.println(myName);
+
+  // Replace 1 substring with another
+  myName.replace("nas", "s");
+  Serial.println(myName);
+
+  // Get a substring
+  Serial.println(myName.substring(0,3));
+
+  // Change to upper and lowercase
+  myName.toUpperCase();
+  Serial.println(myName);
+  myName.toLowerCase();
+  Serial.println(myName);
+
+  // Convert String to int or float with toFloat()
+  String one = "1";
+  int num1 = one.toInt();
+  int sum = num1 + num1;
+  Serial.println(sum);
+
+  // Cycle through array
+  for(int i = 0; i < 5; i++){
+    Serial.print(array3[i]);
+  }
+
+  // Cycle through each number of blinks in the array
+  for(int i = 0; i < 4; i++){
+    blinkLED(numOfBlinks[i]);
+    delay(delayPeriod);
+  }
+  
+}
+
+// Blink lights with a delay a set number of times
+void blinkLED(int numOfBlinks){
+  for(int j = 0; j < numOfBlinks; j++){
+    digitalWrite(ledPin, HIGH);
+    delay(400);
+    digitalWrite(ledPin, LOW);
+    delay(400);
+  }
+}
+
+// ————— END PART 2 —————

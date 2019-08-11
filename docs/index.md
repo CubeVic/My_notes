@@ -81,4 +81,21 @@ Description: modification of the blockquote to
 }
 ```
 
+## Modifications to codehilite.css
+
+In order to change how the inline code ( `this` in line code ) and solve the contrast problems ( before was black) I made a change in  Codehilite.css, as follow:
+
+```css
+/*
+/////////////////
+// Inline Code //
+/////////////////
+*/
+.md-typeset code {
+  color: #ae81ff !important;
+  background-color: #313131 !important;
+  box-shadow: 0.29412em 0 0 rgba(0,0,0,.07), -0.29412em 0 0 rgba(0,0,0,.07);
+}
+```
+
 >"To every man upon this earth, death cometh soon or late, And how can man die better, Than facing fearful odds, for the ashes of his fathers, And the temples of his gods." 

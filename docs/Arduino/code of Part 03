@@ -1,0 +1,202 @@
+code of Part 03
+// ————— PART 3 —————
+
+
+void setup() {
+  Serial.begin(9600);
+  
+  // Switch performs different actions based on a limited
+  // number of possible values
+  char grade = 'Z';
+  switch(grade){
+    case 'A':
+      Serial.println("Great");
+      break;
+    case 'B':
+      Serial.println("Good");
+      break;
+    case 'C':
+      Serial.println("Average");
+      break;
+    case 'D':
+      Serial.println("Bad");
+      break;
+    case 'F':
+      Serial.println("Terrible");
+      break;
+    default:
+      Serial.println("Confused");
+      break;
+  }
+
+  // Print all odds until i == 14 then quit
+  int i = 0;
+  while(i < 20){
+
+    // If odd print (Modulus returns 0 with evens)
+    if(i % 2){
+      Serial.println(i);
+      i++;
+
+      // Skips rest of the while loop
+      continue;
+    } 
+    
+    if(i == 14){
+      // Jump out of while loop
+      break;
+    }
+    i++;
+  }
+
+  Serial.println(5 + 2);
+  Serial.println(5 - 2);
+  Serial.println(5 * 2);
+  Serial.println(5 / 2);
+  Serial.println(5 % 2);
+
+  // Absolute value
+  Serial.println(fabs(-2));
+
+  // Min & Max
+  Serial.println(fmin(2.5,3));
+  Serial.println(fmax(2.5,3));
+  
+  // Rounding
+  Serial.println(round(2.5));
+  Serial.println(floor(2.5));
+  Serial.println(ceil(2.5));
+
+  // Square Root
+  Serial.println(sqrt(25));
+
+  // Square
+  Serial.println(square(3));
+
+  // Power
+  Serial.println(pow(5, 2));
+
+  // Cube Root
+  Serial.println(cbrt(8));
+
+  // Logarithm
+  Serial.println(log(2.718));
+  Serial.println(log10(1000));
+
+  // Constrain a value between a range
+  // If (x, a, b) 
+  // Return x if x is between a & b
+  // Return a if x < than a
+  // Return b if x > than b
+  Serial.println(constrain(5, 1, 6));
+
+  // Trig Functions
+  Serial.println(sin(1.57));
+  Serial.println(cos(1.57));
+  Serial.println(tan(3.14));
+  Serial.println(sinh(1.57));
+  Serial.println(cosh(1.57));
+  Serial.println(tanh(1.57));
+  Serial.println(asin(1.57));
+  Serial.println(acos(1.57));
+  Serial.println(atan(1.57));
+  
+  // Generate 10 random numbers between 1 to 9
+  // Initialize the random number generator with
+  // a random seed value using an unconnected pin
+  // which has a floating value
+  randomSeed(analogRead(0));
+  for(int i = 0; i < 10; i++){
+    Serial.println(random(1,10));
+  }
+
+  // Bit Manipulation
+  // Their are 8 bits in a byte
+  // A bit (Binary Digit) has a value of 0 or 1
+  // 1111 = 1*2^3 + 1*2^2 + 1*2^1 + 1*2^0
+  // 15 = 8 + 4 + 2 + 1
+
+  // Return 1 if both are 1 with &
+  int bin1 = 0b10101010; // 170
+  int bin2 = 0b11111111; // 255
+  Serial.println(bin1 & bin2); // 170
+
+  // Return 1 if either are 1
+  Serial.println(bin1 | bin2); // 255
+
+  // XOR returns 1 only if one is 1 and other is 0
+  Serial.println(bin1 ^ bin2); // 85
+
+  // Bitwise not converts each to its opposite
+  Serial.println(~0b0111); // -8 because highest bit 
+  // (sign bit) was changed to 1 making it negative
+
+  // Shift bits right
+  Serial.println(bin2 >> 2); // 00111111 = 63
+
+  // Shift bits left
+  Serial.println(bin2 << 2); // 1111111100 = 1020
+
+  // Structs allow you to create custom data types
+  struct RGB{
+    byte red;
+    byte green;
+    byte blue;
+  };
+
+  RGB color = {0,255,0};
+  if(color.red == 0 && color.green == 255 && color.blue == 0){
+    Serial.println("It's Green");
+  }
+
+  // sprintf creates formatted strings
+  printTime(1, 12);
+
+  // Pointers
+  // A pointer refers to a memory location of a variable
+
+  // Create a pointer for an int
+  int *ptr;
+  int val1 = 15;
+
+  // Store the memory location in a pointer
+  ptr = &val1;
+
+  // Print the value pointed at
+  Serial.println(*ptr);
+
+  // An array is a pointer
+  int primes[] = {2,3,5,7};
+
+  // Print the 1st index
+  Serial.println(*primes);
+
+  // Print the 2nd index
+  Serial.println(*primes + 1);
+
+  // Pass an array to a function
+  printArray(primes, 4);
+}
+
+void loop() {
+  // put your main code here, to run repeatedly:
+
+}
+
+void printTime(int hour, int minute){
+  // Will store the time in a char array
+  char buffer[6] = "";
+
+  // ints with a : between 02 guarantees 2 digits show
+  sprintf(buffer, "%02d:%02d", hour, minute);
+  Serial.println(buffer);
+}
+
+// Prints out the array
+void printArray(int arr[], int size){
+  for(int i = 0; i < size; i++){
+    Serial.println(arr[i]);
+  }
+}
+
+// ————— END PART 3 —————
