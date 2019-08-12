@@ -105,7 +105,7 @@ if __name__ = "__main__":
 
 And the result will be like:
 
-![create_excel_files_001](../images/create_excel_files_001.png)
+![create_excel_files_001](../images/create_excel_files_001.png){: .center}
 
 ### Updating a CSV files
 
@@ -301,7 +301,7 @@ ws = wb.active
 ws1 = wb.create_sheet("second sheet")
 ```
 
-![scripts_pythonExcel_001](../images/create_excel_files_002.png)
+![scripts_pythonExcel_001](../images/create_excel_files_002.png){: .center}
 
 We can use the `create_sheet("name of the sheet")` and by defautl the sheet will be created after the previous sheet, but if we want to insert the sheet in a specific spot we can use `create_sheet("name of the sheet",0)` in this case this sheet will be insert in the first spot.
 
@@ -317,7 +317,7 @@ ws1 = wb.create_sheet("second sheet")
 #change the name of the first sheet
 ws.title = "first sheet"
 ```
-![create_excel_files_003](../images/create_excel_files_003.png)
+![create_excel_files_003](../images/create_excel_files_003.png){: .center}
 
 
 ### Save the workbook
@@ -351,7 +351,7 @@ For more details or tutorial we can visit [openpyxl documentation](https://openp
 
 Now, we are going to work with an existing file called "*customers1.xlsx*", this look like this:
 
-![create_excel_files_004](../images/create_excel_files_004.png)
+![create_excel_files_004](../images/create_excel_files_004.png){: .center}
 
 The file contain 6 columns and 11 rows, We are going to import it and:
 
@@ -367,7 +367,7 @@ print(theFile.sheetnames)
 ```
 the result:
 
-![create_excel_files_005](../images/create_excel_files_005.png)
+![create_excel_files_005](../images/create_excel_files_005.png){: .center}
 
 We got the file, and display the sheets names, now step 2 and 3, Save the current sheet in a variable and print the value of the cell B4.
 
@@ -381,7 +381,7 @@ current_sheet = theFile['customers 1']
 print(current_sheet['B4'].value)
 ```
 
-![create_excel_files_006](../images/create_excel_files_006.png)
+![create_excel_files_006](../images/create_excel_files_006.png){: .center}
 
 
 there is hardcoded values in this script which make it not that flexible, but we can make modifications in the future, for now we are going to do the following:

@@ -25,6 +25,8 @@ theme:
   feature:
       tabs: true
 
+use_directory_urls: false
+
 extra_css:
   - stylesheets/dark_theme.css
   - stylesheets/codehilite.css
@@ -40,6 +42,7 @@ markdown_extensions:
   - footnotes
   - pymdownx.details
   - attr_list
+  - smarty
   - pymdownx.betterem:
       smart_enable: all
   - pymdownx.tasklist:
