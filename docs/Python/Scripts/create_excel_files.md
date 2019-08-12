@@ -384,11 +384,47 @@ print(current_sheet['B4'].value)
 ![create_excel_files_006](../images/create_excel_files_006.png)
 
 
+there is hardcoded values in this script which make it not that flexible, but we can make modifications in the future, for now we are going to do the following:
 
+* Read the file
+* Get all sheet names
+* Loop through all sheets
+* In the last step, the code will print values that are located in B4 fields of each found sheet inside the workbook.
 
+```python
+import openpyxl as opxl
 
+the_File = opxl.load_workbook('Customers1.xlsx')
+print(the_File.sheetnames)
 
+all_sheets = the_File.sheetnames
 
+for x in all_sheets:
+	current_sheet = the_File[x]
+	print(current_sheet['B4'].value)
+```
+
+Next, We will use the string `'ABCDEF'` to create a loop through the content of each sheet.
+
+```python
+import openpyxl as opxl
+
+the_File = opxl.load_workbook('Customers1.xlsx')
+print(the_File.sheetnames)
+
+columns_marks = 'ABCDEF'
+
+all_sheets = the_File.sheetnames
+
+for x in all_sheets:
+	current_sheet = the_File[x]
+	for row in range(1, current_sheet.max_row + 1):
+		for column in columns_marks:
+			cell_name = "{}{}".format(column, row) # creat the structure B4 or C4 etc
+			print("Cell Position: {} has the value {}".format(cell_name,current_sheet[cell_name].value))
+```
+
+![create_excel_files_007](../images/create_excel_files_007.png){: .center}
 
 
 

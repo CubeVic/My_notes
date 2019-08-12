@@ -32,6 +32,34 @@ That's it! Behind the scenes, MkDocs will build your docs and use the ghp-import
 * To add a block of math we use `$$$` and close with `$$$`
 * In case that you need to add a white space inside this blocks you will need to escape it, example `training\ batch`
 
+## extra.css
+
+This is a file to customize the theme without modify the original files, I modify the following:
+
+1. Center the images:
+
+
+### 1. Center the image
+
+To center the images first, I added the `markdown extension` called `attr_list`, later create the following modification on the `extra.css`
+
+```css
+/*
+///////////////////////
+// To center images////
+///////////////////////
+*/
+
+.center {
+    display: block;
+    margin: 0 auto;
+}
+```
+
+now to center the image I just need to add "{: .center}" at the end of the statement, for example:
+
+`![Name of the image](/images/nameImage.png).{: .center}`
+
 ## Modification to the dark theme
 
 ### TOC visited links
