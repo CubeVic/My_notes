@@ -248,22 +248,121 @@ if __name__ = "__main__":
 
 ```
 
+## The xlsx File 
 
 
+This will be an enhancement of the previous part, that doesn't mean previous part is not a solution, just that this solution will include [*openpyxl*](https://openpyxl.readthedocs.io/en/stable/)  which is a all in one solution to work with worksheets, loading, updating m renaming and deleting them.
 
 
+### Basic terminology 
+
+* WorkBook is the name for a an Excel file in `openpyxl`.
+* A workbook consist of sheets( default is 1 sheet). sheets are referenced by their names.
+* A Sheet consist of rows ( horizontal lines) starting from the number 1 and columns ( vertical lines) starting the letter A.
+* Rows and columns result in a grid and form cells which may contain some data ( numerical or string value) or formulas.
 
 
+## First Steps with openpyxl
+
+First we need to install `openpyxl` this can be done using `pip`
+
+```Bash
+pip install openpyxl
+```
+
+For the most basic usage, this been creating a new workbook with just one sheet
+
+### Create a workbook
+
+To create a workbook we can use the function `Workbook()`
+
+```python
+from openpyxl import WorkBook
+wb = Workbook()
+```
+now, we need to create the first sheet, the following statement is just for the first sheet
+
+```python
+from openpyxl import WorkBook
+wb = Workbook()
+
+ws = wb.active
+```
+
+by default the name of the sheet will be "sheet" and a number, so the first sheet will be "sheet", the second "Sheet1", etc. 
+
+Now, we have the workbook and the first sheet, what about the second sheet?, To create the second sheet and all the following sheets, we use `create_sheet("name of the sheet")`
+
+```python
+from openpyxl import WorkBook
+wb = Workbook()
+
+ws = wb.active
+ws1 = wb.create_sheet("second sheet")
+```
+
+![scripts_pythonExcel_001](../images/create_excel_files_002.png)
+
+We can use the `create_sheet("name of the sheet")` and by defautl the sheet will be created after the previous sheet, but if we want to insert the sheet in a specific spot we can use `create_sheet("name of the sheet",0)` in this case this sheet will be insert in the first spot.
+
+At any moment we can change the title of the sheet using `.title` as follow
+
+```python
+from openpyxl import WorkBook
+wb = Workbook()
+
+ws = wb.active
+ws1 = wb.create_sheet("second sheet")
+
+#change the name of the first sheet
+ws.title = "first sheet"
+```
+![create_excel_files_003](../images/create_excel_files_003.png)
 
 
+### Save the workbook
+
+To save the workbook, first we need to give it a name `dest_filename = "name of the file"`, later, we use the function `save(filename="name of the workbook")`
+
+```python
+from openpyxl import Workbook
+
+# Creating the workbook
+wb = Workbook()
+
+# the name of the file 
+dest_filename = 'test_openpyxl.xlsx'
+
+ws = wb.active
+ws1 = wb.create_sheet("second sheet")
+
+#change the name of the first sheet
+ws.title = "first sheet"
+
+wb.save(filename = dest_filename)
+```
+
+For more details or tutorial we can visit [openpyxl documentation](https://openpyxl.readthedocs.io/en/stable/tutorial.html)
+
+> we just saw how to create a workbook, now, for this example, we are going to focus in manipulate a workbook that already exist, for that reason we will create one called "Customers1.xlsx" and continue working on it
 
 
+### Working with xlsx files
 
+Now, we are going to work with an existing file called "*customers1.xlsx*", this look like this:
 
+![create_excel_files_004](../images/create_excel_files_004.png)
 
+The file contain 6 columns and 11 rows, We are going to import it and:
 
+1. Print the sheets name
+2. save the current sheet on the variable `current_Sheet`
+3. print the value of the second column and 4 row (B4).
 
+```python
+import openpyxl
 
+```
 
 
 
