@@ -360,9 +360,28 @@ The file contain 6 columns and 11 rows, We are going to import it and:
 3. print the value of the second column and 4 row (B4).
 
 ```python
-import openpyxl
+import openpyxl as opxl
 
+theFile = opxl.load_workbook('Customers1.xlsx')
+print(theFile.sheetnames)
 ```
+the result:
+
+![create_excel_files_005](../images/create_excel_files_005.png)
+
+We got the file, and display the sheets names, now step 2 and 3, Save the current sheet in a variable and print the value of the cell B4.
+
+```python
+import openpyxl as opxl
+
+theFile = opxl.load_workbook('Customers1.xlsx')
+print(theFile.sheetnames)
+
+current_sheet = theFile['customers 1']
+print(current_sheet['B4'].value)
+```
+
+![create_excel_files_006](../images/create_excel_files_006.png)
 
 
 
