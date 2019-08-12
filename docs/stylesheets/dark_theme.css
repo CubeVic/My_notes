@@ -31,42 +31,6 @@ tbody {
   background-color: #484848 !important;
 }
 
-/*
-////////////////////
-/// Blockquote/////
-///////////////////
-
-Modification by: Victor Fernandez
-Description: modification of the blockquote to 
-              solve contrast issue
-*/
-
-.md-typeset blockquote {
-  color: #808080;
-  border-left-width: 0.2rem;
-  border-left-style: solid;
-  border-left-color: #808080;
-}
-
-/*
-////////////////////
-// Navigation bar //
-////////////////////
-*/
-
-/*
-Left and right toc scrollbar
-*/
-.md-sidebar__scrollwrap::-webkit-scrollbar-thumb {
-  background-color: #E0E0E0 !important;
-}
-
-
-
-.md-nav {
-  color: #F5F5F5 !important;
-  background-color: #212121 !important;
-}
 
 
 
@@ -99,23 +63,6 @@ Arrow Right Icon
   background-color: #212121 !important;
 }
 
-/*
-/////////////////////////////
-/// visited links on toc ////
-////////////////////////////
-
-Modification by: Victor Fernandez
-Description: modification of the visited links on TOC to 
-              solve contrast issue
-*/
-
-.md-nav__link:visited{
-  color: #808080;
-}
-
-.md-nav__link[data-md-state=blur] {
-    color: #808080;
-}
 
 /*
 ////////////

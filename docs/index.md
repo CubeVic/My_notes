@@ -63,7 +63,7 @@ now to center the image I just need to add "{: .center}" at the end of the state
 ## Modification to the dark theme
 
 ### TOC visited links
-I made a modification on the **dark_theme.css**
+I made a modification on the **extra.css** to overwrite **dark_theme.css**
 
 ```css
 /*
@@ -88,7 +88,7 @@ This modification wants to change the color of the visited links in the TOC, by 
 
 ### Blockquote 
 
-block quote has the same problem with the contrast, like the visited link in toc, thus these changes in the **dark_theme.css** file
+block quote has the same problem with the contrast, like the visited link in toc, thus these changes in the **extra.css** to overwrite **dark_theme.css** file
 
 ```css
 /*
@@ -109,9 +109,9 @@ Description: modification of the blockquote to
 }
 ```
 
-## Modifications to codehilite.css
+## Modifications to codehilite.css (extra.css)
 
-In order to change how the inline code ( `this` in line code ) and solve the contrast problems ( before was black) I made a change in  Codehilite.css, as follow:
+In order to change how the inline code ( `this` in line code ) and solve the contrast problems ( before was black) I made a change in **extra.css** that overwrite the original **codehilite.css** code, as follow:
 
 ```css
 /*
