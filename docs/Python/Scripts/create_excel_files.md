@@ -427,15 +427,92 @@ for x in all_sheets:
 ![create_excel_files_007](../images/create_excel_files_007.png){: .center}
 
 
+### Rudimentary way to find content of a column 
+
+The idea will be find the content of the column named "telephone" and display its content.
+For that we will start by creating a function that will hold the loops, this loops will look row by row and column by column until we found the column named "telephone"
+
+```python
+
+def find_specific_cell():
+	for row in range(1, current_sheet.max_row + 1):
+		for column in columns_marks:
+			cell_name = "{}{}".format(column,row)
+			if current_sheet[cell_name].value == "telephone":
+				return cell_name
+```
+
+now with the function, we can create a loop that iterate over the different sheets looking for the specific column that we are looking for
+
+```python
+for sheet in all_sheets:
+	current_sheet =  the_File[sheet]
+	print(find_specific_cell)
+```
+
+so the script including this new function will be:
+
+```python
+import openpyxl as opxl
+
+the_File = opxl.load_workbook('Customers1.xlsx')
+print(the_File.sheetnames)
+
+columns_marks = 'ABCDEF'
+
+all_sheets = the_File.sheetnames
+
+def find_specific_cell():
+	for row in range(1, current_sheet.max_row + 1):
+		for column in columns_marks:
+			cell_name = "{}{}".format(column, row) # create the structure B4 or C4 etc
+			if  current_sheet[cell_name].value == "telephone":
+				return cell_name
+
+for sheet in all_sheets:
+	print("Current sheet is: {}".format(sheet))
+	current_sheet = the_File[sheet]
+	print(find_specific_cell())
+```
+
+![create_excel_files_008](../images/create_excel_files_008.png){: .center}
+
+so, with few modification and the creation of the second functions we have 
+
+```python 
+
+import openpyxl as opxl
+
+the_File = opxl.load_workbook('Customers1.xlsx')
+print(the_File.sheetnames)
+
+columns_marks = 'ABCDEF'
+
+#adding all the sheets to this variable
+all_sheets = the_File.sheetnames
+
+def find_specific_cell():
+	for row in range(1, current_sheet.max_row + 1):
+		for column in columns_marks:
+			cell_name = "{}{}".format(column, row) 
+			if  current_sheet[cell_name].value == "telephone":
+				return (cell_name,column)
+
+def print_all(cell_name):
+	_ , column_letter = cell_name
+	for row in range(1, current_sheet.max_row +1):
+		cell = column_letter + str(row)
+		print(current_sheet[cell].value)
+
+for sheet in all_sheets:
+	print("Current sheet is: {}".format(sheet))
+	current_sheet = the_File[sheet]
+	cell = find_specific_cell()
+	print(print_all(cell))
+```
 
 
 
-
-
-
-
-
-
-
+![create_excel_files_009](../images/create_excel_files_009.png){: .center}
 
 
