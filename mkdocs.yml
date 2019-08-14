@@ -123,6 +123,7 @@ nav:
 
     - EasyLanguage:
       - EasyLanguage 001: 'EasyLanguage/EasyLanguages_001.md'
+      - How Scripts Work: 'EasyLanguage/how_script_works.md'
       - Functions: 'EasyLanguage/functions.md'
       - Plot: 'EasyLanguage/Plot.md'
       - Text and Trendlines: 'EasyLanguage/text_trendlines.md'
