@@ -11,11 +11,11 @@ $ sudo rasp-config
 we are going to access to the configuration, after the command a menu will be display and we can select the option "Advance Options"
 
 
-![001_Advance_Options](../images/001_Advance_Options.jpg)
+![001_Advance_Options](images/001_Advance_Options.jpg)
 
 next, we select the option "Expand filesystem"
 
-![002_Expand_filesystem](../images/002_Expand_filesystem.jpg)
+![002_Expand_filesystem](images/002_Expand_filesystem.jpg)
 
 once we select we option we can go t **<Finish>** and reboot the unit
 
@@ -24,7 +24,7 @@ $ sudo reboot
 ```
 after the reboot the available space will expand, this can be verify using the command `df -h` 
 
-![003_df_command](../images/003_df_command.png)
+![003_df_command](images/003_df_command.png)
 
 This might not be enough, therefore we will proceed to remove libreOffice and Wolfram engine to make more room.
 

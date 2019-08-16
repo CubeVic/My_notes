@@ -3,11 +3,11 @@ Functions on easylanguage are similar to functions in other languages, not in sy
 ## Making a Function
 to make a function we need to go to File -> New and select function:
 
-![functions_001](../images/functions_001.png)
+![functions_001](images/functions_001.png)
 
 the next screen will display the options for the name of the function, the return type and the function storage 
 
-![functions_002](../images/functions_002.png)
+![functions_002](images/functions_002.png)
 
 ### The name 
 like in other languages the function name should be descriptive and not contain special characters with the exception of underscore

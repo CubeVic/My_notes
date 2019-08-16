@@ -89,7 +89,7 @@ $ python manage.py makemigrations polls
 ```
 and we will have a result like this:
 
-![003_makemigrations](../images/003_makemigrations.png)
+![003_makemigrations](images/003_makemigrations.png)
 
 the command `makemigrations` tell Django that you've made some changes to your models(in this case we make a new one)
 

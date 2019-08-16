@@ -60,7 +60,7 @@ pic_arr.shape
 ```
 you will get 
 
-![001.image_from_npArray_using_matplotlib](../images/001.image_from_npArray_using_matplotlib.png)
+![001.image_from_npArray_using_matplotlib](images/001.image_from_npArray_using_matplotlib.png)
 
 `plt.imshow(image_numpy_array)` the *plt.imshow* is a special function from  *matplotlib* use to display images that are in a Numpy array format.
 
@@ -75,7 +75,7 @@ plt.imshow(pic_red)
 ```
 the result will be 
 
-![002.image_red_001](../images/002.Image_red_001.png)
+![002.image_red_001](images/002.Image_red_001.png)
 
 ```python
 pic_red.shape
@@ -89,7 +89,7 @@ We can display the image in gray scale, but the question will be, Gray?, we are 
 ```python
 plt.imshow(pic_red, cmap='gray')
 ``` 
-![003.image_red_002](../images/003.Image_red_002.png)
+![003.image_red_002](images/003.image_red_002.png)
 
 we can see the difference when we get the other colors, green and blue
 
@@ -99,7 +99,7 @@ pic_green = pic_arr.copy()
 pic_green = pic_green[:,:,1]
 plt.imshow(pic_green, cmap = 'gray')
 ```
-![004.image_green](../images/004.image_green.png)
+![004.image_green](images/004.image_green.png)
 **Green**
 
 ```python
@@ -107,11 +107,11 @@ pic_blue = pic_arr.copy()
 pic_blue = pic_blue[:,:,2]
 plt.imshow(pic_blue, cmap = 'gray')
 ```
-![005.image_blue](../images/005.image_blue.png)
+![005.image_blue](images/005.image_blue.png)
 
 now comparing the 3 images
 
-![006.image_compare](../images/006.image_compare.png)
+![006.image_compare](images/006.image_compare.png)
 
 Then we can say that in each channel, the closest is the pixel to the color of the channel, closest to 255, and closest to white, for example, in the image of the red channel, the parts of the picture that are more white means that they contain more red, and those that are black means that contain no red. This is mapping the color to a gray scale, but we are not removing the contribution of the colors.
 
@@ -125,7 +125,7 @@ pic_red_real[:,:,1] = 0
 pic_red_real[:,:,2] = 0
 plt.imshow(pic_red_real)
 ```
-![007.image_real_red](../images/007.image_real_red.png)
+![007.image_real_red](images/007.image_real_red.png)
 
 and if we check the shape
 

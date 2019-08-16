@@ -6,7 +6,7 @@ One thing, we can see from the previous exercise is that there is a lot of waste
 
 To use an analogy, in image processing normally involve having a filter and passing that filter over the image in order to change the underlying image.
 The convolution will work in a similar way.
- ![Convolution](../images/convolution.png)
+ ![Convolution](images/convolution.png)
 
 **The process** will be a little bit like this:
 
@@ -42,18 +42,18 @@ $$ New pixel = (-1 * 0)+(0 * 64)+(-2 * 128)+(0.5 * 48)+(4.5 * 192)+(-1.5 * 144)+
 
 The idea here is that some convolutions will change the image in such a way that certain features in the image get emphasized. So, for example, if you look at this filter. 
 
-![vertical line](../images/vertical_line.png)
+![vertical line](images/vertical_line.png)
 
 
 Then the vertical lines in the image really pop out.
 
-![horizontal line](../images/horizontal_line.png)
+![horizontal line](images/horizontal_line.png)
 
 Now with this filter, the horizontal lines pop out. 
 
 When convolution is combine with something call *pooling* they will become really powerful, a quick and easy way to do this, is to go over the image of four pixels at a time, of these four, pick the biggest value and keep just that. So, for example: 
 
-![pooling](../images/pooling.png)
+![pooling](images/pooling.png)
 
 So 16 pixels on the left are turned into the four pixels on the right, by looking at them in two-by-two grids and picking the biggest value. This will preserve the features that were highlighted by the convolution, while simultaneously quartering the size of the image. We have the horizontal and vertical axes.
 
@@ -121,30 +121,30 @@ model.summary()
 
 this allow use to inspect the layers of the model and see the journey of the image through the convolution.
 
-![summary method](../images/summary.png)
+![summary method](images/summary.png)
 
 
 the table is showing  the layer and some details about them, including the output, one of the most important columns is the output shape, one things that we will notice is:
 
-![first layer conv](../images/first_layer_conv.png)
+![first layer conv](images/first_layer_conv.png)
  
 the output shape isn't 28x28 instead 26x26, remember the filter is 3x3, so if we are trying to scan a picture we won't be able to scan form the top left corner, because  it doesn't have any neighbors.
 
- ![top left corner](../images/top_left.png)
+![top left corner](images/top_left.png)
 
 we will need to start from one pixel down and one pixel to the right
 
-![new pixel start](../images/new_pixel_start.png)
+![new pixel start](images/new_pixel_start.png)
 
 this means we cant use a one pixel margin all around the image, so the output of the convolution will be 2 pixel smaller in `x`  and 2 pixel smaller in `y`, if we use a filter 5x5 the output will be smaller, but in a filter 3x3 the output shape of an input of 28x28 will be 26x26. 
 
 The next, is the first max-pooling layer. We specified it to be *two-by-two*, thus turning four pixels into one, so now the output get reduced from 26 by 26, to 13 by 13. 
 
-![first maxpooling](../images/first_maxpooling.png)
+![first maxpooling](images/first_maxpooling.png)
 
 The next convolution will operate in this, losing one margin as before, and we are down to 11 by 11, add another *two-by-two* max-pooling layers, rounding down, and we when down to a image of 5 by 5 instead of 28 by 28. 
 
-![second Layers](../images/second_layers.png)
+![second Layers](images/second_layers.png)
 
 The Number of convolutions per image, in this case 64 (filters) and size  five-by-five pixels are fed in to the Flatten, that will output 25 pixels times 64, which is 1600. Then the flattened layer will get 1,600 elements in it, as opposed to the 784 that you had previously. This number is impacted by the parameters that you set when defining the convolutional 2D layers.
 

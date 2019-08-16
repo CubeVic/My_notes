@@ -125,4 +125,4 @@ for tweet in public_tweets:
 		print('Neutral')
 ```
 
-![001_twitter_sentiment](../images/001_twitter_sentiment.png)
+![001_twitter_sentiment](images/001_twitter_sentiment.png)

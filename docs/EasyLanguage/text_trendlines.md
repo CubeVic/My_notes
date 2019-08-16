@@ -35,7 +35,7 @@ once
 
 the result will be something like:
 
-![text_trendinglines_001](../images/text_trendinglines_001.png)
+![text_trendinglines_001](images/text_trendinglines_001.png)
 
 there are some characteristics of the line that we can change, those will be:
 
@@ -43,7 +43,7 @@ there are some characteristics of the line that we can change, those will be:
 * Size: TL_SetSize(TLID, size); size will be from 0 to 6
 * Style: TL_SetStyle(TLID, Style) for the style we have 5 different types, we can use reserve words or numbers as bellow
 
-![text_trendinglines_002](../images/text_trendinglines_002.png)
+![text_trendinglines_002](images/text_trendinglines_002.png)
 
 so let see how the statement change after adding this settings
 
@@ -56,7 +56,7 @@ TLID =  TL_New(Date[10], Time[10], Close, Date, Time, Close);
 
 and the result will be similar to this:
 
-![text_trendinglines_003](../images/text_trendinglines_003.png)
+![text_trendinglines_003](images/text_trendinglines_003.png)
 
 
 ## Text
@@ -88,7 +88,7 @@ once
 
 then the result will be 
 
-![text_trendinglines_004](../images/text_trendinglines_004.png)
+![text_trendinglines_004](images/text_trendinglines_004.png)
 
 Like the trendlines we can modify the text style, position and color, we do this with:
 
@@ -135,7 +135,7 @@ once
 
 And we will have as a result:
 
-![text_trendinglines_005](../images/text_trendinglines_005.png)
+![text_trendinglines_005](images/text_trendinglines_005.png)
 
 ## The study 
 
@@ -239,4 +239,4 @@ if Low < DayLow then
 	DayLow = Low;
 ```
 
-![text_trendinglines_006](../images/text_trendinglines_006.png)
+![text_trendinglines_006](images/text_trendinglines_006.png)

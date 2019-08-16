@@ -85,6 +85,7 @@ nav:
       - Virtual Environments: 'Python/virtual_environments.md'
       - Scripts:
           - Create Excel Files With Python: 'Python/Scripts/create_excel_files.md'
+          - Creating a dataset wth api and python: 'Python/Scripts/create_dataset_api_python.md'
       - Algorithm:
           - Magic Square: 'Python/Algorithm/Magic_square.md'
 
@@ -131,7 +132,7 @@ nav:
     - Arduino:
       - Structure: 
         - Sketch: 'Arduino/Structure/Sketch.md'
-        - Control Structure: Arduino/Structure/Control_Structure.md'
+        - Control Structure: 'Arduino/Structure/Control_Structure.md'
         - Further Syntax: 'Arduino/Structure/Further_Syntax.md'
       - Variables:
         - Constants and Data Types: 'Arduino/Variables/Constants_and_Data_Types.md'

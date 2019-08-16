@@ -6,7 +6,7 @@ From this architecture, we need to consider that we are not flatten the image in
 
 Now for the input we need to think in different ways: in terms of 3D **Volumes** this means that the image has a *depth* associated with it. This is called the number of  **channels**. For example, a color image or a RGB image of $M * N$ will have 3 channels ( one r, B, and G) so the full shape will be $ M * N * 3$ in contrast to a gray scale image that will be $M * N * 1$, this input are called **image volumes.**
 
-![Image Volumes](../images/image_volumes.png)
+![Image Volumes](images/image_volumes.png)
 
 
 In this architecture we have three different kinds of layers: Convolutional Layer, pooling Layer, and fully-connected Layers.
@@ -15,7 +15,7 @@ In this architecture we have three different kinds of layers: Convolutional Laye
 
 This is the most important layer in CNNs: it gives the CNN its name, The convolution Layer, is where the feature learning happens, the idea is that we have a number of **filters** or **kernels**. These **filters** are just small patches that represent some kind of visual feature, "weights" and "biases" of the CNN.
 
-![conv Layer](../images/CONV-Layer.png)
+![conv Layer](images/CONV-Layer.png)
 
 We take each filter and convolve it over the input volume to get a single **activation map**, so in other words, we convolve a filter with an input volume to get back a **activation map** that tells us "How well" parts of the input "respond" to the filter.
 
@@ -52,13 +52,13 @@ $$
 f_{(x)} = max(0,x)
 $$
 
-![Relu](../images/relu.png)
+![Relu](images/relu.png)
 
 it is zero for $x<=0$ and $x>0$, this is the activation use most frequently and that work well with this kind of scenarios.
 
 ##Pooling Layer
 
-![Pooling Layer](../images/Pooling_layer.png)
+![Pooling Layer](images/Pooling_layer.png)
 
 This layer is primarily used to help reduce the computational complexity and extract prominent features, the pooling Layer (POOL) has no weights/parameters, unlike CONV layers. The result is smaller activation volume along the width and height. the depth of the input is still maintained, so if 12 activation maps go to the POOL layer, the output will also have 12 activation maps.
 
@@ -66,7 +66,7 @@ For the POOL layer, we have to define the pool size, which tells us by how much 
 
 The computation we do depends on the type of pooling: average or max.
 
-![Pool type](../images/Pooling-Types.png)
+![Pool type](images/Pooling-Types.png)
 
 For max pooling, inside of the window, we just choose the maximum value in that window. This intuitively corresponds to choosing the most prominent features. For average pooling, we take the average of the values in the window. This produces smoother results than max pooling.
 
@@ -76,7 +76,7 @@ In practice, max pooling is used more frequently than average pooling, and the m
 
 This layer is the common artificial neural network, the catch, we have a activation volume as output of the CONV and POOL Layers, and this layer accept just a vector, so we will need to flatten this volume.
 
-![Flattening](../images/Flattenin.png) 
+![Flattening](images/Flattenin.png) 
 
 After flattening the volume, we can treat this layer just like a neural network! It is okay to flatten here since we’ve already passed through all of the CONV layers and applied the filters.
 

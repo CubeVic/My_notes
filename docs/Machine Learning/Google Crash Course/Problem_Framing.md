@@ -1,4 +1,4 @@
-![001_Introduction](../images/001_Introduction.png)
+![001_Introduction](images/001_Introduction.png)
 
 ## Common ML Problem 
 
@@ -145,10 +145,10 @@ We are to follow the suggested approach for framing the ML problem:
 
 There are several subtype of classification an regression, the following flowchart can give help to define which can be use.
 
-![classification_Flowchart_001](../images/002_classification_Flowchart.svg)
+![classification_Flowchart_001](images/002_classification_Flowchart.svg)
 
   
-![Regression_Flowchart_001](../images/003_Regression_Flowchart.svg)
+![Regression_Flowchart_001](images/003_Regression_Flowchart.svg)
 
 Our problem is best framed as:
 
@@ -169,7 +169,7 @@ First, simplify your modeling task. State your given problem as a binary classif
 Then, for that task, use the simplest model possible. A simple model is easier to implement and understand. Once you have a full ML pipeline, you can iterate on the simple model with greater ease.
 
 
-![Barchart](../images/004_Barchart.svg)
+![Barchart](images/004_Barchart.svg)
 
 The biggest gain from ML tends to be the first launch, since that's when you can first leverage your data. Further tuning still gives wins, but, generally, the biggest gain is at the start so it's good to pick well-tested methods to make the process easier.
 

@@ -55,7 +55,7 @@ Now that we have the correct image, or rather the correct path, we have the imag
 img_bgr = cv2.imread('../DATA/00-puppy.jpg')
 plt.imshow(img_bgr)
 ```
-![008.Image_load_opencv](../images/008.Image_load_opencv.png)
+![008.Image_load_opencv](images/008.Image_load_opencv.png)
 
 The image has been correctly loaded by openCV as a numpy array, but the color of each pixel has been sorted as BGR. Matplotlib's plot expects an RGB image so, for a correct display of the image, it is necessary to swap those channels
 
@@ -66,7 +66,7 @@ img_rgb = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
 
 in this case we are going to use `cvtColor` to transform from BGR to RGB, we pass first the image `img`, later the type of conversion `cv2.COLOR_BGR2RGB`
 
-![009.Image_Color_Transform](../images/009.Image_Color_Transform.png)
+![009.Image_Color_Transform](images/009.Image_Color_Transform.png)
 
 ## Load Image to a Specific Color Map
 
@@ -77,7 +77,7 @@ img_gray = cv2.imread('../DATA/00-puppy.jpg',cv2.IMREAD_GRAYSCALE)
 plt.imshow(img_gray)
 ```
 
-![010.Image_gray_scale_without_mapping](../images/010.Image_gray_scale_without_mapping.png)
+![010.Image_gray_scale_without_mapping](images/010.Image_gray_scale_without_mapping.png)
 
 so in this case we have have the default color mapping but this is not the gray scale we wanted, we need to be specific to `plt` to map the image to gray-scale
 
@@ -86,7 +86,7 @@ img_gray = cv2.imread('../DATA/00-puppy.jpg',cv2.IMREAD_GRAYSCALE)
 plt.imshow(img_gray, cmap='gray')
 ```
 
-![011.Image_grayscale_with_mapping](../images/011.Image_grayscale_with_mapping.png)
+![011.Image_grayscale_with_mapping](images/011.Image_grayscale_with_mapping.png)
 
 ##Resizing and Flipping the Image
 
@@ -104,7 +104,7 @@ img =cv2.resize(img_rgb,(1300,275))
 plt.imshow(img)
 ```
 
-![012.Image_resize](../images/012.Image_resize.png)
+![012.Image_resize](images/012.Image_resize.png)
 
 ### By Ratio
 
@@ -116,7 +116,7 @@ h_ratio = 0.5
 new_img =cv2.resize(img_rgb,(0,0),img,w_ratio,h_ratio)
 plt.imshow(new_img)
 ```
-![013.Images_resize_by_ratio](../images/013.Images_resize_by_ratio.png)
+![013.Images_resize_by_ratio](images/013.Images_resize_by_ratio.png)
 
 ### Flipping Images
 
@@ -129,7 +129,7 @@ new_img = cv2.flip(new_img,1)
 new_img = cv2.flip(new_img,-1)
 plt.imshow(new_img)
 ```
-![014.Images_Flipping](../images/014.Images_Flipping.png)
+![014.Images_Flipping](images/014.Images_Flipping.png)
 
 ## Saving Image Files
 

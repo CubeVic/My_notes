@@ -27,7 +27,7 @@ _Steps to process a command_
 3. Intent recognition.  
 4. Execute joke.  
 
-![AI system speak recognition](/images/AI_system_speak.png)  
+![AI system speak recognition](images/AI_system_speak.png)  
 
 
 **Case study: Self-driving car**
@@ -37,7 +37,7 @@ the key steps:
 2. Pedestrian detection.  
 3. Motion Planning.  
 
-![Step for deciding how to drive](/images/steps_deciding_how_drive.png)  
+![Step for deciding how to drive](images/steps_deciding_how_drive.png)  
 
 **Example roles of a AI team**
 
@@ -64,7 +64,7 @@ to create or move towards AI the company might need to restructure itself.
 
 **2. Build an in-house AI team**
 
-![Build an in-house AI team](/images/build_inhouse_AI_team.png)
+![Build an in-house AI team](images/build_inhouse_AI_team.png)
 
 It is better have a dedicated unit to work in this projects that a Business unit aside.  
 
@@ -83,7 +83,7 @@ AI engineer trainees | 1. Build and ship AI software. 2.Gather data. 3. Execute 
 * Leverage AI to create an advantage specific to your industry sector.
 * Design strategy aligned with the  "Virtuous Cycle of AI".  
 
-![Virtuous Cycle of AI](/images/Virtuous_Cycle_of_AI.png)  
+![Virtuous Cycle of AI](images/Virtuous_Cycle_of_AI.png)  
 
 * Consider Creating a data strategy ( strategic data acquisition, unified data warehouse).  
 

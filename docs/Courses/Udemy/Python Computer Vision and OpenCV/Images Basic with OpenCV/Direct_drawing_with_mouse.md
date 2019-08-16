@@ -96,7 +96,7 @@ cv2.destroyAllWindows()
 
 the result 
 
-![023_drawing_circles](../images/023_drawing_circles.png)
+![023_drawing_circles](images/023_drawing_circles.png)
 
 ## Adding functionality with Event Choices
 
@@ -136,7 +136,7 @@ while True:
 cv2.destroyAllWindows()
 ```
 
-![024_drawing_circles](../images/024_drawing_circles.png)
+![024_drawing_circles](images/024_drawing_circles.png)
 
 
 ## Dragging with Mouse
@@ -188,4 +188,4 @@ cv2.destroyAllWindows()
 The result is:
 
 
-![025_drawing_rectangles](../images/025_drawing_rectangles.png)
+![025_drawing_rectangles](images/025_drawing_rectangles.png)
