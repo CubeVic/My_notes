@@ -97,9 +97,6 @@ for row in rows:
 		country_link = cells[1].find('a')
 		print(country_link.get('href'))
 ```
-
-
-
 so the code will be
 
 ```python 
@@ -138,3 +135,62 @@ for row in rows:
 and the result 
 
 ![Scraping_Using_Python_003](../images/Scraping_Using_Python_003.png){: .center}
+
+We can see that the information or links that we got back don't include the first part of the URL so we will need to prefix "https://en.wikipedia.org".
+
+> later we will create a variable called `root_URL` that will contain "https://en.wikipedia.org"
+
+## Data for Each country 
+
+Now, we Will use the list of link to go to each country page and locate the card to the right of the screen where there is the remaining information.
+
+inspecting the country page we found that the class for card mentioned above is `infobox geography vcard`
+
+![dataset_api_python_004](../images/dataset_api_python_004.png)
+
+Here is when we run into some issues, we are looking for the following fields:
+
+* Area > Total area
+* Water (%)
+* GDP (nominal) > Total   
+* Per capita
+
+but their order vary in each country page, so we will need to make some adjustment.
+
+### Modifying current code
+
+We will start making a small modification in the code, we will create a new function that will return a list with the link of all the counties
+
+```python
+import numpy as np
+import pandas as pd
+
+from urllib.request import urlopen
+from bs4 import BeautifulSoup
+
+root_URL = 'https://en.wikipedia.org'
+URL= 'https://en.wikipedia.org/wiki/List_of_countries_and_dependencies_by_population'
+country_links = []
+
+#get the HTML 
+def getHTMLContent(link):
+	html = urlopen(link)
+	soup = BeautifulSoup(html, 'html.parser')
+	return soup
+
+# get the link of all countries 
+def getCountryLinks(URL):
+	content = getHTMLContent(URL)
+	#tables = content.find_all('table')
+	table = content.find('table', {'class': 'wikitable sortable'})
+	rows = table.find_all('tr')
+	for row in rows:
+		cells = row.find_all('td')
+		if len(cells) > 1:
+			country_link = cells[1].find('a').get('href')
+			#print(country_link.get('href'))
+			country_links.append(country_link)
+
+getCountryLinks(URL)
+print(country_links)
+```
