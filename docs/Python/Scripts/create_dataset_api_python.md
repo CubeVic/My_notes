@@ -171,7 +171,7 @@ print(dataset.sample(5))
 
 ![dataset_api_python_003](../images/dataset_api_python_003.png){: .center}
 
-### Removing rows with EMpty columns 
+### Removing rows with Empty columns 
 
 In this case we are going to use `dropan(axis = 0, how = 'any', inplace = True)`
 this will drop the rows that has some empty columns, after this we need to reindex the dataframe for that we use `dataset.index = pd.RangeIndex(len(dataset.index))`

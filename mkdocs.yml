@@ -86,6 +86,7 @@ nav:
       - Scripts:
           - Create Excel Files With Python: 'Python/Scripts/create_excel_files.md'
           - Creating a dataset wth api and python: 'Python/Scripts/create_dataset_api_python.md'
+          - Scraping Usign Python: 'Python/Scripts/Scraping_Usign_Python.md'
       - Algorithm:
           - Magic Square: 'Python/Algorithm/Magic_square.md'
 
