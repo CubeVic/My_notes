@@ -138,7 +138,7 @@ and the result
 
 We can see that the information or links that we got back don't include the first part of the URL so we will need to prefix "https://en.wikipedia.org".
 
-> later we will create a variable called `root_URL` that will contain "https://en.wikipedia.org"
+> Later we will create a variable called `root_URL` that will contain "https://en.wikipedia.org"
 
 ## Data for Each country 
 
@@ -194,3 +194,5 @@ def getCountryLinks(URL):
 getCountryLinks(URL)
 print(country_links)
 ```
+
+
