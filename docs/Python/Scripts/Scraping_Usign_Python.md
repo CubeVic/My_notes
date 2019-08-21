@@ -146,7 +146,7 @@ Now, we Will use the list of link to go to each country page and locate the card
 
 inspecting the country page we found that the class for card mentioned above is `infobox geography vcard`
 
-![dataset_api_python_004](../images/dataset_api_python_004.png)
+![Scraping_Using_Python_004](../images/Scraping_Using_Python_004.png)
 
 Here is when we run into some issues, we are looking for the following fields:
 
@@ -195,4 +195,17 @@ getCountryLinks(URL)
 print(country_links)
 ```
 
+### Values in different positions - Something to thing about it
+
+Now, with few pages inspected we can see where will be a problem, the location of the different values we want are in different position depending of the country.
+
+We now the information is in tags with classes `mergedrow` or `mergedrowbottom` but the possition of the row that contain the information it is not constant, in the first example, we see that we don't have `water(%)` but in the second page we do have this value, making the position of population one position down in comparison with the first example 
+
+![Scraping_Using_Python_005](../images/Scraping_Using_Python_005.png){: .center}
+
+![Scraping_Using_Python_006](../images/Scraping_Using_Python_006.png){: .center}
+
+To solve this we will add some extra code, for that we will start by adding a new variable called `additional_details` that will be later use to append the information we collect form each country page to the table with the list of countries. Later, we will create a function `getadditionalDetails()` and a variable flag `read_content`, we will explain the usage later.
+
+we are going to use three type of function here: 
 
