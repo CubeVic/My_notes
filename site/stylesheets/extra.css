@@ -1,0 +1,88 @@
+/*
+///////////////////////
+// To center images////
+///////////////////////
+*/
+
+.center {
+    display: block;
+    margin: 0 auto;
+}
+
+/*
+///////////////////////////////////////
+// set image or object to the right////
+///////////////////////////////////////
+*/
+
+.right {
+    float: right;
+}
+
+
+/*
+///////////////////////
+// Inline Code block //
+///////////////////////
+*/
+
+.md-typeset code {
+  color: #ae81ff !important;
+  background-color: #313131 !important;
+  box-shadow: 0.29412em 0 0 rgba(0,0,0,.07), -0.29412em 0 0 rgba(0,0,0,.07);
+}
+
+/*
+/////////////////////////////
+/// visited links on toc ////
+////////////////////////////
+
+Modification by: Victor Fernandez
+Description: modification of the visited links on TOC to 
+              solve contrast issue
+*/
+
+.md-nav__link:visited{
+  color: #808080;
+}
+
+.md-nav__link[data-md-state=blur] {
+    color: #808080;
+}
+
+/*
+////////////////////
+/// Blockquote/////
+///////////////////
+
+Modification by: Victor Fernandez
+Description: modification of the blockquote to 
+              solve contrast issue
+*/
+
+.md-typeset blockquote {
+  color: #808080;
+  border-left-width: 0.2rem;
+  border-left-style: solid;
+  border-left-color: #808080;
+}
+
+/*
+////////////////////
+// Navigation bar //
+////////////////////
+*/
+
+/*
+Left and right toc scrollbar
+*/
+.md-sidebar__scrollwrap::-webkit-scrollbar-thumb {
+  background-color: #E0E0E0 !important;
+}
+
+
+
+.md-nav {
+  color: #F5F5F5 !important;
+  background-color: #212121 !important;
+}
