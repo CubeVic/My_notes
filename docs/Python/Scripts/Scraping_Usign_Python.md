@@ -199,13 +199,77 @@ print(country_links)
 
 Now, with few pages inspected we can see where will be a problem, the location of the different values we want are in different position depending of the country.
 
-We now the information is in tags with classes `mergedrow` or `mergedrowbottom` but the possition of the row that contain the information it is not constant, in the first example, we see that we don't have `water(%)` but in the second page we do have this value, making the position of population one position down in comparison with the first example 
+We now the information is in tags with classes `mergedrow` or `mergedrowbottom` but the position of the row that contain the information it is not constant, in the first example, we see that we don't have `water(%)` but in the second page we do have this value, making the position of population one position down in comparison with the first example 
 
 ![Scraping_Using_Python_005](../images/Scraping_Using_Python_005.png){: .center}
 
 ![Scraping_Using_Python_006](../images/Scraping_Using_Python_006.png){: .center}
 
-To solve this we will add some extra code, for that we will start by adding a new variable called `additional_details` that will be later use to append the information we collect form each country page to the table with the list of countries. Later, we will create a function `getadditionalDetails()` and a variable flag `read_content`, we will explain the usage later.
+To solve this we will add some extra code. We will start by adding a new variable called `additional_details`, later use it to append the information we collect form each country page to the table with the list of countries. Next, we will create a function `getadditionalDetails()` and a variable flag `read_content`, we will explain the usage later.
 
 we are going to use three type of function here: 
+
+1. `get()` With this function we will find and get the reference of a particular element.
+2. `get_text()` the function will return the text that is within the opening and close tags of an element.
+3. `strip()` This will remove the white spaces at both sides of the string or text.  
+
+#### `getadditionalDetails()` function:
+
+First, we will create a new variable
+
+```Python
+# to be use in getAdditionalDetails
+additional_details = []
+```
+
+next, the function
+
+```python 
+def getAdditionalDetails(country_link):
+    try:
+        country_page = getHTMLContent('https://en.wikipedia.org' + country_link)
+        table = country_page.find('table', {'class': 'infobox geography vcard'})     
+        read_content = False
+
+        for tr in table.find_all('tr'):
+
+            if (tr.get('class') == ['mergedtoprow'] and not read_content):
+                link = tr.find('a')
+            
+                if (link and (link.get_text().strip() == 'Area' or (link.get_text().strip() == 'GDP' and tr.find('span').get_text().strip() == '(nominal)'))):
+                    read_content = True
+            
+                if (link and (link.get_text().strip() == 'Population')):
+                    read_content = False
+            
+            elif ((tr.get('class') == ['mergedrow'] or tr.get('class') == ['mergedbottomrow']) and read_content):
+                additional_details.append(tr.find('td').get_text().strip('\n')) 
+            
+                if (tr.find('div').get_text().strip() != '•\xa0Total area' and
+                   tr.find('div').get_text().strip() != '•\xa0Total'):
+                    read_content = False
+        return additional_details
+    
+    except Exception as error:
+        print('Error occurred: {}'.format(error))
+        return []
+```
+
+We have a `try/except` block that will wrap the logic and it will prevent the script to crash if one of the links doesn't provide the information in the same format or if the page is empty
+
+1. We get the links for the countries, remember those links don't have the root url so here we concatenate them with the root URL. We find the table with the classes `infobox geography vcard`, and set the flag `read_content`.
+
+2. We use a `for` loop to iterate over all the `<tr>` tags on the table.
+
+3. We use a decision block to check if the class in the `<tr>` is  `mergedtoprow` and `not read_content`. if the condition are match we save the content of `<a>` on the variable `link`.
+
+4. the next two condition blocks are checking if the information on the page is following the order that we want, in which case we set the `read_content` to True , otherwise `read_content` will be set as False.
+
+5. the `elif` part of the initial conditional will be the one that will populate the variable `additional_details`
+
+6. Finally the `except` block, this will be used to report back if there is any issue.
+
+
+
+## Create the dataset
 
