@@ -5,7 +5,7 @@ There are 7 steps in this installation, and a small project that include the ras
  The first thing will be expand the filesystem on the raspberry to make use of all the available space in the micro-sd card:
 
 ```
-$ sudo rasp-config
+$ sudo raspi-config
 ```
 
 we are going to access to the configuration, after the command a menu will be display and we can select the option "Advance Options"
