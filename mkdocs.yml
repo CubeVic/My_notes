@@ -82,6 +82,7 @@ nav:
       - Generator and Iterators: 'Python/Generator and Iterator.md'
       - Useful or researched built-in functions: 'Python/Useful or researched built-in functions.md'
       - Trick and tips for better code in python: 'Python/Tricks_tips_better_code_python.md'
+      - Useful Snippets: 'Python/Useful_snippets.md'
       - Virtual Environments: 'Python/virtual_environments.md'
       - Scripts:
           - Create Excel Files With Python: 'Python/Scripts/create_excel_files.md'

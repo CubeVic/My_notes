@@ -35,7 +35,7 @@ egg_count = buy_eggs(egg_count)
 
 ## Lambda Expressions
 
-You can use lambda expressions to create anonymous functions. That is, functions that don’t have a name. They are helpful for creating quick functions that aren’t needed later in your code. This can be especially useful for higher order functions, or functions that take in other functions as arguments.
+You can use lambda expressions to create anonymous functions. These are functions that don’t have a name. They are helpful for creating quick functions that aren’t needed later in your code. This can be especially useful for higher order functions, or functions that take in other functions as arguments.
 
 
 With a lambda expression, this function:
