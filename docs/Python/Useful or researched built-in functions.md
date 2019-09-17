@@ -6,7 +6,7 @@
 
 **Working :** 
 
-* At first step, first two elements of sequence are picked and the result is obtained.  
+* First two elements of sequence are picked and the result is obtained.  
 * Next step is to apply the same function to the previously attained result and the number just succeeding the second element and the result is again stored.  
 * This process continues till no more elements are left in the container.  
 * The final returned result is returned and printed on console.  
@@ -38,7 +38,7 @@ while lcm <= gcd:
 print(count)
 ```
 
-int he previous code the idea to solve the problem [Between Two Sets](https://www.hackerrank.com/challenges/between-two-sets/problem)
+in the previous code the idea to solve the problem [Between Two Sets](https://www.hackerrank.com/challenges/between-two-sets/problem)
 
 here more information about [GCD](https://en.wikipedia.org/wiki/Greatest_common_divisor) and [LCM](https://en.wikipedia.org/wiki/Least_common_multiple) 
 
@@ -130,7 +130,7 @@ car = {
 
 x = car.setdefault("color", "white")
 
-print(x)
+print(x.color)
 ```
  the output will be:
 
