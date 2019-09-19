@@ -149,6 +149,9 @@ nav:
         - Random Numbers: 'Arduino/Functions/Random_Numbers.md'
         - Communication: 'Arduino/Functions/Communication.md'
         - Interrupts and External Interruptions: 'Arduino/Functions/Interrupts_and_External_Interruptions.md'
+      - Projects:
+        - Ikea Lack Table - Enclosure:
+          - Air Vent servo control: Arduino/Projects/Ikea Lack Table - Enclosure/Air_vent_servo_control.md        
                
     - Miscellaneous:
       - Aliases in Windows command prompt: 'Miscellaneous/Aliases_in_Windows_command_prompt.md'
