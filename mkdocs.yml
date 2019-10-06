@@ -152,7 +152,11 @@ nav:
       - Projects:
         - Ikea Lack Table - Enclosure:
           - Air Vent servo control: Arduino/Projects/Ikea Lack Table - Enclosure/Air_vent_servo_control.md        
-               
+    
+    - 3D Printing:
+      - Calibration:
+          - Center and Z offset: '3D Printing/Calibration/Center and Z offset.md'
+
     - Miscellaneous:
       - Aliases in Windows command prompt: 'Miscellaneous/Aliases_in_Windows_command_prompt.md'
       - OAuth 2: 'Miscellaneous/OAuth_2.md'
