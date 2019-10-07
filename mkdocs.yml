@@ -125,12 +125,12 @@ nav:
                 - Color Mapping: 'Courses/Udemy/Python Computer Vision and OpenCV/Image Processing/color_mapping.md'
                 - Blending and Pasting Images: 'Courses/Udemy/Python Computer Vision and OpenCV/Image Processing/blending_pasting_images.md'
 
-    - EasyLanguage:
-      - EasyLanguage 001: 'EasyLanguage/EasyLanguages_001.md'
-      - How Scripts Work: 'EasyLanguage/how_script_works.md'
-      - Functions: 'EasyLanguage/functions.md'
-      - Plot: 'EasyLanguage/Plot.md'
-      - Text and Trendlines: 'EasyLanguage/text_trendlines.md'
+    - PowerLanguages:
+      - PowerLanguages 001: 'PowerLanguages/PowerLanguages_001.md'
+      - How Scripts Work: 'PowerLanguages/how_script_works.md'
+      - Functions: 'PowerLanguages/functions.md'
+      - Plot: 'PowerLanguages/Plot.md'
+      - Text and Trendlines: 'PowerLanguages/text_trendlines.md'
 
     - Arduino:
       - Structure: 
@@ -156,6 +156,7 @@ nav:
     - 3D Printing:
       - Calibration:
           - Center and Z offset: '3D Printing/Calibration/Center and Z offset.md'
+      - '3D Printing/about design.md'
 
     - Miscellaneous:
       - Aliases in Windows command prompt: 'Miscellaneous/Aliases_in_Windows_command_prompt.md'
