@@ -14,18 +14,18 @@ http://marlinfw.org/docs/gcode/M206.html
 
 Z-Offset Instructions:
 
-Home 3D printer
-M851 Z0 - Reset Z0Offset
-M500 - Store setting to eeprom
-M501 - Set active parameters
-M503 - Display Active Parameters
-G28 Z - Home Z Axis
-G1 F60 Z0 - Move nozzle to true 0 offset
-M211 S0 - Switch off soft endstops
-Move nozzle towards bed slowly until the paper can barely move
-Take note of the Z on the printer display (take that number and add the measurment of the calibration sheet or device used)
-M851 Z X.XX (X.XX being your z offset achieved)
-M211 S1 - Enable Soft Endstops
-M500 - Save settings to Eeprom
-M501 - Set Active Parameters
-M503 - display current settings
+1. Home 3D printer
+2. M851 Z0 - Reset Z0Offset
+3. M500 - Store setting to eeprom
+4. M501 - Set active parameters
+5. M503 - Display Active Parameters
+6. G28 Z - Home Z Axis
+7. G1 F60 Z0 - Move nozzle to true 0 offset
+8. M211 S0 - Switch off soft endstops
+9. Move nozzle towards bed slowly until the paper can barely move
+10. Take note of the Z on the printer display (take that number and add the measurment of the calibration sheet or device used)
+11. M851 Z X.XX (X.XX being your z offset achieved)
+12. M211 S1 - Enable Soft Endstops
+13. M500 - Save settings to Eeprom
+14. M501 - Set Active Parameters
+15. M503 - display current settings
