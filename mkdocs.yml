@@ -73,6 +73,8 @@ nav:
       - Other Key Terminology (TensorFlow): 'Machine Learning/Other_key_Terminology.md'
 
     - Python:
+      - Preparation for PCPP-32-1:
+          - Module 1: 'Preparation for PCPP-32-1/Module 1.md'
       - Data Structures: 'Python/Data structures.md'
       - Control Flow: 'Python/control flow.md'
       - Functions: 'Python/functions.md'
