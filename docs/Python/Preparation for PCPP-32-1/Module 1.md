@@ -33,3 +33,6 @@ The source code is translate once (but this act needs to be repeated each time w
 
 ## Interpretation
 We can translate the source program each time it has to be run; the program performing this kind of transformation is called an interpreter, as it interprets the code every time it is intended to be executed; it also means that you cannot just distribute the source code *as-is*, because the end-user also needs the interpreter to execute it.
+
+|:---------:|:-------:|:--------:|
+|
