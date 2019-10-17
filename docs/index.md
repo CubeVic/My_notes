@@ -2,7 +2,7 @@
 
 # Victor Andres Aguirre Fernandez
 
-These are my Notes, All about what I'm learning to improve my Daily  Job, a new Hobby or just something that i found interesting.
+These are my Notes, what I'm learning to improve my Daily Job, a new Hobby or just something that i found interesting.
 
 I store all notes about the different categories, which are constantly changing, the idea is to have easy access to knowledge and use a s a quick personal reference.
 
