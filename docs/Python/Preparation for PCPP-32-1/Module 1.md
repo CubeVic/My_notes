@@ -44,3 +44,25 @@ We can translate the source program each time it has to be run; the program perf
 ||* You have to have as many compilers as hardware platforms you want your code to be run on. |* Both you and the end user have to have the interpreter to run your code. |
 
 Python is an **Interpreted Language**  you just need the *Python Interpreter* 
+
+## Python Goals
+
+* An **Easy and Intuitive** yet powerful language.
+* **Open Source**
+* Understandable code, just like plain English.
+* **Suitable for Everyday programming**.
+
+## Python, CPhyton and Cython 
+
+Python is maintain for people around the PSF or Python Software Foundation, the president is the creator of the language itself, *Guido van Rossum*, these Pythons are called **Canonical** 
+
+![PCPP-32-1_Module_1_001.png](images/PCPP-32-1_Module_1_001.png){: .center}
+
+Python was implemented in C, it was, it is, and, probably continue been, implemented in C, this is why it is often refer as **CPython**
+
+### Cython
+
+**Cython** is other family member of Python, it is a solution for many trade off, such the lack of efficiency, once the code is written in Python, and it is prove that there is not issue, one can translate this code to C. 
+This is what Cython is intended to do so, translate python code to C.
+
+![PCPP-32-1_Module_1_002](images/PCPP-32-1_Module_1_002.png){: .center}

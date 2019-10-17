@@ -19,3 +19,5 @@ here an example:
 [004. Knowledge base Multicharts](https://www.multicharts.com/support/base/)
 
 [005. Trading station Help page](http://help.tradestation.com/09_01/tswebtrading/Subsystems/elanalysis_webtrading/elanalysis_webtrading.htm)
+
+[book for reference](https://drive.google.com/file/d/0B_aFLJZIlhWvcHlLTU9wYndxVEU/view)

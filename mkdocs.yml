@@ -129,6 +129,7 @@ nav:
 
     - PowerLanguages:
       - PowerLanguages 001: 'PowerLanguages/PowerLanguages_001.md'
+      - Reserved words: 'PowerLanguages/Reserved words.md'
       - How Scripts Work: 'PowerLanguages/how_script_works.md'
       - Functions: 'PowerLanguages/functions.md'
       - Plot: 'PowerLanguages/Plot.md'
