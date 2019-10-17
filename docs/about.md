@@ -1,17 +1,10 @@
-# Welcome to About
+Leader and professionally focused Product development manager. Working with local and international development teams for over 4 years. Experience working as:
 
-For full documentation visit [mkdocs.org](https://mkdocs.org).
+* Field Application Engineer.  
+* Product development manager.  
+* Automation test developer.  
+* Project manager in Web and mobile developer.  
 
-## Commands
+Experienced Integrating test automation with Jenkins (Continuous integration tools), understanding of software development life cycle and agile methodologies (especially Scrum). 
 
-* `mkdocs new [dir-name]` - Create a new project.
-* `mkdocs serve` - Start the live-reloading docs server.
-* `mkdocs build` - Build the documentation site.
-* `mkdocs help` - Print this help message.
-
-## Project layout
-
-    mkdocs.yml    # The configuration file.
-    docs/
-        index.md  # The documentation homepage.
-        ...       # Other markdown pages, images and other files.
+I constantly study new technologies and innovative concepts to its rapid and efficient Implementation, I have the ability to perform effectively and efficiently in a team and individually, as well as adapt to international teams.
