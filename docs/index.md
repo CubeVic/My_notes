@@ -8,8 +8,7 @@ I store all notes about the different categories, which are constantly changing,
 
 **NOTE:** I use different resources and not all the content is mind, there are different authors and the credits/attribution are for them, in any moment i want to say the content is totally created by me, in some cases i use the same graphic the original Author use, just because they give a clear picture or useful information.
 
-*PS:* My native language is not English, so there might be sentence that are to wordy, or odd ...., I'm working on it.
+*PS:* My native language is not English, so if some one other than me see this notes, please be patient, this are personal notes, not a blog, thus, some topics are not finish yet (because I'm learning it).
 
-Initially will be locally and in my github.
 
 I'm using MkDocs to generate this *"documentation"* more information visit [mkdocs.org](https://mkdocs.org).
