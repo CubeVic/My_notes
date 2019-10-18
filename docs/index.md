@@ -8,7 +8,7 @@ I store all notes about the different categories, which are constantly changing,
 
 **NOTE:** I use different resources and not all the content is mind, there are different authors and the credits/attribution are for them, in any moment i want to say the content is totally created by me, in some cases i use the same graphic the original Author use, just because they give a clear picture or useful information.
 
-*PS:* My native language is not English, so there might be sentence that are to wordy or that can be write in a better way, I'm working on it.
+*PS:* My native language is not English, so there might be sentence that are to wordy, or odd ...., I'm working on it.
 
 Initially will be locally and in my github.
 
