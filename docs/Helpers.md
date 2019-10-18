@@ -1,3 +1,29 @@
+## Installing mkdocs
+
+Install using pip:
+
+```
+pip install mkdocs
+```
+and to check the installation 
+```
+$ mkdocs --version
+mkdocs, version 0.15.3
+```
+## Installing Material for mkdocs
+
+Install using pip:
+
+```
+pip install mkdocs-material
+```
+and int the project's mkdocs.yml we need to add:
+
+```yml
+theme:
+  name: 'material' 
+```
+
 ## Useful MkDocs Commands
 
 * `mkdocs new [dir-name]` - Create a new project.
@@ -30,9 +56,6 @@ That's it! Behind the scenes, MkDocs will build your docs and use the ghp-import
 
 This is a file to customize the theme without modify the original files, I modify the following:
 
-1. Center the images:
-
-
 ### 1. Center the image
 
 To center the images first, I added the `markdown extension` called `attr_list`, later create the following modification on the `extra.css`
@@ -54,9 +77,9 @@ now to center the image I just need to add "{: .center}" at the end of the state
 
 `![Name of the image](/images/nameImage.png).{: .center}`
 
-## Modification to the dark theme
+### 2. Modification to the dark theme
 
-### TOC visited links
+#### TOC visited links
 I made a modification on the **extra.css** to overwrite **dark_theme.css**
 
 ```css
@@ -80,7 +103,7 @@ Description: modification of the visited links on TOC to
 ```
 This modification wants to change the color of the visited links in the TOC, by default this visited link ( or permalinks) are black, this black color against black background present low contrast, thus it is difficult to read, therefore the modification.
 
-### Blockquote 
+#### Blockquote 
 
 block quote has the same problem with the contrast, like the visited link in toc, thus these changes in the **extra.css** to overwrite **dark_theme.css** file
 
