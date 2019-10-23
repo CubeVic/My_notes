@@ -165,7 +165,7 @@ nav:
       - Aliases in Windows command prompt: 'Miscellaneous/Aliases_in_Windows_command_prompt.md'
       - OAuth 2: 'Miscellaneous/OAuth_2.md'
       - Random: 'Miscellaneous/Random Link.md'
-      - Potential activities: 'Miscellaneous/potential activities.md'
+      #- Potential activities: 'Miscellaneous/potential activities.md'
       - How to Install OpenCv on Raspberry pi: 'Miscellaneous/How_install_openCV_raspberry.md'
     - About: 'about.md'
     - Helpers.md
