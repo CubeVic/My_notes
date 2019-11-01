@@ -160,6 +160,8 @@ nav:
       - Setup and Calibration:
           - Center and Z offset: '3D Printing/Setup and Calibration/Center and Z offset.md'
           - Debuging and Logging: '3D Printing/Setup and Calibration/Debuging and Logging.md'
+      - Projects: 
+        - Moving Electronics: '3D Printing/Projects/Moving Electronics.md'
       - '3D Printing/about design.md'
 
     - Miscellaneous:
