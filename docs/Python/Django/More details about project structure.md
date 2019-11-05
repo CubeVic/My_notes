@@ -96,7 +96,7 @@ The following path converters are available by default:
 
 ## `path()`
 
-**path(route,view,kwarg=None,name=None**
+**path(route,view,kwarg=None,name=None)**
 
 Returns an element for inclussion in `urlpatters`, for example:
 

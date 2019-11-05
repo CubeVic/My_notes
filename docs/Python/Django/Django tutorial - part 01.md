@@ -1,6 +1,6 @@
 # Verify Django is installed and what Version are we using.
 
-to verify which version are we using we can use;
+to verify which version are we using we can use:
 
 ```
 python -m django --version
@@ -8,7 +8,9 @@ python -m django --version
 
 ## Creating a project  
 
-To create a project, first, we need to navigate to the location where we want to store the project, we can use *cd* to do so, second we type:
+To create a project, we need:  
+* Navigate to the location where we want to store the project, we can use *cd*  to do so.  
+* After navigate to the correct directory, we type:
 
 ```
 django-admin startproject mysite
@@ -29,7 +31,7 @@ mysite/
 
 this files are:
 
-* the outer `mysite/` root directory is just a container for your project, the name doesn't matter to Django; you can rename it to anything you like.  
+* the outer `mysite/` root directory is just a container for your project, the name doesn't matter to Django;  you can rename it to anything you like.  
 * `manage.py`: A command line utility that let you interact with this Django project in various ways.  
 * the inner `mysite/` directory is the actual Python package for the project.  
 * `mysite/__init__.py`:and empty file that tells Python package that this directory should  be considered a Python package.  
@@ -40,10 +42,10 @@ this files are:
 
 ## Creating the Polls app  
 
-Now that your environment – a “project” – is set up
 Each application we write in Django consists of a Python package that follows a certain convention. Django comes with a utility that automatically generates the basic directory structure of an app. 
 
-**What’s the difference between a project and an app?** An app is a Web application that does something – e.g., a Weblog system, a database of public records or a simple poll app. A project is a collection of configuration and apps for a particular website. A project can contain multiple apps. An app can be in multiple projects.
+**What’s the difference between a project and an app?**   
+An app is a Web application that does something – e.g., a Weblog system, a database of public records or a simple poll app. A project is a collection of configuration and apps for a particular website. A project can contain multiple apps. An app can be in multiple projects.
 
 In this case to create an app we will need to be at the same level that the `manage.py` file, and we can create the app with the command:
 
@@ -111,7 +113,13 @@ urlpatterns = [
 ]
 ```
 
-The next step is to point the root URLconf at the **polls.urls** module, to do this we will need to add something in **mysite/urls.py**, we need to import `django.urls.include` and insert an `include()` in the `urlpatterns` list, so you have:
+The next step is to point the root URLconf at the **polls.urls**, to achieve that, we will add something in **mysite/urls.py**. 
+
+we need to import `django.urls.include` and insert an `include()` in the `urlpatterns` list
+
+![001.Tutorial_part_1-001](images/001.Tutorial_part_1-001.png){: .center}
+
+so we will have:
 
 ```python
 from django.contrib import admin
@@ -127,9 +135,10 @@ The `include()` function allows referencing other URLconfs. Whenever Django enco
 
 The idea behind `include()` is to make it easy to plug-and-play URLs. Since polls are in their own URLconf `(polls/urls.py)`, they can be placed under “/polls/”, or under “/fun_polls/”, or under “/content/polls/”, or any other path root, and the app will still work.
 
-When to use `include()`? You should always use `include()` when you include other URL patterns. **admin.site.urls** is the only exception to this.
+>**When to use `include()`?**   
+>You should always use `include()` when you include other URL patterns. **admin.site.urls** is the only exception to this.
 
-now the index is wired to the URLconf so we should be be able so see it  under *http://localhost:8000/polls/*
+Now the index is wired to the URLconf, so we should be able to access  it  under *http://localhost:8000/polls/*
 
 first, lets run:
 
@@ -137,14 +146,13 @@ first, lets run:
 $ python manage.py runserver
 ```
 
-The `path()` function is important to find the correct URL, this function is passed, two argument, in the previous example, the argument **route** and 
-**view**, for more explanation of this function we can visit the [documentation](https://docs.djangoproject.com/en/2.2/ref/urls/#django.urls.path) or the notes I made in [More details about project structure](/More%20details%20about%20project%20structure/)
+> The `path()` function is important to find the correct URL. This function pass, two argument <<`path('polls/',include('polls.urls'))`>>, the argument are **route** and 
+**view**.
 
-so a brief explanation of each argument will be:
 
 #### `path()` argument: route  
 
-This route argument is a string that contain the URLpattern , Django will start with the first pattern in `urlpatterns` and make its way down the list until find one pattern that matches.
+This route argument is a string that contain the URLpattern, Django will start with the first pattern in `urlpatterns` and make its way down the list until find one pattern that matches.
 GET and POST parameters are ignore, for example:
 `http://www.example.com/myapp/`, the URLconfig will look at `myapp/`, in a request `http://www.example.com/myapp/?page=3`, the URLconf will look for `myapp/`
 
@@ -160,15 +168,7 @@ Arbitrary keyword argument can be passed in a dictionary to the target view
 Naming your URL lets you refer to it unambiguously from elsewhere in Django, especially from within templates.
 
 
-
-
-
-
-
-
-
-
-
+> for more explanation of this function we can visit the [documentation](https://docs.djangoproject.com/en/2.2/ref/urls/#django.urls.path) or the notes I made in [More details about project structure](More%20details%20about%20project%20structure.html)
 
 
 

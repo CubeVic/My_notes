@@ -93,11 +93,12 @@ nav:
           - Scraping Usign Python: 'Python/Scripts/Scraping_Usign_Python.md'
       - Algorithm:
           - Magic Square: 'Python/Algorithm/Magic_square.md'
+      - Django:
+        - Django Tutorial (part 01): 'Python/Django/Django tutorial - part 01.md'
+        - Django Tutorial (part 02): 'Python/Django/Django tutorial - part 02.md'
+        - (Optional) More details about file structure: 'Python/Django/More details about project structure.md'
 
-    - Django:
-      - Django Tutorial (part 01): 'Django/Django tutorial - part 01.md'
-      - Django Tutorial (part 02): 'Django/Django tutorial - part 02.md'
-      - (Optional) More details about file structure: 'Django/More details about project structure.md'
+
 
     - SQL:
       - Random notes about SQL: 'SQL/Some_SQL.md'
