@@ -154,7 +154,7 @@ $ python manage.py runserver
 
 This route argument is a string that contain the URLpattern, Django will start with the first pattern in `urlpatterns` and make its way down the list until find one pattern that matches.
 GET and POST parameters are ignore, for example:
-`http://www.example.com/myapp/`, the URLconfig will look at `myapp/`, in a request `http://www.example.com/myapp/?page=3`, the URLconf will look for `myapp/`
+`http://www.example.com/myapp/`, the URLconfig will look at `myapp/`.
 
 ####`path()` argument: view  
 
