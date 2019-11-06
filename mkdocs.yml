@@ -98,8 +98,6 @@ nav:
         - Django Tutorial (part 02): 'Python/Django/Django tutorial - part 02.md'
         - (Optional) More details about file structure: 'Python/Django/More details about project structure.md'
 
-
-
     - SQL:
       - Random notes about SQL: 'SQL/Some_SQL.md'
       - String Funtions SQL: 'SQL/String_Functions_SQL.md'
@@ -160,6 +158,7 @@ nav:
     - 3D Printing:
       - Setup and Calibration:
           - Center and Z offset: '3D Printing/Setup and Calibration/Center and Z offset.md'
+          - E-steps and Extrutor multiplier: '3D Printing/Setup and Calibration/E-steps and Extrutor multiplie.md'
           - Debuging and Logging: '3D Printing/Setup and Calibration/Debuging and Logging.md'
       - Projects: 
         - Moving Electronics: '3D Printing/Projects/Moving Electronics.md'
