@@ -73,8 +73,8 @@ The last two "flavors" of python mentioned in the course are **Jython** and **Py
 
 **Jython** is similar to Cython, but instead of translate the python script to C, this will translate to java, it is specially use in big systems, where java is the main language, this Flavor, Jython just support Python 2 and there is not implementation for Python3 so far.
 
-![PCPP-32-1_Module_1_003](images/PCPP-32-1_Module_1_003.png){: .center}
+![PCPP-32-1_Module_1_003](images/PCPP-32-1_Module_1_003.PNG){: .center}
 
 **pypy** it is an environment written in **RPython** and is mostly use for develop python, it doesn't run the interpreter it translate everything to C.
 
-![PCPP-32-1_Module_1_004](images/PCPP-32-1_Module_1_004.png){: .center}
+![PCPP-32-1_Module_1_004](images/PCPP-32-1_Module_1_004.PNG){: .center}
