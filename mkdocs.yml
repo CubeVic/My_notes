@@ -156,6 +156,7 @@ nav:
           - Air Vent servo control: Arduino/Projects/Ikea Lack Table - Enclosure/Air_vent_servo_control.md        
     
     - 3D Printing:
+      - G-code: '3D Printing/gcode.md'
       - Setup and Calibration:
           - Center and Z offset: '3D Printing/Setup and Calibration/Center and Z offset.md'
           - E-steps and Extrutor multiplier: '3D Printing/Setup and Calibration/E-steps and Extrutor multiplie.md'

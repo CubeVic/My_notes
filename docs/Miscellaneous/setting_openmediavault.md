@@ -8,7 +8,7 @@ openmediavault is the next generation network attached storage (NAS) solution ba
 
 In this case we need to download the images for the Raspberry 
 
-![setting_openmediavault_001](images/setting_openmediavault_001.png)
+![setting_openmediavault_001](images/setting_openmediavault_001.PNG)
 
 We can use [balenaEtcher](https://www.balena.io/etcher/)  to flash the image, after this we can put it in the RAspberry pi and boot it up, the next steps i did it connecting a keyboard to the Raspberry and a screen, this might be possible connecting to the raspberry by SSH but i didn't try.
 
