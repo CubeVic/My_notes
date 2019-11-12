@@ -75,6 +75,7 @@ nav:
     - Python:
       - Preparation for PCPP-32-1:
           - Module 1: 'Python/Preparation for PCPP-32-1/Module 1.md'
+          - Module 2: 'Python/Preparation for PCPP-32-1/Module 2.md'
       - Data Structures: 'Python/Data structures.md'
       - Control Flow: 'Python/control flow.md'
       - Functions: 'Python/functions.md'
