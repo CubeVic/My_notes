@@ -41,3 +41,24 @@ the work flow will be as follow:
 4. Python execute the code, causes the desired effect (if any), evaluates the results (if any) and finished the task
 5. Python return to the main code and resume the execution.
 
+### Keyword arguments
+
+This are special arguments that can be pass to the function, these arguments can modify the behavior of the function, as and example:
+
+```python
+print("My name is", "Python.", end=" ")
+print("Monty Python.")
+```
+the result is 
+
+```
+My name is Python. Monty Python.
+```
+Which is different for the normal behavior
+
+in order to use this arguments we need some rules:
+
+* the keyword arguments consist of three elements the keyword, in this case `end` the equal `=` and the value, in this case `" "`
+* the keyword argument must be add at the end of the last positional argument.
+
+In this case the keyword argument modify the behavior of the `print()` function, by default at the end of this function it is a change of line, but in this case we change it to a space.
