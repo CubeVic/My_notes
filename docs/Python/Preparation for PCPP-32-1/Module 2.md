@@ -62,3 +62,14 @@ in order to use this arguments we need some rules:
 * the keyword argument must be add at the end of the last positional argument.
 
 In this case the keyword argument modify the behavior of the `print()` function, by default at the end of this function it is a change of line, but in this case we change it to a space.
+
+For the `print()` function we have other keyword argument, in this case is `sep` this argument will modify the way python separate each argument pass to the function, example:
+
+```python 
+print("My", "name", "is", "Monty", "Python.", sep="-")
+```
+
+will give as a result:
+```
+My-name-is-Monty-Python.
+```
