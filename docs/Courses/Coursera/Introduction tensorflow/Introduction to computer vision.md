@@ -39,7 +39,8 @@ Label |	Description|
 
 ## About the layers of the model
 
-we will look at the code for the neural network definition. before we have just one layer, now we have three layers, the important think to look at are the first and the last layers.
+we will look at the code for the neural network definition. 
+Previously, we have just one layer, now we have three layers, it  is important  to look at are the first and the last layers.
 
 ```python
 model = keras.Sequential([

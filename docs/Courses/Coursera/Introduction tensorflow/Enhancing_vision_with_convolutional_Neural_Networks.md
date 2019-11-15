@@ -59,7 +59,7 @@ So 16 pixels on the left are turned into the four pixels on the right, by lookin
 
 ## Class `Conv2d`
 
-This is the class that we are going to use to make the convolution, for more detailed information we can check the TesorFLow documentation about [Conv2d](https://www.tensorflow.org/versions/r1.8/api_docs/python/tf/keras/layers/Conv2D).
+This is the class that we are going to use to make the convolution, for more detailed information we can check the TesorFLow documentation about [Conv2d](https://www.tensorflow.org/api_docs/python/tf/nn/conv2d).
 
 This layer creates a convolution kernel, which in or example was a 3x3, that is convolved with the layer input to produce a tensor of outputs. If `use_bias` is True, a bias vector is created and added to the outputs. Finally, if `activation` is not `None`, it is applied to the outputs as well.
 

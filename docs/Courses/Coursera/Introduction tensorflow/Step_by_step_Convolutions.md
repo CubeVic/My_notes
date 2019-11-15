@@ -37,7 +37,7 @@ Next is to define the models, the first type of model we saw, we started with th
 ### Convolutional Layer
 So the Layer will have a series of parameters:
 
-1. The number of convolution, or filters (check [here](http://127.0.0.1:8000/Courses/Coursera/Introduction%20tensorflow/Convolutional_Neural_network_Overview/#convolution_layer) for more info), at this point, it is purely arbitrary, but the suggesting start is with something in the order of 32.
+1. The number of convolution, or filters (check [here](../Introduction%20tensorflow/Convolutional_Neural_network_Overview.html/#convolution_layer) for more info), at this point, it is purely arbitrary, but the suggesting start is with something in the order of 32.
 2. The size  of the Convolution, in this case a 3x3 grid.
 3. The activation to use in this case will the the **Rectified Linear Unit** or **ReLU** ( which it will return X when x>0, else return 0)
 4. In the first layer of the convolution, we need to add the input data.
@@ -47,7 +47,7 @@ tf.keras.layers.Conv2D(32, (3,3), activation='relu', input_shape=(28, 28, 1))
 ```
 ### MaxPooling Layer
 
-The next layer will be a MaxPooling layer which will compress the image, it will maintain the content of the features that were previously highlighted by the convolution, by specifying (2,2) for the Maxpooling (check [here](http://127.0.0.1:8000/Courses/Coursera/Introduction%20tensorflow/Convolutional_Neural_network_Overview/#pooling_layer) for more information about maxpooling), the effect is to quarter the size of the image. this layer create a 2x2 array of pixels, and picks the biggest one thus turning 4 pixels into 1, effectively reducing the image by 25%.
+The next layer will be a MaxPooling layer which will compress the image, it will maintain the content of the features that were previously highlighted by the convolution, by specifying (2,2) for the Maxpooling (check [here](../Introduction%20tensorflow/Convolutional_Neural_network_Overview.html/#pooling_layer) for more information about maxpooling), the effect is to quarter the size of the image. this layer create a 2x2 array of pixels, and picks the biggest one thus turning 4 pixels into 1, effectively reducing the image by 25%.
 
 ```python
 tf.keras.layers.MaxPooling2D(2, 2)
