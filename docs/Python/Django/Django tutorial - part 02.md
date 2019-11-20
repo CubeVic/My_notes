@@ -72,7 +72,7 @@ The next step is to tell Django that polls ( or the app we are creating) is goin
 ```python 
 
 INSTALLED_APPS = [
-	'polls.app.PollsConvig',
+	'polls.apps.PollsConfig',
 	'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -115,3 +115,66 @@ so there will be three steps:
 * Run `python manage.py makemigrations` to create the migrations for those changes.
 * Run `python manage.py migrate` to apply those changes to the database.
 
+### How to check what Django is going to built
+
+We can check what Django is going to build once we execute `migration`, we can do it without affecting or executing that migration, this is done with the command `sqlmigrate`
+
+```
+python manage.py sqlmigrate polls 0001
+```
+
+and we will get back a message similar to this:
+
+```SQL
+BEGIN;
+--
+-- Create model Question
+--
+CREATE TABLE "polls_question" (
+    "id" integer NOT NULL PRIMARY KEY AUTOINCREMENT, 
+    "question_text" varchar(200) NOT NULL, 
+    "pub_date" datetime NOT NULL);
+--
+-- Create model Choice
+--
+CREATE TABLE "polls_choice" (
+    "id" integer NOT NULL PRIMARY KEY AUTOINCREMENT, 
+    "choice_text" varchar(200) NOT NULL, 
+    "votes" integer NOT NULL, 
+    "question_id" integer NOT NULL REFERENCES "polls_question" ("id") DEFERRABLE INITIALLY DEFERRED);
+
+CREATE INDEX "polls_choice_question_id_c5b4b260" ON "polls_choice" ("question_id");
+COMMIT;
+
+```
+>The `sqlmigrate`  command doesn’t actually run the migration on your database - it just prints it to the screen so that you can see what SQL Django thinks is required
+
+## Create a User
+
+There are three steps to create a use, the username, the email, and the password.
+
+To start the process we need run the command
+
+```
+python manage.py createsuperuser
+```
+
+Now create the user
+
+```
+Username: admin
+```
+
+The desired email address
+
+```
+Email Address: admin@example.com
+```
+
+Finally the password
+
+```
+Password: **********
+Password (again): *********
+Superuser created successfully.
+```
