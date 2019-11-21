@@ -97,6 +97,7 @@ nav:
       - Django:
         - Django Tutorial (part 01): 'Python/Django/Django tutorial - part 01.md'
         - Django Tutorial (part 02): 'Python/Django/Django tutorial - part 02.md'
+        - Django Tutorial (part 03): 'Python/Django/Django tutorial - part 03.md'
         - (Optional) More details about file structure: 'Python/Django/More details about project structure.md'
 
     - SQL:

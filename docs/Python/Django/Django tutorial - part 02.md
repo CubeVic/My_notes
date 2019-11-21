@@ -178,3 +178,60 @@ Password: **********
 Password (again): *********
 Superuser created successfully.
 ```
+
+## Start the Development server
+
+
+The Django Admin site is activated by default, to explore it we need to  run the server: 
+
+```
+python manage.py runserver
+```
+
+> additionally we can add a specific  port after `runserver` so we can choose in which port run the server 
+
+now, once the server is running we can access to it 
+
+```
+http://127.0.0.1:8000/admin/
+```
+
+we will be receive by a screen like 
+
+![004_Admin_login](images/004_Admin_login.png){: .center}
+
+
+
+once we log in we will see some editable fields, this are provided it by `django.contrib.auth`
+which is the authentication framework shipped by Django
+
+
+![005.Admin_screen](images/005_Admin_screen.png){: .center}
+
+## Make Polls app available on Admin console
+
+Now we need to teel the admin that the object `Questions` have a admin interface, for this we will need to make some modification in `polls/admin.py`
+
+```python
+from django.contrib import admin
+from .models import Question
+
+admin.site.register(Question)
+```
+
+Now that we register the Model, in oder words we register `Question` we can access it on the admin console  
+
+![006_Question_Admin_console.png](images/006_Question_Admin_console.png)
+
+Now we can create and delete questions
+
+![007_Make_Questions](images/007_Make_Questions.png){: .center}
+
+in this case i would like to quote directly the Django documentation:
+
+>Things to note here:
+>
+>* The form is automatically generated from the Question model.
+>* The different model field types (**DateTimeField**, **CharField**) correspond to the appropriate HTML input widget. Each type of field knows how to display itself in the Django admin.
+>* Each DateTimeField gets free JavaScript shortcuts. Dates get a *“Today”* shortcut and calendar popup, and times get a *“Now”* shortcut and a convenient popup that lists commonly entered times.  
+
