@@ -127,6 +127,8 @@ nav:
               - Image Processing:
                 - Color Mapping: 'Courses/Udemy/Python Computer Vision and OpenCV/Image Processing/color_mapping.md'
                 - Blending and Pasting Images: 'Courses/Udemy/Python Computer Vision and OpenCV/Image Processing/blending_pasting_images.md'
+            - Complete Tensorflow 2 and Keras Deep Learning Bootcamp:
+                - Numpy Crash course: 'Courses/Udemy/Complete Tensorflow 2 and Keras Deep Learning Bootcamp/Numpy Crash course.md'
 
     - PowerLanguages:
       - PowerLanguages 001: 'PowerLanguages/PowerLanguages_001.md'
