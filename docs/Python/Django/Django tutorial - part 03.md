@@ -162,3 +162,113 @@ def index(request):
     context = {'latest_question_list': latest_question_list}
     return render(request, 'polls/index.html', context)
 ``` 
+
+## Raising 404 errors
+
+Now, for those cases where the page is not found, of the question is not found we can use the `Http404` error, for that we will need to raise an exception, we are going to use the details view  on `polls/views.py`
+
+```python 
+from django.shortcuts import render
+#from django.template import loader #cuz we are using render()
+# Create your views here.
+from django.http import HttpResponse
+from .models import Question
+
+
+#Because we are using render()
+# def index(request):
+#     latest_question_list = Question.objects.order_by('-pub_date')[:5]
+#     template = loader.get_template('polls/index.html')
+#     context = {
+#         'latest_question_list': latest_question_list,
+#     }
+#     return HttpResponse(template.render(context, request))
+
+
+def index(request):
+    latest_question_list = Question.objects.order_by('-pub_date')[:5]
+    context = {'latest_question_list': latest_question_list}
+    return render(request, 'polls/index.html', context)
+    
+def detail(request, question_id):
+    try:
+        question = Question.objects.get(pk=question_id) #pk stand for primary key
+    except Question.DoesNotExist:
+        raise Http404("Question does not exist")
+    return render(request, 'polls/detail.html',{'question': question})
+
+def results(request,question_id):
+    response = "you're looking at the results of question %s"
+    return HttpResponse(response % question_id)
+
+def vote(request, question_id):
+    return HttpResponse("you're voting on question %s" % question_id)
+``` 
+
+and now we need to create the template, for that we will create a new file on `polls/templates/polls` this file will be `details.html` so the full address will be `polls/templates/polls/details.html` and inside 
+
+```html
+{{question}}
+```
+
+### Shortcut `get_object-or-404()`
+
+Like with the previous scenario there is a way to make the code shorter, for that we can use `get_object_or_404()`
+
+`get_object_or_404()` take as *first* argument  the model, this method can take several other keyword arguments that can be pass to the `get()` function of the model's manager. It raise the `Http404` if the object doesn't exist 
+
+so the modification to the `details()` view will be 
+
+```python 
+def detail(request, question_id):
+    question = get_object_or_404(Question, pk=question_id)
+    return render(request, 'polls/detail.html', {'question': question})
+``` 
+
+making the hold file 
+
+
+```python 
+from django.shortcuts import render
+#from django.template import loader #cuz we are using render()
+# Create your views here.
+from django.http import HttpResponse
+from .models import Question
+
+
+#Because we are using render()
+# def index(request):
+#     latest_question_list = Question.objects.order_by('-pub_date')[:5]
+#     template = loader.get_template('polls/index.html')
+#     context = {
+#         'latest_question_list': latest_question_list,
+#     }
+#     return HttpResponse(template.render(context, request))
+
+
+def index(request):
+    latest_question_list = Question.objects.order_by('-pub_date')[:5]
+    context = {'latest_question_list': latest_question_list}
+    return render(request, 'polls/index.html', context)
+    
+# because we use get_object_or_404()
+# def detail(request, question_id):
+#     try:
+#         question = Question.objects.get(pk=question_id) #pk stand for primary key
+#     except Question.DoesNotExist:
+#         raise Http404("Question does not exist")
+#     return render(request, 'polls/detail.html',{'question': question})
+
+def detail(request, question_id):
+    question = get_object_or_404(Question, pk=question_id)
+    return render(request, 'polls/detail.html', {'question': question})
+
+def results(request,question_id):
+    response = "you're looking at the results of question %s"
+    return HttpResponse(response % question_id)
+
+def vote(request, question_id):
+    return HttpResponse("you're voting on question %s" % question_id)
+``` 
+
+> There’s also a `get_list_or_404()` function, which works just as `get_object_or_404()` – except using `filter()` instead of `get()`. It raises `Http404` if the list is empty.
