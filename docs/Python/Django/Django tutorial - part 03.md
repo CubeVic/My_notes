@@ -272,3 +272,20 @@ def vote(request, question_id):
 ``` 
 
 > There’s also a `get_list_or_404()` function, which works just as `get_object_or_404()` – except using `filter()` instead of `get()`. It raises `Http404` if the list is empty.
+
+## Using the template system  - `detail()`
+
+now using the context variable `question` the template `polls/detail.html` will be 
+
+```html
+<h1>{{question.question_text}}</h1>
+    <ul>
+        {% for choice in question.choice_set.all %}
+        <li> {{ choice.choice_text}} </li>
+        {% endfor %}
+    </ul>
+```
+
+In the templates the dot-lookup notation is use to access variable attributes, example `{{ question.question_text}}`, Django first make a dictionary lookup if this fail it will do a list lookup.
+
+Method-calling happens in the `{% for %}` loop: `question.choice_set.all` will create a iterable of the object `Choice` the statement is interpreted by python as `questionn.choice_set.all()` this iterable object is suitable for the `{% for %}.
