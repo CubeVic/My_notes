@@ -395,3 +395,35 @@ path('<int:question_id>/', views.detail, name='detail'),
 ```
 
 so if in the future we decided to change the url of the polls we can do it in `polls/urls.py` and just in that file
+
+## Namespacing URL names
+
+In this example we have just one app, but in a real prohject we will have more than one,in that case how we make the system know which `details` template to grap, in that case we use `app_name`, for that we need to make changes in `polls/urls.py`
+
+```python 
+from django.urls import path
+
+from . import views
+
+app_name = 'polls'
+urlpatterns = [
+    path('', views.index, name='index'),
+    path('<int:question_id>/', views.detail, name='detail'),
+    path('<int:question_id>/results/', views.results, name='results'),
+    path('<int:question_id>/vote/', views.vote, name='vote'),
+]
+``` 
+
+in this case we added `app_name = 'polls'`
+
+now we need to change `polls/index.html` from
+
+```html
+<li><a href="{% url 'detail' question.id %}">{{ question.question_text }}</a></li>
+```
+to 
+
+```html
+<li><a href="{% url 'polls:detail' question.id %}">{{ question.question_text }}</a></li>
+```
+
