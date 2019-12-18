@@ -288,4 +288,89 @@ now using the context variable `question` the template `polls/detail.html` will 
 
 In the templates the dot-lookup notation is use to access variable attributes, example `{{ question.question_text}}`, Django first make a dictionary lookup if this fail it will do a list lookup.
 
-Method-calling happens in the `{% for %}` loop: `question.choice_set.all` will create a iterable of the object `Choice` the statement is interpreted by python as `questionn.choice_set.all()` this iterable object is suitable for the `{% for %}.
+Method-calling happens in the `{% for %}` loop: `question.choice_set.all` will create a iterable of the object `Choice` the statement is interpreted by python as `questionn.choice_set.all()` this iterable object is suitable for the `{% for %}`.
+
+> Documentation about templates here [template guide](https://docs.djangoproject.com/en/3.0/topics/templates/)
+
+### Brief view to **The Django template language**
+
+Template are rendered in a context, Rendering replace the content of the variables of this context, tags are execute and then everything else is output as is.
+
+There are 4 constructs in Django:
+
+* Variables
+* Tags
+* Filters
+* Comments 
+
+#### Variables 
+
+The variables are placeholders that going to be located between "{{" and "}}", the output of this variables it is going to depend of the context, which is a dict-like object that map key values, everything will be clear with the example 
+
+Let say the context is: 
+```
+ {'first_name': 'John', 'last_name': 'Doe'}
+```
+and we have something like 
+```html
+My first name is {{ first_name }}. My last name is {{ last_name }}.
+```
+we will have an answer like 
+```
+My first name is John. My last name is Doe.
+```
+
+The notation implemented for Dictionary lookup, object lookup and list lookup will be 
+
+```html
+{{ my_dict.key }}
+{{ my_object.attribute }}
+{{ my_list.0 }}
+```
+
+#### Tag
+
+Provide arbitrary logic in the rendering process.
+
+The definition is vague on purpose, this can serve control structures, get database data or access other templates
+
+It is surrounded by "{%" and "%}"
+
+```DTL
+{% if user.is_authenticated %}Hello, {{ user.username }}.{% endif %}
+```
+More information about [Tag](https://docs.djangoproject.com/en/3.0/ref/templates/builtins/#ref-templates-builtins-tags)
+
+#### Filter
+
+Filters transform the values of the variable or the tags 
+for a filter like:
+
+```hmtl
+{{ django|title }}
+```
+with a context like:
+```html
+{'django': 'the web framework for perfectionists with deadlines'}
+```
+result will be 
+```html
+The Web Framework For Perfectionists With Deadlines
+```
+
+more information about [Filter](https://docs.djangoproject.com/en/3.0/ref/templates/builtins/#ref-templates-builtins-filters)
+
+#### Commets
+
+The comments look like
+```html
+{# comments #}
+```
+
+for a multi-line comments
+
+```html
+{% comments %}
+```
+
+
