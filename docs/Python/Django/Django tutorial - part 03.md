@@ -373,4 +373,25 @@ for a multi-line comments
 {% comments %}
 ```
 
+## Removing hardcore URLs in templates 
 
+To maintain a loosely couple approach we will, need to modify the hard-code that we have in the `polls/index.html` template, this can be achieve thank to the name argument in the `path()` function in the `pools.urls` module, we will use the tag `url` to do this in the template.
+
+so from a template like
+```html
+<li><a href="/polls/{{ question.id }}/">{{ question.question_text }}</a></li>
+```
+we have a template like 
+```html
+<li><a href="{% url 'detail' question.id %}">{{ question.question_text }}</a></li>
+```
+this works because Django will look the URL definition as specified in `polls.urls` module. and the we can see **'detail'** defined 
+
+```python 
+...
+# the 'name' value as called by the {% url %} template tag
+path('<int:question_id>/', views.detail, name='detail'),
+...
+```
+
+so if in the future we decided to change the url of the polls we can do it in `polls/urls.py` and just in that file
