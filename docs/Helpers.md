@@ -143,4 +143,16 @@ In order to change how the inline code ( `this` in line code ) and solve the con
 }
 ```
 
+
+### Modification to footnote strings color
+
+To change the color of the footnotes i made a chang ein the css
+
+```css
+.md-typeset div.footnote {
+  color: #808080;
+}
+```
+
+
 >"To every man upon this earth, death cometh soon or late, And how can man die better, Than facing fearful odds, for the ashes of his fathers, And the temples of his gods." 

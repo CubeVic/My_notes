@@ -72,38 +72,68 @@ nav:
         - Twitter Sentiment Analyzer: 'Machine Learning/Scripts or Projects/Twitter_sentiment_Analyzer.md'
       - Other Key Terminology (TensorFlow): 'Machine Learning/Other_key_Terminology.md'
 
-    - Python:
-      - Preparation for PCPP-32-1:
-          - Module 1: 'Python/Preparation for PCPP-32-1/Module 1.md'
-          - Module 2: 'Python/Preparation for PCPP-32-1/Module 2.md'
-      - Data Structures: 'Python/Data structures.md'
-      - Control Flow: 'Python/control flow.md'
-      - Functions: 'Python/functions.md'
-      - Error and Exceptions: 'Python/Error and Exceptions.md'
-      - Reading and Writing Files: 'Python/Reading and Writing Files.md'
-      - Import Local Scripts: 'Python/Import Local Scripts.md'
-      - Generator and Iterators: 'Python/Generator and Iterator.md'
-      - Useful or researched built-in functions: 'Python/Useful or researched built-in functions.md'
-      - Trick and tips for better code in python: 'Python/Tricks_tips_better_code_python.md'
-      - Useful Snippets: 'Python/Useful_snippets.md'
-      - Data bases with Python: 'Python/Databases_with_Python.md'
-      - Virtual Environments: 'Python/virtual_environments.md'
-      - Scripts:
-          - Create Excel Files With Python: 'Python/Scripts/create_excel_files.md'
-          - Creating a dataset wth api and python: 'Python/Scripts/create_dataset_api_python.md'
-          - Scraping Usign Python: 'Python/Scripts/Scraping_Usign_Python.md'
-      - Algorithm:
-          - Magic Square: 'Python/Algorithm/Magic_square.md'
-      - Django:
-        - Django Tutorial (part 01): 'Python/Django/Django tutorial - part 01.md'
-        - Django Tutorial (part 02): 'Python/Django/Django tutorial - part 02.md'
-        - Django Tutorial (part 03): 'Python/Django/Django tutorial - part 03.md'
-        - (Optional) More details about file structure: 'Python/Django/More details about project structure.md'
+    - Coding:
+      - Python:
+        - Preparation for PCPP-32-1:
+          - Module 1: 'Coding/Python/Preparation for PCPP-32-1/Module 1.md'
+          - Module 2: 'Coding/Python/Preparation for PCPP-32-1/Module 2.md'
+        - Data Structures: 'Coding/Python/Data structures.md'
+        - Control Flow: 'Coding/Python/control flow.md'
+        - Functions: 'Coding/Python/functions.md'
+        - Error and Exceptions: 'Coding/Python/Error and Exceptions.md'
+        - Reading and Writing Files: 'Coding/Python/Reading and Writing Files.md'
+        - Import Local Scripts: 'Coding/Python/Import Local Scripts.md'
+        - Generator and Iterators: 'Coding/Python/Generator and Iterator.md'
+        - Useful or researched built-in functions: 'Coding/Python/Useful or researched built-in functions.md'
+        - Trick and tips for better code in python: 'Coding/Python/Tricks_tips_better_code_python.md'
+        - Useful Snippets: 'Coding/Python/Useful_snippets.md'
+        - Data bases with Python: 'Coding/Python/Databases_with_Python.md'
+        - Virtual Environments: 'Coding/Python/virtual_environments.md'
+        - Scripts:
+          - Create Excel Files With Python: 'Coding/Python/Scripts/create_excel_files.md'
+          - Creating a dataset wth api and python: 'Coding/Python/Scripts/create_dataset_api_python.md'
+          - Scraping Usign Python: 'Coding/Python/Scripts/Scraping_Usign_Python.md'
+        - Algorithm:
+          - Magic Square: 'Coding/Python/Algorithm/Magic_square.md'
+        - Django:
+          - Django Tutorial (part 01): 'Coding/Python/Django/Django tutorial - part 01.md'
+          - Django Tutorial (part 02): 'Coding/Python/Django/Django tutorial - part 02.md'
+          - Django Tutorial (part 03): 'Coding/Python/Django/Django tutorial - part 03.md'
+          - (Optional) More details about file structure: 'Coding/Python/Django/More details about project structure.md'
 
-    - SQL:
-      - Random notes about SQL: 'SQL/Some_SQL.md'
-      - String Funtions SQL: 'SQL/String_Functions_SQL.md'
-      - Advance Funtion SQL: 'SQL/Advance_Funtion_SQL.md'
+      - SQL:
+        - Random notes about SQL: 'Coding/SQL/Some_SQL.md'
+        - String Funtions SQL: 'Coding/SQL/String_Functions_SQL.md'
+        - Advance Funtion SQL: 'Coding/SQL/Advance_Funtion_SQL.md'
+
+      - PowerLanguages:
+        - PowerLanguages 001: 'Coding/PowerLanguages/PowerLanguages_001.md'
+        - Reserved words: 'Coding/PowerLanguages/Reserved words.md'
+        - How Scripts Work: 'Coding/PowerLanguages/how_script_works.md'
+        - Functions: 'Coding/PowerLanguages/functions.md'
+        - Plot: 'Coding/PowerLanguages/Plot.md'
+        - Text and Trendlines: 'Coding/PowerLanguages/text_trendlines.md'
+
+      - Arduino:
+        - Structure: 
+          - Sketch: 'Coding/Arduino/Structure/Sketch.md'
+          - Control Structure: 'Coding/Arduino/Structure/Control_Structure.md'
+          - Further Syntax: 'Coding/Arduino/Structure/Further_Syntax.md'
+        - Variables:
+          - Constants and Data Types: 'Coding/Arduino/Variables/Constants_and_Data_Types.md'
+          - Conversion: 'Coding/Arduino/Variables/Conversion.md'
+          - Variable Scope & Qualifiers: 'Coding/Arduino/Variables/Variable_Scope_Qualifiers.md'
+        - Functions:
+          - Digital I/O and Analog I/O: 'Coding/Arduino/Functions/Digital_and_Analog.md'
+          - Time: 'Coding/Arduino/Functions/Time.md'
+          - Math and Trigonometry: 'Coding/Arduino/Functions/Math_and_Trigonometry.md'
+          - Characters: 'Coding/Arduino/Functions/Characters.md'
+          - Random Numbers: 'Coding/Arduino/Functions/Random_Numbers.md'
+          - Communication: 'Coding/Arduino/Functions/Communication.md'
+          - Interrupts and External Interruptions: 'Coding/Arduino/Functions/Interrupts_and_External_Interruptions.md'
+        - Projects:
+          - Ikea Lack Table - Enclosure:
+            - Air Vent servo control: Coding/Arduino/Projects/Ikea Lack Table - Enclosure/Air_vent_servo_control.md'  
 
     - Courses:
           - Coursera:
@@ -129,36 +159,7 @@ nav:
                 - Blending and Pasting Images: 'Courses/Udemy/Python Computer Vision and OpenCV/Image Processing/blending_pasting_images.md'
             - Complete Tensorflow 2 and Keras Deep Learning Bootcamp:
                 - Numpy Crash course: 'Courses/Udemy/Complete Tensorflow 2 and Keras Deep Learning Bootcamp/Numpy Crash course.md'
-
-    - PowerLanguages:
-      - PowerLanguages 001: 'PowerLanguages/PowerLanguages_001.md'
-      - Reserved words: 'PowerLanguages/Reserved words.md'
-      - How Scripts Work: 'PowerLanguages/how_script_works.md'
-      - Functions: 'PowerLanguages/functions.md'
-      - Plot: 'PowerLanguages/Plot.md'
-      - Text and Trendlines: 'PowerLanguages/text_trendlines.md'
-
-    - Arduino:
-      - Structure: 
-        - Sketch: 'Arduino/Structure/Sketch.md'
-        - Control Structure: 'Arduino/Structure/Control_Structure.md'
-        - Further Syntax: 'Arduino/Structure/Further_Syntax.md'
-      - Variables:
-        - Constants and Data Types: 'Arduino/Variables/Constants_and_Data_Types.md'
-        - Conversion: 'Arduino/Variables/Conversion.md'
-        - Variable Scope & Qualifiers: 'Arduino/Variables/Variable_Scope_Qualifiers.md'
-      - Functions:
-        - Digital I/O and Analog I/O: 'Arduino/Functions/Digital_and_Analog.md'
-        - Time: 'Arduino/Functions/Time.md'
-        - Math and Trigonometry: 'Arduino/Functions/Math_and_Trigonometry.md'
-        - Characters: 'Arduino/Functions/Characters.md'
-        - Random Numbers: 'Arduino/Functions/Random_Numbers.md'
-        - Communication: 'Arduino/Functions/Communication.md'
-        - Interrupts and External Interruptions: 'Arduino/Functions/Interrupts_and_External_Interruptions.md'
-      - Projects:
-        - Ikea Lack Table - Enclosure:
-          - Air Vent servo control: Arduino/Projects/Ikea Lack Table - Enclosure/Air_vent_servo_control.md        
-    
+          
     - 3D Printing:
       - G-code: '3D Printing/gcode.md'
       - Setup and Calibration:
