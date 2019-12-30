@@ -277,13 +277,13 @@ For the most basic usage, this been creating a new workbook with just one sheet
 To create a workbook we can use the function `Workbook()`
 
 ```python
-from openpyxl import WorkBook
+from openpyxl import Workbook
 wb = Workbook()
 ```
 now, we need to create the first sheet, the following statement is just for the first sheet
 
 ```python
-from openpyxl import WorkBook
+from openpyxl import Workbook
 wb = Workbook()
 
 ws = wb.active
@@ -294,7 +294,7 @@ by default the name of the sheet will be "sheet" and a number, so the first shee
 Now, we have the workbook and the first sheet, what about the second sheet?, To create the second sheet and all the following sheets, we use `create_sheet("name of the sheet")`
 
 ```python
-from openpyxl import WorkBook
+from openpyxl import Workbook
 wb = Workbook()
 
 ws = wb.active
@@ -308,7 +308,7 @@ We can use the `create_sheet("name of the sheet")` and by defautl the sheet will
 At any moment we can change the title of the sheet using `.title` as follow
 
 ```python
-from openpyxl import WorkBook
+from openpyxl import Workbook
 wb = Workbook()
 
 ws = wb.active
