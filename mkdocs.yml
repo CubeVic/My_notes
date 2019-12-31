@@ -161,6 +161,7 @@ nav:
                 - Numpy Crash course: 'Courses/Udemy/Complete Tensorflow 2 and Keras Deep Learning Bootcamp/Numpy Crash course.md'
           
     - 3D Printing:
+      - Concepts: '3D Printing/Concepts.md'
       - G-code: '3D Printing/gcode.md'
       - Setup and Calibration:
           - Center and Z offset: '3D Printing/Setup and Calibration/Center and Z offset.md'
