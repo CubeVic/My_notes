@@ -261,3 +261,103 @@ arr2.dtype
 
 #dtype('float64')
 ``` 
+
+## Numpy Indexing and Selection
+To select an item in the array we can use a syntax similar to the one use to pick up elements of a list, in the following example we will:
+
+####1. Create an array 
+```python 
+import numpy as np#create an array
+arr = np.arange(0,11)
+``` 
+
+####2. Select a single element
+```python 
+arr[7]
+#7
+``` 
+
+####3. Select a range of elements
+```python 
+arr[0:5]
+#array([0,1,2,3,4])\
+``` 
+
+### Broadcasting
+
+The differences between Python list and Numpy arrays can be simplify as; python list you can **only reassign values** to part of the list with the same size and shape, if you want to replace X number of elements you will need to pass in a new x element list, this is explain better with an example.
+
+In the example:  
+1. Create an array.  
+2. Slice part of the array.  
+3. We will change the sliced array.    
+4. Display the original array. 
+
+Notice the elements of the array, that belong to the sliced array, were change. This is because the data is not copied in order to avoid memory problems. 
+
+![numpy broadcasting](images/numpy_001.png)
+
+```python 
+import numpy as np
+#create an array 
+arr= np.arange(0,10)
+#slice the array
+sliced_arr = arr[0:6]
+#change the values in the slice
+sliced_arr[:] = 100
+# print the original array to show the changes
+print(arr)
+#array([100, 100, 100, 100, 100, 100,   6,   7,   8,   9])
+``` 
+
+> If you want to make a copy of the array you can use `copy()` like `new_arr = arr.copy()`
+
+### Indexing 2d arrays (matrices)
+
+The syntax will be **arr_2d[row][col]** or **arr_2d[row,col]**, the latter the most common used.
+
+###1. Create the matrix
+```python 
+import numpy as np
+arr_2d = np.arange([5,10,15],[20,25,30],[35,40,45])
+``` 
+###2. Select base in index
+a row
+```python 
+arr_2d[1]
+#array([20,25,30])
+``` 
+a value
+```python 
+arr_2d[1][0]
+#20
+``` 
+###3. select a matrix inside the matrix
+```python 
+arr_2d[:2,1:] # top right corner
+# array([25,30],
+#		[40,45])
+
+``` 
+
+### Conditional selection
+
+We can select elements of the arrays base in a condition, let say we want to know what elements are bigger than 4.
+
+```python 
+import numpy as np
+arr = np.arange(0,10)
+print(arr>4)
+#array([False, False, False, False,  True,  True,  True,  True,  True,
+#        True])
+``` 
+we can save this array of boolean values and use it to slice or select elements of the original array base in this condition 
+
+```python 
+bool_arr = arr>4
+arr[bool_arr]
+# array([ 5,  6,  7,  8,  9, 10])
+arr[arr>4]
+# array([ 5,  6,  7,  8,  9, 10])
+``` 
+
