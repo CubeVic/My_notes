@@ -159,6 +159,7 @@ nav:
                 - Blending and Pasting Images: 'Courses/Udemy/Python Computer Vision and OpenCV/Image Processing/blending_pasting_images.md'
             - Complete Tensorflow 2 and Keras Deep Learning Bootcamp:
                 - Numpy Crash course: 'Courses/Udemy/Complete Tensorflow 2 and Keras Deep Learning Bootcamp/Numpy Crash course.md'
+                - Pandas Crash course: 'Courses/Udemy/Complete Tensorflow 2 and Keras Deep Learning Bootcamp/Pandas Crash course.md'
           
     - 3D Printing:
       - Concepts: '3D Printing/Concepts.md'
