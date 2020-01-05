@@ -86,3 +86,16 @@ Left and right toc scrollbar
   color: #F5F5F5 !important;
   background-color: #212121 !important;
 }
+
+/*
+/////////////////////////////
+/// footnotes ////
+////////////////////////////
+
+Modification by: Victor Fernandez
+Description: modification of footnotes color
+*/
+
+.md-typeset div.footnote {
+  color: #808080 !important;
+}
