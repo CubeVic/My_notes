@@ -78,6 +78,14 @@ pd.Series(arr,labels)
 #dtype: int64
 ``` 
 
+####3. Using Dictionaries
+```python 
+pd.Series(d)
+#a    10
+#b    20
+#c    30
+#dtype: int64
+``` 
 
 
 
