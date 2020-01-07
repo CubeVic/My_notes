@@ -132,8 +132,7 @@ nav:
           - Communication: 'Coding/Arduino/Functions/Communication.md'
           - Interrupts and External Interruptions: 'Coding/Arduino/Functions/Interrupts_and_External_Interruptions.md'
         - Projects:
-          - Ikea Lack Table - Enclosure:
-            - Air Vent servo control: Coding/Arduino/Projects/Ikea Lack Table - Enclosure/Air_vent_servo_control.md'  
+          - Air Vent servo control: 'Coding/Arduino/Projects/Air_vent_servo_control.md'  
 
     - Courses:
           - Coursera:
