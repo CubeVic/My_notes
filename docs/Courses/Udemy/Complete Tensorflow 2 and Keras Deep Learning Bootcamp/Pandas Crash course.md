@@ -87,23 +87,242 @@ pd.Series(d)
 #dtype: int64
 ``` 
 
+### Using Index
+
+Pandas use the index name or numbers which allow to access the information ( the index are the rows).
+
+```python 
+sales_Q1 = pd.Series(data=[250,450,200,150], index=['USA','China','India','Brazil'])
+Sales_Q1 
+#USA       250
+#China     450
+#India     200
+#Brazil    150
+#dtype: int64
+
+sales_Q2 = pd.Series([260,500,210,100],index = ['USA', 'China','India', 'Japan'])  
+sales_Q2
+#USA      260
+#China    500
+#India    210
+#Japan    100
+#dtype: int64
+
+sales_Q1['USA']
+#250
+
+sales_Q1 + sales_Q2
+#Brazil      NaN
+#China     950.0
+#India     410.0
+#Japan       NaN
+#USA       510.0
+#dtype: float64
+``` 
+
+## DataFrames
+
+Datafarames are inspire in **R programming** they look like a group of series put together to share the same index.
+
+```python 
+import pandas as pd
+import numpy as np
+from numpy.random import randint
+
+# define columns and index to use later in the DataFrame
+columns = ['W','X','Y','Z'] # four columns
+index = ['A','B','C','D','E'] # five rows
+
+np.random.seed(42)
+data = randint(-100,100,(5,4))
+# randint(low,high, size)
+
+print(data)
+#array([[  2,  79,  -8, -86],
+#       [  6, -29,  88, -80],
+#       [  2,  21, -26, -13],
+#       [ 16,  -1,   3,  51],
+#       [ 30,  49, -48, -99]])
+
+df = pd.DataFrame(data,index,columns)
+print(df)
+
+``` 
+![pandas](images/pandas_001.png)
 
 
+###Selection and indexing
+
+We can select and grad columns or parts of the DataFrame
+
+####Columns
+
+To grap a single column
+
+```python 
+print(df['W'])
+#A     2
+#B     6
+#C     2
+#D    16
+#E    30
+#Name: W, dtype: int64
+``` 
+
+Grap multiple Columns
+
+```python 
+print[['W','Z']]
+#  	W	Z
+# A	2	-86
+# B	6	-80
+# C	2	-13
+# D	16	51
+# E	30	-99
+``` 
+
+If we use the method `type()` we can see that the columns are just pandas series
+
+```python 
+print(type(df['W']))
+# pandas.core.series.Series
+``` 
+
+####Create a new column
+
+```python 
+df["new"] = df['W'] + df['Y']
+print(df['new'])
+``` 
+
+![pandas](images/pandas_002.png)
 
 
+####Removing Columns
+
+for the removing of a column is important to understand that if it is not reassigned (df = de.drop()) the removal wont be save, see in the example:
+
+```python 
+# axis=1 because its a column
+print(df.drop('new',axis=1))
+#	W	X	Y	Z
+# A	2	79	-8	-86
+# B	6	-29	88	-80
+# C	2	21	-26	-13
+# D	16	-1	3	51
+# E	30	49	-48	-99
+
+print(df)
+#	W	X	Y	Z	new
+# A	2	79	-8	-86	-6
+# B	6	-29	88	-80	94
+# C	2	21	-26	-13	-24
+# D	16	-1	3	51	19
+# E	30	49	-48	-99	-18
+
+df = df.drop('new',axis=1)
+``` 
+
+![pandas](images/pandas_003.png)
+
+### Working with Rows
+
+Now to select a row we will need to use a bit different approach, in this case we will need to use `df.loc[]` we use `loc` and the name or number of the row.
+
+```python 
+print(df.loc['A'])
+#W     2
+#X    79
+#Y    -8
+#Z   -86
+#Name: A, dtype: int64
+``` 
+
+The selection by numerical index will be
+
+```python 
+print(df.iloc[0])
+#W     2
+#X    79
+#Y    -8
+#Z   -86
+#Name: A, dtype: int32
+``` 
 
 
+#### Multi-row selection
+
+Similar with columns we can select multiple rows at the same time
+```python 
+print(df.loc[['A'.'C']])
+#	W	X	Y	Z
+# A	2	79	-8	-86
+# C	2	21	-26	-13
+``` 
+
+now by numerical index
+
+```python 
+print(df.iloc[0:2])
+
+#	 W	 X	 Y	 Z
+# A	 2	 79	 -8	 -86
+# B	 6	-29	 88	 -80
+``` 
+Now we can select a subset of rows and columns 
+
+```python 
+print(df.loc[['A','C'],['W','Y']])
+#	 W	 Y
+# A	 2	 -8
+# C	 2	 -26
+``` 
 
 
+#### Removing a row
 
+To remove a row we use `drop()` but this time the parameter `axis=0`, and in the same way with columns, if this is not reassigned the removal wont take place.
 
+```python 
+print(df.drop('C',axis=0))
+#	 W	X	Y	Z
+# A	 2	79	-8	-86
+# B	 6	-29	88	-80
+# D	 16	-1	3	51
+# E	 30	49	-48	-99
 
+print(df)
+#	 W	X	Y	Z
+# A	 2	79	-8	-86
+# B	 6	-29	88	-80
+# C	 2	21	-26	-13
+# D	 16	-1	3	51
+# E	 30	49	-48	-99
+``` 
 
+### Conditional Selection
 
+Pandas allow the conditional selection similar to NumPy, for the examples of this we will use the DataFrame 
 
+![pandas](images/pandas_004.png)
 
+```python 
+print(df>0)
+#		W		X		Y		Z
+# A	 True	 True	 False	 False
+# B	 True	 False	 True	 False
+# C	 True	 True	 False	 False
+# D	 True	 False	 True	 True
+# E	 True	 True	 False	 False
 
-
+print(df[df>0])
+#	 W	 X	 	Y	 Z
+# A	 2	 79.0	NaN	 NaN
+# B	 6	 NaN	88.0 NaN
+# C	 2	 21.0	NaN	 NaN
+# D	 16	 NaN	3.0	 51.0
+# E	 30	 49.0	NaN	 NaN
+``` 
 
 
 
