@@ -302,7 +302,7 @@ print(df)
 
 ### Conditional Selection
 
-Pandas allow the conditional selection similar to NumPy, for the examples of this we will use the DataFrame 
+Pandas allow the conditional selection similar to NumPy, for the examples of this we will use the DataFrame: 
 
 ![pandas](images/pandas_004.png)
 
