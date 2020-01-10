@@ -395,11 +395,28 @@ df = df.set_index('states')
 
 
 
+#### Summaries
+
+THere are 3 methods we can use to get information about the data in the DataFrames they are:
+
+* `describe()` which will give a statistic description of the values 
+
+```python 
+df.describe()
+``` 
+
+![pandas](images/pandas_006.png)
+
+* `info()` overall description of what is in the table 
+```python 
+df.info()
+``` 
+![pandas](images/pandas_007.png)
 
 
+* `dtypes()` to display the data type
 
-
-
+![pandas](images/pandas_008.png)
 
 
 
