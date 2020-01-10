@@ -324,6 +324,75 @@ print(df[df>0])
 # E	 30	 49.0	NaN	 NaN
 ``` 
 
+More examples
+
+```python 
+print(df['X']>0)
+#A     True
+#B    False
+#C     True
+#D    False
+#E     True
+#Name: X, dtype: bool
+
+print(df[df['X']>0])
+#	W	X	Y	Z
+#A	2	79	-8	-86
+#C	2	21	-26	-13
+#E	30	49	-48	-99
+
+print(df[df['X']>0]['Y'])
+#A    -8
+#C   -26
+#E   -48
+#Name: Y, dtype: int64
+
+print(df[df['X']>0][['Y','Z']])
+#	 Y	  Z
+#A	-8	-86
+#C	-26	-13
+#E	-48	-99
+```
+If we want to use more than one conditional we can us binary operator like "|" or "&".
+```python 
+print(df[(df['W']>0) & (df['Y'] > 1)])
+#	W	X	Y	Z
+#B	6	-29	88	-80
+#D	16	-1	3	51
+``` 
+
+#### More about index
+
+We can reset the index, this means change the index selected ( in this case the letters A to E) for the number (starting in 0), lit copy if this change is not reassigned it wont take place.
+
+Again we start with   
+![pandas](images/pandas_004.png)
+
+```python 
+# Reset to default 0,1...n index
+df.reset_index()
+
+#	index	W	X	Y	Z
+#0	A	2	79	-8	-86
+#1	B	6	-29	88	-80
+#2	C	2	21	-26	-13
+#3	D	16	-1	3	51
+#4	E	30	49	-48	-99
+``` 
+
+now we can create new index, in the following example we will create a new index starting from a string
+
+```python 
+
+newid = 'CA NY WY OR CO'.split()
+df['states'] = newind
+df = df.set_index('states')
+
+
+``` 
+
+![pandas](images/pandas_005.png)
+
 
 
 
