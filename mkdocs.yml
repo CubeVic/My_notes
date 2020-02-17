@@ -91,7 +91,7 @@ nav:
         - Virtual Environments: 'Coding/Python/virtual_environments.md'
         - Scripts:
           - Create Excel Files With Python: 'Coding/Python/Scripts/create_excel_files.md'
-          - Creating a dataset wth api and python: 'Coding/Python/Scripts/create_dataset_api_python.md'
+          - Creating a dataset with api and python: 'Coding/Python/Scripts/create_dataset_api_python.md'
           - Scraping Usign Python: 'Coding/Python/Scripts/Scraping_Usign_Python.md'
         - Algorithm:
           - Magic Square: 'Coding/Python/Algorithm/Magic_square.md'
