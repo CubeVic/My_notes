@@ -418,18 +418,96 @@ df.info()
 
 ![pandas](images/pandas_008.png)
 
+### Missing Data
+
+There are some methods in POandas that allow you to handle missing data in the DataFrames or series, 
+
+First lets create a new DataFrame with missing data
+
+```python 
+import numpy as np
+import pandas as pd
+
+df = pd.DataFrame({'A':[1,2,np,nan,4],
+					'B':[5,np,nan,np,nan,8],
+					'C':[10,20,30,40]})
+``` 
+
+![pandas](images/pandas_009.png)
+
+#### Removing missing data
+
+To remove horizontally 
 
 
+```python 
+df.dropna()
+#	A	B	C
+#0	1.0	5.0	10
+#3	4.0	8.0	40
+
+``` 
+
+To do it Vertically
+
+```python 
+df.dropna(axis=1)
+#    C
+# 0	10
+# 1	20
+# 2	30
+# 3	40
+``` 
+
+#### Threshold 
+
+We can set a threshold for each column or row, if the row or column has equal or more of specific number of NA
+
+```python 
+df.dropna(thresh=2)
+#	A	B	C
+#0	1.0	5.0	10
+#1	2.0	NaN	20
+#3	4.0	8.0	40
+``` 
+
+#### Filling missing data
 
 
+Now to fill the empty values we can use `fillna(value=0)`  using as a argument for the parameter `value` either a *string* of an *integer*
+
+```python 
+df.fillna(value='FILL VALUE')
+
+#	A			B			C
+#0	1			5			10
+#1	2			FILL VALUE	20
+#2	FILL VALUE	FILL VALUE	30
+#3	4			8			40
+
+``` 
 
 
+```python 
+df['A'].fillna(value=0)
+
+#0    1.0
+#1    2.0
+#2    0.0
+#3    4.0
+#Name: A, dtype: float64
+``` 
 
 
+```python 
+df['A'].fillna(df['A'].mean())
 
-
-
-
+#0    1.000000
+#1    2.000000
+#2    2.333333
+#3    4.000000
+#Name: A, dtype: float64
+``` 
 
 
 
