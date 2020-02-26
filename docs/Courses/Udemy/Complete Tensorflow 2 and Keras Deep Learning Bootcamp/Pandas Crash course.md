@@ -461,7 +461,7 @@ df.dropna(axis=1)
 
 #### Threshold 
 
-We can set a threshold for each column or row, if the row or column has equal or more of specific number of NA
+We can set a threshold for each column or row, if the row or column has equal or more of specific number of non-NaN
 
 ```python 
 df.dropna(thresh=2)
@@ -509,12 +509,29 @@ df['A'].fillna(df['A'].mean())
 #Name: A, dtype: float64
 ``` 
 
+### Groupby
+
+the Method `groupby()` allow me to group different rows and call other functions ( aggregate functions)
+
+first we will need to choose the column that we are going to use as a categorical column, which is the same that we are going to use with `groupby`, Second choose the aggregated function (e.g. max,min, mean, std, etc...) 
 
 
+![pandas](images/pandas_010.png)
 
 
+let make and example, we are going to read a file called "Universities.csv"  and use the column 'Year' to group. 
 
+```python 
+import pandas as pd
 
+#read the csv file
+df = pd.read_csv('Universities.cvs')
+
+#now we can show the first rows 
+df.head()
+``` 
+
+![pandas](images/pandas_011.png)
 
 
 
