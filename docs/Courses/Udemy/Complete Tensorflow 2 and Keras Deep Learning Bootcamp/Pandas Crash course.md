@@ -516,8 +516,7 @@ the Method `groupby()` allow me to group different rows and call other functions
 first we will need to choose the column that we are going to use as a categorical column, which is the same that we are going to use with `groupby`, Second choose the aggregated function (e.g. max,min, mean, std, etc...) 
 
 
-![pandas](images/pandas_010.png)
-
+![pandas](images/pandas_010.png){: .center}
 
 let make and example, we are going to read a file called "Universities.csv"  and use the column 'Year' to group. 
 
@@ -531,15 +530,51 @@ df = pd.read_csv('Universities.cvs')
 df.head()
 ``` 
 
-![pandas](images/pandas_011.png)
+![pandas](images/pandas_011.png){: .center}
+
+
+```python 
+#now group by Year
+df.groupby('Year')
+#<pandas.core.groupby.generic.DataFrameGroupBy object at 0x00000220102EC048>
+# the groupby will be a DataFrame
+
+# we can use the the aggregated 
+df.groupby('Year'),mean()
+``` 
+
+![pandas](images/pandas_012.png){: .center}
+
+
+As well as the `groupby` the result of `df.groupby('Year').mean()` will be a DataFrame as well.
+
+we can sort the results of `mean()`
+
+```python 
+df.groupby('Year').mean().sort_index(ascending=False)
+``` 
+![pandas](images/pandas_013.png){: .center}
 
 
 
+#### Groupby by multiple columns
+
+We can make the grouping by multiple columns we just need to
+
+```python 
+df.groupby(['Year','Sector']).mean()
+``` 
+
+![pandas](images/pandas_014.png){: .center}
 
 
+Now we are going to use `describe()` which will give use information about this dataFrame, but we will combine it with `transpose()` so we can change the columns for the rows and display it in a more readable way ( we are going to use just `groupby` with "Year")
 
+```python 
+df.groupby('Year').describe().transpose()
+``` 
 
-
+![pandas](images/pandas_015.png){: .center}
 
 
 
