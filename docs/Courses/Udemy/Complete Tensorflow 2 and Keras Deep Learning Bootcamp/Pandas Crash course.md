@@ -577,7 +577,54 @@ df.groupby('Year').describe().transpose()
 ![pandas](images/pandas_015.png){: .center}
 
 
+### Operations 
 
+There are a set of operation that are useful but don't fall in a specific category 
+
+for the next operation we will create the following DataFrame:
+
+```python 
+import pandas as pd
+
+df_one = pd.DataFrame({'k1':['A','A','B','B','C','C'],'col1':[100,200,300,300,400,500],'col2':['NY','CA','WA','WA','AK','NV']})
+``` 
+
+![pandas](images/pandas_016.png){: .center}
+
+#### Unique Values
+
+* Get the unique values.
+```python 
+df_one['col2'].unique()
+# array(['NY', 'CA', 'WA', 'AK', 'NV'], dtype=object)
+``` 
+
+* Get number of unique values.
+```python 
+df_one['col2'].nunique()
+# 5
+```
+
+* Count and Get the number of times a value is repeated 
+```python 
+df_one['col2'].value_counts()
+# WA    2
+# CA    1
+# NV    1
+# NY    1
+# AK    1
+
+``` 
+
+* To remove duplicated rows 
+
+```python 
+df_one['col2'].drop_duplicates()
+``` 
+
+![pandas](images/pandas_017.png){: .center}
+
+  
 
 
 
