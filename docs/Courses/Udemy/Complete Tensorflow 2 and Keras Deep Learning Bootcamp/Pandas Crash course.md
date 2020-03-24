@@ -594,7 +594,7 @@ df_one = pd.DataFrame({'k1':['A','A','B','B','C','C'],'col1':[100,200,300,300,40
 #### Unique Values
 
 * Get the unique values.
-```python 
+```python
 df_one['col2'].unique()
 # array(['NY', 'CA', 'WA', 'AK', 'NV'], dtype=object)
 ``` 
@@ -624,7 +624,123 @@ df_one['col2'].drop_duplicates()
 
 ![pandas](images/pandas_017.png){: .center}
 
-  
+ 
+#### Create new Columns with Operations and Functions 
 
+```python 
+def_one['New col'] = df_one['col1'] * 10
+``` 
+
+![pandas](images/pandas_018.png){: .center}
+
+
+or we can use the method `apply()` and pass a customize function as a parameter 
+
+```python 
+def grab_first_letter(state):
+	return state[0]
+
+
+df_one['first letter'] = df_one['col2'].apply(grab_first_letter)
+
+``` 
+![pandas](images/pandas_019.png){: .center}
+
+> Be aware that we are not making a call of the function `grab_first_letter()`, there is not "()". 
+
+
+#### Mapping 
+
+now we are going to mapped some value to other 
+lets check the column "k1"
+
+![pandas](images/pandas_020.png){: .center}
+
+```python 
+df_one['k1'].map({'A':1,'B':2,'C':3})
+
+``` 
+
+![pandas](images/pandas_021.png){: .center}
+
+
+#### Sorting, min, max, columns and index
+
+to get the max, min or their positions we use:
+
+* To find max value: `df_one['col1'].max()` 
+* The index of the max value: `df_one['col1'].idxmax()`
+* To find min value: `df_one['col1'].min()`
+* The index of the min value: `df_one['col1'].idxmin()`
+* Now for sorting: `df_one.sort_values('col2')`
+
+#### Concatenate DataFrames and Dummy variables 
+
+to concatenate we need to be careful in which axis we want to work with,
+
+```python 
+features = pd.DataFrame({'A':[100,200,300,400,500],
+                        'B':[12,13,14,15,16]})
+predictions = pd.DataFrame({'pred':[0,1,1,0,1]})
+
+pd.concat([features,predictions])
+``` 
+![pandas](images/pandas_022.png){: .center}
+
+```python 
+pd.concat([features,predictions],axis=1)
+``` 
+![pandas](images/pandas_023.png){: .center}
+
+for the dummy variables, first, we are going to change the name of the columns 
+
+```python 
+df_one.columns = ['C1','C2','C3','C4','C5','C6']
+``` 
+later we can make the dummy variable
+
+```python 
+pd.get_dummies(df_one['C1'])
+``` 
+![pandas](images/pandas_024.png){: .center}
+
+### Data input and Data Output
+
+for more detailed information of the different type of files and please visit the [pandas documentation](https://pandas.pydata.org/pandas-docs/stable/user_guide/io.html)
+
+![pandas](images/pandas_025.png){: .center}
+
+#### CSV
+
+To be able to read this type of files we need two additional libraries:
+
+* xlrd ( `pip install xlrd` ).  
+* openpyxl ( `pip install openpyxl `).  
+
+for reading CSV: 
+```python 
+df = pd.read_csv('example.csv')
+``` 
+
+for the Output
+```python 
+df = df.to_csv('example.csv', index = False)
+``` 
+
+#### HTML
+
+Pandas is able to read table tabs of the HTML (if the firewall allow pandas to read the HTML) but it is necessary to add the following libraries:
+
+* lxml ( `pip install lxml`).  
+* html5lib (`pip install html5lib`).  
+* beautifulsoap4 ( `pip install beautifulsoap4`).  
+
+for the input, the `read_html` function willl read tables of the webpage and return a list of DataFrame object:
+
+```python 
+tables = pd.read_html('http://www.fdic.gov/bank/individual/failed/banklist.html')
+tables[0].head()
+``` 
+![pandas](images/pandas_026.png){: .center}
 
 
