@@ -70,6 +70,26 @@ plt.ylabel('Y Label')
 ![Visualization](images/visualization_003.png){: .center}
 
 
+#### Adding limits or changing the axis scale
+
+We can limit or expand the limit of the graphic, in this case we want the previous plot axis to start 0 for X and 100 for Y and finish at 2 for X and 30 for Y.
+
+
+```python 
+ptl.plot(x,y)
+
+#axis and ticks
+plt.xlim(0,2)
+plt.ylin(100,300)
+
+#labeling
+plt.title('Title')
+plt.xlabel('X Label')
+plt.ylabel('Y Label')
+``` 
+
+![Visualization](images/visualization_004.png){: .center}
+
 
 
 
