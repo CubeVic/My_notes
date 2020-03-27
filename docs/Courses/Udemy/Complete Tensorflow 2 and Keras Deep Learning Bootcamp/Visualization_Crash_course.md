@@ -54,8 +54,20 @@ If we use the normal plot this will display some straight line but if we use the
 ![Visualization](images/visualization_002.png){: .center}
 
 
+#### Adding title and name to the axis 
 
+1. we draw the plot `plt.plot(x,y)`
+2. we put the title `plt.title('title')`
+3. we name the axis `plt.xlabel('X Label'), plt.ylabel('Y Label')`
 
+```python 
+plt.plot(x,y)
+plt.title('Title')
+plt.xlabel('X Label')
+plt.ylabel('Y Label')
+``` 
+
+![Visualization](images/visualization_003.png){: .center}
 
 
 
