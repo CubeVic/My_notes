@@ -226,3 +226,34 @@ sns.boxplot(x='target',y='thalach',data=df, hue='sex')
 ``` 
 
 ![Visualization](images/visualization_019.png){: .center}
+
+## Scatter plot
+This kind of plot is use to display the relationship between two continuous features
+we can use the `hue` and `size` to add extra dimension, and use `palette` to change the color [more info](https://seaborn.pydata.org/generated/seaborn.scatterplot.html)
+
+```python 
+sns.scatterplot(x='chol',y='trestbps',data=df,hue='sex',size='age')
+``` 
+![Visualization](images/visualization_020.png){: .center}
+
+## Pairplots 
+
+Pairplots perform scatterplots and histograms for every single column in your data set. This means it could be a huge plot for large datasets! Use with caution, as it could take a long time for large datasets and the figures could be too small! [more info](https://seaborn.pydata.org/generated/seaborn.pairplot.html)
+
+```python 
+iris = pd.read_csv('../DATA/iris.csv')
+iris.head()
+``` 
+![Visualization](images/visualization_021.png){: .center}
+
+```python 
+sns.pairplot(iris)
+``` 
+![Visualization](images/visualization_022.png){: .center}
+
+or just show the KDEs instead of histograms
+
+```python 
+sns.pairplot(iris, hue="species")
+``` 
+![Visualization](images/visualization_023.png){: .center}
