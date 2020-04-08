@@ -212,3 +212,17 @@ sns.countplot(x='cp',data=df,palette='terrain')
 ### Box Plot
 
 ![Visualization](images/visualization_017.png){: .center}
+
+```python 
+sns.boxplot(x='target',y='thalach',data=df)
+``` 
+
+![Visualization](images/visualization_018.png){: .center}
+
+and in the same way that with count plots we can use the hue to add more information to the Box plot
+
+```python 
+sns.boxplot(x='target',y='thalach',data=df, hue='sex')
+``` 
+
+![Visualization](images/visualization_019.png){: .center}
