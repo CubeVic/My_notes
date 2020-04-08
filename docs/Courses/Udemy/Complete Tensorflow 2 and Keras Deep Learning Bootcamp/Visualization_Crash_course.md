@@ -91,15 +91,124 @@ plt.ylabel('Y Label')
 ![Visualization](images/visualization_004.png){: .center}
 
 
+#### Changing the markers
+
+We can change the color and style of the line, but also we can change the style of the markets 
+
+```python 
+ptl.plot(x,y,color='red', marker='o', markersize=20,linestyle='--')
+
+# Axis and Ticks
+plt.xlim(0,20)
+plt.ylim(100,300)
+
+#labels
+plt.title('Title')
+plt.xlabel('X label')
+plt.ylabel('y label')
+
+``` 
+
+![Visualization](images/visualization_005.png){: .center}
 
 
+## Seaborn
+
+Seaborn is a library on top of Matplotlib that allow the creation of different charts and graphics with less code 
 
 
+for the examples we will use a Csv file
+
+```python
+import pandas as pd
+import matplotlib.pyplot as plt
+import seaborn as sns
+
+df = pd.read_csv('../DATA/heart.csv')
+df.head()
+```
+
+![Visualization](images/visualization_006.png){: .center}
+
+### Distribution plots
+
+```python 
+sns.displot(df['age'])
+``` 
+![Visualization](images/visualization_007.png){: .center}
+
+####Resizing and modify seaborn plots
+
+for resizing
+
+```python 
+plt.figure(figsize=(12,8))
+sns.displot(df['age'])
+``` 
+
+to remove the KDE (Kernel Density Estimates)
+
+```python 
+sns.distplot(df['age'],kde=False)
+``` 
+
+![Visualization](images/visualization_008.png){: .center}
+
+similar to remove the histogram 
+
+```python 
+sns.distplot(df['age'],hist=False)
+``` 
+![Visualization](images/visualization_009.png){: .center}
 
 
+to change the color
 
+```python 
+sns.distplot(df['age'],kde=False,bins=40,color='red')
+``` 
 
+![Visualization](images/visualization_010.png){: .center}
 
+we can limit the axis in seaborn as we limit the axis in matplotlib
 
+```python 
+sns.distplot(df['age'],kde=False,bins=40,color='green')
+plt.xlim(50,60)
+``` 
+![Visualization](images/visualization_011.png){: .center}
 
+### Count plot
 
+From the same csv file
+
+![Visualization](images/visualization_012.png){: .center}
+
+```python 
+sns.countplot(x='sex',data=df)
+``` 
+![Visualization](images/visualization_013.png){: .center}
+
+```python 
+sns.countplot(x='cp',data=df)
+``` 
+![Visualization](images/visualization_014.png){: .center}
+
+and we can use `hue` to add more information 
+
+```python 
+sns.countplot(x='cp',data=df,hue='sex')
+``` 
+![Visualization](images/visualization_015.png){: .center}
+
+we can change the color ( there are predefine color [colormaps](https://matplotlib.org/3.1.0/tutorials/colors/colormaps.html))
+
+```python 
+sns.countplot(x='cp',data=df,palette='terrain')
+``` 
+
+![Visualization](images/visualization_016.png){: .center}
+
+### Box Plot
+
+![Visualization](images/visualization_017.png){: .center}
