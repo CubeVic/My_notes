@@ -257,3 +257,4 @@ or just show the KDEs instead of histograms
 sns.pairplot(iris, hue="species")
 ``` 
 ![Visualization](images/visualization_023.png){: .center}
+
