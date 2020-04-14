@@ -1,35 +1,42 @@
-Introduction
-Scrapy is a free and open-source web crawling framework written in Python. It allows you to send requests to websites and to parse the HTML code that you receive as response.
-With Scrapyrt (Scrapy realtime), you can create an HTTP server that can control Scrapy through HTTP requests. The response send by the server are data formatted in JSON containing the data scraped by Scrapy.
-It basically means that with the combination of these two tools, you can create an entire API without even having a database! I will show you how to process to achieve this.
-Set up Scrapy and create your spider
-If you don’t have Scrapy installed on your machine yet, run the following command (I will assume you have Python installed on your computer):
+**Scrapy** is a free and *open-source* web crawling framework written in Python. With Scrapy we can send requests to websites and parse the HTML code received as response.
+
+**Scrapyrt** (Scrapy realtime), we can create an HTTP server that can control Scrapy through HTTP requests. The response send by the server will be data formatted as JSON and it will contain the data scraped by Scrapy.
+
+With the combination of these two tools, We can create an entire API without need a database.
+
+##Set up Scrapy and create your spider
+
+To install Scrapy we can use `pip`
 
 ```
 pip install scrapy
 ```
-
-It will install Scrapy globally on your machine. You can also do it on a virtual environment if you prefer.
 Once the installation completed, you can start a Scrapy project by running:
 
 ```
 scrapy startproject <project_name>
 ```
 
-In my case (and if you want to follow along the article), I’ll do
+We will use an article from Medium.com as guide, for that we will use coinmarketcap.com
 
 ```
 scrapy startproject coinmarketcap
 ```
 
-We will scrape the URL: https://coinmarketcap.com/all/views/all/. It contains information about cryptocurrencies such as their current prices, their price variations, etc.
+We will scrape the URL: [https://coinmarketcap.com/all/views/all/](https://coinmarketcap.com/all/views/all/). It contains information about cryptocurrencies such as their current prices, their price variations, etc.
 
 The goal is to collect those data with Scrapy and then to return them as JSON value with Scrapyrt.
-Your project folder structure should currently look like this:
 
-![Scrapy_and_Scrapyrt_001](../images/Scrapy_and_Scrapyrt_001.png)
+the project folder structure should currently look like this:
 
-We’ll now create our first Spider. For that, create a new file in the spiders folder. The file’s name doesn’t really matter, it should just represent what your spider is scraping. In my example, I will simply call it coinSpider.py.
+![Scrapy_and_Scrapyrt_001](../images/Scrapy_and_Scrapyrt_001.png){:.center}
+
+## The First Spider
+
+To create the new spider we need to create a new file in the spiders folder. 
+
+>The file’s name doesn’t really matter, it should just represent what your spider is scraping. in this example we simply call it `coinSpider.py`.
+
 First let’s create a class that inherits from scrapy.Spider.
 
 ```python 
@@ -37,7 +44,7 @@ import scrapy
 
 class CoinSpider(scrapy.Spider):
 ``` 
-A Spider class must have a name attribute. This element will help you to inform Scrapy which crawler you want to start.
+A Spider class must have a `name` attribute. This element will help you to inform Scrapy which crawler you want to start.
 
 ```python 
 import scrapy
@@ -45,7 +52,8 @@ import scrapy
 class CoinSpider(scrapy.Spider):
     name = "coin"
 ``` 
-Now let’s say to Scrapy what is the first URL you want to send a request to. We’ll do it with a start_requests method. This method will return the Scrapy request to the URL you want to crawl. In our case, it looks like this:
+Now we need to tell Scrapy what is the URL we want to send the request to. 
+We’ll use `start_requests` method. This method will return the Scrapy request to the URL we want to crawl. 
 
 ```python 
 import scrapy
@@ -57,7 +65,9 @@ class CoinSpider(scrapy.Spider):
         url = "https://coinmarketcap.com/all/views/all/"
         yield scrapy.Request(url=url, callback=self.parse)
 ``` 
-The scrapy.Request function takes the URL you want to crawl as the first parameter and a callback function that will parse the response you’ll receive from the request.
+The `scrapy.Request` function takes the URL we want to crawl as the first parameter and a callback function that will parse the response we’ll receive from the request.
+
+Now we need to create that callback function
 
 ```python 
 def parse(self, response):
@@ -72,7 +82,8 @@ def parse(self, response):
             }
 ``` 
 Our parse method will go through each row of the table containing the cryptocurrency data that we want for our API. It then selects the wanted information using CSS selector.
-The line for row in response.css(“tbody tr”): basically says “take the content of the response, select all the `<tr>` in the `<tbody>`, assign individually the content of each of them in the row variable”. The value of this variable would look like something like this for the first line of the table:
+
+The line `for row in response.css(“tbody tr”)` basically says “take the content of the response, select all the `<tr>` in the `<tbody>`, assign individually the content of each of them in the row variable”. The value of this variable would look like something like this for the first line of the table:
 
 ```html
 <tr id="id-bitcoin" class="odd" role="row">
@@ -116,13 +127,14 @@ The line for row in response.css(“tbody tr”): basically says “take the con
 </tr>
 ```
 
-We then loop through each row and apply one more CSS selector to extract the exact value that we want. For example, the name of the currency is contained in a link `<a>`that has the class currency-name-container assigned to it. By adding `::text` to the selector we specify that we want the text between `<a>` and `</a>`. The method `.extract_first()` is added after the selector to indicate that we want the first value found by the parser. In our case, the CSS selector will return only one value for each element.
+We then loop through each row and apply one more CSS selector to extract the exact value that we want. For example; 
+The name of the currency is contained in a link `<a>` which has the class `currency-name-container` assigned to it. By adding `::text` to the selector, we specify that we want the text between `<a>` and `</a>`. The method `.extract_first()` is added after the selector to indicate that we want the first value found by the parser.
 
 We repeat the process with all the data we want to extract, and we then return them in a dictionary.
 
 >Quick note: if the data that you want to extract is not between two HTML tags but in an attribute, you can use `::attr(<name_of_the_attribute>)` in the CSS selector. In our case we have `::attr(data-usd)` as an example.
 
-Here is the complete version of our Spider:
+So putting everything together the spider will look like:
 
 ```python
 import scrapy
@@ -145,10 +157,13 @@ class CoinSpider(scrapy.Spider):
                 "volume": row.css("a.volume::attr(data-usd)").extract_first()
             }
 ```
-Now let’s try to run it. For that, open your terminal and set your working directory in your Scrapy project folder. In my case, the command would be:
+
+## Run the spider
+
+Using the terminal and set our working directory in your Scrapy project folder. example:
 
 `
-cd C:\Users\jerom\Documents\Code\scrappy_test\coinmarketcap
+C:\Users\BlackDesktop\Documents\Hero of Alexandria\006. [Scrapy] Create an API with Scrapy and Scrapyrt\coinmarketcap
 `
 
 To start the crawler and save the scraped data in a JSON file, run the following command:
@@ -178,13 +193,11 @@ It should contain the result scraped by the spider similar to the following form
   ...
 ```
 
-If the format of the results is not similar to the example or if you have some errors, you can refer to this repository.
-
-Install Scrapyrt and combine it with our project
+##Install Scrapyrt and combine it with our project
 
 Let’s now use Scrapyrt to serve those data through an HTTP request instead of having them saved in a JSON file.
 
-The installation of Scrapyrt is quite strait forward. You just have to run
+To install scrapyrt we run
 
 `
 pip install scrapyrt
@@ -196,13 +209,15 @@ To use it, open your terminal again and set your working directory to the Scrapy
 scrapyrt -p <PORT>
 `
 
-<PORT> can be replaced with a port number. For example
+`<PORT>` can be replaced with a port number. For example
 
 `
 scrapyrt -p 3000
 `
 
-With this command Scrapyrt will setup locally a simple HTTP server that will allow you to control your crawler. You access it with a GET request through the endpoint http://localhost:<PORT>/crawl.json. To work properly it also needs at least these two arguments: start_requests (Boolean) and spider_name (string). Here you’d access to the result by opening the following URL in your browser:
+With this command Scrapyrt will setup locally a simple HTTP server that will allow you to control your crawler.  We can access it with a `GET` request through the endpoint `http://localhost:<PORT>/crawl.json.` 
+
+To work properly it also needs at least these two arguments: `start_requests (Boolean)` and `spider_name (string)`. to see the results we can open the browser on:
 
 `
 http://localhost:3000/crawl.json?start_requests=true&spider_name=coin
@@ -211,14 +226,3 @@ http://localhost:3000/crawl.json?start_requests=true&spider_name=coin
 The result should look like this:
 
 ![Scrapy_and_Scrapyrt_003](../images/Scrapy_and_Scrapyrt_003.png)
-
->Note: If you’re on Chrome, you can install this plugin to format the json result nicely in your browser.
-
-Conclusion
-You saw the basic steps to create an API with Scrapy. You can have access to data from other websites for your own project.
-In the title, I specified “how to create your own API from (almost) any website”: this method will work with most of the websites, but it will be much more difficult to get data from a website that relies heavily on JavaScript.
-
->Disclaimer: Don’t abuse it. If you have a large website with a lot of visitors or if you need to request the API frequently, contact the owners of the website for their permission before your scrape it. Sending a large number of requests to a website can make it crash or they could even ban your IP.
-
-Thank you for your time reading my article. If you have any questions, don’t hesitate to contact me through Medium or Twitter.
-This was my first article on Medium. I hope you enjoyed it as much as I enjoyed writing it! I will probably write more of them in the future.
