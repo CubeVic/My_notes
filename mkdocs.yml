@@ -94,6 +94,7 @@ nav:
           - Creating a dataset with api and python: 'Coding/Python/Scripts/create_dataset_api_python.md'
           - Scraping Usign Python: 'Coding/Python/Scripts/Scraping_Usign_Python.md'
           - JSON Object in python: 'Coding/Python/Scripts/JSON Objects in Python.md'
+          - Scrapy and Scrapyrt: 'Coding/Python/Scripts/Scrapy_and_Scrapyrt.md'
         - Algorithm:
           - Magic Square: 'Coding/Python/Algorithm/Magic_square.md'
         - Django:
