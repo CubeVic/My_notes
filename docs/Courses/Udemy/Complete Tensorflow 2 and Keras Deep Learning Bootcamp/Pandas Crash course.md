@@ -299,6 +299,20 @@ print(df)
 # D	 16	-1	3	51
 # E	 30	49	-48	-99
 ``` 
+### Select a specific cell
+
+You can select a specific cell in the DataFrame, you can use the function `at()`
+
+```python 
+df = pd.DataFrame([[0, 3, 4], [0, 5, 2], [20, 30, 40]],
+                  index=[1, 2, 3], columns=['P', 'Q', 'R'])
+df.at[1, 'Q']
+# 3
+``` 
+
+
+![pandas](images/pandas_003_1.png)
+
 
 ### Conditional Selection
 
@@ -392,7 +406,6 @@ df = df.set_index('states')
 ``` 
 
 ![pandas](images/pandas_005.png)
-
 
 
 #### Summaries
