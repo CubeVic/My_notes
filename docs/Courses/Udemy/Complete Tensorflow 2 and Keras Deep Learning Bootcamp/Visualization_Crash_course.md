@@ -133,7 +133,7 @@ df.head()
 ### Distribution plots
 
 ```python 
-sns.displot(df['age'])
+sns.distplot(df['age'])
 ``` 
 ![Visualization](images/visualization_007.png){: .center}
 
@@ -143,7 +143,7 @@ for resizing
 
 ```python 
 plt.figure(figsize=(12,8))
-sns.displot(df['age'])
+sns.distplot(df['age'])
 ``` 
 
 to remove the KDE (Kernel Density Estimates)
