@@ -311,10 +311,11 @@ df.at[1, 'Q']
 ``` 
 
 
-![pandas](images/pandas_003_1.png)
+![pandas](images/pandas_003_1.png){.center}
 
 
 ### Conditional Selection
+
 
 Pandas allow the conditional selection similar to NumPy, for the examples of this we will use the DataFrame: 
 
