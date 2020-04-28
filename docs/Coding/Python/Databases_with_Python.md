@@ -56,7 +56,7 @@ DROP TABLE IF EXISTS Member;
 DROP TABLE IF EXISTS Course;
 ''')
 ```
-3. Now we will create 3 tables; "User", "Course", "Member". Member table contain a primary key thajt take two parameters, this is a way to link to the other 2 tables and create the many to many relationship
+3. Now we will create 3 tables; "User", "Course", "Member". Member table contain a primary key composed of take two parameters, this is a way to link to the other 2 tables and create the many to many relationship
 
 ```python
 import sqlite3
