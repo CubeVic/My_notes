@@ -71,4 +71,45 @@ print ' '.join(lst3)+' '+str1+' '+str2
 #Omg You Are Totally Awesome
 ```
 
+## Tip 3: Replace loops for Map, Filter, and Reduce
 
+In some cases what we want to achieve with the loops can be do by `map()`, `filter()`, and `reduce()`, we need to keep in mine the following:
+
+* **Map:** Apply the same set of steps to each item, storing the result.
+* **Filter:** Apply validation criteria, storing items that evaluate True.
+* **Reduce:** Return a value that is passed from element to element.
+
+here a simple example, first how it will be done by loops 
+
+```python 
+numbers = [1,2,3,4,5,6]
+odd_numbers = []
+squared_odd_numbers = []
+total = 0
+# filter for odd numbers
+for number in numbers:
+   if number % 2 == 1:
+      odd_numbers.append(number)
+# square all odd numbers
+for number in odd_numbers:
+   squared_odd_numbers.append(number * number)
+# calculate total
+for number in squared_odd_numbers:
+   total += number
+# calculate average
+``` 
+
+now let's do it with the functions
+
+```python 
+from functools import reduce
+numbers = [1,2,3,4,5,6]
+odd_numbers = filter(lambda n: n % 2 == 1, numbers)
+squared_odd_numbers = map(lambda n: n * n, odd_numbers)
+total = reduce(lambda acc, n: acc + n, squared_odd_numbers)
+``` 
+Few things to keep in mine:
+
+* `map()` and `filter()` are native available, but `reduce()` is part of the library `functools`  
+* the lambda expression is the first argument, and the second is a iterable 
+* The lambda expression for `reduce()` requires two arguments: the accumulator (the value that is passed to each element) and the individual element itself.
