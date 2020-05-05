@@ -1,4 +1,4 @@
-> This notes are base in the Medium post called ["five Python tricks you need to learn today"](https://towardsdatascience.com/five-python-tricks-you-need-to-learn-today-9dbe03c790ab)
+> This notes are base in the Medium post called ["five Python tricks you need to learn today"](https://towardsdatascience.com/five-python-tricks-you-need-to-learn-today-9dbe03c790ab) and different articles or answers i found on Internet. 
 
 
 ## TIp 1: Clean - Powerful One-liners
