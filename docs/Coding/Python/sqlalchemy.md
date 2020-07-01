@@ -41,7 +41,6 @@ there is something mentioned in several tutorials, that i don't see the use yet,
 
 here we will use a example from a [medium article](https://medium.com/hacking-datascience/sqlalchemy-python-tutorial-abcc2ec77b57)
 
-> I use the medium article's structure because I think is easy to follow and will be easy to find a specific thing in the future 
 
 ```python 
 import sqlalchemy as db
@@ -63,3 +62,7 @@ Table('census',
 	Column('pop2008', INTEGER(), table=<census>), schema=None)
 """
 ```
+
+## Querying
+
+To query the database 
