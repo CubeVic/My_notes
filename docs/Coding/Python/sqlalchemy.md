@@ -5,64 +5,82 @@ Although the description is deeper and for sure I'm been shallow in my descripti
 
 [SQLAlchemy docs 1.3](https://docs.sqlalchemy.org/en/13/)
 
-## Installation 
+## SQLAlchemy Introduction
 
-The installation is no different than other libraries.
+this library facilitate the communication between python and databases, the library use `Object Relational Mapper (ORM)`  tool to translate python classes into relational tables, and automatically convert functions calls to SQL statements. thanks to the SQLAlchemy boilerplate code handling task like database connection is abstracted away then the developer can focus in the business logic.
 
-```
+### Python DBAPI
+
+The Python DataBase API or DBAPI was created to specify how Python modules that integrate with the database should expose their interface, i wont go in details about it, just because is a deeper topic and SQLAlchemy works as a facade to it, so common functions like `connect`, ` close` , `commit` and `rollback` are already defined on the library.
+
+I will follow an [article](https://auth0.com/blog/sqlalchemy-orm-tutorial-for-python-developers/?utm_source=medium&utm_medium=sc&utm_campaign=sqlalchemy_python) that use the most popular PostgrSQL DBAPI implementation available (`psycopg`), again I wont go deeper into it.
+
+## SQLAlchemy Engines
+
+> we can install SQLAlchemy using pip.   
+```python 
 pip install sqlalchemy
+```   
+
+In SQLAlchemy to interact with the database we will  need to create an `Engine`. This "Engine" is use to  manage two crucial factors: **Pools** and **Dialects** ( see more details bellow) 
+
+```Python
+from sqlalchemy import create_engine
+engine = create_engine('postgresql://usr:pass@localhost:5432/mydatabase')
+```
+from the previous code:
+
+* `usr:pass` are the credentials for the `mydatabase` database.  
+* `localhost` the host.  
+* `5432` refers to the `port` in this case the default postgresql port.  
+
+In this case the URI doesn't show the Dialect but most of the common databases and Dialect are integrated we can get more information in the [official documentation](https://docs.sqlalchemy.org/en/13/core/engines.html), as example (from the documentation):
+
+```Python
+# default
+engine = create_engine('postgresql://scott:tiger@localhost/mydatabase')
+# psycopg2
+engine = create_engine('postgresql+psycopg2://scott:tiger@localhost/mydatabase')
+# pg8000
+engine = create_engine('postgresql+pg8000://scott:tiger@localhost/mydatabase')
+```
+I think in more of the case for the small applications the database use will be `sqlite`, SQLite is connects to local files, the URL format is slightly different. The *"file"* portion of the path is going to be the filename of the database. For a relative file path, this requires three slashes (four slashes for a specific one):
+
+```Python
+engine = create_engine('sqlite:///foo.db')
 ```
 
-> using VScode and pylint I ran into some issue where pylint report the `from sqlalchemy ....` as an error, to solve it i modify some setting in the settings.json of the work space in VScode, it was based in an answer on stackoverflow but since them i lost the link to it.
+### SQLAlchemy Connection Polls
 
-## Connecting to the database
+The connection pools is a implementation of the object pool pattern, this allow the re-usage of pre-initialized objects ready to use, instead of create new instances of create object that are frequently needed  ( like db connection) the program fetch an existing object from the pool, used it as desired and puts back when done.   
 
-(Not totally accurate but is just a reference) for the connection with the bases in python normally i will need to create a connection later a cursor, needless to say the set up of the engine, all of this might , emphasis in MIGHT, be different depending of the DB that we will use. In SQLAlchemy it will be a bit more simple 
+There are various implementation of the connection pool pattern in SQLAlchemy, as an example, when we create the Engine using `create_engine()` this function generate a `QueuePool`, the default configuration is a reasonable default, like maximum pool size of 5 connections.
+
+The most common options with their description:  
+
+* `pool_size`: Sets the number of connections that the pool will handle.
+* `max_overflow`: Specifies how many exceeding connections ( relative to `pool_size`) the pool supports.
+* `pool_recycle`: Configures the maximum age (in seconds) of connections in the pool.
+* `pool_timeout`: Identifies how many seconds the program will wait before giving up on getting a connection from the pool.
+
+and example of this concept will be:
 
 ```python 
-import sqlalchemy as db
-engine = db.create_engine('dialect+driver://user:pass@host:port/db')
-``` 
+engine = create_engine('postgresql://me@localhost/mydb', pool_size=20, max_overflow=0 )
+```  
 
-what is inside the `create_engine()` is what will vary depending of the database, here some information from the official docs engine configuration](https://docs.sqlalchemy.org/en/13/core/engines.html#postgresql)
+###  SQLAlchemy Dialects
 
-for now, we will use `sqlite`
+SQLAchelmy serve as a facade that allow us to connect to different databases engines using the same API, the most of the database follow SQL (Structured Query Language) standard, but there are different variations, this is the reason of dialects.
 
-```python 
- import sqlalchemy as db
- engine = db.create_engine('sqlite///mydb.sqlite')
+* **Microsoft SQL**
+```SQL
+SELECT TOP 10* FROM people;
 ```
 
-the `///` meas relative path, `////` means full path, in most of the cases a relative path will do.
-
-## Viewing Table Details
-
-there is something mentioned in several tutorials, that i don't see the use yet, but that i will use here, it is the creation on a table using *reflection*. Reflection is the process of create metadata by reading the database
-
-here we will use a example from a [medium article](https://medium.com/hacking-datascience/sqlalchemy-python-tutorial-abcc2ec77b57)
-
-
-```python 
-import sqlalchemy as db
-
-engine = db.create_engine('sqlite:///census.sqlite')
-connection = engine.connect()
-metadata = db.MetaData()
-census = db.Table('census', metadata, autoload=True, autoload_with=engine)
-print(census.columns.keys())
-#['state', 'sex', 'age', 'pop2000', 'pop2008']
-print(repr(metadata.tables['census']))
-"""
-Table('census', 
-	MetaData(bind=None), 
-	Column('state', VARCHAR(length=30), table=<census>), 
-	Column('sex', VARCHAR(length=1), table=<census>), 
-	Column('age', INTEGER(), table=<census>), 
-	Column('pop2000', INTEGER(), table=<census>), 
-	Column('pop2008', INTEGER(), table=<census>), schema=None)
-"""
+* **MySQL** 
+```SQL
+SELECT *FROM people LIMIT 10;
 ```
 
-## Querying
-
-To query the database 
+Therefore, to know precisely what query to issue, SQLALchemy needs to be aware of the type of the database that it is dealing with
