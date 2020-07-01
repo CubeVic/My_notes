@@ -85,7 +85,7 @@ SELECT *FROM people LIMIT 10;
 
 Therefore, to know precisely what query to issue, SQLALchemy needs to be aware of the type of the database that it is dealing with
 
-### SQLALchemy ORM
+## SQLALchemy ORM
 
 **Object Relational Mapper**, is a specialization of the Data Mapper design pattern that addresses relational databases, Mappers are responsible for moving data between objects and a database while keeping them independent of each other.
 
