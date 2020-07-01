@@ -88,6 +88,7 @@ nav:
             - Useful or researched built-in functions: 'Coding/Python/Basic/Useful or researched built-in functions.md'
             - Data bases with Python: 'Coding/Python/Basic/Databases_with_Python.md'
         - Trick and tips for better code in python: 'Coding/Python/Tricks_tips_better_code_python.md'
+        - SQLAchemy: 'Coding/Python/sqlalchemy.md'
         - Useful Snippets: 'Coding/Python/Useful_snippets.md'
         - Virtual Environments: 'Coding/Python/virtual_environments.md'
         - Scripts:
