@@ -84,3 +84,34 @@ SELECT *FROM people LIMIT 10;
 ```
 
 Therefore, to know precisely what query to issue, SQLALchemy needs to be aware of the type of the database that it is dealing with
+
+### SQLALchemy ORM
+
+**Object Relational Mapper**, is a specialization of the Data Mapper design pattern that addresses relational databases, Mappers are responsible for moving data between objects and a database while keeping them independent of each other.
+
+for example to create `Product` class and an `Order` class to relate as many instance as needed from one class to another (many to many), but in a relational database , we will need three entities, one for products, another for orders, and the third one to relate (through foreign key) products and orders.
+
+### SQLAlchemy Data Types
+
+This library provide support for [the common data types](https://docs.sqlalchemy.org/en/13/core/type_basics.html#generic-types) found in relational databases, example, booleans, dates, times, string, and numeric values, SQLALchemy implements some [vendor-specific type](https://docs.sqlalchemy.org/en/13/core/type_basics.html#sql-standard-and-multiple-vendor-types) such as JSON.
+
+```Python
+class Product(Base):
+	__tablename__ = 'product'
+	id = Column(Integer, primary_key=True)
+	title = Column('title', String(32))
+	in_stock = Column('in_stock', Boolean)
+	quantity  Column('quatity', Integer)
+	price = Column('price', Numeric)
+```
+
+* The `__tablename__` property tells SQLAlchemy that rows of the products table must be mapped to this class.
+* The `id`  property identifies that this is the `primary_key` in the table and it is an **Integer**.
+* The `title` property indicate the a column in the table  and is a **String**.
+* The `in_strock` property type **Boolean**.
+* The `quantity` property type **Integer**.
+* The `price` property type **Numeric**.
+
+This type are different to the type we will see in a pure implementation or SQL but this is part of the abstraction, SQLALchemy will translate to the correct type depending of the dialect.
+
+### SQLAlchemy Relationship Pattern
