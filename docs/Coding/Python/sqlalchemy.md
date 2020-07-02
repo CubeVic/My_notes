@@ -115,3 +115,97 @@ class Product(Base):
 This type are different to the type we will see in a pure implementation or SQL but this is part of the abstraction, SQLALchemy will translate to the correct type depending of the dialect.
 
 ### SQLAlchemy Relationship Pattern
+
+SQLAlchemy support 4 type of relationships: 
+
+* One to Many.  
+* Many to One.  
+* One to One.  
+* Many to Many.  
+
+#### One to Many
+
+One instance of a class can be associated with many instance of another class
+
+```python 
+class Article(Base):
+	__tablename__ = 'articles'
+	id = Column(Integer, primary_key=True)
+	comments = relationship('Comment')
+
+class Comment(Base):
+	__tablename__ = 'comments'
+	id = Column(Integer, Primary_key=True)
+	article_id = Column(Integer, ForeignKey('article.id'))
+``` 
+
+#### Many to One
+
+it is similar to the relationship describe about 
+
+
+```python 
+class Tire(Base):
+	__tablename__ = 'tires'
+	id = Column(Integer, primary_key=True)
+	car_id = Column(Integer, ForeignKey('car.id'))
+	car = relationship('Car')
+
+class Car(Base):
+	__tablename__ = 'cars'
+	id = Column(Integer, primary_key=True)
+```
+
+#### One to One
+
+```python 
+class Person(Base):
+	__tablename__ = 'people'
+	id = Column(Integer, primary_key=True)
+	mobile_phone = relationship('MobilePhone', uselist=False, back_populates="person" )
+
+class MobilePhone(Base):
+	__tablename__ = 'mobile_phones'
+	id = Column(Integer, primary_key=True)
+	person_id = Column(Integer, ForeignKey('people.id'))
+	person = relationship("Person", back_populates="mobile_phone")
+``` 
+
+two new parameter in the `relationship` method:
+
+* `uselist=False` Make SQLAlchemy understand that `mobile_phone` will hold only a single instance and not an array.
+* `back_populates` instruct SQLAlchemy to populate the other side of the mapping.
+
+#### Many to Many
+
+```python 
+student_classes_association = Table('students_classes', Base.metadata,
+		Column('stundent_id', Integer, ForeignKey('student.id')),
+		Column('class_id', Integer, ForeignKey('classes.id')) 
+)
+
+class Student(Base):
+	__tablename__ = 'students'
+	id = Column(Integer, primary_key=True)
+	classes = relationship("Class", secondary=student_classes_association)
+
+class Class(Base):
+	__tablename__ = 'classes'
+	id = Column(Integer, primary_key=True)
+``` 
+
+In this case a secondary table or a helper table must be created to persist the association between instances of `student` and instances of `Class`, to make SQLAlchemy aware of the helper table, we passed it in the `secondary` parameter of the `relationship` function.
+
+### SQLAlchemy ORM Cascade
+
+Sometimes wen we update one table we need to propagate those changes to the other related tables, these changes can be simple updates (cascade updates) or deletes ( cascade deletes). SQLAlchemy ORM enables developers to map cascade behavior when using `relationship()`  the most common cascade:
+
+* `save-update`
+* `delete`
+* `delete-orphan`
+* `merge`
+
+>The default behavior of cascade is limited to cascades of the so-called save-update and merge settings. The typical “alternative” setting for cascade is to add the delete and delete-orphan options; these settings are appropriate for related objects which only exist as long as they are attached to their parent, and are otherwise deleted.
+
+
+
