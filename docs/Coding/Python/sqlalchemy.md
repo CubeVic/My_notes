@@ -200,12 +200,12 @@ In this case a secondary table or a helper table must be created to persist the 
 
 Sometimes wen we update one table we need to propagate those changes to the other related tables, these changes can be simple updates (cascade updates) or deletes ( cascade deletes). SQLAlchemy ORM enables developers to map cascade behavior when using `relationship()`  the most common cascade:
 
-* `save-update`
-* `delete`
-* `delete-orphan`
-* `merge`
+* `save-update`: Indicates that when a parent object is saved/updated, child objects are saved/updated as well.
+* `delete`: Indicates that when a parent object is deleted, children of this object will be deleted as well.
+* `delete-orphan`: Indicates that when a child object loses reference to a parent, it will get deleted.
+* `merge`: Indicates that `merge()` operations propagate from parent to children.
 
->The default behavior of cascade is limited to cascades of the so-called save-update and merge settings. The typical “alternative” setting for cascade is to add the delete and delete-orphan options; these settings are appropriate for related objects which only exist as long as they are attached to their parent, and are otherwise deleted.
+>The default behavior of cascade is limited to cascades of the so-called `save-update` and `merge` settings. The typical “alternative” setting for cascade is to add the `delete` and `delete-orphan` options; these settings are appropriate for related objects which only exist as long as they are attached to their parent, and are otherwise deleted.
 
-
+### SQLAlchemy Sessions
 
