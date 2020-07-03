@@ -207,5 +207,30 @@ Sometimes wen we update one table we need to propagate those changes to the othe
 
 >The default behavior of cascade is limited to cascades of the so-called `save-update` and `merge` settings. The typical “alternative” setting for cascade is to add the `delete` and `delete-orphan` options; these settings are appropriate for related objects which only exist as long as they are attached to their parent, and are otherwise deleted.
 
-### SQLAlchemy Sessions
+### [SQLAlchemy Sessions](https://docs.sqlalchemy.org/en/13/orm/session_basics.html)
+
+Sessions are an implementation of the design patter called *unit of work* which idea is maintain a list of objects affected by a business transaction and to coordinate the writing of these changes, in other words, all modifications tracked by Sessions (Units of Works) will be applied to the underlying database together, or none of them will.
+
+>the Session establishes all conversations with the database and represents a “holding zone” for all the objects which you’ve loaded or associated with it during its lifespan. 
+
+```python 
+from sqlalchemy import create_engine
+from sqlalchemy.orm  import sessionmaker
+
+# create an engine
+my_engine = create_engine('postgresql://user:pass@localhost:5432/sqlachemy')
+
+#create a configured "Session" class 
+Session = sessionmaker(bind=my_engine)
+
+#create a Session
+session = Session()
+
+#example of the usage
+my_object = MyObject('foo', 'bar')
+session.add(my_object)
+session.commit()
+``` 
+
+In the code above we create a session factory bind to our engine and later we create our session.
 
