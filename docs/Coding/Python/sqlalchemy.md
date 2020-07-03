@@ -236,4 +236,59 @@ In the code above we create a session factory bind to our engine and later we cr
 
 ## SQLAlchemy in practice 
 
+I follow the structure in [this article](https://auth0.com/blog/sqlalchemy-orm-tutorial-for-python-developers/) so i will follow part of their *in practice* section 
+
+### Starting ( Virtual environment)
+
+First we need to set the environment in this case we are going to use `pipenv` in order to create a virtual environment:
+
+```
+# installing pipenv 
+pip install pipenv
+
+```
+
+now to organize everything we can create a new directory and go inside, once inside we can start the new virtual environment 
+
+```
+mkdir sqlalchemy-tutorial
+cd sqlalchemy-tutorial
+
+# create a Python 3 project
+pipenv --three
+
+```
+
+### Postgress on Docker
+
+I will jump the session where how to install docker is explain and go directly to the configurations,in this case we are going to use a docker image that contain postgreSQL
+
+```
+# create a PostgreSQL instance
+docker run --name sqlalchemy-orm-psql \
+    -e POSTGRES_PASSWORD=pass \
+    -e POSTGRES_USER=usr \
+    -e POSTGRES_DB=sqlalchemy \
+    -p 5432:5432 \
+    -d postgres
+``` 
+This command will create a Docker PostgreSQL Instance, the parameters use are:
+
+* `--name`: Defines  the name of the Docker instance 
+* `-e POSTGRES_PASSWORD=pass`: Defines the password to connect to PosgreSQL
+* `-e POSGRES_USE=usr`: Defines the User to connect to PosgreSQL 
+* `-e POSGRES_DB=sqlalchemy`: the name of the database   
+* `-p 5432:5432`: the local port 5432 will be tunnel to the container port 5432
+* `-d postgres`: Define that this Docker instance will be create based on the official PosgreSQL repository   
+
+
+Now here some useful commands to stop and delete the container 
+
+```
+# stop instance
+docker stop sqlalchemy-orm-psql
+
+# destroy instance
+docker rm sqlalchemy-orm-psql
+```
 
