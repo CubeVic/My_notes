@@ -292,3 +292,17 @@ docker stop sqlalchemy-orm-psql
 docker rm sqlalchemy-orm-psql
 ```
 
+in this practice we will use progreSQL and the dialect psycopg2 so to install it we run:
+
+```
+# install sqlalchemy and psycopg2
+pipenv install sqlalchemy psycopg2
+```
+
+and now we need to activate the virtual environment 
+
+```
+pipenv shell
+```
+
+![pipenv](images/sqlalchemy_001.jpg)
