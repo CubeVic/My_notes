@@ -234,3 +234,6 @@ session.commit()
 
 In the code above we create a session factory bind to our engine and later we create our session.
 
+## SQLAlchemy in practice 
+
+
