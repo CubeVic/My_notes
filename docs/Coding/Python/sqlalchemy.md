@@ -234,7 +234,7 @@ session.commit()
 
 In the code above we create a session factory bind to our engine and later we create our session.
 
-## SQLAlchemy in practice 
+<!-- ## SQLAlchemy in practice 
 
 I follow the structure in [this article](https://auth0.com/blog/sqlalchemy-orm-tutorial-for-python-developers/) so i will follow part of their *in practice* section 
 
@@ -305,4 +305,114 @@ and now we need to activate the virtual environment
 pipenv shell
 ```
 
-![pipenv](images/sqlalchemy_001.jpg)
+![pipenv](images/sqlalchemy_001.jpg) -->
+
+## About Queries and Querying
+
+Lets assume that we already establish a connections and a session with the database, let call the table "census"
+
+### Selecting 
+
+**SQL**
+```SQL
+SELECT * FROM census
+```
+
+**SQLAlchemy**
+```python 
+quey = db.select([census])
+``` 
+
+#### Filtering data
+
+#### where
+
+**SQL**
+```SQL
+SELECT * FROM census
+WHERE sex = F
+```
+
+**SQLAlchemy**
+```python 
+db.select([census]).where (census.columns.sex == 'F')
+``` 
+
+#### in
+
+**SQL**
+```SQL
+SELECT state, sex
+FROM census
+WHERE state in (Texas, New York)
+```
+
+**SQLAlchemy**
+```python 
+db.select([census.columns.state, census.columns.sex]).where(census.columns.state.in_(['Texas', 'New York']))
+``` 
+
+#### and, or, not
+
+**SQL**
+```SQL
+SELECT * FROM census
+WHERE state = 'California' AND NOT sex = 'M'
+```
+
+**SQLAlchemy**
+```python 
+db.census([census]).where(db.and_(census.columns.state == 'California', census.columns.sex != 'M'))
+``` 
+
+#### order by
+
+**SQL**
+```SQL
+SELECT * FROM census
+ORDER by state DESC, pop2000
+```
+
+**SQLAlchemy**
+```python 
+db.select([census]).order_by(db.desc(census.columns.state), census. columns.pop2000)
+``` 
+
+#### function
+
+**SQL**
+```SQL
+SELECT SUM(pop2008)
+FROM census
+```
+
+**SQLAlchemy**
+```python 
+db.select([db.func.sum(census.columns.pop2008)])
+``` 
+
+#### group by
+
+**SQL**
+```SQL
+SELECT Sum(POP2008) as pop 2008, sex
+FROM census
+```
+
+**SQLAlchemy**
+```python 
+db.select([db.func.sum(census.columns.pop2008).label('pop2008'), census. comuns.sex]). group_by(census.columns.sex)
+``` 
+
+#### distinct
+
+**SQL**
+```SQL
+SELECT DISTINCT state 
+FROM census
+```
+
+**SQLAlchemy**
+```python 
+db.select([census.columns.state.distinct()])
+``` 
