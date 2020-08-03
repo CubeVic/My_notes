@@ -416,3 +416,62 @@ FROM census
 ```python 
 db.select([census.columns.state.distinct()])
 ``` 
+
+### Creating and Inserting Data Into Tables
+
+#### Creating Database and table
+
+Although above we create the table using classes in this case we will Create it as a functions.
+>I haven't found a good explanation of which method use, or what is the best to create tables, but i guess the one using classes will be better.
+
+```python 
+engine = db.create_engine('sqlite:///test.sqlite') #Create test.sqlite automatically
+connection = engine.connect()
+metadata = db.MetaData()
+
+emp = db.Table('emp', metadata,
+              db.Column('Id', db.Integer()),
+              db.Column('name', db.String(255), nullable=False),
+              db.Column('salary', db.Float(), default=100.0),
+              db.Column('active', db.Boolean(), default=True)
+              )
+
+metadata.create_all(engine) #Creates the table
+``` 
+#### Inserting Data
+
+```python
+#Inserting record one by one
+query = db.insert(emp).values(Id=1, name='naveen', salary=60000.00, active=True) 
+ResultProxy = connection.execute(query)
+```
+
+```python 
+query = db.insert(emp) 
+values_list = [{'Id':'2', 'name':'ram', 'salary':80000, 'active':False},
+               {'Id':'3', 'name':'ramesh', 'salary':70000, 'active':True}]
+ResultProxy = connection.execute(query,values_list)
+``` 
+
+#### Updating Data
+
+```python 
+db.update(table_name).values(attribute = new_value).where(condition)
+``` 
+
+### Delete Table
+
+```python 
+db.delete(table_name).where(condition)
+``` 
+
+#### Dropping the Table
+
+```python 
+table_name.drop(engine) #drops a single table
+metadata.drop_all(engine) #drops all the tables in the database
+``` 
+
+
+
+
