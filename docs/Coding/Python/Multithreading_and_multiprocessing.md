@@ -82,3 +82,75 @@ child = th.Thread(target=mt, deamon=True)
 child.start()
 print("Executing thread name :", th.current_thread().getName())
 ``` 
+
+#### `.join()`
+
+`.jpin()` tell one thread to wait for another thread to finish
+
+```python 
+import threading
+import time
+
+class myThread(threading.Thread):
+	"""docstring for ClassName"""
+	def run(self):
+		for x in range(7):
+			print('Hi from child')
+
+print(threading.current_thread().getName())
+a = myThread()
+a.start()
+a.join()
+print("Bye from",threading.current_thread().getName())
+``` 
+in this case the line 
+
+```python
+a.join()
+```
+tell the main thread to wait until the thread a finish.
+
+## `ThreadPoolExecutor()` Another way to work with threads
+
+There is another way to work with threads and that is using `ThreadPoolExecutor`, this is part of the library `concurrent.future`, the best way to work with `ThreadPoolExecutor` will be by using the context manager, using `with` statement to manage and destruction of the pool 
+
+Here an example using `ThreadPoolExecutor`
+
+```Python
+import logging
+import time 
+import concurrent.futures
+
+def thread_function(name):
+	logging.info("Thread %s: starting", name)
+	time.sleep(2)
+	logging.info("Thread %s: finishing", name)
+
+if __name__ == "__main__":
+    format = "%(asctime)s: %(message)s"
+    logging.basicConfig(format=format, level=logging.INFO,
+                        datefmt="%H:%M:%S")
+
+    with concurrent.futures.ThreadPoolExecutor(max_workers=3) as executor:
+        executor.map(thread_function, range(3))
+
+```
+
+the code create a `ThreadPoolExecutor` as a context manager  telling how many working it wants on the pool, then use the function `map()` to step through an iterable of things, in this case a `range(3)`. The `.join()` is not necessary since the context manager will take care of it.
+
+![thread_003](images/thread_003.png){: .center}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

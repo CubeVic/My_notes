@@ -11,16 +11,16 @@ After change the board or flash a new firmware it is necessary center and set th
 6. ```G28 Z``` - Home Z Axis
 7. ```G1 F60 Z0``` - Move nozzle to true 0 offset
 8. ```M211 S0``` - Switch off soft endstops
-9. Move nozzle towards bed slowly until the paper can barely move
-10. Take note of the Z on the printer display (*take that number and add the measurement of the calibration sheet or device used*)
+9. take note of the current Z value and Move nozzle towards bed slowly until the paper can barely move
+10. Take note of the new Z value on the printer display (*take that number and add the measurement of the calibration sheet or device used*)
 11. ```M851 Z X.XX``` (X.XX being your z offset achieved)
 12. ```M211 S1``` - Enable Soft Endstops
 13. ```M500``` - Save settings to EEprom
 14. ```M501``` - Set Active Parameters
 15. ```M503``` - display current settings
 
-base in  https://www.youtube.com/watch?v=y_1Kg45APko&feature=youtu.be
-and https://3dprinting.stackexchange.com/questions/6375/how-to-center-my-prints-on-the-build-platform-re-calibrate-homing-offset/6376#6376
+base in  this [video](https://www.youtube.com/watch?v=y_1Kg45APko&feature=youtu.be)
+and this [article](https://3dprinting.stackexchange.com/questions/6375/how-to-center-my-prints-on-the-build-platform-re-calibrate-homing-offset/6376#6376)
 
 
 ## G-code used
