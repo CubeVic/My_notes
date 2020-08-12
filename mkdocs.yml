@@ -100,6 +100,8 @@ nav:
           - Scrapy and Scrapyrt: 'Coding/Python/Scripts/Scrapy_and_Scrapyrt.md'
         - Algorithm:
           - Magic Square: 'Coding/Python/Algorithm/Magic_square.md'
+        - Flask:
+          - Basics - Based in Official Docs example: 'Coding/Python/Flask/Basics_Flask_examples_(Flask_doc).md'
         - Django:
           - Django Tutorial (part 01): 'Coding/Python/Django/Django tutorial - part 01.md'
           - Django Tutorial (part 02): 'Coding/Python/Django/Django tutorial - part 02.md'
