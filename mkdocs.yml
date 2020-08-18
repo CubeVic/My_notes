@@ -100,8 +100,6 @@ nav:
           - Scraping Usign Python: 'Coding/Python/Scripts/Scraping_Usign_Python.md'
           - JSON Object in python: 'Coding/Python/Scripts/JSON Objects in Python.md'
           - Scrapy and Scrapyrt: 'Coding/Python/Scripts/Scrapy_and_Scrapyrt.md'
-        - Algorithm:
-          - Magic Square: 'Coding/Python/Algorithm/Magic_square.md'
         - Flask:
           - Basics - Based in Official Docs example: 'Coding/Python/Flask/Basics_Flask_examples_(Flask_doc).md'
         - Django:
@@ -109,19 +107,13 @@ nav:
           - Django Tutorial (part 02): 'Coding/Python/Django/Django tutorial - part 02.md'
           - Django Tutorial (part 03): 'Coding/Python/Django/Django tutorial - part 03.md'
           - (Optional) More details about file structure: 'Coding/Python/Django/More details about project structure.md'
+        - Algorithm:
+          - Magic Square: 'Coding/Python/Algorithm/Magic_square.md'
 
       - SQL:
         - Random notes about SQL: 'Coding/SQL/Some_SQL.md'
         - String Funtions SQL: 'Coding/SQL/String_Functions_SQL.md'
         - Advance Funtion SQL: 'Coding/SQL/Advance_Funtion_SQL.md'
-
-      - PowerLanguages:
-        - PowerLanguages 001: 'Coding/PowerLanguages/PowerLanguages_001.md'
-        - Reserved words: 'Coding/PowerLanguages/Reserved words.md'
-        - How Scripts Work: 'Coding/PowerLanguages/how_script_works.md'
-        - Functions: 'Coding/PowerLanguages/functions.md'
-        - Plot: 'Coding/PowerLanguages/Plot.md'
-        - Text and Trendlines: 'Coding/PowerLanguages/text_trendlines.md'
 
       - Arduino:
         - Structure: 
@@ -142,6 +134,27 @@ nav:
           - Interrupts and External Interruptions: 'Coding/Arduino/Functions/Interrupts_and_External_Interruptions.md'
         - Projects:
           - Air Vent servo control: 'Coding/Arduino/Projects/Air_vent_servo_control.md'  
+
+      - PowerLanguages:
+        - PowerLanguages 001: 'Coding/PowerLanguages/PowerLanguages_001.md'
+        - Reserved words: 'Coding/PowerLanguages/Reserved words.md'
+        - How Scripts Work: 'Coding/PowerLanguages/how_script_works.md'
+        - Functions: 'Coding/PowerLanguages/functions.md'
+        - Plot: 'Coding/PowerLanguages/Plot.md'
+        - Text and Trendlines: 'Coding/PowerLanguages/text_trendlines.md'
+
+    - CCTV:
+      - Basic Concepts: 'CCTV/Basic_concepts.md'           
+    - 3D Printing:
+      - Concepts: '3D Printing/Concepts.md'
+      - G-code: '3D Printing/gcode.md'
+      - Setup and Calibration:
+          - Center and Z offset: '3D Printing/Setup and Calibration/Center and Z offset.md'
+          - E-steps and Extrutor multiplier: '3D Printing/Setup and Calibration/E-steps and Extrutor multiplie.md'
+          - Debuging and Logging: '3D Printing/Setup and Calibration/Debuging and Logging.md'
+      - Projects: 
+        - Moving Electronics: '3D Printing/Projects/Moving Electronics.md'
+      - About design: '3D Printing/about design.md'
 
     - Courses:
           - Coursera:
@@ -170,17 +183,6 @@ nav:
                 - Pandas Crash course: 'Courses/Udemy/Complete Tensorflow 2 and Keras Deep Learning Bootcamp/Pandas Crash course.md'
                 - Visualization Crash course: 'Courses/Udemy/Complete Tensorflow 2 and Keras Deep Learning Bootcamp/Visualization_Crash_course.md'
                 - Artificial Neural Network: 'Courses/Udemy/Complete Tensorflow 2 and Keras Deep Learning Bootcamp/ANN.md'
-          
-    - 3D Printing:
-      - Concepts: '3D Printing/Concepts.md'
-      - G-code: '3D Printing/gcode.md'
-      - Setup and Calibration:
-          - Center and Z offset: '3D Printing/Setup and Calibration/Center and Z offset.md'
-          - E-steps and Extrutor multiplier: '3D Printing/Setup and Calibration/E-steps and Extrutor multiplie.md'
-          - Debuging and Logging: '3D Printing/Setup and Calibration/Debuging and Logging.md'
-      - Projects: 
-        - Moving Electronics: '3D Printing/Projects/Moving Electronics.md'
-      - '3D Printing/about design.md'
 
     - Miscellaneous:
       - Aliases in Windows command prompt: 'Miscellaneous/Aliases_in_Windows_command_prompt.md'
