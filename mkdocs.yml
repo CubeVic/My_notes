@@ -144,7 +144,8 @@ nav:
         - Text and Trendlines: 'Coding/PowerLanguages/text_trendlines.md'
 
     - CCTV:
-      - Basic Concepts: 'CCTV/Basic_concepts.md'           
+      - Basic Concepts: 'CCTV/Basic_concepts.md' 
+                
     - 3D Printing:
       - Concepts: '3D Printing/Concepts.md'
       - G-code: '3D Printing/gcode.md'
