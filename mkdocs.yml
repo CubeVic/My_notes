@@ -157,33 +157,33 @@ nav:
         - Moving Electronics: '3D Printing/Projects/Moving Electronics.md'
       - About design: '3D Printing/about design.md'
 
-    - Courses:
-          - Coursera:
-            - AI for Everyone: 'Courses/Coursera/AI for Everyone/AI_for_Everyone.md'
-            - Introduction tensorflow: 
-              - The Hello World of neural networks: 'Courses/Coursera/Introduction tensorflow/The Hello World of neural networks.md'
-              - Introduction to Computer vision: 'Courses/Coursera/Introduction tensorflow/Introduction to computer vision.md'
-              - Convolutional Neural network Overview : 'Courses/Coursera/Introduction tensorflow/Convolutional_Neural_network_Overview.md'
-              - Enhancing vision with convolutional Neural Networks : 'Courses/Coursera/Introduction tensorflow/Enhancing_vision_with_convolutional_Neural_Networks.md'
-              - (Code) Step by step Convolutions : 'Courses/Coursera/Introduction tensorflow/Step_by_step_Convolutions.md'
-              - Using Real-World Images: 'Courses/Coursera/Introduction tensorflow/Using_Real_world_Image.md'
-          - Udemy:
-            - Python Computer Vision and OpenCV:
-              - Images Basic with OpenCV:
-                - Numpy Basic (Part 1): 'Courses/Udemy/Python Computer Vision and OpenCV/Images Basic with OpenCV/Numpy_Basic_part_1.md'
-                - Numpy Basic (Part 2): 'Courses/Udemy/Python Computer Vision and OpenCV/Images Basic with OpenCV/Numpy_Basic_part_2.md'
-                - Images and Numpy: 'Courses/Udemy/Python Computer Vision and OpenCV/Images Basic with OpenCV/Images_and_Numpy.md'
-                - Images and Opencv: 'Courses/Udemy/Python Computer Vision and OpenCV/Images Basic with OpenCV/Images_and_Opencv.md'
-                - Drawing on Images: 'Courses/Udemy/Python Computer Vision and OpenCV/Images Basic with OpenCV/Drawing_on_Images.md'
-                - Drawing with mouse: 'Courses/Udemy/Python Computer Vision and OpenCV/Images Basic with OpenCV/Direct_drawing_with_mouse.md'
-              - Image Processing:
-                - Color Mapping: 'Courses/Udemy/Python Computer Vision and OpenCV/Image Processing/color_mapping.md'
-                - Blending and Pasting Images: 'Courses/Udemy/Python Computer Vision and OpenCV/Image Processing/blending_pasting_images.md'
-            - Complete Tensorflow 2 and Keras Deep Learning Bootcamp:
-                - Numpy Crash course: 'Courses/Udemy/Complete Tensorflow 2 and Keras Deep Learning Bootcamp/Numpy Crash course.md'
-                - Pandas Crash course: 'Courses/Udemy/Complete Tensorflow 2 and Keras Deep Learning Bootcamp/Pandas Crash course.md'
-                - Visualization Crash course: 'Courses/Udemy/Complete Tensorflow 2 and Keras Deep Learning Bootcamp/Visualization_Crash_course.md'
-                - Artificial Neural Network: 'Courses/Udemy/Complete Tensorflow 2 and Keras Deep Learning Bootcamp/ANN.md'
+    # - Courses:
+    #       - Coursera:
+    #         - AI for Everyone: 'Courses/Coursera/AI for Everyone/AI_for_Everyone.md'
+    #         - Introduction tensorflow: 
+    #           - The Hello World of neural networks: 'Courses/Coursera/Introduction tensorflow/The Hello World of neural networks.md'
+    #           - Introduction to Computer vision: 'Courses/Coursera/Introduction tensorflow/Introduction to computer vision.md'
+    #           - Convolutional Neural network Overview : 'Courses/Coursera/Introduction tensorflow/Convolutional_Neural_network_Overview.md'
+    #           - Enhancing vision with convolutional Neural Networks : 'Courses/Coursera/Introduction tensorflow/Enhancing_vision_with_convolutional_Neural_Networks.md'
+    #           - (Code) Step by step Convolutions : 'Courses/Coursera/Introduction tensorflow/Step_by_step_Convolutions.md'
+    #           - Using Real-World Images: 'Courses/Coursera/Introduction tensorflow/Using_Real_world_Image.md'
+    #       - Udemy:
+    #         - Python Computer Vision and OpenCV:
+    #           - Images Basic with OpenCV:
+    #             - Numpy Basic (Part 1): 'Courses/Udemy/Python Computer Vision and OpenCV/Images Basic with OpenCV/Numpy_Basic_part_1.md'
+    #             - Numpy Basic (Part 2): 'Courses/Udemy/Python Computer Vision and OpenCV/Images Basic with OpenCV/Numpy_Basic_part_2.md'
+    #             - Images and Numpy: 'Courses/Udemy/Python Computer Vision and OpenCV/Images Basic with OpenCV/Images_and_Numpy.md'
+    #             - Images and Opencv: 'Courses/Udemy/Python Computer Vision and OpenCV/Images Basic with OpenCV/Images_and_Opencv.md'
+    #             - Drawing on Images: 'Courses/Udemy/Python Computer Vision and OpenCV/Images Basic with OpenCV/Drawing_on_Images.md'
+    #             - Drawing with mouse: 'Courses/Udemy/Python Computer Vision and OpenCV/Images Basic with OpenCV/Direct_drawing_with_mouse.md'
+    #           - Image Processing:
+    #             - Color Mapping: 'Courses/Udemy/Python Computer Vision and OpenCV/Image Processing/color_mapping.md'
+    #             - Blending and Pasting Images: 'Courses/Udemy/Python Computer Vision and OpenCV/Image Processing/blending_pasting_images.md'
+    #         - Complete Tensorflow 2 and Keras Deep Learning Bootcamp:
+    #             - Numpy Crash course: 'Courses/Udemy/Complete Tensorflow 2 and Keras Deep Learning Bootcamp/Numpy Crash course.md'
+    #             - Pandas Crash course: 'Courses/Udemy/Complete Tensorflow 2 and Keras Deep Learning Bootcamp/Pandas Crash course.md'
+    #             - Visualization Crash course: 'Courses/Udemy/Complete Tensorflow 2 and Keras Deep Learning Bootcamp/Visualization_Crash_course.md'
+    #             - Artificial Neural Network: 'Courses/Udemy/Complete Tensorflow 2 and Keras Deep Learning Bootcamp/ANN.md'
 
     - Miscellaneous:
       - Aliases in Windows command prompt: 'Miscellaneous/Aliases_in_Windows_command_prompt.md'
