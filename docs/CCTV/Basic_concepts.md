@@ -33,3 +33,39 @@ It is important to know bandwidth doesn’t actually increase the speed of a net
 
 ![I-P-B_Frames_01.png](images/I-P-B_Frames_01.png){: .center}  
 
+## Video format and codecs
+
+### Video Formats
+
+It is common to find extension for video files like `.mp4` and `.avi`, and is even more common misunderstand this extension, or containers for the codec.
+When we talk about `mp4` we are not talking about a single file, rather a container of multiple files, it will consist of video files, audio files and metadata file.
+
+![codec_video_container_001.jpg](images/codec_video_container_001.jpg){:.center}
+
+The most common containers for CCTV will be `AVI` and `MP4`
+
+### Video Codec
+
+Now the name codec comes  from the combination of Coder and decoder 
+$$
+Codec = Coder + Decoder
+$$
+
+> Here we talk about software codec, but be aware that the name `codec` applies to hardware as well.
+
+To make the video manageable and smaller, codec create a encoded stream or a compressed version of the video and the audio, software like **VLC player** can then decode that video stream and present the result. 
+
+It is important to know that most of the codec are "lossy" or "lossy compression", in other words, some quality is lost during the compression. 
+
+The most common codec use in CCTV for video are: 
+
+* [H.265 (HECV)](https://en.wikipedia.org/wiki/High_Efficiency_Video_Coding)[^1]
+* [MPEG4](https://en.wikipedia.org/wiki/MPEG-4)  
+* [H.264 (AVC)](https://en.wikipedia.org/wiki/Advanced_Video_Coding)[^2]
+
+[^1]: High Efficiency Video Coding  
+[^2]: Advanced Video Coding  
+
+> "lossless"  codec we will have **MJPEG**.
+
+![codec_video_container_002.png](images/codec_video_container_002.png){:.center}
