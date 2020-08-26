@@ -119,7 +119,7 @@ As it is mentioned in the tutorial, the first thing we need to do when working w
 
 **flaskr/db.py**
 ```python 
-import sqlite 3
+import sqlite3
 
 import click
 from flask import current_app, g
@@ -206,7 +206,44 @@ def init_db_command():
 ``` 
 
 
-so the until now the code will be: 
-![Flask_db_001.png](image/Flask_db_001.png)
+so the code until on **flaskr/db.py** will be: 
+![Flask_db_001.png](images/Flask_db_001.png)
+
+###Register the application 
+
+Now the functions `close_db` and `init_db_command` are defined but they are not register to be use by the application, in other words, in order to use the functions we need to register them with the instance of the application, although, in this case we are using **application factory**, so, technically the applications doesn't exist yet, or the instance is not available, so in this case we will need a function that make the registration for us and later we will import that function on the factory.
+
+> basically we create a function on **flaskr/db.py** later import that function on **flask/__init__.py** in the factory function `create_app()`
+
+**flaskr/db.py**
+```python 
+def init_app(app):
+	app.teardown_appcontext(close_db)
+	app.cli.add_command(init_db_command)
+```   
+1. `app.teardown_appcontext()` this function is executed after returning the response, during the clean up process, and basically allow me to run a function in that moment, in that case `close_db()`
+2. `app.cli.add_command()` add a new command that can be call with the **flask** command.  
+
+so the **flaskr/db.py** will be
+![Flask_db_002.png](images/Flask_db_002.png)
+
+Now we need to call the function `init_app()` from the factory
+
+**flaskr/__init__.py**
+```python 
+def create_app():
+	app = ...
+	#existing code
+
+	from . import db
+	db.init_app(app)
+
+	return app
+``` 
+so the Factory function will look like this: 
+
+![application_factory_001.png](images/application_factory_001.png)
+
+
 
 
