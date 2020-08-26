@@ -213,7 +213,7 @@ so the code until on **flaskr/db.py** will be:
 
 Now the functions `close_db` and `init_db_command` are defined but they are not register to be use by the application, in other words, in order to use the functions we need to register them with the instance of the application, although, in this case we are using **application factory**, so, technically the applications doesn't exist yet, or the instance is not available, so in this case we will need a function that make the registration for us and later we will import that function on the factory.
 
-> basically we create a function on **flaskr/db.py** later import that function on **flask/__init__.py** in the factory function `create_app()`
+> We create a function on **flaskr/db.py** later import that function on **flask/__init__.py** in the factory function `create_app()`
 
 **flaskr/db.py**
 ```python 
@@ -244,6 +244,61 @@ so the Factory function will look like this:
 
 ![application_factory_001.png](images/application_factory_001.png)
 
+### Initialize the database
+
+We create the Flask commands, we register those commands and import it to the factory, so now we can initialize the database using `flask`
+
+on the Command (CMD) or terminal 
+```bash
+flask init-db
+# --> Initialized the database
+```
+
+There now on the **instance** folder we will have a file **flask.sqlite**
+
+## Blueprints and Views
+
+With the Blueprints[^3], we can organize a group of related views and other part of the code, this views and code are not register to the Application, instead the are register to the Blueprint, then the blueprint is registered with the application when it is available in the factory function.
+
+In this example I will use the same two blue prints use in the documentation example, one for the authentication functions and other for the blog posts itself. These blueprints are going to be in two separate modules.
+
+### Creating a Blueprint
+
+Authentication go first:
+
+**flaskr/auth.py**
+```python 
+import functools
+
+from flask import ( 
+	Blueprint, flask, g, render_template, request, sessions, url_for
+)
+from werkzeug.security import check_password_hash, generate_password_hash
+from flaskr.db import get_db
+
+bp = Blueprint('auth', __name__, url_prefix='/auth')
+``` 
+
+1. We create a blueprint called `auth`.
+2. we provide a location for the blueprint `__name__`.
+3. `url_prefix` will be prepended to all the URL associated with the blueprint.
+
+Now we need to import and register from the factory 
+
+**flaskr/__init__.py**
+```python 
+def create_app():
+	app = ...
+	# existing code
+
+	from . import auth
+	app.register_blueprint(auth.bp)
+
+	return app
+``` 
+
+1. `app.register_blueprint()` use to register the blueprint with the application
 
 
 
+[^3]: A blueprint is an object that allows defining application functions without requiring an application object ahead of time. It uses the same decorators as Flask, but defers the need for an application by recording them for later registration
