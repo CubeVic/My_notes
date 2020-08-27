@@ -147,11 +147,7 @@ There are couple objects that still i don't fully understand but that make the d
 
 1. [`g`](https://flask.palletsprojects.com/en/1.1.x/api/#flask.g)[^1]: it is an special object that is unique for each request, use to store data that might be user accessed by multiple function during the request. In this case the connection is stored and reused instead of creating a new one, if the get_db is use a second time at in the same request.
 
-[^1]: `g` is a namespace object that can store data during an [application context](https://flask.palletsprojects.com/en/1.1.x/appcontext/), this is a [proxy](https://flask.palletsprojects.com/en/1.1.x/reqcontext/#notes-on-proxies) 
-
 2. [`current_app`](https://flask.palletsprojects.com/en/1.1.x/api/#flask.current_app)[^2]:  Another special object, it points to the Flask application handling request, if we develop like this example we will be using the **application factory**, thus, we wont have an application object we writing the rest of the code, *"the `get_db()` will be call when the application is create and is handling a request, so current_app can be used."*
-
-[^2]: `current_app` A proxy to the application handling the current request. This is useful to access the application without needing to import it, or if it can’t be imported, such as when using the application factory pattern or in blueprints and extensions.
 
 3. `sqlite3.connect()` establish a connection to the file pointed at by the `DATABASE` configuration key. at the beginning the file wont exist we need to initialize the database (I will explain it bellow)
 
@@ -299,6 +295,68 @@ def create_app():
 
 1. `app.register_blueprint()` use to register the blueprint with the application
 
+### Views (auth module)
 
+Now we need to do the views, these views will have to parts, the templates ( the jinja2 templates) and the functions binded to them.
+
+#### Register view
+
+This view will take care of the registration of a new user, so any user visiting `/auth/register` URL will receive a HTML as a response, this response will be deliver by the `register` view.
+
+**flaskr/auth.py**
+```python 
+@bp.route('/register', methods=('GET','POST'))
+def register():
+	""" this is the register view"""
+	if request.method == 'POST':
+		username = request.form['username']
+		password = request.form['password']
+		db = get_db()
+		error = None
+
+		if not username:
+			error = 'Username is required.'
+		elif not password:
+			error = 'password is required.'
+		elif db.execute(
+				'SELECT id FROM user WHERE user = ?',(username,)
+			).fetchone() is not None:
+				error = 'User {} is already register.'.format(username)
+
+		if error is None:
+			db.execute(
+				'INSERT INTO user (user, password) VALUES (?, ?)',
+				(username, generate_password_hash(password))
+			)
+			db.commit()
+			return redirect(url_for('auth.login'))
+		
+		flash(error)
+
+	return render_template('auth/register.html')
+``` 
+Now a description of the code:
+
+1. `@bp.route` this is a decorator that associate the URL `/register` with the register view function, so if flash receives a request to `/auth/register`, it will call `register` and return a value as response.  
+
+2. We check if the request was made by `POST`, if yes, we validate the input.
+
+3. `request.form` it is a special `dict` it will store the key and values of the information submitted on a html form, in this case username and password. Validate if the username and password are not empty.  
+
+4. Validate `username` doesnt exist already on the database, `fetchone()` give back the first row in the result, if thre are not result it return `None`.
+
+5. Password shouldnt be store in plain text on the database, instead we use `generate_password_hash()` to hash the password and store the hash, after this modification we commit to the database `db.commit()`
+
+6. After commit to the database the user is redirect to the login page.  
+
+7. If there is any error `flash()` stores messages that can be retrieved when rendering the template.  
+
+8. When the user initially navigates to `auth/register`, or there was a validation error, an HTML page with the registration form should be shown. `render_template()` will render a template containing the HTML,
+
+
+
+[^1]: `g` is a namespace object that can store data during an [application context](https://flask.palletsprojects.com/en/1.1.x/appcontext/), this is a [proxy](https://flask.palletsprojects.com/en/1.1.x/reqcontext/#notes-on-proxies) 
+
+[^2]: `current_app` A proxy to the application handling the current request. This is useful to access the application without needing to import it, or if it can’t be imported, such as when using the application factory pattern or in blueprints and extensions.
 
 [^3]: A blueprint is an object that allows defining application functions without requiring an application object ahead of time. It uses the same decorators as Flask, but defers the need for an application by recording them for later registration
