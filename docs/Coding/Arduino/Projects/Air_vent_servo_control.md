@@ -20,7 +20,7 @@ int servo_position = 0;
 
 void setup() {
 
-  Servo_Air_vent.attach (9);
+  servo_Air_vent.attach (9);
 
 }
 
@@ -28,13 +28,13 @@ void loop() {
 
   for (servo_position = 0; servo_position <=180; servo_position +=1){
 
-    Servo_Air_vent.write(servo_position);
+    servo_Air_vent.write(servo_position);
     delay(10);
   }
 
   for (servo_position=180; servo_position >= 0; servo_position -=1){
 
-    Servo_Air_vent.write(servo_position);
+    servo_Air_vent.write(servo_position);
     delay(10);
   }
 }

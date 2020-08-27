@@ -299,7 +299,7 @@ def create_app():
 
 Now we need to do the views, these views will have to parts, the templates ( the jinja2 templates) and the functions binded to them.
 
-#### Register view
+#### Register View
 
 This view will take care of the registration of a new user, so any user visiting `/auth/register` URL will receive a HTML as a response, this response will be deliver by the `register` view.
 
@@ -351,7 +351,37 @@ Now a description of the code:
 
 7. If there is any error `flash()` stores messages that can be retrieved when rendering the template.  
 
-8. When the user initially navigates to `auth/register`, or there was a validation error, an HTML page with the registration form should be shown. `render_template()` will render a template containing the HTML,
+8. When the user initially navigates to `auth/register`, or there was a validation error, an HTML page with the registration form should be shown. `render_template()` will render a template containing the HTML.  
+
+
+#### Login View
+
+Following similar pattern of `register` view here the login view:
+
+**flaskr/auth.py**
+```python 
+@bp.route('/login', methods=('GET', 'POST'))
+def login():
+	if request.method == 'POST':
+		username = request.form['username']
+		password = request.form['password']
+		db = get_db()
+		user = db.execute(
+				'SELECT * FROM user WHERE username = ?' (username,)
+			).fetchone()
+
+		if user is None:
+			error = 'Incorrect username.'
+		elif not check_password_hash(user['password'], password):
+			error = 'Incorrect password.'
+
+		if error is None:
+			session.clear()
+			session['user_id'] = user['id']
+			return redirect(url_for('index'))
+
+``` 
+
 
 
 
