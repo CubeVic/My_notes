@@ -386,6 +386,8 @@ def login():
 
 ``` 
 
+1. The user is queried first and later store in a variable for later use.
+2. `check_password_hash() 
 
 
 
