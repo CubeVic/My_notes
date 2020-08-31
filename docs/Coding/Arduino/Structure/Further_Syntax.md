@@ -23,3 +23,9 @@ The `const` keyword is preferred for defining constants and should be used inste
 ```C++
 #define ledPin 3
 ```
+
+## `#include (include)`
+
+## `&` reference operator
+ 
+## `*` dereference operator
