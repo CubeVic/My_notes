@@ -22,14 +22,14 @@ I won't add much about `break`, `continue`, and `return` since they work like in
 Work similar to `while` loop, with the exception the condition is evaluated at the end of the loop, so the loop aways run at least one time.
 
 **Syntax**
-```c++
+```c
 do {
   // statement block
 } while (condition);
 ```
 
 **Example**
-```c++
+```c
 int x = 0;
 do {
   delay(50);          // wait for sensors to stabilize
@@ -42,13 +42,13 @@ do {
 Like any other while loop, i will loop until the condition become `False`
 
 **Syntax**
-```c++
+```c
 while (condition) {
   // statement(s)
 }
 ```
 **Example**
-```c++
+```c
 var = 0;
 while (var < 200) {
   // do something repetitive 200 times
@@ -64,7 +64,7 @@ while (var < 200) {
 * `label1`, `label2`: constants. Allowed data types: `int`, `char`.
 
 **Syntax**
-```c++
+```c
 switch (var) {
   case label1:
     // statements
@@ -78,7 +78,7 @@ switch (var) {
 }
 ```
 **Example**
-```c++
+```c
 switch (var) {
   case 1:
     //do something when var equals 1
@@ -95,6 +95,29 @@ switch (var) {
 
 ## goto
 
+Transfers program flow to a labeled point in the program.
+
 **Syntax**
+```c
+label:
+
+goto label; // sends program flow to the label
+```
 
 **Example**
+```c
+for (byte r = 0; r < 255; r++) {
+  for (byte g = 255; g > 0; g--) {
+    for (byte b = 0; b < 255; b++) {
+      if (analogRead(0) > 250) {
+        goto bailout;
+      }
+      // more statements ...
+    }
+  }
+}
+
+bailout:
+// more statements ...
+```
+>The use of goto is discouraged in C programming
