@@ -26,6 +26,18 @@ The `const` keyword is preferred for defining constants and should be used inste
 
 ## `#include (include)`
 
+**Syntax**
+
+**Examples**
+
 ## `&` reference operator
+
+**Syntax**
+
+**Examples**
  
 ## `*` dereference operator
+
+**Syntax**
+
+**Examples**

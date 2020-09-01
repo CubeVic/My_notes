@@ -387,7 +387,24 @@ def login():
 ``` 
 
 1. The user is queried first and later store in a variable for later use.
-2. `check_password_hash() 
+2. `check_password_hash()` hashes the submitted password in the same way as the stored hash and securely compares them. If they match, the password is valid.
+3. `session` is a dictionary that stores data across requests. When validation succeeds, the user’s `id` is stored in a new session. The data is stored in a cookie that is sent to the browser, and the browser then sends it back with subsequent requests. Flask securely signs the data so that it can’t be tampered with.
+
+**flaaskr/auth.py**
+```python 
+@bp.before_app_request
+def load_logged_in_user():
+	user_id = session.get('user_id')
+
+	if user_id is None:
+		g.user = None
+	else:
+		g.user = get.db().execute(
+				'SELECT * FROM user WHERE id = ?', (user_id,)
+				).fetchone()
+``` 
+
+1. `bp.before_app_request()`
 
 
 
