@@ -49,10 +49,6 @@ As a template we can create a basic template that will work as base to all the o
 </section>
 ```
 
-{% ... %} for Statements
+`g` is available in templates, thanks to `g.user` from `load_logged_in_user`, if the value of `g.user` is TRUE, the user name and the logout option are display, otherwise the registration and log in links are display.
 
-{{ ... }} for Expressions to print to the template output
-
-{# ... #} for Comments not included in the template output
-
-#  ... ## for Line Statements
+just before the content and after the page title we will display the error message, if any. we create a loop with the message returned by `get_flashed_message()`, this is the code to display it, and work together with the code in the view `flash()`, `flash()` show the error message and code in the above example display it.
