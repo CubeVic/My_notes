@@ -35,7 +35,7 @@ We will assume that we need to develop just the function to calculate the differ
 
 *  **Create an array:** We are going to define an array with all the possible combination.
 
-![Possible magic square 3x3](/Python/Algorithm/possible_Magic_Square.png)
+![Possible magic square 3x3](images/possible_Magic_Square.png)
 
 ```python
 

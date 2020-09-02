@@ -404,9 +404,49 @@ def load_logged_in_user():
 				).fetchone()
 ``` 
 
-1. `bp.before_app_request()`
+1. `bp.before_app_request()` no matter what URL was requested, the decorator will make the function `load_logged_in_user` run before the view function. This function will check if the session contain the user id, it will later store it on `g.user`, which will last for the length of the request.
+
+#### Logout
+
+First we need to remove the user id from `session` so `load_logged_in_user` wont load the user for the subsequent request.
+
+**flaskr/auth.py**
+```python 
+@bp.route('/logout')
+def logout():
+	session.clear()
+	return redirect(url_for('index'))
+``` 
+
+### Required Authentication in Other Views
+
+In this case we will create a decorator that will be use in other parts of the application or other blueprints, for example to create, edit or delete blog post.
+
+**flaskr/auth.py**
+
+```python 
+def login_required(view):
+ 	@functools.wraps(view)
+ 	def wrapped_view(**kwargs):
+ 		if g.user is None:
+ 			return redirect(url_for('auth.login'))
+
+ 		return view(**kwargs)
+ 	return wrapped_view
+``` 
+
+This decorator will wrap the view that is apply to, and it will check if `g.user` exist, if not, it will redirect to the authentication view, otherwise it will continue with the original view.
+
+Now the **flaskr/auth.py** file will be: 
+
+![Flask_auth_001.png](images/Flask_auth_001.png)
 
 
+## Endpoint and URLs
+
+We use the function [`url_for()`](https://flask.palletsprojects.com/en/1.1.x/api/#flask.url_for), this function generate a URL based on a name and arguments. The name is also called **endpoint** and by default is the same name of the view function.
+
+For example, for the first view, the `hello world` the name will be `hello` because the view is `hello()`, in the case of blueprints the blue print is prepended to the name of the function> For the `login` view that is part of the blueprint `auth` we will write `auth.login` and the `url_for()` will be `url_for(auth.login)`
 
 [^1]: `g` is a namespace object that can store data during an [application context](https://flask.palletsprojects.com/en/1.1.x/appcontext/), this is a [proxy](https://flask.palletsprojects.com/en/1.1.x/reqcontext/#notes-on-proxies) 
 

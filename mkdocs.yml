@@ -79,37 +79,39 @@ nav:
         - Preparation for PCPP-32-1:
           - Module 1: 'Coding/Python/Preparation for PCPP-32-1/Module 1.md'
           - Module 2: 'Coding/Python/Preparation for PCPP-32-1/Module 2.md'
-        - Basic:  
-            - Data Structures: 'Coding/Python/Basic/Data structures.md'
-            - Control Flow: 'Coding/Python/Basic/control flow.md'
-            - Functions: 'Coding/Python/Basic/functions.md'
-            - Error and Exceptions: 'Coding/Python/Basic/Error and Exceptions.md'
-            - Reading and Writing Files: 'Coding/Python/Basic/Reading and Writing Files.md'
-            - Import Local Scripts: 'Coding/Python/Basic/Import Local Scripts.md'
-            - Generator and Iterators: 'Coding/Python/Basic/Generator and Iterator.md'
-            - Useful or researched built-in functions: 'Coding/Python/Basic/Useful or researched built-in functions.md'
-            - Data bases with Python: 'Coding/Python/Basic/Databases_with_Python.md'
-        - Multi-threading and Multi-processing: 'Coding/Python/Multithreading_and_multiprocessing.md'      
-        - Trick and tips for better code in python: 'Coding/Python/Tricks_tips_better_code_python.md'
-        - SQLAchemy: 'Coding/Python/sqlalchemy.md'
-        - Useful Snippets: 'Coding/Python/Useful_snippets.md'
-        - Virtual Environments: 'Coding/Python/virtual_environments.md'
+        - Python Basics:  
+            - Data Structures: 'Coding/Python/Python_Basics/Data structures.md'
+            - Control Flow: 'Coding/Python/Python_Basics/control flow.md'
+            - Functions: 'Coding/Python/Python_Basics/functions.md'
+            - Error and Exceptions: 'Coding/Python/Python_Basics/Error and Exceptions.md'
+            - Reading and Writing Files: 'Coding/Python/Python_Basics/Reading and Writing Files.md'
+            - Import Local Scripts: 'Coding/Python/Python_Basics/Import Local Scripts.md'
+            - Generator and Iterators: 'Coding/Python/Python_Basics/Generator and Iterator.md'
+            - Useful or researched built-in functions: 'Coding/Python/Python_Basics/Useful or researched built-in functions.md'
+            - Data bases with Python: 'Coding/Python/Python_Basics/Databases_with_Python.md'
+            - Useful Snippets: 'Coding/Python/Python_Basics/Useful_snippets.md'
+            - Trick and tips for better code in python: 'Coding/Python/Python_Basics/Tricks_tips_better_code_python.md'
         - Scripts:
           - Create Excel Files With Python: 'Coding/Python/Scripts/create_excel_files.md'
           - Creating a dataset with api and python: 'Coding/Python/Scripts/create_dataset_api_python.md'
           - Scraping Usign Python: 'Coding/Python/Scripts/Scraping_Usign_Python.md'
           - JSON Object in python: 'Coding/Python/Scripts/JSON Objects in Python.md'
           - Scrapy and Scrapyrt: 'Coding/Python/Scripts/Scrapy_and_Scrapyrt.md'
+          - Magic Square: 'Coding/Python/Scripts/Magic_square.md'
         - Flask:
           - Basics - Based in Official Docs example: 'Coding/Python/Flask/Basics_Flask_examples_(Flask_doc).md'
+          - Application Layout (Structure): 'Coding/Python/Flask/flask_structure.md'
+          - Application Factory & Run: 'Coding/Python/Flask/flask_application_factory.md'
+          - Application Databese: 'Coding/Python/Flask/flask_database.md'
         - Django:
           - Django Tutorial (part 01): 'Coding/Python/Django/Django tutorial - part 01.md'
           - Django Tutorial (part 02): 'Coding/Python/Django/Django tutorial - part 02.md'
           - Django Tutorial (part 03): 'Coding/Python/Django/Django tutorial - part 03.md'
           - (Optional) More details about file structure: 'Coding/Python/Django/More details about project structure.md'
-        - Algorithm:
-          - Magic Square: 'Coding/Python/Algorithm/Magic_square.md'
-
+        - Others or loose concept: 
+          - Multi-threading and Multi-processing: 'Coding/Python/python_others/Multithreading_and_multiprocessing.md'      
+          - SQLAchemy: 'Coding/Python/python_others/sqlalchemy.md'
+        - Virtual Environments: 'Coding/Python/virtual_environments.md'          
       - SQL:
         - Random notes about SQL: 'Coding/SQL/Some_SQL.md'
         - String Funtions SQL: 'Coding/SQL/String_Functions_SQL.md'
