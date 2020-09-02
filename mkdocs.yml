@@ -103,6 +103,7 @@ nav:
           - Application Factory & Run: 'Coding/Python/Flask/flask_application_factory.md'
           - Application Databese: 'Coding/Python/Flask/flask_database.md'
           - Blueprints (part 01-Auth): 'Coding/Python/Flask/flask_blueprints_part1.md'
+          - Templates: 'Coding/Python/Flask/flask_templates.md'
         - Django:
           - Django Tutorial (part 01): 'Coding/Python/Django/Django tutorial - part 01.md'
           - Django Tutorial (part 02): 'Coding/Python/Django/Django tutorial - part 02.md'
