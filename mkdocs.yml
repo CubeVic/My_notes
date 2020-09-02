@@ -99,7 +99,6 @@ nav:
           - Scrapy and Scrapyrt: 'Coding/Python/Scripts/Scrapy_and_Scrapyrt.md'
           - Magic Square: 'Coding/Python/Scripts/Magic_square.md'
         - Flask:
-          - Basics - Based in Official Docs example: 'Coding/Python/Flask/Basics_Flask_examples_(Flask_doc).md'
           - Application Layout (Structure): 'Coding/Python/Flask/flask_structure.md'
           - Application Factory & Run: 'Coding/Python/Flask/flask_application_factory.md'
           - Application Databese: 'Coding/Python/Flask/flask_database.md'
