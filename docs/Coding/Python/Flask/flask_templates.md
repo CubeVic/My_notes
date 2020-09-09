@@ -112,3 +112,8 @@ Similar to the previous template with the difference in the summit button
   </form>
 {% endblock %}
 ```
+
+## Static files
+
+This will be the CSS, Javascript files and logos for the application, on the base template we can see that we use `{{ url_for('static', filename='style.css')}}` this will search in the relative path to the `flaskr/static` directory.
+
