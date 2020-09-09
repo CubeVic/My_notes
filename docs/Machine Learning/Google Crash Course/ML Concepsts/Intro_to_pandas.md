@@ -1,4 +1,4 @@
-[pandas](http://pandas.pydata.org/pandas-docs/stable/index.html) is a column-oriented dataanalysis API
+[pandas](http://pandas.pydata.org/pandas-docs/stable/index.html) is a column-oriented data analysis API
 
 ## Basic Concepts
 

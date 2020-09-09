@@ -61,7 +61,7 @@ We are going to lunch the app in development mode, in this way the browser will 
 You should be in the top-level not inside the folder **flaskr**
 
 #### For linux and Mac:
-```
+``` 
 export FLASK_APP=flaskr
 export FLASK_ENV=development
 flask run

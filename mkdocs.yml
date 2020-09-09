@@ -15,8 +15,8 @@ theme:
   name: 'material'
   language: 'en'
   palette:
-      primary: 'Deep Purple'
-      accent: 'Deep Purple'
+      primary: 'Deep purple'
+      accent: 'Deep purple'
   font: 
     text: 'Ubuntu'
     code: 'Ubuntu Mono'
@@ -60,7 +60,7 @@ markdown_extensions:
 # Navigation
 nav:
     - index.md
-    - Machine Leaning:
+    - Machine Leaning (Concepts):
       - Google Crash Course:
         - Problem Framing:  'Machine Learning/Google Crash Course/Problem_Framing.md'
         - ML Concepts: 
@@ -136,7 +136,9 @@ nav:
           - Communication: 'Coding/Arduino/Functions/Communication.md'
           - Interrupts and External Interruptions: 'Coding/Arduino/Functions/Interrupts_and_External_Interruptions.md'
         - Projects:
-          - Air Vent servo control: 'Coding/Arduino/Projects/Air_vent_servo_control.md'  
+          - Air Vent servo control: 'Coding/Arduino/Projects/Air_vent_servo_control.md'
+      - ML script or projects:
+          - Twitter Sentiment Analyzer: 'Coding/ML script or projects/Twitter_sentiment_Analyzer.md'   
 
       - PowerLanguages:
         - PowerLanguages 001: 'Coding/PowerLanguages/PowerLanguages_001.md'
