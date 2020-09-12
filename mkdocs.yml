@@ -141,7 +141,7 @@ nav:
           - Twitter Sentiment Analyzer: 'Coding/ML script or projects/Twitter_sentiment_Analyzer.md'   
 
       - PowerLanguages:
-        - PowerLanguages 001: 'Coding/PowerLanguages/PowerLanguages_001.md'
+        - Reference: 'Coding/PowerLanguages/PowerLanguages_001.md'
         - Reserved words: 'Coding/PowerLanguages/Reserved words.md'
         - How Scripts Work: 'Coding/PowerLanguages/how_script_works.md'
         - Functions: 'Coding/PowerLanguages/functions.md'
