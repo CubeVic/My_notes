@@ -1,4 +1,20 @@
 /*
+## this is an attempt to get the colors fo the logo
+$ didnt work so i keep the deep purple
+:root {
+  --md-primary-fg-color:        #4f3378;
+  --md-primary-fg-color--light: #665286;
+  --md-primary-fg-color--dark:  #5c427c;
+}
+[data-md-color-scheme="CubVic"] {
+  --md-primary-fg-color:        #4f3378;
+  --md-primary-fg-color--light: #665286;
+  --md-primary-fg-color--dark:  #5c427c;
+}
+
+*/
+
+/*
 ///////////////////////
 // To center images////
 ///////////////////////

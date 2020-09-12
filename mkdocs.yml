@@ -15,8 +15,8 @@ theme:
   name: 'material'
   language: 'en'
   palette:
-      primary: 'Deep Purple'
-      accent: 'Deep Purple'
+      primary: 'Deep purple'
+      accent: 'Deep purple'
   font: 
     text: 'Ubuntu'
     code: 'Ubuntu Mono'
@@ -60,7 +60,7 @@ markdown_extensions:
 # Navigation
 nav:
     - index.md
-    - Machine Leaning:
+    - Machine Leaning (Concepts):
       - Google Crash Course:
         - Problem Framing:  'Machine Learning/Google Crash Course/Problem_Framing.md'
         - ML Concepts: 
@@ -70,8 +70,6 @@ nav:
             - First Steps TensorFlow: 'Machine Learning/Google Crash Course/ML Concepsts/First_steps_TensorFlow.md'
             - Introduction to Pandas: 'Machine Learning/Google Crash Course/ML Concepsts/Intro_to_pandas.md'
             - Training and Test Sets: 'Machine Learning/Google Crash Course/ML Concepsts/Training_Test_sets.md'
-      - Scripts and Projects:
-        - Twitter Sentiment Analyzer: 'Machine Learning/Scripts or Projects/Twitter_sentiment_Analyzer.md'
       - Other Key Terminology (TensorFlow): 'Machine Learning/Other_key_Terminology.md'
 
     - Coding:
@@ -104,6 +102,7 @@ nav:
           - Application Databese: 'Coding/Python/Flask/flask_database.md'
           - Blueprints (part 01-Auth): 'Coding/Python/Flask/flask_blueprints_part1.md'
           - Templates: 'Coding/Python/Flask/flask_templates.md'
+          - Blueprints (part 02-Blog): 'Coding/Python/Flask/flask_blueprints_part2.md'
         - Django:
           - Django Tutorial (part 01): 'Coding/Python/Django/Django tutorial - part 01.md'
           - Django Tutorial (part 02): 'Coding/Python/Django/Django tutorial - part 02.md'
@@ -138,6 +137,8 @@ nav:
         - Projects:
           - Morse code Translator: 'Coding/Arduino/Projects/Morse_code_Translator.md'
           - Air Vent servo control: 'Coding/Arduino/Projects/Air_vent_servo_control.md'  
+      - ML script or projects:
+          - Twitter Sentiment Analyzer: 'Coding/ML script or projects/Twitter_sentiment_Analyzer.md'   
 
       - PowerLanguages:
         - PowerLanguages 001: 'Coding/PowerLanguages/PowerLanguages_001.md'
