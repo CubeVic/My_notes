@@ -20,7 +20,7 @@ theme:
   font: 
     text: 'Ubuntu'
     code: 'Ubuntu Mono'
-  logo: 'img/Logo.png'
+  logo: 'img/Logo.svg'
   favicon: 'img/favicon.png'
   feature:
       tabs: true
@@ -136,6 +136,7 @@ nav:
           - Communication: 'Coding/Arduino/Functions/Communication.md'
           - Interrupts and External Interruptions: 'Coding/Arduino/Functions/Interrupts_and_External_Interruptions.md'
         - Projects:
+          - Morse code Translator: 'Coding/Arduino/Projects/Morse_code_Translator.md'
           - Air Vent servo control: 'Coding/Arduino/Projects/Air_vent_servo_control.md'  
 
       - PowerLanguages:

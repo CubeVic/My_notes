@@ -36,5 +36,7 @@ The `static` keyword is used to create variables that are visible to only one fu
 
 > Variables declared as static will only be created and initialized the first time a function is called.
 
-
+```C++
+static int count = 0;
+```
 

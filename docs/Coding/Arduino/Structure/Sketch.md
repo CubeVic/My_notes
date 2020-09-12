@@ -8,7 +8,7 @@ The arduino code has two basic "Functions", these functions are a requirement to
 
 The `setup()` function is called when a sketch starts. Use it to initialize variables, pin modes, start using libraries, etc. The `setup()` function will only run once, after each powerup or reset of the Arduino board.
 
-```C
+```C++
 void setup(){
   
 }
@@ -16,7 +16,7 @@ void setup(){
 
 one of the statement that are going to be in this function, or that are commonly found, is the function to communicate with the serial port, `Serial.begin(9600);` this is standard and basically is feeding 960 characters per second over the serial
 
-```C
+```C++
 int buttonPin = 3;
 
 void setup() {
@@ -33,7 +33,7 @@ void loop() {
 
 After creating a `setup()` function, which initializes and sets the initial values, the `loop()` function does precisely what its name suggests, and loops consecutively, allowing your program to change and respond. Use it to actively control the Arduino board.
 
-```C
+```C++
 int buttonPin = 3;
 
 // setup initializes serial and the button pin
