@@ -126,7 +126,7 @@ Description: modification of the blockquote to
 }
 ```
 
-### modification color of the `nav` and size of the icon
+### Modification color of the `nav` and size of the icon
 
 Again the modification was done on the `extra.css` file 
 
