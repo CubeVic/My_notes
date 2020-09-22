@@ -13,6 +13,12 @@ $ didnt work so i keep the deep purple
 }
 
 */
+
+/* 
+///////////////////////////////////////////
+// Modification Nav color and icon size////
+///////////////////////////////////////////
+*/
 [data-md-color-primary=deep-purple] .md-header, [data-md-color-primary=deep-purple] .md-hero {
     background-color: #4f3378;
 }
@@ -24,28 +30,9 @@ $ didnt work so i keep the deep purple
 a.md-header-nav__button.md-logo img{
   width: 48px;
   height: 48px;
- /* margin: 2px 0px 50px 0px;*/
-}
-/*span.md-header-nav__topic {
-  font-size:26px;
-  padding-top: 10px;
-  display: flex;
-  justify-content: left;
-  align-items: center;
-}*/
-
-/*a.md-tabs__link.md-tabs__link--active[href='index.html'] {
-  display: none;
-}*/
-
-/*a.md-tabs__link.md-tabs__link[href='Machine Learning/Google Crash Course/Problem_Framing.html'] {
-  margin-left: 3.9rem;
 }
 
-div.md-sidebar.md-sidebar--primary {
-padding: 2.3rem 0;
-}
-*/
+
 /*
 ///////////////////////
 // To center images////

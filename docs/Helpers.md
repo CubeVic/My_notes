@@ -126,6 +126,30 @@ Description: modification of the blockquote to
 }
 ```
 
+### modification color of the `nav` and size of the icon
+
+Again the modification was done on the `extra.css` file 
+
+```css
+/* 
+///////////////////////////////////////////
+// Modification Nav color and icon size////
+///////////////////////////////////////////
+*/
+[data-md-color-primary=deep-purple] .md-header, [data-md-color-primary=deep-purple] .md-hero {
+    background-color: #4f3378;
+}
+
+[data-md-color-primary=deep-purple] .md-tabs {
+    background-color: #4f3378;
+}
+
+a.md-header-nav__button.md-logo img{
+  width: 48px;
+  height: 48px;
+}
+```
+
 ## Modifications to codehilite.css (extra.css)
 
 In order to change how the inline code ( `this` in line code ) and solve the contrast problems ( before was black) I made a change in **extra.css** that overwrite the original **codehilite.css** code, as follow:
