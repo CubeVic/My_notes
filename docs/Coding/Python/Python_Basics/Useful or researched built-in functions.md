@@ -235,3 +235,16 @@ Another place pass can be used is as a place-holder for a function or conditiona
 def initlog(*args):
      pass   # Remember to implement this!
 ```
+
+## `max()` and the `key` argument
+
+The `max()` function returns the largest of the input values.
+
+Its syntax is as follows:
+
+```python 
+max(iterable[, default=obj, key=func]) -> value
+```
+we will focus in `key` this is an optional argument and it receive a function, and this function is applied to every member of the iterable
+
+> from python documentation `key` (optional)  It refers to the single argument function to customize the sort order. **The function is applied to each item** on the iterable.
