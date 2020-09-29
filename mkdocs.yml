@@ -122,7 +122,6 @@ nav:
                 - Django Tutorial (part 02): 'Coding/Python/Libraries Modules and Frameworks/Django/Django tutorial - part 02.md'
                 - Django Tutorial (part 03): 'Coding/Python/Libraries Modules and Frameworks/Django/Django tutorial - part 03.md'
                 - (Optional) More details about file structure: 'Coding/Python/Libraries Modules and Frameworks/Django/More details about project structure.md'
-
         - Scripts & Algorithms:
           - Create Excel Files With Python: 'Coding/Python/Scripts/create_excel_files.md'
           - Creating a dataset with api and python: 'Coding/Python/Scripts/create_dataset_api_python.md'
