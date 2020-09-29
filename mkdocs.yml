@@ -74,10 +74,11 @@ nav:
       - Other Key Terminology (TensorFlow): 'Machine Learning/Other_key_Terminology.md'
 
     - Coding:
+      - For Certifications:
+        - Python(PCPP-32-1):
+          - Module 1: 'Coding/For Certifications/Python/Preparation for PCPP-32-1/Module 1.md'
+          - Module 2: 'Coding/For Certifications/Python/Preparation for PCPP-32-1/Module 2.md'
       - Python:
-        - Preparation for PCPP-32-1:
-          - Module 1: 'Coding/Python/Preparation for PCPP-32-1/Module 1.md'
-          - Module 2: 'Coding/Python/Preparation for PCPP-32-1/Module 2.md'
         - Python Basics:  
             - Data Structures: 'Coding/Python/Python_Basics/Data structures.md'
             - Control Flow: 'Coding/Python/Python_Basics/control flow.md'
@@ -90,19 +91,35 @@ nav:
             - Data bases with Python: 'Coding/Python/Python_Basics/Databases_with_Python.md'
             - Useful Snippets: 'Coding/Python/Python_Basics/Useful_snippets.md'
             - Trick and tips for better code in python: 'Coding/Python/Python_Basics/Tricks_tips_better_code_python.md'
-        - Numpy:
-            - Numpy Basic (Part 1): 'Coding/Python/Numpy/Numpy_Basic_part_1.md'
-            - Numpy Basic (Part 2): 'Coding/Python/Numpy/Numpy_Basic_part_2.md'
-            - Numpy Crash course: 'Coding/Python/Numpy/Numpy Crash course.md'
-        - Computer Vision and OpenCV:
-            - Images Basic with OpenCV:
-              - Images and Numpy: 'Coding/Python/Computer Vision and OpenCV/Images Basic with OpenCV/Images_and_Numpy.md'
-              - Images and Opencv: 'Coding/Python/Computer Vision and OpenCV/Images Basic with OpenCV/Images_and_Opencv.md'
-              - Drawing on Images: 'Coding/Python/Computer Vision and OpenCV/Images Basic with OpenCV/Drawing_on_Images.md'
-              - Drawing with mouse: 'Coding/Python/Computer Vision and OpenCV/Images Basic with OpenCV/Direct_drawing_with_mouse.md'
-            - Image Processing:
-              - Color Mapping: 'Coding/Python/Computer Vision and OpenCV/Image Processing/color_mapping.md'
-              - Blending and Pasting Images: 'Coding/Python/Computer Vision and OpenCV/Image Processing/blending_pasting_images.md'
+        - Libraries, Modules & Framework: #Libraries Modules and Frameworks
+            - Numpy:
+                - Numpy Basic (Part 1): 'Coding/Python/Libraries Modules and Frameworks/Numpy/Numpy_Basic_part_1.md'
+                - Numpy Basic (Part 2): 'Coding/Python/Libraries Modules and Frameworks/Numpy/Numpy_Basic_part_2.md'
+                - Numpy Crash course: 'Coding/Python/Libraries Modules and Frameworks/Numpy/Numpy Crash course.md'
+            - OpenCV:
+                - Images Basic with OpenCV:
+                  - Images and Numpy: 'Coding/Python/Libraries Modules and Frameworks/Computer Vision and OpenCV/Images Basic with OpenCV/Images_and_Numpy.md'
+                  - Images and Opencv: 'Coding/Python/Libraries Modules and Frameworks/Computer Vision and OpenCV/Images Basic with OpenCV/Images_and_Opencv.md'
+                  - Drawing on Images: 'Coding/Python/Libraries Modules and Frameworks/Computer Vision and OpenCV/Images Basic with OpenCV/Drawing_on_Images.md'
+                  - Drawing with mouse: 'Coding/Python/Libraries Modules and Frameworks/Computer Vision and OpenCV/Images Basic with OpenCV/Direct_drawing_with_mouse.md'
+                - Image Processing:
+                  - Color Mapping: 'Coding/Python/Libraries Modules and Frameworks/Computer Vision and OpenCV/Image Processing/color_mapping.md'
+                  - Blending and Pasting Images: 'Coding/Python/Libraries Modules and Frameworks/Computer Vision and OpenCV/Image Processing/blending_pasting_images.md'
+            - Flask:
+                - Application Layout (Structure): 'Coding/Python/Libraries Modules and Frameworks/Flask/flask_structure.md'
+                - Application Factory & Run: 'Coding/Python/Libraries Modules and Frameworks/Flask/flask_application_factory.md'
+                - Application Databese: 'Coding/Python/Libraries Modules and Frameworks/Flask/flask_database.md'
+                - Blueprints (part 01-Auth): 'Coding/Python/Libraries Modules and Frameworks/Flask/flask_blueprints_part1.md'
+                - Templates: 'Coding/Python/Libraries Modules and Frameworks/Flask/flask_templates.md'
+                - Blueprints (part 02-Blog): 'Coding/Python/Libraries Modules and Frameworks/Flask/flask_blueprints_part2.md'
+            - Django:
+                - Django Tutorial (part 01): 'Coding/Python/Libraries Modules and Frameworks/Django/Django tutorial - part 01.md'
+                - Django Tutorial (part 02): 'Coding/Python/Libraries Modules and Frameworks/Django/Django tutorial - part 02.md'
+                - Django Tutorial (part 03): 'Coding/Python/Libraries Modules and Frameworks/Django/Django tutorial - part 03.md'
+                - (Optional) More details about file structure: 'Coding/Python/Libraries Modules and Frameworks/Django/More details about project structure.md'
+        - Python intermedium: 
+          - Multi-threading and Multi-processing: 'Coding/Python/Python_intermedium/Multithreading_and_multiprocessing.md'      
+          - SQLAchemy: 'Coding/Python/Python_intermedium/sqlalchemy.md'
         - Scripts:
           - Create Excel Files With Python: 'Coding/Python/Scripts/create_excel_files.md'
           - Creating a dataset with api and python: 'Coding/Python/Scripts/create_dataset_api_python.md'
@@ -110,21 +127,6 @@ nav:
           - JSON Object in python: 'Coding/Python/Scripts/JSON Objects in Python.md'
           - Scrapy and Scrapyrt: 'Coding/Python/Scripts/Scrapy_and_Scrapyrt.md'
           - Magic Square: 'Coding/Python/Scripts/Magic_square.md'
-        - Flask:
-          - Application Layout (Structure): 'Coding/Python/Flask/flask_structure.md'
-          - Application Factory & Run: 'Coding/Python/Flask/flask_application_factory.md'
-          - Application Databese: 'Coding/Python/Flask/flask_database.md'
-          - Blueprints (part 01-Auth): 'Coding/Python/Flask/flask_blueprints_part1.md'
-          - Templates: 'Coding/Python/Flask/flask_templates.md'
-          - Blueprints (part 02-Blog): 'Coding/Python/Flask/flask_blueprints_part2.md'
-        - Django:
-          - Django Tutorial (part 01): 'Coding/Python/Django/Django tutorial - part 01.md'
-          - Django Tutorial (part 02): 'Coding/Python/Django/Django tutorial - part 02.md'
-          - Django Tutorial (part 03): 'Coding/Python/Django/Django tutorial - part 03.md'
-          - (Optional) More details about file structure: 'Coding/Python/Django/More details about project structure.md'
-        - Others or loose concept: 
-          - Multi-threading and Multi-processing: 'Coding/Python/python_others/Multithreading_and_multiprocessing.md'      
-          - SQLAchemy: 'Coding/Python/python_others/sqlalchemy.md'
         - Virtual Environments: 'Coding/Python/virtual_environments.md'          
       - SQL:
         - Random notes about SQL: 'Coding/SQL/Some_SQL.md'
