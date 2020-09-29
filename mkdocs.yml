@@ -91,11 +91,16 @@ nav:
             - Data bases with Python: 'Coding/Python/Python_Basics/Databases_with_Python.md'
             - Useful Snippets: 'Coding/Python/Python_Basics/Useful_snippets.md'
             - Trick and tips for better code in python: 'Coding/Python/Python_Basics/Tricks_tips_better_code_python.md'
+        - Python intermedium: 
+          - Multi-threading and Multi-processing: 'Coding/Python/Python_intermedium/Multithreading_and_multiprocessing.md'      
+          - SQLAchemy: 'Coding/Python/Python_intermedium/sqlalchemy.md'
         - Libraries, Modules & Framework: #Libraries Modules and Frameworks
             - Numpy:
                 - Numpy Basic (Part 1): 'Coding/Python/Libraries Modules and Frameworks/Numpy/Numpy_Basic_part_1.md'
                 - Numpy Basic (Part 2): 'Coding/Python/Libraries Modules and Frameworks/Numpy/Numpy_Basic_part_2.md'
                 - Numpy Crash course: 'Coding/Python/Libraries Modules and Frameworks/Numpy/Numpy Crash course.md'
+            - Pandas (Under Review):
+                - Pandas Crash course: 'Coding/Python/Libraries Modules and Frameworks/Pandas/Pandas Crash course.md'
             - OpenCV:
                 - Images Basic with OpenCV:
                   - Images and Numpy: 'Coding/Python/Libraries Modules and Frameworks/Computer Vision and OpenCV/Images Basic with OpenCV/Images_and_Numpy.md'
@@ -117,10 +122,8 @@ nav:
                 - Django Tutorial (part 02): 'Coding/Python/Libraries Modules and Frameworks/Django/Django tutorial - part 02.md'
                 - Django Tutorial (part 03): 'Coding/Python/Libraries Modules and Frameworks/Django/Django tutorial - part 03.md'
                 - (Optional) More details about file structure: 'Coding/Python/Libraries Modules and Frameworks/Django/More details about project structure.md'
-        - Python intermedium: 
-          - Multi-threading and Multi-processing: 'Coding/Python/Python_intermedium/Multithreading_and_multiprocessing.md'      
-          - SQLAchemy: 'Coding/Python/Python_intermedium/sqlalchemy.md'
-        - Scripts:
+
+        - Scripts & Algorithms:
           - Create Excel Files With Python: 'Coding/Python/Scripts/create_excel_files.md'
           - Creating a dataset with api and python: 'Coding/Python/Scripts/create_dataset_api_python.md'
           - Scraping Usign Python: 'Coding/Python/Scripts/Scraping_Usign_Python.md'
@@ -189,7 +192,7 @@ nav:
               - Using Real-World Images: 'Courses/Coursera/Introduction tensorflow/Using_Real_world_Image.md'
           - Udemy:
             - Complete Tensorflow 2 and Keras Deep Learning Bootcamp:
-                - Pandas Crash course: 'Courses/Udemy/Complete Tensorflow 2 and Keras Deep Learning Bootcamp/Pandas Crash course.md'
+                
                 - Visualization Crash course: 'Courses/Udemy/Complete Tensorflow 2 and Keras Deep Learning Bootcamp/Visualization_Crash_course.md'
                 - Artificial Neural Network: 'Courses/Udemy/Complete Tensorflow 2 and Keras Deep Learning Bootcamp/ANN.md'
 
