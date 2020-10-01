@@ -39,13 +39,14 @@ void setup()
 
 ### `loop()`
 
-Here will be the main loop of the sketch.
+Here will be the main loop of the sketch.  
+
 1. First a Variable `char` will be create to hold a character, that character will come from the input, one character at the time (since it is a serial input it will be read one character at the time).
 2. A conditional that will evaluate if there is something in the serial port (`Serial.available()`).
 3. It will read the serial input and save one character at the time in the variable `ch`. 
 4. A `if/else` conditionals that compare the input with letters (Arduino will read/interpret every letter as its value in ASCII).  
 5. Inside the `if/else` there is a function `flashSequence()` that will take as input one element of the list `letters[]`, the element is selected by subtracting the ASCII value of the letter taken from the serial input and a letter of the alphabet `[ch - 'a']`
-6. A delay statement to make a gap between words.
+6. A delay statement to make a gap between words (`delay(dotDelay * 4)`).
 
 ### The functions 
 
