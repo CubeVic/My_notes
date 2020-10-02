@@ -32,9 +32,18 @@ The `const` keyword is preferred for defining constants and should be used inste
 
 ## `&` reference operator
 
+This operator is use with pointers, if `x` is a variable, `&x` represent the address of the variable. 
+
 **Syntax**
 
-**Examples**
+```C++
+int *p;       // declare a pointer to an int data type
+int i = 5;
+int result = 0;
+p = &i;       // now 'p' contains the address of 'i'
+result = *p;  // 'result' gets the value at the address pointed by 'p'
+              // i.e., it gets the value of 'i' which is 5
+```
  
 ## `*` Dereference operator
 
