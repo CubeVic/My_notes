@@ -1,5 +1,5 @@
 # My notes
-![logo_Banner.png](Hero_Image_notes.png)
+![logo_Banner](Hero_Image_notes.png)
 
 These are my notes. Here I write, collect, and sometimes copy information about:  
 
