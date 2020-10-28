@@ -189,6 +189,8 @@ nav:
               - Enhancing vision with convolutional Neural Networks : 'Courses/Coursera/Introduction tensorflow/Enhancing_vision_with_convolutional_Neural_Networks.md'
               - (Code) Step by step Convolutions : 'Courses/Coursera/Introduction tensorflow/Step_by_step_Convolutions.md'
               - Using Real-World Images: 'Courses/Coursera/Introduction tensorflow/Using_Real_world_Image.md'
+            - Convolutional Neural Networks in TensorFlow: 
+              - Week 1 - Cats vs Dogs : 'Courses/Coursera/Convolutional Neural Networks in TensorFlow/week_1-cats_v_dogs.md'
           - Udemy:
             - Complete Tensorflow 2 and Keras Deep Learning Bootcamp:
                 
