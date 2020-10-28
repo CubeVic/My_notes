@@ -191,6 +191,7 @@ nav:
               - Using Real-World Images: 'Courses/Coursera/Introduction tensorflow/Using_Real_world_Image.md'
             - Convolutional Neural Networks in TensorFlow: 
               - Exploring large Datasets - Cats vs Dogs : 'Courses/Coursera/Convolutional Neural Networks in TensorFlow/exploring_large_dataset.md'
+              - Augmentation: 'Courses/Coursera/Convolutional Neural Networks in TensorFlow/Augmentation_technique_to_avoid_overfitting.md'
           - Udemy:
             - Complete Tensorflow 2 and Keras Deep Learning Bootcamp:
                 
