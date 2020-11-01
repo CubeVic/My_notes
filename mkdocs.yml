@@ -192,6 +192,7 @@ nav:
             - Convolutional Neural Networks in TensorFlow: 
               - Exploring large Datasets - Cats vs Dogs : 'Courses/Coursera/Convolutional Neural Networks in TensorFlow/exploring_large_dataset.md'
               - Augmentation: 'Courses/Coursera/Convolutional Neural Networks in TensorFlow/Augmentation_technique_to_avoid_overfitting.md'
+              - Transfer Learning: 'Courses/Coursera/Convolutional Neural Networks in TensorFlow/Transfer_Learning.md'
           - Udemy:
             - Complete Tensorflow 2 and Keras Deep Learning Bootcamp:
                 
