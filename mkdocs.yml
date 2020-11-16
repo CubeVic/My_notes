@@ -22,8 +22,8 @@ theme:
     code: 'Ubuntu Mono'
   logo: 'img/Logo.svg'
   favicon: 'img/favicon.png'
-  feature:
-      tabs: true
+  features:
+    - navigation.tabs
 
 use_directory_urls: false
 
