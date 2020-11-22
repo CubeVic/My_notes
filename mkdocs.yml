@@ -122,9 +122,10 @@ nav:
               - Intro: 'Coding/Python/Libraries Modules and Frameworks/HTTPX/intro.md'
             - Flask:
                 - Introduction and notes: 'Coding/Python/Libraries Modules and Frameworks/Flask/Introduction_and_notes.md'
+                - First App with Flask: 'Coding/Python/Libraries Modules and Frameworks/Flask/first_app_flask.md'
                 - Application Layout (Structure): 'Coding/Python/Libraries Modules and Frameworks/Flask/flask_structure.md'
                 - Application Factory & Run: 'Coding/Python/Libraries Modules and Frameworks/Flask/flask_application_factory.md'
-                - Application Databese: 'Coding/Python/Libraries Modules and Frameworks/Flask/flask_database.md'
+                - Application Database: 'Coding/Python/Libraries Modules and Frameworks/Flask/flask_database.md'
                 - Blueprints (part 01-Auth): 'Coding/Python/Libraries Modules and Frameworks/Flask/flask_blueprints_part1.md'
                 - Templates: 'Coding/Python/Libraries Modules and Frameworks/Flask/flask_templates.md'
                 - Blueprints (part 02-Blog): 'Coding/Python/Libraries Modules and Frameworks/Flask/flask_blueprints_part2.md'
