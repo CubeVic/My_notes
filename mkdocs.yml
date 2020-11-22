@@ -121,6 +121,7 @@ nav:
             - HTTPX:
               - Intro: 'Coding/Python/Libraries Modules and Frameworks/HTTPX/intro.md'
             - Flask:
+                - Introduction and notes: 'Coding/Python/Libraries Modules and Frameworks/Flask/Introduction_and_notes.md'
                 - Application Layout (Structure): 'Coding/Python/Libraries Modules and Frameworks/Flask/flask_structure.md'
                 - Application Factory & Run: 'Coding/Python/Libraries Modules and Frameworks/Flask/flask_application_factory.md'
                 - Application Databese: 'Coding/Python/Libraries Modules and Frameworks/Flask/flask_database.md'
