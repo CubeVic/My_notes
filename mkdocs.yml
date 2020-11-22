@@ -22,8 +22,8 @@ theme:
     code: 'Ubuntu Mono'
   logo: 'img/Logo.svg'
   favicon: 'img/favicon.png'
-  feature:
-      tabs: true
+  features:
+    - navigation.tabs
 
 use_directory_urls: false
 
@@ -110,6 +110,16 @@ nav:
                 - Image Processing:
                   - Color Mapping: 'Coding/Python/Libraries Modules and Frameworks/Computer Vision and OpenCV/Image Processing/color_mapping.md'
                   - Blending and Pasting Images: 'Coding/Python/Libraries Modules and Frameworks/Computer Vision and OpenCV/Image Processing/blending_pasting_images.md'
+            - Netifaces:
+              - Intro: 'Coding/Python/Libraries Modules and Frameworks/netifaces/intro.md'
+            - WS Discovery:
+              - Intro: 'Coding/Python/Libraries Modules and Frameworks/WS_Discovery/intro.md'
+            - ONVIF-zeep-async:
+              - Intro: 'Coding/Python/Libraries Modules and Frameworks/ONVIF_python_zeep_async/intro.md'
+            - Pillow:
+              - Intro: 'Coding/Python/Libraries Modules and Frameworks/Pillow/intro.md'
+            - HTTPX:
+              - Intro: 'Coding/Python/Libraries Modules and Frameworks/HTTPX/intro.md'
             - Flask:
                 - Application Layout (Structure): 'Coding/Python/Libraries Modules and Frameworks/Flask/flask_structure.md'
                 - Application Factory & Run: 'Coding/Python/Libraries Modules and Frameworks/Flask/flask_application_factory.md'
@@ -167,7 +177,7 @@ nav:
         - Text and Trendlines: 'Coding/PowerLanguages/text_trendlines.md'
 
     - CCTV:
-      - Basic Concepts: 'CCTV/Basic_concepts.md' 
+      - Basic Concepts: 'CCTV/Basic_concepts.md'
                 
     - 3D Printing:
       - Concepts: '3D Printing/Concepts.md'

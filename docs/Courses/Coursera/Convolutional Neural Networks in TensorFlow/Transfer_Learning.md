@@ -102,31 +102,42 @@ train_datagen = ImageDataGenerator(rescale = 1./255.,
                                    zoom_range = 0.2,
                                    horizontal_flip = True)
 ``` 
-## Over-fitting
 
 We will see that we are having an over-fitting case.
 ![overfitting](images/augmentation_007.png){.center}
 
 ## Dropout Layers
 
-Is in this case that we can use the Layer Dropout, the dropout layer will drop neurons randomly, preventing the over-fitting.
+In some cases we will have some over-fitting after the image augmentation, so it is a good practice to have some Dropout Layers, this layer will randomly turn off and on some of the neurones in the layers, preventing the over-fitting.
+
+> Dropout layers are **Regulazers**
+
+the dropout layer will look like this: 
+```python
+x = layers.Dropout(0.2)(x)  
+```
+The `0.2`  tell the model to drop up to 20% of the neurons.
+
+so the code will be: 
 
 ```python
-from tensorflow.keras.optimizers import RMSprop
-
 # Flatten the output layer to 1 dimension
 x = layers.Flatten()(last_output)
 # Add a fully connected layer with 1,024 hidden units and ReLU activation
-x = layers.Dense(1024, activation='relu')(x)
+x = layers.Dense(1024,activation='relu')(x)
 # Add a dropout rate of 0.2
 x = layers.Dropout(0.2)(x)                  
 # Add a final sigmoid layer for classification
-x = layers.Dense  (1, activation='sigmoid')(x)           
+x = layers.Dense(1, activation='sigmoid')(x)           
 
-model = Model( pre_trained_model.input, x) 
+model = Model(pre_trained_model.input, x) 
 
 model.compile(optimizer = RMSprop(lr=0.0001), 
               loss = 'binary_crossentropy', 
-              metrics = ['accuracy'])
-```
+              metrics =['accuracy']) 
 
+model.summary()
+``` 
+
+> the full model in this [Colab](https://colab.research.google.com/drive/1qngZFC62pVIDwXktxUqBrgzlPGW2Vh6U?usp=sharing)
+>>>>>>> 34277d71620fd6e8b442837ae1bc3d161014df4e
