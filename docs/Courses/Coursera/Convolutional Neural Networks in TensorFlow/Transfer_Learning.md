@@ -104,5 +104,29 @@ train_datagen = ImageDataGenerator(rescale = 1./255.,
 ``` 
 ## Over-fitting
 
-We will see that we are having an over-fitting case 
+We will see that we are having an over-fitting case.
+![overfitting](images/augmentation_007.png){.center}
+
 ## Dropout Layers
+
+Is in this case that we can use the Layer Dropout, the dropout layer will drop neurons randomly, preventing the over-fitting.
+
+```python
+from tensorflow.keras.optimizers import RMSprop
+
+# Flatten the output layer to 1 dimension
+x = layers.Flatten()(last_output)
+# Add a fully connected layer with 1,024 hidden units and ReLU activation
+x = layers.Dense(1024, activation='relu')(x)
+# Add a dropout rate of 0.2
+x = layers.Dropout(0.2)(x)                  
+# Add a final sigmoid layer for classification
+x = layers.Dense  (1, activation='sigmoid')(x)           
+
+model = Model( pre_trained_model.input, x) 
+
+model.compile(optimizer = RMSprop(lr=0.0001), 
+              loss = 'binary_crossentropy', 
+              metrics = ['accuracy'])
+```
+
