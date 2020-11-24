@@ -43,3 +43,38 @@ fetch_devices(devices_services)
 
 wsd.stop()
 ```
+
+## searchService()
+
+I remark this method since it will affect the divices we will find, there are 3 attibutes 
+
+* types.  
+* scopes.  
+* timeout.  
+
+from the documentation:  
+> `searchServices(types=None, scopes=None, address=None, port=None, timeout=3)`  
+search for services given the TYPES and SCOPES in a given TIMEOUT
+
+Example: 
+
+```python
+def fetch_devices():
+	wsd = WSDiscovery()
+	scope1 = Scope("onvif://www.onvif.org/")
+	ttype1 = QName("http://www.onvif.org/ver10/device/wsdl", "Device")
+
+	wsd.start()
+	services = wsd.searchServices(types=[ttype1], scopes=[scope1], timeout=6)
+	ipaddresses = []
+	for service in services:
+	#filter those devices that dont have ONVIF service
+		ipaddress = re.search('(\d+|\.)+', str(service.getXAddrs()[0])).group(0)
+		ipaddresses.append(ipaddress)
+		print(display(service.getScopes()))
+		print('----------END')
+
+	print(f'\nnumber of devices detected: {len(services)}')
+	wsd.stop()
+	return ipaddresses
+```

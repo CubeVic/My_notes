@@ -113,7 +113,7 @@ nav:
             - Netifaces:
               - Intro: 'Coding/Python/Libraries Modules and Frameworks/netifaces/intro.md'
             - WS Discovery:
-              - Intro: 'Coding/Python/Libraries Modules and Frameworks/WS_Discovery/intro.md'
+              - Introduction: 'Coding/Python/Libraries Modules and Frameworks/WS_Discovery/intro.md'
             - ONVIF-zeep-async:
               - Intro: 'Coding/Python/Libraries Modules and Frameworks/ONVIF_python_zeep_async/intro.md'
             - Pillow:
