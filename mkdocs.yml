@@ -134,6 +134,8 @@ nav:
                 - Django Tutorial (part 02): 'Coding/Python/Libraries Modules and Frameworks/Django/Django tutorial - part 02.md'
                 - Django Tutorial (part 03): 'Coding/Python/Libraries Modules and Frameworks/Django/Django tutorial - part 03.md'
                 - (Optional) More details about file structure: 'Coding/Python/Libraries Modules and Frameworks/Django/More details about project structure.md'
+        - Projects:
+          - Random Password Generator: 'Coding/Python/Projects/random_password_generator.md'
         - Scripts & Algorithms:
           - Create Excel Files With Python: 'Coding/Python/Scripts/create_excel_files.md'
           - Creating a dataset with api and python: 'Coding/Python/Scripts/create_dataset_api_python.md'
@@ -169,7 +171,8 @@ nav:
           - Air Vent servo control: 'Coding/Arduino/Projects/Air_vent_servo_control.md'  
       - ML script or projects:
           - Twitter Sentiment Analyzer: 'Coding/ML script or projects/Twitter_sentiment_Analyzer.md'   
-
+      - APIs:
+        - datamuse: 'Coding/APIs/datamuse.md'
       - PowerLanguages:
         - Reference: 'Coding/PowerLanguages/PowerLanguages_001.md'
         - Reserved words: 'Coding/PowerLanguages/Reserved words.md'
