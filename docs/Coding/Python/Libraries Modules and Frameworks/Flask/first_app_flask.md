@@ -81,7 +81,7 @@ note that in the first part, in the creation of the model we use `datatime.utcno
 
 ### Controllers 
 
-For the controllers there will be 3:
+For the controllers there will be 3:  
 1. The index and landing page.
 2. The delete
 3. The update

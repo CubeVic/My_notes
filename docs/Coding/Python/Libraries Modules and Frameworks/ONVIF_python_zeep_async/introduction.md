@@ -1,6 +1,6 @@
 # `python-onvif-zeep-async`
 
-![No_logo](images/githubLogo.png){: .center}
+![No_logo](images/onvif_zeep_async.png){: .center}
 
 >ONVIF Client Implementation in Python 3 (using https://github.com/mvantellingen/python-zeep instead of suds as SOAP client) 
 

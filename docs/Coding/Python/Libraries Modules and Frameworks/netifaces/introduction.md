@@ -1,6 +1,5 @@
-#nertifaces
-
-![no logo](images/githubLogo.png){: .center}
+# Netifaces
+![no logo](images/netifaces.png){: .center}
 
 The authors or maintainers [alastair](https://pypi.org/user/alastair/) and [opalmer](https://pypi.org/user/opalmer/) made an excellent description so i will just copy it.
 

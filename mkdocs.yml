@@ -2,7 +2,7 @@
 site_name: 'My Notes' 
 site_description: 'A Material Design theme for my personal notes'
 site_author: 'Victor Andres Aguirre Fernandez'
-site_url: ''
+site_url: 'https://cubevic.github.io/My_notes/'
 
 # Repository
 repo_name: 'My_notes'
@@ -59,7 +59,7 @@ markdown_extensions:
 
 # Navigation
 nav:
-    - index.md
+    # - Home: index.md
     - Machine Leaning (Concepts):
       - Google Crash Course:
         - Problem Framing:  'Machine Learning/Google Crash Course/Problem_Framing.md'
@@ -74,10 +74,6 @@ nav:
       - Other Key Terminology (TensorFlow): 'Machine Learning/Other_key_Terminology.md'
 
     - Coding:
-      - For Certifications:
-        - Python(PCPP-32-1):
-          - Module 1: 'Coding/For Certifications/Python/Preparation for PCPP-32-1/Module 1.md'
-          - Module 2: 'Coding/For Certifications/Python/Preparation for PCPP-32-1/Module 2.md'
       - Python:
         - Python Basics:  
             - Data Structures: 'Coding/Python/Python_Basics/Data structures.md'
@@ -111,15 +107,15 @@ nav:
                   - Color Mapping: 'Coding/Python/Libraries Modules and Frameworks/Computer Vision and OpenCV/Image Processing/color_mapping.md'
                   - Blending and Pasting Images: 'Coding/Python/Libraries Modules and Frameworks/Computer Vision and OpenCV/Image Processing/blending_pasting_images.md'
             - Netifaces:
-              - Intro: 'Coding/Python/Libraries Modules and Frameworks/netifaces/intro.md'
+              - Introduction: 'Coding/Python/Libraries Modules and Frameworks/netifaces/introduction.md'
             - WS Discovery:
-              - Introduction: 'Coding/Python/Libraries Modules and Frameworks/WS_Discovery/intro.md'
+              - Introduction: 'Coding/Python/Libraries Modules and Frameworks/WS_Discovery/introduction.md'
             - ONVIF-zeep-async:
-              - Intro: 'Coding/Python/Libraries Modules and Frameworks/ONVIF_python_zeep_async/intro.md'
+              - Introduction: 'Coding/Python/Libraries Modules and Frameworks/ONVIF_python_zeep_async/introduction.md'
             - Pillow:
-              - Intro: 'Coding/Python/Libraries Modules and Frameworks/Pillow/intro.md'
+              - Introduction: 'Coding/Python/Libraries Modules and Frameworks/Pillow/introduction.md'
             - HTTPX:
-              - Intro: 'Coding/Python/Libraries Modules and Frameworks/HTTPX/intro.md'
+              - Introduction: 'Coding/Python/Libraries Modules and Frameworks/HTTPX/introduction.md'
             - Flask:
                 - Introduction and notes: 'Coding/Python/Libraries Modules and Frameworks/Flask/Introduction_and_notes.md'
                 - First App with Flask: 'Coding/Python/Libraries Modules and Frameworks/Flask/first_app_flask.md'
@@ -134,6 +130,8 @@ nav:
                 - Django Tutorial (part 02): 'Coding/Python/Libraries Modules and Frameworks/Django/Django tutorial - part 02.md'
                 - Django Tutorial (part 03): 'Coding/Python/Libraries Modules and Frameworks/Django/Django tutorial - part 03.md'
                 - (Optional) More details about file structure: 'Coding/Python/Libraries Modules and Frameworks/Django/More details about project structure.md'
+            - Datamuse: 
+                - Introduction: 'Coding/Python/Libraries Modules and Frameworks/Datamuse/introduction.md'
         - Projects:
           - Random Password Generator: 'Coding/Python/Projects/random_password_generator.md'
         - Scripts & Algorithms:
@@ -143,7 +141,8 @@ nav:
           - JSON Object in python: 'Coding/Python/Scripts/JSON Objects in Python.md'
           - Scrapy and Scrapyrt: 'Coding/Python/Scripts/Scrapy_and_Scrapyrt.md'
           - Magic Square: 'Coding/Python/Scripts/Magic_square.md'
-        - Virtual Environments: 'Coding/Python/virtual_environments.md'          
+        - Virtual Environments: 'Coding/Python/virtual_environments.md'
+        - PIP notes: 'Coding/Python/pip_notes.md'          
       - SQL:
         - Random notes about SQL: 'Coding/SQL/Some_SQL.md'
         - String Funtions SQL: 'Coding/SQL/String_Functions_SQL.md'
@@ -180,6 +179,10 @@ nav:
         - Functions: 'Coding/PowerLanguages/functions.md'
         - Plot: 'Coding/PowerLanguages/Plot.md'
         - Text and Trendlines: 'Coding/PowerLanguages/text_trendlines.md'
+      - For Certifications:
+        - Python(PCPP-32-1):
+          - Module 1: 'Coding/For Certifications/Python/Preparation for PCPP-32-1/Module 1.md'
+          - Module 2: 'Coding/For Certifications/Python/Preparation for PCPP-32-1/Module 2.md'
 
     - CCTV:
       - Basic Concepts: 'CCTV/Basic_concepts.md'
