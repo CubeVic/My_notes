@@ -4,7 +4,7 @@ This is the initial draft 2020/08/18 Later with the addition of more information
 
 In the nutshell, **Throughput tells you how much data was transferred from a source at any given time** and **bandwidth tells you how much data could theoretically be transferred from a source at any given time.**
 
-![Bandwidth-and-Throughput_001.jpg](images/Bandwidth-and-Throughput_001.jpg){: .center}
+![Bandwidth-and-Throughput_001.jpg](images/Bandwidth_and_Throughput_001.jpg){: .center}
 
 ### Throughput
 
@@ -18,12 +18,12 @@ It is important to know bandwidth doesn’t actually increase the speed of a net
 
 >Let’s say 1 Mbps is the equivalent of a single-lane freeway. Let’s also say you want to download a 5 Mb image. If you had a connection with a bandwidth of 1 Mbps (one lane) it would take you about five seconds to download that image. Now, if you were operating with a 5 Mbps bandwidth connection (five lanes)
 
-![Bandwidth-and-Throughput_002.jpg](images/Bandwidth-and-Throughput_002.jpg){: .center}
+![Bandwidth-and-Throughput_002.jpg](images/Bandwidth_and_Throughput_002.jpg){: .center}
 >You can think of bandwidth as a tube and data throughput as sand. If you have a large tube, you can pour more sand through it at a faster rate. but, if you try to put a lot of sand through a small tube, it will go very slowly.
 
 ## I-P-B Frames
 
-![I-P-B_Frames.jpg](images/I-P-B_Frames.jpg){: .center}
+![I-P-B_Frames.jpg](images/I_P_B_Frames.jpg){: .center}
 
 **I-FRAME** or Intra-coded picture, least compressible of all frames but it doesn't required other frames to be decoded, it is a complete image, similar to `.jpg`, compress just I-Frames will result in a good quality but heavy file.
 
@@ -31,7 +31,7 @@ It is important to know bandwidth doesn’t actually increase the speed of a net
 
 **B-Frame** or Bidirectional predicted picture, can use both previous and forward Frame to get the highest amount of date compression, use the difference between the current frame and both  the preceding and following frame to specify its content.
 
-![I-P-B_Frames_01.png](images/I-P-B_Frames_01.png){: .center}  
+![I-P-B_Frames_01.png](images/I_P_B_Frames_01.png){: .center}  
 
 ## Video format and codecs
 

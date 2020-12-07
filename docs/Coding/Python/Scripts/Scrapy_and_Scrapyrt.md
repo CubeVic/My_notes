@@ -29,7 +29,7 @@ The goal is to collect those data with Scrapy and then to return them as JSON va
 
 the project folder structure should currently look like this:
 
-![Scrapy_and_Scrapyrt_001](../images/Scrapy_and_Scrapyrt_001.png){:.center}
+![Scrapy_and_Scrapyrt_001](images/Scrapy_and_Scrapyrt_001.png){:.center}
 
 ## The First Spider
 
@@ -180,7 +180,7 @@ scrapy crawl coin -o coin.json
 
 The file coin.json should be created at the root of your coinmarketcap folder
 
-![Scrapy_and_Scrapyrt_002](../images/Scrapy_and_Scrapyrt_002.png)
+![Scrapy_and_Scrapyrt_002](images/Scrapy_and_Scrapyrt_002.png)
 
 It should contain the result scraped by the spider similar to the following format:
 
@@ -225,4 +225,4 @@ http://localhost:3000/crawl.json?start_requests=true&spider_name=coin
 
 The result should look like this:
 
-![Scrapy_and_Scrapyrt_003](../images/Scrapy_and_Scrapyrt_003.png)
+![Scrapy_and_Scrapyrt_003](images/Scrapy_and_Scrapyrt_003.png)

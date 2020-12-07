@@ -45,7 +45,7 @@ import json
 print(dir(json))
 ```
 
-![JSON object python](../images/JSON_object_python_001.png)
+![JSON object python](images/JSON_object_python_001.png)
 
 ## `load()` and `dump()`
 
@@ -58,7 +58,7 @@ album_json_file = open("album.TXT",'r')
 album = j.load(album_json_file)
 print(album)
 ``` 
-![JSON object python](../images/JSON_object_python_002.png)
+![JSON object python](images/JSON_object_python_002.png)
 
 if we use `print(type(album))` the result will be a python dictionary type
 
@@ -111,7 +111,7 @@ album2 = {'album_title': 'Yellow Submarine', 'release_year': 1966, 'won_grammy':
 print(json.dumps(album2))
 print(type(json.dumps(album2)))
 ``` 
-![JSON object python](../images/JSON_object_python_003.png)
+![JSON object python](images/JSON_object_python_003.png)
 
 We see that the ‘album_sale’ value, ‘None’, is now ‘null’ and the ‘won_grammy’ value, ‘False’, is now ‘false’.
 
@@ -121,4 +121,4 @@ Finally, we can write this JSON object to a ‘.txt’ file using the dump metho
 file2 = open("album2.txt", "w")
 json.dump(album2, file2)
 ```
-![JSON object python](../images/JSON_object_python_004.png)
+![JSON object python](images/JSON_object_python_004.png)

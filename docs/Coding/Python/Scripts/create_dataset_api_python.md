@@ -33,7 +33,7 @@ print(content)
 
 and the result is:
 
-![dataset_api_python_001](../images/dataset_api_python_001.png){: .center}
+![dataset_api_python_001](images/dataset_api_python_001.png){: .center}
 
 The screen-shot looks messy but we will see the response after explain a bit the code.
 
@@ -144,7 +144,7 @@ print(dataset.sample(5))
 producing this result:
 
 
-![dataset_api_python_002](../images/dataset_api_python_002.png){: .center}
+![dataset_api_python_002](images/dataset_api_python_002.png){: .center}
 
 `sample(5)` allow me to display 5 random records 
 
@@ -169,7 +169,7 @@ dataset.columns = ['ID', 'Name', 'Status', 'Followers', "Views"]
 print(dataset.sample(5))
 ```
 
-![dataset_api_python_003](../images/dataset_api_python_003.png){: .center}
+![dataset_api_python_003](images/dataset_api_python_003.png){: .center}
 
 ### Removing rows with Empty columns 
 

@@ -38,7 +38,7 @@ and we return  the output of this parser, `Beautifulsoup(markup,'html.parser')`,
 ### Finding the data and display it with `prettify()`
 
 we get the content of the URL but the information we need is in a table 
-![Scraping_Using_Python_001](../images/Scraping_Using_Python_001.png)
+![Scraping_Using_Python_001](images/Scraping_Using_Python_001.png)
 
 so we are going to store the information we got in a variable, later we will apply the method `find_all()` from Beautifulsoup  and the tag `table` so we can get all the tables in this HTML, later we are going to print it in a readable way using the method `prettify()`
 
@@ -78,7 +78,7 @@ for table in tables:
 
 Now we need one table  in specific
 
-![Scraping_Using_Python_002](../images/Scraping_Using_Python_002.png)
+![Scraping_Using_Python_002](images/Scraping_Using_Python_002.png)
 
 so we will need to find this table with the class **wikitable sortable**, 
 We will use the method `find()`, since this method allow us no just find a tag but a tag with a specific tag, once we have the table we will get all the rows
@@ -134,7 +134,7 @@ for row in rows:
 
 and the result 
 
-![Scraping_Using_Python_003](../images/Scraping_Using_Python_003.png){: .center}
+![Scraping_Using_Python_003](images/Scraping_Using_Python_003.png){: .center}
 
 We can see that the information or links that we got back don't include the first part of the URL so we will need to prefix "https://en.wikipedia.org".
 
@@ -146,7 +146,7 @@ Now, we Will use the list of link to go to each country page and locate the card
 
 inspecting the country page we found that the class for card mentioned above is `infobox geography vcard`
 
-![Scraping_Using_Python_004](../images/Scraping_Using_Python_004.png)
+![Scraping_Using_Python_004](images/Scraping_Using_Python_004.png)
 
 Here is when we run into some issues, we are looking for the following fields:
 
@@ -201,9 +201,9 @@ Now, with few pages inspected we can see where will be a problem, the location o
 
 We now the information is in tags with classes `mergedrow` or `mergedrowbottom` but the position of the row that contain the information it is not constant, in the first example, we see that we don't have `water(%)` but in the second page we do have this value, making the position of population one position down in comparison with the first example 
 
-![Scraping_Using_Python_005](../images/Scraping_Using_Python_005.png){: .center}
+![Scraping_Using_Python_005](images/Scraping_Using_Python_005.png){: .center}
 
-![Scraping_Using_Python_006](../images/Scraping_Using_Python_006.png){: .center}
+![Scraping_Using_Python_006](images/Scraping_Using_Python_006.png){: .center}
 
 To solve this we will add some extra code. We will start by adding a new variable called `additional_details`, later use it to append the information we collect form each country page to the table with the list of countries. Next, we will create a function `getadditionalDetails()` and a variable flag `read_content`, we will explain the usage later.
 
