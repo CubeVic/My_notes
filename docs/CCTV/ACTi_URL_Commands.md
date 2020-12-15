@@ -169,4 +169,27 @@ This is an error message display when the type 4 ERROR: CMD='VALUE' is not enoug
 |8051THX Image	     |8051THX image file is corrupted|
 |internal error <more description>|	There is an error internally. There might be more description of the error|
 
-	
+## Valid Character in the URL Commands
+The valid characters will depend on which part of the URL are they.
+
+### Valid Characters in the Login Name
+
+1. Only *A~Z*, *a~z*, 0~9, minus sign (-), underscore (_), period (.), $ and @ are allowed.  
+2. The first character is allowed to *A~Z* or *a~z*.  
+
+### Valid Characters in Login Password 
+
+1. Printable characters: Started from ASCII code $0x21$ to $0x7E$, with the exception of these 10 reserved characters which are not allowed  `':', '#', '?', '/', '\', '%', '&', ''', '"', ','`  
+
+### Valid Characters in Network Name
+1. Only ASCII *A~Z*, *a~z*, 0~9, minus sign (-), underscore (_), and period (.) are allowed.  
+2. No blank or space characters are permitted as part of a name.  
+3. The last character must not be a minus sign, underscore, or period.  
+4. The first character is allowed to either a letter or a digit.  
+5. No NULL string is allowed.  
+
+### General  rule of Valid Characters in URI
+1. Only ASCII *A~Z*, *a~z*, 0~9, minus sign (-), underscore (_), period (.), and space ( ) characters are allowed.  
+2. The last character must not be a minus sign, underscore, period, or space.  
+3. The first character is allowed to either a letter or a digit.  
+4. NULL string is allowed.  
