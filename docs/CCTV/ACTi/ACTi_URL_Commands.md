@@ -193,3 +193,9 @@ The valid characters will depend on which part of the URL are they.
 2. The last character must not be a minus sign, underscore, period, or space.  
 3. The first character is allowed to either a letter or a digit.  
 4. NULL string is allowed.  
+
+## List of CGI
+
+* SYSTEM CGI
+* ENCODER CGI
+* UPDATE CGI
