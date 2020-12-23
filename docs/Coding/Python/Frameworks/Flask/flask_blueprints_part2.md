@@ -89,5 +89,10 @@ There some point to be aware off in this template:
 3. we use a special Jinja loop `loop.last` so if the post is the last one it wont have the line that separate each post visually.
 
 ### Create
+
+the `create` view and the `register` view work quite similarly, either the form is display, or it is validated and the post is added.
+
+
+
 ### Update
 ### Delete
