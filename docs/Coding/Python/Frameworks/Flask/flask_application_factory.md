@@ -1,10 +1,10 @@
 ## Application Factory
 
-As shown on the `hello world!` code snippet, a typical Flask application is a instance of the **Flask** class, any configuration, URL or change will be done with the class ( or register with the class), this instance is a global instance.  
+As shown on the `hello world!` code snippet, a typical Flask application is an instance of the **Flask** class, any configuration, URL or change will be done with the class ( or register with the class), this instance is global.  
 
-In this example, they took another approach, it seems to be a best practice, and a future prove implementation. They, instead of, a global instance, they will create a instance inside a function. This function is called **Application factory**, all configuration registration or set up will be done inside this function, and then application will be returned, in other words, the return of this `application factory` will be the application itself.
+In this example, they took another approach, which might be a best practice, and a future proves implementation. They will create an instance inside a function. This function is called **Application factory**, all configuration registration or set up will be done inside this function, and then the application will be returned, in other words, the return of this `application factory` will be the application itself.
 
-We will create a script called `__init__.py` that will serve as container of the **application Factory** and it tells Python to tread the current directory as a package ( in this case the directory is *flaskr*)
+We will create a script called `__init__.py` that will serve as the container of the **application Factory** and it tells Python to tread the current directory as a package ( in this case the directory is *flaskr*)
 
 **flaskr/__init__.py**
 ```python 
