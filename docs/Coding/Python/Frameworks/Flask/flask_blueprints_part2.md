@@ -90,9 +90,160 @@ There some point to be aware off in this template:
 
 ### Create
 
-the `create` view and the `register` view work quite similarly, either the form is display, or it is validated and the post is added.
+The `create` view and the `register` view work quite similarly, either the form is displayed, or it is validated for later post it.
 
+Something to remark is the usage of the decorator `login_required` wrote before, this tells the flask that the user must be logged in to be able to see this post, otherwise must be redirected to the login page. 
 
+** flaskr/blog.py**
+```python 
+@bp.route('/create', methods=('GET', 'POST'))
+@login_required
+def create():
+    if request.method == 'POST':
+        title = request.form['title']
+        body = request.form['body']
+        error = None
+
+        if not title:
+            error = 'Title is required.'
+
+        if error is not None:
+            flash(error)
+        else:
+            db = get_db()
+            db.execute(
+                'INSERT INTO post (title, body, author_id)'
+                ' VALUES (?, ?, ?)',
+                (title, body, g.user['id'])
+            )
+            db.commit()
+            return redirect(url_for('blog.index'))
+
+    return render_template('blog/create.html')
+``` 
+
+** flaskr/templates/blog/create.html **
+
+```html
+{% extends 'base.html' %}
+
+{% block header %}
+  <h1>{% block title %}New Post{% endblock %}</h1>
+{% endblock %}
+
+{% block content %}
+  <form method="post">
+    <label for="title">Title</label>
+    <input name="title" id="title" value="{{ request.form['title'] }}" required>
+    <label for="body">Body</label>
+    <textarea name="body" id="body">{{ request.form['body'] }}</textarea>
+    <input type="submit" value="Save">
+  </form>
+{% endblock %}
+``` 
 
 ### Update
+The Update and delete views have some similarities, therefore we can make something different. Both `update` and `delete` fetch the `post`  by `id`, so we can create the function to fetch the post and later reuse it in each view
+
+#### Fetch post by id
+
+** Flaskr/blog.py**
+```python
+def get_post(id, check_author=True):
+    post = get_db().execute(
+        'SELECT p.id, title, body, created, author_id, username'
+        ' FROM post p JOIN user u ON p.author_id = u.id'
+        ' WHERE p.id = ?',
+        (id,)
+    ).fetchone()
+
+    if post is None:
+        abort(404, "Post id {0} doesn't exist.".format(id))
+
+    if check_author and post['author_id'] != g.user['id']:
+        abort(403)
+
+    return post
+```
+
+The `abort()` function will raise and exception that returns a HTTP status code, it take the code and additional message, if the message is not provided it will display some default message example: 
+
+* 404 "Not Found".  
+* 403 "Forbidden".  
+* 401 "Unauthorized".  
+
+Additionally the `check_author` argument is create it so we can look for the post without the check the author, this can be use in a view where a single post will be display but the author doesn't matter, since the user wont make a modification of that post.
+
+**Flaskr/blog.py**
+```python
+@bp.route('/<int:id>/update', methods=('GET', 'POST'))
+@login_required
+def update(id):
+    post = get_post(id)
+
+    if request.method == 'POST':
+        title = request.form['title']
+        body = request.form['body']
+        error = None
+
+        if not title:
+            error = 'Title is required.'
+
+        if error is not None:
+            flash(error)
+        else:
+            db = get_db()
+            db.execute(
+                'UPDATE post SET title = ?, body = ?'
+                ' WHERE id = ?',
+                (title, body, id)
+            )
+            db.commit()
+            return redirect(url_for('blog.index'))
+
+    return render_template('blog/update.html', post=post)
+```
+something to pay attention is the usage of the `id` argument in the raout, in this case we are using `<init: id>` in the route, which will translate to `/1/update`. To generate this URL we will need to use the id as well, so the `url_for()` will look like `url_for('blog.update', id=post['id'])`
+
+```HTML
+{% extends 'base.html' %}
+
+{% block header %}
+  <h1>{% block title %}Edit "{{ post['title'] }}"{% endblock %}</h1>
+{% endblock %}
+
+{% block content %}
+  <form method="post">
+    <label for="title">Title</label>
+    <input name="title" id="title"
+      value="{{ request.form['title'] or post['title'] }}" required>
+    <label for="body">Body</label>
+    <textarea name="body" id="body">{{ request.form['body'] or post['body'] }}</textarea>
+    <input type="submit" value="Save">
+  </form>
+  <hr>
+  <form action="{{ url_for('blog.delete', id=post['id']) }}" method="post">
+    <input class="danger" type="submit" value="Delete" onclick="return confirm('Are you sure?');">
+  </form>
+{% endblock %}
+```
+
+The previous template will have 2 forms, the first with the first post to be edited (`/<id>/update`). The other form contain just only the button and species and action attribute that the post to the delete view instead.
+
+The `{{ request.form['title'] or post['title']}}` is used to choose what data appears in the form. 
+
 ### Delete
+
+The `delete` view doesnt have its own template it will reuse the one use in `update`, now similar to the previous view, we need to pay attention to the route `/<id>/delete`.
+
+```python 
+@bp.route('/<int:id>/delete', methods=('POST',))
+@login_required
+def delete(id):
+    get_post(id)
+    db = get_db()
+    db.execute('DELETE FROM post WHERE id = ?', (id,))
+    db.commit()
+    return redirect(url_for('blog.index'))
+``` 
+
