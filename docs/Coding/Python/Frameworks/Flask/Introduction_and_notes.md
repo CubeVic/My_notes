@@ -30,3 +30,42 @@ I have several notes in this case, the first notes are from a youtube video and 
 ## How I use it/ How I find it
 
 I wanted to get some UI for some projects, but Django was way to complicated, since the idea was a simple display, just a table and a form, so Someone recommended Flask, and i found that the tutorials were shorter and the documentation was easier to digest than Django. I'm sure Django will have its usage and in some case be a better choice than Django but i think for smaller projects i will stay with Flask.
+
+## Extra notes
+
+### Nuggets for Template Jinja2
+
+* `{% extends 'html_file.html'%}`  it is similar to inheritance.
+* `{% include %}` it is use to add to the current template, in some cases are called partial, this is to further separate the templates, it is use to 'include' extra parts to the base or other templates.
+
+### Common plug-ins
+
+* **Flask-SQLAlchemy**:  For database interaction 
+* **Flask-Session**:  User sessions management 
+* **Flask-login**: Management user login
+* **Flask-WTF**: To handle forms 
+
+#### Common configuration variables 
+
+##### General
+* FLASK_ENV
+* DEBUG
+* TESTING
+* SECRET_KEY
+* SERVER_NAME
+
+##### Flask SQLAlchemy
+* SQLALCHEMY_DATABASE_URI
+* SQLALCHEMY_ECHO
+* SQLALCHEMY_ENGINE_OPTIONS
+
+##### Flask-Session
+* SESSION_TYPE	
+* SESSION_PERMANENT
+* SESSION_KEY_PREFIX
+* SESSION_REDIS
+* SESSION_MEMCHED
+* SESSION_MONGODB
+* SESSION_SQLALCHEMY
+
+

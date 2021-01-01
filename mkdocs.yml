@@ -229,6 +229,7 @@ nav:
       - Random: 'Miscellaneous/Random Link.md'
       #- Potential activities: 'Miscellaneous/potential activities.md'
       - How to Install OpenCv on Raspberry pi: 'Miscellaneous/How_install_openCV_raspberry.md'
+      - Raspberry Password Pelated: 'Miscellaneous/Password_related_raspberry.md'
       - Configuration for Sublime Text 3: 'Miscellaneous/Sublime_text.md'
     - About: 'about.md'
     - Helpers.md
