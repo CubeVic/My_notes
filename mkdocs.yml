@@ -89,6 +89,7 @@ nav:
             - Useful Snippets: 'Coding/Python/Python_Basics/Useful_snippets.md'
             - Trick and tips for better code in python: 'Coding/Python/Python_Basics/Tricks_tips_better_code_python.md'
         - Python intermediate: 
+          - Context Managers 'with': 'Coding/Python/Python_intermediate/context_manager_python.md'
           - Multi-threading and Multi-processing: 'Coding/Python/Python_intermediate/Multithreading_and_multiprocessing.md'      
           - SQLAchemy: 'Coding/Python/Python_intermediate/sqlalchemy.md'
         - Libraries & Modules: #Libraries and Modules
