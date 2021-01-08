@@ -270,4 +270,3 @@ Now we restart Nagios
 ```Bash
 sudo systemctl restart nagios
 ```
-

@@ -187,7 +187,7 @@ nav:
           - Module 1: 'Coding/For Certifications/Python/Preparation for PCPP-32-1/Module 1.md'
           - Module 2: 'Coding/For Certifications/Python/Preparation for PCPP-32-1/Module 2.md'
     - Raspberry:
-      - IoT and Networking: 'Raspberry/IoT_Networking/Nagios.md'
+      - Nagios Core: 'Raspberry/Nagios.md'
     
     - CCTV:
       - Basic Concepts: 'CCTV/Basic_concepts.md'
