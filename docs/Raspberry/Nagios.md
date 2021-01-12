@@ -264,7 +264,7 @@ sudo /usr/local/nagios/bin/nagios -v /usr/local/nagios/etc/nagios.cfg
 
 If everything is okay we will see `Things look okay`
 
-![Navios](image/Nagios_001.png)
+![Navios](images/Nagios_001.png)
 
 Now we restart Nagios 
 ```Bash
