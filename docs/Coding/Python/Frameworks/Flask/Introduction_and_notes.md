@@ -17,15 +17,14 @@ I was struggling in a project, i made changes on the CSS and didn't see those re
 
 I have several notes in this case, the first notes are from a youtube video and explain how to make a small application that use SQLite as database and Heroku for "live deployment", be aware that the app still use the `DEBUG=True` in a really live app that should be set to `False`.
 
-1. [First App with Flask](first_app_flask.html)
-2. [Minimal application]()
-3. Official Flask tutorial.  
-3.1. [Application Layout (Structure)](flask_structure.html).  
-3.2. [Application Factory](flask_application_factory.html).  
-3.3. [Application Database](flask_database.html).  
-3.4. [Blueprints (part 01-Auth)](flask_blueprints_part1.html).  
-3.5. [Templates](flask_templates.html).  
-3.6. [Blueprints (part 02-Blog)](lask_blueprints_part2.html).  
+1. [Quick & Dirty First App](first_app_flask.html)
+2. Official Flask tutorial.  
+2.1. [Application Layout (Structure)](flask_structure.html).  
+2.2. [Application Factory](flask_application_factory.html).  
+2.3. [Application Database](flask_database.html).  
+2.4. [Blueprints (part 01-Auth)](flask_blueprints_part1.html).  
+2.5. [Templates](flask_templates.html).  
+2.6. [Blueprints (part 02-Blog)](lask_blueprints_part2.html).  
 
 ## How I use it/ How I find it
 

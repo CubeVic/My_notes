@@ -124,13 +124,15 @@ nav:
         - Frameworks: 
             - Flask:
                 - Introduction and notes: 'Coding/Python/Frameworks/Flask/Introduction_and_notes.md'
-                - First App with Flask: 'Coding/Python/Frameworks/Flask/first_app_flask.md'
+                - Quick & Dirty First App: 'Coding/Python/Frameworks/Flask/first_app_flask.md'
                 - Application Layout (Structure): 'Coding/Python/Frameworks/Flask/flask_structure.md'
                 - Application Factory & Run: 'Coding/Python/Frameworks/Flask/flask_application_factory.md'
                 - Application Database: 'Coding/Python/Frameworks/Flask/flask_database.md'
                 - Blueprints (part 01-Auth): 'Coding/Python/Frameworks/Flask/flask_blueprints_part1.md'
                 - Templates: 'Coding/Python/Frameworks/Flask/flask_templates.md'
                 - Blueprints (part 02-Blog): 'Coding/Python/Frameworks/Flask/flask_blueprints_part2.md'
+                - Flask Extensions:
+                  - Forms - Flask-WTF: 'Coding/Python/Frameworks/Flask/Extensions/forms_flask_wtf.md'
             - Django:
                 - Django Tutorial (part 01): 'Coding/Python/Frameworks/Django/Django tutorial - part 01.md'
                 - Django Tutorial (part 02): 'Coding/Python/Frameworks/Django/Django tutorial - part 02.md'
