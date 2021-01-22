@@ -207,6 +207,99 @@ from the previous code:
 
 as we mentioned before `flash()` is a function use to give messages to the user, but to be able to see it we need to modify the templates to do it, in this case we are going to modify the `base.html` template.
 
-1. `{% with messages = get_Flashed_messages() %}` the `with` is a construct that we are going to use to assigne the return value of `get_flashed_messages()` to the variable `messages`, all in the context of this template.
+1. `{% with messages = get_Flashed_messages() %}` the `with` is a construct that we are going to use to assign the return value of `get_flashed_messages()` to the variable `messages`, all in the context of this template.
 2. `get_flashed_messages()`  this function come from Flask and it returns a list of messages register to `flash()`.  
-3. `{% if messages %}` is a condition to check if the variable has some content, if the variable has some content we will use a html list and a jinja `{% for message in messages %}` to loop and display all the messages in the list.
+3. `{% if messages %}` is a condition to check if the variable has some content, if the variable has some content we will use a `HTML` list and a jinja `{% for message in messages %}` to loop and display all the messages in the list.  
+
+#### Improving the Field Validation
+
+For the most part the validation and the form are working, although if we fail during the validation we don't know what is the filed that failed and we don't have any way to alert the user that there is a mistake or an error in the form.
+
+We can create some messages in the **login.html** template so if the customer fail in some field we can give the feedback
+
+**application/templates/login.html**
+
+```HTML
+{% extends "base.html" %}
+
+{% block content %}
+    <h1>Sign In</h1>
+    <form action="" method="post" novalidate>
+        {{ form.hidden_tag() }}
+        <p>
+            {{ form.username.label }}<br>
+            {{ form.username(size=32) }}<br>
+            {% for error in form.username.errors %}
+            <span style="color: red;">[{{ error }}]</span>
+            {% endfor %}
+        </p>
+        <p>
+            {{ form.password.label }}<br>
+            {{ form.password(size=32) }}<br>
+            {% for error in form.password.errors %}
+            <span style="color: red;">[{{ error }}]</span>
+            {% endfor %}
+        </p>
+        <p>{{ form.remember_me() }} {{ form.remember_me.label }}</p>
+        <p>{{ form.submit() }}</p>
+    </form>
+{% endblock %}
+```
+
+From the previous template we can see the changes, in this case we are using `form.username.errors` and `form.password.errors` to check if there is any error in this field, the validator attached to every field will be `form.<filed_name>.errors)`
+
+![feedback](flask-wtf_002.png){: .center}
+
+### Generating Links
+
+For now the login is basically complete, but we have some hardcoded URLs whihc is not a goo practice, so far we have:
+
+**application/templates/base.html**
+```HTML
+    <div>
+        Microblog:
+        <a href="/index">Home</a>
+        <a href="/login">Login</a>
+    </div>
+```
+and 
+
+**Application/routes.html**
+```python 
+@app.route('/login', methods=['GET', 'POST'])
+def login():
+    form = LoginForm()
+    if form.validate_on_submit():
+        # ...
+        return redirect('/index')
+    # ...
+``` 
+
+The good practice will be, generate those URLs using `url_for()` whihc generate the URLs bas in the internal mapping, The argument of `url_for()` will be the name of the view function, so for example, `url_for('login')` because the view function is called `/login` will returns /login, and same for  `url_for('index')` return `/index`.
+
+So the previous links will be
+
+**application/templates/base.html**
+```HTML
+    <div>
+        Microblog:
+        <a href="{{ url_for('index') }}">Home</a>
+        <a href="{{ url_for('login') }}">Login</a>
+    </div>
+```
+and
+
+**Application/routes.html**
+```python 
+ from flask import render_template, flash, redirect, url_for
+
+# ...
+
+@app.route('/login', methods=['GET', 'POST'])
+def login():
+    form = LoginForm()
+    if form.validate_on_submit():
+        # ...
+        return redirect(url_for('index'))
+    # ...
+ ``` 
