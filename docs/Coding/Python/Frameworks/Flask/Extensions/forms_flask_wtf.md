@@ -146,7 +146,7 @@ Now we can add a link to login in or base template
 ```
 
 However if we click in submit button we will have 
-![Method not allowed](flask-wtf_001.png){: .center}
+![Method not allowed](images/flask-wtf_001.png){: .center}
 
 This is because we don't have the logic to handle the request using `POST` and the form is using post top send the information 
 
@@ -248,7 +248,7 @@ We can create some messages in the **login.html** template so if the customer fa
 
 From the previous template we can see the changes, in this case we are using `form.username.errors` and `form.password.errors` to check if there is any error in this field, the validator attached to every field will be `form.<filed_name>.errors)`
 
-![feedback](flask-wtf_002.png){: .center}
+![feedback](images/flask-wtf_002.png){: .center}
 
 ### Generating Links
 
@@ -302,4 +302,4 @@ def login():
         # ...
         return redirect(url_for('index'))
     # ...
- ``` 
+``` 
