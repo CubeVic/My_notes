@@ -52,7 +52,7 @@ From the code we got:
 2. The 4 type of field are represented as classes and they came form `wtforms`, since the `Flask-WTF` extension does not provide customized versions.  
 3. Each instance or object of the field class has as first argument a label, and the second and optional argument will be the validators, in this case we use the validator `DataRequired()`
 
-### From Templates
+### Form Templates
 
 We have the form, now 2 things are missing the template and the view function, in this section we will talk about the template.
 
