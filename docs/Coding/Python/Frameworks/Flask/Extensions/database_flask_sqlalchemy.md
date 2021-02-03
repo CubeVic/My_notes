@@ -186,10 +186,6 @@ class User(Base):
         return '<User %r>' % (self.name)
 ``` 
 
-
-
-## Database Upgrade and Downgrade Workflow
-
 ## Database Relationships
 
 ## Play Time
