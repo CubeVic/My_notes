@@ -124,7 +124,69 @@ bellow and example of how will python print the object
 
 ## Creating The Migration Repository
 
+the previous class represent the model or the schema of the database, but is highly possible that this structure will change with the time, so we will need to do some migration, the author of the mega-tutorial created a Flask extension **Flask-Migrate** that use **Alembic** to do the migration.
+
+**Alembic** create migration scripts and safe the changes face with each migration, in order to safe those scripts and changes we will need to create a *migration repository* so we can store that information.
+
+*Flask-Migrate* is design to interact with `flask` commands, similar to what we use `flask run` in this case *flask-Migrate* will use `flask db` to manage everything related with databases.
+
+To create the migration repository for our example we use `flask db init`
+
+![flask_sqlalchemy_002.png](images/flask_sqlalchemy_002.png){: .center}
+
+> these `flask` commands relay in the `FLASK_APP` enviroment variable so it is important to make sure that variable is set properly before execute the command.
+
+after the command is executed a new directory will appear 
+
+![flask_sqlalchemy_003.png](images/flask_sqlalchemy_003.png){: .center}
+
+
 ## The First Database Migration
+
+There are two ways to do the migration, automatically and manually. To generate the automatic migration Alembic compares the database schema as defined in the database models and the current database, after that it will generate the script to migrate and make the models match to the models defined in the schema. To generate this automatic migrations we use `flask db migrate`
+
+```BASH 
+flask db migrate -m "users table"
+``` 
+![flask_sqlalchemy_004.png](images/flask_sqlalchemy_004.png){: .center}
+
+from the previous answer: 
+
+1. first two lines are not important for now. 
+2. Alembic tell use where the migration script was store, and assigned an unique code.  
+3.  the -m in the command was just to add extra description to the migration.  
+now the generated script is in the folder 
+
+![flask_sqlalchemy_005.png](images/flask_sqlalchemy_005.png){: .center}
+
+I wont go to details in what the script mentioned, but we can point that there are two main functions `upgrade()` and `downgrade()`. the `upgrade()` apply the migration and `downgrade()` removes it. This will allow Alembic to perform the migrations to a any point in the history  even older versions using the `downgrade()` path.
+
+It is important to remark that the command `flask db migrate` doesn't perform the changes in the database, it just generate the script, to execute the changes we use `flask db upgrade`.
+
+> Note: the example use SQLite, so in this case a file containing the database will be create but in production if we use different database server we need to create the table first.
+
+By default *Flask_SQLAlchemy* use snake case for the name of the databases, so a model named "AddressAndPhone" will generate a table **"address_and_Phone"** so if we want to change this behavior we can add the attribute `__tablename__` to the model class.
+
+so let's say we want the table to be called  "Users", it will be something like 
+```python 
+from sqlalchemy import Column, Integer, String
+from yourapplication.database import Base
+
+class User(Base):
+    __tablename__ = 'Users'
+    id = Column(Integer, primary_key=True)
+    name = Column(String(50), unique=True)
+    email = Column(String(120), unique=True)
+
+    def __init__(self, name=None, email=None):
+        self.name = name
+        self.email = email
+
+    def __repr__(self):
+        return '<User %r>' % (self.name)
+``` 
+
+
 
 ## Database Upgrade and Downgrade Workflow
 
