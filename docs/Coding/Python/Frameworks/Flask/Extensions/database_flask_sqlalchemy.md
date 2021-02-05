@@ -188,6 +188,8 @@ class User(Base):
 
 ## Database Relationships
 
+Now we will add other table, this time will be the table that represent the post, we need to be careful reading the table, there will be a foreign key that will be the way to represent the relationship between the both tables
+
 ## Play Time
 
 ## Shell Context  
