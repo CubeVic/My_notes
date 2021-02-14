@@ -120,8 +120,6 @@ bellow and example of how will python print the object
 <User susan>
 ``` 
 
-
-
 ## Creating The Migration Repository
 
 the previous class represent the model or the schema of the database, but is highly possible that this structure will change with the time, so we will need to do some migration, the author of the mega-tutorial created a Flask extension **Flask-Migrate** that use **Alembic** to do the migration.
@@ -167,7 +165,8 @@ It is important to remark that the command `flask db migrate` doesn't perform th
 
 By default *Flask_SQLAlchemy* use snake case for the name of the databases, so a model named "AddressAndPhone" will generate a table **"address_and_Phone"** so if we want to change this behavior we can add the attribute `__tablename__` to the model class.
 
-so let's say we want the table to be called  "Users", it will be something like 
+so let's say we want the table to be called  "Users", it will be something like:
+ 
 ```python 
 from sqlalchemy import Column, Integer, String
 from yourapplication.database import Base

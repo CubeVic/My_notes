@@ -264,7 +264,7 @@ For now the login is basically complete, but we have some hardcoded URLs whihc i
 ```
 and 
 
-**Application/routes.html**
+**application/routes.html**
 ```python 
 @app.route('/login', methods=['GET', 'POST'])
 def login():
@@ -289,7 +289,7 @@ So the previous links will be
 ```
 and
 
-**Application/routes.html**
+**application/routes.html**
 ```python 
  from flask import render_template, flash, redirect, url_for
 

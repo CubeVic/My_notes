@@ -117,6 +117,8 @@ nav:
               - Introduction: 'Coding/Python/Libraries_and_Modules/ONVIF_python_zeep_async/introduction.md'
             - Pillow:
               - Introduction: 'Coding/Python/Libraries_and_Modules/Pillow/introduction.md'
+            - QR Code:
+              - Introduction: 'Coding/Python/Libraries_and_Modules/QRcode/introduction.md'
             - HTTPX:
               - Introduction: 'Coding/Python/Libraries_and_Modules/HTTPX/introduction.md'
             - Datamuse: 
@@ -134,6 +136,7 @@ nav:
                 - Flask Extensions:
                   - Forms - Flask-WTF: 'Coding/Python/Frameworks/Flask/Extensions/forms_flask_wtf.md'
                   - Databases - Flask-SQLAlchemy: 'Coding/Python/Frameworks/Flask/Extensions/database_flask_sqlalchemy.md'
+                  - Databases(Migration) - Flask-Migration: "Coding/Python/Frameworks/Flask/Extensions/database_migration_flask_migration.md"
             - Django:
                 - Django Tutorial (part 01): 'Coding/Python/Frameworks/Django/Django tutorial - part 01.md'
                 - Django Tutorial (part 02): 'Coding/Python/Frameworks/Django/Django tutorial - part 02.md'
