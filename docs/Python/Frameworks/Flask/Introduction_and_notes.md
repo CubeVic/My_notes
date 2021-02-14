@@ -24,7 +24,7 @@ I have several notes in this case, the first notes are from a youtube video and 
 2.3. [Application Database](flask_database.html).  
 2.4. [Blueprints (part 01-Auth)](flask_blueprints_part1.html).  
 2.5. [Templates](flask_templates.html).  
-2.6. [Blueprints (part 02-Blog)](lask_blueprints_part2.html).  
+2.6. [Blueprints (part 02-Blog)](flask_blueprints_part2.html).  
 
 ## How I use it/ How I find it
 

@@ -53,12 +53,50 @@ or
 https://api.datamuse.com/words?ml=Python
 ```
 
-#### Means like `ml`
-
 #### Sound like `sl`
+
+Require that the results are pronounced similarly to this string of characters.
+```
+https://api.datamuse.com/words?sl=jirraf
+```
 
 #### spelled like `sp`
 
+Require that the results are spelled similarly to this string of characters.
+A pattern can include any combination of alphanumeric characters, spaces, and two reserved characters that represent placeholders: 
+
+* "*" (which matches any number of characters).
+* "?" (which matches exactly one character).
+
+```
+https://api.datamuse.com/words?sp=t??k
+or
+https://api.datamuse.com/words?sp=hipopatamus
+```
+
 #### Related word `rel_[code]`
 
+[code] is a three-letter identifier from the list below.
+
+|[code]|Description|Example|
+|:-:|:-------------|:-----:|
+|jja|Popular nouns modified by the given adjective|gradual → increase|
+|jjb|Popular adjectives used to modify the given noun|beach → sandy|
+|syn|Synonyms|ocean → sea|
+|trg|"Triggers", words that are statistically associated with the query word.|cow → milking|
+|ant|Antonyms|late → early|
+|spc|"Kind of", direct hypernyms.|gondola → boat|
+|gen|"More general than", direct hyponyms|boat → gondola|
+|com|"Comprises", direct holonyms|car → accelerator|
+|par|"Part of", direct meronyms|trunk → tree|
+|bga|Frequent followers (w′ such that P(w′\|w) ≥ 0.001)|wreak → havoc|
+|bgb|Frequent predecessors (w′ such that P(w\|w′) ≥ 0.001)|havoc → wreak|
+|rhy|Rhymes, "perfect" rhymes|spade → aid|
+|nry|Approximate rhymes|forest → chorus|
+|hom|Homophones, sound-alike words|course → coarse|
+|cns|Consonant match|sample → simple|
+
+
 #### Vocabulary used `v`
+
+Identifier for the vocabulary to use. If none is provided, a $550,000$-term vocabulary of `English` words and multiword expressions is used. (The value es specifies a $500,000$-term vocabulary of words from `Spanish-language` books.

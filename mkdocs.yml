@@ -72,86 +72,85 @@ nav:
             - Training and Test Sets: 'Machine Learning/Google Crash Course/ML Concepsts/Training_Test_sets.md'
       - AI for Everyone: 'Machine Learning/AI for Everyone/AI_for_Everyone.md'
       - Other Key Terminology (TensorFlow): 'Machine Learning/Other_key_Terminology.md'
-
-    - Coding:
-      - Python:
-        - Introduction: 'Coding/Python/introduction.md'
-        - Python Basics:  
-            - Data Structures: 'Coding/Python/Python_Basics/Data structures.md'
-            - Control Flow: 'Coding/Python/Python_Basics/control flow.md'
-            - Functions: 'Coding/Python/Python_Basics/functions.md'
-            - Error and Exceptions: 'Coding/Python/Python_Basics/Error and Exceptions.md'
-            - Reading and Writing Files: 'Coding/Python/Python_Basics/Reading and Writing Files.md'
-            - Import Local Scripts: 'Coding/Python/Python_Basics/Import Local Scripts.md'
-            - Generator and Iterators: 'Coding/Python/Python_Basics/Generator and Iterator.md'
-            - Useful or researched built-in functions: 'Coding/Python/Python_Basics/Useful or researched built-in functions.md'
-            - Data bases with Python: 'Coding/Python/Python_Basics/Databases_with_Python.md'
-            - Useful Snippets: 'Coding/Python/Python_Basics/Useful_snippets.md'
-            - Trick and tips for better code in python: 'Coding/Python/Python_Basics/Tricks_tips_better_code_python.md'
-        - Python intermediate: 
-          - Context Managers 'with': 'Coding/Python/Python_intermediate/context_manager_python.md'
-          - Multi-threading and Multi-processing: 'Coding/Python/Python_intermediate/Multithreading_and_multiprocessing.md'      
-          - SQLAchemy: 'Coding/Python/Python_intermediate/sqlalchemy.md'
-        - Libraries & Modules: #Libraries and Modules
-            - PIP notes: 'Coding/Python/Libraries_and_Modules/PIP/pip_notes.md' 
-            - Numpy:
-                - Numpy Basic (Part 1): 'Coding/Python/Libraries_and_Modules/Numpy/Numpy_Basic_part_1.md'
-                - Numpy Basic (Part 2): 'Coding/Python/Libraries_and_Modules/Numpy/Numpy_Basic_part_2.md'
-                - Numpy Crash course: 'Coding/Python/Libraries_and_Modules/Numpy/Numpy Crash course.md'
-            - Pandas (Under Review):
-                - Pandas Crash course: 'Coding/Python/Libraries_and_Modules/Pandas/Pandas Crash course.md'
-            - OpenCV:
-                - Images Basic with OpenCV:
-                  - Images and Numpy: 'Coding/Python/Libraries_and_Modules/Computer Vision and OpenCV/Images Basic with OpenCV/Images_and_Numpy.md'
-                  - Images and Opencv: 'Coding/Python/Libraries_and_Modules/Computer Vision and OpenCV/Images Basic with OpenCV/Images_and_Opencv.md'
-                  - Drawing on Images: 'Coding/Python/Libraries_and_Modules/Computer Vision and OpenCV/Images Basic with OpenCV/Drawing_on_Images.md'
-                  - Drawing with mouse: 'Coding/Python/Libraries_and_Modules/Computer Vision and OpenCV/Images Basic with OpenCV/Direct_drawing_with_mouse.md'
-                - Image Processing:
-                  - Color Mapping: 'Coding/Python/Libraries_and_Modules/Computer Vision and OpenCV/Image Processing/color_mapping.md'
-                  - Blending and Pasting Images: 'Coding/Python/Libraries_and_Modules/Computer Vision and OpenCV/Image Processing/blending_pasting_images.md'
-            - Netifaces:
-              - Introduction: 'Coding/Python/Libraries_and_Modules/netifaces/introduction.md'
-            - WS Discovery:
-              - Introduction: 'Coding/Python/Libraries_and_Modules/WS_Discovery/introduction.md'
-            - ONVIF-zeep-async:
-              - Introduction: 'Coding/Python/Libraries_and_Modules/ONVIF_python_zeep_async/introduction.md'
-            - Pillow:
-              - Introduction: 'Coding/Python/Libraries_and_Modules/Pillow/introduction.md'
-            - QR Code:
-              - Introduction: 'Coding/Python/Libraries_and_Modules/QRcode/introduction.md'
-            - HTTPX:
-              - Introduction: 'Coding/Python/Libraries_and_Modules/HTTPX/introduction.md'
-            - Datamuse: 
-                - Introduction: 'Coding/Python/Libraries_and_Modules/Datamuse/introduction.md'
-        - Frameworks: 
-            - Flask:
-                - Introduction and notes: 'Coding/Python/Frameworks/Flask/Introduction_and_notes.md'
-                - Quick & Dirty First App: 'Coding/Python/Frameworks/Flask/first_app_flask.md'
-                - Application Layout (Structure): 'Coding/Python/Frameworks/Flask/flask_structure.md'
-                - Application Factory & Run: 'Coding/Python/Frameworks/Flask/flask_application_factory.md'
-                - Application Database: 'Coding/Python/Frameworks/Flask/flask_database.md'
-                - Blueprints (part 01-Auth): 'Coding/Python/Frameworks/Flask/flask_blueprints_part1.md'
-                - Templates: 'Coding/Python/Frameworks/Flask/flask_templates.md'
-                - Blueprints (part 02-Blog): 'Coding/Python/Frameworks/Flask/flask_blueprints_part2.md'
-                - Flask Extensions:
-                  - Forms - Flask-WTF: 'Coding/Python/Frameworks/Flask/Extensions/forms_flask_wtf.md'
-                  - Databases - Flask-SQLAlchemy: 'Coding/Python/Frameworks/Flask/Extensions/database_flask_sqlalchemy.md'
-                  - Databases(Migration) - Flask-Migration: "Coding/Python/Frameworks/Flask/Extensions/database_migration_flask_migration.md"
-            - Django:
-                - Django Tutorial (part 01): 'Coding/Python/Frameworks/Django/Django tutorial - part 01.md'
-                - Django Tutorial (part 02): 'Coding/Python/Frameworks/Django/Django tutorial - part 02.md'
-                - Django Tutorial (part 03): 'Coding/Python/Frameworks/Django/Django tutorial - part 03.md'
-                - (Optional) More details about file structure: 'Coding/Python/Frameworks/Django/More details about project structure.md'
-        - Projects:
-          - Random Password Generator: 'Coding/Python/Projects/random_password_generator.md'
-        - Scripts & Algorithms:
-          - Create Excel Files With Python: 'Coding/Python/Scripts/create_excel_files.md'
-          - Creating a dataset with api and python: 'Coding/Python/Scripts/create_dataset_api_python.md'
-          - Scraping Usign Python: 'Coding/Python/Scripts/Scraping_Usign_Python.md'
-          - JSON Object in python: 'Coding/Python/Scripts/JSON Objects in Python.md'
-          - Scrapy and Scrapyrt: 'Coding/Python/Scripts/Scrapy_and_Scrapyrt.md'
-          - Magic Square: 'Coding/Python/Scripts/Magic_square.md'
-        - Virtual Environments: 'Coding/Python/virtual_environments.md'         
+    - Python:
+      - Introduction: 'Python/introduction.md'
+      - Python Basics:  
+        - Data Structures: 'Python/Python_Basics/Data structures.md'
+        - Control Flow: 'Python/Python_Basics/control flow.md'
+        - Functions: 'Python/Python_Basics/functions.md'
+        - Error and Exceptions: 'Python/Python_Basics/Error and Exceptions.md'
+        - Reading and Writing Files: 'Python/Python_Basics/Reading and Writing Files.md'
+        - Import Local Scripts: 'Python/Python_Basics/Import Local Scripts.md'
+        - Generator and Iterators: 'Python/Python_Basics/Generator and Iterator.md'
+        - Useful or researched built-in functions: 'Python/Python_Basics/Useful or researched built-in functions.md'
+        - Data bases with Python: 'Python/Python_Basics/Databases_with_Python.md'
+        - Useful Snippets: 'Python/Python_Basics/Useful_snippets.md'
+        - Trick and tips for better code in python: 'Python/Python_Basics/Tricks_tips_better_code_python.md'
+      - Python intermediate: 
+        - Context Managers 'with': 'Python/Python_intermediate/context_manager_python.md'
+        - Multi-threading and Multi-processing: 'Python/Python_intermediate/Multithreading_and_multiprocessing.md'      
+        - SQLAchemy: 'Python/Python_intermediate/sqlalchemy.md'
+      - Libraries & Modules: #Libraries and Modules
+        - PIP notes: 'Python/Libraries_and_Modules/PIP/pip_notes.md' 
+        - Numpy:
+          - Numpy Basic (Part 1): 'Python/Libraries_and_Modules/Numpy/Numpy_Basic_part_1.md'
+          - Numpy Basic (Part 2): 'Python/Libraries_and_Modules/Numpy/Numpy_Basic_part_2.md'
+          - Numpy Crash course: 'Python/Libraries_and_Modules/Numpy/Numpy Crash course.md'
+        - Pandas (Under Review):
+          - Pandas Crash course: 'Python/Libraries_and_Modules/Pandas/Pandas Crash course.md'
+        - OpenCV:
+          - Images Basic with OpenCV:
+            - Images and Numpy: 'Python/Libraries_and_Modules/Computer Vision and OpenCV/Images Basic with OpenCV/Images_and_Numpy.md'
+            - Images and Opencv: 'Python/Libraries_and_Modules/Computer Vision and OpenCV/Images Basic with OpenCV/Images_and_Opencv.md'
+            - Drawing on Images: 'Python/Libraries_and_Modules/Computer Vision and OpenCV/Images Basic with OpenCV/Drawing_on_Images.md'
+            - Drawing with mouse: 'Python/Libraries_and_Modules/Computer Vision and OpenCV/Images Basic with OpenCV/Direct_drawing_with_mouse.md'
+          - Image Processing:
+            - Color Mapping: 'Python/Libraries_and_Modules/Computer Vision and OpenCV/Image Processing/color_mapping.md'
+            - Blending and Pasting Images: 'Python/Libraries_and_Modules/Computer Vision and OpenCV/Image Processing/blending_pasting_images.md'
+        - Netifaces:
+          - Introduction: 'Python/Libraries_and_Modules/netifaces/introduction.md'
+        - WS Discovery:
+          - Introduction: 'Python/Libraries_and_Modules/WS_Discovery/introduction.md'
+        - ONVIF-zeep-async:
+          - Introduction: 'Python/Libraries_and_Modules/ONVIF_python_zeep_async/introduction.md'
+        - Pillow:
+          - Introduction: 'Python/Libraries_and_Modules/Pillow/introduction.md'
+        - QR Code:
+          - Introduction: 'Python/Libraries_and_Modules/QRcode/introduction.md'
+        - HTTPX:
+          - Introduction: 'Python/Libraries_and_Modules/HTTPX/introduction.md'
+        - Datamuse: 
+          - Introduction: 'Python/Libraries_and_Modules/Datamuse/introduction.md'
+      - Frameworks: 
+        - Flask:
+          - Introduction and notes: 'Python/Frameworks/Flask/Introduction_and_notes.md'
+          - Quick & Dirty First App: 'Python/Frameworks/Flask/first_app_flask.md'
+          - Application Layout (Structure): 'Python/Frameworks/Flask/flask_structure.md'
+          - Application Factory & Run: 'Python/Frameworks/Flask/flask_application_factory.md'
+          - Application Database: 'Python/Frameworks/Flask/flask_database.md'
+          - Blueprints (part 01-Auth): 'Python/Frameworks/Flask/flask_blueprints_part1.md'
+          - Templates: 'Python/Frameworks/Flask/flask_templates.md'
+          - Blueprints (part 02-Blog): 'Python/Frameworks/Flask/flask_blueprints_part2.md'
+          - Flask Extensions:
+              - Forms - Flask-WTF: 'Python/Frameworks/Flask/Extensions/forms_flask_wtf.md'
+              - Databases - Flask-SQLAlchemy: 'Python/Frameworks/Flask/Extensions/database_flask_sqlalchemy.md'
+              - Databases(Migration) - Flask-Migration: "Python/Frameworks/Flask/Extensions/database_migration_flask_migration.md"
+        - Django:
+          - Django Tutorial (part 01): 'Python/Frameworks/Django/Django tutorial - part 01.md'
+          - Django Tutorial (part 02): 'Python/Frameworks/Django/Django tutorial - part 02.md'
+          - Django Tutorial (part 03): 'Python/Frameworks/Django/Django tutorial - part 03.md'
+          - (Optional) More details about file structure: 'Python/Frameworks/Django/More details about project structure.md'
+      - Projects:
+        - Random Password Generator: 'Python/Projects/random_password_generator.md'
+      - Scripts & Algorithms:
+        - Create Excel Files With Python: 'Python/Scripts/create_excel_files.md'
+        - Creating a dataset with api and python: 'Python/Scripts/create_dataset_api_python.md'
+        - Scraping Usign Python: 'Python/Scripts/Scraping_Usign_Python.md'
+        - JSON Object in python: 'Python/Scripts/JSON Objects in Python.md'
+        - Scrapy and Scrapyrt: 'Python/Scripts/Scrapy_and_Scrapyrt.md'
+        - Magic Square: 'Python/Scripts/Magic_square.md'
+      - Virtual Environments: 'Python/virtual_environments.md'
+    - Coding:         
       - SQL:
         - Random notes about SQL: 'Coding/SQL/Some_SQL.md'
         - String Funtions SQL: 'Coding/SQL/String_Functions_SQL.md'
@@ -194,14 +193,12 @@ nav:
           - Module 2: 'Coding/For Certifications/Python/Preparation for PCPP-32-1/Module 2.md'
     - Raspberry:
       - Samba Server: 'Raspberry/samba.md'
-      - Nagios Core: 'Raspberry/Nagios.md'
-    
+      - Nagios Core: 'Raspberry/Nagios.md'    
     - CCTV:
       - Basic Concepts: 'CCTV/Basic_concepts.md'
       - ACTi URL commands: 
         - URL Commands Basics: 'CCTV/ACTi/ACTi_URL_Commands.md'
-      - Wireshark: 'CCTV/wireshark.md'
-                
+      - Wireshark: 'CCTV/wireshark.md'                
     - 3D Printing:
       - Concepts: '3D Printing/Concepts.md'
       - G-code: '3D Printing/gcode.md'
@@ -212,7 +209,6 @@ nav:
       - Projects: 
         - Moving Electronics: '3D Printing/Projects/Moving Electronics.md'
       - About design: '3D Printing/about design.md'
-
     - Courses:
           - Coursera:
             - Introduction tensorflow: 
@@ -231,7 +227,6 @@ nav:
                 
                 - Visualization Crash course: 'Courses/Udemy/Complete Tensorflow 2 and Keras Deep Learning Bootcamp/Visualization_Crash_course.md'
                 - Artificial Neural Network: 'Courses/Udemy/Complete Tensorflow 2 and Keras Deep Learning Bootcamp/ANN.md'
-
     - Miscellaneous:
       - Aliases in Windows command prompt: 'Miscellaneous/Aliases_in_Windows_command_prompt.md'
       - Setting Open Media Vault: 'Miscellaneous/setting_openmediavault.md'
