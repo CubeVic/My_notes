@@ -189,6 +189,78 @@ class User(Base):
 
 Now we will add other table, this time will be the table that represent the post, we need to be careful reading the table, there will be a foreign key that will be the way to represent the relationship between the both tables
 
+![Id and post ](images/flask_sqlalchemy_007.png){: .center}
+
+Now we can see a second table `posts` this table will contain an unique `id` field, the `body`, the `timestamp` and a foreign key called `user_id`. This foreign key is the way to link both tables, this relationship is called *one-to-many* ( one user can write many ports ).
+
+Noww the model will change 
+**application/models/py**
+
+```python 
+from datetime import datetime
+from app import db
+
+class User(db.Models):
+	"""Table USERs"""
+	id = db.Column(db.Integer, primary_key=True)
+	username= db.Column(db.String(64), index=True, unique=True)
+	email = db.Column(db.String(120), index=True, unique=True)
+	password_hash = db.Column(db.String(128))
+	posts = db.relationship('Post', backref='author', lazy='dynamic')
+
+	def __repr__(self):
+		return '<User {}>'.format(self.username)
+
+class Post(db.Model):
+	""" Table posts"""
+	id = db.Column(db.Integer, primary_key=True)
+	body = db.Column(db.String(140))
+	timestamp = db.Column(db.DateTime, index=True, default=datetime.utcnow)
+	user_id = db.Column(db.Integer, db.ForeignKey('user.id'))
+
+	def __repr__(self):
+		return '<Post {}>'.format(self.body)
+``` 
+
+From the code above:
+
+1. `Post` Class represent the post the user will write.
+2. `timestamp` will be a indexed column so we can search the records chronologically, and it contain a default argument set to `datetime.utcnow` notice that is without the `()` it is because we are passing as a default argument a function not the result of that function. the timestamp will be convert to the user time when they are displayed.
+3. `user_id` was initialized as the Foreign key `user.id`, in other words, it is a reference to the `id` value in the table `user`
+
+> SQLAlchemy by default will treat all the table names as lower case which is different to what is use in SQL and different of the class name, but there is way to change that behavior as it was explain above by using the attibute `__tablename__`.
+
+### New field `db.relationship`
+
+Now we discuss the new field in the User table. We added the line `posts = db.relationship('Post', backref='author', lazy='dynamic')` this is not a real database field but rather a high-level representation of the relationship of User table and Post (it won't be in the relational diagram)>
+
+For this type of relationship *one-to-many* the `db.relationship` is going to be in the **one** side of the relationship, and it is a convenient way to access the **many**, with an example will be easy to understand, let way we have a user `u` and we want to access all the post written by `u` we just need to call `u.post`.
+
+now form the expression we have:
+
+1. the first argument is the **many** side of the relationship, in ths case `Post`.
+2. the `backref` define the name of the argument one the **many** side object that point back to the **one** object, in other words this will add `post.author` expression that will return the user given a post.
+3. `lazy` define how the database relationship will be manage, it wont be explain yet, hope i can do it later.
+
+
+### Migrate the changes
+
+Since we made changes to the database we will need to migrate the changes.
+
+First, We generate the database migration
+
+```Bash
+flask db migrate -m "posts table"
+```
+![generate migration](images/flask_sqlalchemy_008.png){: .center}
+
+second, we applied the migration to the database 
+
+```Bash
+flask db upgrade
+```
+![applied migration ](images/flask_sqlalchemy_009.png){: .center}
+
 ## Play Time
 
 ## Shell Context  
