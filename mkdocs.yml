@@ -154,31 +154,32 @@ nav:
         - Magic Square: 'Python/Scripts/Magic_square.md'
       - Virtual Environments: 'Python/virtual_environments.md'
          
-      - SQL:
-        - Random notes about SQL: 'SQL/Some_SQL.md'
-        - String Funtions SQL: 'SQL/String_Functions_SQL.md'
-        - Advance Funtion SQL: 'SQL/Advance_Funtion_SQL.md'
+    - SQL:
+      - Random notes about SQL: 'SQL/Some_SQL.md'
+      - String Funtions SQL: 'SQL/String_Functions_SQL.md'
+      - Advance Funtion SQL: 'SQL/Advance_Funtion_SQL.md'
 
-      - Arduino:
-        - Structure: 
-          - Sketch: 'Arduino/Structure/Sketch.md'
-          - Control Structure: 'Arduino/Structure/Control_Structure.md'
-          - Further Syntax: 'Arduino/Structure/Further_Syntax.md'
-        - Variables:
-          - Constants and Data Types: 'Arduino/Variables/Constants_and_Data_Types.md'
-          - Conversion: 'Arduino/Variables/Conversion.md'
-          - Variable Scope & Qualifiers: 'Arduino/Variables/Variable_Scope_Qualifiers.md'
-        - Functions:
-          - Digital I/O and Analog I/O: 'Arduino/Functions/Digital_and_Analog.md'
-          - Time: 'Arduino/Functions/Time.md'
-          - Math and Trigonometry: 'Arduino/Functions/Math_and_Trigonometry.md'
-          - Characters: 'Arduino/Functions/Characters.md'
-          - Random Numbers: 'Arduino/Functions/Random_Numbers.md'
-          - Communication: 'Arduino/Functions/Communication.md'
-          - Interrupts and External Interruptions: 'Arduino/Functions/Interrupts_and_External_Interruptions.md'
-        - Projects:
-          - Morse code Translator: 'Arduino/Projects/Morse_code_Translator.md'
-          - Air Vent servo control: 'Arduino/Projects/Air_vent_servo_control.md'  
+    - Arduino:
+      - Structure: 
+        - Sketch: 'Arduino/Structure/Sketch.md'
+        - Control Structure: 'Arduino/Structure/Control_Structure.md'
+        - Further Syntax: 'Arduino/Structure/Further_Syntax.md'
+      - Variables:
+        - Constants and Data Types: 'Arduino/Variables/Constants_and_Data_Types.md'
+        - Conversion: 'Arduino/Variables/Conversion.md'
+        - Variable Scope & Qualifiers: 'Arduino/Variables/Variable_Scope_Qualifiers.md'
+      - Functions:
+        - Digital I/O and Analog I/O: 'Arduino/Functions/Digital_and_Analog.md'
+        - Time: 'Arduino/Functions/Time.md'
+        - Math and Trigonometry: 'Arduino/Functions/Math_and_Trigonometry.md'
+        - Characters: 'Arduino/Functions/Characters.md'
+        - Random Numbers: 'Arduino/Functions/Random_Numbers.md'
+        - Communication: 'Arduino/Functions/Communication.md'
+        - Interrupts and External Interruptions: 'Arduino/Functions/Interrupts_and_External_Interruptions.md'
+      - Projects:
+        - Morse code Translator: 'Arduino/Projects/Morse_code_Translator.md'
+        - Air Vent servo control: 'Arduino/Projects/Air_vent_servo_control.md'  
+
     - APIs:
       - datamuse: 'APIs/datamuse.md'
     - PowerLanguages:
