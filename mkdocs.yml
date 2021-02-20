@@ -72,6 +72,9 @@ nav:
             - Training and Test Sets: 'Machine Learning/Google Crash Course/ML Concepsts/Training_Test_sets.md'
       - AI for Everyone: 'Machine Learning/AI for Everyone/AI_for_Everyone.md'
       - Other Key Terminology (TensorFlow): 'Machine Learning/Other_key_Terminology.md'
+      - ML script or projects:
+        - Twitter Sentiment Analyzer: 'Coding/ML script or projects/Twitter_sentiment_Analyzer.md' 
+    
     - Python:
       - Introduction: 'Python/introduction.md'
       - Python Basics:  
@@ -150,55 +153,55 @@ nav:
         - Scrapy and Scrapyrt: 'Python/Scripts/Scrapy_and_Scrapyrt.md'
         - Magic Square: 'Python/Scripts/Magic_square.md'
       - Virtual Environments: 'Python/virtual_environments.md'
-    - Coding:         
+         
       - SQL:
-        - Random notes about SQL: 'Coding/SQL/Some_SQL.md'
-        - String Funtions SQL: 'Coding/SQL/String_Functions_SQL.md'
-        - Advance Funtion SQL: 'Coding/SQL/Advance_Funtion_SQL.md'
+        - Random notes about SQL: 'SQL/Some_SQL.md'
+        - String Funtions SQL: 'SQL/String_Functions_SQL.md'
+        - Advance Funtion SQL: 'SQL/Advance_Funtion_SQL.md'
 
       - Arduino:
         - Structure: 
-          - Sketch: 'Coding/Arduino/Structure/Sketch.md'
-          - Control Structure: 'Coding/Arduino/Structure/Control_Structure.md'
-          - Further Syntax: 'Coding/Arduino/Structure/Further_Syntax.md'
+          - Sketch: 'Arduino/Structure/Sketch.md'
+          - Control Structure: 'Arduino/Structure/Control_Structure.md'
+          - Further Syntax: 'Arduino/Structure/Further_Syntax.md'
         - Variables:
-          - Constants and Data Types: 'Coding/Arduino/Variables/Constants_and_Data_Types.md'
-          - Conversion: 'Coding/Arduino/Variables/Conversion.md'
-          - Variable Scope & Qualifiers: 'Coding/Arduino/Variables/Variable_Scope_Qualifiers.md'
+          - Constants and Data Types: 'Arduino/Variables/Constants_and_Data_Types.md'
+          - Conversion: 'Arduino/Variables/Conversion.md'
+          - Variable Scope & Qualifiers: 'Arduino/Variables/Variable_Scope_Qualifiers.md'
         - Functions:
-          - Digital I/O and Analog I/O: 'Coding/Arduino/Functions/Digital_and_Analog.md'
-          - Time: 'Coding/Arduino/Functions/Time.md'
-          - Math and Trigonometry: 'Coding/Arduino/Functions/Math_and_Trigonometry.md'
-          - Characters: 'Coding/Arduino/Functions/Characters.md'
-          - Random Numbers: 'Coding/Arduino/Functions/Random_Numbers.md'
-          - Communication: 'Coding/Arduino/Functions/Communication.md'
-          - Interrupts and External Interruptions: 'Coding/Arduino/Functions/Interrupts_and_External_Interruptions.md'
+          - Digital I/O and Analog I/O: 'Arduino/Functions/Digital_and_Analog.md'
+          - Time: 'Arduino/Functions/Time.md'
+          - Math and Trigonometry: 'Arduino/Functions/Math_and_Trigonometry.md'
+          - Characters: 'Arduino/Functions/Characters.md'
+          - Random Numbers: 'Arduino/Functions/Random_Numbers.md'
+          - Communication: 'Arduino/Functions/Communication.md'
+          - Interrupts and External Interruptions: 'Arduino/Functions/Interrupts_and_External_Interruptions.md'
         - Projects:
-          - Morse code Translator: 'Coding/Arduino/Projects/Morse_code_Translator.md'
-          - Air Vent servo control: 'Coding/Arduino/Projects/Air_vent_servo_control.md'  
-      - ML script or projects:
-          - Twitter Sentiment Analyzer: 'Coding/ML script or projects/Twitter_sentiment_Analyzer.md'   
-      - APIs:
-        - datamuse: 'Coding/APIs/datamuse.md'
-      - PowerLanguages:
-        - Reference: 'Coding/PowerLanguages/PowerLanguages_001.md'
-        - Reserved words: 'Coding/PowerLanguages/Reserved words.md'
-        - How Scripts Work: 'Coding/PowerLanguages/how_script_works.md'
-        - Functions: 'Coding/PowerLanguages/functions.md'
-        - Plot: 'Coding/PowerLanguages/Plot.md'
-        - Text and Trendlines: 'Coding/PowerLanguages/text_trendlines.md'
-      - For Certifications:
-        - Python(PCPP-32-1):
-          - Module 1: 'Coding/For Certifications/Python/Preparation for PCPP-32-1/Module 1.md'
-          - Module 2: 'Coding/For Certifications/Python/Preparation for PCPP-32-1/Module 2.md'
+          - Morse code Translator: 'Arduino/Projects/Morse_code_Translator.md'
+          - Air Vent servo control: 'Arduino/Projects/Air_vent_servo_control.md'  
+    - APIs:
+      - datamuse: 'APIs/datamuse.md'
+    - PowerLanguages:
+      - Reference: 'PowerLanguages/PowerLanguages_001.md'
+      - Reserved words: 'PowerLanguages/Reserved words.md'
+      - How Scripts Work: 'PowerLanguages/how_script_works.md'
+      - Functions: 'PowerLanguages/functions.md'
+      - Plot: 'PowerLanguages/Plot.md'
+      - Text and Trendlines: 'PowerLanguages/text_trendlines.md'
+
     - Raspberry:
       - Samba Server: 'Raspberry/samba.md'
-      - Nagios Core: 'Raspberry/Nagios.md'    
+      - Nagios Core: 'Raspberry/Nagios.md'
+      - How to Install OpenCv on Raspberry pi: 'Raspberry/How_install_openCV_raspberry.md'
+      - Raspberry Password Pelated: 'Raspberry/Password_related_raspberry.md' 
+      - Setting Open Media Vault: 'Raspberry/setting_openmediavault.md'   
+
     - CCTV:
       - Basic Concepts: 'CCTV/Basic_concepts.md'
       - ACTi URL commands: 
         - URL Commands Basics: 'CCTV/ACTi/ACTi_URL_Commands.md'
       - Wireshark: 'CCTV/wireshark.md'                
+
     - 3D Printing:
       - Concepts: '3D Printing/Concepts.md'
       - G-code: '3D Printing/gcode.md'
@@ -209,32 +212,33 @@ nav:
       - Projects: 
         - Moving Electronics: '3D Printing/Projects/Moving Electronics.md'
       - About design: '3D Printing/about design.md'
-    - Courses:
-          - Coursera:
-            - Introduction tensorflow: 
-              - The Hello World of neural networks: 'Courses/Coursera/Introduction tensorflow/The Hello World of neural networks.md'
-              - Introduction to Computer vision: 'Courses/Coursera/Introduction tensorflow/Introduction to computer vision.md'
-              - Convolutional Neural network Overview : 'Courses/Coursera/Introduction tensorflow/Convolutional_Neural_network_Overview.md'
-              - Enhancing vision with convolutional Neural Networks : 'Courses/Coursera/Introduction tensorflow/Enhancing_vision_with_convolutional_Neural_Networks.md'
-              - (Code) Step by step Convolutions : 'Courses/Coursera/Introduction tensorflow/Step_by_step_Convolutions.md'
-              - Using Real-World Images: 'Courses/Coursera/Introduction tensorflow/Using_Real_world_Image.md'
-            - Convolutional Neural Networks in TensorFlow: 
-              - Exploring large Datasets - Cats vs Dogs : 'Courses/Coursera/Convolutional Neural Networks in TensorFlow/exploring_large_dataset.md'
-              - Augmentation: 'Courses/Coursera/Convolutional Neural Networks in TensorFlow/Augmentation_technique_to_avoid_overfitting.md'
-              - Transfer Learning: 'Courses/Coursera/Convolutional Neural Networks in TensorFlow/Transfer_Learning.md'
-          - Udemy:
-            - Complete Tensorflow 2 and Keras Deep Learning Bootcamp:
-                
-                - Visualization Crash course: 'Courses/Udemy/Complete Tensorflow 2 and Keras Deep Learning Bootcamp/Visualization_Crash_course.md'
-                - Artificial Neural Network: 'Courses/Udemy/Complete Tensorflow 2 and Keras Deep Learning Bootcamp/ANN.md'
+
     - Miscellaneous:
+      - Courses:
+        - Coursera:
+          - Introduction tensorflow: 
+            - The Hello World of neural networks: 'Miscellaneous/Courses/Coursera/Introduction tensorflow/The Hello World of neural networks.md'
+            - Introduction to Computer vision: 'Miscellaneous/Courses/Coursera/Introduction tensorflow/Introduction to computer vision.md'
+            - Convolutional Neural network Overview : 'Miscellaneous/Courses/Coursera/Introduction tensorflow/Convolutional_Neural_network_Overview.md'
+            - Enhancing vision with convolutional Neural Networks : 'Miscellaneous/Courses/Coursera/Introduction tensorflow/Enhancing_vision_with_convolutional_Neural_Networks.md'
+            - (Code) Step by step Convolutions : 'Miscellaneous/Courses/Coursera/Introduction tensorflow/Step_by_step_Convolutions.md'
+            - Using Real-World Images: 'Miscellaneous/Courses/Coursera/Introduction tensorflow/Using_Real_world_Image.md'
+          - Convolutional Neural Networks in TensorFlow: 
+            - Exploring large Datasets - Cats vs Dogs : 'Miscellaneous/Courses/Coursera/Convolutional Neural Networks in TensorFlow/exploring_large_dataset.md'
+            - Augmentation: 'Miscellaneous/Courses/Coursera/Convolutional Neural Networks in TensorFlow/Augmentation_technique_to_avoid_overfitting.md'
+            - Transfer Learning: 'Miscellaneous/Courses/Coursera/Convolutional Neural Networks in TensorFlow/Transfer_Learning.md'
+        - Udemy:
+          - Complete Tensorflow 2 and Keras Deep Learning Bootcamp:        
+            - Visualization Crash course: 'Miscellaneous/Courses/Udemy/Complete Tensorflow 2 and Keras Deep Learning Bootcamp/Visualization_Crash_course.md'
+            - Artificial Neural Network: 'Miscellaneous/Courses/Udemy/Complete Tensorflow 2 and Keras Deep Learning Bootcamp/ANN.md'
+      - For Certifications:
+        - Python(PCPP-32-1):
+          - Module 1: 'Miscellaneous/Coding/For Certifications/Python/Preparation for PCPP-32-1/Module 1.md'
+          - Module 2: 'Miscellaneous/Coding/For Certifications/Python/Preparation for PCPP-32-1/Module 2.md'
       - Aliases in Windows command prompt: 'Miscellaneous/Aliases_in_Windows_command_prompt.md'
-      - Setting Open Media Vault: 'Miscellaneous/setting_openmediavault.md'
       - OAuth 2: 'Miscellaneous/OAuth_2.md'
       - Random: 'Miscellaneous/Random Link.md'
       #- Potential activities: 'Miscellaneous/potential activities.md'
-      - How to Install OpenCv on Raspberry pi: 'Miscellaneous/How_install_openCV_raspberry.md'
-      - Raspberry Password Pelated: 'Miscellaneous/Password_related_raspberry.md'
       - Configuration for Sublime Text 3: 'Miscellaneous/Sublime_text.md'
     - About: 'about.md'
     - Helpers.md
