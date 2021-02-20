@@ -73,7 +73,7 @@ nav:
       - AI for Everyone: 'Machine Learning/AI for Everyone/AI_for_Everyone.md'
       - Other Key Terminology (TensorFlow): 'Machine Learning/Other_key_Terminology.md'
       - ML script or projects:
-        - Twitter Sentiment Analyzer: 'Coding/ML script or projects/Twitter_sentiment_Analyzer.md' 
+        - Twitter Sentiment Analyzer: 'Machine Learning/ML script or projects/Twitter_sentiment_Analyzer.md' 
     
     - Python:
       - Introduction: 'Python/introduction.md'
@@ -233,8 +233,8 @@ nav:
             - Artificial Neural Network: 'Miscellaneous/Courses/Udemy/Complete Tensorflow 2 and Keras Deep Learning Bootcamp/ANN.md'
       - For Certifications:
         - Python(PCPP-32-1):
-          - Module 1: 'Miscellaneous/Coding/For Certifications/Python/Preparation for PCPP-32-1/Module 1.md'
-          - Module 2: 'Miscellaneous/Coding/For Certifications/Python/Preparation for PCPP-32-1/Module 2.md'
+          - Module 1: 'Miscellaneous/For Certifications/Python/Preparation for PCPP-32-1/Module 1.md'
+          - Module 2: 'Miscellaneous/For Certifications/Python/Preparation for PCPP-32-1/Module 2.md'
       - Aliases in Windows command prompt: 'Miscellaneous/Aliases_in_Windows_command_prompt.md'
       - OAuth 2: 'Miscellaneous/OAuth_2.md'
       - Random: 'Miscellaneous/Random Link.md'
