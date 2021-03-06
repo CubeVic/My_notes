@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="239px" height="239px" viewBox="0 0 239 239" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Logo</title>
+    <defs>
+        <circle id="path-1" cx="119.5" cy="119.5" r="119.5"></circle>
+    </defs>
+    <g id="wallpapers_V1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Logo">
+            <mask id="mask-2" fill="white">
+                <use xlink:href="#path-1"></use>
+            </mask>
+            <use id="Mask" fill="#4F3378" fill-rule="nonzero" xlink:href="#path-1"></use>
+            <path d="M169.579893,137.95542 L181.413596,144.055456 L202.846154,104.070912 L186.533596,83.2794991 L155.822755,112.36458 L143.347907,75.8971735 L149.425045,54.7851878 C96.965653,32.7114848 59.5365295,67.9011807 59.5365295,67.9011807 C59.5365295,67.9011807 43.8559571,34.4700537 74.0676208,17.9834705" id="Path" stroke="#FFFFFF" stroke-width="1.37388193" stroke-linecap="round" stroke-linejoin="round" mask="url(#mask-2)"></path>
+            <path d="M84.8159571,35.0058676 C84.8159571,35.0058676 75.4415027,20.1633631 80.9095528,14.3060465" id="Path" stroke="#FFFFFF" stroke-width="1.37388193" stroke-linecap="round" stroke-linejoin="round" mask="url(#mask-2)"></path>
+            <path d="M110.223614,41.4722719 C110.223614,41.4722719 85.7501968,25.5535599 88.4659034,12.9550626" id="Path" stroke="#FFFFFF" stroke-width="1.37388193" stroke-linecap="round" stroke-linejoin="round" mask="url(#mask-2)"></path>
+            <path d="M100.185116,10.7614311 C100.185116,10.7614311 99.0081574,32.5420394 139.381968,42.3607156" id="Path" stroke="#FFFFFF" stroke-width="1.37388193" stroke-linecap="round" stroke-linejoin="round" mask="url(#mask-2)"></path>
+            <path d="M126.66898,13.8068694 C126.66898,13.8068694 162.63263,11.8238998 177.443077,34.4150984 C177.443077,34.4150984 199.264902,37.5658676 201.463113,60.0883721 L193.760215,92.4845081" id="Path" stroke="#FFFFFF" stroke-width="1.37388193" stroke-linecap="round" stroke-linejoin="round" mask="url(#mask-2)"></path>
+            <line x1="153.597066" y1="51.2680501" x2="177.443077" y2="34.39678" id="Path" stroke="#FFFFFF" stroke-width="1.37388193" stroke-linecap="round" stroke-linejoin="round" mask="url(#mask-2)"></line>
+            <polyline id="Path" stroke="#FFFFFF" stroke-width="1.37388193" stroke-linecap="round" stroke-linejoin="round" mask="url(#mask-2)" points="167.175599 116.005367 187.106047 97.2015027 192.720644 105.481431"></polyline>
+            <polyline id="Path" stroke="#FFFFFF" stroke-width="1.37388193" stroke-linecap="round" stroke-linejoin="round" mask="url(#mask-2)" points="175.995921 107.684222 177.443077 126.135456 185.274204 119.179034"></polyline>
+            <polyline id="Path" stroke="#FFFFFF" stroke-width="1.37388193" stroke-linecap="round" stroke-linejoin="round" mask="url(#mask-2)" points="53.445653 153.942826 68.9476208 197.265903 66.291449 221.913345 107.246869 227.033345 171.713989 175.08229"></polyline>
+            <polyline id="Path" stroke="#FFFFFF" stroke-width="1.37388193" stroke-linecap="round" stroke-linejoin="round" mask="url(#mask-2)" points="59.5365295 67.9011807 47.7532021 91.4083005 60.5028265 119.815599"></polyline>
+            <polyline id="Path" stroke="#9E9E9E" stroke-width="1.37388193" stroke-linecap="round" stroke-linejoin="round" mask="url(#mask-2)" points="52.9602147 132.37746 40.7326655 105.655456 57.0864401 97.2015027 65.8426476 105.26619 65.2427191 110.454884"></polyline>
+            <polygon id="Path" stroke="#9E9E9E" stroke-width="1.37388193" stroke-linecap="round" stroke-linejoin="round" mask="url(#mask-2)" points="78.1755277 107.684222 84.8159571 92.4661896 118.979821 86.3890519 131.047084 100.594991 124.621896 132.904114 91.7311628 137.186047"></polygon>
+            <line x1="131.047084" y1="100.594991" x2="172.309338" y2="92.8371377" id="Path" stroke="#9E9E9E" stroke-width="1.37388193" stroke-linecap="round" stroke-linejoin="round" mask="url(#mask-2)"></line>
+            <polyline id="Path" stroke="#FFFFFF" stroke-width="1.37388193" stroke-linecap="round" stroke-linejoin="round" mask="url(#mask-2)" points="179.948122 143.281503 174.777746 231.228265 226.490662 275.458104"></polyline>
+            <polyline id="Path" stroke="#FFFFFF" stroke-width="1.37388193" stroke-linecap="round" stroke-linejoin="round" mask="url(#mask-2)" points="64.3634347 113.138533 43.6407156 149.322004 67.9996422 160.789338 78.1755277 155.866261 75.8124508 151.140107"></polyline>
+            <line x1="65.2427191" y1="110.454884" x2="78.1755277" y2="107.688801" id="Path" stroke="#9E9E9E" stroke-width="1.37388193" stroke-linecap="round" stroke-linejoin="round" mask="url(#mask-2)"></line>
+        </g>
+    </g>
+</svg>

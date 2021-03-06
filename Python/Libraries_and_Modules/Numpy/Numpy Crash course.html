@@ -1,0 +1,4615 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="A Material Design theme for my personal notes">
+      
+      
+      
+        <meta name="author" content="Victor Andres Aguirre Fernandez">
+      
+      
+        <link rel="canonical" href="https://cubevic.github.io/My_notes/Python/Libraries_and_Modules/Numpy/Numpy%20Crash%20course.html">
+      
+      <link rel="shortcut icon" href="../../../img/favicon.png">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-7.0.4">
+    
+    
+      
+        <title>Numpy Crash course - My Notes</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.77f3fd56.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.7fa14f5b.min.css">
+        
+          
+          
+          <meta name="theme-color" content="#7e56c2">
+        
+      
+    
+    
+    
+      
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Ubuntu:300,400,400i,700%7CUbuntu+Mono&display=fallback">
+        <style>:root{--md-text-font-family:"Ubuntu";--md-code-font-family:"Ubuntu Mono"}</style>
+      
+    
+    
+    
+      <link rel="stylesheet" href="../../../stylesheets/dark_theme.css">
+    
+      <link rel="stylesheet" href="../../../stylesheets/codehilite.css">
+    
+      <link rel="stylesheet" href="../../../stylesheets/extra.css">
+    
+    
+      
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="deep-purple" data-md-color-accent="deep-purple">
+      
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#using_numpy" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="https://cubevic.github.io/My_notes/" title="My Notes" class="md-header__button md-logo" aria-label="My Notes">
+      
+  <img src="../../../img/Logo.svg" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            My Notes
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Numpy Crash course
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    <div class="md-header__options">
+      
+    </div>
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        
+<a href="https://github.com/CubeVic/My_notes/" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05L244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    My_notes
+  </div>
+</a>
+      </div>
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+
+
+  
+  
+  
+    
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../Machine%20Learning/Google%20Crash%20Course/Problem_Framing.html" class="md-tabs__link">
+        Machine Leaning (Concepts)
+      </a>
+    </li>
+  
+
+  
+
+      
+        
+  
+  
+    
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../introduction.html" class="md-tabs__link md-tabs__link--active">
+        Python
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../SQL/Some_SQL.html" class="md-tabs__link">
+        SQL
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../Arduino/Structure/Sketch.html" class="md-tabs__link">
+        Arduino
+      </a>
+    </li>
+  
+
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../APIs/datamuse.html" class="md-tabs__link">
+        APIs
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../PowerLanguages/PowerLanguages_001.html" class="md-tabs__link">
+        PowerLanguages
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../Raspberry/samba.html" class="md-tabs__link">
+        Raspberry
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../CCTV/Basic_concepts.html" class="md-tabs__link">
+        CCTV
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../3D%20Printing/Concepts.html" class="md-tabs__link">
+        3D Printing
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    
+
+  
+  
+  
+    
+
+  
+  
+  
+    
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../Miscellaneous/Courses/Coursera/Introduction%20tensorflow/The%20Hello%20World%20of%20neural%20networks.html" class="md-tabs__link">
+        Miscellaneous
+      </a>
+    </li>
+  
+
+  
+
+  
+
+  
+
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../../../about.html" class="md-tabs__link">
+      About
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../../../Helpers.html" class="md-tabs__link">
+      Helpers
+    </a>
+  </li>
+
+      
+    </ul>
+  </div>
+</nav>
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="https://cubevic.github.io/My_notes/" title="My Notes" class="md-nav__button md-logo" aria-label="My Notes">
+      
+  <img src="../../../img/Logo.svg" alt="logo">
+
+    </a>
+    My Notes
+  </label>
+  
+    <div class="md-nav__source">
+      
+<a href="https://github.com/CubeVic/My_notes/" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05L244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    My_notes
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1" type="checkbox" id="__nav_1" >
+      
+      <label class="md-nav__link" for="__nav_1">
+        Machine Leaning (Concepts)
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Machine Leaning (Concepts)" data-md-level="1">
+        <label class="md-nav__title" for="__nav_1">
+          <span class="md-nav__icon md-icon"></span>
+          Machine Leaning (Concepts)
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1_1" type="checkbox" id="__nav_1_1" >
+      
+      <label class="md-nav__link" for="__nav_1_1">
+        Google Crash Course
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Google Crash Course" data-md-level="2">
+        <label class="md-nav__title" for="__nav_1_1">
+          <span class="md-nav__icon md-icon"></span>
+          Google Crash Course
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Machine%20Learning/Google%20Crash%20Course/Problem_Framing.html" class="md-nav__link">
+        Problem Framing
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1_1_2" type="checkbox" id="__nav_1_1_2" >
+      
+      <label class="md-nav__link" for="__nav_1_1_2">
+        ML Concepts
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="ML Concepts" data-md-level="3">
+        <label class="md-nav__title" for="__nav_1_1_2">
+          <span class="md-nav__icon md-icon"></span>
+          ML Concepts
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Machine%20Learning/Google%20Crash%20Course/ML%20Concepsts/Framing.html" class="md-nav__link">
+        Framing
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Machine%20Learning/Google%20Crash%20Course/ML%20Concepsts/Linear%20regression.html" class="md-nav__link">
+        Linear Regression
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Machine%20Learning/Google%20Crash%20Course/ML%20Concepsts/Reducing_Loss.html" class="md-nav__link">
+        Reducing Loss
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Machine%20Learning/Google%20Crash%20Course/ML%20Concepsts/First_steps_TensorFlow.html" class="md-nav__link">
+        First Steps TensorFlow
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Machine%20Learning/Google%20Crash%20Course/ML%20Concepsts/Intro_to_pandas.html" class="md-nav__link">
+        Introduction to Pandas
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Machine%20Learning/Google%20Crash%20Course/ML%20Concepsts/Training_Test_sets.html" class="md-nav__link">
+        Training and Test Sets
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Machine%20Learning/AI%20for%20Everyone/AI_for_Everyone.html" class="md-nav__link">
+        AI for Everyone
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Machine%20Learning/Other_key_Terminology.html" class="md-nav__link">
+        Other Key Terminology (TensorFlow)
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1_4" type="checkbox" id="__nav_1_4" >
+      
+      <label class="md-nav__link" for="__nav_1_4">
+        ML script or projects
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="ML script or projects" data-md-level="2">
+        <label class="md-nav__title" for="__nav_1_4">
+          <span class="md-nav__icon md-icon"></span>
+          ML script or projects
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Machine%20Learning/ML%20script%20or%20projects/Twitter_sentiment_Analyzer.html" class="md-nav__link">
+        Twitter Sentiment Analyzer
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" checked>
+      
+      <label class="md-nav__link" for="__nav_2">
+        Python
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Python" data-md-level="1">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          Python
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../introduction.html" class="md-nav__link">
+        Introduction
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_2" type="checkbox" id="__nav_2_2" >
+      
+      <label class="md-nav__link" for="__nav_2_2">
+        Python Basics
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Python Basics" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_2">
+          <span class="md-nav__icon md-icon"></span>
+          Python Basics
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Python_Basics/Data%20structures.html" class="md-nav__link">
+        Data Structures
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Python_Basics/control%20flow.html" class="md-nav__link">
+        Control Flow
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Python_Basics/functions.html" class="md-nav__link">
+        Functions
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Python_Basics/Error%20and%20Exceptions.html" class="md-nav__link">
+        Error and Exceptions
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Python_Basics/Reading%20and%20Writing%20Files.html" class="md-nav__link">
+        Reading and Writing Files
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Python_Basics/Import%20Local%20Scripts.html" class="md-nav__link">
+        Import Local Scripts
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Python_Basics/Generator%20and%20Iterator.html" class="md-nav__link">
+        Generator and Iterators
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Python_Basics/Useful%20or%20researched%20built-in%20functions.html" class="md-nav__link">
+        Useful or researched built-in functions
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Python_Basics/Databases_with_Python.html" class="md-nav__link">
+        Data bases with Python
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Python_Basics/Useful_snippets.html" class="md-nav__link">
+        Useful Snippets
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Python_Basics/Tricks_tips_better_code_python.html" class="md-nav__link">
+        Trick and tips for better code in python
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_3" type="checkbox" id="__nav_2_3" >
+      
+      <label class="md-nav__link" for="__nav_2_3">
+        Python intermediate
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Python intermediate" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_3">
+          <span class="md-nav__icon md-icon"></span>
+          Python intermediate
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Python_intermediate/context_manager_python.html" class="md-nav__link">
+        Context Managers 'with'
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Python_intermediate/Multithreading_and_multiprocessing.html" class="md-nav__link">
+        Multi-threading and Multi-processing
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Python_intermediate/sqlalchemy.html" class="md-nav__link">
+        SQLAchemy
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_4" type="checkbox" id="__nav_2_4" checked>
+      
+      <label class="md-nav__link" for="__nav_2_4">
+        Libraries & Modules
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Libraries & Modules" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_4">
+          <span class="md-nav__icon md-icon"></span>
+          Libraries & Modules
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../PIP/pip_notes.html" class="md-nav__link">
+        PIP notes
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_4_2" type="checkbox" id="__nav_2_4_2" checked>
+      
+      <label class="md-nav__link" for="__nav_2_4_2">
+        Numpy
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Numpy" data-md-level="3">
+        <label class="md-nav__title" for="__nav_2_4_2">
+          <span class="md-nav__icon md-icon"></span>
+          Numpy
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="Numpy_Basic_part_1.html" class="md-nav__link">
+        Numpy Basic (Part 1)
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="Numpy_Basic_part_2.html" class="md-nav__link">
+        Numpy Basic (Part 2)
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Numpy Crash course
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="Numpy%20Crash%20course.html" class="md-nav__link md-nav__link--active">
+        Numpy Crash course
+      </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#using_numpy" class="md-nav__link">
+    Using NumPy
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#numpy_arrays" class="md-nav__link">
+    NumPy Arrays
+  </a>
+  
+    <nav class="md-nav" aria-label="NumPy Arrays">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#create_numpy_arrays" class="md-nav__link">
+    Create NumPy Arrays
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#build-in_methods" class="md-nav__link">
+    Build-in Methods
+  </a>
+  
+    <nav class="md-nav" aria-label="Build-in Methods">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#arange" class="md-nav__link">
+    arange
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#zeros_and_ones" class="md-nav__link">
+    zeros and ones
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#linspace" class="md-nav__link">
+    linspace
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#eye_identity_matrix" class="md-nav__link">
+    eye identity matrix
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#random" class="md-nav__link">
+    Random
+  </a>
+  
+    <nav class="md-nav" aria-label="Random">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#rand" class="md-nav__link">
+    rand
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#randint" class="md-nav__link">
+    randint
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#seed" class="md-nav__link">
+    seed
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#array_attributes_and_methods" class="md-nav__link">
+    Array Attributes and Methods
+  </a>
+  
+    <nav class="md-nav" aria-label="Array Attributes and Methods">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#reshape_-_reshape" class="md-nav__link">
+    Reshape - reshape
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#max_min_argmax_argmin_-_maxminargmaxargmin" class="md-nav__link">
+    max, min, argmax, argmin - max,min,argmax,argmin
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#shape_-_shape" class="md-nav__link">
+    Shape - shape
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dtype" class="md-nav__link">
+    dtype
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#numpy_indexing_and_selection" class="md-nav__link">
+    Numpy Indexing and Selection
+  </a>
+  
+    <nav class="md-nav" aria-label="Numpy Indexing and Selection">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1_create_an_array" class="md-nav__link">
+    1. Create an array
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2_select_a_single_element" class="md-nav__link">
+    2. Select a single element
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3_select_a_range_of_elements" class="md-nav__link">
+    3. Select a range of elements
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#broadcasting" class="md-nav__link">
+    Broadcasting
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#indexing_2d_arrays_matrices" class="md-nav__link">
+    Indexing 2d arrays (matrices)
+  </a>
+  
+    <nav class="md-nav" aria-label="Indexing 2d arrays (matrices)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1_create_the_matrix" class="md-nav__link">
+    1. Create the matrix
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2_select_base_in_index" class="md-nav__link">
+    2. Select base in index
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3_select_a_matrix_inside_the_matrix" class="md-nav__link">
+    3. select a matrix inside the matrix
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#conditional_selection" class="md-nav__link">
+    Conditional selection
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#operations" class="md-nav__link">
+    Operations
+  </a>
+  
+    <nav class="md-nav" aria-label="Operations">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#arithmetic" class="md-nav__link">
+    Arithmetic
+  </a>
+  
+    <nav class="md-nav" aria-label="Arithmetic">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1_addition_multiplication_subtraction_and_division" class="md-nav__link">
+    1. Addition, multiplication , subtraction and division
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#universal_array_function" class="md-nav__link">
+    Universal Array function
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#statistics" class="md-nav__link">
+    Statistics
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#axis_logic" class="md-nav__link">
+    Axis Logic
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_4_3" type="checkbox" id="__nav_2_4_3" >
+      
+      <label class="md-nav__link" for="__nav_2_4_3">
+        Pandas (Under Review)
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Pandas (Under Review)" data-md-level="3">
+        <label class="md-nav__title" for="__nav_2_4_3">
+          <span class="md-nav__icon md-icon"></span>
+          Pandas (Under Review)
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Pandas/Pandas%20Crash%20course.html" class="md-nav__link">
+        Pandas Crash course
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_4_4" type="checkbox" id="__nav_2_4_4" >
+      
+      <label class="md-nav__link" for="__nav_2_4_4">
+        OpenCV
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="OpenCV" data-md-level="3">
+        <label class="md-nav__title" for="__nav_2_4_4">
+          <span class="md-nav__icon md-icon"></span>
+          OpenCV
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_4_4_1" type="checkbox" id="__nav_2_4_4_1" >
+      
+      <label class="md-nav__link" for="__nav_2_4_4_1">
+        Images Basic with OpenCV
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Images Basic with OpenCV" data-md-level="4">
+        <label class="md-nav__title" for="__nav_2_4_4_1">
+          <span class="md-nav__icon md-icon"></span>
+          Images Basic with OpenCV
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Computer%20Vision%20and%20OpenCV/Images%20Basic%20with%20OpenCV/Images_and_Numpy.html" class="md-nav__link">
+        Images and Numpy
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Computer%20Vision%20and%20OpenCV/Images%20Basic%20with%20OpenCV/Images_and_Opencv.html" class="md-nav__link">
+        Images and Opencv
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Computer%20Vision%20and%20OpenCV/Images%20Basic%20with%20OpenCV/Drawing_on_Images.html" class="md-nav__link">
+        Drawing on Images
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Computer%20Vision%20and%20OpenCV/Images%20Basic%20with%20OpenCV/Direct_drawing_with_mouse.html" class="md-nav__link">
+        Drawing with mouse
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_4_4_2" type="checkbox" id="__nav_2_4_4_2" >
+      
+      <label class="md-nav__link" for="__nav_2_4_4_2">
+        Image Processing
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Image Processing" data-md-level="4">
+        <label class="md-nav__title" for="__nav_2_4_4_2">
+          <span class="md-nav__icon md-icon"></span>
+          Image Processing
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Computer%20Vision%20and%20OpenCV/Image%20Processing/color_mapping.html" class="md-nav__link">
+        Color Mapping
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Computer%20Vision%20and%20OpenCV/Image%20Processing/blending_pasting_images.html" class="md-nav__link">
+        Blending and Pasting Images
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_4_5" type="checkbox" id="__nav_2_4_5" >
+      
+      <label class="md-nav__link" for="__nav_2_4_5">
+        Netifaces
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Netifaces" data-md-level="3">
+        <label class="md-nav__title" for="__nav_2_4_5">
+          <span class="md-nav__icon md-icon"></span>
+          Netifaces
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../netifaces/introduction.html" class="md-nav__link">
+        Introduction
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_4_6" type="checkbox" id="__nav_2_4_6" >
+      
+      <label class="md-nav__link" for="__nav_2_4_6">
+        WS Discovery
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="WS Discovery" data-md-level="3">
+        <label class="md-nav__title" for="__nav_2_4_6">
+          <span class="md-nav__icon md-icon"></span>
+          WS Discovery
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../WS_Discovery/introduction.html" class="md-nav__link">
+        Introduction
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_4_7" type="checkbox" id="__nav_2_4_7" >
+      
+      <label class="md-nav__link" for="__nav_2_4_7">
+        ONVIF-zeep-async
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="ONVIF-zeep-async" data-md-level="3">
+        <label class="md-nav__title" for="__nav_2_4_7">
+          <span class="md-nav__icon md-icon"></span>
+          ONVIF-zeep-async
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ONVIF_python_zeep_async/introduction.html" class="md-nav__link">
+        Introduction
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_4_8" type="checkbox" id="__nav_2_4_8" >
+      
+      <label class="md-nav__link" for="__nav_2_4_8">
+        Pillow
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Pillow" data-md-level="3">
+        <label class="md-nav__title" for="__nav_2_4_8">
+          <span class="md-nav__icon md-icon"></span>
+          Pillow
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Pillow/introduction.html" class="md-nav__link">
+        Introduction
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_4_9" type="checkbox" id="__nav_2_4_9" >
+      
+      <label class="md-nav__link" for="__nav_2_4_9">
+        QR Code
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="QR Code" data-md-level="3">
+        <label class="md-nav__title" for="__nav_2_4_9">
+          <span class="md-nav__icon md-icon"></span>
+          QR Code
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../QRcode/introduction.html" class="md-nav__link">
+        Introduction
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_4_10" type="checkbox" id="__nav_2_4_10" >
+      
+      <label class="md-nav__link" for="__nav_2_4_10">
+        HTTPX
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="HTTPX" data-md-level="3">
+        <label class="md-nav__title" for="__nav_2_4_10">
+          <span class="md-nav__icon md-icon"></span>
+          HTTPX
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../HTTPX/introduction.html" class="md-nav__link">
+        Introduction
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_4_11" type="checkbox" id="__nav_2_4_11" >
+      
+      <label class="md-nav__link" for="__nav_2_4_11">
+        Datamuse
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Datamuse" data-md-level="3">
+        <label class="md-nav__title" for="__nav_2_4_11">
+          <span class="md-nav__icon md-icon"></span>
+          Datamuse
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Datamuse/introduction.html" class="md-nav__link">
+        Introduction
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_5" type="checkbox" id="__nav_2_5" >
+      
+      <label class="md-nav__link" for="__nav_2_5">
+        Frameworks
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Frameworks" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_5">
+          <span class="md-nav__icon md-icon"></span>
+          Frameworks
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_5_1" type="checkbox" id="__nav_2_5_1" >
+      
+      <label class="md-nav__link" for="__nav_2_5_1">
+        Flask
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Flask" data-md-level="3">
+        <label class="md-nav__title" for="__nav_2_5_1">
+          <span class="md-nav__icon md-icon"></span>
+          Flask
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Frameworks/Flask/Introduction_and_notes.html" class="md-nav__link">
+        Introduction and notes
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Frameworks/Flask/first_app_flask.html" class="md-nav__link">
+        Quick & Dirty First App
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Frameworks/Flask/flask_structure.html" class="md-nav__link">
+        Application Layout (Structure)
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Frameworks/Flask/flask_application_factory.html" class="md-nav__link">
+        Application Factory & Run
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Frameworks/Flask/flask_database.html" class="md-nav__link">
+        Application Database
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Frameworks/Flask/flask_blueprints_part1.html" class="md-nav__link">
+        Blueprints (part 01-Auth)
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Frameworks/Flask/flask_templates.html" class="md-nav__link">
+        Templates
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Frameworks/Flask/flask_blueprints_part2.html" class="md-nav__link">
+        Blueprints (part 02-Blog)
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_5_1_9" type="checkbox" id="__nav_2_5_1_9" >
+      
+      <label class="md-nav__link" for="__nav_2_5_1_9">
+        Flask Extensions
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Flask Extensions" data-md-level="4">
+        <label class="md-nav__title" for="__nav_2_5_1_9">
+          <span class="md-nav__icon md-icon"></span>
+          Flask Extensions
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Frameworks/Flask/Extensions/forms_flask_wtf.html" class="md-nav__link">
+        Forms - Flask-WTF
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Frameworks/Flask/Extensions/database_flask_sqlalchemy.html" class="md-nav__link">
+        Databases - Flask-SQLAlchemy
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Frameworks/Flask/Extensions/database_migration_flask_migration.html" class="md-nav__link">
+        Databases(Migration) - Flask-Migration
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Frameworks/Flask/Extensions/login_flask_login.html" class="md-nav__link">
+        Login - Flask-login
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_5_2" type="checkbox" id="__nav_2_5_2" >
+      
+      <label class="md-nav__link" for="__nav_2_5_2">
+        Django
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Django" data-md-level="3">
+        <label class="md-nav__title" for="__nav_2_5_2">
+          <span class="md-nav__icon md-icon"></span>
+          Django
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Frameworks/Django/Django%20tutorial%20-%20part%2001.html" class="md-nav__link">
+        Django Tutorial (part 01)
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Frameworks/Django/Django%20tutorial%20-%20part%2002.html" class="md-nav__link">
+        Django Tutorial (part 02)
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Frameworks/Django/Django%20tutorial%20-%20part%2003.html" class="md-nav__link">
+        Django Tutorial (part 03)
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Frameworks/Django/More%20details%20about%20project%20structure.html" class="md-nav__link">
+        (Optional) More details about file structure
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_6" type="checkbox" id="__nav_2_6" >
+      
+      <label class="md-nav__link" for="__nav_2_6">
+        Projects
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Projects" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_6">
+          <span class="md-nav__icon md-icon"></span>
+          Projects
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Projects/random_password_generator.html" class="md-nav__link">
+        Random Password Generator
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_7" type="checkbox" id="__nav_2_7" >
+      
+      <label class="md-nav__link" for="__nav_2_7">
+        Scripts & Algorithms
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Scripts & Algorithms" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_7">
+          <span class="md-nav__icon md-icon"></span>
+          Scripts & Algorithms
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Scripts/create_excel_files.html" class="md-nav__link">
+        Create Excel Files With Python
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Scripts/create_dataset_api_python.html" class="md-nav__link">
+        Creating a dataset with api and python
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Scripts/Scraping_Usign_Python.html" class="md-nav__link">
+        Scraping Usign Python
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Scripts/JSON%20Objects%20in%20Python.html" class="md-nav__link">
+        JSON Object in python
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Scripts/Scrapy_and_Scrapyrt.html" class="md-nav__link">
+        Scrapy and Scrapyrt
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Scripts/Magic_square.html" class="md-nav__link">
+        Magic Square
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../virtual_environments.html" class="md-nav__link">
+        Virtual Environments
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" >
+      
+      <label class="md-nav__link" for="__nav_3">
+        SQL
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="SQL" data-md-level="1">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          SQL
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../SQL/Some_SQL.html" class="md-nav__link">
+        Random notes about SQL
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../SQL/String_Functions_SQL.html" class="md-nav__link">
+        String Funtions SQL
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../SQL/Advance_Funtion_SQL.html" class="md-nav__link">
+        Advance Funtion SQL
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" >
+      
+      <label class="md-nav__link" for="__nav_4">
+        Arduino
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Arduino" data-md-level="1">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          Arduino
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_1" type="checkbox" id="__nav_4_1" >
+      
+      <label class="md-nav__link" for="__nav_4_1">
+        Structure
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Structure" data-md-level="2">
+        <label class="md-nav__title" for="__nav_4_1">
+          <span class="md-nav__icon md-icon"></span>
+          Structure
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Arduino/Structure/Sketch.html" class="md-nav__link">
+        Sketch
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Arduino/Structure/Control_Structure.html" class="md-nav__link">
+        Control Structure
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Arduino/Structure/Further_Syntax.html" class="md-nav__link">
+        Further Syntax
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_2" type="checkbox" id="__nav_4_2" >
+      
+      <label class="md-nav__link" for="__nav_4_2">
+        Variables
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Variables" data-md-level="2">
+        <label class="md-nav__title" for="__nav_4_2">
+          <span class="md-nav__icon md-icon"></span>
+          Variables
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Arduino/Variables/Constants_and_Data_Types.html" class="md-nav__link">
+        Constants and Data Types
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Arduino/Variables/Conversion.html" class="md-nav__link">
+        Conversion
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Arduino/Variables/Variable_Scope_Qualifiers.html" class="md-nav__link">
+        Variable Scope & Qualifiers
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_3" type="checkbox" id="__nav_4_3" >
+      
+      <label class="md-nav__link" for="__nav_4_3">
+        Functions
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Functions" data-md-level="2">
+        <label class="md-nav__title" for="__nav_4_3">
+          <span class="md-nav__icon md-icon"></span>
+          Functions
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Arduino/Functions/Digital_and_Analog.html" class="md-nav__link">
+        Digital I/O and Analog I/O
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Arduino/Functions/Time.html" class="md-nav__link">
+        Time
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Arduino/Functions/Math_and_Trigonometry.html" class="md-nav__link">
+        Math and Trigonometry
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Arduino/Functions/Characters.html" class="md-nav__link">
+        Characters
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Arduino/Functions/Random_Numbers.html" class="md-nav__link">
+        Random Numbers
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Arduino/Functions/Communication.html" class="md-nav__link">
+        Communication
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Arduino/Functions/Interrupts_and_External_Interruptions.html" class="md-nav__link">
+        Interrupts and External Interruptions
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_4" type="checkbox" id="__nav_4_4" >
+      
+      <label class="md-nav__link" for="__nav_4_4">
+        Projects
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Projects" data-md-level="2">
+        <label class="md-nav__title" for="__nav_4_4">
+          <span class="md-nav__icon md-icon"></span>
+          Projects
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Arduino/Projects/Morse_code_Translator.html" class="md-nav__link">
+        Morse code Translator
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Arduino/Projects/Air_vent_servo_control.html" class="md-nav__link">
+        Air Vent servo control
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" type="checkbox" id="__nav_5" >
+      
+      <label class="md-nav__link" for="__nav_5">
+        APIs
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="APIs" data-md-level="1">
+        <label class="md-nav__title" for="__nav_5">
+          <span class="md-nav__icon md-icon"></span>
+          APIs
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../APIs/datamuse.html" class="md-nav__link">
+        datamuse
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6" type="checkbox" id="__nav_6" >
+      
+      <label class="md-nav__link" for="__nav_6">
+        PowerLanguages
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="PowerLanguages" data-md-level="1">
+        <label class="md-nav__title" for="__nav_6">
+          <span class="md-nav__icon md-icon"></span>
+          PowerLanguages
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../PowerLanguages/PowerLanguages_001.html" class="md-nav__link">
+        Reference
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../PowerLanguages/Reserved%20words.html" class="md-nav__link">
+        Reserved words
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../PowerLanguages/how_script_works.html" class="md-nav__link">
+        How Scripts Work
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../PowerLanguages/functions.html" class="md-nav__link">
+        Functions
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../PowerLanguages/Plot.html" class="md-nav__link">
+        Plot
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../PowerLanguages/text_trendlines.html" class="md-nav__link">
+        Text and Trendlines
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7" type="checkbox" id="__nav_7" >
+      
+      <label class="md-nav__link" for="__nav_7">
+        Raspberry
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Raspberry" data-md-level="1">
+        <label class="md-nav__title" for="__nav_7">
+          <span class="md-nav__icon md-icon"></span>
+          Raspberry
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Raspberry/samba.html" class="md-nav__link">
+        Samba Server
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Raspberry/Nagios.html" class="md-nav__link">
+        Nagios Core
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Raspberry/How_install_openCV_raspberry.html" class="md-nav__link">
+        How to Install OpenCv on Raspberry pi
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Raspberry/Password_related_raspberry.html" class="md-nav__link">
+        Raspberry Password Pelated
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Raspberry/setting_openmediavault.html" class="md-nav__link">
+        Setting Open Media Vault
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_8" type="checkbox" id="__nav_8" >
+      
+      <label class="md-nav__link" for="__nav_8">
+        CCTV
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="CCTV" data-md-level="1">
+        <label class="md-nav__title" for="__nav_8">
+          <span class="md-nav__icon md-icon"></span>
+          CCTV
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../CCTV/Basic_concepts.html" class="md-nav__link">
+        Basic Concepts
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_8_2" type="checkbox" id="__nav_8_2" >
+      
+      <label class="md-nav__link" for="__nav_8_2">
+        ACTi URL commands
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="ACTi URL commands" data-md-level="2">
+        <label class="md-nav__title" for="__nav_8_2">
+          <span class="md-nav__icon md-icon"></span>
+          ACTi URL commands
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../CCTV/ACTi/ACTi_URL_Commands.html" class="md-nav__link">
+        URL Commands Basics
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../CCTV/wireshark.html" class="md-nav__link">
+        Wireshark
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_9" type="checkbox" id="__nav_9" >
+      
+      <label class="md-nav__link" for="__nav_9">
+        3D Printing
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="3D Printing" data-md-level="1">
+        <label class="md-nav__title" for="__nav_9">
+          <span class="md-nav__icon md-icon"></span>
+          3D Printing
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../3D%20Printing/Concepts.html" class="md-nav__link">
+        Concepts
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../3D%20Printing/gcode.html" class="md-nav__link">
+        G-code
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_9_3" type="checkbox" id="__nav_9_3" >
+      
+      <label class="md-nav__link" for="__nav_9_3">
+        Setup and Calibration
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Setup and Calibration" data-md-level="2">
+        <label class="md-nav__title" for="__nav_9_3">
+          <span class="md-nav__icon md-icon"></span>
+          Setup and Calibration
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../3D%20Printing/Setup%20and%20Calibration/Center%20and%20Z%20offset.html" class="md-nav__link">
+        Center and Z offset
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../3D%20Printing/Setup%20and%20Calibration/E-steps%20and%20Extrutor%20multiplie.html" class="md-nav__link">
+        E-steps and Extrutor multiplier
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../3D%20Printing/Setup%20and%20Calibration/Debuging%20and%20Logging.html" class="md-nav__link">
+        Debuging and Logging
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_9_4" type="checkbox" id="__nav_9_4" >
+      
+      <label class="md-nav__link" for="__nav_9_4">
+        Projects
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Projects" data-md-level="2">
+        <label class="md-nav__title" for="__nav_9_4">
+          <span class="md-nav__icon md-icon"></span>
+          Projects
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../3D%20Printing/Projects/Moving%20Electronics.html" class="md-nav__link">
+        Moving Electronics
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../3D%20Printing/about%20design.html" class="md-nav__link">
+        About design
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_10" type="checkbox" id="__nav_10" >
+      
+      <label class="md-nav__link" for="__nav_10">
+        Miscellaneous
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Miscellaneous" data-md-level="1">
+        <label class="md-nav__title" for="__nav_10">
+          <span class="md-nav__icon md-icon"></span>
+          Miscellaneous
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_10_1" type="checkbox" id="__nav_10_1" >
+      
+      <label class="md-nav__link" for="__nav_10_1">
+        Courses
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Courses" data-md-level="2">
+        <label class="md-nav__title" for="__nav_10_1">
+          <span class="md-nav__icon md-icon"></span>
+          Courses
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_10_1_1" type="checkbox" id="__nav_10_1_1" >
+      
+      <label class="md-nav__link" for="__nav_10_1_1">
+        Coursera
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Coursera" data-md-level="3">
+        <label class="md-nav__title" for="__nav_10_1_1">
+          <span class="md-nav__icon md-icon"></span>
+          Coursera
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_10_1_1_1" type="checkbox" id="__nav_10_1_1_1" >
+      
+      <label class="md-nav__link" for="__nav_10_1_1_1">
+        Introduction tensorflow
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Introduction tensorflow" data-md-level="4">
+        <label class="md-nav__title" for="__nav_10_1_1_1">
+          <span class="md-nav__icon md-icon"></span>
+          Introduction tensorflow
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Miscellaneous/Courses/Coursera/Introduction%20tensorflow/The%20Hello%20World%20of%20neural%20networks.html" class="md-nav__link">
+        The Hello World of neural networks
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Miscellaneous/Courses/Coursera/Introduction%20tensorflow/Introduction%20to%20computer%20vision.html" class="md-nav__link">
+        Introduction to Computer vision
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Miscellaneous/Courses/Coursera/Introduction%20tensorflow/Convolutional_Neural_network_Overview.html" class="md-nav__link">
+        Convolutional Neural network Overview
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Miscellaneous/Courses/Coursera/Introduction%20tensorflow/Enhancing_vision_with_convolutional_Neural_Networks.html" class="md-nav__link">
+        Enhancing vision with convolutional Neural Networks
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Miscellaneous/Courses/Coursera/Introduction%20tensorflow/Step_by_step_Convolutions.html" class="md-nav__link">
+        (Code) Step by step Convolutions
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Miscellaneous/Courses/Coursera/Introduction%20tensorflow/Using_Real_world_Image.html" class="md-nav__link">
+        Using Real-World Images
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_10_1_1_2" type="checkbox" id="__nav_10_1_1_2" >
+      
+      <label class="md-nav__link" for="__nav_10_1_1_2">
+        Convolutional Neural Networks in TensorFlow
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Convolutional Neural Networks in TensorFlow" data-md-level="4">
+        <label class="md-nav__title" for="__nav_10_1_1_2">
+          <span class="md-nav__icon md-icon"></span>
+          Convolutional Neural Networks in TensorFlow
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Miscellaneous/Courses/Coursera/Convolutional%20Neural%20Networks%20in%20TensorFlow/exploring_large_dataset.html" class="md-nav__link">
+        Exploring large Datasets - Cats vs Dogs
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Miscellaneous/Courses/Coursera/Convolutional%20Neural%20Networks%20in%20TensorFlow/Augmentation_technique_to_avoid_overfitting.html" class="md-nav__link">
+        Augmentation
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Miscellaneous/Courses/Coursera/Convolutional%20Neural%20Networks%20in%20TensorFlow/Transfer_Learning.html" class="md-nav__link">
+        Transfer Learning
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_10_1_2" type="checkbox" id="__nav_10_1_2" >
+      
+      <label class="md-nav__link" for="__nav_10_1_2">
+        Udemy
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Udemy" data-md-level="3">
+        <label class="md-nav__title" for="__nav_10_1_2">
+          <span class="md-nav__icon md-icon"></span>
+          Udemy
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_10_1_2_1" type="checkbox" id="__nav_10_1_2_1" >
+      
+      <label class="md-nav__link" for="__nav_10_1_2_1">
+        Complete Tensorflow 2 and Keras Deep Learning Bootcamp
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Complete Tensorflow 2 and Keras Deep Learning Bootcamp" data-md-level="4">
+        <label class="md-nav__title" for="__nav_10_1_2_1">
+          <span class="md-nav__icon md-icon"></span>
+          Complete Tensorflow 2 and Keras Deep Learning Bootcamp
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Miscellaneous/Courses/Udemy/Complete%20Tensorflow%202%20and%20Keras%20Deep%20Learning%20Bootcamp/Visualization_Crash_course.html" class="md-nav__link">
+        Visualization Crash course
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Miscellaneous/Courses/Udemy/Complete%20Tensorflow%202%20and%20Keras%20Deep%20Learning%20Bootcamp/ANN.html" class="md-nav__link">
+        Artificial Neural Network
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_10_2" type="checkbox" id="__nav_10_2" >
+      
+      <label class="md-nav__link" for="__nav_10_2">
+        For Certifications
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="For Certifications" data-md-level="2">
+        <label class="md-nav__title" for="__nav_10_2">
+          <span class="md-nav__icon md-icon"></span>
+          For Certifications
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_10_2_1" type="checkbox" id="__nav_10_2_1" >
+      
+      <label class="md-nav__link" for="__nav_10_2_1">
+        Python(PCPP-32-1)
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Python(PCPP-32-1)" data-md-level="3">
+        <label class="md-nav__title" for="__nav_10_2_1">
+          <span class="md-nav__icon md-icon"></span>
+          Python(PCPP-32-1)
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Miscellaneous/For%20Certifications/Python/Preparation%20for%20PCPP-32-1/Module%201.html" class="md-nav__link">
+        Module 1
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Miscellaneous/For%20Certifications/Python/Preparation%20for%20PCPP-32-1/Module%202.html" class="md-nav__link">
+        Module 2
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Miscellaneous/Aliases_in_Windows_command_prompt.html" class="md-nav__link">
+        Aliases in Windows command prompt
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Miscellaneous/OAuth_2.html" class="md-nav__link">
+        OAuth 2
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Miscellaneous/Random%20Link.html" class="md-nav__link">
+        Random
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Miscellaneous/Sublime_text.html" class="md-nav__link">
+        Configuration for Sublime Text 3
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../about.html" class="md-nav__link">
+        About
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Helpers.html" class="md-nav__link">
+        Helpers
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#using_numpy" class="md-nav__link">
+    Using NumPy
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#numpy_arrays" class="md-nav__link">
+    NumPy Arrays
+  </a>
+  
+    <nav class="md-nav" aria-label="NumPy Arrays">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#create_numpy_arrays" class="md-nav__link">
+    Create NumPy Arrays
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#build-in_methods" class="md-nav__link">
+    Build-in Methods
+  </a>
+  
+    <nav class="md-nav" aria-label="Build-in Methods">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#arange" class="md-nav__link">
+    arange
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#zeros_and_ones" class="md-nav__link">
+    zeros and ones
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#linspace" class="md-nav__link">
+    linspace
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#eye_identity_matrix" class="md-nav__link">
+    eye identity matrix
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#random" class="md-nav__link">
+    Random
+  </a>
+  
+    <nav class="md-nav" aria-label="Random">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#rand" class="md-nav__link">
+    rand
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#randint" class="md-nav__link">
+    randint
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#seed" class="md-nav__link">
+    seed
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#array_attributes_and_methods" class="md-nav__link">
+    Array Attributes and Methods
+  </a>
+  
+    <nav class="md-nav" aria-label="Array Attributes and Methods">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#reshape_-_reshape" class="md-nav__link">
+    Reshape - reshape
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#max_min_argmax_argmin_-_maxminargmaxargmin" class="md-nav__link">
+    max, min, argmax, argmin - max,min,argmax,argmin
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#shape_-_shape" class="md-nav__link">
+    Shape - shape
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dtype" class="md-nav__link">
+    dtype
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#numpy_indexing_and_selection" class="md-nav__link">
+    Numpy Indexing and Selection
+  </a>
+  
+    <nav class="md-nav" aria-label="Numpy Indexing and Selection">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1_create_an_array" class="md-nav__link">
+    1. Create an array
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2_select_a_single_element" class="md-nav__link">
+    2. Select a single element
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3_select_a_range_of_elements" class="md-nav__link">
+    3. Select a range of elements
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#broadcasting" class="md-nav__link">
+    Broadcasting
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#indexing_2d_arrays_matrices" class="md-nav__link">
+    Indexing 2d arrays (matrices)
+  </a>
+  
+    <nav class="md-nav" aria-label="Indexing 2d arrays (matrices)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1_create_the_matrix" class="md-nav__link">
+    1. Create the matrix
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2_select_base_in_index" class="md-nav__link">
+    2. Select base in index
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3_select_a_matrix_inside_the_matrix" class="md-nav__link">
+    3. select a matrix inside the matrix
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#conditional_selection" class="md-nav__link">
+    Conditional selection
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#operations" class="md-nav__link">
+    Operations
+  </a>
+  
+    <nav class="md-nav" aria-label="Operations">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#arithmetic" class="md-nav__link">
+    Arithmetic
+  </a>
+  
+    <nav class="md-nav" aria-label="Arithmetic">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1_addition_multiplication_subtraction_and_division" class="md-nav__link">
+    1. Addition, multiplication , subtraction and division
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#universal_array_function" class="md-nav__link">
+    Universal Array function
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#statistics" class="md-nav__link">
+    Statistics
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#axis_logic" class="md-nav__link">
+    Axis Logic
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                  <a href="https://github.com/CubeVic/My_notes/edit/master/docs/Python/Libraries_and_Modules/Numpy/Numpy Crash course.md" title="Edit this page" class="md-content__button md-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
+                  </a>
+                
+                
+                  <h1>Numpy Crash course</h1>
+                
+                <p>This notes  are notes for the Numpy crash course.</p>
+<p>Numpy is a linear library for Python, it is an essential building block for other PyData ecosystem ( Pandas, scipy, scikit-lean, etc)</p>
+<h2 id="using_numpy">Using NumPy<a class="headerlink" href="#using_numpy" title="Permanent link">&para;</a></h2>
+<p>Normally numpy is import as <code>np</code></p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span></pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+</code></pre></div>
+</td></tr></table>
+<h2 id="numpy_arrays">NumPy Arrays<a class="headerlink" href="#numpy_arrays" title="Permanent link">&para;</a></h2>
+<p>NumPy came in vector and matrices, Vectors are 1 dimension, matrix are 2D dimensions.</p>
+<h3 id="create_numpy_arrays">Create NumPy Arrays<a class="headerlink" href="#create_numpy_arrays" title="Permanent link">&para;</a></h3>
+<p>we can create an array from a python list</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span></pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="n">my_list</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">]</span>
+<span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">my_list</span><span class="p">)</span>
+<span class="c1"># array([1, 2, 3])</span>
+</code></pre></div>
+</td></tr></table>
+<p>and can be a list of list as well</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span></pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="n">my_matrix</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">],[</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">],[</span><span class="mi">7</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">9</span><span class="p">]]</span>
+<span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">my_matrix</span><span class="p">)</span>
+<span class="c1">#array([[1, 2, 3],</span>
+<span class="c1">#       [4, 5, 6],</span>
+<span class="c1">#       [7, 8, 9]])</span>
+</code></pre></div>
+</td></tr></table>
+<h2 id="build-in_methods">Build-in Methods<a class="headerlink" href="#build-in_methods" title="Permanent link">&para;</a></h2>
+<h3 id="arange"><code>arange</code><a class="headerlink" href="#arange" title="Permanent link">&para;</a></h3>
+<p>Return evenly spaced value within a given interval</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">10</span><span class="p">)</span>
+<span class="c1"># array([0,1,2,3,4,5,6,7,8,9])</span>
+<span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">11</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
+<span class="c1"># array([0, 2, 4, 6, 8, 10])</span>
+</code></pre></div>
+</td></tr></table>
+<h3 id="zeros_and_ones"><code>zeros</code> and <code>ones</code><a class="headerlink" href="#zeros_and_ones" title="Permanent link">&para;</a></h3>
+<p>Generate vectors or matrix of zeros or ones</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span></pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="n">np</span><span class="o">.</span><span class="n">zero</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+<span class="c1"># array([0. , 0. , 0.])</span>
+
+<span class="n">np</span><span class="o">.</span><span class="n">zero</span><span class="p">((</span><span class="mi">5</span><span class="p">,</span><span class="mi">5</span><span class="p">))</span>
+<span class="c1"># array([[0., 0., 0., 0., 0.],</span>
+<span class="c1">#        [0., 0., 0., 0., 0.],</span>
+<span class="c1">#        [0., 0., 0., 0., 0.],</span>
+<span class="c1">#        [0., 0., 0., 0., 0.],</span>
+<span class="c1">#        [0., 0., 0., 0., 0.]])</span>
+
+<span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+<span class="c1"># array([1., 1., 1.])</span>
+
+<span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">((</span><span class="mi">3</span><span class="p">,</span><span class="mi">3</span><span class="p">))</span>
+<span class="c1"># array([[1., 1., 1.],</span>
+<span class="c1">#       [1., 1., 1.],</span>
+<span class="c1">#       [1., 1., 1.]])</span>
+</code></pre></div>
+</td></tr></table>
+<h3 id="linspace"><code>linspace</code><a class="headerlink" href="#linspace" title="Permanent link">&para;</a></h3>
+<p>Return evenly spaced numbers over a specific interval</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span></pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span><span class="mi">3</span><span class="p">)</span>
+<span class="c1"># array([0., 5., 10.])</span>
+
+<span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">20</span><span class="p">)</span>
+<span class="c1"># array([0.        , 0.26315789, 0.52631579, 0.78947368, 1.05263158,</span>
+<span class="c1">#       1.31578947, 1.57894737, 1.84210526, 2.10526316, 2.36842105,</span>
+<span class="c1">#       2.63157895, 2.89473684, 3.15789474, 3.42105263, 3.68421053,</span>
+<span class="c1">#       3.94736842, 4.21052632, 4.47368421, 4.73684211, 5.        ])</span>
+
+<span class="c1">#Note that .linspace() includes the stop value. To obtain an array of common fractions, increase the number of items:</span>
+
+<span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">21</span><span class="p">)</span>
+<span class="c1"># array([0.  , 0.25, 0.5 , 0.75, 1.  , 1.25, 1.5 , 1.75, 2.  , 2.25, 2.5 ,</span>
+<span class="c1">#       2.75, 3.  , 3.25, 3.5 , 3.75, 4.  , 4.25, 4.5 , 4.75, 5.  ])</span>
+</code></pre></div>
+</td></tr></table>
+<h3 id="eye_identity_matrix"><code>eye</code> identity matrix<a class="headerlink" href="#eye_identity_matrix" title="Permanent link">&para;</a></h3>
+<p>Create a identity matrix</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span></pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="n">np</span><span class="o">.</span><span class="n">eye</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
+<span class="c1"># array([[1., 0., 0., 0.],</span>
+<span class="c1">#       [0., 1., 0., 0.],</span>
+<span class="c1">#       [0., 0., 1., 0.],</span>
+<span class="c1">#       [0., 0., 0., 1.]])</span>
+</code></pre></div>
+</td></tr></table>
+<h2 id="random">Random<a class="headerlink" href="#random" title="Permanent link">&para;</a></h2>
+<p>Here some of the ways we can create random numbers </p>
+<h3 id="rand"><code>rand</code><a class="headerlink" href="#rand" title="Permanent link">&para;</a></h3>
+<p>Creates an array of the given shape with random uniform distribution over <code>[0,1)</code></p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span>
+<span class="normal">8</span></pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">rand</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+<span class="c1"># array([0.37065108, 0.89813878])</span>
+<span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">rand</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span><span class="mi">5</span><span class="p">)</span>
+<span class="c1"># array([[0.03932992, 0.80719137, 0.50145497, 0.68816102, 0.1216304 ],</span>
+<span class="c1">#       [0.44966851, 0.92572848, 0.70802042, 0.10461719, 0.53768331],</span>
+<span class="c1">#       [0.12201904, 0.5940684 , 0.89979774, 0.3424078 , 0.77421593],</span>
+<span class="c1">#       [0.53191409, 0.0112285 , 0.3989947 , 0.8946967 , 0.2497392 ],</span>
+<span class="c1">#       [0.5814085 , 0.37563686, 0.15266028, 0.42948309, 0.26434141]])</span>
+</code></pre></div>
+</td></tr></table>
+<h3 id="randint"><code>randint</code><a class="headerlink" href="#randint" title="Permanent link">&para;</a></h3>
+<p>This generate a integer from low (inclusive) to high (exclusive)</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">100</span><span class="p">)</span>
+<span class="c1">#61</span>
+<span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">100</span><span class="p">,</span><span class="mi">10</span><span class="p">)</span>
+<span class="c1"># array([39, 50, 72, 18,27, 59, 15, 97, 11, 14])</span>
+</code></pre></div>
+</td></tr></table>
+<h3 id="seed"><code>seed</code><a class="headerlink" href="#seed" title="Permanent link">&para;</a></h3>
+<p>It is use to create a random state that can be reproducible, i means, the result will be the same everything we use the same seed </p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span></pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span><span class="mi">42</span><span class="p">)</span>
+<span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">rand</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
+<span class="c1"># array([0.37454012, 0.95071431, 0.73199394, 0.59865848])</span>
+
+<span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span><span class="mi">42</span><span class="p">)</span>
+<span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">rand</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
+<span class="c1"># array([0.37454012, 0.95071431, 0.73199394, 0.59865848])</span>
+</code></pre></div>
+</td></tr></table>
+<h2 id="array_attributes_and_methods">Array Attributes and Methods<a class="headerlink" href="#array_attributes_and_methods" title="Permanent link">&para;</a></h2>
+<p>To explain the attributes and methods we need to create a vector and matrix</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span></pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="n">arr</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">25</span><span class="p">)</span>
+<span class="c1"># array([ 0,  1,  2,  3,  4,  5,  6,  7,  8,  9, 10, 11, 12, 13, 14, 15, 16,</span>
+<span class="c1">#       17, 18, 19, 20, 21, 22, 23, 24])</span>
+<span class="n">ranarr</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">50</span><span class="p">,</span><span class="mi">10</span><span class="p">)</span>
+<span class="c1"># array([38, 18, 22, 10, 10, 23, 35, 39, 23,  2])</span>
+</code></pre></div>
+</td></tr></table>
+<h3 id="reshape_-_reshape">Reshape - <code>reshape</code><a class="headerlink" href="#reshape_-_reshape" title="Permanent link">&para;</a></h3>
+<p>Return the same data of the vector or matrix but in a different shape</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span></pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="n">arr</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span><span class="mi">5</span><span class="p">)</span>
+<span class="c1"># array([[ 0,  1,  2,  3,  4],</span>
+<span class="c1">#       [ 5,  6,  7,  8,  9],</span>
+<span class="c1">#       [10, 11, 12, 13, 14],</span>
+<span class="c1">#       [15, 16, 17, 18, 19],</span>
+<span class="c1">#       [20, 21, 22, 23, 24]])</span>
+</code></pre></div>
+</td></tr></table>
+<h3 id="max_min_argmax_argmin_-_maxminargmaxargmin">max, min, argmax, argmin - <code>max</code>,<code>min</code>,<code>argmax</code>,<code>argmin</code><a class="headerlink" href="#max_min_argmax_argmin_-_maxminargmaxargmin" title="Permanent link">&para;</a></h3>
+<p>Let start with <code>ranarr</code></p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="n">ranarr</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">50</span><span class="p">,</span><span class="mi">10</span><span class="p">)</span>
+<span class="c1"># array([38, 18, 22, 10, 10, 23, 35, 39, 23,  2])</span>
+</code></pre></div>
+</td></tr></table>
+<p>the maximum number in the array</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="n">ranarr</span><span class="o">.</span><span class="n">max</span><span class="p">()</span>
+<span class="c1"># 39</span>
+</code></pre></div>
+</td></tr></table>
+<p>the index of this maximum number</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="n">ranarr</span><span class="o">.</span><span class="n">argmax</span><span class="p">()</span>
+<span class="c1"># 7</span>
+</code></pre></div>
+</td></tr></table>
+<p>now for the minimum </p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="n">ranarr</span><span class="o">.</span><span class="n">min</span><span class="p">()</span>
+<span class="c1"># 2</span>
+<span class="n">ranarr</span><span class="o">.</span><span class="n">argmin</span><span class="p">()</span>
+<span class="c1"># 9</span>
+</code></pre></div>
+</td></tr></table>
+<h3 id="shape_-_shape">Shape - <code>shape</code><a class="headerlink" href="#shape_-_shape" title="Permanent link">&para;</a></h3>
+<p>shape is an attribute and not a method</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span>
+<span class="normal">26</span>
+<span class="normal">27</span>
+<span class="normal">28</span>
+<span class="normal">29</span>
+<span class="normal">30</span>
+<span class="normal">31</span>
+<span class="normal">32</span>
+<span class="normal">33</span>
+<span class="normal">34</span>
+<span class="normal">35</span>
+<span class="normal">36</span>
+<span class="normal">37</span>
+<span class="normal">38</span>
+<span class="normal">39</span>
+<span class="normal">40</span>
+<span class="normal">41</span></pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="c1"># Vector</span>
+<span class="n">arr</span><span class="o">.</span><span class="n">shape</span>
+<span class="c1">#(25,)</span>
+
+<span class="c1"># Notice the two sets of brackets</span>
+<span class="n">arr</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">25</span><span class="p">)</span>
+<span class="c1"># array([[ 0,  1,  2,  3,  4,  5,  6,  7,  8,  9, 10, 11, 12, 13, 14, 15,</span>
+<span class="c1">#        16, 17, 18, 19, 20, 21, 22, 23, 24]])</span>
+
+<span class="n">arr</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">25</span><span class="p">)</span><span class="o">.</span><span class="n">shape</span>
+<span class="c1"># (1, 25)</span>
+
+<span class="n">arr</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="mi">25</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
+<span class="c1">#array([[ 0],</span>
+<span class="c1">#       [ 1],</span>
+<span class="c1">#       [ 2],</span>
+<span class="c1">#       [ 3],</span>
+<span class="c1">#       [ 4],</span>
+<span class="c1">#       [ 5],</span>
+<span class="c1">#       [ 6],</span>
+<span class="c1">#       [ 7],</span>
+<span class="c1">#       [ 8],</span>
+<span class="c1">#       [ 9],</span>
+<span class="c1">#       [10],</span>
+<span class="c1">#       [11],</span>
+<span class="c1">#       [12],</span>
+<span class="c1">#       [13],</span>
+<span class="c1">#       [14],</span>
+<span class="c1">#       [15],</span>
+<span class="c1">#       [16],</span>
+<span class="c1">#       [17],</span>
+<span class="c1">#       [18],</span>
+<span class="c1">#       [19],</span>
+<span class="c1">#       [20],</span>
+<span class="c1">#       [21],</span>
+<span class="c1">#       [22],</span>
+<span class="c1">#       [23],</span>
+<span class="c1">#       [24]])</span>
+
+<span class="n">arr</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="mi">25</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">shape</span>
+<span class="c1"># (25, 1)</span>
+</code></pre></div>
+</td></tr></table>
+<h2 id="dtype"><code>dtype</code><a class="headerlink" href="#dtype" title="Permanent link">&para;</a></h2>
+<p>In order to know the data type of the object </p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span></pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="n">arr</span><span class="o">.</span><span class="n">dtype</span>
+<span class="c1"># dtype(&#39;int32&#39;)</span>
+
+<span class="n">arr2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">1.2</span><span class="p">,</span> <span class="mf">3.4</span><span class="p">,</span> <span class="mf">5.6</span><span class="p">])</span>
+<span class="n">arr2</span><span class="o">.</span><span class="n">dtype</span>
+
+<span class="c1">#dtype(&#39;float64&#39;)</span>
+</code></pre></div>
+</td></tr></table>
+<h2 id="numpy_indexing_and_selection">Numpy Indexing and Selection<a class="headerlink" href="#numpy_indexing_and_selection" title="Permanent link">&para;</a></h2>
+<p>To select an item in the array we can use a syntax similar to the one use to pick up elements of a list, in the following example we will:</p>
+<h4 id="1_create_an_array">1. Create an array<a class="headerlink" href="#1_create_an_array" title="Permanent link">&para;</a></h4>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span><span class="c1">#create an array</span>
+<span class="n">arr</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">11</span><span class="p">)</span>
+</code></pre></div>
+</td></tr></table>
+<h4 id="2_select_a_single_element">2. Select a single element<a class="headerlink" href="#2_select_a_single_element" title="Permanent link">&para;</a></h4>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="n">arr</span><span class="p">[</span><span class="mi">7</span><span class="p">]</span>
+<span class="c1">#7</span>
+</code></pre></div>
+</td></tr></table>
+<h4 id="3_select_a_range_of_elements">3. Select a range of elements<a class="headerlink" href="#3_select_a_range_of_elements" title="Permanent link">&para;</a></h4>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="n">arr</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">5</span><span class="p">]</span>
+<span class="c1">#array([0,1,2,3,4])\</span>
+</code></pre></div>
+</td></tr></table>
+<h3 id="broadcasting">Broadcasting<a class="headerlink" href="#broadcasting" title="Permanent link">&para;</a></h3>
+<p>The differences between Python list and Numpy arrays can be simplify as; python list you can <strong>only reassign values</strong> to part of the list with the same size and shape, if you want to replace X number of elements you will need to pass in a new x element list, this is explain better with an example.</p>
+<p>In the example:<br />
+1. Create an array.<br />
+2. Slice part of the array.<br />
+3. We will change the sliced array.  <br />
+4. Display the original array. </p>
+<p>Notice the elements of the array, that belong to the sliced array, were change. This is because the data is not copied in order to avoid memory problems. </p>
+<p><img alt="numpy broadcasting" src="images/numpy_001.png" /></p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span></pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="c1">#create an array </span>
+<span class="n">arr</span><span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">10</span><span class="p">)</span>
+<span class="c1">#slice the array</span>
+<span class="n">sliced_arr</span> <span class="o">=</span> <span class="n">arr</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">6</span><span class="p">]</span>
+<span class="c1">#change the values in the slice</span>
+<span class="n">sliced_arr</span><span class="p">[:]</span> <span class="o">=</span> <span class="mi">100</span>
+<span class="c1"># print the original array to show the changes</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">arr</span><span class="p">)</span>
+<span class="c1">#array([100, 100, 100, 100, 100, 100,   6,   7,   8,   9])</span>
+</code></pre></div>
+</td></tr></table>
+<blockquote>
+<p>If you want to make a copy of the array you can use <code>copy()</code> like <code>new_arr = arr.copy()</code></p>
+</blockquote>
+<h3 id="indexing_2d_arrays_matrices">Indexing 2d arrays (matrices)<a class="headerlink" href="#indexing_2d_arrays_matrices" title="Permanent link">&para;</a></h3>
+<p>The syntax will be <strong>arr_2d[row][col]</strong> or <strong>arr_2d[row,col]</strong>, the latter the most common used.</p>
+<h4 id="1_create_the_matrix">1. Create the matrix<a class="headerlink" href="#1_create_the_matrix" title="Permanent link">&para;</a></h4>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="n">arr_2d</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">([</span><span class="mi">5</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span><span class="mi">15</span><span class="p">],[</span><span class="mi">20</span><span class="p">,</span><span class="mi">25</span><span class="p">,</span><span class="mi">30</span><span class="p">],[</span><span class="mi">35</span><span class="p">,</span><span class="mi">40</span><span class="p">,</span><span class="mi">45</span><span class="p">])</span>
+</code></pre></div>
+</td></tr></table>
+<h4 id="2_select_base_in_index">2. Select base in index<a class="headerlink" href="#2_select_base_in_index" title="Permanent link">&para;</a></h4>
+<p>a row</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="n">arr_2d</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+<span class="c1">#array([20,25,30])</span>
+</code></pre></div>
+</td></tr></table>
+<p>a value</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="n">arr_2d</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
+<span class="c1">#20</span>
+</code></pre></div>
+</td></tr></table>
+<h4 id="3_select_a_matrix_inside_the_matrix">3. select a matrix inside the matrix<a class="headerlink" href="#3_select_a_matrix_inside_the_matrix" title="Permanent link">&para;</a></h4>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span></pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="n">arr_2d</span><span class="p">[:</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">:]</span> <span class="c1"># top right corner</span>
+<span class="c1"># array([25,30],</span>
+<span class="c1">#       [40,45])</span>
+</code></pre></div>
+</td></tr></table>
+<h3 id="conditional_selection">Conditional selection<a class="headerlink" href="#conditional_selection" title="Permanent link">&para;</a></h3>
+<p>We can select elements of the arrays base in a condition, let say we want to know what elements are bigger than 4.</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span></pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="n">arr</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">10</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">arr</span><span class="o">&gt;</span><span class="mi">4</span><span class="p">)</span>
+<span class="c1">#array([False, False, False, False,  True,  True,  True,  True,  True,</span>
+<span class="c1">#        True])</span>
+</code></pre></div>
+</td></tr></table>
+<p>we can save this array of boolean values and use it to slice or select elements of the original array base in this condition </p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span></pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="n">bool_arr</span> <span class="o">=</span> <span class="n">arr</span><span class="o">&gt;</span><span class="mi">4</span>
+<span class="n">arr</span><span class="p">[</span><span class="n">bool_arr</span><span class="p">]</span>
+<span class="c1"># array([ 5,  6,  7,  8,  9, 10])</span>
+<span class="n">arr</span><span class="p">[</span><span class="n">arr</span><span class="o">&gt;</span><span class="mi">4</span><span class="p">]</span>
+<span class="c1"># array([ 5,  6,  7,  8,  9, 10])</span>
+</code></pre></div>
+</td></tr></table>
+<h2 id="operations">Operations<a class="headerlink" href="#operations" title="Permanent link">&para;</a></h2>
+<h3 id="arithmetic">Arithmetic<a class="headerlink" href="#arithmetic" title="Permanent link">&para;</a></h3>
+<p>Numpy allows operation including matrix with matrix and scalar with matrix.</p>
+<h4 id="1_addition_multiplication_subtraction_and_division">1. Addition, multiplication , subtraction and division<a class="headerlink" href="#1_addition_multiplication_subtraction_and_division" title="Permanent link">&para;</a></h4>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span></pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="n">arr</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">10</span><span class="p">)</span>
+<span class="n">arr</span>
+<span class="c1">#array([0, 1, 2, 3, 4, 5, 6, 7, 8, 9])</span>
+
+<span class="c1">#addition</span>
+<span class="n">arr</span> <span class="o">+</span> <span class="n">arr</span>
+<span class="c1">#array([ 0,  2,  4,  6,  8, 10, 12, 14, 16, 18])</span>
+
+<span class="c1"># Multiplication</span>
+<span class="n">arr</span> <span class="o">*</span> <span class="n">arr</span>
+<span class="c1">#array([ 0,  1,  4,  9, 16, 25, 36, 49, 64, 81])</span>
+
+<span class="c1">#Subtraction</span>
+<span class="n">arr</span> <span class="o">-</span> <span class="n">arr</span>
+<span class="c1">#array([0, 0, 0, 0, 0, 0, 0, 0, 0, 0])</span>
+
+<span class="c1">#Division</span>
+<span class="n">arr</span><span class="o">/</span><span class="n">arr</span>
+<span class="c1">#array([nan,  1.,  1.,  1.,  1.,  1.,  1.,  1.,  1.,  1.])</span>
+</code></pre></div>
+</td></tr></table>
+<p>numpy will notify us when the division is not possible or the division by 0</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span></pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="mi">1</span><span class="o">/</span><span class="n">arr</span>
+<span class="c1">#array([       inf, 1.        , 0.5       , 0.33333333, 0.25      ,</span>
+<span class="c1">#       0.2       , 0.16666667, 0.14285714, 0.125     , 0.11111111])</span>
+</code></pre></div>
+</td></tr></table>
+<p>and we have the exponential as well</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="n">arr</span><span class="o">**</span><span class="mi">3</span>
+<span class="c1">#array([  0,   1,   8,  27,  64, 125, 216, 343, 512, 729])</span>
+</code></pre></div>
+</td></tr></table>
+<h3 id="universal_array_function">Universal Array function<a class="headerlink" href="#universal_array_function" title="Permanent link">&para;</a></h3>
+<p>With Numpy we can perform different function to the matrices, square root, logarithmic and geometric functions.</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span></pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">arr</span><span class="p">)</span>
+ <span class="c1">#array([0.        , 1.        , 1.41421356, 1.73205081, 2.        ,</span>
+ <span class="c1">#      2.23606798, 2.44948974, 2.64575131, 2.82842712, 3.        ])</span>
+
+<span class="c1"># Exponential (e^)</span>
+<span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="n">arr</span><span class="p">)</span>
+<span class="c1">#array([1.00000000e+00, 2.71828183e+00, 7.38905610e+00, 2.00855369e+01,</span>
+<span class="c1">#       5.45981500e+01, 1.48413159e+02, 4.03428793e+02, 1.09663316e+03,</span>
+<span class="c1">#       2.98095799e+03, 8.10308393e+03])</span>
+
+<span class="c1">#Trigonometric</span>
+<span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">arr</span><span class="p">)</span>
+<span class="c1">#array([ 0.        ,  0.84147098,  0.90929743,  0.14112001, -0.7568025 ,</span>
+<span class="c1">#       -0.95892427, -0.2794155 ,  0.6569866 ,  0.98935825,  0.41211849])</span>
+
+<span class="c1">#Natural Logarithm</span>
+<span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">arr</span><span class="p">)</span>
+<span class="c1">#array([      -inf, 0.        , 0.69314718, 1.09861229, 1.38629436,</span>
+<span class="c1">#       1.60943791, 1.79175947, 1.94591015, 2.07944154, 2.19722458])</span>
+</code></pre></div>
+</td></tr></table>
+<h3 id="statistics">Statistics<a class="headerlink" href="#statistics" title="Permanent link">&para;</a></h3>
+<p>as an example of the statistic function that can be perform in numpy we have sum, mean and max</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span></pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="n">arr</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">10</span><span class="p">)</span>
+
+<span class="n">arr</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+<span class="c1">#45</span>
+
+<span class="n">arr</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+<span class="c1">#4.5</span>
+
+<span class="n">arr</span><span class="o">.</span><span class="n">max</span><span class="p">()</span>
+<span class="c1">#9</span>
+</code></pre></div>
+</td></tr></table>
+<p>and other examples of statistic functions </p>
+<p><img alt="other example of Statistics operation" src="images/numpy_002.png" /></p>
+<h3 id="axis_logic">Axis Logic<a class="headerlink" href="#axis_logic" title="Permanent link">&para;</a></h3>
+<p>Wen we work with 2D arrays (Matrix) the array term , axis 0 is the vertical axis ( rows ), and axis 1 is the horizontal ( columns )</p>
+<p>so let do sum on the 0 axis, basically sum all the elements vertically, it make sense after the code.</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span></pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="n">arr_2d</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">],[</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">8</span><span class="p">],[</span><span class="mi">9</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span><span class="mi">11</span><span class="p">,</span><span class="mi">12</span><span class="p">]])</span>
+<span class="n">arr_2d</span>
+<span class="c1">#array([[ 1,  2,  3,  4],</span>
+<span class="c1">#       [ 5,  6,  7,  8],</span>
+<span class="c1">#       [ 9, 10, 11, 12]])</span>
+
+<span class="n">arr_2d</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<span class="c1">#array([15, 18, 21, 24])</span>
+<span class="c1">#[(1+5+9), (2+6+10), (3+7+11), (4+8+12)]</span>
+
+<span class="n">arr_2d</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="c1">#array([10, 26, 42])</span>
+</code></pre></div>
+</td></tr></table>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <nav class="md-footer__inner md-grid" aria-label="Footer">
+      
+        <a href="Numpy_Basic_part_2.html" class="md-footer__link md-footer__link--prev" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              Numpy Basic (Part 2)
+            </div>
+          </div>
+        </a>
+      
+      
+        <a href="../Pandas/Pandas%20Crash%20course.html" class="md-footer__link md-footer__link--next" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              Pandas Crash course
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+          <div class="md-footer-copyright__highlight">
+            Copyright &copy; 2019 -  Victor Aguirre
+          </div>
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.tabs"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}, "search": "../../../assets/javascripts/workers/search.fb4a9340.min.js", "version": null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.9b151c6a.min.js"></script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+      
+    
+  </body>
+</html>
