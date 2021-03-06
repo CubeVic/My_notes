@@ -154,6 +154,24 @@ From the previous code we have:
 
 ## Logging Users Out
 
+We can use the `logout_user()` to complete the log out process
+
+**application/routes.py**
+```python 
+# ...
+
+from flask_login import logout_user
+
+# ...
+
+@app.route('/logout')
+def logout():
+	logout_user()
+	return redirect(url_for('index'))
+```
+
+Now we need to expose the link to the user, we ned to switch the login link in the navigation bar to logout if the user is log in. 
+
 
 ## Requiring User To Login
 
