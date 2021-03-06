@@ -263,4 +263,104 @@ flask db upgrade
 
 ## Play Time
 
+Now, we can use the python interpreter to test the database we create, first we can start creating the Users 
+
+![creating a user](images/flask_sqlalchemy_010.png){: .center}
+
+with the interactive environment we can create the record.
+
+1. Create the User records by using the class and the parameters `username` and `email`
+2. use `db.session.add(u)` we use the `session.add()` to add the object, preparing for commit but not commit yet.
+3. Use the `commit`  to commit to the database
+
+```python
+u = User(username='susan', email='susan@example.com')
+db.session.add(u)
+db.session.commit()
+```
+
+![Create records](images/flask_sqlalchemy_011.png){: .center}
+
+from the previous images
+
+1. we use to get back all records `User.query.all()`.
+2. the result of the previous query will give back all the records on the table.
+
+Now if we want to get just one record we can use a index type of query
+
+```python
+u = User.query.get(1)
+```
+
+now for the Post part 
+
+![Create records for post](images/flask_sqlalchemy_012.png){: .center}
+
+Now to delete all the records 
+
+```python
+users = User.query.all()
+for u in users:
+     db.session.delete(u)
+
+posts = Post.query.all()
+for p in posts:
+     db.session.delete(p)
+
+db.session.commit()
+```
+
 ## Shell Context  
+
+Now, the Shell context is a extra help Flask provided, this is base in the fact that during the development of a site with flask we will need to test constantly using the python interactive console, and that will required the constant import such as: 
+
+```python
+from application import db
+from app.models import User, Post
+```
+
+we can avoid this issue using the shell context, this context will run within the app context to test we can make the following test 
+
+![test the Shell context](images/flask_sqlalchemy_013.png){: .center}
+
+We can use some of the flask decorators to add this imports to the shell context, for that we need to add something to one of the files 
+
+**microblog.py**
+```python
+from application import app, db
+from app.models import User, Post
+
+@app.shell_context_processor
+def make_shell_context():
+	return {'db':db, 'User': User, 'Post': Post}
+
+```
+
+![test the Shell context](images/flask_sqlalchemy_014.png){: .center}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
