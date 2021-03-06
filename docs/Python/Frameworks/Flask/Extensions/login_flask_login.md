@@ -117,7 +117,43 @@ Now, we need to register the **User loader** to the extension, in this case we r
 
 ## Logging User In
 
+With the database in place, with the *user loader* done and with the modification in the User model we can make a modification of the view function handling the login.
+
+**application/routes.py**
+```python
+#...
+
+from flask_login import current_user, login_user
+from application.models import User
+
+#...
+
+@app.route('/login', methods=['GET','POST'])
+def login():
+	if current_user.is_authenticated:
+		return redirect(url_for('index'))
+	form = LoginForm()
+	if form.validate_on_submit():
+		user = User.query.filter_by(username=form.username.date).first()
+		if user is None or not user.check_password(form.password.data):
+			flash('Invalid username or password')
+			return redirect(url_for('login'))
+		login_user(user, remember=form.remember_me.data)
+		return redirect(url_for('index'))
+	return render_template('login.html', title='Sign In', form=form)
+
+```
+
+From the previous code we have:
+
+1. The first two lines have two important items, the first `current_user` this variable contain the user, and the parameter `is_authenticated`, if the user is already log in the parameter `is_authenticated` will be `True`, and them the user is redirect to the index.
+2. we get back the user from the database if hte user is not already log in, in this case we use the `query.filter_by` and the method `first()` to filter the records by user name and get back the first record found.
+3. Now we verify the password, in this case we need to remember that the password is hash so we use the method `check_password()`, the there is no match we will use the `flash()` method to display the error and redirect to login page.
+4. if the user and password are correct, we call the method `login_user()`, this function comes from Flask-login, this function will register the user as logged in , so that means that any future pages the user navigates will the variable `current_user` set to that user.
+5. last step is to redirect the newly logged user to the index page.
+
 ## Logging Users Out
+
 
 ## Requiring User To Login
 
