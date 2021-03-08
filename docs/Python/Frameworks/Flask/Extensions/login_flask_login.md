@@ -170,10 +170,60 @@ def logout():
 	return redirect(url_for('index'))
 ```
 
-Now we need to expose the link to the user, we ned to switch the login link in the navigation bar to logout if the user is log in. 
+Now, we need to expose the link to the user, we ned to switch the login link in the navigation bar to logout if the user is log in.
 
+### Modification to the Templates 
+
+**application/templates/base.html**
+```HTML
+    <div>
+        Microblog:
+        <a href={{ url_for(endpoint='index') }}>Home</a>
+        {% if current_user.is_anonymous %}
+        <a href={{ url_for(endpoint='login') }}>Login</a>
+        {% else %}
+        <a href={{ url_for(endpoint='logout' }}>Logout</a>
+        {% endif %}
+    </div>
+```
+
+From the class `UserMixin` we have access to the property `is_anonymous`. The `current_user.is_anonymous` expression is going to be True only when the user is not logged in.
 
 ## Requiring User To Login
+
+With some of the features of Flask-login we can "force" the user to login before they can view certain pages of the application, if a user who is not logged in tries to view a protected page Flask-Login will automatically redirect the user to the login form, and only redirect back to the page the user wanted to view after the login process is complete.
+
+To implement this function  we will need to tel flask-login which is the view function handling the login.
+
+**application/__init__.py**
+```python
+#...
+login = LoginManager(app)
+login.login_view = 'login'
+```
+the `'login'` value in the code above  is the name of the login view, the same we use in `url_for()`.
+
+Now the way Flask-Login protect a view function against anonymous users is with the decorator `@login_required`, this decorator is added to the view function bellow `@app.route`, a function with this decorator becomes protected and will not allow access to a not authenticated.
+
+**application/routes.py**
+```python
+from flask_login import login_requered
+
+@app.route('/')
+@app.route('/index')
+@login_required
+def index():
+	#...
+```
+
+The `@login_required` will intercept the request and respond with a redirect to `/login`, but it will add a query string argument to this URL, the complete URL will be like `/login?next=/index`. The `next` query string argument is set to the original URL, so the application can use  that to redirect back after login.
+
+Now we need to read and process the `next` query string argument:
+
+**Application/routes.py**
+```python
+
+```
 
 ## Showing The Logged In User in Templates
 
