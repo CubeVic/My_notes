@@ -149,7 +149,7 @@ From the previous code we have:
 1. The first two lines have two important items, the first `current_user` this variable contain the user, and the parameter `is_authenticated`, if the user is already log in the parameter `is_authenticated` will be `True`, and them the user is redirect to the index.
 2. we get back the user from the database if hte user is not already log in, in this case we use the `query.filter_by` and the method `first()` to filter the records by user name and get back the first record found.
 3. Now we verify the password, in this case we need to remember that the password is hash so we use the method `check_password()`, the there is no match we will use the `flash()` method to display the error and redirect to login page.
-4. if the user and password are correct, we call the method `login_user()`, this function comes from Flask-login, this function will register the user as logged in , so that means that any future pages the user navigates will the variable `current_user` set to that user.
+4. if the user and password are correct, we call the method `login_user()`, this function comes from Flask-login, this function will register the user as logged in, so that means that any future pages the user navigates will the variable `current_user` set to that user.
 5. last step is to redirect the newly logged user to the index page.
 
 ## Logging Users Out
@@ -222,12 +222,241 @@ Now we need to read and process the `next` query string argument:
 
 **Application/routes.py**
 ```python
+from flask import request
+from werkzeug.urls import url_parse
 
+@app.route('/login'. methods=['GET','POST'])
+def login():
+	#...
+	if form.validate_on_submit():
+		user = User.query.filter_by(username=form.username.data).first()
+		if user is None or not user.check_password(form.password.data):
+			flash('Invalid username or password')
+			return redirect(url_for(endpoint='login'))
+		login_user(user, remember=form.remember_me.data)
+		next_page = request.args.get('next')
+		if not next_page or url_parse(next_page).netloc !='':
+			next_page = url_for(endpoint='index')
+		return redirect(next_page)
+	return render_template('login.html', title='Sign In', form=form)
 ```
+once the user is login and the function `login_user()` is used, the value of the `next` string query argument is obtained. The variable `request` come from flask and it store all the information the client sent with the request. From this variable we can check the attribute `arg` as `request.arg` this attribute contain all the content of the query string, this information is format as a dictionary thus the use of `get('next')` to get back the page to be redirected to.
+
+Now we need to give a bit more explanation to the statement `if not next_page or url_parse(next_page).netloc != ''`. Consider the possibilities of the redirection after a successful login:
+
+1. The URL doesn't contain a `next` argument, in that case we redirect the user to the index page.  
+2. The URL include a `next` argument, this argument is a relative path (a URL without a domain part), the user is redirect to that URL.  
+3. The URL include a `next` argument, however in this case the value is a full URL, the URL includes a domain name, in this case the use is redirected to the index page.  
+
+The first two option are simple and predictable, but the third one is more a security measure, this is to prevent an attack where the next value will include a full URL to a malicious website. so the application only redirects when the URL is relative. To determine if the URL is relative or absolute, we use `url_parse()` from **Werkzeug** package and check if the `netloc` component is set or not.
+
 
 ## Showing The Logged In User in Templates
 
+Now we modify the template to display the user name, this information will be extracted from the `current_user`
+
+**application/template/index.html**
+```html
+{{% extends 'base.html' %}}
+
+{% block content %}
+	<h1>Hi, {{ current_user.username }}</h1>
+	{% for post in posts %}
+	<div><p>{{ post.author.username }} says: <b> {{ post.body }} </b></p></div>
+	{% endfor %}
+
+{% endblock %}
+
+```
+
+Now we can modify the view function
+
+```python
+@app.route('/')
+@app.route('/index')
+@login_required
+
+def index():
+	#...
+	return render_template('index', title='Home Page', posts=posts)
+```
+
+we can use the `flask shell` to create a user and log in.
+```
+u = User(username='susan', email='susan@example.com')
+u.set_password('cat')
+db.session.add(u)
+db.session.commit()
+```
+
 ## User Registration
+
+
+Now the last step is the creation of the registration form, for that we will start by the creation of a new class on the **forms.py**, this class will represent the registration form
+
+### Registration form 
+**application/forms.py**
+```python
+from flask_wtf import FlaskForm
+from wtforms import StringField, PasswordField, BooleanField, SubmitField
+from wtforms.validators import ValidationError, DataRequired, Email, EqualTo
+from application.models import User
+
+#...
+
+class RegistrationForm(FlaskForm):
+	username = StringField('Username', validators=[DataRequired()])
+	email = String('Email', validator=[DataRequired(), Email()])
+	password = passwordField('Password', validator=[DataRequired()])
+	password_repeat = PasswordField('Repeat Password', validator=[DataRequired(), EqualTo('password')])
+	submit = SubmitField('Register')
+
+
+	def validate_username(self, username):
+		user = User.query.filter_by(username=username.data).first()
+		if user is not None:
+			raise ValidationError('Please use a different user')
+
+
+	def validate_email(seld, email):
+		user = User.query.filter_by(email=email.data).first()
+		if user is not None:
+			raise ValidationError('Please use a different email')
+
+```
+
+Before running `Email()`, or added to the script, we will need to install a email-validator, this is a external dependency required by WTForms, we do this with:
+
+```
+pip install email-validator
+```
+
+From the previous code we have: 
+
+1. there are two fields for the password, the idea is to use the second field as a verification, or a "repeat password".
+2. the second field has an extra validator, this time `EqualTo()` and the argument of this method will be the name of the the first field.
+3. there are two new methods called `validate_username` and `validate_password`, this are following a WTForm pattern, WTForm will take any method that follow pattern `validate_<field_name>` as a custom validator, in this case these two validator will make sure that user and password are not in the database.  
+4. the custom validators are going to use `ValidationError` to handle the errors, in this case the error will be if the user input a email or an user that is already in the database.
+
+### Template for the registration form 
+
+The last step will be create a template to display the registration form 
+
+**application/templates/register.html**
+```html
+{% extends 'base.html' %}
+
+{% Block content %}
+	<h1>Registration form</h1>
+	<form action="" method="post">
+		{{ form.hidden_tag() }}
+		<p>
+			{{form.username.label}}
+			<br>
+			{{form.username(size=32) }}
+			{% for errors in in form.username.errors %}
+				<span style="color: red;"> [{{error}}]</span>
+			{% endfor %}
+		</p>
+
+		<p>
+			{{form.email.label}}
+			<br>
+			{{form.email(size=64) }}
+			{% for errors in in form.email.errors %}
+				<span style="color: red;"> [{{error}}]</span>
+			{% endfor %}
+		</p>
+
+		<p>
+			{{form.password.label}}
+			<br>
+			{{form.password(size=32) }}
+			{% for errors in in form.password.errors %}
+				<span style="color: red;"> [{{error}}]</span>
+			{% endfor %}
+		</p>
+
+		<p>
+			{{form.password_repeat.label}}
+			<br>
+			{{form.password_repeat(size=32) }}
+			{% for errors in in form.password_repeat.errors %}
+				<span style="color: red;"> [{{error}}]</span>
+			{% endfor %}
+		</p>
+
+		<p> {{ form.submit() }} </p>
+	</form>
+
+{% endblock %}
+
+```
+
+now the login form must have a link that can take new users to the registration form. wee will add
+
+**application/templates/login.html**
+```html
+<p>new user? <a href="{{url_for('register')}}""> Click here to register</a></p>
+```
+
+### View function for the registration
+
+As last step we need to create the view function to connect the registration form to the system, in this case this view function will be in the `routes.py` file 
+
+**application/routes.py**
+```python
+from application import db
+from application.forms import RegistrationForm
+
+# ...
+
+@app.route('/register', methods=['GET', 'POST'])
+def register():
+	if current_user.is_authenticated:
+		return redirect(url_for('index'))
+
+	form =  RegistrationForm
+
+	if form.validate_on_submit():
+		user = User(username=form.username.data, email=form.email.data)
+		user.set_password(form.password.data)
+		db.session.add(user)
+		db.session.commit()
+		flash("User register successfully")
+		return redirect(url_for('login'))
+	return render_template('register.html', title='Registration', form=form)
+
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
