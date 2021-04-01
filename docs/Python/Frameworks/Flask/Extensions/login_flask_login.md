@@ -397,7 +397,7 @@ now the login form must have a link that can take new users to the registration 
 
 **application/templates/login.html**
 ```html
-<p>new user? <a href="{{url_for('register')}}""> Click here to register</a></p>
+<p>new user? <a href="{{url_for('register')}}"> Click here to register</a></p>
 ```
 
 ### View function for the registration
@@ -426,7 +426,6 @@ def register():
 		flash("User register successfully")
 		return redirect(url_for('login'))
 	return render_template('register.html', title='Registration', form=form)
-
 ```
 
 
