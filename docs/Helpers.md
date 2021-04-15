@@ -36,6 +36,12 @@ theme:
 * `![Name of the image](/images/nameImage.png)` -  to add an image 
 * `[text](URL)` to add a link to a text 
 
+## Launch Mkdocs in specific ip
+
+```bash
+mkdocs serve --dev-addr=[IP_Address:Port]
+```
+
 ## Deploy the MKDocs
 
 The project pages site will be deploy in other branch called 'gh-deploy', run the following command:
