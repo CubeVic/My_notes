@@ -10,6 +10,8 @@ In the nutshell Allow me to save pieces of text or code under a specific trigger
 1. [Official Website](https://espanso.org/).  
 2. [Documentation](https://espanso.org/docs/).  
 
+Created by **[Federico Terzi]**(https://federicoterzi.com/).
+
 ## Installation
 
 This section is copy directly from the website, there are instructions to install in Windows, Linux and Mac.
@@ -89,3 +91,59 @@ undo_backspace: false
 ```
 
 to the **default.yml** file.
+
+## Matches
+
+The exact documentation about the matches can be find here [Matches](https://espanso.org/docs/matches/)
+
+In the official documentation words **"Matches are pairs that associate a trigger with a replaced text."**
+
+#### Static Matches  
+
+These are the most basic,. it will consist of:   
+* **trigger**: the word that will trigger the expansion.  
+* **replace**: Expression or word that will be place instead of the trigger.
+
+```YAML
+- trigger: ":Hola"
+  replace: "Hello  world"
+```
+
+#### Multi-line expansions  
+
+To replace the original text with a multi-line message we can use `\n` the line terminator to jump to the next line.
+
+```YAML
+- trigger: ":hello"
+  replace: "Hello\nWorld!"
+```
+
+or we can use (From the official documentation) :
+
+**Literal Block Scalar**
+It will include any line or trailing spaces added on the replaces section.  
+
+![literal_block_scalar](images/literal_block_scalar.png){: .center}
+
+**Folded Block Scalar**
+It will fold the newlines to spaces, so no matter if the replace section contain new lines they will be fold to spaces.  
+
+![folded_block_scalar](images/folded_block_scalar.png){: .center}
+
+ 
+#### Dynamic Matches  
+
+#### Cursor Hints  
+
+#### Multi-trigger  
+
+#### Script Expansion  
+
+#### Shell Extension  
+
+#### Date Extension  
+
+#### Clipboard   
+
+
+## Configuration
