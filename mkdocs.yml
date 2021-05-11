@@ -217,6 +217,7 @@ nav:
       - About design: '3D Printing/about design.md'
 
     - Miscellaneous:
+      - Espanso ( shortcuts ): 'Miscellaneous/Espanso.md'
       - Courses:
         - Coursera:
           - Introduction tensorflow: 
