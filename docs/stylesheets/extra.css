@@ -103,6 +103,17 @@ Description: modification of the blockquote to
 }
 
 /*
+Modification by: Victor fernandez
+Description: Modification to solve 
+contrast issue with h5 level
+*/
+.md-typeset h5 {
+  text-transform: uppercase;
+  color: white !important;
+  text-decoration: underline;
+}
+
+/*
 ////////////////////
 // Navigation bar //
 ////////////////////

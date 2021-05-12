@@ -133,17 +133,186 @@ It will fold the newlines to spaces, so no matter if the replace section contain
  
 #### Dynamic Matches  
 
+For this type of Matches  there will be two additional concepts **variable** and **extensions**.
+
+* **Variable:** it is use on the replace clause to include the output of a dynamic component.
+* **Extension:**  It is the dynamic component that will produce an output that will be take place of the variable on the replace clause.
+
+**Example**:
+
+```YAML
+- trigger: ":now"
+  replace: "It's {{mytime}}"
+  vars:
+    - name: mytime
+      type: date
+      params:
+        format: "%H:%M"
+
+```
+
+1. The Trigger is `:now`.  
+2. Te replace close `"It's {{mytime}}"` contain the variable `{{mytime}}`.  
+3. now the dynamic component will be on the next part that start with `vars`.  
+
+```YAML
+vars:
+	- name: mytime
+	  type: date
+```
+
+In these lines we define the variable `mytime` as a `date` type.
+In this example the [Date Extension](https://espanso.org/docs/matches/#date-extension) is use
+
+The most important part of this extension is the `format` parameter
+```YAML
+	  params:
+	  	format: "%H:%M"
+```
+> A list of all the possible options can be found in the [official chrono documentation](https://docs.rs/chrono/0.3.1/chrono/format/strftime/index.html).
+
 #### Cursor Hints  
+
+In some cases we want to set the cursor in the middle of the expression expanded, in that case we use the the cursor hint `$|$` so for example:
+
+```YAML
+  - trigger: ":div"
+    replace: "<div>$|$</div>"
+```
 
 #### Multi-trigger  
 
+In some cases we want to have more than one trigger, in that case we can list the triggers like a list.
+
+```YAML
+	- triggers: ["hello", "hi"]
+  	  replace: "world"
+
+```
+
 #### Script Expansion  
+
+In this case we will use espanso to execute a external script, in this case we will run a python script
+
+**script.py**
+```python
+print("Hello from python")
+```
+
+now the match will look like:
+
+```YAML
+- trigger: ":pyscript"
+  replace: "{{output}}"
+  vars:
+    - name: output
+      type: script
+      params:
+        args:
+          - python
+          - /path/to/your/script.py
+```
+
+> `args` must change depending of the programming language and the location of the script.  
+
+
+There is a good practice mentioned in the official documentation
+
+##### Script Placement
+
+The best-practice is to create a folder called `scripts` inside the directory `espanso` to store all the scripts to be use.
+
+Now, we use the `%CONFIG%` wildcard to automatically replace the configuration directory
+
+```YAML
+- trigger: ":pyscript"
+  replace: "{{output}}"
+  vars:
+    - name: output
+      type: script
+      params:
+        args:
+          - python
+          - "%CONFIG%/scripts/script.py"
+```
 
 #### Shell Extension  
 
-#### Date Extension  
+Similar to the Script Expansion, this is use to execute a script, in this case will be a shell command.
+
+```YAML
+- trigger: ":ip"
+  replace: "{{output}}"
+  vars:
+    - name: output
+      type: shell
+      params:
+        cmd: "curl 'https://api.ipify.org'"
+```
+
+> this will get the IP address with [ipify](https://www.ipify.org/).
+
+We can choose the Shell:
+
+* On Windows: `cmd`, `powershell`, `wsl`.  
+* On macOS: `sh`, `bash`.  
+* On Linux: `sh`, `bash`.  
 
 #### Clipboard   
 
+In some cases we want to add the content of the clipboard as part of the expansion.
+
+```YAML
+  - trigger: ":a"
+    replace: "<a href='{{clipboard}}' />$|$</a>"
+    vars:
+      - name: "clipboard"
+        type: "clipboard"
+```
+
+so if we copy a link and later use the trigger `:a` the content of the clipboard will be paste on the location of the variable `{{clipboard}}`.
+
 
 ## Configuration
+
+Espanso uses files to manage its configuration, so this can be add to git or dropbox/Google drive (more about [synchronization](https://espanso.org/docs/sync/)).
+
+We can organize the triggers and expansion can be organize in different files, those files will be on the directory `user/`.
+
+for example for a file that will contain expansion for emails we will:
+
+1. create a new file inside `user/` by `espanso edit emails` command.  
+2. Inside the file `user/emails.yml`we add.
+
+```YAML
+name: emails
+parent: default
+
+matches:
+  - trigger: ":sig"
+    replace: |
+      Best regards,
+      Victor.
+```
+The connection of this child file with the parent is with the line `parent: default` instruction.
+
+### Filters 
+
+In some cases we want to espanso behave different depending of the application or the program, in that case we use filters.
+
+* `filter_title`.  
+* `filter_exec`.  
+* `filter_class`.  
+
+> The filter will request some information, in that case we can use `espanso detect`  which will provide information need it for the filters, see [official documentation](https://espanso.org/docs/configuration/#application-specific-configurations).  
+
+For example in a different document title `telegram.yml` on the folder `user/`
+
+```YAML
+filter_title: "Telegram"
+
+matches:
+  - trigger: ":ok"
+    replace: "👍"
+
+```
