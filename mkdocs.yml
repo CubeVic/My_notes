@@ -144,6 +144,9 @@ nav:
           - Django Tutorial (part 02): 'Python/Frameworks/Django/Django tutorial - part 02.md'
           - Django Tutorial (part 03): 'Python/Frameworks/Django/Django tutorial - part 03.md'
           - (Optional) More details about file structure: 'Python/Frameworks/Django/More details about project structure.md'
+        - Scrapy:
+          - Introduction: ''
+          -
       - Projects:
         - Random Password Generator: 'Python/Projects/random_password_generator.md'
       - Scripts & Algorithms:
