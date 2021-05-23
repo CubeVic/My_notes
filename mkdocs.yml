@@ -128,12 +128,13 @@ nav:
         - Flask:
           - Introduction and notes: 'Python/Frameworks/Flask/Introduction_and_notes.md'
           - Quick & Dirty First App: 'Python/Frameworks/Flask/first_app_flask.md'
-          - Application Layout (Structure): 'Python/Frameworks/Flask/flask_structure.md'
-          - Application Factory & Run: 'Python/Frameworks/Flask/flask_application_factory.md'
-          - Application Database: 'Python/Frameworks/Flask/flask_database.md'
-          - Blueprints (part 01-Auth): 'Python/Frameworks/Flask/flask_blueprints_part1.md'
-          - Templates: 'Python/Frameworks/Flask/flask_templates.md'
-          - Blueprints (part 02-Blog): 'Python/Frameworks/Flask/flask_blueprints_part2.md'
+          - Tutorial From Official Documentation:
+            - Application Layout (Structure): 'Python/Frameworks/Flask/from_Official_documentation/flask_structure.md'
+            - Application Factory & Run: 'Python/Frameworks/Flask/from_Official_documentation/flask_application_factory.md'
+            - Application Database: 'Python/Frameworks/Flask/from_Official_documentation/flask_database.md'
+            - Blueprints (part 01-Auth): 'Python/Frameworks/Flask/from_Official_documentation/flask_blueprints_part1.md'
+            - Templates: 'Python/Frameworks/Flask/from_Official_documentation/flask_templates.md'
+            - Blueprints (part 02-Blog): 'Python/Frameworks/Flask/from_Official_documentation/flask_blueprints_part2.md'
           - Flask Extensions:
               - Forms - Flask-WTF: 'Python/Frameworks/Flask/Extensions/forms_flask_wtf.md'
               - Databases - Flask-SQLAlchemy: 'Python/Frameworks/Flask/Extensions/database_flask_sqlalchemy.md'
@@ -219,6 +220,7 @@ nav:
       - About design: '3D Printing/about design.md'
 
     - Miscellaneous:
+      - Espanso ( shortcuts ): 'Miscellaneous/Espanso.md'
       - Courses:
         - Coursera:
           - Introduction tensorflow: 
