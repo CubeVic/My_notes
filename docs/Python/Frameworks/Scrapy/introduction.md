@@ -7,6 +7,13 @@ In a fast, simple, yet extensible way.
 2. [Pypi page](https://pypi.org/project/Scrapy/)
 3. [Documentation](https://docs.scrapy.org/en/latest/)
 
+## Install 
+
+We can install it using pi
+```
+pip install Scrapy
+```
+
 ## Project structure
 
 ![scrapy_project](images/scrapy_project_tree.png){: .center}
@@ -39,6 +46,25 @@ Bellow some examples
 
 **project/items.py**
 ![scrapy_spider](images/scrapy_spider_002.png){: .center}
+
+1. `from scrapy.loader import ItemLoader`: we will import the IteamLoader, this will allow use to access processors and functions to clean the data.
+2. `from itemloaders.processors import TakeFirst, MapCompose`: This are two functions that we will use in the `input_processor` and `out_processor`. `MapCompose()` allow me to run several functions on the incoming data.
+3. `from w3lib.html import remove_tags`: with `remove_tags()` will help use to remove the html tags from the information.
+4. `remove_currency()`: this is an example of a custom function that we will use to clean the information and later will be use in `MapCompose()`.
+5. `Field()`: Here we will use the `input_processor` and `output_processor` to clean the information.
+
+## Commands
+
+**Create the project**
+```
+scrapy startproject [name of the project]
+```
+
+**Create the spider**
+```
+scrapy genspider [name of spider] [starting urls]
+```
+
 
 ## Data flow 
 > This information was extracted fro  the official website and all the rights belong to then. I copy part of the information since it is relevant to understand how scrapy handle the data flow.
@@ -80,5 +106,19 @@ Downloader middlewares are specific hooks that sit between the Engine and the Do
 #### Spider Middlewares
 > from the original documentation
 Spider middlewares are specific hooks that sit between the Engine and the Spiders and are able to process spider input (responses) and output (items and requests).
+
+
+## Scrapy Shell
+
+Scrapy provide an interactive Shell that we can use to test or gather information of the website we will scrap.
+
+to start:
+```
+scrapy shell
+``` 
+
+Here in the shell we can use the  function `fetch()` passing the URL, this will download the page, and we will be able to interact with it using the `response` object and then we can use selectors to scrap the information, example `response.css('a.product')`
+
+
 
 

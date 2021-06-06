@@ -124,6 +124,8 @@ nav:
           - Introduction: 'Python/Libraries_and_Modules/HTTPX/introduction.md'
         - Datamuse: 
           - Introduction: 'Python/Libraries_and_Modules/Datamuse/introduction.md'
+        - Crontab:
+          - Introduction: 'Python/Libraries_and_Modules/Crontab/introduction.md'
       - Frameworks: 
         - Flask:
           - Introduction and notes: 'Python/Frameworks/Flask/Introduction_and_notes.md'
@@ -147,6 +149,7 @@ nav:
           - (Optional) More details about file structure: 'Python/Frameworks/Django/More details about project structure.md'
         - Scrapy:
           - Introduction: 'Python/Frameworks/Scrapy/introduction.md'
+          - Splash: 'Python/Frameworks/Scrapy/splash.md'
       - Projects:
         - Random Password Generator: 'Python/Projects/random_password_generator.md'
       - Scripts & Algorithms:
