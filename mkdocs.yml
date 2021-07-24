@@ -94,7 +94,11 @@ nav:
         - Multi-threading and Multi-processing: 'Python/Python_intermediate/Multithreading_and_multiprocessing.md'      
         - SQLAchemy: 'Python/Python_intermediate/sqlalchemy.md'
       - Libraries & Modules: #Libraries and Modules
-        - PIP notes: 'Python/Libraries_and_Modules/PIP/pip_notes.md' 
+        - PIP notes: 'Python/Libraries_and_Modules/PIP/pip_notes.md'
+        - Itertools:
+            - Introductions: 'Python/Libraries_and_Modules/[Built_in]itertools/introduction.md'
+            - Infinite iterators:
+              - count(): 'Python/Libraries_and_Modules/[Built_in]itertools/Infinite_iterators/introduction.md'
         - Numpy:
           - Numpy Basic (Part 1): 'Python/Libraries_and_Modules/Numpy/Numpy_Basic_part_1.md'
           - Numpy Basic (Part 2): 'Python/Libraries_and_Modules/Numpy/Numpy_Basic_part_2.md'
