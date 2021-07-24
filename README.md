@@ -1,18 +1,29 @@
 # My notes
 ![logo_Banner](Hero_Image_notes.png)
 
-These are my notes. Here I write, collect, and sometimes copy information about:  
+I'm victor, 
+These are my notes. I don't expect many people, other than me, to see these notes. Nonetheless, if you are reading, welcome, here I write, collect, and sometimes copy information about:  
 
-* Concepts or tools I'm learning to improve on y Daily Job.    
-* A new Hobby.    
-* Something interesting.    
+## Concepts or Tools
 
-I store all my notes in different categories. The main idea is to have easy access to knowledge and use those notes as a quick personal reference.
+1. Python
+2. Machine learning
+3. Python as a tool for financial analysis or automation of "boring" tasks.
+
+
+## Daily Job
+
+Currently, working as Field Application Engineer in Asia:  
+1. Concepts about CCTV equipment.
+2. Basic, and I emphasize, Basic knowledge about networks.
+
+## Other Interest
+
+1. Raspberry pi.  
+2. 3d Printer.  
 
 You can take a look here: https://cubevic.github.io/My_notes/
 
-**NOTE:** I use different sources, therefore I must clarify, not all the content is mine. I will try to change, summarize, or put my explanations but in some cases, I keep the original sentence or the graphic since I believe provide excellent information and doesn't worth it to change it.
+**NOTE:** I use different sources. I must clarify, not all the content is mine. I will try to change, summarize,  clarify or put my own take on the topic, but in some cases, I keep the original sentence or the graphic since I believe it will provide excellent information, and doesn't worth it to change it.
 
-> *PS:* My mother tongue is Spanish, but I like to read and write in English, so if someone, other than me, reads these notes, please be patient, they are personal notes, not a blog.
-
-> You might find that some topics are not finished, some spelling errors, or odd sentences, I'm working on that ;).
+> You might find that some topics are incomplete, with some spelling errors, or odd sentences. I'm working on that ;).
