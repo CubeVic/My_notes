@@ -96,9 +96,9 @@ nav:
       - Libraries & Modules: #Libraries and Modules
         - PIP notes: 'Python/Libraries_and_Modules/PIP/pip_notes.md'
         - Itertools:
-            - Introductions: 'Python/Libraries_and_Modules/itertools/introduction.md'
+            - Introductions: 'Python/Libraries_and_Modules/Itertools/introduction.md'
             - Infinite iterators:
-              - count(): 'Python/Libraries_and_Modules/itertools/Infinite_iterators/introduction.md'
+              - count(): 'Python/Libraries_and_Modules/itertools/Infinite_iterators/count.md'
         - Numpy:
           - Numpy Basic (Part 1): 'Python/Libraries_and_Modules/Numpy/Numpy_Basic_part_1.md'
           - Numpy Basic (Part 2): 'Python/Libraries_and_Modules/Numpy/Numpy_Basic_part_2.md'
