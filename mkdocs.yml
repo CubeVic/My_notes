@@ -99,6 +99,8 @@ nav:
             - Introductions: 'Python/Libraries_and_Modules/Itertools/introduction.md'
             - Infinite iterators:
               - count(): 'Python/Libraries_and_Modules/Itertools/Infinite_iterators/count.md'
+              - cycle(): 'Python/Libraries_and_Modules/Itertools/Infinite_iterators/cycle.md'
+              - repeat(): 'Python/Libraries_and_Modules/Itertools/Infinite_iterators/repeat.md'
         - Numpy:
           - Numpy Basic (Part 1): 'Python/Libraries_and_Modules/Numpy/Numpy_Basic_part_1.md'
           - Numpy Basic (Part 2): 'Python/Libraries_and_Modules/Numpy/Numpy_Basic_part_2.md'
