@@ -1,13 +1,10 @@
 # Itertools
 
-![Itertools](images/itertools.png){: .center}
-
-This is a built-in library so there ir is not necessary to installed with PIP
+![Itertools](images/Itertools.png){: .center}
 
 ### Why I make notes about it
 
-I'm making note about this , since I found that many of the challenges in the website can be solved using these iterators,
-so I think it is a good idea.
+I found many of the challenges websites can be solved using these iterators.
 
 ##Description
 Itertools is a module which is implementing of the iterator building blocks of other well known programing languages, 
