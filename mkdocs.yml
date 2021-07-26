@@ -64,12 +64,12 @@ nav:
       - Google Crash Course:
         - Problem Framing:  'Machine Learning/Google Crash Course/Problem_Framing.md'
         - ML Concepts: 
-            - Framing: 'Machine Learning/Google Crash Course/ML Concepsts/Framing.md'
-            - Linear Regression: 'Machine Learning/Google Crash Course/ML Concepsts/Linear regression.md'
-            - Reducing Loss: 'Machine Learning/Google Crash Course/ML Concepsts/Reducing_Loss.md'
-            - First Steps TensorFlow: 'Machine Learning/Google Crash Course/ML Concepsts/First_steps_TensorFlow.md'
-            - Introduction to Pandas: 'Machine Learning/Google Crash Course/ML Concepsts/Intro_to_pandas.md'
-            - Training and Test Sets: 'Machine Learning/Google Crash Course/ML Concepsts/Training_Test_sets.md'
+            - Framing: 'Machine Learning/Google Crash Course/ML Concepts/Framing.md'
+            - Linear Regression: 'Machine Learning/Google Crash Course/ML Concepts/Linear regression.md'
+            - Reducing Loss: 'Machine Learning/Google Crash Course/ML Concepts/Reducing_Loss.md'
+            - First Steps TensorFlow: 'Machine Learning/Google Crash Course/ML Concepts/First_steps_TensorFlow.md'
+            - Introduction to Pandas: 'Machine Learning/Google Crash Course/ML Concepts/Intro_to_pandas.md'
+            - Training and Test Sets: 'Machine Learning/Google Crash Course/ML Concepts/Training_Test_sets.md'
       - AI for Everyone: 'Machine Learning/AI for Everyone/AI_for_Everyone.md'
       - Other Key Terminology (TensorFlow): 'Machine Learning/Other_key_Terminology.md'
       - ML script or projects:
@@ -101,6 +101,11 @@ nav:
               - count(): 'Python/Libraries_and_Modules/Itertools/Infinite_iterators/count.md'
               - cycle(): 'Python/Libraries_and_Modules/Itertools/Infinite_iterators/cycle.md'
               - repeat(): 'Python/Libraries_and_Modules/Itertools/Infinite_iterators/repeat.md'
+            - Combinatoric iterator:
+              - permutations(): 'Python/Libraries_and_Modules/Itertools/Combinatoric_iterator/permutations.md'
+              - combinations(): 'Python/Libraries_and_Modules/Itertools/Combinatoric_iterator/combinations.md'
+            - Shortest input equence:
+                - groupby(): 'Python/Libraries_and_Modules/Itertools/Combinatoric_iterator/Shortest_input_sequence/groupby.md'
         - Numpy:
           - Numpy Basic (Part 1): 'Python/Libraries_and_Modules/Numpy/Numpy_Basic_part_1.md'
           - Numpy Basic (Part 2): 'Python/Libraries_and_Modules/Numpy/Numpy_Basic_part_2.md'
