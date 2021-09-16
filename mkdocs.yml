@@ -203,7 +203,7 @@ nav:
       - datamuse: 'APIs/datamuse.md'
       - Google API:
         - introduction:  'APIs/Google/introduction.md'
-          - Sheets:
+          - sheets:
             - Google Sheet API: 'APIs/Google/sheets/google_sheet_api.md'
             - Create spreadsheets: 'APIs/Google/sheets/google_sheet_create.md'
 
