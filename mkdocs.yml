@@ -202,10 +202,10 @@ nav:
     - APIs:
       - datamuse: 'APIs/datamuse.md'
       - Google API:
-        - introduction:  'APIs/Google/introduction.md'
-          - sheets:
-            - Google Sheet API: 'APIs/Google/sheets/google_sheet_api.md'
-            - Create spreadsheets: 'APIs/Google/sheets/google_sheet_create.md'
+        - introduction: 'APIs/Google/introduction.md'
+        - sheets:
+          - Google Sheet API: 'APIs/Google/sheets/google_sheet_api.md'
+          - Create spreadsheets: 'APIs/Google/sheets/google_sheet_create.md'
 
     - Raspberry:
       - Samba Server: 'Raspberry/samba.md'
