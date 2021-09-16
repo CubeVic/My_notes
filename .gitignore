@@ -70,3 +70,4 @@ ENV/
 site/
 
 .DS_store
+.idea

@@ -201,13 +201,9 @@ nav:
 
     - APIs:
       - datamuse: 'APIs/datamuse.md'
-    - PowerLanguages:
-      - Reference: 'PowerLanguages/PowerLanguages_001.md'
-      - Reserved words: 'PowerLanguages/Reserved words.md'
-      - How Scripts Work: 'PowerLanguages/how_script_works.md'
-      - Functions: 'PowerLanguages/functions.md'
-      - Plot: 'PowerLanguages/Plot.md'
-      - Text and Trendlines: 'PowerLanguages/text_trendlines.md'
+      - Google API:
+        - introduction:  'APIs/Google/introduction.md'
+        - Google Sheet API: 'APIs/Google/google_sheet_api.md'
 
     - Raspberry:
       - Samba Server: 'Raspberry/samba.md'
@@ -220,21 +216,28 @@ nav:
       - Basic Concepts: 'CCTV/Basic_concepts.md'
       - ACTi URL commands: 
         - URL Commands Basics: 'CCTV/ACTi/ACTi_URL_Commands.md'
-      - Wireshark: 'CCTV/wireshark.md'                
-
-    - 3D Printing:
-      - Concepts: '3D Printing/Concepts.md'
-      - G-code: '3D Printing/gcode.md'
-      - Setup and Calibration:
-          - Center and Z offset: '3D Printing/Setup and Calibration/Center and Z offset.md'
-          - E-steps and Extrutor multiplier: '3D Printing/Setup and Calibration/E-steps and Extrutor multiplie.md'
-          - Debuging and Logging: '3D Printing/Setup and Calibration/Debuging and Logging.md'
-      - Projects: 
-        - Moving Electronics: '3D Printing/Projects/Moving Electronics.md'
-      - About design: '3D Printing/about design.md'
+      - Wireshark: 'CCTV/wireshark.md'
 
     - Miscellaneous:
+      - Helpers: 'Miscellaneous/Helpers.md'
       - Espanso ( shortcuts ): 'Miscellaneous/Espanso.md'
+      - PowerLanguages:
+        - Reference: 'Miscellaneous/PowerLanguages/PowerLanguages_001.md'
+        - Reserved words: 'Miscellaneous/PowerLanguages/Reserved words.md'
+        - How Scripts Work: 'Miscellaneous/PowerLanguages/how_script_works.md'
+        - Functions: 'Miscellaneous/PowerLanguages/functions.md'
+        - Plot: 'Miscellaneous/PowerLanguages/Plot.md'
+        - Text and Trendlines: 'Miscellaneous/PowerLanguages/text_trendlines.md'
+      - 3D Printing:
+        - Concepts: 'Miscellaneous/3D Printing/Concepts.md'
+        - G-code: 'Miscellaneous/3D Printing/gcode.md'
+        - Setup and Calibration:
+            - Center and Z offset: 'Miscellaneous/3D Printing/Setup and Calibration/Center and Z offset.md'
+            - E-steps and Extrutor multiplier: 'Miscellaneous/3D Printing/Setup and Calibration/E-steps and Extrutor multiplie.md'
+            - Debuging and Logging: 'Miscellaneous/3D Printing/Setup and Calibration/Debuging and Logging.md'
+        - Projects:
+          - Moving Electronics: 'Miscellaneous/3D Printing/Projects/Moving Electronics.md'
+        - About design: 'Miscellaneous/3D Printing/about design.md'
       - Courses:
         - Coursera:
           - Introduction tensorflow: 
@@ -262,4 +265,3 @@ nav:
       #- Potential activities: 'Miscellaneous/potential activities.md'
       - Configuration for Sublime Text 3: 'Miscellaneous/Sublime_text.md'
     - About: 'about.md'
-    - Helpers.md
