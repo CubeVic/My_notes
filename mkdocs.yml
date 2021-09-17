@@ -216,9 +216,14 @@ nav:
 
     - CCTV:
       - Basic Concepts: 'CCTV/Basic_concepts.md'
+      - Lens mount: 'CCTV/lens_mount.md'
+      - SoC: 'CCTV/SoC.md'
+      - STARVIS sensor: 'CCTV/starvis.md'
       - ACTi URL commands: 
         - URL Commands Basics: 'CCTV/ACTi/ACTi_URL_Commands.md'
       - Wireshark: 'CCTV/wireshark.md'
+      - Windows errors: 'CCTV/windows_error.md'
+      - what is hypercoverged infrastructure: 'CCTV/hypercoverged_infrastructure.md'
 
     - Miscellaneous:
       - Helpers: 'Miscellaneous/Helpers.md'
