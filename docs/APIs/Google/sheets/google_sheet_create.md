@@ -81,3 +81,9 @@ Finally, use `print()` to get the spreadsheet ID, we can use this ID on the brow
 ![gsheet.png](images/gsheet.png)
 
 Note the ID in the URL as well as the Sheet ID, in the bottom we have the name of the sheet.
+
+## Personal Changes
+
+I made some personal changes in the code, this case just to add some type hint and change it to my style and tase 
+
+![gsheet.png](images/code.png)
