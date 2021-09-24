@@ -153,11 +153,11 @@ nav:
               - Databases - Flask-SQLAlchemy: 'Python/Frameworks/Flask/Extensions/database_flask_sqlalchemy.md'
               - Databases(Migration) - Flask-Migration: "Python/Frameworks/Flask/Extensions/database_migration_flask_migration.md"
               - Login - Flask-login: "Python/Frameworks/Flask/Extensions/login_flask_login.md"
-        - Django:
-          - Django Tutorial (part 01): 'Python/Frameworks/Django/Django tutorial - part 01.md'
-          - Django Tutorial (part 02): 'Python/Frameworks/Django/Django tutorial - part 02.md'
-          - Django Tutorial (part 03): 'Python/Frameworks/Django/Django tutorial - part 03.md'
-          - (Optional) More details about file structure: 'Python/Frameworks/Django/More details about project structure.md'
+ #       - Django:
+ #         - Django Tutorial (part 01): 'Python/Frameworks/Django/Django tutorial - part 01.md'
+ #         - Django Tutorial (part 02): 'Python/Frameworks/Django/Django tutorial - part 02.md'
+ #         - Django Tutorial (part 03): 'Python/Frameworks/Django/Django tutorial - part 03.md'
+ #         - (Optional) More details about file structure: 'Python/Frameworks/Django/More details about project structure.md'
         - Scrapy:
           - Introduction: 'Python/Frameworks/Scrapy/introduction.md'
           - Splash: 'Python/Frameworks/Scrapy/splash.md'
