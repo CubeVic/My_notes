@@ -487,5 +487,5 @@ if __name__ == '__main__':
     service = fetch_resource()
     write_single(service)
     write_range(service)
-    append_range(service)
+    append_range(service)    
 ```
