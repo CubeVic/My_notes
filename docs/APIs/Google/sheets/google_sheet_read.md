@@ -48,7 +48,7 @@ Its JSON representation is:
 ```json
 {
   "range": string,
-  "majorDimension": enum (Dimension),
+  "majorDimension": enum(Dimension),
   "values": [
     array
   ]
@@ -290,9 +290,7 @@ def append_range(gservice: gsheet_resource):
     result = service.spreadsheets().values().append(
         spreadsheetId=SAMPLE_SPREADSHEET_ID, range=range,
         valueInputOption='RAW', body=body).execute()
-    print('{0} cells appended.'.format(result \
-                                       .get('updates') \
-                                       .get('updatedCells')))
+    print('{0} cells appended.'.format(result.get('updates').get('updatedCells')))
 ```
 
 from the code above:
@@ -351,7 +349,9 @@ def fetch_resource() -> gsheet_resource:
     return build('sheets', 'v4', credentials=creds)
 
 def read_single(gservice: gsheet_resource):
-    result = gservice.spreadsheets().values().get(spreadsheetId=SAMPLE_SPREADSHEET_ID,range=SAMPLE_RANGE_NAME).execute()
+    result = gservice.spreadsheets().values().get(
+        spreadsheetId=SAMPLE_SPREADSHEET_ID,
+        range=SAMPLE_RANGE_NAME).execute()
     rows = result.get('values')
     print('{0} '.format(rows))
 
@@ -360,7 +360,9 @@ def read_multiple(gservice: gsheet_resource):
         'first_sheet!A1:C1',
         'first_sheet!A3:C4'
     ]
-    result = gservice.spreadsheets().values().batchGet(spreadsheetId=SAMPLE_SPREADSHEET_ID,ranges=range_names).execute()
+    result = gservice.spreadsheets().values().batchGet(
+        spreadsheetId=SAMPLE_SPREADSHEET_ID,
+        ranges=range_names).execute()
     rows = result.get('valueRanges')
     print('{0} '.format(rows))
 
