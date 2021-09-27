@@ -2,11 +2,11 @@
 
 [IP Camera/DVR/NVR's SoC, What's it? What it does?](https://www.unifore.net/ip-video-surveillance/ip-camera-dvr-nvrs-soc-whats-it-what-it-does.html)
 
-System on a Chip or SoC it is the core processor in most of the IP cameras and NVRs, so it is safe to say that the SoC will determine the performance of the Network CCTV equipment .
+A system on a Chip or SoC is the core processor in most of the IP cameras and NVRs, so it is safe to say that the SoC will determine the performance of the Network CCTV equipment.
 
 ### Components of the SoC
 
-There are different component of the SoC, but it is faster if we mention what SoC integrate:
+There is a different component of the SoC, but it is faster if we mention what SoC integrates:
 
 - ISP or Image signal processor.
 - Video Codec Engine (Encoding)
@@ -17,11 +17,11 @@ There are different component of the SoC, but it is faster if we mention what So
 
 ![https://www.unifore.net/images/433/433_IPC_Block_Diagram_mini.jpg](https://www.unifore.net/images/433/433_IPC_Block_Diagram_mini.jpg)
 
-We can say that there are to main important components in a CCTV camera, those will be the CMOS sensor and the SoC, in order to evaluate a device it is important to know what type of SoC it is use.
+We can say that there are two main important components in a CCTV camera, those will be the CMOS sensor and the SoC, in order to evaluate a device it is important to know what type of SoC it is used.
 
 The factors to determine the performance of the SoC are:
 
-1. Architecture of the SoC, dual core, quad-core, speed
+1. Architecture of the SoC, dual-core, quad-core, speed
 2. ISP Capability including WDR, HDR, DOL. etc
 3. Encoding/Decoding capability
 4. Maximum resolution and frame rate
@@ -39,7 +39,7 @@ The most popular manufactures are:
 > 
 > Uniview and Tiandy use Hisilicon
 
-in 2020 due to the NDAA some manufacture move away from SoC produce  in China such as Hisilicon.
+in 2020 due to the NDAA some manufacture move away from SoC produce in China such as Hisilicon.
 
 ## Most popular SoCs
 

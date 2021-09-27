@@ -1,20 +1,18 @@
-This is the initial draft 2020/08/18 Later with the addition of more information i will segment this in different parts or notes
-
 ## Throughput vs Bandwidth
 
-In the nutshell, **Throughput tells you how much data was transferred from a source at any given time** and **bandwidth tells you how much data could theoretically be transferred from a source at any given time.**
+**Throughput tells you how much data was transferred from a source at any given time** and **bandwidth tells how much data could theoretically be transferred from a source at any given time.**
 
 ![Bandwidth-and-Throughput_001.jpg](Images/Bandwidth_and_Throughput_001.jpg){: .center}
 
 ### Throughput
 
-The network throughput refers to how much data can be transferred from source to destination withing a frame of time. **Throughput measures how many packets arrive at their destinations successfully.**
+The network **throughput** refers to how much data can be transferred from source to destination within a frame of time. **Throughput measures how many packets arrive at their destinations successfully.**
 Packet loss, latency, and jitter are all related to slow throughput speed. Latency is the amount of time it takes for a packet to make it from source to destination, and jitter refers to the difference in packet delay.
 
 ### Bandwidth
 
-although a bit confusing, the bandwidth definition will be **Network bandwidth is defined as the maximum transfer throughput capacity of a network** it measure how much data can be sent and receive at the same time. 
-It is important to know bandwidth doesn't actually increase the speed of a network, it just appears to make the network faster.
+The bandwidth definition will be **Network bandwidth is defined as the maximum transfer throughput capacity of a network**. It measures how much data can be sent and receive at the same time. 
+It is important to know bandwidth doesn't increase the speed of a network, it just appears to make the network faster.
 
 >Let’s say 1 Mbps is the equivalent of a single-lane freeway. Let’s also say you want to download a 5 Mb image. If you had a connection with a bandwidth of 1 Mbps (one lane) it would take you about five seconds to download that image. Now, if you were operating with a 5 Mbps bandwidth connection (five lanes)
 
@@ -25,11 +23,11 @@ It is important to know bandwidth doesn't actually increase the speed of a netwo
 
 ![I-P-B_Frames.jpg](Images/I_P_B_Frames.jpg){: .center}
 
-**I-FRAME** or Intra-coded picture, least compressible of all frames but it doesn't required other frames to be decoded, it is a complete image, similar to `.jpg`, compress just I-Frames will result in a good quality but heavy file.
+**I-FRAME** or Intra-coded picture, least compressible of all frames but it doesn't require other frames to be decoded, it is a complete image, similar to `.jpg`, compress just I-Frames will result in good quality but heavy file.
 
-**P-Frame** or Predicted picture,more compressible than the I-FRAME, it use information of the previous frame to decompress. It only holds the part of the image that change comparing with the last frame.
+**P-Frame** or Predicted picture, more compressible than the I-FRAME, it uses information of the previous frame to decompress. It only holds the part of the image that changes comparing with the last frame.
 
-**B-Frame** or Bidirectional predicted picture, can use both previous and forward Frame to get the highest amount of date compression, use the difference between the current frame and both  the preceding and following frame to specify its content.
+**B-Frame** or Bidirectional predicted picture can use both previous and forward Frame to get the highest amount of data compression, use the difference between the current frame and both the preceding and following frame to specify its content.
 
 ![I-P-B_Frames_01.png](Images/I_P_B_Frames_01.png){: .center}  
 
@@ -37,12 +35,12 @@ It is important to know bandwidth doesn't actually increase the speed of a netwo
 
 ### Video Formats
 
-It is common to find extension for video files like `.mp4` and `.avi`, and is even more common misunderstand this extension, or containers for the codec.
-When we talk about `mp4` we are not talking about a single file, rather a container of multiple files, it will consist of video files, audio files and metadata file.
+It is common to find an extension for video files like `.mp4` and `.avi` and is even more common to misunderstand this extension or containers for the codec.
+When we talk about `mp4` we are not talking about a single file, instead of a container of multiple files. It consists of video files, audio files, and metadata files.
 
 ![codec_video_container_001.jpg](Images/codec_video_container_001.jpg){:.center}
 
-The most common containers for CCTV will be `AVI` and `MP4`
+The most common containers for CCTV will be `AVI` and `MP4`.
 
 ### Video Codec
 
@@ -51,11 +49,11 @@ $$
 Codec = Coder + Decoder
 $$
 
-> Here we talk about software codec, but be aware that the name `codec` applies to hardware as well.
+> We talk about software codec but be aware that the name `codec` applies to hardware as well.
 
-To make the video manageable and smaller, codec create a encoded stream or a compressed version of the video and the audio, software like **VLC player** can then decode that video stream and present the result. 
+To make the video manageable and smaller, codec creates an encoded stream or a compressed version of the video and the audio, software like **VLC player** can then decode that video stream and present the result. 
 
-It is important to know that most of the codec are "lossy" or "lossy compression", in other words, some quality is lost during the compression. 
+It is important to know that most of the codec is "lossy" or "lossy compression", in other words, some quality is lost during the compression. 
 
 The most common codec use in CCTV for video are: 
 
@@ -63,9 +61,10 @@ The most common codec use in CCTV for video are:
 * [MPEG4](https://en.wikipedia.org/wiki/MPEG-4)  
 * [H.264 (AVC)](https://en.wikipedia.org/wiki/Advanced_Video_Coding)[^2]
 
-[^1]: High Efficiency Video Coding  
+[^1]: High-Efficiency Video Coding  
 [^2]: Advanced Video Coding  
 
 > "lossless"  codec we have **MJPEG**.
 
 ![codec_video_container_002.png](Images/codec_video_container_002.png){:.center}
+

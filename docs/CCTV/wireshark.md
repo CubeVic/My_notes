@@ -1,25 +1,25 @@
 # WireShark
 ![Wireshark image](Images/wireshark_logo.png){: .center}
 
-Wireshark display hundreds of protocols on all major networks, Data packets can be viewed in real-time or analyzed off-line.
+Wireshark displays hundreds of protocols on all major networks. Data packets can be viewed in real-time or analyzed offline.
 
 ## How to capture Data Packets
 
-Upon opening or launch wireshark will display a screen with the different available networks next to a graph ( EKG-Style) that represent the live traffic.
+Upon opening or launch, Wireshark will display a screen with the different available networks next to a graph ( EKG-Style) that represents the live traffic.
 
 ![Wireshark](Images/wireshark_001.png){: .center}
 
-We can either start the analysis selecting the network we want to check 
+We can either start the analysis by selecting the network we want to check 
 
 ![Wireshark](Images/wireshark_002.png){: .center}
 
-> To stop the analysis we can just clink in the red square button on the top
+> To stop the analysis, we can click on the red square button on the top
 
 ### Panels 
 
-We the analysis start we will see 3 different panels, top middle and bottom.
+When the analysis starts, we will see 3 different panels, top middle, and bottom.
 
-> To stop the analysis we can just clink in the red square button on the top.
+> To stop the analysis we can click on the red square button on the top.
 
 ![Wireshark](Images/wireshark_003.png){: .center}  
 
@@ -31,7 +31,7 @@ The session:
 
 #### Packet list
 
-It display all the packages captured
+It displays all the packages captured.
 
 * **No**: This field indicates which packets are part of the same conversation. It remains blank until you select a packet.  
 * **Time**: The timestamp of when the packet was captured is displayed in this column. The default format is the number of seconds or partial seconds since this specific capture file was first created.
@@ -57,7 +57,7 @@ At the bottom is the packet bytes pane, which displays the raw data of the selec
 
 ## How to use filters
 
-On the top of the top panel we will have a field, we can input some filters in this panel, filters will help us to find a specific message between two IPs or a specific message that use a specific protocol.
+On the top of the top panel, we will have a field. We can input some filters in this panel, filters will help us to find a specific message between two IPs or a specific message that uses a specific protocol.
 
 ![Wireshark](Images/wireshark_007.png){: .center} 
 

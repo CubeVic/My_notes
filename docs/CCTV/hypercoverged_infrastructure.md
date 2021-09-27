@@ -9,37 +9,37 @@ Hyperconverged infrastructure or HCI combine:
 - Networking
 - storage
 
-All in a single cluster, this provide cloud-like scalability 
+All in a single cluster, this provides cloud-like scalability. 
 
 ## Components
 
-There are two major components in these system
+There are two major components in these systems
 
 1. Hypervisors ( VMware, Hyper-v, KVM, Citrix, etc )
 2. Storage Controllers ( Stonefly, etc) 
 
 ## Available in which forms?
 
-The are available in tow main forms 
+They are available in two main forms 
 
 - Fully Integrate Hardware appliances (hardware and software same manufacture)
 - Standalone Software
 
 ## How is it work?
 
-First, an standard or common architecture
+First, a standard or common architecture
 
 ### Standard 3-tier "siloed" architecture
 
 ![architecture_02.jpeg](images/architecture_02.jpeg)
 
-We have some point to remark:
+We have some points to remark:
 
 Storage tier
 
 1. It will contain:
     1. Storage
-    2. controllers or nas switch
+    2. controllers or NAS switch
     3. Backup
 2. There will be 3 different user interphase to control all 
 
@@ -51,13 +51,13 @@ Server Tier
 
 Site A will have a Redundancy Site B
 
-1. To keep the two site sync, a Bidirectional replication is use ( example Wan optimisartion )
+1. To keep the two sites sync, a Bidirectional replication is a use (for example Wan optimization )
 
-It is called 3-tier because is divided in three parts, network, server, storage
+It is called "3-tier" because it is divided into three parts, network, server, storage
 
-One advantage that different parts can be updated independently
+One advantage is the ability to update different parts independently.
 
-The disadvantage you need to notify the other tiers of that update or any change 
+The disadvantage you need to notify the other tiers of that update or any change. 
 
 ## How to improve the 3-tier architecture?
 
@@ -68,11 +68,11 @@ By using Hyperconvergance
 
 ![architecture_01.jpeg](images/architecture_01.jpeg)
 
-In the example above, two of the three layers is collapsed and it is replace for a single standard server ( with a mirror device as redundancy), all the UI are replace for a single UI.
+In the example above, two of the three layers are collapsed and it is replaced for a single standard server ( with a mirror device as redundancy). All the UI are replaced for a single UI.
 
-The Hypervisor will virtualize server resources r, and use the storage controller to provide virtual storage ( vNAS, vSAN, etc) 
+The Hypervisor will virtualize server resources and use the storage controller to provide virtual storage ( vNAS, vSAN, etc) 
 
-This Architecture allow the user to use Available server resources to the maximum capacity 
+This architecture allows the user to use Available server resources to the maximum capacity. 
 
 ## Benefits
 
