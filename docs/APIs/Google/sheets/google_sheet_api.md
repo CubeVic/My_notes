@@ -131,4 +131,4 @@ Now from the code above we have:
 1. The import of the packages, in this case we are importing from the google library, this will  make easy the interaction with the google API.  
 2. `SCOPES` this is the limitation on the actions, in this case it is limited to `readonly`.  
 3. `SAMPLE_SPREADSHEET_ID` and `SAMPLE_RANGE_NAME` these are the ID for the spreadsheet and the range where we are going to work in.  
-4. Inside the Main function will be a section where we will consult the file `credentials.json` this is the file we download it from the dashboard in the OAuth 2.0 client ID section.  
+4. Inside the main function will be a section where we will consult the file `credentials.json` this is the file we download from the dashboard in the OAuth 2.0 client ID section. 
