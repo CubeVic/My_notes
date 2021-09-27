@@ -200,6 +200,7 @@ nav:
         - Air Vent servo control: 'Arduino/Projects/Air_vent_servo_control.md'  
 
     - APIs:
+      - Introduction: 'APIs/intro.md'
       - datamuse: 'APIs/datamuse.md'
       - Google API:
         - introduction: 'APIs/Google/introduction.md'

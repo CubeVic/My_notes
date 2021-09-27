@@ -36,7 +36,7 @@ The feacture can be access on:
 
 >End point return a list of words 
 
-we can device divide it in 3 categories;   
+I can divide it in 3 categories;   
 1. Hard constraints results (`rd`,`sl`,`sp`,`rel_[code]` and `v`). 
 2. Context hints (`topics`, `lc`, `rc`). 
 3. Those that affect the order of the results returned.

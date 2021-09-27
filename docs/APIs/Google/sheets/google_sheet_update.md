@@ -1,6 +1,6 @@
 # Update Spreadsheet
 
-We can use the `batchUpdate` method to alter or update some appearance and operation of the spreadsheets, some of the data we can change will be: 
+I can use the `batchUpdate` method to alter or update some appearance and operation of the spreadsheets, some data I can change will be: 
 
 - Cell format and borders
 - named rage
@@ -13,7 +13,7 @@ All these operations can be divided into three groups
 2. Update ( or set): update the certain property and leaving others as they were. 
 3. Delete: Delete objects
 
-How it works is that `batchUpdate` will take one or more request objects, each one will modify, add or delete some kind of parameter or value, there are several types of requests, we will take the information from the official documentation 
+How it works is that `batchUpdate` will take one or more request objects, each one will modify, add or delete some kind of parameter or value, there are several types of requests, I will take the information from the official documentation 
 
 [Updating Spreadsheets | Sheets API | Google Developers](https://developers.google.com/sheets/api/guides/batchupdate)
 
@@ -27,14 +27,14 @@ This table will be a short version, for more details go to the official document
 |Borders                 | | [UpdateBordersRequest](https://developers.google.com/sheets/api/reference/rest/v4/spreadsheets/request#updatebordersrequest)                 |                  |
 
 
-The official documentation also mentions request that mimics user actions, from those listed request we are interested in these: 
+The official documentation also mentions request that mimics user actions, but the most relevant for me are: 
 
 - [FindReplaceRequest](https://developers.google.com/sheets/api/reference/rest/v4/spreadsheets/request#findreplacerequest)
 - [SortRangeRequest](https://developers.google.com/sheets/api/reference/rest/v4/spreadsheets/request#sortrangerequest)
 
 ## Filed mask
 
-These are comma-separated values that will ensure just the desire fields are changed, these field masks are required in some of the update requests, we can use '*' as a shorthand to update every field.
+These are comma-separated values that will ensure just the desire fields are changed, these field masks are required in some update requests, I can use '*' as a shorthand to update every field.
 
 an example of these files in a JSON representation is:
 
@@ -53,7 +53,7 @@ Some update requests will have a response, these returns are delivered in a form
 
 ## Example
 
-First, I will display the example from the documentation and later a customize example with few modifications that we can use to understand the update request and how to create the requests
+First, I will display the example from the documentation and later a customized example with few modifications I can use to understand the update request and how to create the requests
 
 ```python
 requests = []
@@ -87,20 +87,20 @@ print('{0} replacements made.'.format(
     find_replace_response.get('occurrencesChanged')))
 ```
 
-from the documentation code above we have:
+from the documentation code above:
 
 1. Create a empty array called `requests`.
 2. Append the first update request `updateSpreadsheetProperties` this will change the name of the spreadsheet.
 3. Append the second request `findReplace` this will find a specific value and replace it.
-4. We create the `body` with the requests
-5. Execute the `batchUpdate` request using the body that we already create.
+4. I create the `body` with the requests
+5. Execute the `batchUpdate` request using the body I already create.
 6. Save and display the response from the `findReplace`request.
 
-For the example, we will start with the following spreadsheet
+For the example, I will start with the following spreadsheet
 
 ![updateing_first.png](images/updateing_first.png){: .center}
 
-and we have the following method:
+and I have the following method:
 
 ```python
 def update_spreadsheet(gservice: gsheet_resource):
@@ -135,8 +135,8 @@ def update_spreadsheet(gservice: gsheet_resource):
 
 The code about it is similar to the example from the documentation with some minor changes: 
 
-1. We add the changes in the title of the spreadsheet and define the strings we want to find and replace 
-2. We print the full response for this request 
+1. I add the changes in the title of the spreadsheet and define the strings I want to find and replace 
+2. I print the full response for this request 
 
 The response of this request is:
 
@@ -144,15 +144,15 @@ The response of this request is:
 {'spreadsheetId': '1DjfIxE0ValkVRVyIOVE-8Sa9v7xSkqDvY9NCWGhImGp', 'replies': [{}, {'findReplace': {'valuesChanged': 2, 'rowsChanged': 2, 'sheetsChanged': 1, 'occurrencesChanged': 2}}]}
 ```
 
-we have the ID of the spreadsheet, and we have the array that represent the response to the different request
+I have the ID of the spreadsheet, and  the array that represent the response to the different request
 
 ```python
 'replies': [{}, {'findReplace': {'valuesChanged': 2, 'rowsChanged': 2, 'sheetsChanged': 1, 'occurrencesChanged': 2}}]}
 ```
 
-The first item in the array will be empty since the first request was the change of the name, the second is the request to find and replace a string, and here we have a response `{'findReplace': {'valuesChanged': 2, 'rowsChanged': 2, 'sheetsChanged': 1, 'occurrencesChanged': 2}}]}` we find 2 occurrences of the string `first` and replace it with the string `second` affecting two rows in one sheet.
+The first item in the array will be empty since the first request was the change of the name, the second is the request to find and replace a string, and here a response `{'findReplace': {'valuesChanged': 2, 'rowsChanged': 2, 'sheetsChanged': 1, 'occurrencesChanged': 2}}]}` we find 2 occurrences of the string `first` and replace it with the string `second` affecting two rows in one sheet.
 
-now the spread sheet looks like this:
+now the spreadsheet looks like this:
 
 ![after_update.png](images/after_update.png){: .center}
 
