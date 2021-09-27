@@ -1,10 +1,10 @@
 # Create Spreadsheet
 
-In order to create spreadsheets we need to have the authentication an authorisation, these can be achive by the usage of the Class `Flow` and the object `Credentials` for more information we can refer to the documentation in github 
+To create spreadsheets we need to have authentication and authorization, these can be achieved by the usage of the Class `Flow` and the object `Credentials` for more information we can refer to the documentation in Github. 
 
 [google-api-python-client/oauth.md at main · googleapis/google-api-python-client](https://github.com/googleapis/google-api-python-client/blob/main/docs/oauth.md)
 
-in this case i will copy and modify the code from the example in the quick start form google documentation 
+in this case, I will copy and modify the code from the example in the quick start form google documentation 
 
 ```python
 SCOPES = ['https://www.googleapis.com/auth/spreadsheets']
@@ -36,7 +36,7 @@ def start():
     return service
 ```
 
-We get the use the code to get the credentials and the token need it to interact with the API and return the object service that we will use to the creation of the spreadsheet
+We get the use the code to get the credentials and the token need it to interact with the API and return the object service that we will use for the creation of the spreadsheet
 
 ### `create()` method
 
@@ -66,7 +66,7 @@ def create_spreadsheet(service, title):
 
 From the above code:
 
-We have the object `spreadsheet` with some properties like the title and sheets, this are not the only properties and parameters we can modify for more information we need to check the spreadsheet resources and the sheet resources
+We have the object `spreadsheet` with some properties like the title and sheets, these are not the only properties and parameters we can modify for more information we need to check the spreadsheet resources and the sheet resources
 
 [REST Resource: spreadsheets | Sheets API | Google Developers](https://developers.google.com/sheets/api/reference/rest/v4/spreadsheets)
 
@@ -80,10 +80,10 @@ Finally, use `print()` to get the spreadsheet ID, we can use this ID on the brow
 
 ![gsheet.png](images/gsheet.png)
 
-Note the ID in the URL as well as the Sheet ID, in the bottom we have the name of the sheet.
+Note the ID in the URL as well as the Sheet ID, at the bottom we have the name of the sheet.
 
 ## Personal Changes
 
-I made some personal changes in the code, this case just to add some type hint and change it to my style and tase 
+I made some personal changes in the code, adding some type of hint. 
 
 ![gsheet.png](images/code.png)

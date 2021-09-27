@@ -1,23 +1,23 @@
 # Update Spreadsheet
 
-I can use the `batchUpdate` method to alter or update some appearance and operation of the spreadsheets, some data I can change will be: 
+I can use the `batchUpdate` method to alter or update some appearance and operation of the spreadsheets. I can change the following data: 
 
 - Cell format and borders
 - named rage
 - protected range
 - conditional formatting
 
-All these operations can be divided into three groups 
+These operations can be divided into three groups. 
 
 1. Add (and duplicate): add new objects or  duplicate existing one
-2. Update ( or set): update the certain property and leaving others as they were. 
+2. Update ( or set): update some properties and leaving others as they were. 
 3. Delete: Delete objects
 
-How it works is that `batchUpdate` will take one or more request objects, each one will modify, add or delete some kind of parameter or value, there are several types of requests, I will take the information from the official documentation 
+How it works is that `batchUpdate` will take one or more request objects, each one will modify, add or delete some parameter or value.  I will take the information from the official documentation 
 
 [Updating Spreadsheets | Sheets API | Google Developers](https://developers.google.com/sheets/api/guides/batchupdate)
 
-This table will be a short version, for more details go to the official documentation link above
+This table will be a short version of the information in the above link:
 
 |Object                  | ADD/DUPLICATE    | UPDATE/SET   | DELETE   |
 |:----------------------:|:----------------|:------------|:-------------|
@@ -34,7 +34,7 @@ The official documentation also mentions request that mimics user actions, but t
 
 ## Filed mask
 
-These are comma-separated values that will ensure just the desire fields are changed, these field masks are required in some update requests, I can use '*' as a shorthand to update every field.
+These are comma-separated values that will ensure just the desire fields are changed. These "field masks" are required in some update requests. I can use '*' as a shorthand to update every field.
 
 an example of these files in a JSON representation is:
 
@@ -49,11 +49,11 @@ an example of these files in a JSON representation is:
 }
 ```
 
-Some update requests will have a response, these returns are delivered in a form of an array, where each response will occupy the same index that corresponds to the request.
+Some update requests will have a response. These returns are delivered in array form, where each response will occupy the same index that corresponds to the request.
 
 ## Example
 
-First, I will display the example from the documentation and later a customized example with few modifications I can use to understand the update request and how to create the requests
+First, I will display the example from the documentation and later a customized example with few modifications.
 
 ```python
 requests = []
@@ -89,9 +89,9 @@ print('{0} replacements made.'.format(
 
 from the documentation code above:
 
-1. Create a empty array called `requests`.
-2. Append the first update request `updateSpreadsheetProperties` this will change the name of the spreadsheet.
-3. Append the second request `findReplace` this will find a specific value and replace it.
+1. Create an empty array called `requests`.
+2. Append the first update request `updateSpreadsheetProperties` which will change the name of the spreadsheet.
+3. Append the second request `findReplace` which finds a specific value and replaces it.
 4. I create the `body` with the requests
 5. Execute the `batchUpdate` request using the body I already create.
 6. Save and display the response from the `findReplace`request.
@@ -144,13 +144,13 @@ The response of this request is:
 {'spreadsheetId': '1DjfIxE0ValkVRVyIOVE-8Sa9v7xSkqDvY9NCWGhImGp', 'replies': [{}, {'findReplace': {'valuesChanged': 2, 'rowsChanged': 2, 'sheetsChanged': 1, 'occurrencesChanged': 2}}]}
 ```
 
-I have the ID of the spreadsheet, and  the array that represent the response to the different request
+I have the ID of the spreadsheet, and  the array that represents the response to the different requests
 
 ```python
 'replies': [{}, {'findReplace': {'valuesChanged': 2, 'rowsChanged': 2, 'sheetsChanged': 1, 'occurrencesChanged': 2}}]}
 ```
 
-The first item in the array will be empty since the first request was the change of the name, the second is the request to find and replace a string, and here a response `{'findReplace': {'valuesChanged': 2, 'rowsChanged': 2, 'sheetsChanged': 1, 'occurrencesChanged': 2}}]}` we find 2 occurrences of the string `first` and replace it with the string `second` affecting two rows in one sheet.
+The first item in the array is empty because the first request was the change of the name. The second is the request to find and replace a string. The response looks like `{'findReplace': {'valuesChanged': 2, 'rowsChanged': 2, 'sheetsChanged': 1, 'occurrencesChanged': 2}}]}` we find 2 occurrences of the string `first` and replace it with the string `second` affecting two rows in one sheet.
 
 now the spreadsheet looks like this:
 

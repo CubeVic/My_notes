@@ -201,7 +201,7 @@ nav:
 
     - APIs:
       - Introduction: 'APIs/intro.md'
-      - datamuse: 'APIs/datamuse.md'
+      - Datamuse: 'APIs/datamuse.md'
       - Google API:
         - introduction: 'APIs/Google/introduction.md'
         - sheets:

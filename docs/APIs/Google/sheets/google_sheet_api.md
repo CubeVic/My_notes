@@ -1,19 +1,20 @@
 # Google Sheets API
 
-The common task that I can perform with the RESTful API will be:
+The task we can perform with the RESTful API will be:
 
 - Create spreadsheets
 - Read and write spreadsheets cell values
 - update spreadsheets formatting
 - Manage connected sheets
 
+
 ## Common terms
 
-Some common terms used in the API 
+Some terms used in the API 
 
 ### Spreadsheet
 
-It is the primary object and it contains multiple sheets, It has a unique ID `spreeadsheetId` made with letters, numbers, hyphens, and underscores, you can find it in the google sheet URL  
+It is the primary object, and it contains multiple sheets. It has a unique ID `spreeadsheetId` made with letters, numbers, hyphens, and underscores. You can find it in the google sheet URL. 
 
 ```python
 https://docs.google.com/spreadsheets/d/spreadsheetId/edit#gid=0
@@ -23,7 +24,7 @@ https://docs.google.com/spreadsheets/d/spreadsheetId/edit#gid=0
 
 ### Sheet
 
-A page or tab in the spreadsheet, sheets have a unique title and a numeric `sheetId` value, this value can be found in a google sheet URL
+A page or tab in the spreadsheet, sheets have a unique title and a numeric `sheetId` value which can be found in a google sheet URL.
 
 ```python
 https://docs.google.com/spreadsheets/d/aBC-123_xYz/edit#gid=sheetId
@@ -37,7 +38,7 @@ An individual field of text or data within the sheets. Cells can be group vertic
 
 ### A1 notation
 
-This is the method to refer to one or a group of cells, it uses the sheet name, the column letter, and a numeric value that indicates the row, bellow examples taken from the google sheet documentation: 
+The method refers to one or a group of cells. It uses the sheet name, the column letter, and a numeric value that indicates the row. Bellow examples taken from the google sheet documentation: 
 
 - `Sheet1!A1:B2` refers to the first two cells in the top two rows of Sheet1.
 - `Sheet1!A:A` refers to all the cells in the first column of Sheet1.
@@ -48,7 +49,7 @@ This is the method to refer to one or a group of cells, it uses the sheet name, 
 
 ### R1C1 notation
 
-This method is less common but is used to refer to some cells or cells in reference to a specific point, it uses the sheet name, the starting and ending coordinates of the cell using the row and column numbers.
+This method is less common than A1 notation, and it is used to refer to some cells or cells about a specific point. It uses the sheet name and the starting and ending coordinates of the cell using the row and column numbers.
 
 - `Sheet1!R1C1:R2C2` refers to the first two cells in the top two rows of Sheet1.
 - `R1C1:R2C2` refers to the first two cells in the top two rows of the first visible sheet.
@@ -58,11 +59,11 @@ This method is less common but is used to refer to some cells or cells in refere
 
 ## Python Quickstart
 
-There will be some prerequisites but those can be fine in the official documentation.
+There will be some prerequisites. They can be fine in the official documentation.
 
 [Python Quickstart | Sheets API | Google Developers](https://developers.google.com/sheets/api/quickstart/python)
 
-### 1. Install google client library
+### 1. Install the google client library
 
 ```python
 pip install --upgrade google-api-python-client google-auth-httplib2 google-auth-oauthlib
@@ -128,7 +129,7 @@ if __name__ == '__main__':
 ```
 Now from the code above:
 
-1. The import of the packages, in this case I'm importing from the google library, this will  make easy the interaction with the google API.  
-2. `SCOPES` this is the limitation on the actions, in this case it is limited to `readonly`.  
+1. The import of the packages, in this case, I'm importing from the google library. It will make easy the interaction with the google API.  
+2. `SCOPES` It is the limitation on the actions. For this case, it is limited to `readonly`.  
 3. `SAMPLE_SPREADSHEET_ID` and `SAMPLE_RANGE_NAME` these are the ID for the spreadsheet and the range where I'm going to work in.  
 4. Inside the main function will be a section where I will consult the file `credentials.json` this is the file I download from the dashboard in the OAuth 2.0 client ID section. 

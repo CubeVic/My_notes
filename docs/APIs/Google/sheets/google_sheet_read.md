@@ -2,9 +2,9 @@
 
 ---
 
-A cell is located at interception between a row and a column and may contain a value, to interact with it google sheet API provides the [spreadsheet.values](https://developers.google.com/sheets/api/reference/rest/v4/spreadsheets.values) collection thus I can perform basic reading and writing.
+A cell is located at interception between a row and a column and may contain a value. To interact with those cells, google sheets API provides the [spreadsheet.values](https://developers.google.com/sheets/api/reference/rest/v4/spreadsheets.values) collection with it, those with the credentials can reading and writing.
 
-I will focus here on the basic usage of the [spreadsheet.values](https://developers.google.com/sheets/api/reference/rest/v4/spreadsheets.values) collection and won't deal with any formatting properties for the sheets.
+I will focus here on the "basic" usage of the [spreadsheet.values](https://developers.google.com/sheets/api/reference/rest/v4/spreadsheets.values) collection and ignoring any formatting properties for the sheets.
 
 # Methods
 
@@ -45,7 +45,7 @@ Represent the data within the range of the spreadsheet, the data I'm reading.
 
 Its JSON representation is:
 
-```json
+```JSON
 {
   "range": string,
   "majorDimension": enum(Dimension),
@@ -57,9 +57,9 @@ Its JSON representation is:
 
 Where:
 
-- `range` type `string`: the range of values in A1 notation, this will be the range I will be reading.
+- `range` type `string`: the range of values in A1 notation. This range will be the one I will be reading.
 - `majorDimension` type `enum`: This is more difficult to understand, but in few words, depending on the value the output will follow a format, let say the value is `majorDimension=ROWS`the data is A1=1,B1=2,A2=3,B2=4, the `range=A1:B2` the return will be `[ [1,2] [3,4] ]` but if I modify `majorDimension=COLUMNS` the output will be `[ [1,3] [2,4] ]`.
-- `values` type `array`: the data to be read, this fallow a format of an array of arrays, the outer array represent the data, each inner array a major dimension and each item inside a cell value.
+- `values` type `array`: the data to be read, this fallow a format of an array of arrays, the outer array represent the data, each inner array a `majordimension` and each item inside a cell value.
 
 more info:
 
@@ -67,7 +67,7 @@ more info:
 
 ### `valueRenderOption`
 
-This will affect how the values are rendered in the output if they will follow a specific format, un-formatted, or a calculation of a formula, the possible values of this parameter are: 
+It will affect how the values are rendered in the output.  The possible values of this parameter are: 
 
 - `FORMATTED_VALUE`
 - `UNFORMATTED_VALUE`
@@ -79,7 +79,7 @@ More info:
 
 ### `dateTimeRenderOption`
 
-This option will be used only if `valueRenderOption=FORMATTED_VALUE` and it affects how dates are rendered in the output. the options are: 
+It is used only if `valueRenderOption=FORMATTED_VALUE`.  It affects how dates are rendered in the output. the options are: 
 
 - `SERIAL_NUMBER`
 - `FORMATTED_STRING`
@@ -90,9 +90,9 @@ more info:
 
 ## `BatchGetValueResponse`
 
-This is the response I have when I use the method `batchGet()` which is the method to read non-consecutive ranges, or several ranges from a spreadsheet. As well as `valueRange` is has a JSON representation
+It is the response when the method `batchGet()` is used. It is the method to read non-consecutive ranges or several ranges from a spreadsheet. As well as `valueRange` is has a JSON representation
 
-```json
+```JSON
 {
   "spreadsheetId": string,
   "valueRanges": [
@@ -105,7 +105,7 @@ This is the response I have when I use the method `batchGet()` which is the meth
 
 Where:
 
-- `spreadsheetId`: It is the ID of the spreadsheet I are reading
+- `spreadsheetId`: It is the ID of the spreadsheet I am reading
 - `valueRanges`: is an object that contains `valueRange` in the same order as the request values.
 
 more info: 
@@ -126,7 +126,7 @@ Where:
 
 ### Reading single range
 
-Assuming that I already have the resources and tokens (full implementation bellow), the reading function will look like: 
+Assuming that I already have the resources and tokens (full implementation below), the reading function will look like this: 
 
 ```python
 def read_single(gservice: gsheet_resource):
@@ -137,17 +137,17 @@ def read_single(gservice: gsheet_resource):
     print('{0} '.format(rows))
 ```
 
-Be aware that `values` in the second statement are the item in the `ValueRange` JSON representation I mention earlier.
+Be aware that `values` in the second statement are the item in the `ValueRange` JSON representation I mentioned earlier.
 
-I didn't provide any information about the `majorDimension` so the default value `ROW` is applied that is why the result is 
+I didn't provide any information about the `majorDimension` so the default value `ROW` is applied. the result is 
 
 ![result_reading.png](images/result_reading.png)
 
 ### Reading multiple ranges
 
-Using the same spreadsheet, for this example I will change the range to two non-consecutive ranges. I will need to make some changes to the function, I replace the `get()` method for `batchGet()`.
+Using the same spreadsheet, for this example, I will change the range to two non-consecutive ranges. I will need to make some changes to the function. I replace the `get()` method for `batchGet()`.
 
-In this case, the response will be a `BatchGetValueResponse` that is an object that contains a list of `ValueRange` and the `spreadsheet_ID`
+The response will be a `BatchGetValueResponse` that is an object that contains a list of `ValueRange` and the `spreadsheet_ID`
 
 ```python
 def read_multiple(gservice: gsheet_resource):
@@ -173,7 +173,7 @@ and the response will be:
 
 # Writing
 
-Similar to reading I will need few elements to be able to read on the spreadsheet, these elements are:
+Similar to "reading". I will need few elements to be able to read on the spreadsheet, these elements are:
 
 - `spreadsheetID`.
 - The range in A1 notation.
@@ -184,7 +184,7 @@ for the update, I will need to use the parameter `ValueInputOption` ( for a batc
 | valueInputOption| Description |
 |:----------------|:------------|
 |RAW              |It will place a string without any parse, if the input is =1+2 the value place in the cell will be that =1+2        |
-|USER_ENTERED     |The input will be parse following similar pattern that google sheet UI, example, =1+2 will be render as a result of the operation 3           |
+|USER_ENTERED     |The input will be parse following a similar pattern that googles sheet UI, example, =1+2 will be rendered as a result of the operation 3           |
 
 ## Examples
 
@@ -230,7 +230,7 @@ from the code above:
 
 In this case, the request use is [spreadsheets.values.batchUpdate](https://developers.google.com/sheets/api/reference/rest/v4/spreadsheets.values/batchUpdate)
 
-The request must be `BatchUpdateValuesRequest` object, this object will contain the `ValueInputOption` and a list of `ValueRange` this will make more sense with an example:
+The request must be `BatchUpdateValuesRequest` object, this object will contain the `ValueInputOption` and a list of `ValueRange`, an example:
 
 ```python
 def write_range(gservice: gsheet_resource):
@@ -270,7 +270,7 @@ From the code above:
 1. I define two ranges, ode that will be the first row `first_sheet!A1:C1` and the second will be the third row `first_sheet!A3:C3`.
 2. I define two variables that will handle the values, `values1`, and `values2`
 3. I create the `data`, Be aware here I have two`valueRange`.
-4. I create the `body`, in this case, the `valueInputOption` will be in the body of the request rather than the query parameter like in the example with a single range.
+4. I create the `body, the `valueInputOption` will be in the body in the request instead of the query parameter, like in the example with a single range.
 5. I use the function `batchUpdate` to execute the writing.
 
 ![write_multiple_rage.png](images/write_multiple_rage.png){: .center}
@@ -279,7 +279,7 @@ From the code above:
 
 Like writing append will use a specific type of request in this case `spreadsheets.values.append`.
 
-For the most part, the append is similar to the writing single range with the difference in the function use, rather than use `update()` I use `append()`.
+For the most part, the append is similar to writing a single range with the difference in the function use, rather than use `update()` I use `append()`.
 
 ```python
 def append_range(gservice: gsheet_resource):
@@ -300,8 +300,8 @@ def append_range(gservice: gsheet_resource):
 
 from the code above:
 
-1. Define the range where I will start to append ( be aware that if that is used already the new information will be write in the next row)
-2. Define the values, the outer array define the data , inner array represent the rows (I haven't defined a `majorDimension` so the default is `ROW`).
+1. Define the range where I will start to append ( be aware that if that is used already the new information will be written in the next row)
+2. Define the values, the outer array defines the data, inner array represents the rows (I haven't defined a `majorDimension` so the default is `ROW`).
 3. I create the `body`.
 4. I use the function `append()` that will include the query parameter `valueInputOption`
 

@@ -14,7 +14,7 @@ Packet loss, latency, and jitter are all related to slow throughput speed. Laten
 ### Bandwidth
 
 although a bit confusing, the bandwidth definition will be **Network bandwidth is defined as the maximum transfer throughput capacity of a network** it measure how much data can be sent and receive at the same time. 
-It is important to know bandwidth doesn’t actually increase the speed of a network, it just appears to make the network faster.
+It is important to know bandwidth doesn't actually increase the speed of a network, it just appears to make the network faster.
 
 >Let’s say 1 Mbps is the equivalent of a single-lane freeway. Let’s also say you want to download a 5 Mb image. If you had a connection with a bandwidth of 1 Mbps (one lane) it would take you about five seconds to download that image. Now, if you were operating with a 5 Mbps bandwidth connection (five lanes)
 
@@ -66,6 +66,6 @@ The most common codec use in CCTV for video are:
 [^1]: High Efficiency Video Coding  
 [^2]: Advanced Video Coding  
 
-> "lossless"  codec we will have **MJPEG**.
+> "lossless"  codec we have **MJPEG**.
 
 ![codec_video_container_002.png](Images/codec_video_container_002.png){:.center}
