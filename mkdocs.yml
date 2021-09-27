@@ -207,7 +207,7 @@ nav:
           - Google Sheet API: 'APIs/Google/sheets/google_sheet_api.md'
           - Create spreadsheets: 'APIs/Google/sheets/google_sheet_create.md'
           - Read and Write spreadsheets: 'APIs/Google/sheets/google_sheet_read.md'
-          - Update spreadsheets: 'API/Google/sheets/google_sheet_update.md'
+          - Update spreadsheets: 'APIs/Google/sheets/google_sheet_update.md'
 
     - Raspberry:
       - Samba Server: 'Raspberry/samba.md'
