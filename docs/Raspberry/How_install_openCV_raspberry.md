@@ -137,16 +137,6 @@ I will divide the installation into two parts. In the first part, I get the libr
 
 ```
 $ sudo pip3 install virtualenv virtualenvwrapper
-$ sudo rm -rf ~/get-pip.py ~/.cache/pip
-```
-Next, I will update the `~/.profile`.
-
-```
-# virtualenv and virtualenvwrapper
-export WORKON_HOME=$HOME/.virtualenvs
-export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3
-source /usr/local/bin/virtualenvwrapper.sh
-source ~/.profile
 ```
 
 ### Create the virtual environment 
@@ -154,14 +144,10 @@ source ~/.profile
 I will  create the virtual environment with the commands as follow:
 
 ```
-$ mkvirtualenv cv -p python3
+$ virtualenv -p python3 cv
 ```
-The above command will create a virtual environment called `cv`.
-To verify the virtual environment, I can use the `workon` command.
+The virtual environment is called `cv`
 
-```
-$ workon cv
-```
 Install Numpy 
 ```
 $ pip3 install numpy
