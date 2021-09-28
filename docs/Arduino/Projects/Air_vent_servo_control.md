@@ -1,13 +1,14 @@
-This is part of the project for the Ikea Lack enclosure, more exact to the Air vent or the temperature control, the idea vents will be open and close with the servo, the decision to open or close the vents will be based on the temperature of the main enclosure.
+The air vent subproject is part of the Ikea Lack enclosure, more exact to the Air vent or the temperature control. The idea is simple; the vents will be open and close with by a servo, the decision to open or close the vents depending on the current temperature inside the enclosure.
 
-This is based on [Servo automated iris / aperture for airflow control](https://www.thingiverse.com/thing:3563742) by AcE_Krystal
+The project is based on [Servo automated iris/aperture for airflow control](https://www.thingiverse.com/thing:3563742) by AcE_Krystal
 
 ![001.servo_automated_iris](images/001.servo_automated_iris.jpg){: .center}
 
 ## First Sketch (Basic Control)
 
 ![002.servo_schema](images/002.servo_schema.jpg){: . center}
-First, we are going to create a sketch to control the servo, it will move 180 degrees right and later 180 left
+First, we are going to create a sketch to control the servo. 
+It will move 180 degrees right, later 180 left.
 
 The code will be as follow:
 
