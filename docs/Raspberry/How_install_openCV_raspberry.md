@@ -122,7 +122,7 @@ $ mv opencv-4.0.0 opencv
 $ mv opencv_contrib-4.0.0 opencv_contrib
 ```
 > `opencv_contrib`  is a repository with additional or extra modules to increase the functionality.
-
+ 
 ## Step 4: Python 3 virtual environment for OpenCV 4
 
 ### Get PIP
