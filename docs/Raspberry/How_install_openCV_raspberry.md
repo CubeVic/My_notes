@@ -4,14 +4,16 @@
 
 I will divide the process into seven steps.
 
-## Step 1: Expanding filesystem on the Raspberry Pi
+## Step 1: Preparing the raspberry 
+
+### Expanding filesystem on the Raspberry Pi
 
 The raspberry won't be using all the space available. It will have a directory structure by default. The first step will be to expand that directory to get more space  in the micro-sd card: 
 
-### Access the raspberry configuration menu
+#### Access the raspberry configuration menu
 To access the configuration, I need to type on the terminal the following command.
 ```
-$ sudo raspi-config
+sudo raspi-config
 ```
 
 After entering the command, a configuration menu appears on the screen. 
@@ -27,49 +29,83 @@ Next, I select the option "Expand filesystem".
 Finally, **<Finish>** and reboot the unit.
 
 ```
-$ sudo reboot
+sudo reboot
 ```
 After the reboot, the available space will expand. To verify it, I use the command `df -h`.
 
 ![003_df_command](images/003_df_command.png)
 
-### Deleting software unuse to release more space. 
+### Deleting software unused to release more space. 
 Depending on the OS installed, might not be enough space. I can get some extra space if I remove some of the software installed. To remove the software, I can use the terminal. I will remove libreOffice and Wolfram engine.
 
 ```
-$ sudo apt-get purge wolfram-engine
-$ sudo apt-get purge libreoffice*
-$ sudo apt-get clean
-$ sudo apt-get autoremove
+sudo apt-get purge wolfram-engine
+sudo apt-get purge libreoffice*
+sudo apt-get clean
+sudo apt-get autoremove
 ```
-> dpkg-query -l  will provide a list all the programs installed, I can remove the following:   
-* wolfram-engine.  
-* bluej.  
-* greenfoot.  
-* nodered.  
-* nuscratch.  
-* scratch.  
-* sonic-pi.  
-* libreoffice.  
-* claws-mail.  
-* claws-mail-i18n.  
-* minecraft-pi.  
-* python-pygame.  
+> dpkg-query -l  will provide a list all the programs installed, I can remove the following:
+> * wolfram-engine.  
+> * bluej.  
+> * greenfoot.  
+> * nodered.  
+> * nuscratch.  
+> * scratch.  
+> * sonic-pi.  
+> * libreoffice.  
+> * claws-mail.  
+> * claws-mail-i18n.  
+> * minecraft-pi.  
+> * python-pygame.  
+
+### Increasing memory assigned to GPU
+
+The raspberry pi share the RAM with CPU and GPU, for the early models like  pi2 and pi3 the memory assigned to GPU is 64Mbytes ( for pi4 is 76MBytes). I'm going to use the raspberry with a project that include vision, so, I will increase the memory assigned to the GPU to 128Mbytes.
+
+1. Go to menu>preference>Raspberry pi configuration 
+2. navigate to performance tab 
+3. Change value assigned to the GPU
+4. reboot 
+
+![Raspberry_pi](images/raspberry_GPU.png)
+
+### verify EEPROM is up-to-date.
+
+This might not be needed it for new installation, but it is a good idea to double check.
+
+1. Check if the EEPROM is up-to-date with `sudo rpi-eeprom-update`.
+2. Update it if need it `rpi-eeprom-update -a`
+
+```buildoutcfg
+sudo rpi-eeprom-update
+sudo rpi-eeprom-update -a
+sudo reboot
+```
+
+### Verify OS version.
+
+Before to continue with the installation I need to make sure what os I'm using. Using the commands `uname -a` i can get information about the OS.
+
+* aarch64 ---> 64-bit OS.  
+* armv7l  ---> 32-bit OS.  
+
+> The steps I follow are for 32-bit.
 
 ## Step 2: Installing OpenCV 4 dependencies on Raspberry pi
 
 I start by updating and upgrading the system.
 
 ```
-$ sudo apt-get update && sudo apt-get upgrade
+sudo apt-get update && sudo apt-get upgrade
 ```
+
 >This process might take some time 
 
 ### Install developer tools (CMake)
 After updating, I have to include the developer tools on [CMake](https://cmake.org/)
 
 ```
-$ sudo apt-get install build-essential cmake unzip pkg-config
+sudo apt-get install build-essential cmake unzip pkg-config
 ```
 
 ### Install libraries to handle video and image.
@@ -77,9 +113,9 @@ $ sudo apt-get install build-essential cmake unzip pkg-config
 I'm going to install libraries to work with videos and images.
 
 ```
-$ sudo apt-get install libjpeg-dev libpng-dev libtiff-dev
-$ sudo apt-get install libavcodec-dev libavformat-dev libswscale-dev libv4l-dev
-$ sudo apt-get install libxvidcore-dev libx264-dev
+sudo apt-get install libjpeg-dev libpng-dev libtiff-dev
+sudo apt-get install libavcodec-dev libavformat-dev libswscale-dev libv4l-dev
+sudo apt-get install libxvidcore-dev libx264-dev
 ```
 ### Install GTK
 >[GTK](https://www.gtk.org/) is a UI tool kit used to render the different components for a UI.
@@ -87,15 +123,15 @@ $ sudo apt-get install libxvidcore-dev libx264-dev
 The next step will be to Install GTK and GUI backend.  I will install an additional package that reduces the GTK warnings.
 
 ```
-$ sudo apt-get install libgtk-3-dev
-$ sudo apt-get install libcanberra-gtk*
+sudo apt-get install libgtk-3-dev
+sudo apt-get install libcanberra-gtk*
 ```
 
 Now two more packages, one for numerical optimization other for python development headers.
 
 ```
-$ sudo apt-get install libatlas-base-dev gfortran
-$ sudo apt-get install python3-dev
+sudo apt-get install libatlas-base-dev gfortran
+sudo apt-get install python3-dev
 ```
 
 ## Step 3: Download OpenCV 4 for Raspberry pi
@@ -104,7 +140,7 @@ There are two things to download, the `opencv` and the `opencv_contrib`.
 Bellow the code to download the libraries and unzip them. It is a good practice to rename the directories.
 
 ```
-$ cd ~
+cd ~
 ```
 I will download the zip from github directly
 [opencv](https://github.com/opencv/opencv)
@@ -112,14 +148,14 @@ I will download the zip from github directly
 To unzip
 
 ```
-$ unzip opnecv.zip
-$ unzip opencv_contrib.zip
+unzip opnecv.zip
+unzip opencv_contrib.zip
 ```
 To rename
 
 ```
-$ mv opencv-4.0.0 opencv
-$ mv opencv_contrib-4.0.0 opencv_contrib
+mv opencv-4.0.0 opencv
+mv opencv_contrib-4.0.0 opencv_contrib
 ```
 > `opencv_contrib`  is a repository with additional or extra modules to increase the functionality.
  
@@ -129,14 +165,14 @@ $ mv opencv_contrib-4.0.0 opencv_contrib
 I will use PIP to make the installation of python packages easier.
 
 ```
-$ sudo apt-get install python3-pip
+sudo apt-get install python3-pip
 ```
 
 ### Install the virtual environment
 I will divide the installation into two parts. In the first part, I get the libraries with `pip`. In the second part, I will add the package to the system path.
 
 ```
-$ sudo pip3 install virtualenv virtualenvwrapper
+sudo pip3 install virtualenv virtualenvwrapper
 ```
 
 ### Create the virtual environment 
@@ -144,13 +180,13 @@ $ sudo pip3 install virtualenv virtualenvwrapper
 I will  create the virtual environment with the commands as follow:
 
 ```
-$ virtualenv -p python3 cv
+virtualenv -p python3 cv
 ```
 The virtual environment is called `cv`
 
 Install Numpy 
 ```
-$ pip3 install numpy
+pip3 install numpy
 ```
 
 ### Step 5: Cmake and compile OpenCV 4
@@ -160,7 +196,7 @@ This increase will help with the compilation and avoid issues with memory.
 
 open `/etc/dphys-swapfile` :
 ```
-$ sudo nano /etc/dphys-swapfile
+sudo nano /etc/dphys-swapfile
 ```
 
 and add:
@@ -174,8 +210,8 @@ CONF_SWAPSIZE=2048
 
 restart the swap service:
 ```
-$ sudo /etc/init.d/dphys-swapfile stop
-$ sudo /etc/init.d/dphys-swapfile start
+sudo /etc/init.d/dphys-swapfile stop
+sudo /etc/init.d/dphys-swapfile start
 ```
 > Be aware the increase in the size of SWAP might affect the MicroSD card. It is worthy to remember SD cards have a limited number of write and read. It is a good idea to make a copy of the image including OpenCV and python in case the SD card fails.
 
@@ -183,14 +219,14 @@ $ sudo /etc/init.d/dphys-swapfile start
 I will use the Cmake command `make` to compile OpenCV.
 > This is a time-consuming task
 ```
-$ cd ~/opencv
-$ mkdir build
-$ cd build
+cd ~/opencv
+mkdir build
+cd build
 ```
 The following code will configure the OpenCV 4 build.
 
 ```
-$ cmake -D CMAKE_BUILD_TYPE=RELEASE \
+cmake -D CMAKE_BUILD_TYPE=RELEASE \
     -D CMAKE_INSTALL_PREFIX=/usr/local \
     -D OPENCV_EXTRA_MODULES_PATH=~/opencv_contrib/modules \
     -D ENABLE_NEON=ON \
@@ -208,7 +244,7 @@ if you miss the last two dots you will get an error message
 ![Cmake error](images/Cmake_error.png)
 
 Once it is finished, it is a good idea to check the result or the output:
-> I didnt add the whole answer, I focus in the report 
+> I didn't add the whole answer, I focus in the report 
 
 ```
 General configuration for OpenCV 4.4.0 =====================================
@@ -334,24 +370,26 @@ General configuration for OpenCV 4.4.0 =====================================
 
 Compile the OpenCV
 ```
-$ make -j4
+make -j4
 ```
 
 The `-j4`  argument specifies that I have 4 cores for compilation. if there are problems with the compilation try `make` without `-j4`.
 
+![Compile result](images/opencv_compile_result.png)
+
 #### Install OpenCV 4
 
 ```
-$ sudo make install
-$ sudo ldconfig
+sudo make install
+sudo ldconfig
 ```
 
 #### DON'T FORGET  to reset the SWAP size 
  open the file with `/etc/dphys-swapfile` and reset `CONF_SWAPSIZE` to 100MB, reset the swap service 
 
 ```
-$ sudo /etc/init.d/dphys-swapfile stop
-$ sudo /etc/init.d/dphys-swapfile start
+sudo /etc/init.d/dphys-swapfile stop
+sudo /etc/init.d/dphys-swapfile start
 ```
 
 ### Step 6: Link OpenCV to python virtual environment 
@@ -359,9 +397,9 @@ $ sudo /etc/init.d/dphys-swapfile start
 This step is important.
 
 ```
-$ cd ~/.virtualenvs/cv/lib/python3.5/site-packages/
-$ ln -s /usr/local/python/cv2/python-3.5/cv2.cpython-35m-arm-linux-gnueabihf.so cv2.so
-$ cd ~
+cd ~/.virtualenvs/cv/lib/python3.5/site-packages/
+ln -s /usr/local/python/cv2/python-3.5/cv2.cpython-35m-arm-linux-gnueabihf.so cv2.so
+cd ~
 ```
 
 ### Step 7: Test OpenCV
@@ -369,8 +407,8 @@ $ cd ~
 Using the terminal
 
 ```
-$ workon cv
-$ python
+workon cv
+python
 >>> import cv2
 >>> cv2.__version__
 
