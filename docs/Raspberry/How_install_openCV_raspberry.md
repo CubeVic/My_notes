@@ -69,7 +69,7 @@ The raspberry pi share the RAM with CPU and GPU, for the early models like  pi2 
 
 ![Raspberry_pi](images/raspberry_GPU.png)
 
-### verify EEPROM is up-to-date.
+### verify EEPROM is up-to-date (just for Raspberry pi 4).
 
 This might not be needed it for new installation, but it is a good idea to double check.
 
@@ -142,9 +142,9 @@ Bellow the code to download the libraries and unzip them. It is a good practice 
 ```
 cd ~
 ```
-I will download the zip from github directly
-[opencv](https://github.com/opencv/opencv)
-[opencv_contrib](https://github.com/opencv/opencv_contrib)
+I will download the zip from github directly:
+* [opencv](https://github.com/opencv/opencv)  
+* [opencv_contrib](https://github.com/opencv/opencv_contrib)
 To unzip
 
 ```
