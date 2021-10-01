@@ -112,11 +112,18 @@ sudo apt-get install build-essential cmake unzip pkg-config
 
 I'm going to install libraries to work with videos and images.
 
+```commandline
+sudo apt-get install cmake gfortran
+sudo apt-get install libjpeg-dev libtiff-dev libgif-dev
+sudo apt-get install libavcodec-dev libavformat-dev libswscale-dev
+sudo apt-get install libgtk2.0-dev libcanberra-gtk*
+sudo apt-get install libxvidcore-dev libx264-dev libgtk-3-dev
+sudo apt-get install libtbb2 libtbb-dev libdc1394-22-dev libv4l-dev
+sudo apt-get install libopenblas-dev libatlas-base-dev libblas-dev
+sudo apt-get install libjasper-dev liblapack-dev libhdf5-dev
+sudo apt-get install protobuf-compiler
 ```
-sudo apt-get install libjpeg-dev libpng-dev libtiff-dev
-sudo apt-get install libavcodec-dev libavformat-dev libswscale-dev libv4l-dev
-sudo apt-get install libxvidcore-dev libx264-dev
-```
+
 ### Install GTK
 >[GTK](https://www.gtk.org/) is a UI tool kit used to render the different components for a UI.
 
