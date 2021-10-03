@@ -201,7 +201,7 @@ nav:
 
     - APIs:
       - Introduction: 'APIs/intro.md'
-      - News API: 'APIs/news_api.md'
+      - News API: 'APIs/News_API/news_api.md'
       - Datamuse: 'APIs/datamuse.md'
       - Google API:
         - introduction: 'APIs/Google/introduction.md'
