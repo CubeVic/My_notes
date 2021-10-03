@@ -32,7 +32,7 @@ The first endpoint `everything` gathers all information about a specific topic, 
 - `/v2/top-headlines`: This can be used to get the top headlines for a country or specific toping in a region.
     - `/v2/top-headlines/source`: This is a specialized endpoint, it returns information (including name, description, and category) about the most notable sources available for obtaining top headlines from.
 
-# Authentification
+# Authentication
 
 They are three different ways to authenticate with the API: 
 
@@ -42,12 +42,13 @@ They are three different ways to authenticate with the API:
 
 ```python
 #Via querystring
-GET https://newsapi.org/v2/everything?q=keyword&apiKey=db0c830faab34094b9d9f3d36cceeb2f
+GET https://newsapi.org/v2/everything?q=keyword&apiKey=db0c830faab34094b9d9f3xxxxxxxx
 #Via X-Api-Key HTTP header
-X-Api-Key: db0c830faab34094b9d9f3d36cceeb2f
+X-Api-Key: db0c830faab34094b9d9f3d3xxxxxxxx
 #Via Authorization HTTP header
-Authorization: db0c830faab34094b9d9f3d36cceeb2f
+Authorization: db0c830faab34094b9d9f3d3xxxxxxxx
 ```
+
 
 If the authentication is not done correctly the `401 - Unauthorized` HTTP error.
 
@@ -63,14 +64,14 @@ For more information check the official documentation
 
 ### Request parameters
 
-For now the some of the request parameters:
+For now the some request parameters:
 
 - `apiKey` this is can be pass as part of the string query or as another form previously discussed.
 - `q` and `qInTitle` The first parameter is used to provide the phrases or keywords to search. The second `qInTitle` is the focus on keywords and phrases present just in the title of the new.
 - `sources` with this parameter we can limit the sources in the response.
 - `from` and `to` It is self-explanatory it will limit the time frame for the news.
 
-```bash
+```commandline
 GET https://newsapi.org/v2/everything?q=apple&from=2021-10-02&to=2021-10-02&sortBy=popularity&apiKey=db0c830faab34094b9d9xxxxxxxxxxxx
 ```
 
@@ -126,7 +127,7 @@ For now the some of the request parameters:
 - `source` here is a list of sources per country, the [source for official documentation](https://newsapi.org/sources).
 - `q` like the previous endpoint this is a parameter for the keyword and phrase search.
 
-```bash
+```commandline
 GET https://newsapi.org/v2/top-headlines?country=us&apiKey=db0c830faab34094b9d9xxxxxxxxxxxx
 ```
 
@@ -195,7 +196,7 @@ The response will have:
 - `code` this is the HTTP code.
 - `message` this is a description of the error.
 
-```json
+```JSON
 {
 "status": "error",
 "code": "apiKeyMissing",
