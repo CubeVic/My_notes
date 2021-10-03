@@ -1,8 +1,6 @@
-# Google News API
-
-[News API - Search News and Blog Articles on the Web](https://newsapi.org/)                                       
-
 # News API
+
+[News API - Search News and Blog Articles on the Web](https://newsapi.org/)
 
 We can get News and articles from the web using this API.
 
