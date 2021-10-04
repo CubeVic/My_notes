@@ -119,7 +119,7 @@ The documentation recommends this endpoint to get news for stock tickers or fina
 
 #### Request parameters
 
-For now the some of the request parameters:
+For now the some request parameters:
 
 - `apiKey` this is can be pass as part of the string query or as another form previously discussed.
 - `country` follow the 2-letter ISO 3166-1 code. example: `co` means Colombia.
@@ -218,10 +218,10 @@ These are just a few of the codes, for a full list check the documentation.
 
 [Errors - Documentation - News API](https://newsapi.org/docs/errors)
 
-- `apiKeyDisabled` - The key is disabled.
-- `apiKeyExhausted` - We reach the limit of the plan.
-- `parameterInvalid` - The request has some invalid parameters.
-- `parametersMissing` - The request is missing some parameters.
+- `apiKeyDisabled`- The key is disabled.
+- `apiKeyExhausted`- We reach the limit of the plan.
+- `parameterInvalid`- The request has some invalid parameters.
+- `parametersMissing`- The request is missing some parameters.
 
 ## Client Library
 
