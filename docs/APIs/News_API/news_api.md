@@ -266,3 +266,6 @@ From the code above few points
 
 - For `get_top_headlines` it is not possible to make a request using `sources` and `category`/ `country` at the same time, that will give us back an error.
 - For `get_everything`  pay attention to the time frame, on the free tier of the NewsAPI we are limited to one-month-old news.
+
+Here an example of a response from `/v2/top-headlines`
+![response](images/json_response.png)
