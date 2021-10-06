@@ -5,7 +5,8 @@ I will try to create examples and notes about how to use the API.
 
 Here a list of APIs already made notes about: 
 
-* **Datamuse:** from the official website "series of resources designed to help people create and communicate more effectively."
+* **NewsAPI:** Get news from more than 800,000 sources.
+* **Datamuse:** From the official website "series of resources designed to help people create and communicate more effectively."
 * **GOOGLE Sheets:** It is the API to interact with Google sheets.
 
 
