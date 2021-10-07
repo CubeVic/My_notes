@@ -123,6 +123,13 @@ sudo apt-get install libopenblas-dev libatlas-base-dev libblas-dev
 sudo apt-get install libjasper-dev liblapack-dev libhdf5-dev
 sudo apt-get install protobuf-compiler
 ```
+## Development toolkits
+
+Toolkits are relevant when you are using a system like linux, this tool kits are going to affect how the app will integrate with the desktop, We have two options **GTK+** and **Qt**.
+
+These are toolkits developer use to create the structure and how the app looks and feel, we are talking about the buttons, toolbars and menus we use in the apps. These toolkits are a time-saver for developers, since we don't need to waste time designing and writing code for evey shape, size and look of every button. we can let the toolkit take care of it.
+
+They are different, however I won't dig deeper in that difference, I will use Qt just because that is what I feel more comfortable. 
 
 ### Install GTK
 >[GTK](https://www.gtk.org/) is a UI tool kit used to render the different components for a UI.
@@ -134,11 +141,11 @@ sudo apt-get install libgtk-3-dev
 sudo apt-get install libcanberra-gtk*
 ```
 
-Now two more packages, one for numerical optimization other for python development headers.
+### install Qt
+>[Qt](https://www.qt.io/)  Qt is the fastest and smartest war to produce industrial-leading software that user love.
 
-```
-sudo apt-get install libatlas-base-dev gfortran
-sudo apt-get install python3-dev
+```commandline
+sudo apt-get install qt5-default
 ```
 
 ## Step 3: Download OpenCV 4 for Raspberry pi
@@ -148,50 +155,72 @@ Bellow the code to download the libraries and unzip them. It is a good practice 
 
 ```
 cd ~
+wget -O opencv.zip https://github.com/opencv/opencv/archive/4.5.3.zip
+wget -O opencv_contrib.zip https://github.com/opencv/opencv_contrib/archive/4.5.3.zip
 ```
-I will download the zip from github directly:
-* [opencv](https://github.com/opencv/opencv)  
-* [opencv_contrib](https://github.com/opencv/opencv_contrib)
-To unzip
+
+I ran into some issue using `wget`, so i had two options, download the zip from github directly, see links bellow, or use `curl`. I used `curl`.
+
+* [opencv](https://github.com/opencv/opencv/releases)  
+* [opencv_contrib](https://github.com/opencv/opencv_contrib/releases)
+
+```commandline
+sudo curl -L --output opencv.zip https://github.com/opencv/opencv/archive/4.5.3.zip
+sudo curl -L --output opencv_contrib https://github.com/opencv/opencv_contrib/archive/refs/tags/4.5.3.zip
+```
+Once the download finish, we will have two zip files, the next step is to unzip them and rename them, just to make it easier to work with the directories.
 
 ```
-unzip opnecv.zip
+unzip opencv.zip
 unzip opencv_contrib.zip
-```
-To rename
-
-```
-mv opencv-4.0.0 opencv
-mv opencv_contrib-4.0.0 opencv_contrib
+mv opencv-4.5.3 opencv
+mv opencv_contrib-4.5.3 opencv_contrib
 ```
 > `opencv_contrib`  is a repository with additional or extra modules to increase the functionality.
  
 ## Step 4: Python 3 virtual environment for OpenCV 4
 
+The first step is to check the current version of python 3 (do not use python2), after the version we will need to locate it, and finally we added to the `~/.bashrc` file.
+
+```commandline
+python3 --version
+which python 3.7
+
+# merge VIRTUALENVWRAPPER_PYTHON=location/version
+echo "export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3.7" >> ~/.bashrc
+# reload profile
+source ~/.bashrc
+```
+
 ### Get PIP
-I will use PIP to make the installation of python packages easier.
+We can use `PIP` to make the installation of python packages easier.
 
 ```
 sudo apt-get install python3-pip
 ```
 
 ### Install the virtual environment
-I will divide the installation into two parts. In the first part, I get the libraries with `pip`. In the second part, I will add the package to the system path.
+First, we need to get the libraries with `pip`. The second step will be adding the package to the system path.
 
 ```
-sudo pip3 install virtualenv virtualenvwrapper
+sudo pip3 install virtualenv
+sudo pip3 install virtualenvwrapper
 ```
-
-### Create the virtual environment 
-
-I will  create the virtual environment with the commands as follow:
+We need to do some admin work on the `~/.bashrc` file
 
 ```
-virtualenv -p python3 cv
+echo "export WORKON_HOME=$HOME/.virtualenvs" >> ~/.bashrc
+echo "source /usr/local/bin/virtualenvwrapper.sh" >> ~/.bashrc
+source ~/.bashrc
 ```
-The virtual environment is called `cv`
+Now, we can create the virtual environment with the name `cv453`
+```
+mkvirtualenv cv453
+```
+If there are no errors, we should get something like 
+![virtual_environment](images/virtual_enviroment.png)
 
-Install Numpy 
+There is an extra step, that is the installation  of Numpy, this is important otherwise Cmake won't compile 
 ```
 pip3 install numpy
 ```
@@ -230,18 +259,34 @@ cd ~/opencv
 mkdir build
 cd build
 ```
-The following code will configure the OpenCV 4 build.
+Now we can make the compilation, here we will tell Cmake where, what and how to make the OpenCV, In the command bellow we have several flags, some of them are set as off, like the python example, this will allow us to save some memory space, here to we can enable or disable the usage of Qt.
 
 ```
 cmake -D CMAKE_BUILD_TYPE=RELEASE \
-    -D CMAKE_INSTALL_PREFIX=/usr/local \
-    -D OPENCV_EXTRA_MODULES_PATH=~/opencv_contrib/modules \
-    -D ENABLE_NEON=ON \
-    -D ENABLE_VFPV3=ON \
-    -D BUILD_TESTS=OFF \
-    -D OPENCV_ENABLE_NONFREE=ON \
-    -D INSTALL_PYTHON_EXAMPLES=OFF \
-    -D BUILD_EXAMPLES=OFF ..
+-D CMAKE_INSTALL_PREFIX=/usr/local \
+-D OPENCV_EXTRA_MODULES_PATH=~/opencv_contrib/modules \
+-D ENABLE_NEON=ON \
+-D ENABLE_VFPV3=ON \
+-D WITH_OPENMP=ON \
+-D WITH_OPENCL=OFF \
+-D BUILD_ZLIB=ON \
+-D BUILD_TIFF=ON \
+-D WITH_FFMPEG=ON \
+-D WITH_TBB=ON \
+-D BUILD_TBB=ON \
+-D BUILD_TESTS=OFF \
+-D WITH_EIGEN=OFF \
+-D WITH_GSTREAMER=OFF \
+-D WITH_V4L=ON \
+-D WITH_LIBV4L=ON \
+-D WITH_VTK=OFF \
+-D WITH_QT=OFF \
+-D OPENCV_ENABLE_NONFREE=ON \
+-D INSTALL_C_EXAMPLES=OFF \
+-D INSTALL_PYTHON_EXAMPLES=OFF \
+-D BUILD_opencv_python3=TRUE \
+-D OPENCV_GENERATE_PKGCONFIG=ON \
+-D BUILD_EXAMPLES=OFF ..
 ```
 The `\` indicate that all is one single line, the space before '-D' is a single space.
 >IMPORTANT the  `..` at the end is not a type, it is a way to tell CMAke where is the CmakeList.txt file 
@@ -398,14 +443,27 @@ sudo ldconfig
 sudo /etc/init.d/dphys-swapfile stop
 sudo /etc/init.d/dphys-swapfile start
 ```
+#### Cleaning
+now we can clean the make and update the system
+```commandline
+make clean
+sudo apt-get update
+```
+we can remove the zip files too
+```commandline
+cd ~
+rm opencv.zip
+rm opencv_contrib.zip
+sudo reboot
+```
 
 ### Step 6: Link OpenCV to python virtual environment 
 
-This step is important.
+This an important step if we use a virtual environment, otherwise the system won't be able to import openCV correctly 
 
 ```
-cd ~/.virtualenvs/cv/lib/python3.5/site-packages/
-ln -s /usr/local/python/cv2/python-3.5/cv2.cpython-35m-arm-linux-gnueabihf.so cv2.so
+cd ~/.virtualenvs/cv453/lib/python3.7/site-packages
+ln -s /usr/local/lib/python3.7/site-packages/cv2/python-3.7/cv2.cpython-37m-arm-linux-gnueabihf.so
 cd ~
 ```
 
@@ -421,7 +479,4 @@ python
 
 ```
 
-
-
-[Resource](https://www.pyimagesearch.com/2018/09/26/install-opencv-4-on-your-raspberry-pi/)
 
