@@ -61,15 +61,15 @@ markdown_extensions:
 nav:
     # - Home: index.md
     - Machine Leaning (Concepts):
-      - Google Crash Course:
-        - Problem Framing:  'Machine Learning/Google Crash Course/Problem_Framing.md'
-        - ML Concepts: 
-            - Framing: 'Machine Learning/Google Crash Course/ML Concepts/Framing.md'
-            - Linear Regression: 'Machine Learning/Google Crash Course/ML Concepts/Linear regression.md'
-            - Reducing Loss: 'Machine Learning/Google Crash Course/ML Concepts/Reducing_Loss.md'
-            - First Steps TensorFlow: 'Machine Learning/Google Crash Course/ML Concepts/First_steps_TensorFlow.md'
-            - Introduction to Pandas: 'Machine Learning/Google Crash Course/ML Concepts/Intro_to_pandas.md'
-            - Training and Test Sets: 'Machine Learning/Google Crash Course/ML Concepts/Training_Test_sets.md'
+#      - Google Crash Course:
+#        - Problem Framing:  'Machine Learning/Google Crash Course/Problem_Framing.md'
+#        - ML Concepts:
+#            - Framing: 'Machine Learning/Google Crash Course/ML Concepts/Framing.md'
+#            - Linear Regression: 'Machine Learning/Google Crash Course/ML Concepts/Linear regression.md'
+#            - Reducing Loss: 'Machine Learning/Google Crash Course/ML Concepts/Reducing_Loss.md'
+#            - First Steps TensorFlow: 'Machine Learning/Google Crash Course/ML Concepts/First_steps_TensorFlow.md'
+#            - Introduction to Pandas: 'Machine Learning/Google Crash Course/ML Concepts/Intro_to_pandas.md'
+#            - Training and Test Sets: 'Machine Learning/Google Crash Course/ML Concepts/Training_Test_sets.md'
       - AI for Everyone: 'Machine Learning/AI for Everyone/AI_for_Everyone.md'
       - Other Key Terminology (TensorFlow): 'Machine Learning/Other_key_Terminology.md'
       - ML script or projects:
@@ -212,6 +212,7 @@ nav:
           - Update spreadsheets: 'APIs/Google/sheets/google_sheet_update.md'
 
     - Raspberry:
+      - Introduction: 'Raspberry/introduction.md'
       - Samba Server: 'Raspberry/samba.md'
       - Nagios Core: 'Raspberry/Nagios.md'
       - How to Install OpenCv on Raspberry pi: 'Raspberry/How_install_openCV_raspberry.md'
