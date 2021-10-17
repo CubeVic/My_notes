@@ -1,5 +1,5 @@
 # Raspberry Pi 
-![pi logo](images/RPi-Logo-Stacked-Reg-SCREEN.png){ .center}
+![pi logo](images/RPi-Logo-Stacked-Reg-SCREEN.png){:.center}
 
 Raspberry  pi  is a single board computer create for the UK-Based foundation [Raspberry pi](https://www.raspberrypi.org/)
 

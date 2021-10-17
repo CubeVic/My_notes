@@ -1,4 +1,4 @@
-![logo_Banner.png](img/logo_Banner.png)
+![logo_Banner.png](img/logo_Banner.png){loading=lazy}
 
 # Victor Andres Aguirre Fernandez
 
