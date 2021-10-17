@@ -1,5 +1,5 @@
 # Raspberry Pi 
-![pi logo](images/RPi-Logo-Stacked-Reg-SCREEN.png) {: .center}
+![pi logo](images/RPi-Logo-Stacked-Reg-SCREEN.png) {. :center}
 
 
 Raspberry  pi  is a single board computer create for the UK-Based foundation [Raspberry pi](https://www.raspberrypi.org/)
@@ -12,11 +12,11 @@ The most simple of terms, Raspberry pi in all their forms is a mini computer run
 
 ## Raspberry models
 
-<details>
-  <summary>Raspberry pi Model B/B+</summary>
-
+### Model B/B+
   ![Model B](images/modelB.png)
   These are the most popular form factor, they required a SD card to work, and it provided different ports, from Ethernet to USB 3 (in some models)
+<details>
+  <summary>Raspberry pi Model B/B+</summary>
   * [Raspberry pi 4 Model B](https://www.raspberrypi.com/products/raspberry-pi-4-model-b/)
   * [Raspberry pi 3 Model B+](https://www.raspberrypi.com/products/raspberry-pi-3-model-b-plus/)
   * [Raspberry pi 3 Model B](https://www.raspberrypi.com/products/raspberry-pi-3-model-b/)
@@ -24,14 +24,13 @@ The most simple of terms, Raspberry pi in all their forms is a mini computer run
   
 </details>
 
-<details>
-  <summary>Raspberry pi Model A/A+</summary>
+### Model A/A+
 
   ![Model A](images/modelA.jpeg)
-  This is an smaller form factor, with fewer ports similar performance in a smaller package.
-
+  This is a smaller form factor, with fewer ports similar performance in a smaller package.
+<details>
+  <summary>Raspberry pi Model A/A+</summary>
   * [Raspberry pi 3 Model A+](https://www.raspberrypi.com/products/raspberry-pi-3-model-a-plus/)
   * [Raspberry pi 1 Model A+](https://www.raspberrypi.com/products/raspberry-pi-1-model-a-plus/)
 
-  
 </details>
