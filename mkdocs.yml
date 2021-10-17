@@ -43,6 +43,8 @@ markdown_extensions:
   - pymdownx.details
   - attr_list
   - smarty
+  - attr_list
+  - md_in_html
   - pymdownx.highlight:
       use_pygments: true
   - pymdownx.betterem:

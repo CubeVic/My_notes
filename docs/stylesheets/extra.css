@@ -114,6 +114,20 @@ contrast issue with h5 level
 }
 
 /*
+/////////////////////////////
+///// section divider ///////
+/////////////////////////////
+*/
+
+hr{
+    height:2px;
+    border-width:0;
+    color:gray;
+    background-color:gray
+}
+
+
+/*
 ////////////////////
 // Navigation bar //
 ////////////////////
