@@ -64,7 +64,7 @@ For more information check the official documentation
 
 #### Request parameters
 
-For now the some request parameters:
+Some request parameters:
 
 - `apiKey` this is can be pass as part of the string query or as another form previously discussed.
 - `q` and `qInTitle` The first parameter is used to provide the phrases or keywords to search. The second `qInTitle` is the focus on keywords and phrases present just in the title of the new.
@@ -119,7 +119,7 @@ The documentation recommends this endpoint to get news for stock tickers or fina
 
 #### Request parameters
 
-For now the some request parameters:
+Some request parameters:
 
 - `apiKey` this is can be pass as part of the string query or as another form previously discussed.
 - `country` follow the 2-letter ISO 3166-1 code. example: `co` means Colombia.

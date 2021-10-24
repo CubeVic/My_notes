@@ -1,6 +1,7 @@
->Datamuse is a collection of free websites, mobile apps, and APIs designed to help people create and communicate more effectively.
+![datamuse](images/datamuse.png){:.center}
+> Datamuse is a collection of free websites, mobile apps, and APIs designed to help people create and communicate more effectively.
 
-I will focus in this note sin the [datamuse API](https://www.datamuse.com/api/)
+[datamuse API](https://www.datamuse.com/api/)
 
 ## What is it
 

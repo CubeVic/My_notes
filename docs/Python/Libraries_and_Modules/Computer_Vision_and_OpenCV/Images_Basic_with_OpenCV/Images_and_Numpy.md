@@ -21,7 +21,7 @@ from PIL import Image
 ```python
 import numpy as np
 import mathplotlib.pyplot as plt
-%matplotlib inline #--> this line is just for Jupyter Lab, in order to disply images
+%matplotlib inline #--> this line is just for Jupyter Lab, in order to display images
 from PIL import Image
 
 pic = Image.open('path-to/the-image.jpg')

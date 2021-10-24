@@ -107,7 +107,8 @@ nav:
               - permutations(): 'Python/Libraries_and_Modules/Itertools/Combinatoric_iterator/permutations.md'
               - combinations(): 'Python/Libraries_and_Modules/Itertools/Combinatoric_iterator/combinations.md'
             - Shortest input equence:
-                - groupby(): 'Python/Libraries_and_Modules/Itertools/Combinatoric_iterator/Shortest_input_sequence/groupby.md'
+                - groupby(): 'Python/Libraries_and_Modules/Itertools/Shortest_input_sequence/groupby.md'
+                - tee(): 'Python/Libraries_and_Modules/Itertools/Shortest_input_sequence/tee.md'
         - Numpy:
           - Numpy Basic (Part 1): 'Python/Libraries_and_Modules/Numpy/Numpy_Basic_part_1.md'
           - Numpy Basic (Part 2): 'Python/Libraries_and_Modules/Numpy/Numpy_Basic_part_2.md'
@@ -116,13 +117,13 @@ nav:
           - Pandas Crash course: 'Python/Libraries_and_Modules/Pandas/Pandas Crash course.md'
         - OpenCV:
           - Images Basic with OpenCV:
-            - Images and Numpy: 'Python/Libraries_and_Modules/Computer Vision and OpenCV/Images Basic with OpenCV/Images_and_Numpy.md'
-            - Images and Opencv: 'Python/Libraries_and_Modules/Computer Vision and OpenCV/Images Basic with OpenCV/Images_and_Opencv.md'
-            - Drawing on Images: 'Python/Libraries_and_Modules/Computer Vision and OpenCV/Images Basic with OpenCV/Drawing_on_Images.md'
-            - Drawing with mouse: 'Python/Libraries_and_Modules/Computer Vision and OpenCV/Images Basic with OpenCV/Direct_drawing_with_mouse.md'
+            - Images and Numpy: 'Python/Libraries_and_Modules/Computer_Vision_and_OpenCV/Images_Basic_with_OpenCV/Images_and_Numpy.md'
+            - Images and Opencv: 'Python/Libraries_and_Modules/Computer_Vision_and_OpenCV/Images_Basic_with_OpenCV/Images_and_Opencv.md'
+            - Drawing on Images: 'Python/Libraries_and_Modules/Computer_Vision_and_OpenCV/Images_Basic_with_OpenCV/Drawing_on_Images.md'
+            - Drawing with mouse: 'Python/Libraries_and_Modules/Computer_Vision_and_OpenCV/Images_Basic_with_OpenCV/Direct_drawing_with_mouse.md'
           - Image Processing:
-            - Color Mapping: 'Python/Libraries_and_Modules/Computer Vision and OpenCV/Image Processing/color_mapping.md'
-            - Blending and Pasting Images: 'Python/Libraries_and_Modules/Computer Vision and OpenCV/Image Processing/blending_pasting_images.md'
+            - Color Mapping: 'Python/Libraries_and_Modules/Computer_Vision_and_OpenCV/Image Processing/color_mapping.md'
+            - Blending and Pasting Images: 'Python/Libraries_and_Modules/Computer_Vision_and_OpenCV/Image Processing/blending_pasting_images.md'
         - Netifaces:
           - Introduction: 'Python/Libraries_and_Modules/netifaces/introduction.md'
         - WS Discovery:
@@ -155,11 +156,6 @@ nav:
               - Databases - Flask-SQLAlchemy: 'Python/Frameworks/Flask/Extensions/database_flask_sqlalchemy.md'
               - Databases(Migration) - Flask-Migration: "Python/Frameworks/Flask/Extensions/database_migration_flask_migration.md"
               - Login - Flask-login: "Python/Frameworks/Flask/Extensions/login_flask_login.md"
- #       - Django:
- #         - Django Tutorial (part 01): 'Python/Frameworks/Django/Django tutorial - part 01.md'
- #         - Django Tutorial (part 02): 'Python/Frameworks/Django/Django tutorial - part 02.md'
- #         - Django Tutorial (part 03): 'Python/Frameworks/Django/Django tutorial - part 03.md'
- #         - (Optional) More details about file structure: 'Python/Frameworks/Django/More details about project structure.md'
         - Scrapy:
           - Introduction: 'Python/Frameworks/Scrapy/introduction.md'
           - Splash: 'Python/Frameworks/Scrapy/splash.md'
@@ -204,7 +200,7 @@ nav:
     - APIs:
       - Introduction: 'APIs/intro.md'
       - News API: 'APIs/News_API/news_api.md'
-      - Datamuse: 'APIs/datamuse.md'
+      - Datamuse: 'APIs/datamuse/datamuse.md'
       - Google API:
         - introduction: 'APIs/Google/introduction.md'
         - sheets:

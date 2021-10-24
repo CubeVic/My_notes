@@ -6,16 +6,16 @@
 
 This is the introduction to **Python notes**, the notes are divided in:
 
-1. [Basics.](Data%20structures.html)
-2. [Intermediate.](Multithreading_and_multiprocessing.html)
+1. Basics.  
+2. Intermediate. 
 3. Libraries and Modules. 
 4. Frameworks. 
 5. Projects.
 6. Scripts & algorithms.
-7. [Virtual environments.](virtual_environments.html)
+7. Virtual environments.  
 
 
->The difference of project and scripts, is in the nutshell, that Scripts has random scripts not always outputting a useful information, but projects more complex scripts or set of scripts, either with GUI or web, but that output an specific output.
+>The difference of project and scripts, is in the nutshell, that Scripts has random scripts not always outputting useful information, but projects more complex scripts or set of scripts, either with GUI or web, but that output an specific output.
 
 ## Some useful information
 

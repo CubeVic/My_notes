@@ -1,11 +1,11 @@
 # groupby()
 
-***Syntax:** itertools.groupby(iterable, key_func)*
+**Syntax:** itertools.groupby(iterable, key_func)*
 
 ***Parameters:***
 
-- ***iterable:** Iterable can be of any kind (list, tuple, dictionary).*
-- ***key:** A function that calculates keys for each element present in iterable.*
+- **iterable:** Iterable can be of any kind (list, tuple, dictionary).
+- **key:** A function that calculates keys for each element present in iterable.
 
 This method calculates the keys for each element present in iterable. It returns key and iterable of grouped items.
 
