@@ -1,6 +1,6 @@
 # Project information
 site_name: 'My Notes' 
-site_description: 'A Material Design theme for my personal notes'
+site_description: 'My personal notes'
 site_author: 'Victor Andres Aguirre Fernandez'
 site_url: 'https://cubevic.github.io/My_notes/'
 
@@ -68,7 +68,6 @@ markdown_extensions:
   - toc:
       permalink: true
       separator: "_"
-
 # Emojis
   - pymdownx.emoji:
       emoji_index: !!python/name:materialx.emoji.twemoji
