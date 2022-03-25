@@ -1,7 +1,7 @@
 # My notes
 ![logo_Banner](Hero_Image_notes.png)
 
-I'm victor, 
+I'm victor,
 These are my notes. I don't expect many people, other than me, to see these notes. Nonetheless, if you are reading, welcome, here I write, collect, and sometimes copy information about:  
 
 ## Concepts or Tools

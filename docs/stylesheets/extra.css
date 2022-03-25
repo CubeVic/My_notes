@@ -159,3 +159,7 @@ Description: modification of footnotes color
 .md-typeset div.footnote {
   color: white !important;
 }
+
+.purple{
+    color: #512DA8;
+}
