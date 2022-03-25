@@ -10,7 +10,7 @@ customized icons.
 
 ### Configuration 
 add the following lines to `mkdocs.yml`
-```yml
+```yaml
 markdown_extensions:
   - pymdownx.emoji:
       emoji_index: !!python/name:materialx.emoji.twemoji
@@ -19,14 +19,14 @@ markdown_extensions:
 #### emojis :smile: 
 it is recommended to use the shortcodes at [Emojipedia](https://emojipedia.org/twitter/)
 we have the example of
-```commandline
+```
 :smile:
 ```
 :smile:
 
 #### Using icons :faces-one-up:
 We can use icons too, in some case we need to make some extra modifications to the `mkdocs.yml`
-```yml
+```yaml
 markdown_extensions:
   - pymdownx.emoji:
       emoji_index: !!python/name:materialx.emoji.twemoji
@@ -39,7 +39,7 @@ and in the root directory next to `mkdocs.yml` we create a new folder called `ov
 and inside we put the svg of the icons.
 
 Now to call that icons we replace the `/` of the path for `-` like
-```commandline
+```
 :faces-guy-fawkes-mask:
 ```
 :faces-guy-fawkes-mask:
@@ -52,59 +52,89 @@ Color can be added to the icons, we will need to add some CSS rules to later ref
     color: #512DA8;
 }
 ```
-```commandline
+```
 :faces-panda:{ .purple }
 ```
 :faces-panda:{ .purple }
 
 ## [Admonitions](https://squidfunk.github.io/mkdocs-material/reference/admonitions/#supported-types)
 
-These are basically call-outs. They are enabled by putting `!!!` later a key word
+These are basically call-outs. 
+
+### Configuration
+```yaml
+markdown_extensions:
+  - admonition
+```
+
+They are enabled by putting `!!!` later a key word
 and bellow indented the content, like this 
 
 ```
 !!!note
-    this is a abmonition
+    this is an admonition
 ```
 
 !!!note
-    this is a abmonition
+    this is an admonition
 
 We can modify the name by putting a different key word ( see [admonitions documentation](https://squidfunk.github.io/mkdocs-material/reference/admonitions/#supported-types))
 or by adding the title in `"`.
 
 ```
 !!!note "this is the title"
-    this is a abmonition
+    this is an admonition
 ```
 !!!note "This is the title"
-    this is a abmonition
+    this is an admonition
 
 we can make a dropdown close by default 
 
 ```
 ???note "This is az dropdown call-out"
-    this is a abmonition
+    this is an admonition
 ```
 
 ???note "This is az dropdown call-out"
-    this is a abmonition
+    this is an admonition
 
 and open by adding "+"
 
 ```
 ???+ note "This is a dropdown call-out"
-    this is a abmonition
+    this is an admonition
 ```
 
 ???+note "This is a dropdown call-out"
-    this is a abmonition
+    this is an admonition
 
 Here some example of other admonitions
 
-```commandline
+```
 !!! warning
     This is a warning 
 ```
 !!! warning
     This is a warning 
+
+
+<!--- 
+TODO: add extensions
+1. definition list  useful for projects
+2. Footnotes.
+3. Metadata.
+4. pymdownx.details.
+5. attr_list.
+6. smarty.
+7. md_in_html.
+--->
+
+## [Definition List](https://squidfunk.github.io/mkdocs-material/reference/lists/)
+
+## [Footnotes](https://squidfunk.github.io/mkdocs-material/reference/footnotes/#adding-footnote-references)
+
+##[Metadata]()
+##[pymdownx.details]()
+##[attr_list]()
+##[smarty]()
+##[md_in_html]()

@@ -42,28 +42,28 @@ markdown_extensions:
       generic: true
 # Add the call-out
   - admonition
+# add footnotes
   - footnotes
   - pymdownx.details
   - attr_list
   - smarty
-  - attr_list
   - md_in_html
+# for the code blocks
   - pymdownx.highlight:
       linenums: true
-      linenums_style: pymdownx-inline
+#      linenums_style: pymdownx-inline
       use_pygments: true
   - pymdownx.inlinehilite
-
+#  - pymdownx.snippets
+#  - pymdownx.superfences
+# codeHilite sort of deprecated, use highlight, however use due to the syntax highlighting
+  - codehilite:
+      linenums: true
 # Handle the emphasis (bold and italic)
   - pymdownx.betterem:
       smart_enable: all
   - pymdownx.tasklist:
       custom_checkbox: true
-# codeHilite sort of deprecated, use highlight, however use due to the syntax highlighting
-  - codehilite:
-      guess_lang: false
-#      linenums: true
-
 # Table of content
   - toc:
       permalink: true
