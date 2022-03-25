@@ -14,8 +14,9 @@ This is the introduction to **Python notes**, the notes are divided in:
 6. Scripts & algorithms.
 7. Virtual environments.  
 
-
->The difference of project and scripts, is in the nutshell, that Scripts has random scripts not always outputting useful information, but projects more complex scripts or set of scripts, either with GUI or web, but that output an specific output.
+<aside>
+The difference of project and scripts, is that scripts not always output something useful they are rather a playground. Projects, in the other hand, are complex either with GUI or web.
+</aside>
 
 ## Some useful information
 

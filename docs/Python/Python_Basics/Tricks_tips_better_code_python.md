@@ -16,7 +16,7 @@ else:
 	beta = 0
 ```
 
-but this can be one line, can be simplify int his way:
+but this can be one line, it can be simplified in this way:
 
 ```python
 beta == 999 if alpha > 7 else 99 if alpha == 7 else 0
@@ -73,7 +73,7 @@ print ' '.join(lst3)+' '+str1+' '+str2
 
 ## Tip 3: Replace loops for Map, Filter, and Reduce
 
-In some cases what we want to achieve with the loops can be do by `map()`, `filter()`, and `reduce()`, we need to keep in mine the following:
+In some cases what we want to achieve with the loops can be done by `map()`, `filter()`, and `reduce()`, we need to keep in mine the following:
 
 * **Map:** Apply the same set of steps to each item, storing the result.
 * **Filter:** Apply validation criteria, storing items that evaluate True.
@@ -81,7 +81,7 @@ In some cases what we want to achieve with the loops can be do by `map()`, `filt
 
 here a simple example, first how it will be done by loops 
 
-```python 
+```python
 numbers = [1,2,3,4,5,6]
 odd_numbers = []
 squared_odd_numbers = []
@@ -101,7 +101,7 @@ for number in squared_odd_numbers:
 
 now let's do it with the functions
 
-```python 
+```py hl_lines="2 3"
 from functools import reduce
 numbers = [1,2,3,4,5,6]
 odd_numbers = filter(lambda n: n % 2 == 1, numbers)
@@ -110,6 +110,6 @@ total = reduce(lambda acc, n: acc + n, squared_odd_numbers)
 ``` 
 Few things to keep in mine:
 
-* `map()` and `filter()` are native available, but `reduce()` is part of the library `functools`  
-* the lambda expression is the first argument, and the second is a iterable 
+* `map()` and `filter()` are native available, but `reduce()` is part of the library `functools`.  
+* The lambda expression is the first argument, and the second is an iterable. 
 * The lambda expression for `reduce()` requires two arguments: the accumulator (the value that is passed to each element) and the individual element itself.

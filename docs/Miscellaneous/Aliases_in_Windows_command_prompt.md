@@ -1,3 +1,6 @@
+
+## Windows 
+
 you may make the alias(es) persistent with the following steps:
 
 1. Create a .bat or .cmd file with your `DOSKEY` commands.
@@ -9,7 +12,6 @@ For example, `%USERPROFILE%\alias.cmd`, replacing the initial segment of the pat
 This way, every time cmd is run, the aliases are loaded.
 
 For completeness, here is a template to illustrate the kind of aliases one may find useful.
-
 ```Batch
 @echo off
 
@@ -36,7 +38,6 @@ DOSKEY notes = cd Documents/Notes/notes
 ::DOSKEY dropbox=cd "%USERPROFILE%\Dropbox\$*"
 ::DOSKEY research=cd %USERPROFILE%\Dropbox\Research\
 ```
-
 ## On MAC
 
 On mac the process is similar to a Linux system, I will add more step later for now i will leave the alias and configuration i want to do 
@@ -44,7 +45,7 @@ On mac the process is similar to a Linux system, I will add more step later for 
 ```Batch
 export PATH=$PATH:/usr/local/bin/pip3
 export PATH=$PATH:/usr/local/bin/pip3.7
-export PATH=$PATH:/Users/victorandresaguirrefernandez/Library/Python/3.7/bin
+export PATH=$PATH:/Users/name_of_the_user/Library/Python/3.7/bin
 export PATH=$PATH:/usr/local/bin/
 alias ls='ls -GFh'
 export PS1="\w [\u]➤ "

@@ -37,7 +37,10 @@ extra_javascript:
 
 # Extensions
 markdown_extensions:
-  - pymdownx.arithmatex
+# Preserve LaTeX math equations
+  - pymdownx.arithmatex:
+      generic: true
+# Add the call-out
   - admonition
   - footnotes
   - pymdownx.details
@@ -46,17 +49,27 @@ markdown_extensions:
   - attr_list
   - md_in_html
   - pymdownx.highlight:
+      linenums: true
+      linenums_style: pymdownx-inline
       use_pygments: true
+  - pymdownx.inlinehilite
+
+# Handle the emphasis (bold and italic)
   - pymdownx.betterem:
       smart_enable: all
   - pymdownx.tasklist:
       custom_checkbox: true
+# codeHilite sort of deprecated, use highlight, however use due to the syntax highlighting
   - codehilite:
       guess_lang: false
-      linenums: true
+#      linenums: true
+
+# Table of content
   - toc:
       permalink: true
       separator: "_"
+
+# Emojis
   - pymdownx.emoji:
       emoji_index: !!python/name:materialx.emoji.twemoji
       emoji_generator: !!python/name:materialx.emoji.to_svg
@@ -235,6 +248,7 @@ nav:
 
     - Miscellaneous:
       - Helpers: 'Miscellaneous/Helpers.md'
+      - Mkdocs & Material Mkdocs extensions: 'Miscellaneous/extensions.md'
       - Espanso ( shortcuts ): 'Miscellaneous/Espanso.md'
       - PowerLanguages:
         - Reference: 'Miscellaneous/PowerLanguages/PowerLanguages_001.md'
@@ -275,6 +289,7 @@ nav:
           - Module 1: 'Miscellaneous/For Certifications/Python/Preparation for PCPP-32-1/Module 1.md'
           - Module 2: 'Miscellaneous/For Certifications/Python/Preparation for PCPP-32-1/Module 2.md'
       - Aliases in Windows command prompt: 'Miscellaneous/Aliases_in_Windows_command_prompt.md'
+      - Useful Windows Commands: 'Miscellaneous/useful_windows_commands.md'
       - OAuth 2: 'Miscellaneous/OAuth_2.md'
       - Random: 'Miscellaneous/Random Link.md'
       #- Potential activities: 'Miscellaneous/potential activities.md'
