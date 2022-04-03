@@ -57,6 +57,15 @@ Color can be added to the icons, we will need to add some CSS rules to later ref
 ```
 :faces-panda:{ .purple }
 
+???important "colors for icons"
+    .purple: #6745c2    
+    .dark-purple: #6745c2  
+    .royal-blue: #000062  
+    .orange: #E66C10  
+    .light-green: #629749   
+    .dark-green: #003d00  
+    .green: #32681
+
 ## [Admonitions](https://squidfunk.github.io/mkdocs-material/reference/admonitions/#supported-types)
 
 These are basically call-outs. 
@@ -91,11 +100,11 @@ or by adding the title in `"`.
 we can make a dropdown close by default 
 
 ```
-???note "This is az dropdown call-out"
+???note "This is az dropdown admonition"
     this is an admonition
 ```
 
-???note "This is az dropdown call-out"
+???note "This is a dropdown admonition"
     this is an admonition
 
 and open by adding "+"

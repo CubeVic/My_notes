@@ -149,7 +149,7 @@ Left and right toc scrollbar
 
 /*
 /////////////////////////////
-/// footnotes ////
+////////// footnotes ///////
 ////////////////////////////
 
 Modification by: Victor Fernandez
@@ -177,7 +177,61 @@ Description: modification of footnotes color
 */
 
 aside{
-    background-color: #673AB7;
+    background-color: #6745c2;
     margin: 10px 20px;
     padding: 20px 20px 20px 20px;
+}
+
+/*
+///////////////////////////////
+// modification admonitions //
+//////////////////////////////
+*/
+
+/* Admonitions important*/
+/* background once open */
+details.important {
+    background-color: #6745c2;
+    color: white;
+}
+/* Color of the Summery title*/
+.md-typeset .hint>.admonition-title, .md-typeset .hint>summary, .md-typeset .important>.admonition-title, .md-typeset .important>summary, .md-typeset .tip>.admonition-title, .md-typeset .tip>summary{
+    background-color: #311a91;
+    color: white;
+}
+/* Left border of the admonition when open*/
+.md-typeset .admonition.hint, .md-typeset .admonition.important, .md-typeset .admonition.tip, .md-typeset details.hint, .md-typeset details.important, .md-typeset details.tip{
+    border-color: #000062;
+}
+/* Left border of the admonition*/
+.md-typeset .hint>.admonition-title, .md-typeset .hint>summary, .md-typeset .important>.admonition-title, .md-typeset .important>summary, .md-typeset .tip>.admonition-title, .md-typeset .tip>summary{
+    border-color: #000062;
+}
+/* color of icon  */
+.md-typeset .hint>.admonition-title:before, .md-typeset .hint>summary:before, .md-typeset .important>.admonition-title:before, .md-typeset .important>summary:before, .md-typeset .tip>.admonition-title:before, .md-typeset .tip>summary{
+    background-color: #E66C10;
+}
+
+/* Admonitions success*/
+/* background once open */
+details.success {
+    background-color: #629749;
+    color: white;
+}
+/* Color of the Summery title*/
+.md-typeset .hint>.admonition-title, .md-typeset .hint>summary, .md-typeset .success>.admonition-title, .md-typeset .success>summary, .md-typeset .tip>.admonition-title, .md-typeset .tip>summary{
+    background-color: #32681d;
+    color: white;
+}
+/* Left border of the admonition when open*/
+.md-typeset .admonition.hint, .md-typeset .admonition.success, .md-typeset .admonition.tip, .md-typeset details.hint, .md-typeset details.success, .md-typeset details.tip{
+    border-color: #003d00;
+}
+/* Left border of the admonition*/
+.md-typeset .hint>.admonition-title, .md-typeset .hint>summary, .md-typeset .success>.admonition-title, .md-typeset .success>summary, .md-typeset .tip>.admonition-title, .md-typeset .tip>summary{
+    border-color: #003d00;
+}
+/* color of icon  */
+.md-typeset .hint>.admonition-title:before, .md-typeset .hint>summary:before, .md-typeset .success>.admonition-title:before, .md-typeset .success>summary:before, .md-typeset .tip>.admonition-title:before, .md-typeset .tip>summary{
+    background-color: #629749;
 }

@@ -184,5 +184,17 @@ To change the color of the footnotes i made a chang ein the css
 }
 ```
 
+### Callout
+
+To create a callout put the content in between `<aside>` tags.
+
+```html
+<aside>
+    This is a Callout
+</aside>
+```
+<aside>
+    This is a Callout
+</aside>
 
 >"To every man upon this earth, death cometh soon or late, And how can man die better, Than facing fearful odds, for the ashes of his fathers, And the temples of his gods." 
