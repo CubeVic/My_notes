@@ -247,7 +247,7 @@ nav:
 
     - Miscellaneous:
       - Helpers: 'Miscellaneous/Helpers.md'
-      - Mkdocs & Material Mkdocs extensions: 'Miscellaneous/extensions.md'
+      - Mkdocs & Material Mkdocs extensions: 'Miscellaneous/mkdocs_extensions.md'
       - Espanso ( shortcuts ): 'Miscellaneous/Espanso.md'
       - PowerLanguages:
         - Reference: 'Miscellaneous/PowerLanguages/PowerLanguages_001.md'
