@@ -15,4 +15,3 @@ I store all my notes in different categories with the idea is to have easy acces
 </aside>
 > *PS:* These are personal notes, so if someone other than me reads them bear in mind it is a work in progress, I will update, fix errors or re-write it.
 
-I'm using MkDocs to generate these *"notes"* more information visit [mkdocs.org](https://mkdocs.org).
