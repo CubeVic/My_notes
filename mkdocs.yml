@@ -232,7 +232,8 @@ nav:
       - Nagios Core: 'Raspberry/Nagios.md'
       - How to Install OpenCv on Raspberry pi: 'Raspberry/How_install_openCV_raspberry.md'
       - Raspberry Password Related: 'Raspberry/Password_related_raspberry.md' 
-      - Setting Open Media Vault: 'Raspberry/setting_openmediavault.md'   
+      - Setting Open Media Vault: 'Raspberry/setting_openmediavault.md'
+      - Cloning OS Instance: 'Raspberry/cloning_raspbian_opencv.md'
 
     - CCTV:
       - Basic Concepts: 'CCTV/Basic_concepts.md'
