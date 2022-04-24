@@ -260,6 +260,8 @@ This Endpoint will provide information about the API usage, like credits remaini
 
 One Endpoint.
 
+- [/v1/key/info](https://coinmarketcap.com/api/documentation/v1/#operation/getV1KeyInfo) - Key Info
+
 
 ## Target domain and Request example.
 
