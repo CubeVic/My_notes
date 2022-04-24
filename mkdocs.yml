@@ -225,7 +225,7 @@ nav:
           - Create spreadsheets: 'APIs/Google/sheets/google_sheet_create.md'
           - Read and Write spreadsheets: 'APIs/Google/sheets/google_sheet_read.md'
           - Update spreadsheets: 'APIs/Google/sheets/google_sheet_update.md'
-      - Coin market Cap: 'APIs/coinmarketcap/coinmarketcap.md'
+      - Coin Market Cap: 'APIs/coinmarketcap/coinmarketcap.md'
 
     - Raspberry:
       - Introduction: 'Raspberry/introduction.md'
