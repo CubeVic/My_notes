@@ -112,6 +112,7 @@ nav:
         - Context Managers 'with': 'Python/Python_intermediate/context_manager_python.md'
         - Multi-threading and Multi-processing: 'Python/Python_intermediate/Multithreading_and_multiprocessing.md'      
         - SQLAchemy: 'Python/Python_intermediate/sqlalchemy.md'
+        - Logging: 'Python/Python_intermediate/logging_python.md'
       - Libraries & Modules: #Libraries and Modules
         - PIP notes: 'Python/Libraries_and_Modules/PIP/pip_notes.md'
         - Itertools:
