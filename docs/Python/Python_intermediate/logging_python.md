@@ -67,39 +67,39 @@ The following code can be duplicated in each script to have a logger in each one
 ####Creating a logger for a specific script
 
 I start by creating a variable:
-
+![logging_006](images/logging_006.png)
 ![logging_005](images/logging_005.png)
 
 The argument __name__ is a deeper topic that I won't cover here. but a bad explanation or rather a not accurate one will say; "this will help the lower to know in which module and function it is been call".
 
 ###Logging Levels
 To add the logging level to the logger, I use the function `setLevel()`.   
-![logging_006](images/logging_006.png)
+![logging_007](images/logging_007.png)
 
 ###Handler
 In this case refer to which output I will use, the console or a document.  
 
-![logging_007](images/logging_007.png)
+![logging_008](images/logging_008.png)
 I created a file handler, but it is not linked to the logger yet, I need to add it.  
 
-![logging_008](images/logging_008.png)   
+![logging_009](images/logging_009.png)   
 
 Be aware that I haven't changed the format of the output, I just define what will be the output for the `logger`.  
 To add a stream handler or an output to the console, I can use `StreamHandler()`.  
 
-![logging_009](images/logging_009.png)
+![logging_010](images/logging_0010.png)
 
 ###Formatter
 Now with the logger added I can think in the format I want. To modify the format I can use `setFormatter()`.
 
-![logging_010](images/logging_010.png)
+![logging_011](images/logging_011.png)
 
 The extra argument `datefmt` allows me to modify how the time is displayed. 
 Similar to Handler, I have to register it with the logger. `setFormatter()` is used to add the format to the logger.
-![logging_011](images/logging_011.png)
+![logging_012](images/logging_012.png)
 
 Now, all together:  
-![logging_012](images/logging_012.png)
+![logging_013](images/logging_013.png)
 
 <aside>
 🔥 Every time I need to call the logger, I will need to use the variable I create for it rather than the logging.
