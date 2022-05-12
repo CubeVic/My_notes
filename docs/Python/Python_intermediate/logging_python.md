@@ -87,7 +87,7 @@ I created a file handler, but it is not linked to the logger yet, I need to add 
 Be aware that I haven't changed the format of the output, I just define what will be the output for the `logger`.  
 To add a stream handler or an output to the console, I can use `StreamHandler()`.  
 
-![logging_010](images/logging_0010.png)
+![logging_010](images/logging_010.png)
 
 ###Formatter
 Now with the logger added I can think in the format I want. To modify the format I can use `setFormatter()`.
