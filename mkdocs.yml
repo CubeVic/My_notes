@@ -122,10 +122,10 @@ nav:
               - count(): 'Python/Libraries_and_Modules/Itertools/Infinite_iterators/count.md'
               - cycle(): 'Python/Libraries_and_Modules/Itertools/Infinite_iterators/cycle.md'
               - repeat(): 'Python/Libraries_and_Modules/Itertools/Infinite_iterators/repeat.md'
-            - Combinatoric iterator:
+            - Combinatorics iterator:
               - permutations(): 'Python/Libraries_and_Modules/Itertools/Combinatoric_iterator/permutations.md'
               - combinations(): 'Python/Libraries_and_Modules/Itertools/Combinatoric_iterator/combinations.md'
-            - Shortest input equence:
+            - Shortest input sequence:
                 - groupby(): 'Python/Libraries_and_Modules/Itertools/Shortest_input_sequence/groupby.md'
                 - tee(): 'Python/Libraries_and_Modules/Itertools/Shortest_input_sequence/tee.md'
         - Numpy:
@@ -184,7 +184,7 @@ nav:
       - Scripts & Algorithms:
         - Create Excel Files With Python: 'Python/Scripts/create_excel_files.md'
         - Creating a dataset with api and python: 'Python/Scripts/create_dataset_api_python.md'
-        - Scraping Usign Python: 'Python/Scripts/Scraping_Usign_Python.md'
+        - Scraping Using Python: 'Python/Scripts/Scraping_Usign_Python.md'
         - JSON Object in python: 'Python/Scripts/JSON Objects in Python.md'
         - Scrapy and Scrapyrt: 'Python/Scripts/Scrapy_and_Scrapyrt.md'
         - Magic Square: 'Python/Scripts/Magic_square.md'
@@ -192,8 +192,8 @@ nav:
          
     - SQL:
       - Random notes about SQL: 'SQL/Some_SQL.md'
-      - String Funtions SQL: 'SQL/String_Functions_SQL.md'
-      - Advance Funtion SQL: 'SQL/Advance_Funtion_SQL.md'
+      - String Functions SQL: 'SQL/String_Functions_SQL.md'
+      - Advance Function SQL: 'SQL/Advance_Funtion_SQL.md'
 
     - Arduino:
       - Structure: 
