@@ -159,6 +159,8 @@ nav:
           - Introduction: 'Python/Libraries_and_Modules/Datamuse/introduction.md'
         - Crontab:
           - Introduction: 'Python/Libraries_and_Modules/Crontab/introduction.md'
+        - pyTelegramBot:
+            - Introduction: 'Python/Libraries_and_Modules/pyTelegramBot/introduction.md'
       - Frameworks: 
         - Flask:
           - Introduction and notes: 'Python/Frameworks/Flask/Introduction_and_notes.md'
