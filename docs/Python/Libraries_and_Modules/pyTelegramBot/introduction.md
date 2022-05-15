@@ -1,9 +1,79 @@
 #pyTelegramBot
 
-![](images/){:.center}
+![](images/pytelegrambotapi.png){:.center}
 
 1. [Pypi page](https://pypi.org/project/pyTelegramBotAPI/)
 2. [GitHub Repository](https://github.com/eternnoir/pyTelegramBotAPI)
+3. [Official Documentation](https://pytba.readthedocs.io/en/latest/index.html)
+
+##Installation
+
+```python
+pip install pyTelegramBotAPI
+```
+
+# Synchronous and Asynchronous Bot.
+
+The API provide two type of bots a synchronous and Asynchronous both with small difference
+on the implementation
+
+### Synchronous bot example
+
+```python
+import telebot
+
+API_TOKEN = '<api_token>'
+
+bot = telebot.TeleBot(API_TOKEN)
+
+
+# Handle '/start' and '/help'
+@bot.message_handler(commands=['help', 'start'])
+def send_welcome(message):
+    bot.reply_to(message, """\
+Hi there, I am EchoBot.
+I am here to echo your kind words back to you. Just say anything nice and I'll say the exact same thing to you!\
+""")
+
+
+# Handle all other messages with content_type 'text' (content_types defaults to ['text'])
+@bot.message_handler(func=lambda message: True)
+def echo_message(message):
+    bot.reply_to(message, message.text)
+
+
+bot.infinity_polling()
+```
+
+### Asynchronous bot example
+
+```python
+from telebot.async_telebot import AsyncTeleBot
+bot = AsyncTeleBot('TOKEN')
+
+# Handle '/start' and '/help'
+@bot.message_handler(commands=['help', 'start'])
+async def send_welcome(message):
+    await bot.reply_to(message, """\
+Hi there, I am EchoBot.
+I am here to echo your kind words back to you. Just say anything nice and I'll say the exact same thing to you!\
+""")
+
+# Handle all other messages with content_type 'text' (content_types defaults to ['text'])
+@bot.message_handler(func=lambda message: True)
+async def echo_message(message):
+    await bot.reply_to(message, message.text)
+
+
+import asyncio
+asyncio.run(bot.polling())
+```
+
+<aside>
+Notice that they call different classes synchronous calls telebot.Telebot meanwhile Asynchronous
+calls telebot.async_telebot.AsyncTelebot.
+They also use different polling methods `bot.infinity_polling()` versus `bot.polling()`
+</aside>
 
 ##The steps to create the bot will be:
 
