@@ -13,10 +13,10 @@ I only need to import it.
 import logging
 ```
 
-There are several elements in the logging, but the most important are:
-* Logging levels
-* Handler
-* Formatter
+There are several elements in the logging, but the most important are:  
+* Logging levels.  
+* Handler.  
+* Formatter.  
 
 ## Logging Levels
 Logging levels will allow me to log more specific things, such as; debugging statements, information, or reports errors.
