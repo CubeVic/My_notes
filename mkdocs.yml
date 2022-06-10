@@ -114,6 +114,7 @@ nav:
         - SQLAchemy: 'Python/Python_intermediate/sqlalchemy.md'
         - Logging: 'Python/Python_intermediate/logging_python.md'
         - Configuration files: 'Python/Python_intermediate/configuration_files.md'
+      - Build you own python package: 'Python/build_your_own_package/build_your_own.md'
       - Libraries & Modules: #Libraries and Modules
         - PIP notes: 'Python/Libraries_and_Modules/PIP/pip_notes.md'
         - Itertools:
