@@ -26,6 +26,6 @@ import io
 	# im.show() 
 	#display the thumbnail
 	thumbnail_size = 128,128
-	im.thumbnail(size)
+	im.thumbnail(thumbnail_size)
 	im.show()
 ```
