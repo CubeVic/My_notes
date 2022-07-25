@@ -182,6 +182,8 @@ nav:
           - Introduction: 'Python/Frameworks/Scrapy/introduction.md'
           - Splash: 'Python/Frameworks/Scrapy/splash.md'
           - Running_multiple_spider: 'Python/Frameworks/Scrapy/Running_multiple_spider.md'
+        - RobotFramework:
+            - Introduction: 'Python/Frameworks/robotframework/introduction.md'
       - Projects:
         - Random Password Generator: 'Python/Projects/random_password_generator.md'
       - Scripts & Algorithms:
