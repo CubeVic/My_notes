@@ -2,7 +2,9 @@ In this examples we are going to use SQLite as database.
 
 ## Import, Connect and Cursor
 
-To start to use SQLite with python we will need to import the library 'sqlite3', once imported we can start using it, first we will establish a connection with the database using `sqlite3.connect()`, later, to start the navigation we will need a cursor, for that we use  `.cursor()`.
+To start to use SQLite with python we will need to import the library 'sqlite3', once imported we can start using it, 
+first we will establish a connection with the database using `sqlite3.connect()`, later, to start the navigation we will 
+need a cursor, for that we use  `.cursor()`.
 
 ```python 
 import sqlite3
@@ -11,7 +13,7 @@ conn = sqlite3.connect('name database')
 cur = conn.cursor()
 ```
 
-using as example chapter 15 of  "Python for everyone" as an example we have
+This will be an example:
 
 ```python
 import sqlite3
@@ -20,18 +22,22 @@ conn = sqlite3.connect('rosterdb.sqlite')
 cur = conn.cursor()
 
 ```
-
+<aside>
 where `rosterdb.sqlite` is the name of the database 
+</aside>
 
 ## `executescript()` and `execute()`
 
-there are two ways to execute SQL statements in python, one will be `executescript()` this will allow me to execute several SLQ statement art the same time, if this statement finish with ";". The second option will be `execute()` this will be limited to one SQL statement.
+There are two ways to execute SQL statements in python.
+* `executescript()`:allow me to execute several SQL statement art the same time, if this statement finish with ";".  
+* `execute()`: this will be limited to one SQL statement.
+
 
 ### `executescript()` example
 
-In the following code we will execute several SLQ statement
+In the following code we will execute several SQL statement
 
-1. we start with `executescript()`, we are goin to use "\'\'\'".
+1. we start with `executescript()`, we are going to use "\'\'\'".
 
 ```python
 import sqlite3
