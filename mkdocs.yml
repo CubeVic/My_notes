@@ -194,7 +194,10 @@ nav:
         - Scrapy and Scrapyrt: 'Python/Scripts/Scrapy_and_Scrapyrt.md'
         - Magic Square: 'Python/Scripts/Magic_square.md'
       - Virtual Environments: 'Python/virtual_environments.md'
-         
+
+    - CI/CD:
+        -  Jenkins: 'ci_cd/jenkins/jenkins_robotframework.md'
+
     - SQL:
       - Random notes about SQL: 'SQL/Some_SQL.md'
       - String Functions SQL: 'SQL/String_Functions_SQL.md'

@@ -1,6 +1,5 @@
-In this examples we are going to use SQLite as database.
-
 ## Import, Connect and Cursor
+>In these examples we are going to use SQLite as database.
 
 To start to use SQLite with python we will need to import the library 'sqlite3', once imported we can start using it, 
 first we will establish a connection with the database using `sqlite3.connect()`, later, to start the navigation we will 
@@ -62,7 +61,8 @@ DROP TABLE IF EXISTS Member;
 DROP TABLE IF EXISTS Course;
 ''')
 ```
-3. Now we will create 3 tables; "User", "Course", "Member". Member table contain a primary key composed of take two parameters, this is a way to link to the other 2 tables and create the many to many relationship
+3. Now we will create 3 tables; "User", "Course", "Member". Member table contain a primary key composed of take two 
+parameters, this is a way to link to the other 2 tables and create the many-to-many relationship
 
 ```python
 import sqlite3
@@ -98,7 +98,8 @@ CREATE TABLE Member (
 
 ## `INSERT`, `IGNORE`, `REPLACE` and `SELECT`
 
-In previous steps we create the shema of the database, now we need to populate this database with information, in this case we are goin to extract information from a JSON file and use it to feed the datase.
+In previous steps we create the schema of the database, now we need to populate this database with information, 
+in this case we are going to extract information from a JSON file and use it to feed the dataset.
 
 ### Getting the data from JSON
 
@@ -109,7 +110,8 @@ import json
 [...]
 ```
 
-second we need to get the information of a JSON file, in this case we are going to use one of the JSON file examples from the book "Python for everyone"
+second we need to get the information of a JSON file, in this case we are going to use one of the JSON file examples 
+from the book "Python for everyone".
 
 ```python
 [...]
@@ -154,16 +156,20 @@ for entry in json_data:
 
 ## `INSERT OR IGNORE`
 
-Now we are goin to insert the information in the different tables, for that we will use `INSERT` and we will add `IGNORE` to avoid those cases when a error appears
+Now we are goin to insert the information in the different tables, for that we will use `INSERT` and we will add 
+`IGNORE` to avoid those cases when a error appears.
 
 ```python 
    cur.execute('''INSERT OR IGNORE INTO User (name)
         VALUES ( ? )''', ( name, ) )
 ```
 
-in the previous statement `execute()` will execute an `INSERT` instruction to the "User" table, to the column "name", the "?" is a placeholder and the "`(name,)`" is a tuple that indicade that the information on the variable "name" is going to be place in the "?", and this information will be insert in the table "User".
+in the previous statement `execute()` will execute an `INSERT` instruction to the "User" table, to the column "name", 
+the "?" is a placeholder and the "`(name,)`" is a tuple that indicate that the information on the variable "name" is 
+going to be place in the "?", and this information will be inserted in the table "User".
 
-Bellow the example of the other statement, the only remark will be the usage of `REPLACE` which will replace the value of what ever is in that column(s).
+Bellow the example of the other statement, the only remark will be the usage of `REPLACE` which will replace the value 
+of what ever is in that column(s).
 
 ```python
     cur.execute('''INSERT OR IGNORE INTO User (name)
@@ -180,17 +186,21 @@ Bellow the example of the other statement, the only remark will be the usage of 
 ```
 ### `SELECT` and `fetchone()[0]`
 
-now we are going to select one of the records in the database and store the first row, for this we will execute the `SELECT` and later use `fetchone[0]` to store the first record
+now we are going to select one of the records in the database and store the first row, for this we will execute the 
+`SELECT` and later use `fetchone[0]` to store the first record
 
 ```python
     cur.execute('SELECT id FROM User WHERE name = ? ', (name, ))
     user_id = cur.fetchone()[0]
 ``` 
-we use "[0]" to be sure that we will get just the first record ( `fetchone()` will get back just one record, to get more you can use `fetchall()`)
+we use "[0]" to be sure that we will get just the first record ( `fetchone()` will get back just one record, to get 
+more you can use `fetchall()`)
 
 ## `commit`
 
-Finally to commit this changes or this addition to the database we can use the function `commit()`, this will commit the changes to the database and wait until is done, that is one of the reason in some case the commit is done after several changes and not after each change, since this will make the execution of the script slower.
+Finally, to commit this changes or this addition to the database we can use the function `commit()`, this will commit 
+the changes to the database and wait until is done, that is one of the reason in some case the commit is done after 
+several changes and not after each change, since this will make the execution of the script slower.
 
 ```python
     conn.commit()

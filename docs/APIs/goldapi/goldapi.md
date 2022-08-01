@@ -22,7 +22,7 @@ There are three endpoints
 
 **The domain:**
 
-```python
+```
 https://www.goldapi.io/api/
 ```
 
@@ -35,7 +35,7 @@ https://www.goldapi.io/api/
 
 ## Get Metal Prices
 
-```python
+```
 https://www.goldapi.io/api/:symbol/:currency/:date?
 # URL to fetch gold prices in USD
 https://www.goldapi.io/api/XAU/USD
@@ -65,7 +65,7 @@ If we want the historical price
 
 ## Get Request Stats
 
-```python
+```
 https://www.goldapi.io/api/stat
 ```
 
@@ -82,7 +82,7 @@ https://www.goldapi.io/api/stat
 
 ## Check API Status
 
-```python
+```
 https://www.goldapi.io/api/status
 ```
 
