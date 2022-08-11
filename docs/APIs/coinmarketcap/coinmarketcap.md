@@ -166,15 +166,15 @@ The documentation provides more detailed information about each endpoint. Here I
 It has 17 endpoints  
 
 - [/v1/cryptocurrency/map](https://coinmarketcap.com/api/documentation/v1/#operation/getV1CryptocurrencyMap) - Provide the CMC mapping for CMC ID and cryptocurrency
-- [/v1/cryptocurrency/info](https://coinmarketcap.com/api/documentation/v1/#operation/getV1CryptocurrencyInfo) - Metadata
+- [/v1/cryptocurrency/info](https://coinmarketcap.com/api/documentation/v1/#operation/getV2CryptocurrencyInfo) - Metadata
 - [/v1/cryptocurrency/listings/latest](https://coinmarketcap.com/api/documentation/v1/#operation/getV1CryptocurrencyListingsLatest) - Latest listings
 - [/v1/cryptocurrency/listings/historical](https://coinmarketcap.com/api/documentation/v1/#operation/getV1CryptocurrencyListingsHistorical) - Historical listings
-- [/v1/cryptocurrency/quotes/latest](https://coinmarketcap.com/api/documentation/v1/#operation/getV1CryptocurrencyQuotesLatest) - Latest quotes
-- [/v1/cryptocurrency/quotes/historical](https://coinmarketcap.com/api/documentation/v1/#operation/getV1CryptocurrencyQuotesHistorical) - Historical quotes
-- [/v1/cryptocurrency/market-pairs/latest](https://coinmarketcap.com/api/documentation/v1/#operation/getV1CryptocurrencyMarketpairsLatest) - Latest market pairs
-- [/v1/cryptocurrency/ohlcv/latest](https://coinmarketcap.com/api/documentation/v1/#operation/getV1CryptocurrencyOhlcvLatest) - Latest OHLCV
-- [/v1/cryptocurrency/ohlcv/historical](https://coinmarketcap.com/api/documentation/v1/#operation/getV1CryptocurrencyOhlcvHistorical) - Historical OHLCV
-- [/v1/cryptocurrency/price-performance-stats/latest](https://coinmarketcap.com/api/documentation/v1/#operation/getV1CryptocurrencyPriceperformancestatsLatest) - Price performance Stats
+- [/v1/cryptocurrency/quotes/latest](https://coinmarketcap.com/api/documentation/v1/#operation/getV2CryptocurrencyQuotesHistorical) - Latest quotes
+- [/v1/cryptocurrency/quotes/historical](https://coinmarketcap.com/api/documentation/v1/#operation/getV2CryptocurrencyQuotesLatest) - Historical quotes
+- [/v1/cryptocurrency/market-pairs/latest](https://pro-api.coinmarketcap.com/v2/cryptocurrency/market-pairs/latest) - Latest market pairs
+- [/v1/cryptocurrency/ohlcv/latest](https://coinmarketcap.com/api/documentation/v1/#operation/getV2CryptocurrencyOhlcvLatest) - Latest OHLCV
+- [/v1/cryptocurrency/ohlcv/historical](https://coinmarketcap.com/api/documentation/v1/#operation/getV2CryptocurrencyOhlcvHistorical) - Historical OHLCV
+- [/v1/cryptocurrency/price-performance-stats/latest](https://coinmarketcap.com/api/documentation/v1/#operation/getV2CryptocurrencyPriceperformancestatsLatest) - Price performance Stats
 - [/v1/cryptocurrency/categories](https://coinmarketcap.com/api/documentation/v1/#operation/getV1CryptocurrencyCategories) - Categories
 - [/v1/cryptocurrency/category](https://coinmarketcap.com/api/documentation/v1/#operation/getV1CryptocurrencyCategory) - Category
 - [/v1/cryptocurrency/airdrops](https://coinmarketcap.com/api/documentation/v1/#operation/getV1CryptocurrencyAirdrops) - Airdrops
