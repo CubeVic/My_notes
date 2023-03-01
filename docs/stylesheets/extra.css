@@ -141,7 +141,15 @@ Left and right toc scrollbar
 }
 
 
+.md-nav--secondary .md-nav__title{
+  box-shadow: none;
+}
 
+.md-nav--lifted>.md-nav__list>.md-nav__item--active>.md-nav__link {
+  color: #F5F5F5 !important;
+  background-color: #212121 !important;
+  box-shadow: none;
+}
 .md-nav {
   color: #F5F5F5 !important;
   background-color: #212121 !important;
