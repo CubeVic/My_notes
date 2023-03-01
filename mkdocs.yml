@@ -15,8 +15,8 @@ theme:
   name: 'material'
   language: 'en'
   palette:
-      primary: 'Deep purple'
-      accent: 'Deep purple'
+      primary: 'deep purple'
+      accent: 'deep purple'
   font: 
     text: 'Ubuntu'
     code: 'Ubuntu Mono'
@@ -70,8 +70,8 @@ markdown_extensions:
       separator: "_"
 # Emojis
   - pymdownx.emoji:
-      emoji_index: !!python/name:materialx.emoji.twemoji
-      emoji_generator: !!python/name:materialx.emoji.to_svg
+      # emoji_index: !!python/name:materialx.emoji.twemoji
+      # emoji_generator: !!python/name:materialx.emoji.to_svg
       options:
         custom_icons:
           - overrides/.icons
