@@ -13,7 +13,7 @@ Flask-SQLAlchemy support different databases, relational an no-n relational, we 
 pip install flask-sqlalchemy
 ```
 
-## Database migration 
+## Database migration
 
 The author of mega-tutorial make a good point, not all tutorial cover migration of a database, this is important since the relational databases are base in structures data so if data change the database need to change and we will need to make the migration of the data that already exist, so there is where the author introduce a library write by himself called [`Flask-migrate`](https://github.com/miguelgrinberg/flask-migrate) which is a wrapper for [`Alembic`](https://github.com/sqlalchemy/alembic).
 
@@ -29,7 +29,7 @@ I will continue using the example of the microblog use in the form extension not
 We are going to add two new configuration to the config file
 
 **config.py**
-```python 
+```python
 import os
 
 #1. new configuration
@@ -43,7 +43,7 @@ class Config(object):
 	SQLALCHEMY_DATABASE_URL = os.environ.get('DATABASE_URL') or 'sqlite:///' + os.path.join(basedir,'app.db')
 	SQLALCHEMY_TRACK_MODIFICATIONS = False
 
-``` 
+```
 
 so from the previous code
 
@@ -57,7 +57,7 @@ so from the previous code
 The database is going to be represented for the database instance, same as the migration engine. These two object should be create it after the creation of the application, so:
 
 **application/__ini__.py**
-```python 
+```python
 from flask import Flask
 from config import Config
 from flask_sqlalchemy import SQLALchemy
@@ -69,12 +69,12 @@ db = SQLAlchemy(app)
 migrate = Migrate(app, db)
 
 from application import routes, models
-``` 
+```
 
 from the code we have:
 
 1. like most extensions we have the instance of the objects that will represent that extension, for example `db` which will be the object that represent the database.
-2. most of the extension in flask will follow similar pattern 
+2. most of the extension in flask will follow similar pattern
 3. finally we import models ad the end of the script, this model define the structure of the database.
 
 ## Database Models
@@ -92,7 +92,7 @@ so for the table we see 4 different rows
 now we need to create the database model, the class that will represent the table
 
 **Application/models.py**
-```python 
+```python
 from application import db
 
 class User(db.Models):
@@ -105,20 +105,20 @@ class User(db.Models):
 	def __repr__(self):
 		return '<User {}>'.format(self.username)
 
-``` 
+```
 
 1. the class that will represent the table will inherit from `db.Model` which is the base for all models from Flask-SQLAlchemy
-2. each variable will represent the database columns, there are instance of the `db.Column` class, this class receive as argument the data type and some additional optional arguments like, Primary key, index, and unique. 
-3. finally the method `__repr__` this method tells python how to print the objects of this class, it is useful in debugging 
+2. each variable will represent the database columns, there are instance of the `db.Column` class, this class receive as argument the data type and some additional optional arguments like, Primary key, index, and unique.
+3. finally the method `__repr__` this method tells python how to print the objects of this class, it is useful in debugging
 
 bellow and example of how will python print the object
 
-```bash 
+```bash
 >>> from app.models import User
 >>> u = User(username='susan', email='susan@example.com')
 >>> u
 <User susan>
-``` 
+```
 
 ## Creating The Migration Repository
 
@@ -134,7 +134,7 @@ To create the migration repository for our example we use `flask db init`
 
 > these `flask` commands relay in the `FLASK_APP` enviroment variable so it is important to make sure that variable is set properly before execute the command.
 
-after the command is executed a new directory will appear 
+after the command is executed a new directory will appear
 
 ![flask_sqlalchemy_003.png](images/flask_sqlalchemy_003.png){: .center}
 
@@ -143,17 +143,17 @@ after the command is executed a new directory will appear
 
 There are two ways to do the migration, automatically and manually. To generate the automatic migration Alembic compares the database schema as defined in the database models and the current database, after that it will generate the script to migrate and make the models match to the models defined in the schema. To generate this automatic migrations we use `flask db migrate`
 
-```BASH 
+```BASH
 flask db migrate -m "users table"
-``` 
+```
 ![flask_sqlalchemy_004.png](images/flask_sqlalchemy_004.png){: .center}
 
-from the previous answer: 
+from the previous answer:
 
-1. first two lines are not important for now. 
-2. Alembic tell use where the migration script was store, and assigned an unique code.  
-3.  the -m in the command was just to add extra description to the migration.  
-now the generated script is in the folder 
+1. first two lines are not important for now.
+2. Alembic tell use where the migration script was store, and assigned an unique code.
+3.  the -m in the command was just to add extra description to the migration.
+now the generated script is in the folder
 
 ![flask_sqlalchemy_005.png](images/flask_sqlalchemy_005.png){: .center}
 
@@ -166,8 +166,8 @@ It is important to remark that the command `flask db migrate` doesn't perform th
 By default *Flask_SQLAlchemy* use snake case for the name of the databases, so a model named "AddressAndPhone" will generate a table **"address_and_Phone"** so if we want to change this behavior we can add the attribute `__tablename__` to the model class.
 
 so let's say we want the table to be called  "Users", it will be something like:
- 
-```python 
+
+```python
 from sqlalchemy import Column, Integer, String
 from yourapplication.database import Base
 
@@ -183,7 +183,7 @@ class User(Base):
 
     def __repr__(self):
         return '<User %r>' % (self.name)
-``` 
+```
 
 ## Database Relationships
 
@@ -193,10 +193,10 @@ Now we will add other table, this time will be the table that represent the post
 
 Now we can see a second table `posts` this table will contain an unique `id` field, the `body`, the `timestamp` and a foreign key called `user_id`. This foreign key is the way to link both tables, this relationship is called *one-to-many* ( one user can write many ports ).
 
-Noww the model will change 
+Noww the model will change
 **application/models/py**
 
-```python 
+```python
 from datetime import datetime
 from app import db
 
@@ -220,7 +220,7 @@ class Post(db.Model):
 
 	def __repr__(self):
 		return '<Post {}>'.format(self.body)
-``` 
+```
 
 From the code above:
 
@@ -254,7 +254,7 @@ flask db migrate -m "posts table"
 ```
 ![generate migration](images/flask_sqlalchemy_008.png){: .center}
 
-second, we applied the migration to the database 
+second, we applied the migration to the database
 
 ```Bash
 flask db upgrade
@@ -263,7 +263,7 @@ flask db upgrade
 
 ## Play Time
 
-Now, we can use the python interpreter to test the database we create, first we can start creating the Users 
+Now, we can use the python interpreter to test the database we create, first we can start creating the Users
 
 ![creating a user](images/flask_sqlalchemy_010.png){: .center}
 
@@ -292,11 +292,11 @@ Now if we want to get just one record we can use a index type of query
 u = User.query.get(1)
 ```
 
-now for the Post part 
+now for the Post part
 
 ![Create records for post](images/flask_sqlalchemy_012.png){: .center}
 
-Now to delete all the records 
+Now to delete all the records
 
 ```python
 users = User.query.all()
@@ -310,20 +310,20 @@ for p in posts:
 db.session.commit()
 ```
 
-## Shell Context  
+## Shell Context
 
-Now, the Shell context is a extra help Flask provided, this is base in the fact that during the development of a site with flask we will need to test constantly using the python interactive console, and that will required the constant import such as: 
+Now, the Shell context is a extra help Flask provided, this is base in the fact that during the development of a site with flask we will need to test constantly using the python interactive console, and that will required the constant import such as:
 
 ```python
 from application import db
 from app.models import User, Post
 ```
 
-we can avoid this issue using the shell context, this context will run within the app context to test we can make the following test 
+we can avoid this issue using the shell context, this context will run within the app context to test we can make the following test
 
 ![test the Shell context](images/flask_sqlalchemy_013.png){: .center}
 
-We can use some of the flask decorators to add this imports to the shell context, for that we need to add something to one of the files 
+We can use some of the flask decorators to add this imports to the shell context, for that we need to add something to one of the files
 
 **microblog.py**
 ```python
@@ -337,30 +337,3 @@ def make_shell_context():
 ```
 
 ![test the Shell context](images/flask_sqlalchemy_014.png){: .center}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

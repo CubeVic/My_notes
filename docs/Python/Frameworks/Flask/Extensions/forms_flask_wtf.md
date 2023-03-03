@@ -23,7 +23,7 @@ $ pip install flask-wtf
 
 ## Example
 
-Following the `separation of concerns` it is a good practice to keep the forms in a different file/module, in the following example we will consider an app that will ask customer to log in, this log in form will include: 
+Following the `separation of concerns` it is a good practice to keep the forms in a different file/module, in the following example we will consider an app that will ask customer to log in, this log in form will include:
 
 * Username.
 * Password.
@@ -32,7 +32,7 @@ Following the `separation of concerns` it is a good practice to keep the forms i
 
 ### The LoginForm class
 **application/forms.py**
-```python 
+```python
 from flask_wtf import FlaskForm
 from wtforms import StringField, PasswordField, BooleanField, SubmitField
 from wtforms.validators import DataRequired
@@ -44,12 +44,12 @@ class LoginForm(FlaskForm):
 	remember_me = BooleanField('Remember_me')
 	submit = SubmitField('Sign in')
 
-``` 
+```
 
-From the code we got: 
+From the code we got:
 
-1. `FlaskForm` is the base form class and all the clases we will create will inherit from it, this class is part of `flask_wtf`.  
-2. The 4 type of field are represented as classes and they came form `wtforms`, since the `Flask-WTF` extension does not provide customized versions.  
+1. `FlaskForm` is the base form class and all the clases we will create will inherit from it, this class is part of `flask_wtf`.
+2. The 4 type of field are represented as classes and they came form `wtforms`, since the `Flask-WTF` extension does not provide customized versions.
 3. Each instance or object of the field class has as first argument a label, and the second and optional argument will be the validators, in this case we use the validator `DataRequired()`
 
 ### Form Templates
@@ -58,7 +58,7 @@ We have the form, now 2 things are missing the template and the view function, i
 
 We will follow the template inheritance and will will be using `{% extend "base.html" %}` to extend inherit from the base template.
 
-we will create a new template `login.html` and it will be same in the template folder (in more complex application this might be different). 
+we will create a new template `login.html` and it will be same in the template folder (in more complex application this might be different).
 
 **application/templates/login.html**
 ```html
@@ -84,26 +84,26 @@ we will create a new template `login.html` and it will be same in the template f
 {% endblock %}
 ```
 
-From the script we have: 
+From the script we have:
 
 1. The template expect a object instance of the `LoginForm` that object is refer as `form` we will see in the view function were we need to pass that object and how we create the instance.
-2. We use the tag `<form>` to contain the web form.  
-3. The `action` attribute of the form is used to tell the browser the URL that should be used when submitting the information the user entered in the form. When the `action` is set to an empty string the form is submitted to the URL that is currently in the address bar, which is the URL that rendered the form on the page.  
-4. The method is set as "post".  
+2. We use the tag `<form>` to contain the web form.
+3. The `action` attribute of the form is used to tell the browser the URL that should be used when submitting the information the user entered in the form. When the `action` is set to an empty string the form is submitted to the URL that is currently in the address bar, which is the URL that rendered the form on the page.
+4. The method is set as "post".
 5. The `novalidate` attribute is used to tell the web browser to not apply validation to the fields in this form, which effectively leaves this task to the Flask application running in the server This is optional, but we use it in this case so we can test the validation in the server-side.
 6. `form.hidden_tag()` template argument generates a hidden field that includes a token that is used to protect the form against **CSRF** attacks. All you need to do to have the form protected is include this hidden field and have the SECRET_KEY variable defined in the Flask configuration.
 
 **IMPORTANT:** if we check the template in detail we notice that there are not `<input >` tags  this is because he fields from the form object know how to render themselves as HTML.
-1. All I needed to do was to include `{{ form.<field_name>.label }}` where I wanted the field label, and `{{ form.<field_name>() }}` where I wanted the field.  
-2. To modify the field we can use the attributes that will be in th `<input>` example, `size` argument.  
+1. All I needed to do was to include `{{ form.<field_name>.label }}` where I wanted the field label, and `{{ form.<field_name>() }}` where I wanted the field.
+2. To modify the field we can use the attributes that will be in th `<input>` example, `size` argument.
 
 ### Form Views
 
 The last step need it is the form view, the view function that will render the template.
-This new view function can be add it to a routes module as follow 
+This new view function can be add it to a routes module as follow
 
 **application/routes.py**
-```python 
+```python
 from flask import render_template
 from application import app
 from application.form import LoginForm
@@ -131,7 +131,7 @@ def index():
 def login():
 	form = LoginForm()
 	return render_template('login.html', title='Sign In', form=form)
-``` 
+```
 
 What are we doin is importing the calls `LoginForm` from the module `forms.py` and we create and instant object of that class called `form` later in `render_template` we pass that object `form` to the variable `form` this variable is the required for to get the fields rendered
 
@@ -145,17 +145,17 @@ Now we can add a link to login in or base template
 </div>
 ```
 
-However if we click in submit button we will have 
+However if we click in submit button we will have
 ![Method not allowed](images/flask-wtf_001.png){: .center}
 
-This is because we don't have the logic to handle the request using `POST` and the form is using post top send the information 
+This is because we don't have the logic to handle the request using `POST` and the form is using post top send the information
 
 #### Receiving Form Data
 
-In order to the the request or to be able to handle the request we need to add some extra code to the view function 
+In order to the the request or to be able to handle the request we need to add some extra code to the view function
 
 **application/routes.py**
-```python 
+```python
 from flask import render_template, flash, redirect
 
 @app.route('/login', methods=['GET','POST'])
@@ -165,7 +165,7 @@ def login():
 		flash('Login requested for user {}, remember_me={}'.format(form.username.data, form.remember_me.data))
 		return redirect('/index')
 	return render_template('login.html', title="Sign In", form=form)
-``` 
+```
 
 from the previous code:
 
@@ -208,8 +208,8 @@ from the previous code:
 as we mentioned before `flash()` is a function use to give messages to the user, but to be able to see it we need to modify the templates to do it, in this case we are going to modify the `base.html` template.
 
 1. `{% with messages = get_Flashed_messages() %}` the `with` is a construct that we are going to use to assign the return value of `get_flashed_messages()` to the variable `messages`, all in the context of this template.
-2. `get_flashed_messages()`  this function come from Flask and it returns a list of messages register to `flash()`.  
-3. `{% if messages %}` is a condition to check if the variable has some content, if the variable has some content we will use a `HTML` list and a jinja `{% for message in messages %}` to loop and display all the messages in the list.  
+2. `get_flashed_messages()`  this function come from Flask and it returns a list of messages register to `flash()`.
+3. `{% if messages %}` is a condition to check if the variable has some content, if the variable has some content we will use a `HTML` list and a jinja `{% for message in messages %}` to loop and display all the messages in the list.
 
 #### Improving the Field Validation
 
@@ -262,10 +262,10 @@ For now the login is basically complete, but we have some hardcoded URLs whihc i
         <a href="/login">Login</a>
     </div>
 ```
-and 
+and
 
 **application/routes.html**
-```python 
+```python
 @app.route('/login', methods=['GET', 'POST'])
 def login():
     form = LoginForm()
@@ -273,7 +273,7 @@ def login():
         # ...
         return redirect('/index')
     # ...
-``` 
+```
 
 The good practice will be, generate those URLs using `url_for()` whihc generate the URLs bas in the internal mapping, The argument of `url_for()` will be the name of the view function, so for example, `url_for('login')` because the view function is called `/login` will returns /login, and same for  `url_for('index')` return `/index`.
 
@@ -290,7 +290,7 @@ So the previous links will be
 and
 
 **application/routes.html**
-```python 
+```python
  from flask import render_template, flash, redirect, url_for
 
 # ...
@@ -302,4 +302,4 @@ def login():
         # ...
         return redirect(url_for('index'))
     # ...
-``` 
+```

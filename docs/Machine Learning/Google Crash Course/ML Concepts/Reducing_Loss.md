@@ -12,7 +12,7 @@ The "model" take one or more feature as input and return one prediction $y'$ as 
 $$
 y' = b + w_1x_1
 $$
- 
+
 For lineal regression problems the values to start are not important, in this example we can pick, $b = 0$, $w_1 = 0$, and assuming the first feature value is 10, the prediction yields:
 
 $$
@@ -62,5 +62,3 @@ a batch is the total number of examples you use to calculate the gradient in a s
 By choosing examples at random from our data set, we could estimate a big average from a much smaller batch **Stochastic gradient descent** (**SGD**) takes this idea to the extreme--it uses only a single example (a batch size of 1) per iteration. Given enough iterations, SGD works but is very noisy. The term "stochastic" indicates that the one example comprising each batch is chosen at random.
 
 **Mini-batch stochastic gradient descent** (**mini-batch SGD**) is a compromise between full-batch iteration and SGD. A mini-batch is typically between 10 and 1,000 examples, chosen at random. Mini-batch SGD reduces the amount of noise in SGD but is still more efficient than full-batch.
-
-    

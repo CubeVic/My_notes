@@ -10,11 +10,11 @@ The task we can perform with the RESTful API will be:
 
 ## Common terms
 
-Some terms used in the API 
+Some terms used in the API
 
 ### Spreadsheet
 
-It is the primary object, and it contains multiple sheets. It has a unique ID `spreeadsheetId` made with letters, numbers, hyphens, and underscores. You can find it in the google sheet URL. 
+It is the primary object, and it contains multiple sheets. It has a unique ID `spreeadsheetId` made with letters, numbers, hyphens, and underscores. You can find it in the google sheet URL.
 
 ```python
 https://docs.google.com/spreadsheets/d/spreadsheetId/edit#gid=0
@@ -38,7 +38,7 @@ An individual field of text or data within the sheets. Cells can be group vertic
 
 ### A1 notation
 
-The method refers to one or a group of cells. It uses the sheet name, the column letter, and a numeric value that indicates the row. Bellow examples taken from the google sheet documentation: 
+The method refers to one or a group of cells. It uses the sheet name, the column letter, and a numeric value that indicates the row. Bellow examples taken from the google sheet documentation:
 
 - `Sheet1!A1:B2` refers to the first two cells in the top two rows of Sheet1.
 - `Sheet1!A:A` refers to all the cells in the first column of Sheet1.
@@ -69,7 +69,7 @@ There will be some prerequisites. They can be fine in the official documentation
 pip install --upgrade google-api-python-client google-auth-httplib2 google-auth-oauthlib
 ```
 
-### 2. Configure the example 
+### 2. Configure the example
 
 ```python
 from __future__ import print_function
@@ -129,7 +129,7 @@ if __name__ == '__main__':
 ```
 Now from the code above:
 
-1. The import of the packages, in this case, I'm importing from the google library. It will make easy the interaction with the google API.  
-2. `SCOPES` It is the limitation on the actions. For this case, it is limited to `readonly`.  
-3. `SAMPLE_SPREADSHEET_ID` and `SAMPLE_RANGE_NAME` these are the ID for the spreadsheet and the range where I'm going to work in.  
-4. Inside the main function will be a section where I will consult the file `credentials.json` this is the file I download from the dashboard in the OAuth 2.0 client ID section. 
+1. The import of the packages, in this case, I'm importing from the google library. It will make easy the interaction with the google API.
+2. `SCOPES` It is the limitation on the actions. For this case, it is limited to `readonly`.
+3. `SAMPLE_SPREADSHEET_ID` and `SAMPLE_RANGE_NAME` these are the ID for the spreadsheet and the range where I'm going to work in.
+4. Inside the main function will be a section where I will consult the file `credentials.json` this is the file I download from the dashboard in the OAuth 2.0 client ID section.

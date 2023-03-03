@@ -1,6 +1,6 @@
 We can draw different things on the images, we can draw basic forms such as circle and rectangles, etc, we can put text and more complex figures all using `cv2`
 
-First we will need the imports 
+First we will need the imports
 
 ```python
 import numpy as np

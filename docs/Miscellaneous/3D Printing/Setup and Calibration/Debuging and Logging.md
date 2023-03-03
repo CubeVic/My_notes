@@ -6,7 +6,7 @@ There are several debug bits, to enable it is necessary add up the bits need it
 
 |Mask	   | Name 		|  	Description 	|
 |:---------|:-----------|:------------------|
-|1		   | ECHO       | Echo all commands sent to the parser.	| 
+|1		   | ECHO       | Echo all commands sent to the parser.	|
 |2		   | INFO		| Print extra informational messages.|
 |4		   | ERRORS		| Print extra error messages.|
 |8		   | DRYRUN 	| Don’t extrude, don’t save leveling data, etc.|
@@ -26,11 +26,11 @@ M111 [S<flags>]
 
 Enable extra messages
 
-```M111 S38 ; LEVELING, ERRORS, INFO```  
+```M111 S38 ; LEVELING, ERRORS, INFO```
 
 Enable everything except dry-run mode
 
-```M111 S247 ; 255 - 8 ```  
+```M111 S247 ; 255 - 8 ```
 
 Disable previously set extra debugging output.
 
@@ -68,7 +68,7 @@ Use this command to start logging all console and host input into the SD card
 
 #### Usage ```M928```
 ```
-M928 filename 
+M928 filename
 ```
 
 * *filename*  File name of log file
@@ -91,7 +91,7 @@ M28 filename
 ```
 * *filename*  File name of log file
 
-> Example: 
+> Example:
 ```M28 file.txt```
 
 source: [M28](http://marlinfw.org/docs/gcode/M028.htmll)

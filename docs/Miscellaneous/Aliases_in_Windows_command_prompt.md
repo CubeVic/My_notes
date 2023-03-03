@@ -1,5 +1,5 @@
 
-## Windows 
+## Windows
 
 you may make the alias(es) persistent with the following steps:
 
@@ -28,7 +28,7 @@ For completeness, here is a template to illustrate the kind of aliases one may f
 
 DOSKEY ls=dir /B
 DOSKEY notes = cd Documents/Notes/notes
-:: DOSKEY sublime=sublime_text $*  
+:: DOSKEY sublime=sublime_text $*
 :: sublime_text.exe is name of the executable. By adding a temporary entry to system path, we don't have to write the whole directory anymore.
 :: DOSKEY gsp="C:\Program Files (x86)\Sketchpad5\GSP505en.exe"
 :: DOSKEY alias=notepad %USERPROFILE%\Dropbox\alias.cmd
@@ -40,7 +40,7 @@ DOSKEY notes = cd Documents/Notes/notes
 ```
 ## On MAC
 
-On mac the process is similar to a Linux system, I will add more step later for now i will leave the alias and configuration i want to do 
+On mac the process is similar to a Linux system, I will add more step later for now i will leave the alias and configuration i want to do
 
 ```Batch
 export PATH=$PATH:/usr/local/bin/pip3

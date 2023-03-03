@@ -1,15 +1,15 @@
 #Useful functions or Statements
 
-## `reduce()` from functools  
+## `reduce()` from functools
 
  The `reduce(fun,seq)` function is used to *apply a particular function passed in its argument to all of the list elements* mentioned in the sequence passed along. This function is defined in “functools” module.
 
-**Working :** 
+**Working :**
 
-* First two elements of sequence are picked and the result is obtained.  
-* Next step is to apply the same function to the previously attained result and the number just succeeding the second element and the result is again stored.  
-* This process continues till no more elements are left in the container.  
-* The final returned result is returned and printed on console.  
+* First two elements of sequence are picked and the result is obtained.
+* Next step is to apply the same function to the previously attained result and the number just succeeding the second element and the result is again stored.
+* This process continues till no more elements are left in the container.
+* The final returned result is returned and printed on console.
 
 ```python
 import sys
@@ -40,24 +40,24 @@ print(count)
 
 in the previous code the idea to solve the problem [Between Two Sets](https://www.hackerrank.com/challenges/between-two-sets/problem)
 
-here more information about [GCD](https://en.wikipedia.org/wiki/Greatest_common_divisor) and [LCM](https://en.wikipedia.org/wiki/Least_common_multiple) 
+here more information about [GCD](https://en.wikipedia.org/wiki/Greatest_common_divisor) and [LCM](https://en.wikipedia.org/wiki/Least_common_multiple)
 
 ## `GCD()` from math
 The Highest Common Factor (HCF) , also called *gcd*, can be computed in python using a single function offered by math module and hence can make tasks easier in many situations.
 
 ```python
-# Python code to demonstrate gcd() 
-# method to compute gcd 
+# Python code to demonstrate gcd()
+# method to compute gcd
 
-import math 
+import math
 
-# prints 12 
-print ("The gcd of 60 and 48 is : ",end="") 
-print (math.gcd(60,48)) 
+# prints 12
+print ("The gcd of 60 and 48 is : ",end="")
+print (math.gcd(60,48))
 ```
 
-##`Counter()` from collection  
-A `Counter` is a `dict` subclass for counting hashable objects. It is a collection where elements are stored as dictionary keys and their counts are stored as dictionary values. Counts are allowed to be any integer value including zero or negative counts. 
+##`Counter()` from collection
+A `Counter` is a `dict` subclass for counting hashable objects. It is a collection where elements are stored as dictionary keys and their counts are stored as dictionary values. Counts are allowed to be any integer value including zero or negative counts.
 
 for example: assume an array `arr=[1,1,2,2,3]` and you are asked to find the number of occurrence of each integer, in this case you can use `Counter` whihc will return a dictionary using the value as key and the count as value, like this:
 
@@ -150,7 +150,7 @@ map(functions_object, iterable1, iterable2,...)
 ```python
 def multiply2(x):
   return x * 2
-    
+
 map(multiply2, [1, 2, 3, 4])  # Output [2, 4, 6, 8]
 ```
 In the above example, map executes multiply2 function for each element in the list i.e. 1, 2, 3, 4 and returns [2, 4, 6, 8]
@@ -166,7 +166,7 @@ We can pass multiple sequences to the map functions as shown below:
 
 list_a = [1, 2, 3]
 list_b = [10, 20, 30]
-  
+
 map(lambda x, y: x + y, list_a, list_b) # Output: [11, 22, 33]
 ```
 Neither we can access the elements of the map object with index nor we can use len() to find the length of the map object
@@ -214,7 +214,7 @@ even_num = list(filter_obj) # Converts the filer obj to a list
 print(even_num) # Output: [2, 4]
 ```
 
-## `pass` Statement 
+## `pass` Statement
 
 The pass statement does nothing. It can be used when a statement is required syntactically but the program requires no action. For example:
 
@@ -242,7 +242,7 @@ The `max()` function returns the largest of the input values.
 
 Its syntax is as follows:
 
-```python 
+```python
 max(iterable[, default=obj, key=func]) -> value
 ```
 we will focus in `key` this is an optional argument and it receive a function, and this function is applied to every member of the iterable

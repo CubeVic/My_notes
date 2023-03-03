@@ -12,7 +12,7 @@ Now in in openCV we can transform or convert the different pictures to a differe
 
 ## Import Libraries
 
-First the imports 
+First the imports
 
 ```python
 import cv2

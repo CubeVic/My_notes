@@ -20,7 +20,7 @@ for j in p:
 	print(j)
 ```
 
-Results: 
+Results:
 
 ('g', 'e')
 ('g', 'E')

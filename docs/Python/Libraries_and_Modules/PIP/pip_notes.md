@@ -8,13 +8,13 @@
 
 ##Check if `pip` is install
 
-pip is already installed in python 2 and python 3, but we can double check the version in the following way: 
+pip is already installed in python 2 and python 3, but we can double check the version in the following way:
 
 ```bash
 python -m pip --version
 ```
 
-## Installation 
+## Installation
 
 There are two was to install packages using `pip` one will be for machines with access to a network and other without access
 
@@ -30,7 +30,7 @@ We can install packages like:
 python -m pip install SomePackage
 ```
 
-Normally we will be able to use: 
+Normally we will be able to use:
 
 ```
 pip install SomePackage
@@ -55,7 +55,7 @@ python -m pip install 'SomePackage>=1.0.4'     # minimum version
 
 
 ## Get packages installed
-to get a list of packages and versions install in a machine we can use 
+to get a list of packages and versions install in a machine we can use
 
 ```
 pip freeze  > requirements.txt
@@ -80,7 +80,7 @@ or
 pip uninstall -r requirements.txt
 ```
 it will ask if we want to uninstall one by one.
-to uninstall everything 
+to uninstall everything
 
 ```
 pip uninstall -r requirements.txt -y

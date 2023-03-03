@@ -13,7 +13,7 @@ This package attempts to solve that problem.
 
 I wanted to find a way to get the IP address of the computer running the python code, the idea was use it as part of my personal project `Project_horus` as part of the discovery devices.
 
-```python 
+```python
 from netifaces import interfaces, ifaddresses, AF_INET
 
 # AF_INET - Address Family - Normal internet address
@@ -31,14 +31,14 @@ def extract_scope_(interface):
 		return ip_address
 
 
-scope = None 
+scope = None
 
 # extrat the IP "scope" of the IP range of the Ethernet interface
-if not scope : ips = list(map(extract_scope_,interfaces())) 
+if not scope : ips = list(map(extract_scope_,interfaces()))
 
 # Extract the first two numbers of the address
 scope = ['.'.join(ip.split('.')[:2]) for ip in ips if ip]
 
 print(f'\n------------>\nscope {scope}') #the scope,
-# ['127.0', '192.168'] 
+# ['127.0', '192.168']
 ```

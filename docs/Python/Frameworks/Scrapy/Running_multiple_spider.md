@@ -28,7 +28,7 @@ crawl()
 reactor.run() # the script will block here until the last crawl call is finished
 ```
 
-Now, i don't need and i shouldn't put the spiders in the same script so i made the modifications 
+Now, i don't need and i shouldn't put the spiders in the same script so i made the modifications
 
 ```python
 from twisted.internet import reactor, defer

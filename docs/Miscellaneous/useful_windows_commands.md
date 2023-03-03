@@ -14,7 +14,7 @@ dir
 
 ### Tree style display
 
-To display folder content we can use the `tree` command 
+To display folder content we can use the `tree` command
 
 ```commandline
 tree <foldername>
@@ -24,7 +24,7 @@ tree <foldername>
 
 ### How to delete files
 
-To delete a file we use the command `del` 
+To delete a file we use the command `del`
 
 ```commandline
 del <filename.extension>
@@ -44,11 +44,11 @@ The command to be used is `rmdir` there is another option `rd` but I will stay w
 rmdir <name of directory/folder>
 ```
 
-This process will fail if there are subdirectories, for that we need to add a flag 
+This process will fail if there are subdirectories, for that we need to add a flag
 
 ####Use flag `/s` with `rmdir`
 
-A flag can be added to delete a folder with sub-folders `/s`. 
+A flag can be added to delete a folder with sub-folders `/s`.
 
 ```commandline
 rmdir /s <name root directory>
@@ -62,7 +62,7 @@ rmdir /s <name root directory>
 perfmon /report
 ```
 
-### System file checker used to fix corrupt or missing files 
+### System file checker used to fix corrupt or missing files
 
 ```bash
 sfc /scannow

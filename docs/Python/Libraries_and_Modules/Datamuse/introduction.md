@@ -32,7 +32,7 @@ foo_complete = api.suggest(s='foo', max=10)
 
 ## Parameters for `word` methods
 Description of the method
-> This endpoint returns a list of words (and multiword expressions) from a given vocabulary that match a given set of constraints. See <https://www.datamuse.com/api/> for the official Datamuse API documentation for the `/words` endpoint.  
+> This endpoint returns a list of words (and multiword expressions) from a given vocabulary that match a given set of constraints. See <https://www.datamuse.com/api/> for the official Datamuse API documentation for the `/words` endpoint.
 **:param `**kwargs`:** Query parameters of constraints and hints.
 **:return:** A list of words matching that match the given constraints.
 
@@ -60,7 +60,7 @@ Description of the method
 *	Left context `lc` An optional hint to the system about the word that appears immediately to the left of the target word in a sentence.
 *	Right context `rc` An optional hint to the system about the word that appears immediately to the right of the target word in a sentence.
 *	Maximum `max`
-* 	Metadata flag `md` A list of single-letter codes (no delimiter) requesting that extra lexical knowledge be included with the results.   
+* 	Metadata flag `md` A list of single-letter codes (no delimiter) requesting that extra lexical knowledge be included with the results.
 
 	| Letter  | Description    |
 	| :------:| ---------------|
@@ -74,7 +74,6 @@ Description of the method
 
 ## Parameters for `suggest` methods
 
-*	`s` Prefix hint string; typically, the characters that the user has entered so far into a search box.  
-*	`max` Maximum number of results to return.  
-*	`v` 	Identifier for the vocabulary to use.  
-
+*	`s` Prefix hint string; typically, the characters that the user has entered so far into a search box.
+*	`max` Maximum number of results to return.
+*	`v` 	Identifier for the vocabulary to use.

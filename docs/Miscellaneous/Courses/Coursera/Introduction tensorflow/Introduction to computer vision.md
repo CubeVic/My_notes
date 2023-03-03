@@ -15,7 +15,7 @@ We simply declare an object of type MNIST loading it from the Keras database. On
 
 ##Input Shape
 
-Here you saw how the data can be loaded into Python data structures that make it easy to train a neural network. 
+Here you saw how the data can be loaded into Python data structures that make it easy to train a neural network.
 
 ![Fashion-mnist](images/fashion-data.jpg) ![fashion boot](images/fashion-data-boot.jpg)
 
@@ -39,7 +39,7 @@ Label |	Description|
 
 ## About the layers of the model
 
-we will look at the code for the neural network definition. 
+we will look at the code for the neural network definition.
 Previously, we have just one layer, now we have three layers, it  is important  to look at are the first and the last layers.
 
 ```python
@@ -49,7 +49,7 @@ model = keras.Sequential([
 	keras.layers.Dense(10, activation=tf.nn.softmax)])
 ```
 
-The last layer has 10 neurons in it because we have ten classes of clothing in the dataset. They should always match. The first layer is a flatten layer with the input shaping 28 by 28, this is because the images are 28X28, so we're specifying that this is the shape that we should expect the data to be in. Flatten takes this 28 by 28 square and turns it into a simple linear array. 
+The last layer has 10 neurons in it because we have ten classes of clothing in the dataset. They should always match. The first layer is a flatten layer with the input shaping 28 by 28, this is because the images are 28X28, so we're specifying that this is the shape that we should expect the data to be in. Flatten takes this 28 by 28 square and turns it into a simple linear array.
 
 The interesting stuff happens in the middle layer, sometimes also called a hidden layer. This is a 128 neurons in it, we can think these neurons as variables in a function. Maybe call them x1, x2 x3, etc.
 
@@ -57,9 +57,9 @@ The interesting stuff happens in the middle layer, sometimes also called a hidde
 
 if you then say the function was `y` equals `w1` times `x1`, plus `w2` times `x2`, plus `w3` times `x3`, all the way up to a `w128` times `x128` ($y = w_1x_1 +w_2x_2+w_3x_3+...+w_{128}x_{128}$). By figuring out the values of `w`, then `y` will be `9`, which is the category of the shoe.
 
-We can check the exercise in the colab [A Computer Vision Example](https://gist.github.com/CubeVic/5b560b7106a25e31cddb5f53b8d3e0dc) 
+We can check the exercise in the colab [A Computer Vision Example](https://gist.github.com/CubeVic/5b560b7106a25e31cddb5f53b8d3e0dc)
 
-## An Example of a script 
+## An Example of a script
 
 A full script will look like:
 
@@ -73,8 +73,8 @@ mnist = tf.keras.datasets.fashion_mnist
 training_images  = training_images / 255.0
 test_images = test_images / 255.0
 
-model = tf.keras.models.Sequential([tf.keras.layers.Flatten(), 
-                                    tf.keras.layers.Dense(128, activation=tf.nn.relu), 
+model = tf.keras.models.Sequential([tf.keras.layers.Flatten(),
+                                    tf.keras.layers.Dense(128, activation=tf.nn.relu),
                                     tf.keras.layers.Dense(10, activation=tf.nn.softmax)])
 model.compile(optimizer = tf.train.AdamOptimizer(),
               loss = 'sparse_categorical_crossentropy',
@@ -85,7 +85,7 @@ model.fit(training_images, training_labels, epochs=5)
 model.evaluate(test_images, test_labels)
 ```
 
-##Explanation of some Keywords  
+##Explanation of some Keywords
 
 * **Sequential:** That defines a SEQUENCE of layers in the neural network
 
@@ -99,9 +99,9 @@ Each layer of neurons need an activation function to tell them what to do. There
 
 * **Softmax** takes a set of values, and effectively picks the biggest one, so, for example, if the output of the last layer looks like [0.1, 0.1, 0.05, 0.1, 9.5, 0.1, 0.05, 0.05, 0.05], it saves you from fishing through it looking for the biggest value, and turns it into [0,0,0,0,1,0,0,0,0] -- The goal is to save a lot of coding!
 
-##Callback to stop the training 
+##Callback to stop the training
 
-first we will need to create the class `myCallback` 
+first we will need to create the class `myCallback`
 
 ```python
 class myCallback(tf.keras.callbacks.Callback):
@@ -123,7 +123,7 @@ now we can make changes in the `fit` function to add the callback
 
 ```python
 model.fit(x_training,y_training, epochs=1-,callbacks=[callbacks])
-```		
+```
 
 so the completed script will be:
 
@@ -169,7 +169,7 @@ class myCallback(tf.keras.callbacks.Callback):
     if (logs.get('acc') > 0.99):
       print('\n Reached 99% accuracy so cancelling training!')
       self.model.stop_training = True
-      
+
 callbacks = myCallback()
 
 x_train, x_test = x_train/255.0 , x_test/255.0
@@ -186,4 +186,3 @@ model.compile(optimizer='adam',
 
 model.fit(x_train,y_train, epochs=10, callbacks=[callbacks])
 ```
-

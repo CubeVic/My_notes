@@ -10,14 +10,14 @@
 
 I have several notes in this case, the first notes are from a youtube video and explain how to make a small application that use SQLite as database and Heroku for "live deployment", be aware that the app still use the `DEBUG=True` in a really live app that should be set to `False`.
 
-1. Quick & Dirty First App.  
-2. Official Flask tutorial.  
-2.1. Application Layout (Structure).    
-2.2. Application Factory.   
-2.3. Application Database.    
-2.4. Blueprints (part 01-Auth).    
-2.5. Templates.    
-2.6. Blueprints (part 02-Blog).    
+1. Quick & Dirty First App.
+2. Official Flask tutorial.
+2.1. Application Layout (Structure).
+2.2. Application Factory.
+2.3. Application Database.
+2.4. Blueprints (part 01-Auth).
+2.5. Templates.
+2.6. Blueprints (part 02-Blog).
 
 ## Extra notes
 
@@ -30,12 +30,12 @@ I have several notes in this case, the first notes are from a youtube video and 
 ### Common plug-ins
 
 <aside>
-* **Flask-SQLAlchemy**:  For database interaction 
-* **Flask-Session**:  User sessions management 
+* **Flask-SQLAlchemy**:  For database interaction
+* **Flask-Session**:  User sessions management
 * **Flask-login**: Management user login
-* **Flask-WTF**: To handle forms 
+* **Flask-WTF**: To handle forms
 </aside>
-#### Common configuration variables 
+#### Common configuration variables
 
 ???important "General"
      * FLASK_ENV
@@ -50,7 +50,7 @@ I have several notes in this case, the first notes are from a youtube video and 
      * SQLALCHEMY_ENGINE_OPTIONS
 
 ???important "Flask Session"
-     * SESSION_TYPE	
+     * SESSION_TYPE
      * SESSION_PERMANENT
      * SESSION_KEY_PREFIX
      * SESSION_REDIS
@@ -63,7 +63,7 @@ I have several notes in this case, the first notes are from a youtube video and 
 
 ### *I learned from experience*
 
-???success "About Cache and potential effects"  
-    **If CSS is not reflected try clean the cache of the browser.**  
-    I was struggling in a project, I made changes on the CSS and didn't see those reflected in the browser, I check the code and the redo the whole thing. 
+???success "About Cache and potential effects"
+    **If CSS is not reflected try clean the cache of the browser.**
+    I was struggling in a project, I made changes on the CSS and didn't see those reflected in the browser, I check the code and the redo the whole thing.
     *Solution*: Clean the cache of the browser.

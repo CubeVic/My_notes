@@ -1,7 +1,7 @@
 There are different type of data on Input and on Variables, these types are:
 
 * a Numeric Value
-* A String 
+* A String
 * A Boolean (true or False)
 
 here an example:

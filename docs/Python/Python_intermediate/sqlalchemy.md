@@ -1,7 +1,7 @@
 #SQLAlchemy
 
 the website describe it as the Python SQL toolkit and Object Relational Mapper
-Although the description is deeper and for sure I'm been shallow in my description, **SQLAlchemy** abstract all the code necessary to interact with the database, and do it in a way that make it easy to change databases, example the development can be done in `sqlite` and production can be in `PostgreSQL` and the changes will be minimum.  
+Although the description is deeper and for sure I'm been shallow in my description, **SQLAlchemy** abstract all the code necessary to interact with the database, and do it in a way that make it easy to change databases, example the development can be done in `sqlite` and production can be in `PostgreSQL` and the changes will be minimum.
 
 [SQLAlchemy docs 1.3](https://docs.sqlalchemy.org/en/13/)
 
@@ -17,12 +17,12 @@ I will follow an [article](https://auth0.com/blog/sqlalchemy-orm-tutorial-for-py
 
 ## SQLAlchemy Engines
 
-> we can install SQLAlchemy using pip.   
-```python 
+> we can install SQLAlchemy using pip.
+```python
 pip install sqlalchemy
-```   
+```
 
-In SQLAlchemy to interact with the database we will  need to create an `Engine`. This "Engine" is use to  manage two crucial factors: **Pools** and **Dialects** ( see more details bellow) 
+In SQLAlchemy to interact with the database we will  need to create an `Engine`. This "Engine" is use to  manage two crucial factors: **Pools** and **Dialects** ( see more details bellow)
 
 ```Python
 from sqlalchemy import create_engine
@@ -30,9 +30,9 @@ engine = create_engine('postgresql://usr:pass@localhost:5432/mydatabase')
 ```
 from the previous code:
 
-* `usr:pass` are the credentials for the `mydatabase` database.  
-* `localhost` the host.  
-* `5432` refers to the `port` in this case the default postgresql port.  
+* `usr:pass` are the credentials for the `mydatabase` database.
+* `localhost` the host.
+* `5432` refers to the `port` in this case the default postgresql port.
 
 In this case the URI doesn't show the Dialect but most of the common databases and Dialect are integrated we can get more information in the [official documentation](https://docs.sqlalchemy.org/en/13/core/engines.html), as example (from the documentation):
 
@@ -52,11 +52,11 @@ engine = create_engine('sqlite:///foo.db')
 
 ### SQLAlchemy Connection Polls
 
-The connection pools is a implementation of the object pool pattern, this allow the re-usage of pre-initialized objects ready to use, instead of create new instances of create object that are frequently needed  ( like db connection) the program fetch an existing object from the pool, used it as desired and puts back when done.   
+The connection pools is a implementation of the object pool pattern, this allow the re-usage of pre-initialized objects ready to use, instead of create new instances of create object that are frequently needed  ( like db connection) the program fetch an existing object from the pool, used it as desired and puts back when done.
 
 There are various implementation of the connection pool pattern in SQLAlchemy, as an example, when we create the Engine using `create_engine()` this function generate a `QueuePool`, the default configuration is a reasonable default, like maximum pool size of 5 connections.
 
-The most common options with their description:  
+The most common options with their description:
 
 * `pool_size`: Sets the number of connections that the pool will handle.
 * `max_overflow`: Specifies how many exceeding connections ( relative to `pool_size`) the pool supports.
@@ -65,9 +65,9 @@ The most common options with their description:
 
 and example of this concept will be:
 
-```python 
+```python
 engine = create_engine('postgresql://me@localhost/mydb', pool_size=20, max_overflow=0 )
-```  
+```
 
 ###  SQLAlchemy Dialects
 
@@ -78,7 +78,7 @@ SQLAchelmy serve as a facade that allow us to connect to different databases eng
 SELECT TOP 10* FROM people;
 ```
 
-* **MySQL** 
+* **MySQL**
 ```SQL
 SELECT *FROM people LIMIT 10;
 ```
@@ -116,18 +116,18 @@ This type are different to the type we will see in a pure implementation or SQL 
 
 ### SQLAlchemy Relationship Pattern
 
-SQLAlchemy support 4 type of relationships: 
+SQLAlchemy support 4 type of relationships:
 
-* One to Many.  
-* Many to One.  
-* One to One.  
-* Many to Many.  
+* One to Many.
+* Many to One.
+* One to One.
+* Many to Many.
 
 #### One to Many
 
 One instance of a class can be associated with many instance of another class
 
-```python 
+```python
 class Article(Base):
 	__tablename__ = 'articles'
 	id = Column(Integer, primary_key=True)
@@ -137,14 +137,14 @@ class Comment(Base):
 	__tablename__ = 'comments'
 	id = Column(Integer, Primary_key=True)
 	article_id = Column(Integer, ForeignKey('article.id'))
-``` 
+```
 
 #### Many to One
 
-it is similar to the relationship describe about 
+it is similar to the relationship describe about
 
 
-```python 
+```python
 class Tire(Base):
 	__tablename__ = 'tires'
 	id = Column(Integer, primary_key=True)
@@ -158,7 +158,7 @@ class Car(Base):
 
 #### One to One
 
-```python 
+```python
 class Person(Base):
 	__tablename__ = 'people'
 	id = Column(Integer, primary_key=True)
@@ -169,7 +169,7 @@ class MobilePhone(Base):
 	id = Column(Integer, primary_key=True)
 	person_id = Column(Integer, ForeignKey('people.id'))
 	person = relationship("Person", back_populates="mobile_phone")
-``` 
+```
 
 two new parameter in the `relationship` method:
 
@@ -178,10 +178,10 @@ two new parameter in the `relationship` method:
 
 #### Many to Many
 
-```python 
+```python
 student_classes_association = Table('students_classes', Base.metadata,
 		Column('stundent_id', Integer, ForeignKey('student.id')),
-		Column('class_id', Integer, ForeignKey('classes.id')) 
+		Column('class_id', Integer, ForeignKey('classes.id'))
 )
 
 class Student(Base):
@@ -192,7 +192,7 @@ class Student(Base):
 class Class(Base):
 	__tablename__ = 'classes'
 	id = Column(Integer, primary_key=True)
-``` 
+```
 
 In this case a secondary table or a helper table must be created to persist the association between instances of `student` and instances of `Class`, to make SQLAlchemy aware of the helper table, we passed it in the `secondary` parameter of the `relationship` function.
 
@@ -211,16 +211,16 @@ Sometimes wen we update one table we need to propagate those changes to the othe
 
 Sessions are an implementation of the design patter called *unit of work* which idea is maintain a list of objects affected by a business transaction and to coordinate the writing of these changes, in other words, all modifications tracked by Sessions (Units of Works) will be applied to the underlying database together, or none of them will.
 
->the Session establishes all conversations with the database and represents a “holding zone” for all the objects which you’ve loaded or associated with it during its lifespan. 
+>the Session establishes all conversations with the database and represents a “holding zone” for all the objects which you’ve loaded or associated with it during its lifespan.
 
-```python 
+```python
 from sqlalchemy import create_engine
 from sqlalchemy.orm  import sessionmaker
 
 # create an engine
 my_engine = create_engine('postgresql://user:pass@localhost:5432/sqlachemy')
 
-#create a configured "Session" class 
+#create a configured "Session" class
 Session = sessionmaker(bind=my_engine)
 
 #create a Session
@@ -230,25 +230,25 @@ session = Session()
 my_object = MyObject('foo', 'bar')
 session.add(my_object)
 session.commit()
-``` 
+```
 
 In the code above we create a session factory bind to our engine and later we create our session.
 
-<!-- ## SQLAlchemy in practice 
+<!-- ## SQLAlchemy in practice
 
-I follow the structure in [this article](https://auth0.com/blog/sqlalchemy-orm-tutorial-for-python-developers/) so i will follow part of their *in practice* section 
+I follow the structure in [this article](https://auth0.com/blog/sqlalchemy-orm-tutorial-for-python-developers/) so i will follow part of their *in practice* section
 
 ### Starting ( Virtual environment)
 
 First we need to set the environment in this case we are going to use `pipenv` in order to create a virtual environment:
 
 ```
-# installing pipenv 
+# installing pipenv
 pip install pipenv
 
 ```
 
-now to organize everything we can create a new directory and go inside, once inside we can start the new virtual environment 
+now to organize everything we can create a new directory and go inside, once inside we can start the new virtual environment
 
 ```
 mkdir sqlalchemy-tutorial
@@ -271,18 +271,18 @@ docker run --name sqlalchemy-orm-psql \
     -e POSTGRES_DB=sqlalchemy \
     -p 5432:5432 \
     -d postgres
-``` 
+```
 This command will create a Docker PostgreSQL Instance, the parameters use are:
 
-* `--name`: Defines  the name of the Docker instance 
+* `--name`: Defines  the name of the Docker instance
 * `-e POSTGRES_PASSWORD=pass`: Defines the password to connect to PosgreSQL
-* `-e POSGRES_USE=usr`: Defines the User to connect to PosgreSQL 
-* `-e POSGRES_DB=sqlalchemy`: the name of the database   
+* `-e POSGRES_USE=usr`: Defines the User to connect to PosgreSQL
+* `-e POSGRES_DB=sqlalchemy`: the name of the database
 * `-p 5432:5432`: the local port 5432 will be tunnel to the container port 5432
-* `-d postgres`: Define that this Docker instance will be create based on the official PosgreSQL repository   
+* `-d postgres`: Define that this Docker instance will be create based on the official PosgreSQL repository
 
 
-Now here some useful commands to stop and delete the container 
+Now here some useful commands to stop and delete the container
 
 ```
 # stop instance
@@ -299,7 +299,7 @@ in this practice we will use progreSQL and the dialect psycopg2 so to install it
 pipenv install sqlalchemy psycopg2
 ```
 
-and now we need to activate the virtual environment 
+and now we need to activate the virtual environment
 
 ```
 pipenv shell
@@ -311,7 +311,7 @@ pipenv shell
 
 Lets assume that we already establish a connections and a session with the database, let call the table "census"
 
-### Selecting 
+### Selecting
 
 **SQL**
 ```SQL
@@ -319,9 +319,9 @@ SELECT * FROM census
 ```
 
 **SQLAlchemy**
-```python 
+```python
 quey = db.select([census])
-``` 
+```
 
 #### Filtering data
 
@@ -334,9 +334,9 @@ WHERE sex = F
 ```
 
 **SQLAlchemy**
-```python 
+```python
 db.select([census]).where (census.columns.sex == 'F')
-``` 
+```
 
 #### in
 
@@ -348,9 +348,9 @@ WHERE state in (Texas, New York)
 ```
 
 **SQLAlchemy**
-```python 
+```python
 db.select([census.columns.state, census.columns.sex]).where(census.columns.state.in_(['Texas', 'New York']))
-``` 
+```
 
 #### and, or, not
 
@@ -361,9 +361,9 @@ WHERE state = 'California' AND NOT sex = 'M'
 ```
 
 **SQLAlchemy**
-```python 
+```python
 db.census([census]).where(db.and_(census.columns.state == 'California', census.columns.sex != 'M'))
-``` 
+```
 
 #### order by
 
@@ -374,9 +374,9 @@ ORDER by state DESC, pop2000
 ```
 
 **SQLAlchemy**
-```python 
+```python
 db.select([census]).order_by(db.desc(census.columns.state), census. columns.pop2000)
-``` 
+```
 
 #### function
 
@@ -387,9 +387,9 @@ FROM census
 ```
 
 **SQLAlchemy**
-```python 
+```python
 db.select([db.func.sum(census.columns.pop2008)])
-``` 
+```
 
 #### group by
 
@@ -400,22 +400,22 @@ FROM census
 ```
 
 **SQLAlchemy**
-```python 
+```python
 db.select([db.func.sum(census.columns.pop2008).label('pop2008'), census. comuns.sex]). group_by(census.columns.sex)
-``` 
+```
 
 #### distinct
 
 **SQL**
 ```SQL
-SELECT DISTINCT state 
+SELECT DISTINCT state
 FROM census
 ```
 
 **SQLAlchemy**
-```python 
+```python
 db.select([census.columns.state.distinct()])
-``` 
+```
 
 ### Creating and Inserting Data Into Tables
 
@@ -424,7 +424,7 @@ db.select([census.columns.state.distinct()])
 Although above we create the table using classes in this case we will Create it as a functions.
 >I haven't found a good explanation of which method use, or what is the best to create tables, but i guess the one using classes will be better.
 
-```python 
+```python
 engine = db.create_engine('sqlite:///test.sqlite') #Create test.sqlite automatically
 connection = engine.connect()
 metadata = db.MetaData()
@@ -437,41 +437,37 @@ emp = db.Table('emp', metadata,
               )
 
 metadata.create_all(engine) #Creates the table
-``` 
+```
 #### Inserting Data
 
 ```python
 #Inserting record one by one
-query = db.insert(emp).values(Id=1, name='naveen', salary=60000.00, active=True) 
+query = db.insert(emp).values(Id=1, name='naveen', salary=60000.00, active=True)
 ResultProxy = connection.execute(query)
 ```
 
-```python 
-query = db.insert(emp) 
+```python
+query = db.insert(emp)
 values_list = [{'Id':'2', 'name':'ram', 'salary':80000, 'active':False},
                {'Id':'3', 'name':'ramesh', 'salary':70000, 'active':True}]
 ResultProxy = connection.execute(query,values_list)
-``` 
+```
 
 #### Updating Data
 
-```python 
+```python
 db.update(table_name).values(attribute = new_value).where(condition)
-``` 
+```
 
 ### Delete Table
 
-```python 
+```python
 db.delete(table_name).where(condition)
-``` 
+```
 
 #### Dropping the Table
 
-```python 
+```python
 table_name.drop(engine) #drops a single table
 metadata.drop_all(engine) #drops all the tables in the database
-``` 
-
-
-
-
+```

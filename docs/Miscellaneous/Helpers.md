@@ -6,7 +6,7 @@ Install using pip:
 pip install mkdocs
 ```
 
-and to check the installation 
+and to check the installation
 
 ```shell
 $ mkdocs --version
@@ -25,7 +25,7 @@ and int the project's mkdocs.yml we need to add:
 
 ```yml
 theme:
-  name: 'material' 
+  name: 'material'
 ```
 
 ## Useful MkDocs Commands
@@ -37,8 +37,8 @@ theme:
 
 ## Useful commands
 
-* `![Name of the image](/images/nameImage.png)` -  to add an image 
-* `[text](URL)` to add a link to a text 
+* `![Name of the image](/images/nameImage.png)` -  to add an image
+* `[text](URL)` to add a link to a text
 
 ## Launch Mkdocs in specific ip
 

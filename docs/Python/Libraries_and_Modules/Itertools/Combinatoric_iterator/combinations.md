@@ -10,13 +10,13 @@ Here `r` is an input, it represent the size of different combinations that are p
 
 ```python
 from itertools import combinations
-  
+
 letters ="victor"
-  
+
 # size of combination is set to 3
-a = combinations(letters, 3) 
+a = combinations(letters, 3)
 comb = [' '.join(i) for i in a]
-  
+
 print(comb)
 
 #['vic', 'vit', 'vio', 'vir', 'vct', 'vco', 'vcr', 'vto', 'vtr', 'vor', 'ict', 'ico', 'icr', 'ito', 'itr', 'ior', 'cto', 'ctr', 'cor', 'tor']

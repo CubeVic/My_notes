@@ -9,7 +9,7 @@
 
 ## How I use it/ How I find it
 
-I wanted to understand some of the implementation of `python-onvif-zeep-async` so I decided to take a look to the libraries use on it, and this was one of those libraries 
+I wanted to understand some of the implementation of `python-onvif-zeep-async` so I decided to take a look to the libraries use on it, and this was one of those libraries
 
 ```python
 from wsdiscovery.discovery import ThreadedWSDiscovery as WSDiscovery
@@ -47,17 +47,17 @@ wsd.stop()
 
 ## searchService()
 
-I remark this method since it will affect the divices we will find, there are 3 attibutes 
+I remark this method since it will affect the divices we will find, there are 3 attibutes
 
-* types.  
-* scopes.  
-* timeout.  
+* types.
+* scopes.
+* timeout.
 
-from the documentation:  
-> `searchServices(types=None, scopes=None, address=None, port=None, timeout=3)`  
+from the documentation:
+> `searchServices(types=None, scopes=None, address=None, port=None, timeout=3)`
 search for services given the TYPES and SCOPES in a given TIMEOUT
 
-Example: 
+Example:
 
 ```python
 def fetch_devices():

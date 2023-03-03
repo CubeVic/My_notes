@@ -5,12 +5,12 @@ In this case we are going to create and script that will allow me to use the mou
 We will need to create the 'canvas', later connect the functions to support hte mouse and a way to close the window.
 We will build the script step by step.
 
-### Basic structure 
+### Basic structure
 
-1. We are going to import the libraries 
+1. We are going to import the libraries
 2. Create the 'canvas' to draw
 3. A loop to keep the window open and a way to close it
-4. Destroy all the windows 
+4. Destroy all the windows
 
 ```python
 import cv2
@@ -34,7 +34,7 @@ cv2.destroyAllWindows()
 ### Giving a name to the window
 
 1. giving a name to the window
-2. show the window 
+2. show the window
 
 ```python
 import cv2
@@ -84,7 +84,7 @@ cv2.namedWindow(winname='my_drawing')
 cv2.setMouseCallback('my_drawing',draw_circle)
 
 while True:
-	
+
 	cv2.imshow('my_drawing',black_img)
 
 	if cv2.waitKey(20) & 0xFF == 27:
@@ -94,7 +94,7 @@ while True:
 cv2.destroyAllWindows()
 ```
 
-the result 
+the result
 
 ![023_drawing_circles](images/023_drawing_circles.png)
 
@@ -114,7 +114,7 @@ import numpy as np
 def draw_circle(event,x,y,flags,param):
 	if event == cv2.EVENT_LBUTTONDOWN:
 		cv2.circle(black_img,(x,y),100,(0,255,0),-1)
-	# Define new event 
+	# Define new event
 	elif event == cv2.EVENT_RBUTTONDOWN:
 		cv2.circle(black_img,(x,y),50,(0,0,255), -1)
 
@@ -126,7 +126,7 @@ cv2.namedWindow(winname='my_drawing')
 cv2.setMouseCallback('my_drawing',draw_circle)
 
 while True:
-	
+
 	cv2.imshow('my_drawing',black_img)
 
 	if cv2.waitKey(20) & 0xFF == 27:
@@ -143,14 +143,14 @@ cv2.destroyAllWindows()
 
 In this case we are going to use the rectangle, we will need to create some variable to keep track of the status of the 'drawing', in other words, when the user stop drawing, also some variable for the initial $x$ and $y$ points.
 
-```python 
+```python
 import cv2
 import numpy as np
 
-#create a function base in the CV2 events 
+#create a function base in the CV2 events
 
 drawing = False # true if the mouse is press
-ix,iy = -1,-1  # this variable will keep track of the initial point 
+ix,iy = -1,-1  # this variable will keep track of the initial point
 
 def draw_rectangle(event,x,y,flags,param):
 	global ix,iy,drawing,mode
@@ -163,7 +163,7 @@ def draw_rectangle(event,x,y,flags,param):
 	elif event == cv2.EVENT_MOUSEMOVE:
 		if drawing ==  True:
 			cv2.rectangle(black_img,(ix,iy),(x,y),(0,255,0),-1)
-	# here we finished drawing 
+	# here we finished drawing
 	elif event == cv2.EVENT_LBUTTONUP:
 		drawing = False
 		cv2.rectangle(black_img,(ix,iy),(x,y),(0,255,0),-1)
@@ -183,7 +183,7 @@ while True:
 		break
 
 cv2.destroyAllWindows()
-``` 
+```
 
 The result is:
 

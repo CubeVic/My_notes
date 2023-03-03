@@ -7,11 +7,11 @@
 1. [Pypi page](https://pypi.org/project/Pillow/)
 2. [Documentation](https://pillow.readthedocs.io/en/stable/)
 
-Form the librtary description we know that this is a library that give image processing capabilities to python 
+Form the librtary description we know that this is a library that give image processing capabilities to python
 
 ## How I use it/ How I find it
 
-I was working in my personal project `Project_Horus` and i was getting the thumbnail and snaposhot of a CCTV camera using other libraries, but this snapshot and the thumbnail where given in bytes, so i need it something to render and display the image so: 
+I was working in my personal project `Project_Horus` and i was getting the thumbnail and snaposhot of a CCTV camera using other libraries, but this snapshot and the thumbnail where given in bytes, so i need it something to render and display the image so:
 
 1. I imported the library
 ```python
@@ -19,11 +19,11 @@ from PIL import Image
 import io
 ```
 2. open and read the bytes, `snapshot` is a variable holding the bytes
-```python 
+```python
 	#read the bytes
 	im = Image.open(io.BytesIO(snapshot))
 	#display the image
-	# im.show() 
+	# im.show()
 	#display the thumbnail
 	thumbnail_size = 128,128
 	im.thumbnail(thumbnail_size)

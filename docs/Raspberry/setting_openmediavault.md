@@ -6,7 +6,7 @@ openmediavault is the next generation network attached storage (NAS) solution ba
 
 ## Download Image
 
-In this case we need to download the images for the Raspberry 
+In this case we need to download the images for the Raspberry
 
 ![setting_openmediavault_001](images/setting_openmediavault_001.PNG)
 
@@ -16,16 +16,16 @@ We can use [balenaEtcher](https://www.balena.io/etcher/)  to flash the image, af
 
 1. Let the raspberry boot up.
 2. Connect using the default user and password, this will be `root` and `openmediavault`.
-3. Set a new password. 
+3. Set a new password.
 4. Run `reboot`
 5. Once rebooted run `sudo /etc/network/interfaces`
 6. In this document add this line at the end `dns-nameservers 8.8.4.4 8.8.8.8 `
 7. Run `reboot`
 8. Run `sudo apt-get update`
 9. Run `sudo apt-get upgrade`
-10. After it finish, run `reboot` 
+10. After it finish, run `reboot`
 11. Run `omv-firstaid`
-12. Previous command will display a menu. 
+12. Previous command will display a menu.
 13. Select from the menu **clean apt**.
 14. Select **Clear local upload package repository**.
 15. Select **Clear web control panel cache**.

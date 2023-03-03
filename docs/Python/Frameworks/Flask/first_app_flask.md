@@ -2,7 +2,7 @@ This notes are based in the  youtube video release by [freecodecamp](https://www
 
 ## The structure
 
-> a virtual environment is created thus the folder env, it contain all the documents and files need it to run the virtual environment 
+> a virtual environment is created thus the folder env, it contain all the documents and files need it to run the virtual environment
 
 now the structure of the application is simple, we wont use **blue prints** a concept that is really important to create modular, efficient and reusable application, for that reason we will have all the logic running in one single document `app.py` this document will contain the model and the controllers, the views as always will be manage by the **templates** like in all Flask application these templates are in the folder templates ( we use the template inheritance of jinja2). We will have just a one single `.css` file in the folder static, and few other documents, `requirements.txt` for the requirements, the `Procfile` for Heroku deplayment and the *SQLite* database as test.db
 
@@ -10,20 +10,20 @@ now the structure of the application is simple, we wont use **blue prints** a co
 
 ## how will looks like
 
-after deploy in heroku and as a first version will look like 
+after deploy in heroku and as a first version will look like
 [live app](https://flaskvicplayground.herokuapp.com/)
 
 ![Heroku](images/first_app_heroku.png)
 
 ## The app.ppy
 
-The whole script will look like 
+The whole script will look like
 ![first_app_app](images/first_app_app.png){: .center}
 
-Now we are going to go a bit deeper and check some of the details 
+Now we are going to go a bit deeper and check some of the details
 
 Be aware that the script has `if __name__ == '__main__'` at the end
-there we set the app to enable `DEBUG` as `True` 
+there we set the app to enable `DEBUG` as `True`
 
 ```python
 if __name__ == "__main__":
@@ -33,7 +33,7 @@ so we can see the error during the development, in a real application the `DEBUG
 
 ### Imports
 
-Here is just the typical imports 
+Here is just the typical imports
 
 ```python
 from flask import Flask, render_template, url_for, request, redirect
@@ -41,14 +41,14 @@ from flask_sqlalchemy import SQLAlchemy
 from datetime import datetime
 ```
 
-From flask we will import 
+From flask we will import
 
-* `Flask` the class and what we instanciate to create the app.  
+* `Flask` the class and what we instanciate to create the app.
 * `render_template` Function to render the view from the template in the folder templates
-* `url_for` this one more complex to explain but basically will create URI to specific resources, example URL for the .css file to be use in the base for the templates.  
-* `request` to handle the request of the forms implemented in the templates.   
-* `redirect` To redirect to a specific view after some action.   
-* `SQLAlchemmy` to handle everything related with the database.     
+* `url_for` this one more complex to explain but basically will create URI to specific resources, example URL for the .css file to be use in the base for the templates.
+* `request` to handle the request of the forms implemented in the templates.
+* `redirect` To redirect to a specific view after some action.
+* `SQLAlchemmy` to handle everything related with the database.
 
 ### Declaration app and database
 
@@ -63,7 +63,7 @@ The `///` means relative path, for a direct or explicit path we need to use `///
 
 ### Database
 
-This step normally will be done after we create some of the logic or some of the controllers and views, but since it is good practice to put it first on the script, I decided to put it first in the notes 
+This step normally will be done after we create some of the logic or some of the controllers and views, but since it is good practice to put it first on the script, I decided to put it first in the notes
 
 ```python
 class Todo(db.Model):
@@ -79,14 +79,14 @@ Here there are two parts, the first one is the description of the model, what co
 
 note that in the first part, in the creation of the model we use `datatime.utcnow` to log the time of the creation of the task.
 
-### Controllers 
+### Controllers
 
-For the controllers there will be 3:  
+For the controllers there will be 3:
 1. The index and landing page.
 2. The delete
 3. The update
 
->during development we will be creating controllers and views( templates) at the same time, since there are connected and they need each other, but in this case we are going to make a description of the controllers first and bellow in the next section we will check the views (templates).  
+>during development we will be creating controllers and views( templates) at the same time, since there are connected and they need each other, but in this case we are going to make a description of the controllers first and bellow in the next section we will check the views (templates).
 
 #### Index
 
@@ -107,8 +107,8 @@ def index():
         tasks = Todo.query.order_by(Todo.date_created).all()
         return render_template('index.html', tasks=tasks)
 ```
-1. `@app.route('/', methods=['POST'.'GET'] ` Is The decorator to create the root, if  the user go to `https://[ipaddress:port]/`  this controller will be executed, be aware that Flask by default use just `GET` so we need to specify the methods if we want to use something different, like in this case `@app.route('/', methods=['POST', 'GET'])`.  
-2. The if statement will handle the request, if there is a `POST` request we will trigger the code to create a new task, later commit to the database, finally redirect to the same page where will display the information. Finally the `else`  it is important to mentioned since this is the one that contain the code that get the task from the database and that send to the view `index.html` in the variable `tasks`.  
+1. `@app.route('/', methods=['POST'.'GET'] ` Is The decorator to create the root, if  the user go to `https://[ipaddress:port]/`  this controller will be executed, be aware that Flask by default use just `GET` so we need to specify the methods if we want to use something different, like in this case `@app.route('/', methods=['POST', 'GET'])`.
+2. The if statement will handle the request, if there is a `POST` request we will trigger the code to create a new task, later commit to the database, finally redirect to the same page where will display the information. Finally the `else`  it is important to mentioned since this is the one that contain the code that get the task from the database and that send to the view `index.html` in the variable `tasks`.
 
 #### Delete
 
@@ -178,7 +178,7 @@ There will be 3 templates;
 </html>
 ```
 
-1.  Here we are using the method `url_for` to create a URI to the resources in the static folder, in this case will be the styles for the templates, in few works, the method will give me the path to the CSS file containing the styles.  
+1.  Here we are using the method `url_for` to create a URI to the resources in the static folder, in this case will be the styles for the templates, in few works, the method will give me the path to the CSS file containing the styles.
 2.  `{% block body %} {% endblock %}` is part of the jinja2 syntax, this will allow us to input content from other file in this location.
 
 #### `index.html`
@@ -227,14 +227,14 @@ There will be 3 templates;
 ```
 
 1. `{% extends 'base.html' %}` this is how the inheritance is done, here I'm telling flask that this template inherit from the `base.html` template.
-2. ` {% if tasks|legth <1 %}` and `{% endif %}` hre i'm evaluating if a variable `tasks` is bigger than 1, thi sis part of the jinja2 syntax. 
+2. ` {% if tasks|legth <1 %}` and `{% endif %}` hre i'm evaluating if a variable `tasks` is bigger than 1, thi sis part of the jinja2 syntax.
 3. `{% block head %}...{% endblock %}` and `{% block body %} ... {% endblock %}` this is how we input content in the templates.
-4. on the **block body** we will fine more jinja2 syntax, in this case is on the table `<a href="/delete/{{task.id}}">Delete</a>` and `<a href="/update/{{task.id}}">Update</a> ` in this case what we tell Flask is that this links will use the controllers `delete` and `update` respectively. 
+4. on the **block body** we will fine more jinja2 syntax, in this case is on the table `<a href="/delete/{{task.id}}">Delete</a>` and `<a href="/update/{{task.id}}">Update</a> ` in this case what we tell Flask is that this links will use the controllers `delete` and `update` respectively.
 
 ## The static files
-Here is not much to say, we will store the static files like stylesheet and javascript  documents in this folder, in this example we have just `.css` files so there are the only that have some importance in this example, below i will add the css file, 
+Here is not much to say, we will store the static files like stylesheet and javascript  documents in this folder, in this example we have just `.css` files so there are the only that have some importance in this example, below i will add the css file,
 
-```css 
+```css
 body, html {
     margin: 0;
     font-family: sans-serif;
@@ -278,7 +278,7 @@ The deployment to heroku will required a series of steps and the preparation of 
 
 ### What we need
 
-We need: 
+We need:
 
 1. account in [Heroku](https://dashboard.heroku.com/)
 2. The [`CLI` client for Heroku](https://devcenter.heroku.com/articles/heroku-cli)
@@ -298,7 +298,7 @@ web: gunicorn app:app
 We need to run in the console the Freeze command to freeze the libraries version and we can sabe it to a file called requirement
 
 ```bash
-pip3 freeze > requirements.txt 
+pip3 freeze > requirements.txt
 ```
 
 #### Create the git repo
@@ -328,7 +328,6 @@ after the creation of the app we execute the last `GIT` command
 git push heroku master
 ```
 
-Finally if everything is in order we should be able to see the live app in the URL given 
+Finally if everything is in order we should be able to see the live app in the URL given
 https://flaskvicplayground.herokuapp.com/
 > I will continue working on it testing things like bootstrap to improve the visual, and in some cases i will try to add javaScript to play with animation so the current version of the live app might look different of the visual presented in this notes.
-

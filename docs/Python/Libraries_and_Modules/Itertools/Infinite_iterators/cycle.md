@@ -3,7 +3,7 @@
 Arg: p
 Example: cycle('ABCD') ⇒ A B C D A B C D ...
 
-It will return elements of the iterable and save a copy of each, when the iterator is exhausted it will rerun the elements of the iterable 
+It will return elements of the iterable and save a copy of each, when the iterator is exhausted it will rerun the elements of the iterable
 
 ```python
 for itertool import cycle

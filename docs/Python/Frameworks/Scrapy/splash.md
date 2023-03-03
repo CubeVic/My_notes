@@ -6,7 +6,7 @@
 2. [Github scrapy-splash](https://github.com/scrapy-plugins/scrapy-splash)
 3. [Document](https://splash.readthedocs.io/en/stable/index.html)
 
-## Installation 
+## Installation
 
 First we need to install and luch docker in order to use splash, the exact steps can be found in the documentation [here](https://splash.readthedocs.io/en/latest/install.html)
 
@@ -67,7 +67,7 @@ HTTPCACHE_STORAGE = 'scrapy_splash.SplashAwareFSCacheStorage'
 
 ## Example
 
-```python 
+```python
 import scrapy
 from scrapy_splash import SplashRequest
 
@@ -83,17 +83,3 @@ class MySpider(scrapy.Spider):
         # contains HTML processed by a browser.
         # ...
 ```
-
-
-
-
-
-
-
-
-
-
-
-
-
-

@@ -16,14 +16,14 @@ $$
 x_1, x_2,...,x_n
 $$
 
-Lets take a spam detector as an example, the features include the following: 
+Lets take a spam detector as an example, the features include the following:
 
 * words in the email text
 * sender's address
 * time of day the email was sent
 * email contains the phrase "one weird trick"
 
-### Examples 
+### Examples
 
 An _Example_  is a particular instance of Data, this data can be represented as **x**, ( were **x** can be a vector), we have to categories:
 
@@ -61,4 +61,3 @@ It defines the relationship between features and labels. The main phases of the 
 
 * Is a given email message Spam or not Spam?
 * Is this an image of a dog, a cat or a hamster?
-

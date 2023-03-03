@@ -133,7 +133,7 @@ The following two tags represent the `in language`  `<DictionaryInLanguage></Dic
 
 This software will allow me to check if the Dictionary was created correctly.
 
-It can be [downloaded  here](https://www.amazon.com/gp/feature.html?docId=1003018611) 
+It can be [downloaded  here](https://www.amazon.com/gp/feature.html?docId=1003018611)
 
 ![kindle_dict_011.png](images/kindle_dict_011.png)
 

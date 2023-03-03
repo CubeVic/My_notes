@@ -1,4 +1,4 @@
-This are some notes about design, mostly take it from the Sketch class in [instructable](https://www.instructables.com/class/Design-Sketching-Class/) 
+This are some notes about design, mostly take it from the Sketch class in [instructable](https://www.instructables.com/class/Design-Sketching-Class/)
 
 
 ## Drawing 2D
@@ -15,7 +15,7 @@ Draw the lines that define the shape of the object, just the general shape, star
 
 ![About_Design_2D_003](images/About_Design_2D_003.jpg){: .center}
 
-Later make construction lines for the other details 
+Later make construction lines for the other details
 
 ![About_Design_2D_004](images/About_Design_2D_004.jpg){: .center}
 
@@ -28,18 +28,18 @@ Finally we can proceed to draw the upper and lower parts, using the construction
 ![About_Design_2D_006](images/About_Design_2D_006.jpg){: .center}
 
 
-### Using different line weight 
+### Using different line weight
 
-In order to give more details about the object we can use different line weights 
+In order to give more details about the object we can use different line weights
 
 ![About_Design_2D_007](images/About_Design_2D_007.jpg){: .center}
 
-> This is a direct copy of the information in this class, this describe where each line weight its been use  
+> This is a direct copy of the information in this class, this describe where each line weight its been use
 
-**1. Extra Light (pencil or light weight pen):** This weight is used for aspects that should either be secondary to the overall form of the object or almost disappear entirely. It's good for construction lines, surface features like textures or patterns, and seams between parts that don't have much depth (like the edge where a fender touches a hood on a car, for example).  
-**2. Light (+/- 0.3mm):** This weight is most often used for contour lines (lines that follow a surface to express its 3D shape) and planar corners (edges between two planes in which you can see both planes in the view).  
-**3. Medium (+/- 0.5mm):** This weight is generally used for spatial edges (the edges of surfaces where only one surface is seen in the view).  
-**4. Heavy (0.7mm+):** Heavy lines are reserved for the perimeter edges of an object and for the cut edges of a cross-section drawing.  
+**1. Extra Light (pencil or light weight pen):** This weight is used for aspects that should either be secondary to the overall form of the object or almost disappear entirely. It's good for construction lines, surface features like textures or patterns, and seams between parts that don't have much depth (like the edge where a fender touches a hood on a car, for example).
+**2. Light (+/- 0.3mm):** This weight is most often used for contour lines (lines that follow a surface to express its 3D shape) and planar corners (edges between two planes in which you can see both planes in the view).
+**3. Medium (+/- 0.5mm):** This weight is generally used for spatial edges (the edges of surfaces where only one surface is seen in the view).
+**4. Heavy (0.7mm+):** Heavy lines are reserved for the perimeter edges of an object and for the cut edges of a cross-section drawing.
 
 
 ## Drawing 3D
@@ -52,7 +52,7 @@ We start in a similar way than 2D, we start making a cage for the object, we can
 
 ![About_Design_3D_002](images/About_Design_3D_002.jpg){: .center}
 
-Now we can draw the last vertical line, this will be the back each of the object, and will be (most of the time) be aware that the distance between this last line and line 3 should be same line 1 and 2, since the object has the same thickness. 
+Now we can draw the last vertical line, this will be the back each of the object, and will be (most of the time) be aware that the distance between this last line and line 3 should be same line 1 and 2, since the object has the same thickness.
 
 ![About_Design_3D_003](images/About_Design_3D_003.jpg){: .center}
 
@@ -69,21 +69,21 @@ if the viewer is looking from a higher place the focus will be the top.
 ![About_Design_3D_006](images/About_Design_3D_006.jpg)
 
 
-Both faces the lower and the upper will be parallel to each other 
+Both faces the lower and the upper will be parallel to each other
 
 ![About_Design_3D_007](images/About_Design_3D_007.jpg){: .center}
 
-Similar what we did with the 2D we can continue making construction lines for the other features of the objects, for example in this case we need some lines for the circles on top of the object.  
+Similar what we did with the 2D we can continue making construction lines for the other features of the objects, for example in this case we need some lines for the circles on top of the object.
 
 ![About_Design_3D_008](images/About_Design_3D_008.jpg){: .center}
 
-In order to draw the circles we need to have an idea of how the look like at different angles 
+In order to draw the circles we need to have an idea of how the look like at different angles
 
 ![About_Design_3D_009](images/About_Design_3D_009.jpg){: .center}
 
 > According to the instructor in the class
 
-A Rule of thumb will be: 
+A Rule of thumb will be:
 
 1. A circle will hit the construction lines at the same points in 3D as they will in 2D.
 2. The curve along the obtuse corners of the box get longer and flatter.
@@ -91,15 +91,15 @@ A Rule of thumb will be:
 
 ![About_Design_3D_010](images/About_Design_3D_010.jpg){: .center}
 
-> here will be a big jump in the instruction, but basically we need to follow similar instruction that we did until now, just that this time we will focus in the details 
+> here will be a big jump in the instruction, but basically we need to follow similar instruction that we did until now, just that this time we will focus in the details
 
 ![About_Design_3D_011](images/About_Design_3D_011.jpg){: .center}
 
-in each step we increase the amount of details 
+in each step we increase the amount of details
 
 ![About_Design_3D_012](images/About_Design_3D_012.jpg){: .center}
 
-finally we use the different line weights 
+finally we use the different line weights
 
 ![About_Design_3D_013](images/About_Design_3D_013.jpg){: .center}
 
@@ -108,7 +108,7 @@ finally we use the different line weights
 * **Medium:** edges with background surfaces.
 * **Heavy:** perimeter outline.
 
-## Shadows and Light 
+## Shadows and Light
 
 >Taken directly and literally from the class
 
@@ -127,7 +127,7 @@ There are 5 basic parts of a shadow.
 
 **5. Highlight:** This is the part of the object that reflects the most light. The highlight is directly in line with the direction of the light. This will remain white.
 
->In the class the had a video where the instructor explain how to make the different shadows 
+>In the class the had a video where the instructor explain how to make the different shadows
 
 The suggestion is start with the cast shadows, since this will gave us the sense of what surface will have the level of shadows.
 
@@ -135,6 +135,6 @@ The suggestion is start with the cast shadows, since this will gave us the sense
 
 ![About_Design_3D_003](images/About_Design_003.jpg){: .center}
 
-Notice that the Shadow is parallel to the top edge of the object 
+Notice that the Shadow is parallel to the top edge of the object
 
 ![About_Design_3D_002](images/About_Design_002.jpg){: .center}

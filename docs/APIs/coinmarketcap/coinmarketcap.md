@@ -90,7 +90,7 @@ Here are a couple of notes:
 
 1. The endpoint I use the most is `/cryptocurrency/*` it provides more than enough data.
 2. The Endpoint `/tools/*` useful and convenient, if combined with `/cryptocurrency/*` will give you all the information you need.
-3. CMC IDs is a mapping system by CMC for the different currencies and projects, for example, `BTC` `CMC ID` will be `1`. 
+3. CMC IDs is a mapping system by CMC for the different currencies and projects, for example, `BTC` `CMC ID` will be `1`.
 
 ### Patterns
 
@@ -163,7 +163,7 @@ The documentation provides more detailed information about each endpoint. Here I
 
 ### `cryptocurrency`
 
-It has 17 endpoints  
+It has 17 endpoints
 
 - [/v1/cryptocurrency/map](https://coinmarketcap.com/api/documentation/v1/#operation/getV1CryptocurrencyMap) - Provide the CMC mapping for CMC ID and cryptocurrency
 - [/v1/cryptocurrency/info](https://coinmarketcap.com/api/documentation/v1/#operation/getV2CryptocurrencyInfo) - Metadata
@@ -183,7 +183,7 @@ It has 17 endpoints
 - [/v1/cryptocurrency/trending/most-visited](https://coinmarketcap.com/api/documentation/v1/#operation/getV1CryptocurrencyTrendingMostvisited) - Trending Most Visited
 - [/v1/cryptocurrency/trending/gainers-losers](https://coinmarketcap.com/api/documentation/v1/#operation/getV1CryptocurrencyTrendingGainerslosers) - Trending Gainers & Losers
 
-Some Endpoints are not available for the free tiers 
+Some Endpoints are not available for the free tiers
 
 - Airdrop and Airdrops
 - Listing historical
@@ -269,7 +269,7 @@ All requests must be targeted to:
 
 `https://pro-api.coinmarketcap.com`
 
-however, there is a sandbox domain that we can use for testing 
+however, there is a sandbox domain that we can use for testing
 
 `https://sandbox-api.coinmarketcap.com`
 

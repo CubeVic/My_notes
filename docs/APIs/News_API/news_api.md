@@ -8,7 +8,7 @@ We can get News and articles from the web using this API.
 
 Obtaining the API key is one of the easiest tasks with this API. The only thing we need is an email.
 
-1. Go to the **get started** page. 
+1. Go to the **get started** page.
 
 ![Screen Shot 2021-10-03 at 3.35.46 PM.png](images/news_api1.png){: .center}
 
@@ -24,7 +24,7 @@ This API provides simple and complete documentation, within this documentation, 
 
 ## News API Description.
 
-We can say this API is subdivided into two main endpoints, with some specialization in one of these subdivisions, these subdivisions are the endpoints. 
+We can say this API is subdivided into two main endpoints, with some specialization in one of these subdivisions, these subdivisions are the endpoints.
 
 The first endpoint `everything` gathers all information about a specific topic, and the second endpoint `top-headlines` is to get the top-headlines base of country and language with the option of select specific keywords, this endpoint is `top-headlines.`
 
@@ -34,7 +34,7 @@ The first endpoint `everything` gathers all information about a specific topic, 
 
 ## Authentication
 
-They are three different ways to authenticate with the API: 
+They are three different ways to authenticate with the API:
 
 1. As part of the query string, `apiKey="here API key"`
 2. via `X-Api-Key` HTTP header.
@@ -56,9 +56,9 @@ If the authentication is not done correctly the `401 - Unauthorized` HTTP error.
 
 ### `/v2/everything`
 
-Like mentioned before the API documentation claim 80,000 news and blogs, this Endpoint is a good option for general-purpose or discovery and analysis. 
+Like mentioned before the API documentation claim 80,000 news and blogs, this Endpoint is a good option for general-purpose or discovery and analysis.
 
-For more information check the official documentation 
+For more information check the official documentation
 
 [Everything - Documentation - News API](https://newsapi.org/docs/endpoints/everything)
 
@@ -77,7 +77,7 @@ GET https://newsapi.org/v2/everything?q=apple&from=2021-10-02&to=2021-10-02&sort
 
 #### Response Object
 
-The response Object will be in JSON format, we can get more information in the documentation but here is a list of some of the most relevant parameters of this response. 
+The response Object will be in JSON format, we can get more information in the documentation but here is a list of some of the most relevant parameters of this response.
 
 ```json
 {
@@ -96,7 +96,7 @@ From the code above:
 - `totalResult` the number of results.
 - `article` is an array of JSON objects that contain the news object response.
 
-Bellow the parameters within each `article` array.  
+Bellow the parameters within each `article` array.
 
 |Parameter  |Type   | Description                                                                        |
 |:----------|:------|:-----------------------------------------------------------------------------------|
@@ -178,7 +178,7 @@ From the code above:
 
 |Parameter  |Type   | Description                                                                        |
 |:----------|:------|:-----------------------------------------------------------------------------------|
-|id	        |string	|Identify the source .                                                               | 
+|id	        |string	|Identify the source .                                                               |
 |name	    |string	|Name of the source.                                                                 |
 |description|string	|A short snippet of the news.                                                        |
 |url	    |string	|URL of the article.                                                                 |

@@ -1,4 +1,4 @@
-#Python 
+#Python
 
 ![Python Logo](images/Python_logo.png){: .center}
 
@@ -6,13 +6,13 @@
 
 This is the introduction to **Python notes**, the notes are divided in:
 
-1. Basics.  
-2. Intermediate. 
-3. Libraries and Modules. 
-4. Frameworks. 
+1. Basics.
+2. Intermediate.
+3. Libraries and Modules.
+4. Frameworks.
 5. Projects.
 6. Scripts & algorithms.
-7. Virtual environments.  
+7. Virtual environments.
 
 <aside>
 The difference of project and scripts, is that scripts not always output something useful they are rather a playground. Projects, in the other hand, are complex either with GUI or web.
@@ -22,26 +22,26 @@ The difference of project and scripts, is that scripts not always output somethi
 
 ### How to know the import path
 
-```python 
+```python
 import sys
 print(sys.path)
-``` 
+```
 
 ### How to know the current directory
 
-```python 
+```python
 import os
 print(os.getcwd())
-``` 
+```
 ### How to inspect a module
 
-To inspect a module we can use `dir(name_module)` and it will output all information about the module 
+To inspect a module we can use `dir(name_module)` and it will output all information about the module
 
 ### About Python Packages
 
 * **Function**: Container of `variables` and `expressions`
 * **Class**:  Container of `variables` and `functions`
-* **Module**: (roughly) represent a python script which contain class, function, variables, and expressions 
+* **Module**: (roughly) represent a python script which contain class, function, variables, and expressions
 * **Packages**: Solution to manage python modules. Contain multiple modules and the file **__init__.py**
 
 some more information here [Making a Python Package](https://python-packaging-tutorial.readthedocs.io/en/latest/setup_py.html)
@@ -51,4 +51,3 @@ some more information here [Making a Python Package](https://python-packaging-tu
 1. Be explicit
 2. Import Only what you needed
 3. Give the right names to packages imports and variables
-

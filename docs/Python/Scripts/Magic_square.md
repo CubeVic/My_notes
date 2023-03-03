@@ -17,13 +17,13 @@ $M = n(n^2+1)/2$
 
 more information fo how to generate ir here [*Magic Square*](https://www.geeksforgeeks.org/magic-square/)
 
-## The problem 
+## The problem
 
 We define a magic square to be an $nXn$  matrix of distinct positive integers from $1$ to $n^2$  where the sum of any row, column, or diagonal of length $n$ is always equal to the same number: the magic constant.
 
 You will be given a $3x3$ matrix $s$ of integers in the inclusive range $[1,9]$. We can convert any digit $a$ to any other digit $b$ in the range $[1,9]$  at cost of $|a -b|$ . Given $s$, convert it into a magic square at minimal cost. Print this cost on a new line.
 
-## The answer explained 
+## The answer explained
 
 We will assume that we need to develop just the function to calculate the difference, but no the code necessary to display the answer.
 
@@ -52,7 +52,7 @@ We will assume that we need to develop just the function to calculate the differ
 ```
 
 
-* **Create a list** where I will store all the $|a-b|$ difference. 
+* **Create a list** where I will store all the $|a-b|$ difference.
 
 ```python
 diffs = []
@@ -77,7 +77,7 @@ the first iteration will be something like this:
 [([8, 1, 6], [4, 9, 2]), ([3, 5, 7], [3, 5, 7]), ([4, 9, 2], [8, 1, 5])] ...
 ```
 
-First element is going to be the row from the magic square variant and the second will be the row from the input.  
+First element is going to be the row from the magic square variant and the second will be the row from the input.
 
 * **Third loop**, Here we are going to create a tuple with each value from the Magic square variant and the input, this will be use to compare number by number
 
@@ -88,11 +88,11 @@ for p_num, s_num in list(zip(p_row,s_row)):
 will give an output like:
 
 ```
-[(8, 4), (1, 9), (6, 2)] 
+[(8, 4), (1, 9), (6, 2)]
 [(3, 3), (5, 5), (7, 7)]
 ...
 ```
- 
+
 * **Comparison**, inside the third loop we are going to compare each element for the magic square variant with the each element of the input, and store the absolute total difference of all the changes done.
 
 ```python
@@ -112,7 +112,7 @@ if p_num != s_num:
         diffs.append(cost)
 ```
 
-* **Return the minimum value in the list** returning the minimum value we will return the minimum difference ask in the challenge 
+* **Return the minimum value in the list** returning the minimum value we will return the minimum difference ask in the challenge
 
 ```python
 return min(diffs)
@@ -121,7 +121,7 @@ return min(diffs)
 ## The answer (the script)
 so the the function will be like:
 
-``` python 
+``` python
 def formingMagicSquare(s):
 
     possibles = [
@@ -134,9 +134,9 @@ def formingMagicSquare(s):
         [[6,7,2],[1,5,9],[8,3,4]],
         [[2,7,6],[9,5,1],[4,3,8]]
         ]
-    
+
     diffs = []
-    
+
     for possible in possibles:
         cost = 0
         for p_row, s_row in list(zip(possible,s)):

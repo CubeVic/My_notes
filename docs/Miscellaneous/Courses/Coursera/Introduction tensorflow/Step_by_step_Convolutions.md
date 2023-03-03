@@ -10,7 +10,7 @@ mnist = tf.keras.datasets.fashion_mnist
 (training_images, training_labels), (test_images, test_labels) = mnist.load_data()
 #Here is where we reshape
 training_images=training_images.reshape(60000, 28, 28, 1)
-#Here we normalize 
+#Here we normalize
 training_images=training_images / 255.0
 test_images = test_images.reshape(10000, 28, 28, 1)
 test_images=test_images/255.0
@@ -22,7 +22,7 @@ training_images = training_images.reshape(6000,28,28,1)
 ```
 where `60000` is the amount of pictures, `28,28` is the size of the pictures 28x28, and, finally `1` is the number of channels in this case is a gray scale pictures thus 1 channel.
 
-### Normalize 
+### Normalize
 
 this is something we already mentioned before, this models work better with smaller number, there fore normalization of information is quite common, and recommended practice.
 
@@ -86,7 +86,7 @@ The same 128 dense layers, and 10 output layers as in the pre-convolution exampl
   tf.keras.layers.Dense(10, activation='softmax')
 ])
 ```
-so the full model will look like 
+so the full model will look like
 
 ```python
 model = tf.keras.models.Sequential([

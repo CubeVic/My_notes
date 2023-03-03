@@ -7,7 +7,7 @@
 I found many of the challenges websites can be solved using these iterators.
 
 ##Description
-Itertools is a module which is implementing of the iterator building blocks of other well known programing languages, 
+Itertools is a module which is implementing of the iterator building blocks of other well known programing languages,
 this is the implementation on python.
 
 [Itertools documentation](https://docs.python.org/3/library/itertools.html)
@@ -17,8 +17,8 @@ These are memory-efficient tools that are useful either using them alone or in c
 They are divided in  three big main categories:
 
 1. Infinite iterators
-2. Iterators on the shortest input sequence 
-3. combinatorics iterators 
+2. Iterators on the shortest input sequence
+3. combinatorics iterators
 
 ## 1. Infinite Iterators
 
@@ -44,7 +44,7 @@ These are more difficult to understand just by reading the title, but the exampl
 |filterfalse()        | pred, seq       |elements of seq where pred(elem) is false | filterfalse(lambda x: x%2, range(10)) ⇒ 0 2 4 6 8|
 |groupby()            |iterable [, key] |sub-iterators grouped by value of key(v)| |
 |islice()             |seq, [start,] stop [, step]|elements from seq[start:stop:step] | islice('ABCDEFG', 2, None) ⇒ C D E F G|
-|starmap()            |func, seq |func(*seq[0]) func(*seq[1]), … |starmap(pow, [(2,5), (3,2), (10,3)]) --> 32 9 1000| 
+|starmap()            |func, seq |func(*seq[0]) func(*seq[1]), … |starmap(pow, [(2,5), (3,2), (10,3)]) --> 32 9 1000|
 |takewhile()          |pred, seq | seq[0], seq[1] until pred fails | takewhile(lambda x: x<5, [1,4,6,4,1]) --> 1 4"|
 |tee()                | it, n |it1, it2, … itn | splits one iterator into n |
 |zip_longest()        | p, q, … |  (p[0], q[0]), (p[1], q[1]), … | zip_longest('ABCD', 'xy', fillvalue='-') --> Ax By C- D-|

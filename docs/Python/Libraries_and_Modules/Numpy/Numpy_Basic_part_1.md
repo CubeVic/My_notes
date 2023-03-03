@@ -21,7 +21,7 @@ The most importation objects for the `ndarray`:
 * `ndarray.size`: total number of elements in the array, this is equal to the product of the elements in the shape.
 * `ndarray.dtype`: an object describing the type of the elements in the array.
 * `ndarray.itemsize`: the size in bytes of each element on the array.
-* `ndarray.data`:the buffer that contain the actual elements of the array, normally is not use since we access the elements using the indexing facilities  
+* `ndarray.data`:the buffer that contain the actual elements of the array, normally is not use since we access the elements using the indexing facilities
 ### The code Example
 
 ```python
@@ -131,7 +131,7 @@ e = np.ones((3,5), dtype=np.int16)
 
 #### Create array of random numbers with `empty` Function
 
-This will create an array with random numbers, the numbers will depend of the state of the memory in that moment 
+This will create an array with random numbers, the numbers will depend of the state of the memory in that moment
 
 ```python
 np.empty( (2,3) )
@@ -169,7 +169,7 @@ np.linspace( 0, 2, 9 )                 # 9 numbers from 0 to 2
 # array([ 0.  ,  0.25,  0.5 ,  0.75,  1.  ,  1.25,  1.5 ,  1.75,  2.  ])
 ```
 
-## Numpy Useful methods for data manipulation 
+## Numpy Useful methods for data manipulation
 
 Here will be a couple of operation that will be useful in some cases
 
@@ -258,7 +258,3 @@ then
 arr.mean()
 # 60.8
 ```
-
-
-
-

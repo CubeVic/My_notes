@@ -9,7 +9,7 @@ pip install virtualenv
 ![virtual_eniroments_001](images/virtual_environments_001.png)
 
 
-## Creating the Virtual Environment 
+## Creating the Virtual Environment
 
 Now we can select the directory where we are going to save the virtual environment, in this example we will use the directory "/Users/victoraguirre/Documents/026.workspace_Python", and we can provide a name for it ( virtual environment), in this case i will choose `virtualEnv000`
 
@@ -25,9 +25,9 @@ now a Folder with the name of the environment it is going to be created, the fir
 
 ![virtual_environments](images/virtual_environments_003.png)
 
-and later call the `activate` file that is inside the `bin` directory 
+and later call the `activate` file that is inside the `bin` directory
 
-``` 
+```
 // on Mac
 cd /Users/victoraguirre/Documents/026.workspace_Python/virtualenv
 source bin/activate
@@ -53,7 +53,7 @@ here the basic code for a page in flash
 
 ![virtual_environments_005](images/virtual_environments_005.png)
 
-now running 
+now running
 
 ```
 python app.py

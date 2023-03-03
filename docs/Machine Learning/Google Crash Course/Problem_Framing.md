@@ -1,6 +1,6 @@
 ![001_Introduction](images/001_Introduction.png)
 
-## Common ML Problem 
+## Common ML Problem
 
 In basic terms, ML is the process of training a piece of software, called a model, to make useful predictions using a data set.
 
@@ -95,7 +95,7 @@ How I will measure the success or failure of the model, the success or failure m
 
 ### Are the Metrics Measurable?
 
-Ask the following: 
+Ask the following:
 
 * How will you measure your metrics?
 * When can you measure your metrics?
@@ -114,7 +114,7 @@ Revisiting this table, which type of output are you looking for: a number, a lab
 |Structured output   |	Create complex output	 | natural language parse trees, image recognition bounding boxes |
 
 
-## Heuristics 
+## Heuristics
 
 How might you solve your problem without ML?
 
@@ -147,7 +147,7 @@ There are several subtype of classification an regression, the following flowcha
 
 ![classification_Flowchart_001](images/002_classification_Flowchart.svg)
 
-  
+
 ![Regression_Flowchart_001](images/003_Regression_Flowchart.svg)
 
 Our problem is best framed as:
@@ -187,7 +187,7 @@ Identify the data that your ML system should use to make predictions (input -> o
 
 ### Determine Where Data Comes From
 
-Assess how much work it will be to develop a data pipeline to construct each column for a row. When does the example output become available for training purposes? 
+Assess how much work it will be to develop a data pipeline to construct each column for a row. When does the example output become available for training purposes?
 
 ### Determine Easily Obtained Inputs
 

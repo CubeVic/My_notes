@@ -34,7 +34,7 @@ np.array(my_matrix)
 #       [7, 8, 9]])
 ```
 
-## Build-in Methods 
+## Build-in Methods
 
 ### `arange`
 
@@ -107,7 +107,7 @@ np.eye(4)
 
 ## Random
 
-Here some of the ways we can create random numbers 
+Here some of the ways we can create random numbers
 
 ### `rand`
 
@@ -129,18 +129,18 @@ np.random.rand(5,5)
 
 This generate a integer from low (inclusive) to high (exclusive)
 
-```python 
+```python
 np.random.randint(1,100)
 #61
 np.random.randint(1,100,10)
 # array([39, 50, 72, 18,27, 59, 15, 97, 11, 14])
-```  
+```
 
 ### `seed`
 
-It is use to create a random state that can be reproducible, i means, the result will be the same everything we use the same seed 
+It is use to create a random state that can be reproducible, i means, the result will be the same everything we use the same seed
 
-```python 
+```python
 np.random.seed(42)
 np.random.rand(4)
 # array([0.37454012, 0.95071431, 0.73199394, 0.59865848])
@@ -148,63 +148,63 @@ np.random.rand(4)
 np.random.seed(42)
 np.random.rand(4)
 # array([0.37454012, 0.95071431, 0.73199394, 0.59865848])
-``` 
+```
 
 ## Array Attributes and Methods
 
 To explain the attributes and methods we need to create a vector and matrix
 
-```python 
+```python
 arr = np.arange(25)
 # array([ 0,  1,  2,  3,  4,  5,  6,  7,  8,  9, 10, 11, 12, 13, 14, 15, 16,
 #       17, 18, 19, 20, 21, 22, 23, 24])
 ranarr = np.random.randint(0,50,10)
 # array([38, 18, 22, 10, 10, 23, 35, 39, 23,  2])
-``` 
+```
 
 ### Reshape - `reshape`
 
 Return the same data of the vector or matrix but in a different shape
 
-```python 
+```python
 arr.reshape(5,5)
 # array([[ 0,  1,  2,  3,  4],
 #       [ 5,  6,  7,  8,  9],
 #       [10, 11, 12, 13, 14],
 #       [15, 16, 17, 18, 19],
 #       [20, 21, 22, 23, 24]])
-``` 
+```
 ### max, min, argmax, argmin - `max`,`min`,`argmax`,`argmin`
 
 Let start with `ranarr`
-```python 
+```python
 ranarr = np.random.randint(0,50,10)
 # array([38, 18, 22, 10, 10, 23, 35, 39, 23,  2])
-``` 
+```
 
 the maximum number in the array
-```python 
+```python
 ranarr.max()
 # 39
-``` 
+```
 the index of this maximum number
-```python 
+```python
 ranarr.argmax()
 # 7
 ```
-now for the minimum 
-```python 
+now for the minimum
+```python
 ranarr.min()
 # 2
 ranarr.argmin()
 # 9
-``` 
-  
+```
+
 ### Shape - `shape`
 
 shape is an attribute and not a method
 
-```python 
+```python
 # Vector
 arr.shape
 #(25,)
@@ -246,13 +246,13 @@ arr.reshape(25,1)
 
 arr.reshape(25,1).shape
 # (25, 1)
-``` 
+```
 
 ## 	`dtype`
 
-In order to know the data type of the object 
+In order to know the data type of the object
 
-```python 
+```python
 arr.dtype
 # dtype('int32')
 
@@ -260,46 +260,46 @@ arr2 = np.array([1.2, 3.4, 5.6])
 arr2.dtype
 
 #dtype('float64')
-``` 
+```
 
 ## Numpy Indexing and Selection
 To select an item in the array we can use a syntax similar to the one use to pick up elements of a list, in the following example we will:
 
-####1. Create an array 
-```python 
+####1. Create an array
+```python
 import numpy as np#create an array
 arr = np.arange(0,11)
-``` 
+```
 
 ####2. Select a single element
-```python 
+```python
 arr[7]
 #7
-``` 
+```
 
 ####3. Select a range of elements
-```python 
+```python
 arr[0:5]
 #array([0,1,2,3,4])\
-``` 
+```
 
 ### Broadcasting
 
 The differences between Python list and Numpy arrays can be simplify as; python list you can **only reassign values** to part of the list with the same size and shape, if you want to replace X number of elements you will need to pass in a new x element list, this is explain better with an example.
 
-In the example:  
-1. Create an array.  
-2. Slice part of the array.  
-3. We will change the sliced array.    
-4. Display the original array. 
+In the example:
+1. Create an array.
+2. Slice part of the array.
+3. We will change the sliced array.
+4. Display the original array.
 
-Notice the elements of the array, that belong to the sliced array, were change. This is because the data is not copied in order to avoid memory problems. 
+Notice the elements of the array, that belong to the sliced array, were change. This is because the data is not copied in order to avoid memory problems.
 
 ![numpy broadcasting](images/numpy_001.png)
 
-```python 
+```python
 import numpy as np
-#create an array 
+#create an array
 arr= np.arange(0,10)
 #slice the array
 sliced_arr = arr[0:6]
@@ -308,7 +308,7 @@ sliced_arr[:] = 100
 # print the original array to show the changes
 print(arr)
 #array([100, 100, 100, 100, 100, 100,   6,   7,   8,   9])
-``` 
+```
 
 > If you want to make a copy of the array you can use `copy()` like `new_arr = arr.copy()`
 
@@ -317,49 +317,49 @@ print(arr)
 The syntax will be **arr_2d[row][col]** or **arr_2d[row,col]**, the latter the most common used.
 
 ####1. Create the matrix
-```python 
+```python
 import numpy as np
 arr_2d = np.arange([5,10,15],[20,25,30],[35,40,45])
-``` 
+```
 ####2. Select base in index
 a row
-```python 
+```python
 arr_2d[1]
 #array([20,25,30])
-``` 
+```
 a value
-```python 
+```python
 arr_2d[1][0]
 #20
-``` 
+```
 ####3. select a matrix inside the matrix
-```python 
+```python
 arr_2d[:2,1:] # top right corner
 # array([25,30],
 #		[40,45])
 
-``` 
+```
 
 ### Conditional selection
 
 We can select elements of the arrays base in a condition, let say we want to know what elements are bigger than 4.
 
-```python 
+```python
 import numpy as np
 arr = np.arange(0,10)
 print(arr>4)
 #array([False, False, False, False,  True,  True,  True,  True,  True,
 #        True])
-``` 
-we can save this array of boolean values and use it to slice or select elements of the original array base in this condition 
+```
+we can save this array of boolean values and use it to slice or select elements of the original array base in this condition
 
-```python 
+```python
 bool_arr = arr>4
 arr[bool_arr]
 # array([ 5,  6,  7,  8,  9, 10])
 arr[arr>4]
 # array([ 5,  6,  7,  8,  9, 10])
-``` 
+```
 
 ## Operations
 
@@ -368,9 +368,9 @@ arr[arr>4]
 Numpy allows operation including matrix with matrix and scalar with matrix.
 
 
-####1. Addition, multiplication , subtraction and division 
+####1. Addition, multiplication , subtraction and division
 
-```python 
+```python
 import numpy as np
 
 arr = np.arange(0,10)
@@ -392,28 +392,28 @@ arr - arr
 #Division
 arr/arr
 #array([nan,  1.,  1.,  1.,  1.,  1.,  1.,  1.,  1.,  1.])
-``` 
+```
 
 numpy will notify us when the division is not possible or the division by 0
 
-```python 
+```python
 1/arr
 #array([       inf, 1.        , 0.5       , 0.33333333, 0.25      ,
 #       0.2       , 0.16666667, 0.14285714, 0.125     , 0.11111111])
-``` 
+```
 
 and we have the exponential as well
 
-```python 
+```python
 arr**3
 #array([  0,   1,   8,  27,  64, 125, 216, 343, 512, 729])
-``` 
+```
 
 ### Universal Array function
 
 With Numpy we can perform different function to the matrices, square root, logarithmic and geometric functions.
 
-```python 
+```python
  np.sqrt(arr)
  #array([0.        , 1.        , 1.41421356, 1.73205081, 2.        ,
  #      2.23606798, 2.44948974, 2.64575131, 2.82842712, 3.        ])
@@ -433,13 +433,13 @@ np.sin(arr)
 np.log(arr)
 #array([      -inf, 0.        , 0.69314718, 1.09861229, 1.38629436,
 #       1.60943791, 1.79175947, 1.94591015, 2.07944154, 2.19722458])
-``` 
+```
 
-### Statistics 
+### Statistics
 
 as an example of the statistic function that can be perform in numpy we have sum, mean and max
 
-```python 
+```python
 arr = np.arange(0,10)
 
 arr.sum()
@@ -450,19 +450,19 @@ arr.mean()
 
 arr.max()
 #9
-``` 
+```
 
-and other examples of statistic functions 
+and other examples of statistic functions
 
 ![other example of Statistics operation](images/numpy_002.png)
 
-### Axis Logic 
+### Axis Logic
 
 Wen we work with 2D arrays (Matrix) the array term , axis 0 is the vertical axis ( rows ), and axis 1 is the horizontal ( columns )
 
 so let do sum on the 0 axis, basically sum all the elements vertically, it make sense after the code.
 
-```python 
+```python
 arr_2d = np.array([[1,2,3,4],[5,6,7,8],[9,10,11,12]])
 arr_2d
 #array([[ 1,  2,  3,  4],
@@ -475,4 +475,4 @@ arr_2d.sum(axis=0)
 
 arr_2d.sum(axis=1)
 #array([10, 26, 42])
-``` 
+```

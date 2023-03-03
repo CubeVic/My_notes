@@ -114,7 +114,7 @@ This reflect the higher complexity of the model, in the previous model we starte
 
 ![Input Shape](images/input_shape.png)
 
-In this case we are dealing with color images or RGB images, which means we need 3 channels depth, so in this case the input shape is `input_shape = (300,300,3)` 
+In this case we are dealing with color images or RGB images, which means we need 3 channels depth, so in this case the input shape is `input_shape = (300,300,3)`
 
 **3. Output Layer**
 
@@ -166,7 +166,7 @@ Because we are using generators instead the dataset, now you call `model.fit_gen
 
 ![Validation_batch](images/Validation_batch.png)
 
-* The verbose parameter specifies how much to display while training is going on. With verbose set to 2, we'll get a little less animation hiding the epoch progress. 
+* The verbose parameter specifies how much to display while training is going on. With verbose set to 2, we'll get a little less animation hiding the epoch progress.
 
 ![verbose](images/verbose.png)
 
@@ -183,7 +183,7 @@ from keras.preprocessing import image
 uploaded = files.upload()
 
 for fn in uploaded.keys():
- 
+
   # predicting images
   path = '/content/' + fn
   img = image.load_img(path, target_size=(300, 300))
@@ -201,7 +201,7 @@ for fn in uploaded.keys():
 
 ### Colab specific - Button to upload images
 
-Here we show the code that is specific for colab, this will give me a button that i can use to pick another image that I'm going to use to make the prediction 
+Here we show the code that is specific for colab, this will give me a button that i can use to pick another image that I'm going to use to make the prediction
 
 ![Button_colab](images/Button_colab.png)
 

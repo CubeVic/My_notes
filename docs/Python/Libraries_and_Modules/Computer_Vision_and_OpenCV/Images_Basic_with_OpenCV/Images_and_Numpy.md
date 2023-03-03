@@ -58,7 +58,7 @@ pic_arr.shape
 ```python
  plt.imshow(pic_arr)
 ```
-you will get 
+you will get
 
 ![001.image_from_npArray_using_matplotlib](images/001.image_from_npArray_using_matplotlib.png)
 
@@ -73,7 +73,7 @@ pic_red = pic_arr.copy()
 pic_red = pic_red[:,:,0]
 plt.imshow(pic_red)
 ```
-the result will be 
+the result will be
 
 ![002.image_red_001](images/002.Image_red_001.png)
 
@@ -88,7 +88,7 @@ We can display the image in gray scale, but the question will be, Gray?, we are 
 
 ```python
 plt.imshow(pic_red, cmap='gray')
-``` 
+```
 ![003.image_red_002](images/003.image_red_002.png)
 
 we can see the difference when we get the other colors, green and blue
@@ -115,7 +115,7 @@ now comparing the 3 images
 
 Then we can say that in each channel, the closest is the pixel to the color of the channel, closest to 255, and closest to white, for example, in the image of the red channel, the parts of the picture that are more white means that they contain more red, and those that are black means that contain no red. This is mapping the color to a gray scale, but we are not removing the contribution of the colors.
 
-### Removing contribution of the channels 
+### Removing contribution of the channels
 
 In this part we are going to remove the contribution of the channels Blue and Green so we can have an image with the tree channels but with 0 contribution in two of those channels.
 
@@ -133,6 +133,3 @@ and if we check the shape
 pic_red_real.shape
 # (1300, 1950, 3)
 ```
-
-
-

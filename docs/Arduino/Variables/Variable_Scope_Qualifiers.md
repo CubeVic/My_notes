@@ -39,4 +39,3 @@ The `static` keyword is used to create variables that are visible to only one fu
 ```C++
 static int count = 0;
 ```
-

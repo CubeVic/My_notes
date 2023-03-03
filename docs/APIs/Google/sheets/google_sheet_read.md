@@ -16,7 +16,7 @@ The following methods are from the [spreadsheet.values](https://developers.googl
 |Multiple Range|spreadsheets.values.batchGet|spreadsheet.values.batchUpdate|
 |Appending     |                            |spreadsheet.values.append     |
 
-Google Provide additional examples for Basic reading and Basic Writing in the sample pages 
+Google Provide additional examples for Basic reading and Basic Writing in the sample pages
 
 Basic reading samples
 
@@ -67,7 +67,7 @@ more info:
 
 ### `valueRenderOption`
 
-It will affect how the values are rendered in the output.  The possible values of this parameter are: 
+It will affect how the values are rendered in the output.  The possible values of this parameter are:
 
 - `FORMATTED_VALUE`
 - `UNFORMATTED_VALUE`
@@ -79,7 +79,7 @@ More info:
 
 ### `dateTimeRenderOption`
 
-It is used only if `valueRenderOption=FORMATTED_VALUE`.  It affects how dates are rendered in the output. the options are: 
+It is used only if `valueRenderOption=FORMATTED_VALUE`.  It affects how dates are rendered in the output. the options are:
 
 - `SERIAL_NUMBER`
 - `FORMATTED_STRING`
@@ -108,13 +108,13 @@ Where:
 - `spreadsheetId`: It is the ID of the spreadsheet I am reading
 - `valueRanges`: is an object that contains `valueRange` in the same order as the request values.
 
-more info: 
+more info:
 
 [Method: spreadsheets.values.batchGet | Sheets API | Google Developers](https://developers.google.com/sheets/api/reference/rest/v4/spreadsheets.values/batchGet)
 
 ## Examples
 
-I have the spreadsheet 
+I have the spreadsheet
 
 ![reading_range.png](images/reading_range.png){: .center}
 
@@ -126,7 +126,7 @@ Where:
 
 ### Reading single range
 
-Assuming that I already have the resources and tokens (full implementation below), the reading function will look like this: 
+Assuming that I already have the resources and tokens (full implementation below), the reading function will look like this:
 
 ```python
 def read_single(gservice: gsheet_resource):
@@ -139,7 +139,7 @@ def read_single(gservice: gsheet_resource):
 
 Be aware that `values` in the second statement are the item in the `ValueRange` JSON representation I mentioned earlier.
 
-I didn't provide any information about the `majorDimension` so the default value `ROW` is applied. the result is 
+I didn't provide any information about the `majorDimension` so the default value `ROW` is applied. the result is
 
 ![result_reading.png](images/result_reading.png)
 
@@ -162,11 +162,11 @@ def read_multiple(gservice: gsheet_resource):
     print('{0} '.format(rows))
 ```
 
-and the response will be: 
+and the response will be:
 
 ```python
 [
-{'range': 'first_sheet!A1:C1', 'majorDimension': 'ROWS', 'values': [['name', 'tel', 'country']]}, 
+{'range': 'first_sheet!A1:C1', 'majorDimension': 'ROWS', 'values': [['name', 'tel', 'country']]},
 {'range': 'first_sheet!A3:C4', 'majorDimension': 'ROWS', 'values': [['Andres', '888-888-888', 'CH'], ['Tob', '222-222-222', 'UK']]}
 ]
 ```
@@ -179,7 +179,7 @@ Similar to "reading". I will need few elements to be able to read on the spreads
 - The range in A1 notation.
 - The data is arranged in the appropriate format in the body of the request.
 
-for the update, I will need to use the parameter `ValueInputOption` ( for a batch update this value is in the body of the request, for a single update, it will be part of the query parameters) 
+for the update, I will need to use the parameter `ValueInputOption` ( for a batch update this value is in the body of the request, for a single update, it will be part of the query parameters)
 
 | valueInputOption| Description |
 |:----------------|:------------|
@@ -235,15 +235,15 @@ The request must be `BatchUpdateValuesRequest` object, this object will contain 
 ```python
 def write_range(gservice: gsheet_resource):
     range_name = 'first_sheet!A1:C1'
-    range_name_1 = 'first_sheet!A3:C3' 
-    
+    range_name_1 = 'first_sheet!A3:C3'
+
     values1 = [
         ['name','title','value'],
     ]
     values2 = [
         ['Animal farm','animal farm', '$14000']
     ]
-    
+
     data = [
         {
             'range': range_name,
@@ -487,5 +487,5 @@ if __name__ == '__main__':
     service = fetch_resource()
     write_single(service)
     write_range(service)
-    append_range(service)    
+    append_range(service)
 ```

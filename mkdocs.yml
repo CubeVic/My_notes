@@ -1,5 +1,5 @@
 # Project information
-site_name: 'My Notes' 
+site_name: 'My Notes'
 site_description: 'My personal notes'
 site_author: 'Victor Andres Aguirre Fernandez'
 site_url: 'https://cubevic.github.io/My_notes/'
@@ -28,7 +28,7 @@ theme:
       toggle:
         icon: material/lightbulb
         name: Switch to light mode
-  font: 
+  font:
     text: 'Ubuntu'
     code: 'Ubuntu Mono'
   logo: 'img/Logo.svg'
@@ -101,11 +101,11 @@ nav:
       - AI for Everyone: 'Machine Learning/AI for Everyone/AI_for_Everyone.md'
       - Other Key Terminology (TensorFlow): 'Machine Learning/Other_key_Terminology.md'
       - ML script or projects:
-        - Twitter Sentiment Analyzer: 'Machine Learning/ML script or projects/Twitter_sentiment_Analyzer.md' 
-    
+        - Twitter Sentiment Analyzer: 'Machine Learning/ML script or projects/Twitter_sentiment_Analyzer.md'
+
     - Python:
       - Introduction: 'Python/introduction.md'
-      - Python Basics:  
+      - Python Basics:
         - Data Structures: 'Python/Python_Basics/Data structures.md'
         - Control Flow: 'Python/Python_Basics/control flow.md'
         - Functions: 'Python/Python_Basics/functions.md'
@@ -117,9 +117,9 @@ nav:
         - Data bases with Python: 'Python/Python_Basics/Databases_with_Python.md'
         - Useful Snippets: 'Python/Python_Basics/Useful_snippets.md'
         - Trick and tips for better code in python: 'Python/Python_Basics/Tricks_tips_better_code_python.md'
-      - Python intermediate: 
+      - Python intermediate:
         - Context Managers 'with': 'Python/Python_intermediate/context_manager_python.md'
-        - Multi-threading and Multi-processing: 'Python/Python_intermediate/Multithreading_and_multiprocessing.md'      
+        - Multi-threading and Multi-processing: 'Python/Python_intermediate/Multithreading_and_multiprocessing.md'
         - SQLAchemy: 'Python/Python_intermediate/sqlalchemy.md'
         - Logging: 'Python/Python_intermediate/logging_python.md'
         - Configuration files: 'Python/Python_intermediate/configuration_files.md'
@@ -165,13 +165,13 @@ nav:
           - Introduction: 'Python/Libraries_and_Modules/QRcode/introduction.md'
         - HTTPX:
           - Introduction: 'Python/Libraries_and_Modules/HTTPX/introduction.md'
-        - Datamuse: 
+        - Datamuse:
           - Introduction: 'Python/Libraries_and_Modules/Datamuse/introduction.md'
         - Crontab:
           - Introduction: 'Python/Libraries_and_Modules/Crontab/introduction.md'
         - pyTelegramBot:
             - Introduction: 'Python/Libraries_and_Modules/pyTelegramBot/introduction.md'
-      - Frameworks: 
+      - Frameworks:
         - Flask:
           - Introduction and notes: 'Python/Frameworks/Flask/Introduction_and_notes.md'
           - Quick & Dirty First App: 'Python/Frameworks/Flask/first_app_flask.md'
@@ -213,7 +213,7 @@ nav:
       - Advance Function SQL: 'SQL/Advance_Funtion_SQL.md'
 
     - Arduino:
-      - Structure: 
+      - Structure:
         - Sketch: 'Arduino/Structure/Sketch.md'
         - Control Structure: 'Arduino/Structure/Control_Structure.md'
         - Further Syntax: 'Arduino/Structure/Further_Syntax.md'
@@ -231,7 +231,7 @@ nav:
         - Interrupts and External Interruptions: 'Arduino/Functions/Interrupts_and_External_Interruptions.md'
       - Projects:
         - Morse code Translator: 'Arduino/Projects/Morse_code_Translator.md'
-        - Air Vent servo control: 'Arduino/Projects/Air_vent_servo_control.md'  
+        - Air Vent servo control: 'Arduino/Projects/Air_vent_servo_control.md'
 
     - APIs:
       - Introduction: 'APIs/intro.md'
@@ -252,7 +252,7 @@ nav:
       - Samba Server: 'Raspberry/samba.md'
       - Nagios Core: 'Raspberry/Nagios.md'
       - How to Install OpenCv on Raspberry pi: 'Raspberry/How_install_openCV_raspberry.md'
-      - Raspberry Password Related: 'Raspberry/Password_related_raspberry.md' 
+      - Raspberry Password Related: 'Raspberry/Password_related_raspberry.md'
       - Setting Open Media Vault: 'Raspberry/setting_openmediavault.md'
       - Cloning OS Instance: 'Raspberry/cloning_raspbian_opencv.md'
 
@@ -290,19 +290,19 @@ nav:
         - About design: 'Miscellaneous/3D Printing/about design.md'
       - Courses:
         - Coursera:
-          - Introduction tensorflow: 
+          - Introduction tensorflow:
             - The Hello World of neural networks: 'Miscellaneous/Courses/Coursera/Introduction tensorflow/The Hello World of neural networks.md'
             - Introduction to Computer vision: 'Miscellaneous/Courses/Coursera/Introduction tensorflow/Introduction to computer vision.md'
             - Convolutional Neural network Overview : 'Miscellaneous/Courses/Coursera/Introduction tensorflow/Convolutional_Neural_network_Overview.md'
             - Enhancing vision with convolutional Neural Networks : 'Miscellaneous/Courses/Coursera/Introduction tensorflow/Enhancing_vision_with_convolutional_Neural_Networks.md'
             - (Code) Step by step Convolutions : 'Miscellaneous/Courses/Coursera/Introduction tensorflow/Step_by_step_Convolutions.md'
             - Using Real-World Images: 'Miscellaneous/Courses/Coursera/Introduction tensorflow/Using_Real_world_Image.md'
-          - Convolutional Neural Networks in TensorFlow: 
+          - Convolutional Neural Networks in TensorFlow:
             - Exploring large Datasets - Cats vs Dogs : 'Miscellaneous/Courses/Coursera/Convolutional Neural Networks in TensorFlow/exploring_large_dataset.md'
             - Augmentation: 'Miscellaneous/Courses/Coursera/Convolutional Neural Networks in TensorFlow/Augmentation_technique_to_avoid_overfitting.md'
             - Transfer Learning: 'Miscellaneous/Courses/Coursera/Convolutional Neural Networks in TensorFlow/Transfer_Learning.md'
         - Udemy:
-          - Complete Tensorflow 2 and Keras Deep Learning Bootcamp:        
+          - Complete Tensorflow 2 and Keras Deep Learning Bootcamp:
             - Visualization Crash course: 'Miscellaneous/Courses/Udemy/Complete Tensorflow 2 and Keras Deep Learning Bootcamp/Visualization_Crash_course.md'
             - Artificial Neural Network: 'Miscellaneous/Courses/Udemy/Complete Tensorflow 2 and Keras Deep Learning Bootcamp/ANN.md'
       - For Certifications:

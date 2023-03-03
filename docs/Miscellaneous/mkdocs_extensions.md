@@ -8,7 +8,7 @@ To add custom Icons we need to use [Icons+Emojis](https://squidfunk.github.io/mk
 We star with the configuration that give use access to some basic icons and emojies, later we explore the addition of
 customized icons.
 
-### Configuration 
+### Configuration
 add the following lines to `mkdocs.yml`
 ```yaml
 markdown_extensions:
@@ -16,7 +16,7 @@ markdown_extensions:
       emoji_index: !!python/name:materialx.emoji.twemoji
       emoji_generator: !!python/name:materialx.emoji.to_svg
 ```
-#### emojis :smile: 
+#### emojis :smile:
 it is recommended to use the shortcodes at [Emojipedia](https://emojipedia.org/twitter/)
 we have the example of
 ```
@@ -46,7 +46,7 @@ Now to call that icons we replace the `/` of the path for `-` like
 
 We can find more icons here [materialdesignicons](https://materialdesignicons.com/)
 
-Color can be added to the icons, we will need to add some CSS rules to later reference next to the icon, like this 
+Color can be added to the icons, we will need to add some CSS rules to later reference next to the icon, like this
 ```CSS
 .purple{
     color: #512DA8;
@@ -58,17 +58,17 @@ Color can be added to the icons, we will need to add some CSS rules to later ref
 :faces-panda:{ .purple }
 
 ???important "colors for icons"
-    .purple: #6745c2    
-    .dark-purple: #6745c2  
-    .royal-blue: #000062  
-    .orange: #E66C10  
-    .light-green: #629749   
-    .dark-green: #003d00  
+    .purple: #6745c2
+    .dark-purple: #6745c2
+    .royal-blue: #000062
+    .orange: #E66C10
+    .light-green: #629749
+    .dark-green: #003d00
     .green: #32681
 
 ## [Admonitions](https://squidfunk.github.io/mkdocs-material/reference/admonitions/#supported-types)
 
-These are basically call-outs. 
+These are basically call-outs.
 
 ### Configuration
 ```yaml
@@ -77,7 +77,7 @@ markdown_extensions:
 ```
 
 They are enabled by putting `!!!` later a key word
-and bellow indented the content, like this 
+and bellow indented the content, like this
 
 ```
 !!!note
@@ -97,7 +97,7 @@ or by adding the title in `"`.
 !!!note "This is the title"
     this is an admonition
 
-we can make a dropdown close by default 
+we can make a dropdown close by default
 
 ```
 ???note "This is az dropdown admonition"
@@ -121,13 +121,13 @@ Here some example of other admonitions
 
 ```
 !!! warning
-    This is a warning 
+    This is a warning
 ```
 !!! warning
-    This is a warning 
+    This is a warning
 
 
-<!--- 
+<!---
 TODO: add extensions
 1. definition list  useful for projects
 2. Footnotes.

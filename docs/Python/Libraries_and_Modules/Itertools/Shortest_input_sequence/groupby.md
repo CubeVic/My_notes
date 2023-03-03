@@ -9,16 +9,16 @@
 
 This method calculates the keys for each element present in iterable. It returns key and iterable of grouped items.
 
-It is still not a good description of this method, in the following example we will use a lambda function as part of the key. 
+It is still not a good description of this method, in the following example we will use a lambda function as part of the key.
 
 ```python
 from iter import groupby
-  
+
 L = [("a", 1), ("a", 2), ("b", 3), ("b", 4)]
-  
+
 # Key function
 key_func = lambda x: x[0]
-  
+
 for key, group in groupby(L, key_func):
     print(key + " :", list(group))
 

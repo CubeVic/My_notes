@@ -2,7 +2,7 @@
 
 The iteration through Dictionaries in pyhton is a different than Swift, in this case to iterate and get back both *key* and *value* you need to use a built-in method `item`.
 
-For example: 
+For example:
 
 ```python
 
@@ -18,7 +18,7 @@ for key,value in cast.items():
 
 ```
 
-which will result in something like: 
+which will result in something like:
 
 ```
 Actor: Jerry Seinfeld    Role: Jerry Seinfeld
@@ -29,11 +29,11 @@ Actor: Michael Richards    Role: Cosmo Kramer
 
 ## `for` Loops vs. `while` Loops
 
-`for` loops are idea when the *number of iteration* are _known_ or _finite_.  
+`for` loops are idea when the *number of iteration* are _known_ or _finite_.
 
-Examples:  
+Examples:
 
-* When you have an iterable collection (list, string, set, tuple, dictionary):  
+* When you have an iterable collection (list, string, set, tuple, dictionary):
 ```python
 for name in names:
 ```
@@ -43,7 +43,7 @@ for name in names:
 for i in range(5):
 ```
 
-`while` loop are ideal when the *iterations* are to _continue until a condition is met_  
+`while` loop are ideal when the *iterations* are to _continue until a condition is met_
 
 Examples:
 
@@ -57,15 +57,15 @@ while count <= 100:
 while user_input == 'y'
 ```
 
-the following are required to build a correct `while` loop: 
+the following are required to build a correct `while` loop:
 
-* The condition for existing the while loop should be included.  
-* Check if the iteration conditions is met.  
-* Body of the loop should change the value of condition variables.  
-##Break and continue.  
+* The condition for existing the while loop should be included.
+* Check if the iteration conditions is met.
+* Body of the loop should change the value of condition variables.
+##Break and continue.
 
-* `break` terminates a loop.  
-* `continue` skips one iteration of a loop.  
+* `break` terminates a loop.
+* `continue` skips one iteration of a loop.
 
 ## Zip and Enumerate
 `zip` and `enumerate` are build-in functions that can come handy when dealing with loops.
@@ -100,7 +100,7 @@ letters, nums = zip(*some_list)
 ```
 In Python3, zip methods returns a zip object instead of a list. This zip object is an iterator. Iterators are lazily evaluated.
 
-Lazy evaluation, or call-by-need is an evaluation strategy which delays the evaluation of an expression until its value is needed and which also avoids repeated evaluations 
+Lazy evaluation, or call-by-need is an evaluation strategy which delays the evaluation of an expression until its value is needed and which also avoids repeated evaluations
 
 Iterators returns only element at a time. len function cannot be used with iterators. We can loop over the zip object or the iterator to get the actual list
 
@@ -121,7 +121,7 @@ list_c = list(zipped) #Output: [(1, 4), (2, 5), (3, 6)]
 list_d = list(zipped) # Output []... Output is empty list becuase by the above statement zip got exhausted.
 ```
 
-**Enumerate**  
+**Enumerate**
 `enumerate` is a built in function that return an iterator of tuples containing indexes and values of a list, example:
 
 ```python
@@ -159,7 +159,7 @@ It will take 2 list and it will out put a single list of items that include a bo
 ['Barney Stinson 72', 'Robin Scherbatsky 68', 'Ted Mosby 72', 'Lily Aldrin 66', 'Marshall Eriksen 76']
 ```
 
-## List Comprehensions  
+## List Comprehensions
 
 List comprehensions are just present in python and not in other languages, this are normally use to create a list in a quickly and concisely way, for example:
 
@@ -184,9 +184,9 @@ Lets start with a simply conditional.
 squares = [x**2 for x in range(9) if x % 2 == 0]
 ```
 
-this will create a list with the power of the even numbers 
+this will create a list with the power of the even numbers
 
-if you want to add a `else`, you will get a syntax error 
+if you want to add a `else`, you will get a syntax error
 
 ```python
 squares = [x**2 for x in range(9) if x % 2 == 0 else x + 3] # this will produce a syntax error
@@ -222,33 +222,33 @@ so in this step i get a dictionary that holds the name and the number of wins
 
 ```
 {'Peter Jackson': 1, 'Anthony Minghella': 1, 'Robert Redford': 1, 'Clint Eastwood': 2, 'Ron Howard': 1, 'Billy Wilder': 2, 'Steven Spielberg': 2, 'Richard Attenborough': 1, 'Mel Gibson': 1, 'Leo McCarey': 2, 'William Friedkin': 1, 'Barry Levinson': 1, 'Oliver Stone': 2, 'Warren Beatty': 1, 'Ang Lee': 1, 'Joseph L. Mankiewicz': 2, 'Sydney Pollack': 1, 'Robert Wise': 2, 'Woody Allen': 1, 'John Ford': 4, 'Bob Fosse': 1, 'Jerome Robbins': 1, 'Robert Benton': 1, 'Elia Kazan': 2, 'Frank Lloyd': 1, 'John G. Avildsen': 1, 'Tom Hooper': 1, 'Frank Borzage': 1, 'Sam Mendes': 1, 'John Huston': 1, 'Carol Reed': 1, 'Francis Ford Coppola': 1, 'Joel Coen': 1, 'Fred Zinnemann': 2, 'William Wyler': 3, 'Jonathan Demme': 1, 'Kathryn Bigelow': 1, 'Delbert Mann': 1, 'Danny Boyle': 1, 'George Cukor': 1, 'Norman Taurog': 1, 'Tony Richardson': 1, 'George Roy Hill': 1, 'James L. Brooks': 1, 'Martin Scorsese': 1, 'David Lean': 2, 'Franklin J. Schaffner': 1, 'Bernardo Bertolucci': 1, 'John Schlesinger': 1, 'Ethan Coen': 1, 'Michael Cimino': 1, 'Milos Forman': 2, 'Mike Nichols': 1, 'Michael Curtiz': 1, 'Steven Soderbergh': 1, 'Robert Zemeckis': 1, 'Kevin Costner': 1, 'Frank Capra': 3, 'Vincente Minnelli': 1, 'James Cameron': 1, 'George Stevens': 2, 'Roman Polanski': 1, 'Victor Fleming': 1}
-```  
+```
 
-now I will need to create a variable `highest_wins` I will change the value of this variable every time I encounter a director with a higher number of wins, and I will clean the `most_win_director` and append the a new name.  
+now I will need to create a variable `highest_wins` I will change the value of this variable every time I encounter a director with a higher number of wins, and I will clean the `most_win_director` and append the a new name.
 
 ```python
 highest_wins = 0
- 
-for director, wins in win_dict.items():  
-    if wins > highest_wins:  
-        highest_wins = wins  
-        most_win_director.clear()  
-        most_win_director.append(director)  
-    elif wins == highest_wins:  
-        most_win_director.append(director)  
-    else:  
-        continue 
-```
- finally print the solution:  
 
-```python 
+for director, wins in win_dict.items():
+    if wins > highest_wins:
+        highest_wins = wins
+        most_win_director.clear()
+        most_win_director.append(director)
+    elif wins == highest_wins:
+        most_win_director.append(director)
+    else:
+        continue
+```
+ finally print the solution:
+
+```python
  print("most_win_director = {}".format(most_win_director))
 ```
 
 
 and here a more compact solution using `max` and _list comprehension_:
 
-```python 
+```python
 highest_count = max(win_count_dict.values())
 
 most_win_director = [key for key, value in win_count_dict.items() if value == highest_count]

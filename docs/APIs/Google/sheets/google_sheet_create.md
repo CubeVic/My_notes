@@ -1,10 +1,10 @@
 # Create Spreadsheet
 
-To create spreadsheets we need to have authentication and authorization, these can be achieved by the usage of the Class `Flow` and the object `Credentials` for more information we can refer to the documentation in Github. 
+To create spreadsheets we need to have authentication and authorization, these can be achieved by the usage of the Class `Flow` and the object `Credentials` for more information we can refer to the documentation in Github.
 
 [google-api-python-client/oauth.md at main · googleapis/google-api-python-client](https://github.com/googleapis/google-api-python-client/blob/main/docs/oauth.md)
 
-in this case, I will copy and modify the code from the example in the quick start form google documentation 
+in this case, I will copy and modify the code from the example in the quick start form google documentation
 
 ```python
 SCOPES = ['https://www.googleapis.com/auth/spreadsheets']
@@ -84,6 +84,6 @@ Note the ID in the URL as well as the Sheet ID, at the bottom we have the name o
 
 ## Personal Changes
 
-I made some personal changes in the code, adding some type of hint. 
+I made some personal changes in the code, adding some type of hint.
 
 ![gsheet.png](images/code.png)

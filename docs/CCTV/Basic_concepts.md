@@ -11,7 +11,7 @@ Packet loss, latency, and jitter are all related to slow throughput speed. Laten
 
 ### Bandwidth
 
-The bandwidth definition will be **Network bandwidth is defined as the maximum transfer throughput capacity of a network**. It measures how much data can be sent and receive at the same time. 
+The bandwidth definition will be **Network bandwidth is defined as the maximum transfer throughput capacity of a network**. It measures how much data can be sent and receive at the same time.
 It is important to know bandwidth doesn't increase the speed of a network, it just appears to make the network faster.
 
 >Let’s say 1 Mbps is the equivalent of a single-lane freeway. Let’s also say you want to download a 5 Mb image. If you had a connection with a bandwidth of 1 Mbps (one lane) it would take you about five seconds to download that image. Now, if you were operating with a 5 Mbps bandwidth connection (five lanes)
@@ -29,7 +29,7 @@ It is important to know bandwidth doesn't increase the speed of a network, it ju
 
 **B-Frame** or Bidirectional predicted picture can use both previous and forward Frame to get the highest amount of data compression, use the difference between the current frame and both the preceding and following frame to specify its content.
 
-![I-P-B_Frames_01.png](images/I_P_B_Frames_01.png){: .center}  
+![I-P-B_Frames_01.png](images/I_P_B_Frames_01.png){: .center}
 
 ## Video format and codecs
 
@@ -44,27 +44,26 @@ The most common containers for CCTV will be `AVI` and `MP4`.
 
 ### Video Codec
 
-Now the name codec comes  from the combination of Coder and decoder 
+Now the name codec comes  from the combination of Coder and decoder
 $$
 Codec = Coder + Decoder
 $$
 
 > We talk about software codec but be aware that the name `codec` applies to hardware as well.
 
-To make the video manageable and smaller, codec creates an encoded stream or a compressed version of the video and the audio, software like **VLC player** can then decode that video stream and present the result. 
+To make the video manageable and smaller, codec creates an encoded stream or a compressed version of the video and the audio, software like **VLC player** can then decode that video stream and present the result.
 
-It is important to know that most of the codec is "lossy" or "lossy compression", in other words, some quality is lost during the compression. 
+It is important to know that most of the codec is "lossy" or "lossy compression", in other words, some quality is lost during the compression.
 
-The most common codec use in CCTV for video are: 
+The most common codec use in CCTV for video are:
 
 * [H.265 (HECV)](https://en.wikipedia.org/wiki/High_Efficiency_Video_Coding)[^1]
-* [MPEG4](https://en.wikipedia.org/wiki/MPEG-4)  
+* [MPEG4](https://en.wikipedia.org/wiki/MPEG-4)
 * [H.264 (AVC)](https://en.wikipedia.org/wiki/Advanced_Video_Coding)[^2]
 
-[^1]: High-Efficiency Video Coding  
-[^2]: Advanced Video Coding  
+[^1]: High-Efficiency Video Coding
+[^2]: Advanced Video Coding
 
 > "lossless"  codec we have **MJPEG**.
 
 ![codec_video_container_002.png](images/codec_video_container_002.png){:.center}
-

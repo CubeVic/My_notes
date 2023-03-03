@@ -1,11 +1,11 @@
 # Random password generator - Project Davinci
 
-The password generator project, Code *Davinci* is a random generator base in built-in library `secrets`. 
+The password generator project, Code *Davinci* is a random generator base in built-in library `secrets`.
 
-The idea is to generate random password following the good practice: 
-* Lower and Upper case Characters.  
-* Digits.  
-* Punctuation marks.  
+The idea is to generate random password following the good practice:
+* Lower and Upper case Characters.
+* Digits.
+* Punctuation marks.
 
  by default it will generate a 8 character password but in the future version it will allow generate longer passwords.
 
@@ -19,7 +19,7 @@ def pass_generator(size: int) -> str:
 	while True:
 		password = ''.join(secrets.choice(alphabet) for i in range(size))
 		if (any(c.islower() for c in password) and
-			any(c.isupper() for c in password) and 
+			any(c.isupper() for c in password) and
 			sum(c.isdigit() for c in password) )>= size//2:
 			break
 	return password

@@ -1,5 +1,5 @@
 
-After change the board or flash a new firmware it is necessary center and set the offset for the Z 
+After change the board or flash a new firmware it is necessary center and set the offset for the Z
 
 ## Z-Offset Instructions:
 
@@ -33,7 +33,7 @@ Not totally clear for me how to make the procedure explained, specially when the
 ```C
 M851 [X<linear>] [Y<linear>] [Z<linear>]
 ```
->Example:  
+>Example:
 M851 Z0 - Reset Z0Offset
 
 source: [M851](http://marlinfw.org/docs/gcode/M851.html)
@@ -62,10 +62,10 @@ It requires ``` EEPROM_SETTINGS```
 ```
 M501
 ```
-source: [M501](http://marlinfw.org/docs/gcode/M501.html) 
+source: [M501](http://marlinfw.org/docs/gcode/M501.html)
 
 ### ```M503``` - Report Settings
-Print a concise report of all current settings.  
+Print a concise report of all current settings.
 
 Does not require ``` EEPROM_SETTINGS```
 
@@ -74,7 +74,7 @@ Does not require ``` EEPROM_SETTINGS```
 ```
 M503
 ```
-source: [M503](http://marlinfw.org/docs/gcode/M503.html) 
+source: [M503](http://marlinfw.org/docs/gcode/M503.html)
 
 ### ```G28``` - Auto Home
 Auto-home one or more axis moving to the end-stop until triggered.
@@ -82,7 +82,7 @@ Auto-home one or more axis moving to the end-stop until triggered.
 ```G28``` disable bed leveling. follow with ```M420 s``` to turn leveling on, or use ```RESTORE_LEVELING_AFTER_G28```
 
 #### Usage ```G28```
-``` 
+```
 G28 [O] [R] [X] [Y] [Z]
 ```
 * ```[X]```	Flag to go back to the X axis origin
@@ -91,16 +91,16 @@ G28 [O] [R] [X] [Y] [Z]
 
 * ```[Z]```	Flag to go back to the Z axis origin
 
-> Example: 
+> Example:
 ```G28 Z``` home the Z axis
 
 source: [G28](http://marlinfw.org/docs/gcode/G028.html)
 
 ### ```G1``` - Linear move
 
-```G0``` and ```G1``` suppose to be similar command, they generate a linear movement, but this command is queue and it is execute when there is a space in the queue, ``` G0 ``` it is use for movements that doesn't include the extrudor and ```G1``` for those that does 
+```G0``` and ```G1``` suppose to be similar command, they generate a linear movement, but this command is queue and it is execute when there is a space in the queue, ``` G0 ``` it is use for movements that doesn't include the extrudor and ```G1``` for those that does
 
-All the coordinates are given in millimeters by default (see [G20](http://marlinfw.org/docs/gcode/G020.html) if you want to change to inch) 
+All the coordinates are given in millimeters by default (see [G20](http://marlinfw.org/docs/gcode/G020.html) if you want to change to inch)
 
 #### Usage ```G1```
 ```
@@ -129,11 +129,10 @@ Optionally enable and disabel software stop, this software stop prevent to go be
 M211 [S<flag>]
 ```
 
-* ```S<flag>``` *flag* 0 for disable and 1 for enable 
+* ```S<flag>``` *flag* 0 for disable and 1 for enable
 
 > Example:
 ```
 M211 S0
 ```
 source: [M211](http://marlinfw.org/docs/gcode/M211.html)
-

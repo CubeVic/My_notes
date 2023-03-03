@@ -7,15 +7,15 @@ The final result will be a compressed file like this:
 ![USB adapter](images/clone_raspbian_opencv_000.png)
 
 ##The steps
-1. Pre-Requisites.  
-2. Prepare the environment.  
-3. Making a Clone of the custom Raspbian OS.  
-4. (optional) compress the image further.  
+1. Pre-Requisites.
+2. Prepare the environment.
+3. Making a Clone of the custom Raspbian OS.
+4. (optional) compress the image further.
 
 
 ##1. Pre-Requisites
-1. A Linux machine, not the Raspberry.  
-2. A working instance of the Raspbian OS.  
+1. A Linux machine, not the Raspberry.
+2. A working instance of the Raspbian OS.
 
 ##2. Prepare the environment
 1.Install `gparted`
@@ -23,24 +23,24 @@ The final result will be a compressed file like this:
 sudo apt-get install gparted
 ```
 
-2.Using a USB adapter connect the SDcard to the Linux machine.  
+2.Using a USB adapter connect the SDcard to the Linux machine.
 ![USB adapter](images/clone_raspbian_opencv_001.png)
 
 ##3. Making a Clone of the custom Raspbian OS
 
-###1.Find the USB with the Raspbian OS.  
+###1.Find the USB with the Raspbian OS.
 ```commandline
 sudo fdisk -l
 ```
-###2. Clone the Raspbian OS.  
+###2. Clone the Raspbian OS.
 ```commandline
 sudo dd if=/dev/sdb of=/your/path/to/clone.img
 ```
 
-where:  
+where:
 
-* `if` Stand for the Input file, this is the path to the USB with the Raspbian OS.  
-* `of` Stand for the Output file, where we will save the clone OS.  
+* `if` Stand for the Input file, this is the path to the USB with the Raspbian OS.
+* `of` Stand for the Output file, where we will save the clone OS.
 
 <aside>
     🔥 This process might take between 20 and 40 minutes.

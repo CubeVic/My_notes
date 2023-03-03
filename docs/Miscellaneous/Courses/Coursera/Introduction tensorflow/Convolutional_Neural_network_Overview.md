@@ -21,25 +21,25 @@ We take each filter and convolve it over the input volume to get a single **acti
 
 Like in the example mentioned before about the horizontal lines and vertical lines, in the case of the horizontal line, we use a horizontal line filter, that will generate a **activation map** that indicates where the horizontal lines are in the input. The best part of CNN is that this filter are not hard-coded, they are learned, that means that we don't need to explicitly tell the CNN to look for horizontal lines, it will do all it by itself during the backprop.
 
-In this Convolution Layer (or CONV Layer), we need to specify at least the number of filters and their size (width and height). some additional parameters will be padding and stride (not cover here), in terms of input and outputs, suppose a CONV layer  receives an input of size 
+In this Convolution Layer (or CONV Layer), we need to specify at least the number of filters and their size (width and height). some additional parameters will be padding and stride (not cover here), in terms of input and outputs, suppose a CONV layer  receives an input of size
 
 $$
-W_{in} * H_{in} * C_{in} 
-$$ 
+W_{in} * H_{in} * C_{in}
+$$
 
-(assuming zero padding and stride 1), the output width and height of the output activation maps will be 
+(assuming zero padding and stride 1), the output width and height of the output activation maps will be
 
-$$ 
+$$
 W_{out} = W_{in} - F_{w} + 1
-$$ 
+$$
 
-and 
+and
 
 $$
 H_{out} = H_{in} - F_{h} + 1
-$$ 
+$$
 
-where $F_w$ and $F_h$ are the width and height of the filters then the output will be 
+where $F_w$ and $F_h$ are the width and height of the filters then the output will be
 $$
 W_{out} * H_{out} * F
 $$
@@ -76,7 +76,7 @@ In practice, max pooling is used more frequently than average pooling, and the m
 
 This layer is the common artificial neural network, the catch, we have a activation volume as output of the CONV and POOL Layers, and this layer accept just a vector, so we will need to flatten this volume.
 
-![Flattening](images/Flattenin.png) 
+![Flattening](images/Flattenin.png)
 
 After flattening the volume, we can treat this layer just like a neural network! It is okay to flatten here since we’ve already passed through all of the CONV layers and applied the filters.
 

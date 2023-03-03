@@ -24,7 +24,7 @@ where:
 * $y$ is the temperature Celsius - the vale the model need to predict
 * $m$ is the slope of the line
 * $x$ is the number of chirp per minute
-* $b$ is the y-intercept 
+* $b$ is the y-intercept
 
 in the field of machine learning the **lineal regression** formula change to:
 
@@ -63,13 +63,13 @@ Here:
 
 ## Squared loss: a popular loss function
 
-Most of the Lineal regression models will use the loss function called _squared loss_ ($L_2 loss$), for the example above (the two lineal function side by side) the squared loss will be 
+Most of the Lineal regression models will use the loss function called _squared loss_ ($L_2 loss$), for the example above (the two lineal function side by side) the squared loss will be
 
 $$
-= (observation - prediction(x))^2 
+= (observation - prediction(x))^2
 $$
 
-$$ 
+$$
 = ( y - y' )^2
 $$
 
@@ -81,14 +81,14 @@ $$
 
 Where:
 
-* $(x,y)$ is an example in which:  
-	- $x$ is the set of features that the model used to make prediction 
+* $(x,y)$ is an example in which:
+	- $x$ is the set of features that the model used to make prediction
 	- $y$ is the example's label
 * $prediction(x)$ is a function of the weights and bias in combination with the set of features $x$
 * $D$ is a dataset containing many examples and labels, which are $(x,y)$ pairs.
-* $N$ is the number of examples in $D$  
+* $N$ is the number of examples in $D$
 
-## Important Concepts 
+## Important Concepts
 
 ### Bias
 
