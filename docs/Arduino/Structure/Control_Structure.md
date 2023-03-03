@@ -1,4 +1,4 @@
-Similar to many other languages on Arduino we have control structures, some of this structure are: 
+Similar to many other languages on Arduino we have control structures, some of this structure are:
 
 * [Do...while](https://www.arduino.cc/reference/en/language/structure/control-structure/dowhile/)
 * [while](https://www.arduino.cc/reference/en/language/structure/control-structure/while/)
@@ -9,7 +9,7 @@ Similar to many other languages on Arduino we have control structures, some of t
 
 From this the new one (in comparison with python and swift ) will be the `goto`.
 
-As other language we have ways to jump to return a value, go to the next item, or break the loop all together, for those task we have: 
+As other language we have ways to jump to return a value, go to the next item, or break the loop all together, for those task we have:
 
 * [return](https://www.arduino.cc/reference/en/language/structure/control-structure/return/)
 * [break](https://www.arduino.cc/reference/en/language/structure/control-structure/break/)

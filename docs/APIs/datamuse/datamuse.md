@@ -5,7 +5,7 @@
 
 ## What is it
 
-the website describe it as: 
+the website describe it as:
 *The Datamuse API is a word-finding query engine for developers.*
 
 ## For what I can use it?
@@ -15,7 +15,7 @@ the website describe it as:
 |Meaning similar to a sentence                                             |`/words?ml=[sentence]`                          |
 |Related with a word that start with b or ends with a                     |`/words?ml=duck&sp=b*`or `/words?ml=spoon&sp=*a`|
 |Word that sound like                                                     |`/words?sl=jirraf`                              |
-|A word that start with t has 2 letters between and end k                  |`/words?sp=t??k`                                | 
+|A word that start with t has 2 letters between and end k                  |`/words?sp=t??k`                                |
 |Words that are spelled similarly to hippopotamus                          |`/words?sp=hipopatamus`                         |
 |Words that rhyme with forgetful                                          |`/words?rel_rhy=forgetful`                      |
 |Words that rhyme with grape that are related to breakfast 	              |`/words?ml=breakfast&rel_rhy=grape`             |
@@ -28,25 +28,25 @@ the website describe it as:
 
 ## End points
 
-The feacture can be access on: 
+The feacture can be access on:
 
 * `api.datamuse.com/words`
 * `api.datamuse.com/sug`
 
 ## `/words` endpoint
 
->End point return a list of words 
+>End point return a list of words
 
-I can divide it in 3 categories;   
-1. Hard constraints results (`rd`,`sl`,`sp`,`rel_[code]` and `v`). 
-2. Context hints (`topics`, `lc`, `rc`). 
+I can divide it in 3 categories;
+1. Hard constraints results (`rd`,`sl`,`sp`,`rel_[code]` and `v`).
+2. Context hints (`topics`, `lc`, `rc`).
 3. Those that affect the order of the results returned.
 
 ### Hard Constraints
 
 #### Means like `ml`
 
-This will give back words or sentence that has similar meaning 
+This will give back words or sentence that has similar meaning
 
 ```
 https://api.datamuse.com/words?ml=ringing+in+the+ears
@@ -64,7 +64,7 @@ https://api.datamuse.com/words?sl=jirraf
 #### spelled like `sp`
 
 Require that the results are spelled similarly to this string of characters.
-A pattern can include any combination of alphanumeric characters, spaces, and two reserved characters that represent placeholders: 
+A pattern can include any combination of alphanumeric characters, spaces, and two reserved characters that represent placeholders:
 
 * "*" (which matches any number of characters).
 * "?" (which matches exactly one character).

@@ -2,25 +2,25 @@
 
 > *A good solution for private clouds*
 
-Hyperconverged infrastructure or HCI combine: 
+Hyperconverged infrastructure or HCI combine:
 
 - Computing
 - Virtualization
 - Networking
 - storage
 
-All in a single cluster, this provides cloud-like scalability. 
+All in a single cluster, this provides cloud-like scalability.
 
 ## Components
 
 There are two major components in these systems
 
 1. Hypervisors ( VMware, Hyper-v, KVM, Citrix, etc )
-2. Storage Controllers ( Stonefly, etc) 
+2. Storage Controllers ( Stonefly, etc)
 
 ## Available in which forms?
 
-They are available in two main forms 
+They are available in two main forms
 
 - Fully Integrate Hardware appliances (hardware and software same manufacture)
 - Standalone Software
@@ -41,7 +41,7 @@ Storage tier
     1. Storage
     2. controllers or NAS switch
     3. Backup
-2. There will be 3 different user interphase to control all 
+2. There will be 3 different user interphase to control all
 
 Server Tier
 
@@ -57,7 +57,7 @@ It is called "3-tier" because it is divided into three parts, network, server, s
 
 One advantage is the ability to update different parts independently.
 
-The disadvantage you need to notify the other tiers of that update or any change. 
+The disadvantage you need to notify the other tiers of that update or any change.
 
 ## How to improve the 3-tier architecture?
 
@@ -70,9 +70,9 @@ By using Hyperconvergance
 
 In the example above, two of the three layers are collapsed and it is replaced for a single standard server ( with a mirror device as redundancy). All the UI are replaced for a single UI.
 
-The Hypervisor will virtualize server resources and use the storage controller to provide virtual storage ( vNAS, vSAN, etc) 
+The Hypervisor will virtualize server resources and use the storage controller to provide virtual storage ( vNAS, vSAN, etc)
 
-This architecture allows the user to use Available server resources to the maximum capacity. 
+This architecture allows the user to use Available server resources to the maximum capacity.
 
 ## Benefits
 

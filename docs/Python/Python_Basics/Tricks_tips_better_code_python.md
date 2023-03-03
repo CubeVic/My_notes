@@ -1,9 +1,9 @@
-> This notes are base in the Medium post called ["five Python tricks you need to learn today"](https://towardsdatascience.com/five-python-tricks-you-need-to-learn-today-9dbe03c790ab) and different articles or answers i found on Internet. 
+> This notes are base in the Medium post called ["five Python tricks you need to learn today"](https://towardsdatascience.com/five-python-tricks-you-need-to-learn-today-9dbe03c790ab) and different articles or answers i found on Internet.
 
 
 ## TIp 1: Clean - Powerful One-liners
 
-### Conditional statements 
+### Conditional statements
 
 A normal If conditional will look like this:
 
@@ -41,7 +41,7 @@ double = [num * 2 for num in lst]
 
 ## Tip 2: String Manipulation
 
-### Reverse a string 
+### Reverse a string
 
 we can use `::-1` to reverse a string, like this:
 
@@ -51,7 +51,7 @@ print a[::-1]
 #bojymevoli
 ```
 
-### `join` strings 
+### `join` strings
 
 we can print the result of join different strings, or item of a list together:
 
@@ -79,7 +79,7 @@ In some cases what we want to achieve with the loops can be done by `map()`, `fi
 * **Filter:** Apply validation criteria, storing items that evaluate True.
 * **Reduce:** Return a value that is passed from element to element.
 
-here a simple example, first how it will be done by loops 
+here a simple example, first how it will be done by loops
 
 ```python
 numbers = [1,2,3,4,5,6]
@@ -97,7 +97,7 @@ for number in odd_numbers:
 for number in squared_odd_numbers:
    total += number
 # calculate average
-``` 
+```
 
 now let's do it with the functions
 
@@ -107,9 +107,9 @@ numbers = [1,2,3,4,5,6]
 odd_numbers = filter(lambda n: n % 2 == 1, numbers)
 squared_odd_numbers = map(lambda n: n * n, odd_numbers)
 total = reduce(lambda acc, n: acc + n, squared_odd_numbers)
-``` 
+```
 Few things to keep in mine:
 
-* `map()` and `filter()` are native available, but `reduce()` is part of the library `functools`.  
-* The lambda expression is the first argument, and the second is an iterable. 
+* `map()` and `filter()` are native available, but `reduce()` is part of the library `functools`.
+* The lambda expression is the first argument, and the second is an iterable.
 * The lambda expression for `reduce()` requires two arguments: the accumulator (the value that is passed to each element) and the individual element itself.

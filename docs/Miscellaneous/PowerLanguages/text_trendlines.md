@@ -1,4 +1,4 @@
-To demonstrate how to make lines and text in easylanguage(powerlanguage) we can create a study which goal is to track the daily extremes and to **display** them on the chart. We want to be able to see the current extremes for the day and also show yesterday’s extremes on today’s data. 
+To demonstrate how to make lines and text in easylanguage(powerlanguage) we can create a study which goal is to track the daily extremes and to **display** them on the chart. We want to be able to see the current extremes for the day and also show yesterday’s extremes on today’s data.
 
 * We need to be able to find the **highest high** and **lowest low** for each day
 * The study should use trendlines to display yesterday’s extremes
@@ -67,7 +67,7 @@ Similar to the trendlines, the text will need an anchor point, as well as the tr
 TxtID = Text_New(TextDate, TextTime, TextPrice, TextString);
 ```
 
-so our script will be 
+so our script will be
 
 ```
 Variables:
@@ -86,7 +86,7 @@ once
     end;
 ```
 
-then the result will be 
+then the result will be
 
 ![text_trendinglines_004](images/text_trendinglines_004.png)
 
@@ -137,7 +137,7 @@ And we will have as a result:
 
 ![text_trendinglines_005](images/text_trendinglines_005.png)
 
-## The study 
+## The study
 
 ```
 Inputs:

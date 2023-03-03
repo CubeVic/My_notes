@@ -12,9 +12,9 @@ Here I follow exactly the documentation
 
 ![Flask layout](images/Flask_layout_01.png)
 
-> The tutorial assume that all the content will be in a folder called "Flask-tutorial" and a virtual environment was created 
+> The tutorial assume that all the content will be in a folder called "Flask-tutorial" and a virtual environment was created
 
-the documentation suggest some to add an specific `.gitignore` that i thing came useful since will help me to avoid commit any unnecessary document or folder to git or any version control system 
+the documentation suggest some to add an specific `.gitignore` that i thing came useful since will help me to avoid commit any unnecessary document or folder to git or any version control system
 
 #### `gitignore` Example
 

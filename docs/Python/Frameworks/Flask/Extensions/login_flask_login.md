@@ -1,12 +1,12 @@
 ![flask-login.png](images/flask_login_logo.png){: .center}
 
-Flask-Login is Flask extension that provide user session management to flask app, it handle the most common task related with the login procedure, task such as Logging in, Logging out, Remember sessions (permanent of by a define amount of time).  
+Flask-Login is Flask extension that provide user session management to flask app, it handle the most common task related with the login procedure, task such as Logging in, Logging out, Remember sessions (permanent of by a define amount of time).
 
 1. [Official documentation:](https://flask-login.readthedocs.io/en/latest/)
 2. [PIP page:](https://pypi.org/project/Flask-Login/)
 3. [Git:](https://github.com/maxcountryman/flask-login)
 
-From the official documentation of Flask-Login: 
+From the official documentation of Flask-Login:
 
 * Store the active user’s ID in the session, and let you log them in and out easily.
 * Let you restrict views to logged-in (or logged-out) users.
@@ -78,9 +78,9 @@ login = LoginManager(app)
 
 Flask-login extension work with any model and multiple databases the only requirements is the implementation of four items:
 
-* `is_autheticated`:  Property is `True` if the user is valid, `false` if is not.    
-* `is_active`: Property is `True` if the user is active and `False` otherwise.  
-* `is_anonymous`: Property is `False` if the user is a regular user, `True` if is special anonymous user.  
+* `is_autheticated`:  Property is `True` if the user is valid, `false` if is not.
+* `is_active`: Property is `True` if the user is active and `False` otherwise.
+* `is_anonymous`: Property is `False` if the user is a regular user, `True` if is special anonymous user.
 * `get_id()`: it returned a unique identifier for the user as a string.
 
 
@@ -157,7 +157,7 @@ From the previous code we have:
 We can use the `logout_user()` to complete the log out process
 
 **application/routes.py**
-```python 
+```python
 # ...
 
 from flask_login import logout_user
@@ -172,7 +172,7 @@ def logout():
 
 Now, we need to expose the link to the user, we ned to switch the login link in the navigation bar to logout if the user is log in.
 
-### Modification to the Templates 
+### Modification to the Templates
 
 **application/templates/base.html**
 ```HTML
@@ -244,9 +244,9 @@ once the user is login and the function `login_user()` is used, the value of the
 
 Now we need to give a bit more explanation to the statement `if not next_page or url_parse(next_page).netloc != ''`. Consider the possibilities of the redirection after a successful login:
 
-1. The URL doesn't contain a `next` argument, in that case we redirect the user to the index page.  
-2. The URL include a `next` argument, this argument is a relative path (a URL without a domain part), the user is redirect to that URL.  
-3. The URL include a `next` argument, however in this case the value is a full URL, the URL includes a domain name, in this case the use is redirected to the index page.  
+1. The URL doesn't contain a `next` argument, in that case we redirect the user to the index page.
+2. The URL include a `next` argument, this argument is a relative path (a URL without a domain part), the user is redirect to that URL.
+3. The URL include a `next` argument, however in this case the value is a full URL, the URL includes a domain name, in this case the use is redirected to the index page.
 
 The first two option are simple and predictable, but the third one is more a security measure, this is to prevent an attack where the next value will include a full URL to a malicious website. so the application only redirects when the URL is relative. To determine if the URL is relative or absolute, we use `url_parse()` from **Werkzeug** package and check if the `netloc` component is set or not.
 
@@ -294,7 +294,7 @@ db.session.commit()
 
 Now the last step is the creation of the registration form, for that we will start by the creation of a new class on the **forms.py**, this class will represent the registration form
 
-### Registration form 
+### Registration form
 **application/forms.py**
 ```python
 from flask_wtf import FlaskForm
@@ -331,16 +331,16 @@ Before running `Email()`, or added to the script, we will need to install a emai
 pip install email-validator
 ```
 
-From the previous code we have: 
+From the previous code we have:
 
 1. there are two fields for the password, the idea is to use the second field as a verification, or a "repeat password".
 2. the second field has an extra validator, this time `EqualTo()` and the argument of this method will be the name of the the first field.
-3. there are two new methods called `validate_username` and `validate_password`, this are following a WTForm pattern, WTForm will take any method that follow pattern `validate_<field_name>` as a custom validator, in this case these two validator will make sure that user and password are not in the database.  
+3. there are two new methods called `validate_username` and `validate_password`, this are following a WTForm pattern, WTForm will take any method that follow pattern `validate_<field_name>` as a custom validator, in this case these two validator will make sure that user and password are not in the database.
 4. the custom validators are going to use `ValidationError` to handle the errors, in this case the error will be if the user input a email or an user that is already in the database.
 
-### Template for the registration form 
+### Template for the registration form
 
-The last step will be create a template to display the registration form 
+The last step will be create a template to display the registration form
 
 **application/templates/register.html**
 ```html
@@ -402,7 +402,7 @@ now the login form must have a link that can take new users to the registration 
 
 ### View function for the registration
 
-As last step we need to create the view function to connect the registration form to the system, in this case this view function will be in the `routes.py` file 
+As last step we need to create the view function to connect the registration form to the system, in this case this view function will be in the `routes.py` file
 
 **application/routes.py**
 ```python
@@ -427,35 +427,3 @@ def register():
 		return redirect(url_for('login'))
 	return render_template('register.html', title='Registration', form=form)
 ```
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

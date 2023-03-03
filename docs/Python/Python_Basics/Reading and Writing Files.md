@@ -19,13 +19,13 @@ file_data = f.read()
 f.close()
 ```
 
-## Writing to File  
+## Writing to File
 
-Now, to write we need to the open the file in write mode, but it is important to know that this will remove any previous content in the document.  
+Now, to write we need to the open the file in write mode, but it is important to know that this will remove any previous content in the document.
 
-1. Open the file in writing ('w') mode. if the file does not exist, Python will create it for you, if the file exist all the content will be delete, if the intention is to add information to this document we will need to open it in append mode ('a').  
-2. Use the write method to add text to the file.  
-3. Close the file when finished.  
+1. Open the file in writing ('w') mode. if the file does not exist, Python will create it for you, if the file exist all the content will be delete, if the intention is to add information to this document we will need to open it in append mode ('a').
+2. Use the write method to add text to the file.
+3. Close the file when finished.
 
 so the code will look like:
 
@@ -68,7 +68,7 @@ the output will be:
 
 ```
 We
-'re the 
+'re the
 knights of the round table
 We dance whenever we're able
 ```
@@ -79,7 +79,7 @@ Now, python is smart enough to understand that `\n` which is a character that me
 
 although there is a way to loop over the lines of the file, this can be done with the syntax `for line in file` and using the `.strip()` we can remove the `\n`.
 
-```python 
+```python
 camelot_lines = []
 with open("camelot.txt") as f:
     for line in f:
@@ -92,5 +92,3 @@ the output will be:
 ```
 ["We're the knights of the round table", "We dance whenever we're able"]
 ```
-
-

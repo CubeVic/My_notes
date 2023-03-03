@@ -11,7 +11,7 @@ n = count(start=10)
 
 for i in range(1,7):
 	print(n.next())
-	
+
 >> 10
 >> 11
 >> 12

@@ -1,6 +1,6 @@
 ## 1. All Unique
 
-This method check if there is any duplicate element 
+This method check if there is any duplicate element
 ```python
 def all_unique(lst):
 		return len(str) == len(set(lst))
@@ -42,7 +42,7 @@ def byte_size(string):
 	return(len(String.encode('utf-8')))
 
 byte_size('😀') # 4
-byte_size('Hello World') # 11 
+byte_size('Hello World') # 11
 ```
 
 ##5. Print a String N times
@@ -76,7 +76,7 @@ chunk([1,2,3,4,5],2) # [[1,2],[3,4],5]
 
 ##8. Compact
 
-This method remove the "Falsy" values, in other words, False, 0, None,"". 
+This method remove the "Falsy" values, in other words, False, 0, None,"".
 
 ```python
 def compact(lst):
@@ -115,7 +115,7 @@ print("My hobbies are: " + ", ".join(hobbies)) # My hobbies are: basketball, foo
 ##12. Count vowels
 This method counts the number of vowels (‘a’, ‘e’, ‘i’, ‘o’, ‘u’) found in a string, using regular expressions.
 
-```python 
+```python
 import re
 
 def count_vowels(str):
@@ -133,8 +133,8 @@ This method can be used to turn the first letter of the given string into lowerc
 
 def decapitalize(string):
     return str[:1].lower() + str[1:]
-  
-  
+
+
 decapitalize('FooBar') # 'fooBar'
 decapitalize('FooBar') # 'fooBar'
 ```
@@ -201,7 +201,7 @@ def subtract(a, b):
     return a - b
 
 a, b = 4, 5
-print((subtract if a > b else add)(a, b)) # 9   
+print((subtract if a > b else add)(a, b)) # 9
 ```
 
 ##18. Has duplicates
@@ -210,8 +210,8 @@ The following method checks whether a list has duplicate values by using the fac
 ```python
 def has_duplicates(lst):
     return len(lst) != len(set(lst))
-    
-    
+
+
 x = [1,2,3,4,5,5]
 y = [1,2,3,4,5]
 has_duplicates(x) # True
@@ -236,9 +236,9 @@ The following method can be used to convert two lists into a dictionary.
 ```python
 def to_dictionary(keys, values):
     return dict(zip(keys, values))
-    
 
-keys = ["a", "b", "c"]    
+
+keys = ["a", "b", "c"]
 values = [2, 3, 4]
 print(to_dictionary(keys, values)) # {'a': 2, 'c': 4, 'b': 3}
 ```
@@ -248,12 +248,12 @@ This method gets a dictionary as an input and then returns only the keys that ar
 
 ```python
 list = ["a", "b", "c", "d"]
-for index, element in enumerate(list): 
+for index, element in enumerate(list):
     print("Value", element, "Index ", index, )
 # ('Value', 'a', 'Index ', 0)
 # ('Value', 'b', 'Index ', 1)
 #('Value', 'c', 'Index ', 2)
-# ('Value', 'd', 'Index ', 3)    
+# ('Value', 'd', 'Index ', 3)
 ```
 
 ##22. Time spent
@@ -296,10 +296,10 @@ This method returns the most frequent element that appears in a list.
 ```python
 def most_frequent(list):
     return max(set(list), key = list.count)
-  
+
 
 list = [1,2,1,2,3,2,1,4,2]
-most_frequent(list)  
+most_frequent(list)
 ```
 
 ##25. Palindrome
@@ -346,7 +346,7 @@ def shuffle(lst):
         temp_lst[m], temp_lst[i] = temp_lst[i], temp_lst[m]
     return temp_lst
 
-  
+
 foo = [1,2,3]
 shuffle(foo) # [2,3,1] , foo = [1,2,3]
 ```
@@ -383,7 +383,7 @@ swap(a, b) # (14, -1)
 ##30. Get default value for missing keys
 This snippet shows how you can get a default value in case a key you are looking for is not included in the dictionary.
 
-```python 
+```python
 d = {'a': 1, 'b': 2}
 
 print(d.get('c', 3)) # 3

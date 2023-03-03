@@ -26,7 +26,7 @@ I can run the wizard to install it.
 
 ![Jenkins wizard](img/002.png){: .center}
 
-I need to select the logon type (in my case, the option `Run service as LocalSystem` is enough, but in a production 
+I need to select the logon type (in my case, the option `Run service as LocalSystem` is enough, but in a production
 environment might be better be safe and select the next option)
 
 ![Logon Type](img/003.png){: .center}
@@ -39,7 +39,7 @@ The last step is to set the port where I will run Jenkins, by default will be `8
 
 ## ⚠️ Make sure Java is already installed in the system
 
-If everything is correct, I should be able to use the browser to navigate to the [localhost](http://localhost/) 
+If everything is correct, I should be able to use the browser to navigate to the [localhost](http://localhost/)
 with the port selected, for example, `http://127.0.0.1:8080` and we will find the Jerking welcome page.
 
 ![Unlock Jenkins](img/005.png){: .center}
@@ -76,7 +76,7 @@ If instead of downloading the installer, I decided to download the `.war` file I
 2. Execute the command `java -jar jenkins.war`
 
 <aside>
-☝🏾 It is easier if I navigate to the location of the file using Windows explorer, once in the file location, on the 
+☝🏾 It is easier if I navigate to the location of the file using Windows explorer, once in the file location, on the
 top bar I use this will open in that location (check the gif below).
 
 </aside>
@@ -132,8 +132,8 @@ To create a job I can start by:
 
 ![Freestyle project](img/017.png){: .center}
 
-3. Once on the configuration page, I need to tell Jenkins to execute the test case, 
-I can do that using the **built** section and selecting `Executing Windows batch command` if I am running Jenkins in 
+3. Once on the configuration page, I need to tell Jenkins to execute the test case,
+I can do that using the **built** section and selecting `Executing Windows batch command` if I am running Jenkins in
 windows and `Execute Shell` if I am in Linux or MAC.
 
 ![Execute Windows batch Command](img/018.png){: .center}
@@ -146,7 +146,7 @@ windows and `Execute Shell` if I am in Linux or MAC.
 ![build commands](img/020.png){: .center}
 
 
-5. I need to tell Jenkins where to publish the Framework test results, for that I need to configure the Post-build 
+5. I need to tell Jenkins where to publish the Framework test results, for that I need to configure the Post-build
 Actions.
 
 6. In the section post-built Actions, select **`Publish Robot Framework test results`**
@@ -194,7 +194,7 @@ cd C:\Users\Victo\PycharmProjects\robotframework_twitch\Tests\twitch\FunctionalT
 robot -d Result VideoSearch_Android.robot
 ```
 
-but `robot -d Result VideoSearch_Android.robot` is not a valid command, and I can prove this by checking the test 
+but `robot -d Result VideoSearch_Android.robot` is not a valid command, and I can prove this by checking the test
 console output
 
 ![Console output](img/028.png){: .center}
@@ -205,7 +205,7 @@ Here I can see what the console printed
 
 ![console](img/029.png){: .center}
 
-So the test is passing, but due to my mistake of adding a not *recognized internal command*, Jenkins reported it as 
+So the test is passing, but due to my mistake of adding a not *recognized internal command*, Jenkins reported it as
 failed.
 
 #### **The solution**

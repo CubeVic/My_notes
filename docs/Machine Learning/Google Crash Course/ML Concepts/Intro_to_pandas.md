@@ -85,7 +85,7 @@ cities['city name'][1]
 # 'San Jose'
 ```
 
-or 
+or
 
 ```python
 print(type(cities[0:2]))
@@ -114,7 +114,7 @@ np.log(population)
 
 ![012_nplog](../images/012_nplog.png)
 
-In similar to how in python we use `map()` to perform a transformation of a set of data, we can use `Series.apply()` and `lambda` as arguments 
+In similar to how in python we use `map()` to perform a transformation of a set of data, we can use `Series.apply()` and `lambda` as arguments
 
 ```python
 population.apply(lambda val:val> 1000000)
@@ -157,7 +157,7 @@ cities.reindex([2, 0, 1])
 
 Reindexing is a great way to shuffle (randomize) a DataFrame. In the example below, we take the index, which is array-like, and pass it to NumPy's random.permutation function, which shuffles its values in place.
 
-```python 
+```python
 cities.reindex(np.random.permutation(cities.index))
 ```
 

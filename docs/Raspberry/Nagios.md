@@ -26,7 +26,7 @@ sudo apt install -y autoconf build-essential wget unzip apache2 apache2-utils ph
 cd /tmp
 ```
 
-####2. Download the Nagios source code 
+####2. Download the Nagios source code
 
 ```Bash
 wget -O nagios.tar.gz https://github.com/NagiosEnterprises/nagioscore/archive/nagios-4.4.6.tar.gz
@@ -34,7 +34,7 @@ wget -O nagios.tar.gz https://github.com/NagiosEnterprises/nagioscore/archive/na
 
 > I had an issue with SSL those i download it normally and i move it to the directory manually
 
-####3. Extract the files 
+####3. Extract the files
 
 ```Bash
 tar xzf nagios.tar.gz
@@ -63,7 +63,7 @@ sudo usermod -a -G nagios www-data
 
 ```Bash
 sudo make install
-``` 
+```
 
 ####3. With the `make ` command we install the Nagios service and make it start at boot
 this command install the Nagios core deamon
@@ -79,7 +79,7 @@ sudo make install-commandmode
 ```
 
 ####5. Copy a sample configuration file using `make`
-this file is important without it the software wont run 
+this file is important without it the software wont run
 
 ```Bash
 sudo make install-config
@@ -166,7 +166,7 @@ sudo make install
 ```Bash
 sudo systemctl restart nagios
 ```
-## 6. Connecting the Nagios Web interface 
+## 6. Connecting the Nagios Web interface
 
 We can access the UI by
 
@@ -184,10 +184,10 @@ To add host we will need to create a configuration file that later Nagios will r
 
 ####1. Navigate to `object` configuration folder for Nagios
 
-this is a default folder that contain sample configuration files  we can check the file to get an idea 
+this is a default folder that contain sample configuration files  we can check the file to get an idea
 
 ```Bash
-cd /usr/local/nagios/etc/objects 
+cd /usr/local/nagios/etc/objects
 ```
 
 ####2. Now lets create a configuration file
@@ -218,7 +218,7 @@ sudo nano /usr/local/nagios/etc/nagios.cfg
 
 ####5. within the file we need to do changes
 
-Find 
+Find
 ```Bash
 cfg_file=/usr/local/nagios/etc/objects/templates.cf
 ```
@@ -232,13 +232,13 @@ Restart Nagios
 ```Bash
 sudo systemctl restart nagios
 ```
-For now we are making a ping check and nothing else, for more specialties test we need to configure the services  
+For now we are making a ping check and nothing else, for more specialties test we need to configure the services
 
-## 8. Adding Service to Nagios 
+## 8. Adding Service to Nagios
 
 This example we will add **check_http** and **Check_ssh**
 
-####1. We need to modify the host configuration created earlier 
+####1. We need to modify the host configuration created earlier
 
 ```Bash
 define service {
@@ -266,7 +266,7 @@ If everything is okay we will see `Things look okay`
 
 ![Navios](images/Nagios_001.png)
 
-Now we restart Nagios 
+Now we restart Nagios
 ```Bash
 sudo systemctl restart nagios
 ```

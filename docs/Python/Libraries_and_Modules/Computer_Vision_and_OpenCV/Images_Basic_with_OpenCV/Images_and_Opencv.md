@@ -10,7 +10,7 @@ import cv2
 
 now to load an image we need to have the correct path to it, otherwise we can generate an error that will be difficult to fine. If for some reason we add the wrong path, we wont get an error message instead `None`
 
-```python 
+```python
 img = cv2.imread('some/wrong/path.png')
 print(img)
 # None
@@ -49,7 +49,7 @@ so this `imread` gave me a Numpy.narray with 3 color channels
 
 ## Color Correction
 
-Now that we have the correct image, or rather the correct path, we have the image loaded, but when we display it 
+Now that we have the correct image, or rather the correct path, we have the image loaded, but when we display it
 
 ```python
 img_bgr = cv2.imread('../DATA/00-puppy.jpg')
@@ -59,7 +59,7 @@ plt.imshow(img_bgr)
 
 The image has been correctly loaded by openCV as a numpy array, but the color of each pixel has been sorted as BGR. Matplotlib's plot expects an RGB image so, for a correct display of the image, it is necessary to swap those channels
 
-for this, we can use a build-in function 
+for this, we can use a build-in function
 ```python
 img_rgb = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
 ```
@@ -155,6 +155,3 @@ blank_img = np.zeros(shape=(512,512,3),dtype=np.int16)
 blank_img.shape
 plt.imshow(blank_img)
 ```
-
-
-

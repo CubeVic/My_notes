@@ -43,7 +43,7 @@ ValueError                                Traceback (most recent call last)
 ValueError: cannot reshape array of size 10 into shape (2,10)
 ```
 
-## Indexing 
+## Indexing
 
 it is important to be able to get back rows, columns or slice of the matrix we create, in this case we enter to scope of indexing.
 
@@ -72,7 +72,7 @@ mat[row,col]
 # 1
 ```
 
-we don't need to define the variables 'row' and 'col' we can simply 
+we don't need to define the variables 'row' and 'col' we can simply
 
 ```python
 mat[5,5]
@@ -81,7 +81,7 @@ mat[5,5]
 
 ### How to slice a matrix
 
-let say that we want 
+let say that we want
 
 **1. Get all the values in a row or column**
 we want to get all the values in the row 1
@@ -118,7 +118,7 @@ mat[1,:].reshape(10,1)
 
 
 **2. Get all the values from n rows and m columns**
-We want to get back part of the original matrix 
+We want to get back part of the original matrix
 
 ```python
 mat[:3,:3]
@@ -142,4 +142,3 @@ mat[0:4,0:4] = 0
 #       [80, 81, 82, 83, 84, 85, 86, 87, 88, 89],
 #       [90, 91, 92, 93, 94, 95, 96, 97, 98, 99]])
 ```
-

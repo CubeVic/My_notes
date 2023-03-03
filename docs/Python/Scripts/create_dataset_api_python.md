@@ -1,12 +1,12 @@
 The idea will be follow the article from medium [Creating a dataset using an API with Python](https://towardsdatascience.com/creating-a-dataset-using-an-api-with-python-dcc1607616d) from this we will change code at will to fit more my personal style or just to try different things.
 
-## Import Libraries 
+## Import Libraries
 
 There will be 3 main libraries to be use in this project:
 
 * `request` this will help use to get content from the API usign the method `get()` and to decide the format of how are we getting this info using `json()` so we can handle the answer for he API using JSON.
 
-* `json` with this library we can work with JSON 
+* `json` with this library we can work with JSON
 
 * `pandas` this will help us to create the dataframes that later can be export to a .cvs file.
 
@@ -16,9 +16,9 @@ we will import `numpy` as well, ... just in case.
 
 We want first to understand what is the information that the API is giving us, what type of data and what values, so for that we are going to start by calling the API and display the content.
 
-first, the API end point is *https://wind-bow.glitch.me/twitch-api/channels/freecodecamp* this API doesn't require any authentication which will make the process easier 
+first, the API end point is *https://wind-bow.glitch.me/twitch-api/channels/freecodecamp* this API doesn't require any authentication which will make the process easier
 
-```python 
+```python
 
 import numpy as np
 import pandas as pd
@@ -90,7 +90,7 @@ From this response we get enough information to continue, we are going to use fe
 First we will need to make a list that will contain the name of the channels that we want to get the information, later we will:
 
 1. Use the `append()` method to populate a variable  with the properties we want.
-2. use the `DataFrame()` from pandas library to create the dataframe which is a similar structure to a table 
+2. use the `DataFrame()` from pandas library to create the dataframe which is a similar structure to a table
 
 #### List of channels
 
@@ -115,7 +115,7 @@ for channel in channels;
 
 we use the [] to access the specific parameter, to this point the script will loop like this:
 
-```python 
+```python
 import numpy as np
 import pandas as pd
 import requests
@@ -146,7 +146,7 @@ producing this result:
 
 ![dataset_api_python_002](images/dataset_api_python_002.png){: .center}
 
-`sample(5)` allow me to display 5 random records 
+`sample(5)` allow me to display 5 random records
 
 ## Enhancing the Dataset
 
@@ -159,7 +159,7 @@ Now we can see that are few things we can improve in the dataset we are creating
 
 ### The headings
 
-we can use the method `columns()` from pandas to name the columns 
+we can use the method `columns()` from pandas to name the columns
 
 ```python
 dataset = pd.DataFrame(channels_list)
@@ -171,7 +171,7 @@ print(dataset.sample(5))
 
 ![dataset_api_python_003](images/dataset_api_python_003.png){: .center}
 
-### Removing rows with Empty columns 
+### Removing rows with Empty columns
 
 In this case we are going to use `dropan(axis = 0, how = 'any', inplace = True)`
 this will drop the rows that has some empty columns, after this we need to reindex the dataframe for that we use `dataset.index = pd.RangeIndex(len(dataset.index))`
@@ -183,7 +183,7 @@ dataset.index = pd.RangeIndex(len(dataset.index))
 
 so the code will be:
 
-```python 
+```python
 import numpy as np
 import pandas as pd
 import requests
@@ -208,7 +208,7 @@ dataset = pd.DataFrame(channels_list)
 
 #Name the columns
 dataset.columns = ['ID', 'Name', 'Status', 'Followers', "Views"]
-#drop rows with empty columns 
+#drop rows with empty columns
 dataset.dropna(axis = 0, how = 'any', inplace = True)
 #re-index the DataFrame
 dataset.index = pd.RangeIndex(len(dataset.index))

@@ -11,7 +11,7 @@ The model without augmentation will be like the one we did in the previous note
 !wget --no-check-certificate \
     https://storage.googleapis.com/mledu-datasets/cats_and_dogs_filtered.zip \
     -O /tmp/cats_and_dogs_filtered.zip
-  
+
 import os
 import zipfile
 import tensorflow as tf
@@ -93,7 +93,7 @@ In the image bellow we can see that the accuracy of the training is $100\%$ but 
 
 ![Augmentation](images/augmentation_001.png)
 
-now if we plot the results we will see some interesting points 
+now if we plot the results we will see some interesting points
 
 ![Augmentation](images/augmentation_002.png)![Augmentation](images/augmentation_003.png)
 
@@ -107,47 +107,47 @@ From the [documentation](https://www.tensorflow.org/api_docs/python/tf/keras/pre
 
 ```python
 tf.keras.preprocessing.image.ImageDataGenerator(
-    featurewise_center=False, 
+    featurewise_center=False,
     samplewise_center=False,
-    featurewise_std_normalization=False, 
+    featurewise_std_normalization=False,
     samplewise_std_normalization=False,
-    zca_whitening=False, 
-    zca_epsilon=1e-06, 
-    rotation_range=0, 
+    zca_whitening=False,
+    zca_epsilon=1e-06,
+    rotation_range=0,
     width_shift_range=0.0,
-    height_shift_range=0.0, 
-    brightness_range=None, 
-    shear_range=0.0, 
+    height_shift_range=0.0,
+    brightness_range=None,
+    shear_range=0.0,
     zoom_range=0.0,
-    channel_shift_range=0.0, 
-    fill_mode='nearest', 
-    cval=0.0, 
+    channel_shift_range=0.0,
+    fill_mode='nearest',
+    cval=0.0,
     horizontal_flip=False,
-    vertical_flip=False, 
-    rescale=None, 
+    vertical_flip=False,
+    rescale=None,
     preprocessing_function=None,
-    data_format=None, 
-    validation_split=0.0, 
+    data_format=None,
+    validation_split=0.0,
     dtype=None
 )
 ```
 
-Although we are going to use just few of them 
+Although we are going to use just few of them
 
-* `rescale`  
-* `rotation_range`  
-* `width_shift_range`  
+* `rescale`
+* `rotation_range`
+* `width_shift_range`
 * `height_shift_range`
 * `shear_range`
 * `zoom_range`
 * `horizontal_flip`
-* `fill_mode`  
+* `fill_mode`
 
 #### **`rotation_range`**
 This parameter will rotate the image from 0~180 degrees randomly, so if we do `rotation_range=40` the image will be rotated randomly from 0 to 40 degrees.
 
 #### **`width_shift_range`** and **`height_shift_range`**
-This will shift the subject within the frame, the value will be a proportion of the total size .  
+This will shift the subject within the frame, the value will be a proportion of the total size .
 
 #### `shear_range`
 this will skew the image along the x-axis, this will help us to simulate different position of the subject.
@@ -185,7 +185,7 @@ and now the full model will be:
 !wget --no-check-certificate \
     https://storage.googleapis.com/mledu-datasets/cats_and_dogs_filtered.zip \
     -O /tmp/cats_and_dogs_filtered.zip
-  
+
 import os
 import zipfile
 import tensorflow as tf
@@ -271,7 +271,7 @@ history = model.fit(
       verbose=2)
 ```
 
-### The performance graphically 
+### The performance graphically
 
 ![Augmentation](images/augmentation_005.png)![Augmentation](images/augmentation_006.png)
 
@@ -299,24 +299,3 @@ plt.legend()
 
 plt.show()
 ```
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

@@ -10,7 +10,7 @@ The `setup()` function is called when a sketch starts. Use it to initialize vari
 
 ```C++
 void setup(){
-  
+
 }
 ```
 
@@ -55,6 +55,3 @@ void loop() {
   delay(1000);
 }
 ```
-
-
-

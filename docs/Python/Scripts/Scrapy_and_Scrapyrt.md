@@ -33,29 +33,29 @@ the project folder structure should currently look like this:
 
 ## The First Spider
 
-To create the new spider we need to create a new file in the spiders folder. 
+To create the new spider we need to create a new file in the spiders folder.
 
 >The file’s name doesn’t really matter, it should just represent what your spider is scraping. in this example we simply call it `coinSpider.py`.
 
 First let’s create a class that inherits from scrapy.Spider.
 
-```python 
+```python
 import scrapy
 
 class CoinSpider(scrapy.Spider):
-``` 
+```
 A Spider class must have a `name` attribute. This element will help you to inform Scrapy which crawler you want to start.
 
-```python 
+```python
 import scrapy
 
 class CoinSpider(scrapy.Spider):
     name = "coin"
-``` 
-Now we need to tell Scrapy what is the URL we want to send the request to. 
-We’ll use `start_requests` method. This method will return the Scrapy request to the URL we want to crawl. 
+```
+Now we need to tell Scrapy what is the URL we want to send the request to.
+We’ll use `start_requests` method. This method will return the Scrapy request to the URL we want to crawl.
 
-```python 
+```python
 import scrapy
 
 class CoinSpider(scrapy.Spider):
@@ -64,12 +64,12 @@ class CoinSpider(scrapy.Spider):
     def start_requests(self):
         url = "https://coinmarketcap.com/all/views/all/"
         yield scrapy.Request(url=url, callback=self.parse)
-``` 
+```
 The `scrapy.Request` function takes the URL we want to crawl as the first parameter and a callback function that will parse the response we’ll receive from the request.
 
 Now we need to create that callback function
 
-```python 
+```python
 def parse(self, response):
         for row in response.css("tbody tr"):
             yield {
@@ -80,7 +80,7 @@ def parse(self, response):
                 "circulating_supply": row.css("td.circulating-supply span::attr(data-supply)").extract_first(),
                 "volume": row.css("a.volume::attr(data-usd)").extract_first()
             }
-``` 
+```
 Our parse method will go through each row of the table containing the cryptocurrency data that we want for our API. It then selects the wanted information using CSS selector.
 
 The line `for row in response.css(“tbody tr”)` basically says “take the content of the response, select all the `<tr>` in the `<tbody>`, assign individually the content of each of them in the row variable”. The value of this variable would look like something like this for the first line of the table:
@@ -127,7 +127,7 @@ The line `for row in response.css(“tbody tr”)` basically says “take the co
 </tr>
 ```
 
-We then loop through each row and apply one more CSS selector to extract the exact value that we want. For example; 
+We then loop through each row and apply one more CSS selector to extract the exact value that we want. For example;
 The name of the currency is contained in a link `<a>` which has the class `currency-name-container` assigned to it. By adding `::text` to the selector, we specify that we want the text between `<a>` and `</a>`. The method `.extract_first()` is added after the selector to indicate that we want the first value found by the parser.
 
 We repeat the process with all the data we want to extract, and we then return them in a dictionary.
@@ -145,7 +145,7 @@ class CoinSpider(scrapy.Spider):
     def start_requests(self):
         url = "https://coinmarketcap.com/all/views/all/"
         yield scrapy.Request(url=url, callback=self.parse)
-    
+
     def parse(self, response):
         for row in response.css("tbody tr"):
             yield {
@@ -215,7 +215,7 @@ scrapyrt -p <PORT>
 scrapyrt -p 3000
 `
 
-With this command Scrapyrt will setup locally a simple HTTP server that will allow you to control your crawler.  We can access it with a `GET` request through the endpoint `http://localhost:<PORT>/crawl.json.` 
+With this command Scrapyrt will setup locally a simple HTTP server that will allow you to control your crawler.  We can access it with a `GET` request through the endpoint `http://localhost:<PORT>/crawl.json.`
 
 To work properly it also needs at least these two arguments: `start_requests (Boolean)` and `spider_name (string)`. to see the results we can open the browser on:
 

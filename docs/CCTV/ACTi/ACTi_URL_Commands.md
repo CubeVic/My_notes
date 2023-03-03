@@ -1,6 +1,6 @@
 
 ## Description of URL
-All URL is going to use the HTTP method GET, there will be two types of URLs the Type 1 URL will contain the password and user as part of the URL command, the type 2 URL won't contain the password and user, therefore it will need a different method of authentication first. 
+All URL is going to use the HTTP method GET, there will be two types of URLs the Type 1 URL will contain the password and user as part of the URL command, the type 2 URL won't contain the password and user, therefore it will need a different method of authentication first.
 
 ### CGI path
 The two types of URLs will have different CGI format, these are defined in the firmware and cannot be changed, the Type 1 URL will have `/cgi-bin/` and Type 2 will have `/cgi-bin/cmd/`.
@@ -15,17 +15,17 @@ http://ip:port/cgi-bin/cmd/system?CMD
 ```
 
 ### Format of URL
-Type 1 URL is considered not secure, although they are very simple and every CGI will support them 
+Type 1 URL is considered not secure, although they are very simple and every CGI will support them
 ```Bash
 http://ip:port/cgi-bin/CGI?USER=admin&PWD=123456&CMD1=VALUE1&CMD2
 ```
-where  
+where
 
-* `IP`: the device IPv4 address.  
-* `port`: the device's HTTP port. If it is 80, the port could be omitted.  
-* `CGI`: CGI Program like system, mpeg4, encoder, update,...   
-* `CMD1=VALUE1`: write command to set the VALUE1 to device's configuration associated with CMD1.  
-* `CMD2`: a read command to get the device's configuration associated with CMD2.  
+* `IP`: the device IPv4 address.
+* `port`: the device's HTTP port. If it is 80, the port could be omitted.
+* `CGI`: CGI Program like system, mpeg4, encoder, update,...
+* `CMD1=VALUE1`: write command to set the VALUE1 to device's configuration associated with CMD1.
+* `CMD2`: a read command to get the device's configuration associated with CMD2.
 
 Type 2 URL is more secure than Type 1 since the password and user are encrypted int he HTTP transaction, but not all CGI support this type or URL
 ```Bash
@@ -79,7 +79,7 @@ The format of the HTTP status code
 HTTP/1.0 <HTTP_CODE> <HTTP_TEXT>\r\n
 ```
 
-the most common codes will be:  
+the most common codes will be:
 
 | HTTP code| HTTP Text    | Description             |
 |:--------:|:------------:|:-----------------------:|
@@ -89,19 +89,19 @@ the most common codes will be:
 
 ### Return message
 
-There are five types of return message: 
+There are five types of return message:
 
-1. **CMD='VALUE'**  
-2. **OK: CMD='VALUE'**  
-3. **OK**  
-4. **ERROR: CMD='VALUE'**  
-5. **ERROR: Descriptions of Error**  
+1. **CMD='VALUE'**
+2. **OK: CMD='VALUE'**
+3. **OK**
+4. **ERROR: CMD='VALUE'**
+5. **ERROR: Descriptions of Error**
 
 > the HTTP 200 code will be return in type 4 and 5 messages, but they are an error message, so it is important to keep that in mind and not use the HTTP code as a validator.
 
 #### 1. `CMD='VALUE'`
 
-Used in the READ type of commands, the response will be the CMD value  on the request URL and a given value withing ' ', if the request contains more than one CMD the answer will list all the CMD 
+Used in the READ type of commands, the response will be the CMD value  on the request URL and a given value withing ' ', if the request contains more than one CMD the answer will list all the CMD
 
 Return Message for `URL WAN_TYPE&WAN_IP` is:
 ```Bash
@@ -110,7 +110,7 @@ WAN_IP='192.168.0.100'
 ```
 
 #### 2. `OK: CMD='VALUE'`
-Used in the WRITE URL command. If the VALUE is correct, the command will be echoed back with OK: tag, follow by the CMD send and the given value within ' '. If more than one value is given the return message of every URL will be displayed. 
+Used in the WRITE URL command. If the VALUE is correct, the command will be echoed back with OK: tag, follow by the CMD send and the given value within ' '. If more than one value is given the return message of every URL will be displayed.
 
 Return Message for `URL WAN_TYPE=1&WAN_IP=192.168.1.100` is
 ```Bash
@@ -119,7 +119,7 @@ OK: WAN_IP='192.168.0.100'
 ```
 
 #### 3. `OK`
-Used in the ACTION URL command like `SAVE`, `REBOOT`, `FACTORY_DEFAULT`, etc. There is no value returned for this command. 
+Used in the ACTION URL command like `SAVE`, `REBOOT`, `FACTORY_DEFAULT`, etc. There is no value returned for this command.
 
 Return Message for `URL REBOOT` is
 ```Bash
@@ -174,25 +174,25 @@ The valid characters will depend on which part of the URL are they.
 
 ### Valid Characters in the Login Name
 
-1. Only *A~Z*, *a~z*, 0~9, minus sign (-), underscore (_), period (.), $ and @ are allowed.  
-2. The first character is allowed to *A~Z* or *a~z*.  
+1. Only *A~Z*, *a~z*, 0~9, minus sign (-), underscore (_), period (.), $ and @ are allowed.
+2. The first character is allowed to *A~Z* or *a~z*.
 
-### Valid Characters in Login Password 
+### Valid Characters in Login Password
 
-1. Printable characters: Started from ASCII code $0x21$ to $0x7E$, with the exception of these 10 reserved characters which are not allowed  `':', '#', '?', '/', '\', '%', '&', ''', '"', ','`  
+1. Printable characters: Started from ASCII code $0x21$ to $0x7E$, with the exception of these 10 reserved characters which are not allowed  `':', '#', '?', '/', '\', '%', '&', ''', '"', ','`
 
 ### Valid Characters in Network Name
-1. Only ASCII *A~Z*, *a~z*, 0~9, minus sign (-), underscore (_), and period (.) are allowed.  
-2. No blank or space characters are permitted as part of a name.  
-3. The last character must not be a minus sign, underscore, or period.  
-4. The first character is allowed to either a letter or a digit.  
-5. No NULL string is allowed.  
+1. Only ASCII *A~Z*, *a~z*, 0~9, minus sign (-), underscore (_), and period (.) are allowed.
+2. No blank or space characters are permitted as part of a name.
+3. The last character must not be a minus sign, underscore, or period.
+4. The first character is allowed to either a letter or a digit.
+5. No NULL string is allowed.
 
 ### General  rule of Valid Characters in URI
-1. Only ASCII *A~Z*, *a~z*, 0~9, minus sign (-), underscore (_), period (.), and space ( ) characters are allowed.  
-2. The last character must not be a minus sign, underscore, period, or space.  
-3. The first character is allowed to either a letter or a digit.  
-4. NULL string is allowed.  
+1. Only ASCII *A~Z*, *a~z*, 0~9, minus sign (-), underscore (_), period (.), and space ( ) characters are allowed.
+2. The last character must not be a minus sign, underscore, period, or space.
+3. The first character is allowed to either a letter or a digit.
+4. NULL string is allowed.
 
 ## List of CGI
 

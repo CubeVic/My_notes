@@ -1,4 +1,4 @@
-Related with data structures 
+Related with data structures
 
 ## Data Structures
 
@@ -13,7 +13,7 @@ Data structures are containers that organize and group data types together in di
 
 ## List
 A list is one of the most common and basic data structures in Python.
-List are Mutable and ordinated data structures 
+List are Mutable and ordinated data structures
 
 ``` python
 list_of_random_things = [1, 3.4, 'a string', True]
@@ -48,7 +48,7 @@ It will output:
 {1, 2, 3, 6}
 ```
 
-## Dictionaries 
+## Dictionaries
 
 A **dictionary** is a mutable data type that stores mappings of unique keys to values.
 
@@ -71,7 +71,7 @@ True
 None
 ```
 
-So, to recap 
+So, to recap
 
 Data Structure | Ordered | Mutable | Constructor     | Example             |
 :--------------|:-------:|:-------:|:----------------|:--------------------|
@@ -80,7 +80,5 @@ Tuple          | Yes     | No      |`()` or `tuple()`|`(5.7,4,'yes',5.7)`  |
 Set            | No      | Yes     |`{}`[^1] or `set()` |`{5.7,4,'yes'}`      |
 Dictionary     | No      | No[^2]  |`{}` or `dict()` |`{'jun':75.'jul':89}`|
 
-[^1]: You can use curly braces to define a set like this: `{1, 2, 3}`. However, if you leave the curly braces empty like this: `{}` Python will instead create an empty dictionary. So to create an empty set, use `set()`.  
+[^1]: You can use curly braces to define a set like this: `{1, 2, 3}`. However, if you leave the curly braces empty like this: `{}` Python will instead create an empty dictionary. So to create an empty set, use `set()`.
 [^2]: A dictionary itself is mutable, but each of its individual keys must be immutable.
-
-

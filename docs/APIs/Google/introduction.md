@@ -5,7 +5,7 @@
 To be able to use the API we will need to have the API token or key for that we need, in big terms, to follow:
 
 1. Create a new project and enable the API.
-2. Define the type of authentication. 
+2. Define the type of authentication.
 3. Identify the scope
 4. Create the credentials, if need it to provide access to User to the specific resources.
 
@@ -13,23 +13,23 @@ To be able to use the API we will need to have the API token or key for that we 
 
 ### 1.Google Cloud platform
 
-Navigate to [console.cloud.google.com](http://console.cloud.google.com), if this is your first time you will find something like this 
+Navigate to [console.cloud.google.com](http://console.cloud.google.com), if this is your first time you will find something like this
 
 In order to use the Google API we need to have an account in Google, of course, but also we need to set up the google cloud platform.
 
 This is just the standard " term of services" "let me spam you with products" page.
 
-Not much we can do, just agree with the term of services, and is up to you if you want to get the email updates. 
+Not much we can do, just agree with the term of services, and is up to you if you want to get the email updates.
 
 ![google cloud platform.png](images/google_cloud_platform.png){: .center}
 
-Now we are presented with the home page or dashboard for the google cloud 
+Now we are presented with the home page or dashboard for the google cloud
 
 ![dashboard.png](images/dashboard.png){: .center}
 
 ### 2. Set up Projects
 
-The projects will represent our application, at least that is how I understand it, so in order to create the access token or the API keys we will need to have a project, we have a limited amount of projects before we need to request an upgrade or to delete previous once, however, the number of projects slots we get initially is pretty generous 
+The projects will represent our application, at least that is how I understand it, so in order to create the access token or the API keys we will need to have a project, we have a limited amount of projects before we need to request an upgrade or to delete previous once, however, the number of projects slots we get initially is pretty generous
 
 ![Create the project.png](images/Create_the_project.png){: .center}
 
@@ -59,13 +59,13 @@ once on the new page we need to select the API we want to use, in this case, as 
 
 Once selected we will see a new page with some description and information. we can either try the API here and confirm this wants we need or go ahead and enable it.
 
-Once enabled we have a second dashboard, this case is just for this API, here we can proceed and create the credentials and the services that we need in order to make use of this API 
+Once enabled we have a second dashboard, this case is just for this API, here we can proceed and create the credentials and the services that we need in order to make use of this API
 
 ![Create credentials.png](images/Create_credentials.png){: .center}
 
 #### Credentials
 
-Once we start the process of credential creation we will see different files to set up, here is where you can spend some time making a proper configuration about the scope and who can access, in this case, I will go the easy way and make it simple, creating access just to myself. 
+Once we start the process of credential creation we will see different files to set up, here is where you can spend some time making a proper configuration about the scope and who can access, in this case, I will go the easy way and make it simple, creating access just to myself.
 
 ![select type of credentials.png](images/select_type_of_credentials.png){: .center}
 
@@ -83,7 +83,7 @@ To get this file we need to create the client Id, we can do that in the top of t
 
 ![Create OAuth.png](images/Create_OAuth.png){: .center}
 
-It is possible that before creating the OAuth Id we will need to configure the Consent screen, this is the screen that will ask the user to grant permission o the application. 
+It is possible that before creating the OAuth Id we will need to configure the Consent screen, this is the screen that will ask the user to grant permission o the application.
 
 In the configuration of consent, we will be presented with two options internal and external. My project right now is just a personal project so it won't affect me which option I will select so I will go by the external sense is the one I use before.
 
@@ -93,11 +93,11 @@ We will be asked to add some information, this information will be display to th
 
 ![OAuth and consent.png](images/OAuth_and_consent.png){: .center}
 
-Now the scopes 
+Now the scopes
 
 ![scopes.png](images/scopes.png){: .center}
 
-I will select the scope Google Sheet API 
+I will select the scope Google Sheet API
 
 ![scope sheet API.png](images/scope_sheet_API.png){: .center}
 
@@ -105,19 +105,19 @@ so I can create, delete and edit the google sheets.
 
 The next steps in this OAuth consent screen configuration will be the test user, which I won't configure since I'm the only one using it.
 
-Finally, with this configuration, we can proceed and finish the generation of the OAuth 2,0 Client ID 
+Finally, with this configuration, we can proceed and finish the generation of the OAuth 2,0 Client ID
 
 ![Create OAuth.png](images/Create_OAuth.png){: .center}
 
-Now we need to select what type of application will interact with the API in this case I will select desktop since the project I planning to work with will be develop in python 
+Now we need to select what type of application will interact with the API in this case I will select desktop since the project I planning to work with will be develop in python
 
 ![desktop.png](images/desktop.png){: .center}
 
-We will get a Modal view with the information about the client, this information will be in the json file as well 
+We will get a Modal view with the information about the client, this information will be in the json file as well
 
 ![modal view.png](images/modal_view.png){: .center}
 
-To download the .json file ( the one we will rename `credentials.json`) we can do it in the dashboard 
+To download the .json file ( the one we will rename `credentials.json`) we can do it in the dashboard
 
 ![json.png](images/json.png){: .center}
 

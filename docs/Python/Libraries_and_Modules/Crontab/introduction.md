@@ -9,7 +9,7 @@
 
 Crontab module for reading and create cronotab files and accessing the sytem cron with and easy API
 
-> The special character "W", "L", "#", and "?"" is not supported. 
+> The special character "W", "L", "#", and "?"" is not supported.
 
 | Field Name | Mandatory | Allowed Values | Special Characters | Extra Values |
 |:-----------|:---------:|:---------------|:------------------:|:------------:|
@@ -34,7 +34,7 @@ Minute Hours Day Month Day_of_the_Week
 as mentioned about the fields can have the following values
 ```
 ┌───────────── minute (0 - 59)
-│ ┌───────────── hour (0 - 23) 
+│ ┌───────────── hour (0 - 23)
 │ │ ┌───────────── day of month (1 - 31)
 │ │ │ ┌───────────── month (1 - 12)
 │ │ │ │ ┌───────────── day of week (0 - 6) (Sunday to Saturday;
@@ -44,7 +44,7 @@ as mentioned about the fields can have the following values
 * * * * *  command to execute
 ```
 
-We can make more complex configuration if we make use of special characters 
+We can make more complex configuration if we make use of special characters
 
 | Character   | Meaning                        |
 |:------------|:-------------------------------|
@@ -53,12 +53,12 @@ We can make more complex configuration if we make use of special characters
 |Asterisk	  | To indicate all possible values|
 |Forward slash|	To indicate EVERY              |
 
-> For example: 
-`0 16 1,10,22 * *` tells cron to run a task at 4 PM (which is the 16th hour) on the 1st, 10th and 22nd day of every month.  
+> For example:
+`0 16 1,10,22 * *` tells cron to run a task at 4 PM (which is the 16th hour) on the 1st, 10th and 22nd day of every month.
 
 ## Access to Crontab
 
-There are 5 ways to access, there are 3 that work just in Linux and the other two will work in windows 
+There are 5 ways to access, there are 3 that work just in Linux and the other two will work in windows
 
 **Linux**
 1.
@@ -80,14 +80,14 @@ from crontab import CronTab
 cron = CronTab(user=True)
 ```
 
-**Windows and other systems**  
-4. 
+**Windows and other systems**
+4.
 ```python
 from crontab import CronTab
 
 cron = CronTab(tabfile='filename.tab')
 ```
-where `filename.tab` is a file containing the task.  
+where `filename.tab` is a file containing the task.
 
 5.
 ```python
@@ -109,7 +109,7 @@ cron.new(command='my command',
 		comment='my comment')
 ```
 
-so a complete example will be 
+so a complete example will be
 
 ```python
 from crontab import CronTab
@@ -141,10 +141,10 @@ Every time we set a time restriction we cancel the previous one thus
 ```python
 job.hour.every(1)
 job.hour.every(15)
-```	
+```
 
 the value set will be 15 instead of 1
-in order to add restriction to a previous one 
+in order to add restriction to a previous one
 
 ```python
 job.hour.every(1)
@@ -156,8 +156,8 @@ In some case we want to set up one filed and make the other field to 0, we can d
 ```python
 job.every(15).hours()
 ```
-This will set the schedule to `0 */4 * * *`. 
-> Similarly for the 'day of the month', 'month' and 'day of the week' fields.  
+This will set the schedule to `0 */4 * * *`.
+> Similarly for the 'day of the month', 'month' and 'day of the week' fields.
 
 ## Set job to work every reboot
 
@@ -174,7 +174,7 @@ job.clear()
 ## Enable and disable jobs
 
 To enable the job
-```python 
+```python
 job.enable()
 ```
 
@@ -218,7 +218,7 @@ cron.find_time(time schedule)
 cron.remove(job)
 ```
 
-remove base in the comment 
+remove base in the comment
 
 ```python
 cron.remove_all(comment='my comment')
@@ -229,9 +229,9 @@ or remove all
 cron.remove_all()
 ```
 
-## Environment Variable 
+## Environment Variable
 
-We can define environment variables 
+We can define environment variables
 
 ```python
 job.env['VARIABLE_NAME'] = 'Value'
@@ -239,33 +239,6 @@ job.env['VARIABLE_NAME'] = 'Value'
 
 to get the variables
 
-```python 
+```python
 job.env
 ```
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

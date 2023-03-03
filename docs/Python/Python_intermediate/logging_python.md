@@ -13,20 +13,20 @@ I only need to import it.
 import logging
 ```
 
-There are several elements in the logging, but the most important are:  
-* Logging levels.  
-* Handler.  
-* Formatter.  
+There are several elements in the logging, but the most important are:
+* Logging levels.
+* Handler.
+* Formatter.
 
 ## Logging Levels
 Logging levels will allow me to log more specific things, such as; debugging statements, information, or reports errors.
 
-|Levels| Descriptions| 
+|Levels| Descriptions|
 |:-------|:------------|
-|DEBUG| Detailed information, mostly for diagnostics.| 
+|DEBUG| Detailed information, mostly for diagnostics.|
 |INFO| Mostly to confirm that something is working.|
-|WARNING| Something happens that can create problems in the future.| 
-|ERROR| A serious problem, the software cannot perform the action. 
+|WARNING| Something happens that can create problems in the future.|
+|ERROR| A serious problem, the software cannot perform the action.
 |CRITICAL| Serious Error, unable to continue.|
 
 <aside>
@@ -58,9 +58,9 @@ The complete code of the basic example will be:
 
 I have just one logger in the following example -a good option if I deal with one script at a time. But for a more complex app, I will need more loggers and probably more output.
 To achieve a more functional logger, I can make use of the elements mentioned previously
-* Logging levels.  
-* Handler.  
-* Formatter.  
+* Logging levels.
+* Handler.
+* Formatter.
 
 The following code can be duplicated in each script to have a logger in each one of them
 
@@ -73,19 +73,19 @@ I start by creating a variable:
 The argument __name__ is a deeper topic that I won't cover here. but a bad explanation or rather a not accurate one will say; "this will help the lower to know in which module and function it is been call".
 
 ###Logging Levels
-To add the logging level to the logger, I use the function `setLevel()`.   
+To add the logging level to the logger, I use the function `setLevel()`.
 ![logging_007](images/logging_007.png)
 
 ###Handler
-In this case refer to which output I will use, the console or a document.  
+In this case refer to which output I will use, the console or a document.
 
 ![logging_008](images/logging_008.png)
-I created a file handler, but it is not linked to the logger yet, I need to add it.  
+I created a file handler, but it is not linked to the logger yet, I need to add it.
 
-![logging_009](images/logging_009.png)   
+![logging_009](images/logging_009.png)
 
-Be aware that I haven't changed the format of the output, I just define what will be the output for the `logger`.  
-To add a stream handler or an output to the console, I can use `StreamHandler()`.  
+Be aware that I haven't changed the format of the output, I just define what will be the output for the `logger`.
+To add a stream handler or an output to the console, I can use `StreamHandler()`.
 
 ![logging_010](images/logging_010.png)
 
@@ -94,11 +94,11 @@ Now with the logger added I can think in the format I want. To modify the format
 
 ![logging_011](images/logging_011.png)
 
-The extra argument `datefmt` allows me to modify how the time is displayed. 
+The extra argument `datefmt` allows me to modify how the time is displayed.
 Similar to Handler, I have to register it with the logger. `setFormatter()` is used to add the format to the logger.
 ![logging_012](images/logging_012.png)
 
-Now, all together:  
+Now, all together:
 ![logging_013](images/logging_013.png)
 
 <aside>

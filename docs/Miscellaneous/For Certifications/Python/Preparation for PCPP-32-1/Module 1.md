@@ -1,8 +1,8 @@
-Lets start with some basic concept that are present in bold in the course 
+Lets start with some basic concept that are present in bold in the course
 
 * **Machine language**: LAnguage use for the computers, very rudimentary.
-* **Natural Language**: Language use by people, it is constantly evolving, new words are created every day and old one disappear. 
-* **Instruction list** (IL): a complete set of know commands 
+* **Natural Language**: Language use by people, it is constantly evolving, new words are created every day and old one disappear.
+* **Instruction list** (IL): a complete set of know commands
 
 ## What is a language
 
@@ -10,7 +10,7 @@ Lets start with some basic concept that are present in bold in the course
 
 * **An Alphabet:** A set of symbols use to build a word.
 * **A Lexis:**  also known as dictionary, it is a set of words available in to be use.
-* **A Syntax:** A set of rules used to determine if a certain string of words make a valid sentence 
+* **A Syntax:** A set of rules used to determine if a certain string of words make a valid sentence
 * **Semantics:** a set of rules to determining if a certain phrase make sense.
 
 The IL o Instruction list is the alphabet for the machine, this is the simplest set of symbols that can be use to give commands to the computer.
@@ -43,7 +43,7 @@ We can translate the source program each time it has to be run; the program perf
 |**DISADVANTAGES**|* The compilation itself may be a very time-consuming process - you may not be able to run your code immediately after any amendment;| *don't expect that interpretation will ramp your code to high speed - your code will share the computer's power with the interpreter, so it can't be really fast;  |
 ||* You have to have as many compilers as hardware platforms you want your code to be run on. |* Both you and the end user have to have the interpreter to run your code. |
 
-Python is an **Interpreted Language**  you just need the *Python Interpreter* 
+Python is an **Interpreted Language**  you just need the *Python Interpreter*
 
 ## Python Goals
 
@@ -52,9 +52,9 @@ Python is an **Interpreted Language**  you just need the *Python Interpreter*
 * Understandable code, just like plain English.
 * **Suitable for Everyday programming**.
 
-## Python, CPhyton and Cython 
+## Python, CPhyton and Cython
 
-Python is maintain for people around the PSF or Python Software Foundation, the president is the creator of the language itself, *Guido van Rossum*, these Pythons are called **Canonical** 
+Python is maintain for people around the PSF or Python Software Foundation, the president is the creator of the language itself, *Guido van Rossum*, these Pythons are called **Canonical**
 
 ![PCPP-32-1_Module_1_001.png](images/PCPP-32-1_Module_1_001.png){: .center}
 
@@ -62,7 +62,7 @@ Python was implemented in C, it was, it is, and, probably continue been, impleme
 
 ### Cython
 
-**Cython** is other family member of Python, it is a solution for many trade off, such the lack of efficiency, once the code is written in Python, and it is prove that there is not issue, one can translate this code to C. 
+**Cython** is other family member of Python, it is a solution for many trade off, such the lack of efficiency, once the code is written in Python, and it is prove that there is not issue, one can translate this code to C.
 This is what Cython is intended to do so, translate python code to C.
 
 ![PCPP-32-1_Module_1_002](images/PCPP-32-1_Module_1_002.png){: .center}

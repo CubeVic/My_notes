@@ -5,11 +5,11 @@ to make a function we need to go to File -> New and select function:
 
 ![functions_001](images/functions_001.png)
 
-the next screen will display the options for the name of the function, the return type and the function storage 
+the next screen will display the options for the name of the function, the return type and the function storage
 
 ![functions_002](images/functions_002.png)
 
-### The name 
+### The name
 like in other languages the function name should be descriptive and not contain special characters with the exception of underscore
 
 ### The return type
@@ -24,9 +24,9 @@ In the indicators you need to specify the default value of the inputs, in the fu
 
 In most of the cases we will work with three type of input parameters:
 
-* Numeric  
-* TrueFalse  
-* String  
+* Numeric
+* TrueFalse
+* String
 
 Each of these types have one or two subtypes, **series** and **simple**, A simple way to see this will be; If a particular input parameter is constant it is **Simple**, for example ins a Moving average the length value use to calculate it will be a subtype **Simple** in other words `NumericSimple`, but the price, since this change or vary all the time, it will be define as subtype **Series**, that is why the price input will be `NumericSeries`.
 
@@ -35,7 +35,7 @@ Each of these types have one or two subtypes, **series** and **simple**, A simpl
 
 //a constant input value, example 10
 ConstantValue               ( NumericSimple ),
-//a Input that can change its value, like Close 
+//a Input that can change its value, like Close
 PriceSeriesValue            ( NumericSeries ),
 
 //TrueFalse Input Types
@@ -93,7 +93,7 @@ Inputs:
 
 ###  The variables
 
-the variables to be use in the logic will be 
+the variables to be use in the logic will be
 
 ```
 variables:
@@ -115,12 +115,12 @@ begin
     CloseValueSum =  CloseValueSum + Price[Counter];
 end;
 
-// calculate the average 
+// calculate the average
 if AverageLength <> 0  then
     AverageValue = CloseValueSum / AverageLength;
 ```
 
-### The return 
+### The return
 
 Now we need to store the result in the name of the function so we can use it in an indicator
 
@@ -130,17 +130,17 @@ _victor_movingAverge = AverageValue;
 
 ## Using the Function
 
-now we can call this function from other indicator, and the code for this indicator will be 
+now we can call this function from other indicator, and the code for this indicator will be
 
 ```
 Inputs:
     Price           ( Close ),
     AverageLength       ( 10 );
-    
-    
+
+
 variables:
     MovAvgResult        ( 0 );
-    
+
 
 //Call the function
 MovAvgResult = _victor_movingAverge( Price, AverageLength);

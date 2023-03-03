@@ -11,7 +11,7 @@
 I run into this library trying to understand `python-onvif-zeep-async` and in order to know a bit more i decided to check it.
 I haven't done anything with it yet, so i will leave just the first code developer shows in the documentation.
 
-```python 
+```python
 import httpx
 r = httpx.get('https://www.example.org/')
 r

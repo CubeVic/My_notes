@@ -14,7 +14,7 @@ Get the prices of the four metals:
 
 # Endpoints
 
-There are three endpoints 
+There are three endpoints
 
 1. **Get Metal Prices:** Get the prices of the metals
 2. **Get Requests Stats:** get the number of requests done in the day, week, and month.

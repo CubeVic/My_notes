@@ -25,7 +25,7 @@ The factors to determine the performance of the SoC are:
 2. ISP Capability including WDR, HDR, DOL. etc
 3. Encoding/Decoding capability
 4. Maximum resolution and frame rate
-5. Network and other I/O peripheral interfaces  
+5. Network and other I/O peripheral interfaces
 
 If we know the SoC we will be able to compare different cameras that share similar features.
 
@@ -35,8 +35,8 @@ The most popular manufactures are:
 - Hisilicon
 - Texas Instruments
 
->Hikvision and Dahua use Ambarella and Hisilicon 
-> 
+>Hikvision and Dahua use Ambarella and Hisilicon
+>
 > Uniview and Tiandy use Hisilicon
 
 in 2020 due to the NDAA some manufacture move away from SoC produce in China such as Hisilicon.
@@ -68,8 +68,8 @@ in 2020 due to the NDAA some manufacture move away from SoC produce in China suc
 |Anyka|	AK3918|	H.264 720P@30fps|
 |Ingenic|	T10|	Up to H.264 960P@40fps
 |   |	T20	|Up to H.264 1080P@60fps|
-|MStar (Media Tek)	|MC313E|	
-|   |	MC316D|	
+|MStar (Media Tek)	|MC313E|
+|   |	MC316D|
 |Fullhan	| 8538M	|HD Analog@2M/4M/5M|
 |   |	FH8536|	720P@60/50/30/25 1080P@30/25|
 |   |	FH8532|	720P@60/50/30/25|

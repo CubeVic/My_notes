@@ -21,7 +21,7 @@ From [Sony official documentation](https://www.sony-semicon.co.jp/e/products/IS/
 
 ## What is DOL-HDR?
 
-The DOL-HDR or Digital Overlap High Dynamic Range is a technology for image processing of subjects with high contrast. It synthesizes different exposure conditions into a single image so that both dark and bright data can be seen at the same time. 
+The DOL-HDR or Digital Overlap High Dynamic Range is a technology for image processing of subjects with high contrast. It synthesizes different exposure conditions into a single image so that both dark and bright data can be seen at the same time.
 
 ![products_camera_technology01.jpg](images/products_camera_technology01.jpg)
 

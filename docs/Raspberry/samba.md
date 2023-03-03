@@ -4,9 +4,9 @@ By using samba in the raspberry we can share directories in a way they can be ac
 
 This is probably the Easiest way to set up a NAS, although it exists other alternatives Samba is the one that i have use the most.
 
-## Setting the samba server 
+## Setting the samba server
 
-### Initial steps 
+### Initial steps
 
 * Before set up the SMB share we need to be sure that the Raspberry is up-to-date.
 
@@ -27,7 +27,7 @@ sudo apt-get install samba samba-common-bin
 mkdir /home/pi/shared
 ```
 
-* To share the folder with the samba software we need to modify the **smb.conf** file 
+* To share the folder with the samba software we need to modify the **smb.conf** file
 
 ```bash
 sudo nano /etc/samba/smb.conf
@@ -59,7 +59,7 @@ In this case we will create a password that follow the default password of raspb
 sudo smbpasswd -a pi
 ```
 
-we need to restart the server now 
+we need to restart the server now
 
 ```bash
 sudo systemctl restart smbd
@@ -69,9 +69,9 @@ sudo systemctl restart smbd
 
 ### Connecting to the Samba server
 
-In this case the configuration will be different in windows  and Windows 
+In this case the configuration will be different in windows  and Windows
 
-#### Windows 
+#### Windows
 
 * File Explorer > Computer > Map network drive
 

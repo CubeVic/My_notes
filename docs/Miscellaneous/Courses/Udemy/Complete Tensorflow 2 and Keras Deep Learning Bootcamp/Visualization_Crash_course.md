@@ -1,27 +1,27 @@
 Here we mentioned the very basics for the visualization tools, just enough to understand how Pandas plotting and Seaborn are built on top of Matplotlib.
 
-##Matplotlib 
+##Matplotlib
 
 It is common to create an alias for Matplotlib as `plt` and that will in this way:
 
-```python 
+```python
 import matplotlib.pyplot as plt
-``` 
+```
 
 Now, since Jupyter notebooks is the most common tool it is important to mentione that we need to add an extra line after importing matplotlib.pyplot. so a common import session of a file will look like:
 
-```python 
+```python
 import numpy as np
 import pandas as pd
 
 import matplotlib,pyplot as plt
-``` 
+```
 
 ### Simple plot
 
 To simple plot we can use `plot(x,y)` but in jupyter notbooks we can add a ";" at the end so the matplotlib text wont be display
 
-```python 
+```python
 import numpy as np
 import pandas as pd
 
@@ -32,40 +32,40 @@ y = [100,200,300]
 
 plt.plot(x,y)
 #plt.plot(x,y);
-``` 
+```
 
 > in a .py file we will need to add `plt.show()` in order to see the graph
 
 we will create a DataFrame that we can use to plot
 
-```python 
+```python
 housing = pd.DataFrame({'rooms':[1,1,2,2,2,3,3,3],
                        'price':[100,120,190,200,230,310,330,305]})
-``` 
+```
 ![Visualization](images/visualization_001.png){: .center}
 
 
-If we use the normal plot this will display some straight line but if we use the `scatter` we will have dots in the x and Y points 
+If we use the normal plot this will display some straight line but if we use the `scatter` we will have dots in the x and Y points
 
-```python 
+```python
  plt.scatter(housing['rooms'],housing['price'])
-``` 
+```
 
 ![Visualization](images/visualization_002.png){: .center}
 
 
-#### Adding title and name to the axis 
+#### Adding title and name to the axis
 
 1. we draw the plot `plt.plot(x,y)`
 2. we put the title `plt.title('title')`
 3. we name the axis `plt.xlabel('X Label'), plt.ylabel('Y Label')`
 
-```python 
+```python
 plt.plot(x,y)
 plt.title('Title')
 plt.xlabel('X Label')
 plt.ylabel('Y Label')
-``` 
+```
 
 ![Visualization](images/visualization_003.png){: .center}
 
@@ -75,7 +75,7 @@ plt.ylabel('Y Label')
 We can limit or expand the limit of the graphic, in this case we want the previous plot axis to start 0 for X and 100 for Y and finish at 2 for X and 30 for Y.
 
 
-```python 
+```python
 ptl.plot(x,y)
 
 #axis and ticks
@@ -86,16 +86,16 @@ plt.ylin(100,300)
 plt.title('Title')
 plt.xlabel('X Label')
 plt.ylabel('Y Label')
-``` 
+```
 
 ![Visualization](images/visualization_004.png){: .center}
 
 
 #### Changing the markers
 
-We can change the color and style of the line, but also we can change the style of the markets 
+We can change the color and style of the line, but also we can change the style of the markets
 
-```python 
+```python
 ptl.plot(x,y,color='red', marker='o', markersize=20,linestyle='--')
 
 # Axis and Ticks
@@ -107,14 +107,14 @@ plt.title('Title')
 plt.xlabel('X label')
 plt.ylabel('y label')
 
-``` 
+```
 
 ![Visualization](images/visualization_005.png){: .center}
 
 
 ## Seaborn
 
-Seaborn is a library on top of Matplotlib that allow the creation of different charts and graphics with less code 
+Seaborn is a library on top of Matplotlib that allow the creation of different charts and graphics with less code
 
 
 for the examples we will use a Csv file
@@ -132,50 +132,50 @@ df.head()
 
 ### Distribution plots
 
-```python 
+```python
 sns.distplot(df['age'])
-``` 
+```
 ![Visualization](images/visualization_007.png){: .center}
 
 ####Resizing and modify seaborn plots
 
 for resizing
 
-```python 
+```python
 plt.figure(figsize=(12,8))
 sns.distplot(df['age'])
-``` 
+```
 
 to remove the KDE (Kernel Density Estimates)
 
-```python 
+```python
 sns.distplot(df['age'],kde=False)
-``` 
+```
 
 ![Visualization](images/visualization_008.png){: .center}
 
-similar to remove the histogram 
+similar to remove the histogram
 
-```python 
+```python
 sns.distplot(df['age'],hist=False)
-``` 
+```
 ![Visualization](images/visualization_009.png){: .center}
 
 
 to change the color
 
-```python 
+```python
 sns.distplot(df['age'],kde=False,bins=40,color='red')
-``` 
+```
 
 ![Visualization](images/visualization_010.png){: .center}
 
 we can limit the axis in seaborn as we limit the axis in matplotlib
 
-```python 
+```python
 sns.distplot(df['age'],kde=False,bins=40,color='green')
 plt.xlim(50,60)
-``` 
+```
 ![Visualization](images/visualization_011.png){: .center}
 
 ### Count plot
@@ -184,28 +184,28 @@ From the same csv file
 
 ![Visualization](images/visualization_012.png){: .center}
 
-```python 
+```python
 sns.countplot(x='sex',data=df)
-``` 
+```
 ![Visualization](images/visualization_013.png){: .center}
 
-```python 
+```python
 sns.countplot(x='cp',data=df)
-``` 
+```
 ![Visualization](images/visualization_014.png){: .center}
 
-and we can use `hue` to add more information 
+and we can use `hue` to add more information
 
-```python 
+```python
 sns.countplot(x='cp',data=df,hue='sex')
-``` 
+```
 ![Visualization](images/visualization_015.png){: .center}
 
 we can change the color ( there are predefine color [colormaps](https://matplotlib.org/3.1.0/tutorials/colors/colormaps.html))
 
-```python 
+```python
 sns.countplot(x='cp',data=df,palette='terrain')
-``` 
+```
 
 ![Visualization](images/visualization_016.png){: .center}
 
@@ -213,17 +213,17 @@ sns.countplot(x='cp',data=df,palette='terrain')
 
 ![Visualization](images/visualization_017.png){: .center}
 
-```python 
+```python
 sns.boxplot(x='target',y='thalach',data=df)
-``` 
+```
 
 ![Visualization](images/visualization_018.png){: .center}
 
 and in the same way that with count plots we can use the hue to add more information to the Box plot
 
-```python 
+```python
 sns.boxplot(x='target',y='thalach',data=df, hue='sex')
-``` 
+```
 
 ![Visualization](images/visualization_019.png){: .center}
 
@@ -231,30 +231,29 @@ sns.boxplot(x='target',y='thalach',data=df, hue='sex')
 This kind of plot is use to display the relationship between two continuous features
 we can use the `hue` and `size` to add extra dimension, and use `palette` to change the color [more info](https://seaborn.pydata.org/generated/seaborn.scatterplot.html)
 
-```python 
+```python
 sns.scatterplot(x='chol',y='trestbps',data=df,hue='sex',size='age')
-``` 
+```
 ![Visualization](images/visualization_020.png){: .center}
 
-## Pairplots 
+## Pairplots
 
 Pairplots perform scatterplots and histograms for every single column in your data set. This means it could be a huge plot for large datasets! Use with caution, as it could take a long time for large datasets and the figures could be too small! [more info](https://seaborn.pydata.org/generated/seaborn.pairplot.html)
 
-```python 
+```python
 iris = pd.read_csv('../DATA/iris.csv')
 iris.head()
-``` 
+```
 ![Visualization](images/visualization_021.png){: .center}
 
-```python 
+```python
 sns.pairplot(iris)
-``` 
+```
 ![Visualization](images/visualization_022.png){: .center}
 
 or just show the KDEs instead of histograms
 
-```python 
+```python
 sns.pairplot(iris, hue="species")
-``` 
+```
 ![Visualization](images/visualization_023.png){: .center}
-

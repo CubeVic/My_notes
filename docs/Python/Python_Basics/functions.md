@@ -15,12 +15,12 @@ check the code
 egg_bag = 0
 
 def buy_eggs()
-    egg_bag += 12 
+    egg_bag += 12
 
 buy_eggs()
 ```
 
-This causes an UnboundLocalError, since Python doesn't allow functions to modify variables that are outside the function's scope. A better way would be to pass the variable as an argument and reassign it outside the function. 
+This causes an UnboundLocalError, since Python doesn't allow functions to modify variables that are outside the function's scope. A better way would be to pass the variable as an argument and reassign it outside the function.
 
 a better solution will be:
 
@@ -53,7 +53,7 @@ multiply = lambda x, y: x * y
 
 **Components of a Lambda Function**
 
-1. The `lambda` keyword is used to indicate that this is a lambda expression.  
+1. The `lambda` keyword is used to indicate that this is a lambda expression.
 2. Following `lambda` are one or more arguments for the anonymous function separated by commas, followed by a colon `:`. Similar to functions, the way the arguments are named in a lambda expression is arbitrary.
 3. Last is an expression that is evaluated and returned in this function. This is a lot like an expression you might see as a return statement in a function.
 
@@ -81,5 +81,3 @@ cities = ["New York City", "Los Angeles", "Chicago", "Mountain View", "Denver", 
 short_cities = list(filter(lambda name: len(name) < 10, cities))
 print(short_cities)
 ```
-
-

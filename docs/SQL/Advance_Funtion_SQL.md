@@ -6,7 +6,7 @@ If no conditions are true, it will return the value in the ELSE clause.
 
 If there is no ELSE part and no conditions are true, it returns NULL.
 
-### **Syntax CASE** 
+### **Syntax CASE**
 
 ```SQL
 CASE
@@ -17,15 +17,15 @@ CASE
 END;
 ```
 
-**Example** 
+**Example**
 
 ```SQL
-SELECT CASE 
-        WHEN A + B > C AND A + C > B AND B + C > A THEN CASE 
-            WHEN A = B AND B = C THEN 'Equilateral' 
-            WHEN A = B OR B = C OR A = C THEN 'Isosceles' 
-            ELSE 'Scalene' END 
-        ELSE 'Not A Triangle' END 
+SELECT CASE
+        WHEN A + B > C AND A + C > B AND B + C > A THEN CASE
+            WHEN A = B AND B = C THEN 'Equilateral'
+            WHEN A = B OR B = C OR A = C THEN 'Isosceles'
+            ELSE 'Scalene' END
+        ELSE 'Not A Triangle' END
 FROM TRIANGLES;
 ```
 
@@ -63,7 +63,7 @@ One way to set a user-defined variable is by issuing a `SET` statement:
 SET @var_name = expr [, @var_name = expr] ...
 ```
 
-For `SET`, either `=` or `:=` can be used as the assignment operator.  
+For `SET`, either `=` or `:=` can be used as the assignment operator.
 
 When making an assignment in this way, you must use `:=` as the assignment operator; `=` is treated as the comparison operator in statements other than `SET`.
 
@@ -75,7 +75,7 @@ SET @dRow = 0, @pRow = 0, @sRow = 0, @aRow = 0;
 
 SELECT MIN(Doctor), MIN(Professor), MIN(Singer), MIN(Actor)
 FROM (
-    SELECT  CASE Occupation    
+    SELECT  CASE Occupation
                 WHEN 'Doctor'       THEN @dRow := @dRow + 1
                 WHEN 'Professor'    THEN @pRow := @pRow + 1
                 WHEN 'Singer'       THEN @sRow := @sRow + 1

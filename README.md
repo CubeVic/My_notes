@@ -2,7 +2,7 @@
 ![logo_Banner](Hero_Image_notes.png)
 
 I'm victor,
-These are my notes. I don't expect many people, other than me, to see these notes. Nonetheless, if you are reading, welcome, here I write, collect, and sometimes copy information about:  
+These are my notes. I don't expect many people, other than me, to see these notes. Nonetheless, if you are reading, welcome, here I write, collect, and sometimes copy information about:
 
 ## Concepts or Tools
 
@@ -18,8 +18,8 @@ These are my notes. I don't expect many people, other than me, to see these note
 
 ## Other Interest
 
-1. Raspberry pi.  
-2. 3d Printer.  
+1. Raspberry pi.
+2. 3d Printer.
 
 You can take a look at the live site here: https://cubevic.github.io/My_notes/
 

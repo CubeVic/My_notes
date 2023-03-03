@@ -1,13 +1,13 @@
 # Random notes about SQL ( mostly MySQL)
 
-## How to get different (unique) results 
+## How to get different (unique) results
 
 ```SQL
 SELECT DISTINCT column-name
   FROM table-name
 ```
 
-## How to count different (unique) results 
+## How to count different (unique) results
 
 ```SQL
 SELECT COUNT (DISTINCT column-name)

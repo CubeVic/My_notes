@@ -12,14 +12,14 @@ import csv
 
 the CVS module includes all necessary methods built-in some of which are:
 
-* csv.reader  
-* csv.writer  
-* csv.DictReader  
-* csv.DictWriter  
+* csv.reader
+* csv.writer
+* csv.DictReader
+* csv.DictWriter
 
 with this method we can edit, modify and manipulate the stored data in a csv file.
 
-### Initial preparation 
+### Initial preparation
 
 First we will need to prepare the file so it can be run with `python namefile.py` for that we  add the `if __name__ == "__main__"`
 
@@ -179,7 +179,7 @@ def writer(header, data, filename, option):
 	...
 ```
 
-2. Inside we are going to create a decision loop to execute some part of the code depending of the the parameter **option** 
+2. Inside we are going to create a decision loop to execute some part of the code depending of the the parameter **option**
 
 ```python
 def writer(header, data, filename, option):
@@ -200,7 +200,7 @@ def writer(header, data, filename, option):
 
 More information about `DictWriter` [here](https://docs.python.org/3/library/csv.html#csv.DictWriter.writeheader) but basically here is use to write a row with the field names.
 
-so with all this changes we will have a script that look like this: 
+so with all this changes we will have a script that look like this:
 
 ```python
 import csv
@@ -248,13 +248,13 @@ if __name__ = "__main__":
 
 ```
 
-## The xlsx File 
+## The xlsx File
 
 
 This will be an enhancement of the previous part, that doesn't mean previous part is not a solution, just that this solution will include [*openpyxl*](https://openpyxl.readthedocs.io/en/stable/)  which is a all in one solution to work with worksheets, loading, updating m renaming and deleting them.
 
 
-### Basic terminology 
+### Basic terminology
 
 * WorkBook is the name for a an Excel file in `openpyxl`.
 * A workbook consist of sheets( default is 1 sheet). sheets are referenced by their names.
@@ -289,7 +289,7 @@ wb = Workbook()
 ws = wb.active
 ```
 
-by default the name of the sheet will be "sheet" and a number, so the first sheet will be "sheet", the second "Sheet1", etc. 
+by default the name of the sheet will be "sheet" and a number, so the first sheet will be "sheet", the second "Sheet1", etc.
 
 Now, we have the workbook and the first sheet, what about the second sheet?, To create the second sheet and all the following sheets, we use `create_sheet("name of the sheet")`
 
@@ -330,7 +330,7 @@ from openpyxl import Workbook
 # Creating the workbook
 wb = Workbook()
 
-# the name of the file 
+# the name of the file
 dest_filename = 'test_openpyxl.xlsx'
 
 ws = wb.active
@@ -427,7 +427,7 @@ for x in all_sheets:
 ![create_excel_files_007](images/create_excel_files_007.png){: .center}
 
 
-### Rudimentary way to find content of a column 
+### Rudimentary way to find content of a column
 
 The idea will be find the content of the column named "telephone" and display its content.
 For that we will start by creating a function that will hold the loops, this loops will look row by row and column by column until we found the column named "telephone"
@@ -477,9 +477,9 @@ for sheet in all_sheets:
 
 ![create_excel_files_008](images/create_excel_files_008.png){: .center}
 
-so, with few modification and the creation of the second functions we have 
+so, with few modification and the creation of the second functions we have
 
-```python 
+```python
 
 import openpyxl as opxl
 
@@ -494,7 +494,7 @@ all_sheets = the_File.sheetnames
 def find_specific_cell():
 	for row in range(1, current_sheet.max_row + 1):
 		for column in columns_marks:
-			cell_name = "{}{}".format(column, row) 
+			cell_name = "{}{}".format(column, row)
 			if  current_sheet[cell_name].value == "telephone":
 				return (cell_name,column)
 
@@ -514,5 +514,3 @@ for sheet in all_sheets:
 
 
 ![create_excel_files_009](images/create_excel_files_009.png){: .center}
-
-

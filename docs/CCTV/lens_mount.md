@@ -2,7 +2,7 @@
 
 ## C/CS-Mount Lenses
 
-A C-mount is a type of mount typically used on CCTV cameras. C-mount provides a male thread, which mates with a female thread on the camera. 
+A C-mount is a type of mount typically used on CCTV cameras. C-mount provides a male thread, which mates with a female thread on the camera.
 
 The common threats are:
 * 25.4 mm in diameter.
@@ -22,7 +22,7 @@ It is not an easy way to use a CS-Mount lens on C-Mount. The main reason is the 
 
 Another typical lens use in CCTV is the M12 or S-Mount lens.
 
-M12 because the lens threat is 12mm, and S stands for Small or short. This lens is shorter or compact comparing with the C/CS-Mount lens because of the size these types of lens are popular on CCTV cameras. 
+M12 because the lens threat is 12mm, and S stands for Small or short. This lens is shorter or compact comparing with the C/CS-Mount lens because of the size these types of lens are popular on CCTV cameras.
 
 ![adapter](images/camera-cs-m12-lens-adapter-arducam_-1024x724.jpg)
 
@@ -34,7 +34,7 @@ Most of these mounts are related to a specific brand of camera or the type of th
 
 ### Cine Camera Lens
 
-1. EF-Mount (Electronic Focus Mount). 
+1. EF-Mount (Electronic Focus Mount).
 2. PL-Mount (Positive Lock Mount).
 3. F-Mount (Format SLR Mount).
 

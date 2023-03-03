@@ -2,7 +2,7 @@
 
 ![No_logo](images/onvif_zeep_async.png){: .center}
 
->ONVIF Client Implementation in Python 3 (using https://github.com/mvantellingen/python-zeep instead of suds as SOAP client) 
+>ONVIF Client Implementation in Python 3 (using https://github.com/mvantellingen/python-zeep instead of suds as SOAP client)
 
 1. [Pypi page](https://pypi.org/project/onvif-zeep-async/)
 2. [Github page](https://github.com/hunterjm/python-onvif-zeep-async)

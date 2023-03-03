@@ -4,7 +4,7 @@ Iterables are objects that can return one of their elements at a time, such as a
 
 An iterator is an object that represents a stream of data. This is different from a list, which is also an iterable, but is not an iterator because it is not a stream of data.
 
-Generators are a simple way to create iterators using functions. You can also define iterators using classes, here [documentation](https://docs.python.org/3/tutorial/classes.html#iterators) about it 
+Generators are a simple way to create iterators using functions. You can also define iterators using classes, here [documentation](https://docs.python.org/3/tutorial/classes.html#iterators) about it
 
 Here is an example of a generator function called my_range, which produces an iterator that is a stream of numbers from 0 to (x - 1).
 
@@ -45,7 +45,7 @@ lessons = ["Why Python Programming", "Data Types and Operators", "Control Flow",
 for i, lesson in my_enumerate(lessons, 1):
     print("Lesson {}: {}".format(i, lesson))
 ```
- 
+
 We need to output:
 
 ```
@@ -67,12 +67,12 @@ def my_enumerate(iterable, start=0):
    for item in iterable:
     	yield count, item
     	count += 1
-   
+
 for i, lesson in my_enumerate(lessons, 1):
     print("Lesson {}: {}".format(i, lesson))
 ```
 
-## Chunker 
+## Chunker
 If you have an iterable that is too large to fit in memory in full (e.g., when dealing with large files), being able to take and use chunks of it at a time can be very valuable.
 
 Implement a generator function, `chunker`, that takes in an iterable and yields a chunk of a specified size at a time.

@@ -20,7 +20,7 @@ G1 X-10 Y4.5 Z0.5 F30000.0 E 0.0377
 
 The values after the code are the arguments, it start with a English letter and then the value:
 
-* `XYZ` Are values for the Cartesian coordinates 
+* `XYZ` Are values for the Cartesian coordinates
 * `F` is the Feed rate
 * `E`  is the Extrusion
 
@@ -71,7 +71,7 @@ With `G20` you set the units to mm and `G21` to Inches
 
 ### `G28` "Homing"
 
-Send the printing head to the home position 
+Send the printing head to the home position
 
 ### `G90` "absolute mode"
 
@@ -93,7 +93,7 @@ G91
 G0 x10
 ```
 
-the print head will move 10 units in the X direction, finishing at X=20. 
+the print head will move 10 units in the X direction, finishing at X=20.
 
 ### `G2` and `G3` "clockwise or anticlockwise motion"
 
@@ -140,7 +140,7 @@ M190 S100
 ```
 
 1. `G90` Set the coordinate as absolute
-2. `M82` Put the E axis into absolute mode independent of the other axes. 
+2. `M82` Put the E axis into absolute mode independent of the other axes.
 3. `M106 S0` turn fan on and set speed to 0
 4. `M140 S100` set Bed temperature as 100 degrees
 5. `M190 S100` Wait until the temperature is 100

@@ -4,11 +4,11 @@
 
 I will divide the process into seven steps.
 
-## Step 1: Preparing the raspberry 
+## Step 1: Preparing the raspberry
 
 ### Expanding filesystem on the Raspberry Pi
 
-The raspberry won't be using all the space available. It will have a directory structure by default. The first step will be to expand that directory to get more space  in the micro-sd card: 
+The raspberry won't be using all the space available. It will have a directory structure by default. The first step will be to expand that directory to get more space  in the micro-sd card:
 
 #### Access the raspberry configuration menu
 To access the configuration, I need to type on the terminal the following command.
@@ -16,8 +16,8 @@ To access the configuration, I need to type on the terminal the following comman
 sudo raspi-config
 ```
 
-After entering the command, a configuration menu appears on the screen. 
-This menu allows us to change some configurations. 
+After entering the command, a configuration menu appears on the screen.
+This menu allows us to change some configurations.
 Using the arrow keys,  I navigate to `Advance Options`.
 
 ![001_Advance_Options](images/001_Advance_Options.jpg)
@@ -35,7 +35,7 @@ After the reboot, the available space will expand. To verify it, I use the comma
 
 ![003_df_command](images/003_df_command.png)
 
-### Deleting software unused to release more space. 
+### Deleting software unused to release more space.
 Depending on the OS installed, might not be enough space. I can get some extra space if I remove some of the software installed. To remove the software, I can use the terminal. I will remove libreOffice and Wolfram engine.
 
 ```
@@ -45,27 +45,27 @@ sudo apt-get clean
 sudo apt-get autoremove
 ```
 > dpkg-query -l  will provide a list all the programs installed, I can remove the following:
-> * wolfram-engine.  
-> * bluej.  
-> * greenfoot.  
-> * nodered.  
-> * nuscratch.  
-> * scratch.  
-> * sonic-pi.  
-> * libreoffice.  
-> * claws-mail.  
-> * claws-mail-i18n.  
-> * minecraft-pi.  
-> * python-pygame.  
+> * wolfram-engine.
+> * bluej.
+> * greenfoot.
+> * nodered.
+> * nuscratch.
+> * scratch.
+> * sonic-pi.
+> * libreoffice.
+> * claws-mail.
+> * claws-mail-i18n.
+> * minecraft-pi.
+> * python-pygame.
 
 ### Increasing memory assigned to GPU
 
 The raspberry pi share the RAM with CPU and GPU, for the early models like  pi2 and pi3 the memory assigned to GPU is 64Mbytes ( for pi4 is 76MBytes). I'm going to use the raspberry with a project that include vision, so, I will increase the memory assigned to the GPU to 128Mbytes.
 
-1. Go to menu>preference>Raspberry pi configuration 
-2. navigate to performance tab 
+1. Go to menu>preference>Raspberry pi configuration
+2. navigate to performance tab
 3. Change value assigned to the GPU
-4. reboot 
+4. reboot
 
 ![Raspberry_pi](images/raspberry_GPU.png)
 
@@ -86,8 +86,8 @@ sudo reboot
 
 Before to continue with the installation I need to make sure what os I'm using. Using the commands `uname -a` i can get information about the OS.
 
-* aarch64 ---> 64-bit OS.  
-* armv7l  ---> 32-bit OS.  
+* aarch64 ---> 64-bit OS.
+* armv7l  ---> 32-bit OS.
 
 > The steps I follow are for 32-bit.
 
@@ -99,7 +99,7 @@ I start by updating and upgrading the system.
 sudo apt-get update && sudo apt-get upgrade
 ```
 
->This process might take some time 
+>This process might take some time
 
 ### Install developer tools (CMake)
 After updating, I have to include the developer tools on [CMake](https://cmake.org/)
@@ -129,7 +129,7 @@ Toolkits are relevant when you are using a system like linux, this tool kits are
 
 These are toolkits developer use to create the structure and how the app looks and feel, we are talking about the buttons, toolbars and menus we use in the apps. These toolkits are a time-saver for developers, since we don't need to waste time designing and writing code for evey shape, size and look of every button. we can let the toolkit take care of it.
 
-They are different, however I won't dig deeper in that difference, I will use Qt just because that is what I feel more comfortable. 
+They are different, however I won't dig deeper in that difference, I will use Qt just because that is what I feel more comfortable.
 
 ### Install GTK
 >[GTK](https://www.gtk.org/) is a UI tool kit used to render the different components for a UI.
@@ -150,7 +150,7 @@ sudo apt-get install qt5-default
 
 ## Step 3: Download OpenCV 4 for Raspberry pi
 
-There are two things to download, the `opencv` and the `opencv_contrib`. 
+There are two things to download, the `opencv` and the `opencv_contrib`.
 Bellow the code to download the libraries and unzip them. It is a good practice to rename the directories.
 
 ```
@@ -161,7 +161,7 @@ wget -O opencv_contrib.zip https://github.com/opencv/opencv_contrib/archive/4.5.
 
 I ran into some issue using `wget`, so i had two options, download the zip from github directly, see links bellow, or use `curl`. I used `curl`.
 
-* [opencv](https://github.com/opencv/opencv/releases)  
+* [opencv](https://github.com/opencv/opencv/releases)
 * [opencv_contrib](https://github.com/opencv/opencv_contrib/releases)
 
 ```commandline
@@ -177,7 +177,7 @@ mv opencv-4.5.3 opencv
 mv opencv_contrib-4.5.3 opencv_contrib
 ```
 > `opencv_contrib`  is a repository with additional or extra modules to increase the functionality.
- 
+
 ## Step 4: Python 3 virtual environment for OpenCV 4
 
 The first step is to check the current version of python 3 (do not use python2), after the version we will need to locate it, and finally we added to the `~/.bashrc` file.
@@ -217,17 +217,17 @@ Now, we can create the virtual environment with the name `cv453`
 ```
 mkvirtualenv cv453
 ```
-If there are no errors, we should get something like 
+If there are no errors, we should get something like
 ![virtual_environment](images/virtual_enviroment.png)
 
-There is an extra step, that is the installation  of Numpy, this is important otherwise Cmake won't compile 
+There is an extra step, that is the installation  of Numpy, this is important otherwise Cmake won't compile
 ```
 pip3 install numpy
 ```
 
 ### Step 5: Cmake and compile OpenCV 4
 
-#### Increase the SWAP on the raspberry 
+#### Increase the SWAP on the raspberry
 This increase will help with the compilation and avoid issues with memory.
 
 open `/etc/dphys-swapfile` :
@@ -289,23 +289,23 @@ cmake -D CMAKE_BUILD_TYPE=RELEASE \
 -D BUILD_EXAMPLES=OFF ..
 ```
 The `\` indicate that all is one single line, the space before '-D' is a single space.
->IMPORTANT the  `..` at the end is not a type, it is a way to tell CMAke where is the CmakeList.txt file 
+>IMPORTANT the  `..` at the end is not a type, it is a way to tell CMAke where is the CmakeList.txt file
 
 ##### Example of missing the `..` at the end
-if you miss the last two dots you will get an error message 
+if you miss the last two dots you will get an error message
 ![Cmake error](images/Cmake_error.png)
 
 Once it is finished, it is a good idea to check the result or the output:
-> I didn't add the whole answer, I focus in the report 
+> I didn't add the whole answer, I focus in the report
 
 ```
 General configuration for OpenCV 4.4.0 =====================================
 --   Version control:               unknown
--- 
+--
 --   Extra modules:
 --     Location (extra):            /home/pi/opencv_contrib/modules
 --     Version control (extra):     unknown
--- 
+--
 --   Platform:
 --     Timestamp:                   2021-09-29T09:05:47Z
 --     Host:                        Linux 5.10.60-v7+ armv7l
@@ -313,12 +313,12 @@ General configuration for OpenCV 4.4.0 =====================================
 --     CMake generator:             Unix Makefiles
 --     CMake build tool:            /usr/bin/make
 --     Configuration:               RELEASE
--- 
+--
 --   CPU/HW features:
 --     Baseline:                    VFPV3 NEON
 --       requested:                 DETECT
 --       required:                  VFPV3 NEON
--- 
+--
 --   C/C++:
 --     Built as dynamic libs?:      YES
 --     C++ standard:                11
@@ -328,13 +328,13 @@ General configuration for OpenCV 4.4.0 =====================================
 --     C Compiler:                  /usr/bin/cc
 --     C flags (Release):           -fsigned-char -W -Wall -Werror=return-type -Werror=non-virtual-dtor -Werror=address -Werror=sequence-point -Wformat -Werror=format-security -Wmissing-declarations -Wmissing-prototypes -Wstrict-prototypes -Wundef -Winit-self -Wpointer-arith -Wshadow -Wuninitialized -Winit-self -Wno-comment -Wimplicit-fallthrough=3 -Wno-strict-overflow -fdiagnostics-show-option -pthread -fomit-frame-pointer -ffunction-sections -fdata-sections  -mfpu=neon -fvisibility=hidden -O3 -DNDEBUG  -DNDEBUG
 --     C flags (Debug):             -fsigned-char -W -Wall -Werror=return-type -Werror=non-virtual-dtor -Werror=address -Werror=sequence-point -Wformat -Werror=format-security -Wmissing-declarations -Wmissing-prototypes -Wstrict-prototypes -Wundef -Winit-self -Wpointer-arith -Wshadow -Wuninitialized -Winit-self -Wno-comment -Wimplicit-fallthrough=3 -Wno-strict-overflow -fdiagnostics-show-option -pthread -fomit-frame-pointer -ffunction-sections -fdata-sections  -mfpu=neon -fvisibility=hidden -g  -O0 -DDEBUG -D_DEBUG
---     Linker flags (Release):      -Wl,--gc-sections -Wl,--as-needed  
---     Linker flags (Debug):        -Wl,--gc-sections -Wl,--as-needed  
+--     Linker flags (Release):      -Wl,--gc-sections -Wl,--as-needed
+--     Linker flags (Debug):        -Wl,--gc-sections -Wl,--as-needed
 --     ccache:                      NO
 --     Precompiled headers:         NO
 --     Extra dependencies:          dl m pthread rt
 --     3rdparty dependencies:
--- 
+--
 --   OpenCV modules:
 --     To be built:                 aruco bgsegm bioinspired calib3d ccalib core datasets dnn dnn_objdetect dnn_superres dpm face features2d flann freetype fuzzy gapi hfs highgui img_hash imgcodecs imgproc intensity_transform line_descriptor ml objdetect optflow phase_unwrapping photo plot python2 python3 quality rapid reg rgbd saliency shape stereo stitching structured_light superres surface_matching text tracking ts video videoio videostab xfeatures2d ximgproc xobjdetect xphoto
 --     Disabled:                    world
@@ -343,14 +343,14 @@ General configuration for OpenCV 4.4.0 =====================================
 --     Applications:                perf_tests apps
 --     Documentation:               NO
 --     Non-free algorithms:         YES
--- 
---   GUI: 
+--
+--   GUI:
 --     GTK+:                        YES (ver 3.24.5)
 --       GThread :                  YES (ver 2.58.3)
 --       GtkGlExt:                  NO
 --     VTK support:                 NO
--- 
---   Media I/O: 
+--
+--   Media I/O:
 --     ZLib:                        /usr/lib/arm-linux-gnueabihf/libz.so (ver 1.2.11)
 --     JPEG:                        /usr/lib/arm-linux-gnueabihf/libjpeg.so (ver 62)
 --     WEBP:                        build (ver encoder: 0x020f)
@@ -362,7 +362,7 @@ General configuration for OpenCV 4.4.0 =====================================
 --     SUNRASTER:                   YES
 --     PXM:                         YES
 --     PFM:                         YES
--- 
+--
 --   Video I/O:
 --     DC1394:                      NO
 --     FFMPEG:                      YES
@@ -373,44 +373,44 @@ General configuration for OpenCV 4.4.0 =====================================
 --       avresample:                NO
 --     GStreamer:                   NO
 --     v4l/v4l2:                    YES (linux/videodev2.h)
--- 
+--
 --   Parallel framework:            pthreads
--- 
+--
 --   Trace:                         YES (with Intel ITT)
--- 
+--
 --   Other third-party libraries:
 --     Lapack:                      NO
 --     Eigen:                       NO
 --     Custom HAL:                  YES (carotene (ver 0.0.1))
 --     Protobuf:                    build (3.5.1)
--- 
+--
 --   OpenCL:                        YES (no extra features)
 --     Include path:                /home/pi/opencv/3rdparty/include/opencl/1.2
 --     Link libraries:              Dynamic load
--- 
+--
 --   Python 2:
 --     Interpreter:                 /usr/bin/python2.7 (ver 2.7.16)
 --     Libraries:                   /usr/lib/arm-linux-gnueabihf/libpython2.7.so (ver 2.7.16)
 --     numpy:                       /usr/lib/python2.7/dist-packages/numpy/core/include (ver 1.16.2)
 --     install path:                lib/python2.7/dist-packages/cv2/python-2.7
--- 
+--
 --   Python 3:
 --     Interpreter:                 /home/pi/cv/bin/python3 (ver 3.7.3)
 --     Libraries:                   /usr/lib/arm-linux-gnueabihf/libpython3.7m.so (ver 3.7.3)
 --     numpy:                       /home/pi/cv/lib/python3.7/site-packages/numpy/core/include (ver 1.21.2)
 --     install path:                lib/python3.7/site-packages/cv2/python-3.7
--- 
+--
 --   Python (for build):            /usr/bin/python2.7
--- 
---   Java:                          
+--
+--   Java:
 --     ant:                         NO
 --     JNI:                         NO
 --     Java wrappers:               NO
 --     Java tests:                  NO
--- 
+--
 --   Install to:                    /usr/local
 -- -----------------------------------------------------------------
--- 
+--
 -- Configuring done
 -- Generating done
 -- Build files have been written to: /home/pi/opencv/build
@@ -436,8 +436,8 @@ sudo make install
 sudo ldconfig
 ```
 
-#### DON'T FORGET  to reset the SWAP size 
- open the file with `/etc/dphys-swapfile` and reset `CONF_SWAPSIZE` to 100MB, reset the swap service 
+#### DON'T FORGET  to reset the SWAP size
+ open the file with `/etc/dphys-swapfile` and reset `CONF_SWAPSIZE` to 100MB, reset the swap service
 
 ```
 sudo /etc/init.d/dphys-swapfile stop
@@ -457,9 +457,9 @@ rm opencv_contrib.zip
 sudo reboot
 ```
 
-### Step 6: Link OpenCV to python virtual environment 
+### Step 6: Link OpenCV to python virtual environment
 
-This an important step if we use a virtual environment, otherwise the system won't be able to import openCV correctly 
+This an important step if we use a virtual environment, otherwise the system won't be able to import openCV correctly
 
 ```
 cd ~/.virtualenvs/cv453/lib/python3.7/site-packages
@@ -478,5 +478,3 @@ python
 >>> cv2.__version__
 
 ```
-
-

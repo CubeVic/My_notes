@@ -1,4 +1,4 @@
-## How to find the length of a string 
+## How to find the length of a string
 
 In this case, let say that we want to print the size or length of a string.
 
@@ -6,7 +6,7 @@ In this case, let say that we want to print the size or length of a string.
 SELECT CITY, LENGTH(CITY) FROM STATION ORDER BY LENGTH(CITY)
 ```
 
-## `LEFT()` and `RIGHT()` functions useful to make substrigns 
+## `LEFT()` and `RIGHT()` functions useful to make substrigns
 
 The `LEFT()` function extracts a number of characters from a string (starting from left.
 
@@ -41,7 +41,7 @@ FROM Customers;
 
 The CONCAT() function adds two or more expressions together.
 
-###**Syntax CONCAT()** 
+###**Syntax CONCAT()**
 ```SQL
 CONCAT(expression1, expression2, expression3,...)
 ```
@@ -52,7 +52,7 @@ SELECT CONCAT(Address, " ", PostalCode, " ", City) AS Address
 FROM Customers;
 ```
 
-##`CONCAT_WS()` function 
+##`CONCAT_WS()` function
 
 The `CONCAT_WS()` function adds two or more expressions together with a separator.
 

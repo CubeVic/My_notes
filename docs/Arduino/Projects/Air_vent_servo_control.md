@@ -7,7 +7,7 @@ The project is based on [Servo automated iris/aperture for airflow control](http
 ## First Sketch (Basic Control)
 
 ![002.servo_schema](images/002.servo_schema.jpg){: . center}
-First, we are going to create a sketch to control the servo. 
+First, we are going to create a sketch to control the servo.
 It will move 180 degrees right, later 180 left.
 
 The code will be as follow:
@@ -41,8 +41,8 @@ void loop() {
 }
 ```
 
-1. We are going to import the library `#include <Servo.h>`  
-2. we are going to give a name to the servo, in this case, "servo_air_vent" `Servo servo_air_vent;`  
-3. we define the initial position `int servo_position = 0;`  
-4. in the `setup` block we tell Arduino where the servo is connected `Servo_Air_vent.attach (9);`  
-5. In the `loop` block we create 2 `for` that will move the servo to the right and later to the left  
+1. We are going to import the library `#include <Servo.h>`
+2. we are going to give a name to the servo, in this case, "servo_air_vent" `Servo servo_air_vent;`
+3. we define the initial position `int servo_position = 0;`
+4. in the `setup` block we tell Arduino where the servo is connected `Servo_Air_vent.attach (9);`
+5. In the `loop` block we create 2 `for` that will move the servo to the right and later to the left

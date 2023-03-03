@@ -88,7 +88,7 @@ returns the section names present in the config file.
 
 will return a Boolean value depending on the value store in the key, values most be `'yes'/'no'`, `'on'/'off`', `'true'/'false'` and `'1'/'0'`.
 
-Here are some examples of interactions with a config file. 
+Here are some examples of interactions with a config file.
 
 ```python
 import configparser
@@ -97,7 +97,7 @@ config = configparser.ConfigParser()
 config.read('myExample.ini')
 print(f'config.sections() => {config.sections()}')
 print(f'config["DEFAULT"]["API key"] => {config["DEFAULT"]["API key"] }')
-default = config['DEFAULT'] 
+default = config['DEFAULT']
 print(f'default["onLine"]  => {default["onLine"] }')
 ```
 
@@ -114,7 +114,7 @@ Fernandez
 
 To update it  I can use the following methods:
 
-`add_section()` to add a new section. 
+`add_section()` to add a new section.
 
 `set(’my_section’,’my_new_key’,’my_new_value’)` To add a new key-value pair to an specific session.
 

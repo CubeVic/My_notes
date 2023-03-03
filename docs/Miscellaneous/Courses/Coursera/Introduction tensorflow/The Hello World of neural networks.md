@@ -14,7 +14,7 @@ There's only one dense here. So there's only one layer and there's only one unit
 You define the shape of what's input to the neural network in the first and in this case the only layer, and you can see that our input shape is super simple. It's just one value
 
 ## The `optimizer` and the `loss`
-Here are two function roles that you should be aware of though and these are loss functions and optimizers. This code defines them. 
+Here are two function roles that you should be aware of though and these are loss functions and optimizers. This code defines them.
 
 ```python
 model.compile(optimizer='sgd', loss='mean_squared_error')
@@ -38,7 +38,7 @@ The training takes place in the fit command.
 model.fit(xs,ys, epochs=500)
 ```
 
-The epochs equals 500 value means that it will go through the training loop 500 times.Then the model has finished training, it will then give you back values using the predict method. 
+The epochs equals 500 value means that it will go through the training loop 500 times.Then the model has finished training, it will then give you back values using the predict method.
 
 ## The prediction
 ```python
@@ -48,7 +48,7 @@ print(model.predict([10.0]))
 you'll see that it will return a value very close to 19 but not exactly 19.
 there are two main reasons. The first is that you trained it using very little data. There's only six points.
 
-The second main reason, when we use neural networks, as they try to figure out the answers for everything, they deal in probability. You'll see that a lot and you'll have to adjust how you handle answers to fit. 
+The second main reason, when we use neural networks, as they try to figure out the answers for everything, they deal in probability. You'll see that a lot and you'll have to adjust how you handle answers to fit.
 
 ##Example:
 

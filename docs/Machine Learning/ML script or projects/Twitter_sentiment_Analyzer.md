@@ -3,7 +3,7 @@ There are two sources for this project:
 1. [Twitter Sentiment Analysis - Learn Python for Data Science #2 by Siraj Raval](https://www.youtube.com/watch?v=T5pRlIbr6gg&list=PL2-dafEMk2A6QKz1mrk1uIGfHkC1zZ6UU)
 2. [How to build a twitter sentiment Analyzer using TextBlob](https://medium.com/better-programming/how-to-build-a-twitter-sentiments-analyzer-in-python-using-textblob-948e1e8aae14)
 
-In this case we are going to use [TextBlob](https://textblob.readthedocs.io/en/dev/) 
+In this case we are going to use [TextBlob](https://textblob.readthedocs.io/en/dev/)
 
 Now, what is sentiment analysis, it is the process of determining whether a piece of writing is positive, negative or neutral, there are several ways to do this sentiment analysis, the two more common approaches will be:
 
@@ -12,7 +12,7 @@ Now, what is sentiment analysis, it is the process of determining whether a piec
 
 In a really shallow description/definition, Lexicon is a method that will list the worlds as positive and negative, e.g 'nice',+2, 'good',+1,'terrible',-1.5), The algorithm will find all the words and combine individual results and provide a result base in that value.
 
-## Twitter API 
+## Twitter API
 
 First, we will need to register the app in twitter in order to get the various keys associated with the API, there will be 4 keys:
 
@@ -21,7 +21,7 @@ First, we will need to register the app in twitter in order to get the various k
 * `access_token`
 * `access_token_secret`
 
-In order to continue we will need to install two packages, [**tweepy**](https://www.tweepy.org/) and **textblob**, we can do this using pip, 
+In order to continue we will need to install two packages, [**tweepy**](https://www.tweepy.org/) and **textblob**, we can do this using pip,
 
 ```python
 pip install tweepy
@@ -62,10 +62,10 @@ api = tweepy.API(auth)
 ```
 the next step will be to find the public tweets related to a topic, in this case we use the method `search` of the API.
 
-```python 
+```python
 public_tweet = api.search('Dogs')
 ```
-##Sentiment Analysis 
+##Sentiment Analysis
 
 ###TextBlob
 
@@ -92,7 +92,7 @@ for tweet in public_tweets:
 
 here the complite script:
 
-```python 
+```python
 import tweepy
 from textblob import TextBlob
 
@@ -104,7 +104,7 @@ access_token_secret ='WXFqNV5Da8hwwh5oIfUXhsBKb9ouvE6gQCZ3fIgQLtdm2' # this is a
 
 
 
-# set the OAuth authentication  
+# set the OAuth authentication
 
 auth = tweepy.OAuthHandler(consumer_key,consumer_key_secret)
 auth.set_access_token(access_token,access_token_secret)

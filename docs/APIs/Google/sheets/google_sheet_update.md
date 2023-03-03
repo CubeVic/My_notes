@@ -1,19 +1,19 @@
 # Update Spreadsheet
 
-I can use the `batchUpdate` method to alter or update some appearance and operation of the spreadsheets. I can change the following data: 
+I can use the `batchUpdate` method to alter or update some appearance and operation of the spreadsheets. I can change the following data:
 
 - Cell format and borders
 - named rage
 - protected range
 - conditional formatting
 
-These operations can be divided into three groups. 
+These operations can be divided into three groups.
 
 1. Add (and duplicate): add new objects or  duplicate existing one
-2. Update ( or set): update some properties and leaving others as they were. 
+2. Update ( or set): update some properties and leaving others as they were.
 3. Delete: Delete objects
 
-How it works is that `batchUpdate` will take one or more request objects, each one will modify, add or delete some parameter or value.  I will take the information from the official documentation 
+How it works is that `batchUpdate` will take one or more request objects, each one will modify, add or delete some parameter or value.  I will take the information from the official documentation
 
 [Updating Spreadsheets | Sheets API | Google Developers](https://developers.google.com/sheets/api/guides/batchupdate)
 
@@ -27,7 +27,7 @@ This table will be a short version of the information in the above link:
 |Borders                 | | [UpdateBordersRequest](https://developers.google.com/sheets/api/reference/rest/v4/spreadsheets/request#updatebordersrequest)                 |                  |
 
 
-The official documentation also mentions request that mimics user actions, but the most relevant for me are: 
+The official documentation also mentions request that mimics user actions, but the most relevant for me are:
 
 - [FindReplaceRequest](https://developers.google.com/sheets/api/reference/rest/v4/spreadsheets/request#findreplacerequest)
 - [SortRangeRequest](https://developers.google.com/sheets/api/reference/rest/v4/spreadsheets/request#sortrangerequest)
@@ -133,10 +133,10 @@ def update_spreadsheet(gservice: gsheet_resource):
     print(f'{find_replace_response}')
 ```
 
-The code about it is similar to the example from the documentation with some minor changes: 
+The code about it is similar to the example from the documentation with some minor changes:
 
-1. I add the changes in the title of the spreadsheet and define the strings I want to find and replace 
-2. I print the full response for this request 
+1. I add the changes in the title of the spreadsheet and define the strings I want to find and replace
+2. I print the full response for this request
 
 The response of this request is:
 

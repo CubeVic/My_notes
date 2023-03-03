@@ -1,6 +1,6 @@
-In order to have the best print quality, we need to have a correct calibration for the extruder this is achieve making a extruder steps and flow rate tune and calibrated for the printer. 
+In order to have the best print quality, we need to have a correct calibration for the extruder this is achieve making a extruder steps and flow rate tune and calibrated for the printer.
 
-## E-steps 
+## E-steps
 
 First we need to know what are the E-steps that the printer has at the moment, for that we use Octoprint *(or any software that allow me to communicate with the printer by G-code)* to send `M503` that will give me as a result different values, between those value we have the steps for each axis and the extruder
 
@@ -39,7 +39,7 @@ Notice the lines
 ```
 Steps per unit:
 M92 X100.00 Y100.00 Z398.70 E100.00
-``` 
+```
 
 This means that currently the E-steps is 100
 
@@ -63,7 +63,7 @@ $$
 the old steps will be 100, the 100 is the amount of filament we asked to extrude and the "measured distance filament" will be $120-19=101$, so
 
 $$
-E-steps_n = 100\ x\  (100/101)  
+E-steps_n = 100\ x\  (100/101)
 $$
 
 $$
@@ -100,4 +100,3 @@ now
 $$
 Flow-rate_n = Average_t\ X\ Current-Flow-rate
 $$
-

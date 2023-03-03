@@ -8,7 +8,7 @@ import useful_functions
 
 to make it easier to use we can create aliases for the different script imported
 
-```python 
+```python
 import usefull_functions as uf
 uf.add_five([1,2,3,4])
 ```
@@ -107,7 +107,7 @@ import module_name as new_name
 ```python
 from module_name import object_name as new_name
 ```
-5. To import everything 
+5. To import everything
 
 ```python
 import module_name

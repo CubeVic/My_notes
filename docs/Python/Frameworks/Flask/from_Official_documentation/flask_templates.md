@@ -2,17 +2,17 @@ Flask use [Jinja](https://jinja.palletsprojects.com/en/2.11.x/templates/) templa
 
 Jinja is base in Django and Python syntax, although, the blocks are represented by special delimiters whihc will distinguish the jijnaja suyntax from the static data in the template.
 
-Anything between `{{` and `}}` is and expresuion and it will be output to the final document, example, the value of a variable `{{ g.user['username'] }}`. Now the control flow statemente like `if` and `for` will use `{%` and `%}` but here is de difference with python. Python use indentation to denotate the blocks, jinja will use a special tag, like:   
+Anything between `{{` and `}}` is and expresuion and it will be output to the final document, example, the value of a variable `{{ g.user['username'] }}`. Now the control flow statemente like `if` and `for` will use `{%` and `%}` but here is de difference with python. Python use indentation to denotate the blocks, jinja will use a special tag, like:
 ```jinja2
-{% if condition %} 
-	here the logic 
+{% if condition %}
+	here the logic
 {% endif %}
-```  
+```
 
 Here some delimiters
 
-* `{% ... %}` for [Statements](https://jinja.palletsprojects.com/en/2.11.x/templates/#list-of-control-structures).  
-* `{{ ... }}` for [Expressions](https://jinja.palletsprojects.com/en/2.11.x/templates/#expressions) to print to the template output.  
+* `{% ... %}` for [Statements](https://jinja.palletsprojects.com/en/2.11.x/templates/#list-of-control-structures).
+* `{{ ... }}` for [Expressions](https://jinja.palletsprojects.com/en/2.11.x/templates/#expressions) to print to the template output.
 * `{# ... #}` for [Comments](https://jinja.palletsprojects.com/en/2.11.x/templates/#comments) not included in the template output.
 * `#  ... ##` for Line [Statements](https://jinja.palletsprojects.com/en/2.11.x/templates/#line-statements).
 
@@ -68,11 +68,11 @@ Here is were we start to get an idea of what the template system can do, in this
 
 **flaskr/templetes/auth/register.html**
 ```html
-{% extends 'base.html' %} 
+{% extends 'base.html' %}
 
-{% block header %} 
+{% block header %}
 	<h1>{% block title %} Register {% endblock %} </h1>
-{% endblock %} 
+{% endblock %}
 
 {% block content %}
   <form method="post">
@@ -85,7 +85,7 @@ Here is were we start to get an idea of what the template system can do, in this
 {% endblock %}
 ```
 
-The point to remark here: 
+The point to remark here:
 
 * `{% extends 'base.html' %}` here we tell jinja that this is a template that should replace the blocks in the base templates, in this case `base.html`
 * `{% block header %}`,`{% block content %}` and `{% endblock %}`  the first to just contain the content that must be replace in the template, the last one `{% endblock %}`  is just to indicate the end of the block.
@@ -116,4 +116,3 @@ Similar to the previous template with the difference in the summit button
 ## Static files
 
 This will be the CSS, Javascript files and logos for the application, on the base template we can see that we use `{{ url_for('static', filename='style.css')}}` this will search in the relative path to the `flaskr/static` directory.
-

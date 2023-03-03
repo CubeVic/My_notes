@@ -26,7 +26,7 @@ coinmarketcap/
 
 From the `tree` above:
 
-1. `src/` folder contains the main part of the API wrapper. 
+1. `src/` folder contains the main part of the API wrapper.
 2. `cmc_api/` folder holds the code for the wrapper.
 3. `test/`contains the unittest.
 4. `config.ini` is used to store some information like API credits.
@@ -62,7 +62,7 @@ The files I need for the project will be:
 4. `LICENSE`
 5. (optional) `MANIFEST.in`.
 
-Now the project will look like 
+Now the project will look like
 
 ```bash
 coinmarketcap/
@@ -86,7 +86,7 @@ coinmarketcap/
 
 I will describe what to add to each file in the next section for now I will provide a simple description of what they do:
 
- 
+
 
 ### `README.md`
 
@@ -140,19 +140,19 @@ One to a two-paragraph statement about your product and what it does.
 ##Index
 
 ## About
-Some special remarks 
+Some special remarks
 
 ## Installation or usage
 
-## Development 
+## Development
 
-## Pre- Requisites 
+## Pre- Requisites
 
 ## Release History
 
 ## Community or contributing guidelines
 
-# License 
+# License
 ```
 
 Here is a good template:
@@ -171,7 +171,7 @@ Here is part of what my project [README.md](https://github.com/CubeVic/coinmarke
 
 </aside>
 
-This file is a `configparser` format, so I should not place quotes around the values, it will have a section defined with `[]` like `[metadata]`, inside this section, there will be a key-value pair that will provide the information. 
+This file is a `configparser` format, so I should not place quotes around the values, it will have a section defined with `[]` like `[metadata]`, inside this section, there will be a key-value pair that will provide the information.
 
 ```config
 [metadata]
@@ -248,7 +248,7 @@ More details here [distributing-packages](https://packaging.python.org/en/latest
 
 ### `pyproject.toml`
 
-The most basic configuration will be 
+The most basic configuration will be
 
 ![building_pypi_package_004.png](images/building_pypi_package_004.png)
 
@@ -271,7 +271,7 @@ The best way to generate the license is through the website [https://choosealice
 
 Once I Create all the files I need the tools for; Building the package and uploading the package.
 
-First, To build the package I can use `build` 
+First, To build the package I can use `build`
 
 [build](https://pypi.org/project/build/)
 
@@ -307,7 +307,7 @@ python -m build
 
 As a result:
 
-1. A folder called `dist` is created 
+1. A folder called `dist` is created
 2. Inside the folder, the builder will save two files, one `.whl` and the other `tar.gz` these are the files I need to upload to [test.pypi.org](http://test.pypi.org) and later to pypi.org.
 
 ### test.pypi.org
@@ -330,7 +330,7 @@ Add the credentials (test.[pypi.org](http://pypi.org) and pypi.org provide other
 
 ![building_pypi_package_009.png](images/building_pypi_package_009.png)
 
-if I want I can install the test package and test it 
+if I want I can install the test package and test it
 
 ```commandline
 pip install -i https://test.pypi.org/simple/ cmc-api-wrapper==0.1.19b0
@@ -386,7 +386,7 @@ classifiers =
     Operating System :: OS Independent
 ```
 
-The version was `version="0.1.10"` when I remove the `"` everything work 
+The version was `version="0.1.10"` when I remove the `"` everything work
 
 ### Error when assuming build package was already installed
 

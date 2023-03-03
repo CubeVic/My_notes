@@ -90,7 +90,7 @@ The response of the Bot father will be something like this:
 ![botfather](images/bot_API_key.png){:.center}
 
 ## Up, running, and listening.
-The package pyTelegramBotAPI encapsulates the telegram API, 
+The package pyTelegramBotAPI encapsulates the telegram API,
 with this package I can send messages and documents and several ways to parse or listen to incoming messages.
 
 1. Create an instance of the TeleBot() using the API key.
@@ -147,12 +147,12 @@ To keep the bot running I need to add one command to the source file `bot.infini
 
 ## Advance Bot replies.
 
-The documentation provides extensive information about the telegram API, 
-but what I’m interested in are the types and something callReply markup, 
-this will allow me to provide different types of responses like audio, 
+The documentation provides extensive information about the telegram API,
+but what I’m interested in are the types and something callReply markup,
+this will allow me to provide different types of responses like audio,
 videos, and keyboard options.
 
-Each function `send_xyz` contains an argument `reply_markup`. 
+Each function `send_xyz` contains an argument `reply_markup`.
 This argument receives an instance of `ReplyKeyboardMarkup`, `ReplyKeyboardRemove`
 or `ForceReply`.
 
