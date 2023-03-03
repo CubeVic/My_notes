@@ -2,21 +2,25 @@
 
 Install using pip:
 
-```
+```shell
 pip install mkdocs
 ```
+
 and to check the installation 
-```
+
+```shell
 $ mkdocs --version
 mkdocs, version 0.15.3
 ```
+
 ## Installing Material for mkdocs
 
 Install using pip:
 
-```
+```shell
 pip install mkdocs-material
 ```
+
 and int the project's mkdocs.yml we need to add:
 
 ```yml
@@ -31,7 +35,7 @@ theme:
 * `mkdocs build` - Build the documentation site.
 * `mkdocs help` - Print this help message.
 
-## Useful commands 
+## Useful commands
 
 * `![Name of the image](/images/nameImage.png)` -  to add an image 
 * `[text](URL)` to add a link to a text 
@@ -83,100 +87,9 @@ now to center the image I just need to add "{: .center}" at the end of the state
 
 `![Name of the image](/images/nameImage.png).{: .center}`
 
-### 2. Modification to the dark theme
-
-#### TOC visited links
-I made a modification on the **extra.css** to overwrite **dark_theme.css**
-
-```css
-/*
-/////////////////////////////
-/// visited links on toc ////
-////////////////////////////
-
-Modification by: Victor Fernandez
-Description: modification of the visited links on TOC to 
-              solve contrast issue
-*/
-
-.md-nav__link:visited{
-  color: #808080;
-}
-
-.md-nav__link[data-md-state=blur] {
-    color: #808080;
-}
-```
-This modification wants to change the color of the visited links in the TOC, by default this visited link ( or permalinks) are black, this black color against black background present low contrast, thus it is difficult to read, therefore the modification.
-
-#### Blockquote 
-
-block quote has the same problem with the contrast, like the visited link in toc, thus these changes in the **extra.css** to overwrite **dark_theme.css** file
-
-```css
-/*
-////////////////////
-/// Blockquote/////
-///////////////////
-
-Modification by: Victor Fernandez
-Description: modification of the blockquote to 
-              solve contrast issue
-*/
-
-.md-typeset blockquote {
-  color: #808080;
-  border-left-width: 0.2rem;
-  border-left-style: solid;
-  border-left-color: #808080;
-}
-```
-
-### Modification color of the `nav` and size of the icon
-
-Again the modification was done on the `extra.css` file 
-
-```css
-/* 
-///////////////////////////////////////////
-// Modification Nav color and icon size////
-///////////////////////////////////////////
-*/
-[data-md-color-primary=deep-purple] .md-header, [data-md-color-primary=deep-purple] .md-hero {
-    background-color: #4f3378;
-}
-
-[data-md-color-primary=deep-purple] .md-tabs {
-    background-color: #4f3378;
-}
-
-a.md-header-nav__button.md-logo img{
-  width: 48px;
-  height: 48px;
-}
-```
-
-## Modifications to codehilite.css (extra.css)
-
-In order to change how the inline code ( `this` in line code ) and solve the contrast problems ( before was black) I made a change in **extra.css** that overwrite the original **codehilite.css** code, as follow:
-
-```css
-/*
-/////////////////
-// Inline Code //
-/////////////////
-*/
-.md-typeset code {
-  color: #ae81ff !important;
-  background-color: #313131 !important;
-  box-shadow: 0.29412em 0 0 rgba(0,0,0,.07), -0.29412em 0 0 rgba(0,0,0,.07);
-}
-```
-
-
 ### Modification to footnote strings color
 
-To change the color of the footnotes i made a chang ein the css
+To change the color of the footnotes i made a change in the css
 
 ```css
 .md-typeset div.footnote {
@@ -193,8 +106,9 @@ To create a callout put the content in between `<aside>` tags.
     This is a Callout
 </aside>
 ```
+
 <aside>
     This is a Callout
 </aside>
 
->"To every man upon this earth, death cometh soon or late, And how can man die better, Than facing fearful odds, for the ashes of his fathers, And the temples of his gods." 
+>"To every man upon this earth, death cometh soon or late, And how can man die better, Than facing fearful odds, for the ashes of his fathers, And the temples of his gods."
