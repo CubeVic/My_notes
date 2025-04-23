@@ -4,6 +4,10 @@ on:
     branches:
       - master
       - main
+
+permissions:
+  contents: write  # Needed to push to gh-pages branch
+
 jobs:
   deploy:
     runs-on: ubuntu-latest
