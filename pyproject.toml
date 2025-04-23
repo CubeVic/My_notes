@@ -11,7 +11,7 @@ packages = [{include = "my_notes"}]
 python = "^3.10"
 mkdocs = "^1.4.2"
 mkdocs-material = "^9.0.15"
-pygments = "^2.15.0"
+pygments = "^2.19.1"
 
 
 [tool.poetry.group.dev.dependencies]
