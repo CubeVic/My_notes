@@ -1,0 +1,7 @@
+version: 2
+updates:
+  - package-ecosystem: "pip" # This specifies that you are using Python's pip for dependencies
+    directory: "/"           # Location of the dependency files; "/" means the root of the repository
+    schedule:
+      interval: "weekly"     # Checks for updates every week; you can set this to "daily" or "monthly"
+    open-pull-requests-limit: 10 
