@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "my-notes"
-version = "2.0.0"
+version = "2.0.1"
 description = "This are my notes about different topics. It serve as a quick place to check my notes about different topics."
 authors = ["CubeVic <victoraguirre.f@gmail.com>"]
 license = "MIT"

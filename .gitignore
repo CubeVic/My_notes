@@ -72,3 +72,4 @@ site/
 .DS_store
 .idea
 .vscode
+poetry.lock
