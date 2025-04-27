@@ -10,7 +10,7 @@ packages = [{include = "my_notes"}]
 [tool.poetry.dependencies]
 python = "^3.10"
 mkdocs = "^1.4.2"
-mkdocs-material = "^9.0.15"
+mkdocs-material = "^9.1.20"
 pygments = "^2.15.0"
 
 
