@@ -1,7 +1,41 @@
 version: 2
 updates:
-  - package-ecosystem: "pip" # This specifies that you are using Python's pip for dependencies
-    directory: "/"           # Location of the dependency files; "/" means the root of the repository
+  # SECURITY UPDATES - WEEKLY
+  - package-ecosystem: "pip"
+    directory: "/"
     schedule:
-      interval: "weekly"     # Checks for updates every week; you can set this to "daily" or "monthly"
-    open-pull-requests-limit: 10
+      interval: "weekly"
+    security-updates-only: true
+    target-branch: "main"  # Or your preferred branch
+    open-pull-requests-limit: 3
+    labels:
+      - "dependencies"
+      - "security"
+    groups:
+      pip-security:
+        applies-to: "security-updates"
+        patterns:
+          - "*"
+
+  # REGULAR UPDATES - MONTHLY
+  - package-ecosystem: "pip"
+    directory: "/"
+    schedule:
+      interval: "monthly"
+      day: "monday"
+      time: "04:00"
+      timezone: "Asia/Taipei"
+    target-branch: "main"
+    security-updates-only: false
+    open-pull-requests-limit: 3
+    allow:
+      - dependency-type: "direct"
+    ignore:
+      - dependency-type: "indirect"
+    labels:
+      - "dependencies"
+    groups:
+      pip-monthly:
+        applies-to: "all"
+        patterns:
+          - "*"
